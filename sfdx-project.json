@@ -2,7 +2,17 @@
   "packageDirectories": [
     {
       "path": "force-app",
-      "default": true
+      "default": true,
+      "package": "Core",
+      "versionName": "Core Components",
+      "versionNumber": "1.0.0.NEXT"
+    },
+    {
+      "path": "feature-customer-portal/salesforce",
+      "default": false,
+      "package": "Customer Portal",
+      "versionName": "Customer Portal Feature",
+      "versionNumber": "1.0.0.NEXT"
     }
   ],
   "name": "dfj-salesforce",
