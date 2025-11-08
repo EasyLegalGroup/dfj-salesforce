@@ -1,0 +1,359 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "dfj-doc-presigner",
+    "version" : "2025-10-31 13:08:29UTC"
+  },
+  "servers" : [ {
+    "url" : "https://ysu7eo2haj.execute-api.eu-north-1.amazonaws.com/{basePath}",
+    "variables" : {
+      "basePath" : {
+        "default" : "prod"
+      }
+    }
+  } ],
+  "paths" : {
+    "/chat/list" : {
+      "get" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for GET /chat/list"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:641409597080:function:dfj-doc-presigner/invocations",
+          "connectionType" : "INTERNET"
+        }
+      }
+    },
+    "/ping" : {
+      "get" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for GET /ping"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:641409597080:function:dfj-doc-presigner/invocations",
+          "connectionType" : "INTERNET"
+        }
+      }
+    },
+    "/sf-oauth-check" : {
+      "get" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for GET /sf-oauth-check"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:641409597080:function:dfj-doc-presigner/invocations",
+          "connectionType" : "INTERNET"
+        }
+      }
+    },
+    "/upload-start" : {
+      "post" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for POST /upload-start"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:641409597080:function:dfj-doc-presigner/invocations",
+          "connectionType" : "INTERNET"
+        }
+      },
+      "options" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for OPTIONS /upload-start"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:641409597080:function:dfj-doc-presigner/invocations",
+          "connectionType" : "INTERNET"
+        }
+      }
+    },
+    "/approve" : {
+      "post" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for POST /approve"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:641409597080:function:dfj-doc-presigner/invocations",
+          "connectionType" : "INTERNET"
+        }
+      }
+    },
+    "/chat/send" : {
+      "post" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for POST /chat/send"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:641409597080:function:dfj-doc-presigner/invocations",
+          "connectionType" : "INTERNET"
+        }
+      }
+    },
+    "/doc-list" : {
+      "post" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for POST /doc-list"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:641409597080:function:dfj-doc-presigner/invocations",
+          "connectionType" : "INTERNET"
+        }
+      }
+    },
+    "/doc-url" : {
+      "post" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for POST /doc-url"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:641409597080:function:dfj-doc-presigner/invocations",
+          "connectionType" : "INTERNET"
+        }
+      }
+    },
+    "/identifier/approve" : {
+      "post" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for POST /identifier/approve"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:641409597080:function:dfj-doc-presigner/invocations",
+          "connectionType" : "INTERNET"
+        }
+      }
+    },
+    "/identifier/chat/list" : {
+      "post" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for POST /identifier/chat/list"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:641409597080:function:dfj-doc-presigner/invocations",
+          "connectionType" : "INTERNET"
+        }
+      }
+    },
+    "/identifier/chat/send" : {
+      "post" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for POST /identifier/chat/send"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:641409597080:function:dfj-doc-presigner/invocations",
+          "connectionType" : "INTERNET"
+        }
+      }
+    },
+    "/identifier/doc-url" : {
+      "post" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for POST /identifier/doc-url"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:641409597080:function:dfj-doc-presigner/invocations",
+          "connectionType" : "INTERNET"
+        }
+      }
+    },
+    "/identifier/list" : {
+      "post" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for POST /identifier/list"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:641409597080:function:dfj-doc-presigner/invocations",
+          "connectionType" : "INTERNET"
+        }
+      }
+    },
+    "/identifier/request-otp" : {
+      "post" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for POST /identifier/request-otp"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:641409597080:function:dfj-doc-presigner/invocations",
+          "connectionType" : "INTERNET"
+        }
+      }
+    },
+    "/identifier/search" : {
+      "post" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for POST /identifier/search"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:641409597080:function:dfj-doc-presigner/invocations",
+          "connectionType" : "INTERNET"
+        }
+      }
+    },
+    "/identifier/verify-otp" : {
+      "post" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for POST /identifier/verify-otp"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:641409597080:function:dfj-doc-presigner/invocations",
+          "connectionType" : "INTERNET"
+        }
+      }
+    },
+    "/impersonation/login" : {
+      "post" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for POST /impersonation/login"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:641409597080:function:dfj-doc-presigner/invocations",
+          "connectionType" : "INTERNET"
+        }
+      }
+    },
+    "/otp-send" : {
+      "post" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for POST /otp-send"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:641409597080:function:dfj-doc-presigner/invocations",
+          "connectionType" : "INTERNET"
+        }
+      }
+    },
+    "/otp-verify" : {
+      "post" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for POST /otp-verify"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:641409597080:function:dfj-doc-presigner/invocations",
+          "connectionType" : "INTERNET"
+        }
+      }
+    },
+    "/otp/init" : {
+      "post" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for POST /otp/init"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:641409597080:function:dfj-doc-presigner/invocations",
+          "connectionType" : "INTERNET"
+        }
+      }
+    }
+  },
+  "x-amazon-apigateway-cors" : {
+    "allowMethods" : [ "GET", "OPTIONS", "POST" ],
+    "allowHeaders" : [ "authorization", "content-type" ],
+    "maxAge" : 3600,
+    "allowCredentials" : false,
+    "allowOrigins" : [ "http://localhost:3000", "http://localhost:5173", "http://localhost:8000", "http://localhost:8080", "https://dfj.lightning.force.com", "https://dfj.my.salesforce.com", "https://docs.hereslaw.ie", "https://dok.dinfamiliejurist.dk", "https://dok.dinfamiljejurist.se" ]
+  },
+  "x-amazon-apigateway-importexport-version" : "1.0"
+}
