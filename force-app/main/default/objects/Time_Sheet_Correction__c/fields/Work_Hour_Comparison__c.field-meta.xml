@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Work_Hour_Comparison__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    Deviation_in_Work_Hours__c &lt; 0,
+    &quot;Less&quot;,
+    IF(
+        Deviation_in_Work_Hours__c = 0,
+        &quot;Same&quot;,
+        &quot;More&quot;
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Calculates whether the employee worked fewer, the same or more hours than usual, based on the value in &quot;Difference in Normal Work Time&quot;</inlineHelpText>
+    <label>Work Hour Comparison</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

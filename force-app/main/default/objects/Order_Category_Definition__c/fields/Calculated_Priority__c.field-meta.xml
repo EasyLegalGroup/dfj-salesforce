@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Calculated_Priority__c</fullName>
+    <externalId>false</externalId>
+    <formula>((Minimum_Product_Count__c + Number_of_Criteria__c) *10 ) +  Manual_Priority_Adjustment__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>((Minimum Product Count + Number of Criteria) * 10 ) +  Manual Priority Adjustment</inlineHelpText>
+    <label>Calculated Priority</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

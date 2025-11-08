@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <logo>cprlogo</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>CPR Registry</label>
+    <navType>Standard</navType>
+    <setupExperience>all</setupExperience>
+    <tabs>CPR_Registry_Overview</tabs>
+    <tabs>CPR_Event__c</tabs>
+    <tabs>CPR_File_Run__c</tabs>
+    <tabs>CPR_Outbound_Batch__c</tabs>
+    <tabs>CPR_Subscription_Add__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>CPR_Registry_UtilityBar</utilityBar>
+</CustomApplication>

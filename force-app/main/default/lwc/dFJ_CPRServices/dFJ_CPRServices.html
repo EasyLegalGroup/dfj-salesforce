@@ -1,0 +1,66 @@
+<!-- DFJ CPR Services -->
+<template>
+    <lightning-card>
+        <div class="slds-m-around_medium">
+            <fieldset class="slds-box">
+
+                <div align="center" class="container">
+                    <img align="center" style="max-width:20%;max-height:20%;" src={logo} alt="Logo" class="logo">
+
+                    <div class="slds-truncate slds-text-align_center slds-p-around_x-small" title="CPR Check">
+
+                        <div class="slds-text-heading_medium "><b>CPR Check</b></div>
+                    </div>
+                    <!-- CPR Number Input -->
+                    <lightning-input label="" class="slds-align_absolute-center "
+                                     onkeydown={handleKeyDown}
+                                     type="text" onchange={handleCPRInput} placeholder="CPR Number"></lightning-input>
+                    
+                    <!-- Submit Button -->
+                    <div class="slds-p-top_small">
+                        <button class="slds-button slds-button_brand slds-button_stretch" onclick={handleSubmit}>Submit
+                        </button>
+                    </div>
+<!--                    div to contain either data or error -->
+                    <div class="slds-p-top_small">
+                        <!-- Returned Data Display -->
+                        <template if:true={isDisplayData}>
+
+                            <div class="slds-text-align_left">
+                                <div class="slds-grid slds-border_bottom slds-p-vertical_x-small">
+                                    <span class="slds-col slds-size_1-of-2"><b>Name:</b></span>
+                                    <span class="slds-col slds-size_1-of-2 slds-text-align_right">{cprResponseData.name}</span>
+                                </div>
+                                <div class="slds-grid slds-border_bottom slds-p-vertical_x-small">
+                                    <span class="slds-col slds-size_1-of-2"><b>Gender:</b></span>
+                                    <span class="slds-col slds-size_1-of-2 slds-text-align_right">{cprResponseData.gender}</span>
+                                </div>
+                                <div class="slds-grid slds-border_bottom slds-p-vertical_x-small">
+                                    <span class="slds-col slds-size_1-of-2"><b>Street:</b></span>
+                                    <span class="slds-col slds-size_1-of-2 slds-text-align_right">{cprResponseData.address}</span>
+                                </div>
+                                <div class="slds-grid slds-border_bottom slds-p-vertical_x-small">
+                                    <span class="slds-col slds-size_1-of-2"><b>Zip Code / City:</b></span>
+                                    <span class="slds-col slds-size_1-of-2 slds-text-align_right">
+                                        {cprResponseData.postalCode}
+                                    </span>
+                                </div>
+                                <div class="slds-grid slds-border_bottom slds-p-vertical_x-small">
+                                    <span class="slds-col slds-size_1-of-2"><b>Region:</b></span>
+                                    <span class="slds-col slds-size_1-of-2 slds-text-align_right">
+                                        {cprResponseData.city}
+                                    </span>
+                                </div>
+
+                            </div>
+                        </template>
+                        <template if:true={isError}>
+                            <p class="slds-text-color_error">{errorMessage}</p>
+                        </template>
+                    </div>
+
+                </div>
+            </fieldset>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This field indicates how or by who, Calendly bookings related to this event, are booked</inlineHelpText>
+    <label>Category</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Partner</fullName>
+                <default>false</default>
+                <label>Partner</label>
+            </value>
+            <value>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <label>Marketing</label>
+            </value>
+            <value>
+                <fullName>Internal Meeting Bookers</fullName>
+                <default>false</default>
+                <label>Internal Meeting Bookers</label>
+            </value>
+            <value>
+                <fullName>Website</fullName>
+                <default>false</default>
+                <label>Website</label>
+            </value>
+            <value>
+                <fullName>Promotional Event</fullName>
+                <default>false</default>
+                <label>Promotional Event</label>
+            </value>
+            <value>
+                <fullName>Live at Lecture</fullName>
+                <default>false</default>
+                <label>Live at Lecture</label>
+            </value>
+            <value>
+                <fullName>Personal Link</fullName>
+                <default>false</default>
+                <label>Personal Link</label>
+            </value>
+            <value>
+                <fullName>Internal Event Booking</fullName>
+                <default>false</default>
+                <label>Internal Event Booking</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

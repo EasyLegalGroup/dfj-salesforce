@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <assignments>
+        <name>Send_Child_Details_to_Prompt_Template</name>
+        <elementSubtype>AddPromptInstructions</elementSubtype>
+        <label>Send Child Details to Prompt Template</label>
+        <locationX>792</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>$Output.Prompt</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>(Child, 
+Fornavn: {!Loop_Persons.person_fornavn__c}, 
+Efternavn:{!Loop_Persons.person_efternavn__c}, 
+Birthday: {!Loop_Persons.Birthday__c}, 
+Last 4 Digits of CPR-number: {!Loop_Persons.Last_4_Digits_of_CPR_Number__c})
+</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Persons</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Send_Other_Person_Details_to_Prompt_Template</name>
+        <elementSubtype>AddPromptInstructions</elementSubtype>
+        <label>Send Other Person Details to Prompt Template</label>
+        <locationX>1056</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>$Output.Prompt</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>(Other Person, 
+Fornavn: {!Loop_Persons.person_fornavn__c}, 
+Efternavn:{!Loop_Persons.person_efternavn__c}, 
+Birthday: {!Loop_Persons.Birthday__c}, 
+Last 4 Digits of CPR-number: {!Loop_Persons.Last_4_Digits_of_CPR_Number__c})
+</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Persons</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Send_Person_1_Details_to_Prompt_Template</name>
+        <elementSubtype>AddPromptInstructions</elementSubtype>
+        <label>Send Person 1 Details to Prompt Template</label>
+        <locationX>264</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>$Output.Prompt</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>(Person 1, 
+Fornavn: {!Loop_Persons.person_fornavn__c}, 
+Efternavn:{!Loop_Persons.person_efternavn__c}, 
+Address: {!Loop_Persons.person_adresse__c}, 
+ZipCode: {!Loop_Persons.person_postnummer__c}, 
+City: {!Loop_Persons.person_by__c}, 
+Birthday: {!Loop_Persons.Birthday__c}, 
+Last 4 Digits of CPR-number: {!Loop_Persons.Last_4_Digits_of_CPR_Number__c})
+</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Persons</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Send_Person_2_Details_to_Prompt_Template</name>
+        <elementSubtype>AddPromptInstructions</elementSubtype>
+        <label>Send Person 2 Details to Prompt Template</label>
+        <locationX>528</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>$Output.Prompt</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>(Person 2, 
+Fornavn: {!Loop_Persons.person_fornavn__c}, 
+Efternavn:{!Loop_Persons.person_efternavn__c}, 
+Address: {!Loop_Persons.person_adresse__c}, 
+ZipCode: {!Loop_Persons.person_postnummer__c}, 
+City: {!Loop_Persons.person_by__c}, 
+Birthday: {!Loop_Persons.Birthday__c}, 
+Last 4 Digits of CPR-number: {!Loop_Persons.Last_4_Digits_of_CPR_Number__c})
+</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Persons</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Send_Unhandled_Person_Type_Details_to_Prompt_Template</name>
+        <elementSubtype>AddPromptInstructions</elementSubtype>
+        <label>Send Unhandled Person Type Details to Prompt Template</label>
+        <locationX>1320</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>$Output.Prompt</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>(Unhandled Person Type, 
+Fornavn: {!Loop_Persons.person_fornavn__c}, 
+Efternavn:{!Loop_Persons.person_efternavn__c}, 
+Birthday: {!Loop_Persons.Birthday__c}, 
+Last 4 Digits of CPR-number: {!Loop_Persons.Last_4_Digits_of_CPR_Number__c})
+</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Persons</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Which_Type_of_Person_is_it</name>
+        <label>Which Type of Person is it?</label>
+        <locationX>792</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Send_Unhandled_Person_Type_Details_to_Prompt_Template</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Something else</defaultConnectorLabel>
+        <rules>
+            <name>Person_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Loop_Persons.person_hidden_person_1__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Person_1_Details_to_Prompt_Template</targetReference>
+            </connector>
+            <label>A Person 1</label>
+        </rules>
+        <rules>
+            <name>A_Person_2</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Loop_Persons.person_hidden_person_2__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Person_2_Details_to_Prompt_Template</targetReference>
+            </connector>
+            <label>A Person 2</label>
+        </rules>
+        <rules>
+            <name>A_Child</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Loop_Persons.person_hf_barn__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Child_Details_to_Prompt_Template</targetReference>
+            </connector>
+            <label>A Child</label>
+        </rules>
+        <rules>
+            <name>Other_Person</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Loop_Persons.person_hidden_anden_type_person__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Other_Person_Details_to_Prompt_Template</targetReference>
+            </connector>
+            <label>Other Person</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>PF {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>PF - Find &amp; Filter Persons from DocFab Journal</label>
+    <loops>
+        <name>Loop_Persons</name>
+        <label>Loop Persons</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <collectionReference>Get_Persons</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Which_Type_of_Person_is_it</targetReference>
+        </nextValueConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>PromptFlow</processType>
+    <recordLookups>
+        <name>Get_Persons</name>
+        <label>Get Persons</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Persons</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>journal_dk_new__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>DocFabJournal.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>df_160_person__c</object>
+        <sortField>person_fornavn__c</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Persons</targetReference>
+        </connector>
+        <triggerType>Capability</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>ChildCollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>df_160_person__c</objectType>
+    </variables>
+    <variables>
+        <name>currentItem_Filter_for_Other</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>df_160_person__c</objectType>
+    </variables>
+    <variables>
+        <name>currentItem_Filter_for_Person_1</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>df_160_person__c</objectType>
+    </variables>
+    <variables>
+        <name>currentItem_Filter_for_Person_2</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>df_160_person__c</objectType>
+    </variables>
+    <variables>
+        <name>DocFabJournal</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>df_journal_dk_new__c</objectType>
+    </variables>
+    <variables>
+        <name>OtherPersonCollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>df_160_person__c</objectType>
+    </variables>
+    <variables>
+        <name>Person1Collection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>df_160_person__c</objectType>
+    </variables>
+    <variables>
+        <name>Person2Collection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>df_160_person__c</objectType>
+    </variables>
+</Flow>

@@ -1,0 +1,228 @@
+<template>
+    <div class="unified-chat-container" style={chatContainerStyle}>
+        <!-- Loading Spinner -->
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading..." size="small"></lightning-spinner>
+        </template>
+
+        <!-- Message Composer -->
+        <div class="composer-section slds-box slds-theme_shade slds-p-around_small slds-m-bottom_small">
+            <lightning-input-rich-text
+                label="Message"
+                label-visible="false"
+                value={messageBody}
+                placeholder={placeholder}
+                formats={richTextFormats}
+                onchange={handleMessageChange}
+                class="composer-input">
+            </lightning-input-rich-text>
+
+            <!-- File Upload -->
+            <lightning-file-upload
+                label=""
+                name="messageFileUploader"
+                accept={acceptedFileFormats}
+                record-id={recordId}
+                onuploadfinished={handleFileUploadFinished}
+                multiple="true"
+                class="file-upload-compact">
+            </lightning-file-upload>
+
+            <!-- Show uploaded files (already in Salesforce) -->
+            <template if:true={hasUploadedFiles}>
+                <div class="uploaded-files-container">
+                    <template for:each={uploadedFiles} for:item="ufile" for:index="ufIndex">
+                        <div key={ufile.documentId} class="uploaded-file-pill">
+                            <lightning-icon
+                                icon-name="utility:file"
+                                size="xx-small"
+                                class="file-icon">
+                            </lightning-icon>
+                            <span class="file-name" title={ufile.name}>{ufile.name}</span>
+                            <lightning-button-icon
+                                icon-name="utility:close"
+                                variant="bare"
+                                alternative-text="Remove"
+                                size="xx-small"
+                                class="remove-file-btn"
+                                data-index={ufIndex}
+                                onclick={handleRemoveUploadedFile}>
+                            </lightning-button-icon>
+                        </div>
+                    </template>
+                </div>
+            </template>
+
+            <!-- Action Buttons -->
+            <div class="slds-grid slds-gutters slds-m-top_small">
+                <div class="slds-col slds-grow">
+                    <!-- Standard Send Button -->
+                    <lightning-button
+                        label="Add Comment"
+                        variant="brand"
+                        onclick={handleSendMessage}
+                        disabled={isSubmitDisabled}
+                        class="slds-m-right_x-small">
+                    </lightning-button>
+
+                    <!-- Case-specific buttons (only show on Case records) -->
+                    <template if:true={isOnCaseRecord}>
+                        <lightning-button
+                            label="Send & Request Reply"
+                            variant="brand-outline"
+                            onclick={handleSendAndRequestReply}
+                            disabled={isRequestReplyDisabled}
+                            icon-name="utility:reply"
+                            class="slds-m-right_x-small">
+                        </lightning-button>
+
+                        <lightning-button
+                            label="Send & Close"
+                            variant="destructive-text"
+                            onclick={handleSendAndCloseCase}
+                            disabled={isCloseCaseDisabled}
+                            icon-name="utility:check">
+                        </lightning-button>
+                    </template>
+                </div>
+
+                <!-- Loading indicator for sending -->
+                <div class="slds-col slds-no-flex">
+                    <template if:true={isSending}>
+                        <lightning-spinner alternative-text="Sending..." size="x-small"></lightning-spinner>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+        <!-- Message History -->
+        <div class="message-container slds-scrollable_y" data-id="messageContainer">
+            <!-- Empty State -->
+            <template if:false={hasMessages}>
+                <div class="empty-state slds-text-align_center slds-p-around_large">
+                    <lightning-icon 
+                        icon-name="utility:comments" 
+                        size="large" 
+                        class="slds-m-bottom_small">
+                    </lightning-icon>
+                    <h3 class="slds-text-heading_small slds-m-bottom_x-small">{emptyStateTitle}</h3>
+                    <p class="slds-text-color_weak">{emptyStateMessage}</p>
+                </div>
+            </template>
+
+            <!-- Messages List -->
+            <template if:true={hasMessages}>
+                <div class="messages-list slds-p-around_small">
+                    <template for:each={messages} for:item="messageItem">
+                        <div key={messageItem.message.Id} class={messageItem.cssClass}>
+                            <article class="message-content" data-message-id={messageItem.message.Id}>
+                                <!-- Message Header -->
+                                <header class="message-header slds-grid slds-grid_align-spread slds-m-bottom_x-small">
+                                    <div class="slds-grid slds-grid_vertical-align-center">
+                                        <!-- User Avatar -->
+                                        <div class="message-avatar slds-m-right_x-small">
+                                            <lightning-avatar 
+                                                src="" 
+                                                initials={messageItem.userInitials}
+                                                size="small"
+                                                variant="circle">
+                                            </lightning-avatar>
+                                        </div>
+                                        
+                                        <!-- User Name -->
+                                        <div class="user-name">
+                                            <span class="message-author slds-text-body_small slds-text-color_default">
+                                                {messageItem.message.CreatedBy.Name}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Timestamp -->
+                                    <div class="message-timestamp">
+                                        <span class="slds-text-body_x-small slds-text-color_weak">
+                                            {messageItem.relativeTimestamp}
+                                        </span>
+                                    </div>
+                                </header>
+
+                                <!-- Message Body -->
+                                <div class="message-body slds-m-bottom_x-small">
+                                    <lightning-formatted-rich-text value={messageItem.message.Body__c}>
+                                    </lightning-formatted-rich-text>
+                                </div>
+
+                                <!-- Attachments -->
+                                <template if:true={messageItem.attachments.length}>
+                                    <div class="message-attachments slds-m-top_small">
+                                        <template for:each={messageItem.attachments} for:item="attachment">
+                                            <div key={attachment.id} class="attachment-item slds-grid slds-grid_vertical-align-center slds-m-bottom_x-small">
+                                                <!-- File Icon -->
+                                                <lightning-icon 
+                                                    icon-name={attachment.iconName}
+                                                    size="x-small"
+                                                    class="slds-m-right_x-small">
+                                                </lightning-icon>
+                                                
+                                                <!-- File Info -->
+                                                <div class="attachment-info slds-grow">
+                                                    <a href={attachment.downloadUrl} 
+                                                       target="_blank" 
+                                                       class="slds-text-link">
+                                                        {attachment.title}
+                                                    </a>
+                                                    <div class="slds-text-body_x-small slds-text-color_weak">
+                                                        {attachment.formattedSize}
+                                                    </div>
+                                                </div>
+
+                                                <!-- Image Preview for images -->
+                                                <template if:true={attachment.isImage}>
+                                                    <div class="attachment-preview">
+                                                        <img src={attachment.downloadUrl} 
+                                                             alt={attachment.title}
+                                                             class="attachment-thumbnail"
+                                                             onclick={handleImagePreview}
+                                                             data-image-url={attachment.downloadUrl}
+                                                             data-image-title={attachment.title}>
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </template>
+
+                                <!-- Status Change Indicator -->
+                                <template if:true={messageItem.message.Triggered_Status_Change__c}>
+                                    <div class="status-change-indicator slds-m-top_x-small">
+                                        <lightning-icon 
+                                            icon-name="utility:change_record_type" 
+                                            size="x-small"
+                                            class="slds-m-right_xx-small">
+                                        </lightning-icon>
+                                        <span class="slds-text-body_x-small slds-text-color_weak">
+                                            Status changed from {messageItem.message.Previous_Case_Status__c} to {messageItem.message.New_Case_Status__c}
+                                        </span>
+                                    </div>
+                                </template>
+
+                                <!-- Notification Indicator -->
+                                <template if:true={messageItem.message.Notification_Sent__c}>
+                                    <div class="notification-indicator slds-m-top_x-small">
+                                        <lightning-icon 
+                                            icon-name="utility:notification" 
+                                            size="x-small"
+                                            class="slds-m-right_xx-small">
+                                        </lightning-icon>
+                                        <span class="slds-text-body_x-small slds-text-color_weak">
+                                            Notification sent via {messageItem.message.Notification_Platform__c}
+                                        </span>
+                                    </div>
+                                </template>
+                            </article>
+                        </div>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>p2_spec_type_ejendom__c</fullName>
+    <externalId>false</externalId>
+    <label>Type af ejendom</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>p2_spec_type_ejndm_hus</fullName>
+                <default>false</default>
+                <label>Hus</label>
+            </value>
+            <value>
+                <fullName>p2_spec_type_ejndm_ejerlejl</fullName>
+                <default>false</default>
+                <label>Ejerlejlighed</label>
+            </value>
+            <value>
+                <fullName>p2_spec_type_ejndm_andel</fullName>
+                <default>false</default>
+                <label>Andelsbolig</label>
+            </value>
+            <value>
+                <fullName>p2_spec_type_ejndm_koloni</fullName>
+                <default>false</default>
+                <label>Kolonihave</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

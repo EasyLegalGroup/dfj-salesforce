@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Approve_Before_Month_Has_Ended</fullName>
+    <active>false</active>
+    <description>This validation rule makes sure that the user cannot approve a record, before the month has expired.</description>
+    <errorConditionFormula>AND(
+  Is_Approved__c,
+  TODAY() &lt; (DATE(
+    YEAR(Month_Year__c),
+    MONTH(Month_Year__c) + 1,
+    1
+  ))
+)</errorConditionFormula>
+    <errorMessage>You cannot approve your time sheet, before the month has ended!</errorMessage>
+</ValidationRule>

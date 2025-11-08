@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Child_Project_Must_have_a_Parent</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    RecordType.DeveloperName = &quot;Child_Project&quot;,
+    ISBLANK(Parent_Project__c)
+)</errorConditionFormula>
+    <errorDisplayField>Parent_Project__c</errorDisplayField>
+    <errorMessage>When creating a Child Project, it must be associated with a Parent Project.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>sidder_i_uskiftet_bo__c</fullName>
+    <externalId>false</externalId>
+    <label>Sidder en af jer i uskiftet bo?</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>uskiftet_bo_nej</fullName>
+                <default>false</default>
+                <label>Nej</label>
+            </value>
+            <value>
+                <fullName>uskiftet_bo_p1</fullName>
+                <default>false</default>
+                <label>Person 1 sidder i uskiftet bo</label>
+            </value>
+            <value>
+                <fullName>uskiftet_bo_p2</fullName>
+                <default>false</default>
+                <label>Person 2 sidder i uskiftet bo</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

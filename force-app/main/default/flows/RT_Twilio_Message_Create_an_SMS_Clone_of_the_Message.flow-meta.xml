@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <environments>Default</environments>
+    <interviewLabel>RT - Twilio Message: Create an SMS Clone of the Message {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RT - Twilio Message: Create an SMS Clone of the Message</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <object>TwilioSF__Message__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <scheduledPaths>
+            <name>X1_Minute_After_Creation</name>
+            <connector>
+                <targetReference>AL_Transform_Twilio_Message_to_SMS_Record</targetReference>
+            </connector>
+            <label>1 Minute After Creation</label>
+            <offsetNumber>1</offsetNumber>
+            <offsetUnit>Minutes</offsetUnit>
+            <recordField>CreatedDate</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>AL_Transform_Twilio_Message_to_SMS_Record</name>
+        <label>AL - Transform Twilio Message to SMS Record</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <flowName>AL_Transform_Twilio_Message_to_SMS_Record</flowName>
+        <inputAssignments>
+            <name>TwilioMessage</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+</Flow>

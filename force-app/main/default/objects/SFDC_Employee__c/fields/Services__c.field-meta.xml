@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Services__c</fullName>
+    <externalId>false</externalId>
+    <label>Services</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Airtable</fullName>
+                <default>false</default>
+                <label>Airtable</label>
+            </value>
+            <value>
+                <fullName>Billwerk (Reepay)</fullName>
+                <default>false</default>
+                <label>Billwerk (Reepay)</label>
+            </value>
+            <value>
+                <fullName>Calendly</fullName>
+                <default>false</default>
+                <label>Calendly</label>
+            </value>
+            <value>
+                <fullName>Docfabricator</fullName>
+                <default>false</default>
+                <label>Docfabricator</label>
+            </value>
+            <value>
+                <fullName>E-conomic</fullName>
+                <default>false</default>
+                <label>E-conomic</label>
+            </value>
+            <value>
+                <fullName>GetAccept</fullName>
+                <default>false</default>
+                <label>GetAccept</label>
+            </value>
+            <value>
+                <fullName>Google</fullName>
+                <default>false</default>
+                <label>Google</label>
+            </value>
+            <value>
+                <fullName>Google Chat</fullName>
+                <default>false</default>
+                <label>Google Chat</label>
+            </value>
+            <value>
+                <fullName>Google Drive</fullName>
+                <default>false</default>
+                <label>Google Drive</label>
+            </value>
+            <value>
+                <fullName>Jira</fullName>
+                <default>false</default>
+                <label>Jira</label>
+            </value>
+            <value>
+                <fullName>Klarna</fullName>
+                <default>false</default>
+                <label>Klarna</label>
+            </value>
+            <value>
+                <fullName>Microsoft 365 Email</fullName>
+                <default>false</default>
+                <label>Microsoft 365 Email</label>
+            </value>
+            <value>
+                <fullName>Plecto</fullName>
+                <default>false</default>
+                <label>Plecto</label>
+            </value>
+            <value>
+                <fullName>Relatel</fullName>
+                <default>false</default>
+                <label>Relatel</label>
+            </value>
+            <value>
+                <fullName>Salesforce</fullName>
+                <default>false</default>
+                <label>Salesforce</label>
+            </value>
+            <value>
+                <fullName>Scribe</fullName>
+                <default>false</default>
+                <label>Scribe</label>
+            </value>
+            <value>
+                <fullName>Sendgrid</fullName>
+                <default>false</default>
+                <label>Sendgrid</label>
+            </value>
+            <value>
+                <fullName>Slack</fullName>
+                <default>false</default>
+                <label>Slack</label>
+            </value>
+            <value>
+                <fullName>Sprout</fullName>
+                <default>false</default>
+                <label>Sprout</label>
+            </value>
+            <value>
+                <fullName>Telegenta Direct Number</fullName>
+                <default>false</default>
+                <label>Telegenta Direct Number</label>
+            </value>
+            <value>
+                <fullName>Twilio (Admin Console)</fullName>
+                <default>false</default>
+                <label>Twilio (Admin Console)</label>
+            </value>
+            <value>
+                <fullName>Twilio for Salesforce</fullName>
+                <default>false</default>
+                <label>Twilio for Salesforce</label>
+            </value>
+            <value>
+                <fullName>Whereby</fullName>
+                <default>false</default>
+                <label>Whereby</label>
+            </value>
+            <value>
+                <fullName>Wordpress</fullName>
+                <default>false</default>
+                <label>Wordpress</label>
+            </value>
+            <value>
+                <fullName>Zendesk</fullName>
+                <default>false</default>
+                <label>Zendesk</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Satisfaction_Surveys</fullName>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Overall_Experience_Rating__c</columns>
+    <columns>Communication_Rating__c</columns>
+    <columns>Likelihood_to_Recommend__c</columns>
+    <columns>Suggestions_for_Improvement__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Customer Satisfaction Survey</value>
+    </filters>
+    <label>Customer Satisfaction Surveys</label>
+</ListView>

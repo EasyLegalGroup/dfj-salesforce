@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partial_Day_Required_Fields_Validation</fullName>
+    <active>true</active>
+    <description>Ensure that if Attendance_Status__c is &quot;Partial Day,&quot; both Absence_Category__c and Compensation__c must be specified:</description>
+    <errorConditionFormula>AND(
+  ISPICKVAL(Attendance_Status__c, &quot;Partial Day&quot;),
+  OR(
+    ISBLANK(TEXT(Absence_Category__c)),
+    ISBLANK(TEXT(Compensation__c))
+  )
+)</errorConditionFormula>
+    <errorMessage>If you set Attendance Status is &quot;Partial Day&quot; you have to specify both Absence Category and Compensation.</errorMessage>
+</ValidationRule>

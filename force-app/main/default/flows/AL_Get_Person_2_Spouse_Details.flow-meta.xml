@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <assignments>
+        <name>Assign_Formatted_Spouse_Phone_to_output_Variable</name>
+        <label>Assign Formatted Spouse Phone to output Variable</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>outputSpousePhoneFormatted</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmSpousePhoneFormatted</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_Flow_Fault_Message</name>
+        <label>Populate Custom Error with Flow Fault Message</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_Invalid_Missing_Market_Unit</name>
+        <label>Populate Custom Error with Invalid/Missing Market Unit</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Invalid/Missing Market Unit &quot;{!inputJournal.Market_Unit__c}&quot;</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_Irish_Market_Unit_Not_Yet_Supported</name>
+        <label>Populate Custom Error with Irish Market Unit Not Yet Supported</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Irish Market Unit Not Yet Supported</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Did_We_Find_a_Journal_DK_2_0</name>
+        <label>Did We Find a Journal DK 2.0?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Formatted_Spouse_Phone_to_output_Variable</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Got_Journal_DK_2_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Journal_DK_2_0</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Person</targetReference>
+            </connector>
+            <label>Got Journal DK 2.0</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Which_Market_Unit_is_the_Journal</name>
+        <label>Which Market Unit is the Journal?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Populate_Custom_Error_with_Invalid_Missing_Market_Unit</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Danish_Market_Unit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>inputJournal.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>DFJ_DK</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Journal_DK_2_0</targetReference>
+            </connector>
+            <label>Danish Market Unit</label>
+        </rules>
+        <rules>
+            <name>Swedish_Market_Unit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>inputJournal.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>FA_SE</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Journal_Sweden</targetReference>
+            </connector>
+            <label>Swedish Market Unit</label>
+        </rules>
+        <rules>
+            <name>Irish_Market_Unit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>inputJournal.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ireland</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_Custom_Error_with_Irish_Market_Unit_Not_Yet_Supported</targetReference>
+            </connector>
+            <label>Irish Market Unit</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>frmSpousePhoneFormatted</name>
+        <dataType>String</dataType>
+        <expression>IF(
+BEGINS(SUBSTITUTE({!SpousePhone}, &quot; &quot;, &quot;&quot;), &apos;+45&apos;),
+SUBSTITUTE({!SpousePhone}, &quot; &quot;, &quot;&quot;),
+IF(
+BEGINS(SUBSTITUTE({!SpousePhone}, &quot; &quot;, &quot;&quot;), &apos;45&apos;),
+&apos;+&apos; + SUBSTITUTE({!SpousePhone}, &quot; &quot;, &quot;&quot;),
+IF(
+AND(
+NOT(BEGINS(SUBSTITUTE({!SpousePhone}, &quot; &quot;, &quot;&quot;), &apos;+45&apos;)),
+OR(
+ISPICKVAL({!inputJournal.Market_Unit__c}, &apos;DFJ_DK&apos;),
+ISPICKVAL({!inputJournal.Market_Unit__c}, &apos;Testamente_DK&apos;)
+)
+),
+&apos;+45&apos; + SUBSTITUTE({!SpousePhone}, &quot; &quot;, &quot;&quot;),
+IF(
+AND(
+NOT(BEGINS(SUBSTITUTE({!SpousePhone}, &quot; &quot;, &quot;&quot;), &apos;+&apos;)),
+OR(
+ISPICKVAL({!inputJournal.Market_Unit__c}, &apos;DFJ_DK&apos;),
+ISPICKVAL({!inputJournal.Market_Unit__c}, &apos;Testamente_DK&apos;)
+)
+),
+&apos;+&apos; + SUBSTITUTE({!SpousePhone}, &quot; &quot;, &quot;&quot;),
+IF(
+BEGINS(SUBSTITUTE({!SpousePhone}, &quot; &quot;, &quot;&quot;), &apos;+46&apos;),
+SUBSTITUTE({!SpousePhone}, &quot; &quot;, &quot;&quot;),
+IF(
+BEGINS(SUBSTITUTE({!SpousePhone}, &quot; &quot;, &quot;&quot;), &apos;46&apos;),
+&apos;+&apos; + SUBSTITUTE({!SpousePhone}, &quot; &quot;, &quot;&quot;),
+IF(
+AND(
+NOT(BEGINS(SUBSTITUTE({!SpousePhone}, &quot; &quot;, &quot;&quot;), &apos;+46&apos;)),
+ISPICKVAL({!inputJournal.Market_Unit__c}, &apos;FA_SE&apos;)
+),
+&apos;+46&apos; + SUBSTITUTE({!SpousePhone}, &quot; &quot;, &quot;&quot;),
+IF(
+AND(
+NOT(BEGINS(SUBSTITUTE({!SpousePhone}, &quot; &quot;, &quot;&quot;), &apos;+&apos;)),
+ISPICKVAL({!inputJournal.Market_Unit__c}, &apos;FA_SE&apos;)
+),
+&apos;+&apos; + SUBSTITUTE({!SpousePhone}, &quot; &quot;, &quot;&quot;),
+/* --- Ireland block starts --- */
+IF(
+BEGINS(SUBSTITUTE({!SpousePhone}, &quot; &quot;, &quot;&quot;), &apos;+353&apos;),
+SUBSTITUTE({!SpousePhone}, &quot; &quot;, &quot;&quot;),
+IF(
+BEGINS(SUBSTITUTE({!SpousePhone}, &quot; &quot;, &quot;&quot;), &apos;353&apos;),
+&apos;+&apos; + SUBSTITUTE({!SpousePhone}, &quot; &quot;, &quot;&quot;),
+IF(
+AND(
+NOT(BEGINS(SUBSTITUTE({!SpousePhone}, &quot; &quot;, &quot;&quot;), &apos;+353&apos;)),
+ISPICKVAL({!inputJournal.Market_Unit__c}, &apos;Ireland&apos;)
+),
+&apos;+353&apos; + SUBSTITUTE({!SpousePhone}, &quot; &quot;, &quot;&quot;),
+IF(
+AND(
+NOT(BEGINS(SUBSTITUTE({!SpousePhone}, &quot; &quot;, &quot;&quot;), &apos;+&apos;)),
+ISPICKVAL({!inputJournal.Market_Unit__c}, &apos;Ireland&apos;)
+),
+&apos;+&apos; + SUBSTITUTE({!SpousePhone}, &quot; &quot;, &quot;&quot;),
+SUBSTITUTE({!SpousePhone}, &quot; &quot;, &quot;&quot;)
+)
+)
+)
+)
+/* --- Ireland block ends --- */
+)
+)
+)
+)
+)
+)
+)
+)</expression>
+    </formulas>
+    <interviewLabel>AL - Get Person 2 / Spouse Details {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>AL - Get Person 2 / Spouse Details</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Journal_DK_2_0</name>
+        <label>Get Journal DK 2.0</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Did_We_Find_a_Journal_DK_2_0</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Journal__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>inputJournal.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>df_journal_dk_new__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Journal_Sweden</name>
+        <label>Get Journal Sweden</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Formatted_Spouse_Phone_to_output_Variable</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Journal__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>inputJournal.Id</elementReference>
+            </value>
+        </filters>
+        <object>df_journal_se_new__c</object>
+        <outputAssignments>
+            <assignToReference>JournalSeNewRecordId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>outputSpouseLastName</assignToReference>
+            <field>efternamn_person2__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>outputSpouseEmail</assignToReference>
+            <field>person_2_email__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>outputSpouseFirstName</assignToReference>
+            <field>person_2_frnamn__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>SpousePhone</assignToReference>
+            <field>person_2_telefonnummer__c</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <description>Finds Person 2 in the Journal DK 2.0</description>
+        <name>Get_Person</name>
+        <label>Get Person</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Formatted_Spouse_Phone_to_output_Variable</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>person_hidden_person_2__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>journal_dk_new__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Journal_DK_2_0.Id</elementReference>
+            </value>
+        </filters>
+        <object>df_160_person__c</object>
+        <outputAssignments>
+            <assignToReference>outputSpouseLastName</assignToReference>
+            <field>person_efternavn__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>outputSpouseEmail</assignToReference>
+            <field>person_email__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>outputSpouseFirstName</assignToReference>
+            <field>person_fornavn__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>SpousePhone</assignToReference>
+            <field>person_telefonnummer__c</field>
+        </outputAssignments>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Desc</sortOrder>
+    </recordLookups>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Which_Market_Unit_is_the_Journal</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>CustomError</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>inputJournal</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Journal__c</objectType>
+    </variables>
+    <variables>
+        <name>JournalSeNewRecordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>outputSpouseEmail</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>outputSpouseFirstName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>outputSpouseLastName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>outputSpousePhoneFormatted</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>SpousePhone</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

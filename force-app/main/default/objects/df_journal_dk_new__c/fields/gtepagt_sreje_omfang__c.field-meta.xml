@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gtepagt_sreje_omfang__c</fullName>
+    <externalId>false</externalId>
+    <label>Ægtepagtens omfang</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>gtepagt_sreje_sumdel</fullName>
+                <default>false</default>
+                <label>Sumdeling</label>
+            </value>
+            <value>
+                <fullName>gtepagt_sreje_omf_alt</fullName>
+                <default>false</default>
+                <label>Alt skal omfattes</label>
+            </value>
+            <value>
+                <fullName>gtepagt_sreje_omf_fr_gteskab</fullName>
+                <default>false</default>
+                <label>Kun hvad vi ejede/ejer før ægteskabet</label>
+            </value>
+            <value>
+                <fullName>gtepagt_sreje_omf_specifik</fullName>
+                <default>false</default>
+                <label>Kun specifikke aktiver</label>
+            </value>
+            <value>
+                <fullName>gtepagt_sreje_omf_andel</fullName>
+                <default>false</default>
+                <label>En bestemt andel</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

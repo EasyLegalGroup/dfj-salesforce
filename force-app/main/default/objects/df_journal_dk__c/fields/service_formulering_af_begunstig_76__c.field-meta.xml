@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>service_formulering_af_begunstig_76__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Originalpris: 0 kr.</description>
+    <externalId>false</externalId>
+    <label>Service: Formulering af begunsti 5831d</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

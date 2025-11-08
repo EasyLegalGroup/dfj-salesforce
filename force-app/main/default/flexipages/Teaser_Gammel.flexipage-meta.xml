@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>allowChanges</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>alternativeText</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>Center</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>imgPath</name>
+                    <value>{[devName:dfjlogo]}</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginBottom</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginLeft</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginRight</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginTop</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>objectFit</name>
+                    <value>fill</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>100</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:image</componentName>
+                <identifier>contentbuilder_image15</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-ea24dc88-440f-46c7-8b98-d4c96985c3ed</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columnBody</name>
+                    <value>Facet-ea24dc88-440f-46c7-8b98-d4c96985c3ed</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columnSpacer</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>padding</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlign</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>100%</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:column</componentName>
+                <identifier>contentbuilder_column41</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-808373c0-6ad8-45dd-a8ef-7336f5b98ae6</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>allowChanges</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>linkedToDesignKit</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginBottom</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginLeft</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginRight</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginTop</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;Hej&amp;nbsp;{{{Hosts__c.Name}}},&lt;/p&gt;
+
+&lt;p&gt;Jeg skriver til dig, da vi er interesserede i at holde et eller flere foredragsarrangementer omkring arv &amp;amp; testamenter hos jer.&amp;nbsp;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;Det ser ud til I har nogle sk&amp;oslash;nne rammer, som vil kunne opfylde vores &amp;oslash;nsker til s&amp;aring;dan en aften.&amp;nbsp;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;b&gt;Tidspunkt for arrangement vil v&amp;aelig;re fra kl. 18:00 &amp;ndash; 21:00&lt;/b&gt;&lt;br /&gt;
+Tiden &amp;oslash;nskes med fleksibilitet p&amp;aring; ca. plus 30 min i forhold til at g&amp;aelig;ster kan komme helt &amp;quot;ud af d&amp;oslash;ren&amp;quot;.&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;strong&gt;Foredraget &amp;oslash;nskes&amp;nbsp;&lt;/strong&gt;&lt;b&gt;&lt;strong&gt;afholdt p&amp;aring; en &lt;/strong&gt;mandag, tirsdag, onsdag eller torsdag&lt;/b&gt;&lt;br /&gt;
+Spisning fra ca. fra kl. 18-18:45.&lt;br /&gt;
+Derefter starter selve foredraget som vil vare 1,5 time.&amp;nbsp;&lt;br /&gt;
+&lt;br /&gt;
+Dette gerne med med ca. 3-4 m&amp;aring;neders mellemrum &amp;ndash; hvis der er plads til os.&lt;/p&gt;
+
+&lt;p&gt;Vi inviterer&amp;nbsp;deltagere til middag og foredrag, hvor vi giver foredrag og middag, og efterf&amp;oslash;lgende tilbyder g&amp;aelig;sterne en gratis individuel r&amp;aring;dgivning.&amp;nbsp;&lt;br /&gt;
+&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Vores &amp;oslash;nsker:&lt;/b&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Plads til minimum 50 mennesker&lt;/li&gt;
+	&lt;li&gt;Gerne op til 120 deltagere&lt;/li&gt;
+&lt;/ul&gt;
+Det er vigtigt at rammerne er egnet til foredrag, som g&amp;oslash;r at vores foredragsholder skal kunne
+
+&lt;ul&gt;
+	&lt;li&gt;Ses fra alle vinkler&lt;/li&gt;
+	&lt;li&gt;H&amp;oslash;res, uden st&amp;oslash;j fra andre g&amp;aelig;ster, k&amp;oslash;kken, bar, etc.&amp;nbsp;(f.eks. i aflukkeligt lokale)&lt;/li&gt;
+	&lt;li&gt;Tilg&amp;aring; projektor og l&amp;aelig;rred (Alternativt, kan vi selv medbringe disse, s&amp;aring; fremt det ikke er tilg&amp;aelig;ngeligt).&lt;/li&gt;
+&lt;/ul&gt;
+&amp;nbsp;
+
+&lt;p&gt;&lt;b&gt;&amp;Oslash;konomi&lt;/b&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;Vi betaler for&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Middagen&lt;/li&gt;
+	&lt;li&gt;Lokale&lt;/li&gt;
+	&lt;li&gt;Betjening&lt;/li&gt;
+&lt;/ul&gt;
+p&amp;aring; de aftale vilk&amp;aring;r vi indg&amp;aring;r, alt efter menu, mm.
+
+&lt;p&gt;Drikkevarer solgt p&amp;aring; aftenen, afregnes p&amp;aring; aftenen direkte med g&amp;aelig;sten.&amp;nbsp;&lt;br /&gt;
+&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Annonceringen&lt;/b&gt;,&amp;nbsp;&amp;nbsp;&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Vi l&amp;aelig;gger en annonce op, typisk&amp;nbsp; en eller flere Facebookreklamer, 4-8 uger f&amp;oslash;r et arrangement&lt;/li&gt;
+	&lt;li&gt;Vi bruger&amp;nbsp;5.000-10.000 kr. p&amp;aring;&amp;nbsp;at promovere vores arrangement/foredrag hos jer (dette er selvf&amp;oslash;lgelig reklame for b&amp;aring;de os og jer)&lt;/li&gt;
+	&lt;li&gt;Booking af g&amp;aelig;sterne foreg&amp;aring;r online via Facebook og vores bookingportal Totalliv.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Ved deltagelses fra jer h&amp;aring;ber vi ligeledes arrangementet vil kunne tiltr&amp;aelig;kke nye g&amp;aelig;ster til jeres faciliter og ser det som et oplagt fremtidigt samarbejde.&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Vi &amp;oslash;nsker derfor allerede at booke tre arrangementer, s&amp;aring;fremt du er interesseret.&lt;br /&gt;
+&lt;br /&gt;
+Kom evt. gerne med forslag til eventuelle datoer, som ville passe ind i jeres program.&lt;br /&gt;
+&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;Jeg gl&amp;aelig;der mig til at h&amp;oslash;re fra dig.&lt;/p&gt;
+
+&lt;p&gt;Du/I &amp;oslash;nskes en rigtig god dag.&amp;nbsp;&amp;nbsp;&lt;br /&gt;
+&lt;br /&gt;
+{{{Sender.Signature}}}&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:richText</componentName>
+                <identifier>contentbuilder_richText23</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-2bf900ce-ed05-4e23-8c19-f7df6f809e56</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columnBody</name>
+                    <value>Facet-2bf900ce-ed05-4e23-8c19-f7df6f809e56</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columnSpacer</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>padding</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlign</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>100%</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:column</componentName>
+                <identifier>contentbuilder_column42</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-e441c765-9041-4154-914c-4082ce5de64a</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-808373c0-6ad8-45dd-a8ef-7336f5b98ae6</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlignment</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:row</componentName>
+                <identifier>contentbuilder_row35</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-e441c765-9041-4154-914c-4082ce5de64a</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlignment</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:row</componentName>
+                <identifier>contentbuilder_row36</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>main</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>Teaser_Gammel</masterLabel>
+    <template>
+        <name>contentpage:defaultEmailTemplatePageTemplate</name>
+        <properties>
+            <name>backgroundColor</name>
+            <value>#E9EAEC</value>
+        </properties>
+        <properties>
+            <name>backgroundImageUrl</name>
+        </properties>
+        <properties>
+            <name>bodyColor</name>
+            <value>#FFFFFF</value>
+        </properties>
+        <properties>
+            <name>paddingBottom</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingLeft</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingRight</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingTop</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>preheader</name>
+            <value>Du kan via linket i denne mail booke gratis rådgivning og få 1.000 kr. i rabat</value>
+        </properties>
+    </template>
+    <type>EmailTemplatePage</type>
+</FlexiPage>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
+    <cacheControl>Private</cacheControl>
+    <contentType>image/png</contentType>
+    <description>Screenshot of a somewhat hidden &quot;Schedule event&quot; button on a Calendly iFrame. This screenshot is used in a screenflow called &quot;Lecture Booking: Calendly iFrame&quot;</description>
+</StaticResource>

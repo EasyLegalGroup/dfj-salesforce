@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Time_Display__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    FLOOR(Hours_Logged__c) &gt; 0,
+    TEXT(FLOOR(Hours_Logged__c)) &amp; &quot; hour&quot; &amp; 
+    IF(FLOOR(Hours_Logged__c) &gt; 1, &quot;s&quot;, &quot;&quot;) &amp; 
+    IF(ROUND(MOD(Hours_Logged__c * 60, 60), 0) &gt; 0, &quot; and &quot;, &quot;&quot;),
+    &quot;&quot;
+) &amp;
+IF(
+    ROUND(MOD(Hours_Logged__c * 60, 60), 0) &gt; 0,
+    TEXT(ROUND(MOD(Hours_Logged__c * 60, 60), 0)) &amp; &quot; minute&quot; &amp; 
+    IF(ROUND(MOD(Hours_Logged__c * 60, 60), 0) &gt; 1, &quot;s&quot;, &quot;&quot;),
+    IF(FLOOR(Hours_Logged__c) = 0, &quot;0 minutes&quot;, &quot;&quot;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Time Display</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

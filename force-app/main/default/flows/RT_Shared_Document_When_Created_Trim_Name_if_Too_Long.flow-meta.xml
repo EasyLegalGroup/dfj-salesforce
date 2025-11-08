@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <environments>Default</environments>
+    <formulas>
+        <name>frmFileExtension</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  CONTAINS({!$Record.Name}, &quot;.&quot;),
+  &quot;.&quot; &amp; RIGHT(
+         {!$Record.Name},
+         LEN({!$Record.Name}) - FIND(&quot;.&quot;, {!$Record.Name})
+       ),
+  &quot;&quot;
+)</expression>
+    </formulas>
+    <interviewLabel>RT - Shared Document: When Created, Trim Name if Too Long {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RT - Shared Document: When Created, Trim Name if Too Long</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Shared_Document</name>
+        <label>Update Shared Document</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>TrimmedName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Shared_Document</targetReference>
+        </connector>
+        <filterFormula>LEN({!$Record.Name}) &gt; 80</filterFormula>
+        <object>Shared_Document__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+    <textTemplates>
+        <name>TrimmedName</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!$Record.Document_Type__c}{!frmFileExtension}</text>
+    </textTemplates>
+</Flow>

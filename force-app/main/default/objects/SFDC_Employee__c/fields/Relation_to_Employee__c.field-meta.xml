@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Relation_to_Employee__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    Manager__c = $User.Id,
+    &quot;Manager&quot;,
+    IF(
+        Supervisor__c = $User.Id,
+        &quot;Supervisor&quot;,
+        IF(
+            SF_User__c = $User.Id,
+            &quot;Me&quot;,
+            &quot;None&quot;
+        )
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Relation to Employee</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

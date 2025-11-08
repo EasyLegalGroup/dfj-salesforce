@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>journal_dk__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>journal_dk</label>
+    <referenceTo>df_journal_dk__c</referenceTo>
+    <relationshipLabel>Pårørende</relationshipLabel>
+    <relationshipName>df_54_prrende_begge_personer</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

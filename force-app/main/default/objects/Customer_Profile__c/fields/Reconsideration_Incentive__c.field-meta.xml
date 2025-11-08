@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reconsideration_Incentive__c</fullName>
+    <externalId>false</externalId>
+    <label>Reconsideration Incentive</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Discount</fullName>
+                <default>false</default>
+                <label>Discount</label>
+            </value>
+            <value>
+                <fullName>Payment plan</fullName>
+                <default>false</default>
+                <label>Payment plan</label>
+            </value>
+            <value>
+                <fullName>Better explanation</fullName>
+                <default>false</default>
+                <label>Better explanation</label>
+            </value>
+            <value>
+                <fullName>In-person meeting</fullName>
+                <default>false</default>
+                <label>In-person meeting</label>
+            </value>
+            <value>
+                <fullName>Nothing</fullName>
+                <default>false</default>
+                <label>Nothing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>forhnds_hvem_afg_samt__c</fullName>
+    <externalId>false</externalId>
+    <label>Hvem skal afgive forhåndssamtykk b7c64</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>forhnds_hvem_afg_samt_p1</fullName>
+                <default>false</default>
+                <label>Børn af Person 1</label>
+            </value>
+            <value>
+                <fullName>forhnds_hvem_afg_samt_p2</fullName>
+                <default>false</default>
+                <label>Børn af Person 2</label>
+            </value>
+            <value>
+                <fullName>forhnds_hvem_afg_samt_alle</fullName>
+                <default>false</default>
+                <label>Alle særbørn</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

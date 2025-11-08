@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discount_Related_To__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <inlineHelpText>Optional. The specific product that this discount is related to.</inlineHelpText>
+    <label>Discount Related To</label>
+    <referenceTo>Product2</referenceTo>
+    <relationshipLabel>Order Category Discounts (Discount Related To)</relationshipLabel>
+    <relationshipName>Order_Category_Discounts1</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

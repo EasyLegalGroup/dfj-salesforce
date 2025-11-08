@@ -1,0 +1,1118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Error_Email_from_Input_Values</name>
+        <label>Send Error Email from Input Values</label>
+        <locationX>336</locationX>
+        <locationY>3590</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Set_Is_Success_to_True</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Assign_Email_Send_Error_to_Output_Custom_Error</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>ToEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <elementReference>SenderType</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>FromEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>EmailSubject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>EmailBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <apiVersion>62.0</apiVersion>
+    <assignments>
+        <name>Assign_Default_Email_Body</name>
+        <label>Assign Default Email Body</label>
+        <locationX>468</locationX>
+        <locationY>1382</locationY>
+        <assignmentItems>
+            <assignToReference>EmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>rtEmailBody</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Did_We_Get_Input_Email_Subject</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Email_Send_Error_to_Output_Custom_Error</name>
+        <label>Assign Email Send Error to Output Custom Error</label>
+        <locationX>732</locationX>
+        <locationY>3698</locationY>
+        <assignmentItems>
+            <assignToReference>outputCustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CaseSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Email Send Failed</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Get_Case_Record_Type</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Flow_ID_to_Variable</name>
+        <label>Assign Flow ID to Variable</label>
+        <locationX>204</locationX>
+        <locationY>1082</locationY>
+        <assignmentItems>
+            <assignToReference>FlowId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Flow.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Did_We_Get_Input_Email_Body</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Input_Custom_Error_to_Custom_Error</name>
+        <label>Assign Input Custom Error to Custom Error</label>
+        <locationX>798</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>inputCustomError</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Did_We_Get_an_Input_Flow_Name</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Input_Email_Body_to_Email_Body</name>
+        <label>Assign Input Email Body to Email Body</label>
+        <locationX>204</locationX>
+        <locationY>1382</locationY>
+        <assignmentItems>
+            <assignToReference>EmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>inputEmailBody</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Did_We_Get_Input_Email_Subject</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Input_Email_Subject_to_Email_Subject</name>
+        <label>Assign Input Email Subject to Email Subject</label>
+        <locationX>204</locationX>
+        <locationY>1682</locationY>
+        <assignmentItems>
+            <assignToReference>EmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>inputEmailSubject</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Did_We_Get_Input_To_Email</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Input_Flow_Name_to_Flow_Name</name>
+        <label>Assign Input Flow Name to Flow Name</label>
+        <locationX>336</locationX>
+        <locationY>758</locationY>
+        <assignmentItems>
+            <assignToReference>FlowName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>inputFlowName</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Flow</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Input_From_Email_to_From_Email</name>
+        <label>Assign Input From Email to From Email</label>
+        <locationX>204</locationX>
+        <locationY>2282</locationY>
+        <assignmentItems>
+            <assignToReference>FromEmail</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>inputFromEmail</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Did_We_Get_Input_Sender_Type</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Input_Record_ID_to_Record_ID</name>
+        <label>Assign Input Record ID to Record ID</label>
+        <locationX>204</locationX>
+        <locationY>566</locationY>
+        <assignmentItems>
+            <assignToReference>RecordId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>inputRecordId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>IsRecordIdProvided</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Input_Flow_Name_to_Flow_Name</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Input_Sender_Type_to_Sender_Type</name>
+        <label>Assign Input Sender Type to Sender Type</label>
+        <locationX>204</locationX>
+        <locationY>2582</locationY>
+        <assignmentItems>
+            <assignToReference>SenderType</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>inputSenderType</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Do_We_Have_a_Flow_ID</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Input_To_Email_to_To_Email</name>
+        <label>Assign Input To Email to To Email</label>
+        <locationX>204</locationX>
+        <locationY>1982</locationY>
+        <assignmentItems>
+            <assignToReference>ToEmail</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>inputToEmail</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Did_We_Get_Input_From_Email</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Bug_Occurence</name>
+        <label>Populate Bug Occurence</label>
+        <locationX>50</locationX>
+        <locationY>3098</locationY>
+        <assignmentItems>
+            <assignToReference>BugOccurence.Bug__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Bug.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugOccurence.Occurence_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugOccurence.Error_Details__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptBugDescription</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugOccurence.Affected_Record_ID__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>RecordId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Bug_Occurence</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Case</name>
+        <label>Populate Case</label>
+        <locationX>1161</locationX>
+        <locationY>4298</locationY>
+        <assignmentItems>
+            <assignToReference>Case.Rich_Description__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>rtCaseDecription</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Case_Record_Type.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.Subject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CaseSubject</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.SuppliedName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Flow Error</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.Priority</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>High</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Group.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Case</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Record_ID_with_Record_ID_not_Provided</name>
+        <label>Populate Record ID with &quot;Record ID not Provided&quot;</label>
+        <locationX>468</locationX>
+        <locationY>566</locationY>
+        <assignmentItems>
+            <assignToReference>RecordId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Not Provided</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>IsRecordIdProvided</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Input_Flow_Name_to_Flow_Name</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Default_Email_Subject</name>
+        <label>Set Default Email Subject</label>
+        <locationX>468</locationX>
+        <locationY>1682</locationY>
+        <assignmentItems>
+            <assignToReference>EmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailSubject</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Did_We_Get_Input_To_Email</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Default_From_Email</name>
+        <label>Set Default From Email</label>
+        <locationX>468</locationX>
+        <locationY>2282</locationY>
+        <assignmentItems>
+            <assignToReference>FromEmail</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>no-reply@dinfamiliejurist.dk</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Did_We_Get_Input_Sender_Type</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Default_Sender_Type</name>
+        <label>Set Default Sender Type</label>
+        <locationX>468</locationX>
+        <locationY>2582</locationY>
+        <assignmentItems>
+            <assignToReference>SenderType</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Do_We_Have_a_Flow_ID</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Default_ToEmail</name>
+        <label>Set Default ToEmail</label>
+        <locationX>468</locationX>
+        <locationY>1982</locationY>
+        <assignmentItems>
+            <assignToReference>ToEmail</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>teknik@dinfamiliejurist.dk</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Did_We_Get_Input_From_Email</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Default Value is False and is only set to Success here</description>
+        <name>Set_Is_Success_to_True</name>
+        <label>Set Is Success to True</label>
+        <locationX>336</locationX>
+        <locationY>3698</locationY>
+        <assignmentItems>
+            <assignToReference>isSuccess</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Set_Output_Custom_Error_Input_Custom_Error_Required</name>
+        <label>Set Output Custom Error &quot;Input Custom Error Required&quot;</label>
+        <locationX>1524</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>outputCustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>You are required to input a Custom Error</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CaseSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Error in Flow: &quot;AL - Send Error Email from Input Values&quot; - Missing Input Custom Error</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Case_Record_Type</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Output_Custom_Error_Input_Flow_Name_Required</name>
+        <label>Set Output Custom Error &quot;Input Flow Name Required&quot;</label>
+        <locationX>1260</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>outputCustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>You are required to input a Flow Name</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CaseSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Error in Flow: &quot;AL - Send Error Email from Input Values&quot; - Missing Input Flow Name</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Case_Record_Type</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Did_We_Find_a_Bug</name>
+        <label>Did We Find a Bug?</label>
+        <locationX>182</locationX>
+        <locationY>2990</locationY>
+        <defaultConnector>
+            <targetReference>Send_Error_Email_from_Input_Values</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Bug_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Bug</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_Bug_Occurence</targetReference>
+            </connector>
+            <label>Bug Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Did_We_Find_a_Flow</name>
+        <label>Did We Find a Flow?</label>
+        <locationX>336</locationX>
+        <locationY>974</locationY>
+        <defaultConnector>
+            <targetReference>Did_We_Get_Input_Email_Body</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Flow_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Flow</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Flow_ID_to_Variable</targetReference>
+            </connector>
+            <label>Flow Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Did_We_Get_an_Input_Custom_Error</name>
+        <label>Did We Get an Input Custom Error?</label>
+        <locationX>1161</locationX>
+        <locationY>134</locationY>
+        <defaultConnector>
+            <targetReference>Set_Output_Custom_Error_Input_Custom_Error_Required</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Input_Custom_Error_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>inputCustomError</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Input_Custom_Error_to_Custom_Error</targetReference>
+            </connector>
+            <label>Input Custom Error Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Did_We_Get_an_Input_Flow_Name</name>
+        <label>Did We Get an Input Flow Name?</label>
+        <locationX>798</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Set_Output_Custom_Error_Input_Flow_Name_Required</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Input_Flow_Name_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>inputFlowName</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Did_We_Get_an_Input_Record_ID</targetReference>
+            </connector>
+            <label>Input Flow Name Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Did_We_Get_an_Input_Record_ID</name>
+        <label>Did We Get an Input Record ID?</label>
+        <locationX>336</locationX>
+        <locationY>458</locationY>
+        <defaultConnector>
+            <targetReference>Populate_Record_ID_with_Record_ID_not_Provided</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Input_Record_ID_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>inputRecordId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Input_Record_ID_to_Record_ID</targetReference>
+            </connector>
+            <label>Input Record ID Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>If an Input Email Body is not provided, we use the input values to create one
+
+An error occured in the flow &quot;{!FlowName}&quot;.
+
+
+
+Custom Error Message:
+
+{!CustomError}
+
+
+
+Record Details:
+
+{!RecordId}</description>
+        <name>Did_We_Get_Input_Email_Body</name>
+        <label>Did We Get Input Email Body?</label>
+        <locationX>336</locationX>
+        <locationY>1274</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Default_Email_Body</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Input_Email_Body_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>inputEmailBody</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Input_Email_Body_to_Email_Body</targetReference>
+            </connector>
+            <label>Input Email Body Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>If an Input Email Subject is not provided, we use the input values to create one 
+
+Error in flow {!FlowName} | Record ID: {!RecordId}</description>
+        <name>Did_We_Get_Input_Email_Subject</name>
+        <label>Did We Get Input Email Subject?</label>
+        <locationX>336</locationX>
+        <locationY>1574</locationY>
+        <defaultConnector>
+            <targetReference>Set_Default_Email_Subject</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Input_Email_Subject_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>inputEmailSubject</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Input_Email_Subject_to_Email_Subject</targetReference>
+            </connector>
+            <label>Input Email Subject Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>If an Input From Email is not provided, we set &quot;no-reply@dinfamiliejurist.dk&quot;</description>
+        <name>Did_We_Get_Input_From_Email</name>
+        <label>Did We Get Input From Email?</label>
+        <locationX>336</locationX>
+        <locationY>2174</locationY>
+        <defaultConnector>
+            <targetReference>Set_Default_From_Email</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Input_From_Email_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>inputFromEmail</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Input_From_Email_to_From_Email</targetReference>
+            </connector>
+            <label>Input From Email Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>If an Input Sender Type is not provided, we set &quot;OrgWideEmailAddress&quot; (this allows sending from e.g. no-reply@dinfamiliejurist.dk)</description>
+        <name>Did_We_Get_Input_Sender_Type</name>
+        <label>Did We Get Input Sender Type?</label>
+        <locationX>336</locationX>
+        <locationY>2474</locationY>
+        <defaultConnector>
+            <targetReference>Set_Default_Sender_Type</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Input_Sender_Type_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>inputSenderType</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Input_Sender_Type_to_Sender_Type</targetReference>
+            </connector>
+            <label>Input Sender Type Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>If an input To Email is not provided, we set &quot;teknik@dinfamiliejurist.dk&quot;</description>
+        <name>Did_We_Get_Input_To_Email</name>
+        <label>Did We Get Input To Email?</label>
+        <locationX>336</locationX>
+        <locationY>1874</locationY>
+        <defaultConnector>
+            <targetReference>Set_Default_ToEmail</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Input_To_Email_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>inputToEmail</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Input_To_Email_to_To_Email</targetReference>
+            </connector>
+            <label>Input To Email Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Do_We_Have_a_Flow_ID</name>
+        <label>Do We Have a Flow ID?</label>
+        <locationX>336</locationX>
+        <locationY>2774</locationY>
+        <defaultConnector>
+            <targetReference>Send_Error_Email_from_Input_Values</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Flow_ID_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>FlowId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Bug</targetReference>
+            </connector>
+            <label>Flow ID Exists</label>
+        </rules>
+    </decisions>
+    <description>This email is availble to be called by other flows. It has a range of input values, like &quot;inputCustomError&quot;, &quot;inputFlowName&quot;, &quot;inputToEmail&quot;, &quot;inputFromEmail&quot;, etc. &quot;inputCustomError&quot;, &quot;inputFlowName&quot; are required and will return an error if not provided. &quot;inputRecordId&quot; should be provided when possible, and will set to &quot;NotProvided&quot; if no value is input.
+
+When the flow completes, it sets &quot;isSuccess&quot; to true as an output variable, which can then be used in the flow that called this as a subflow.
+
+UPDATED: Added a &quot;Get Flow&quot; element, to get it&apos;s id, enabling the adding of a link to it in the email</description>
+    <environments>Default</environments>
+    <interviewLabel>AL - Send Error Email from Input Values {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>AL - Send Error Email from Input Values</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Bug_Occurence</name>
+        <label>Create Bug Occurence</label>
+        <locationX>50</locationX>
+        <locationY>3206</locationY>
+        <inputReference>BugOccurence</inputReference>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Case</name>
+        <label>Create Case</label>
+        <locationX>1161</locationX>
+        <locationY>4406</locationY>
+        <inputReference>Case</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <description>Tries to find a Bug related to the same flow</description>
+        <name>Get_Bug</name>
+        <label>Get Bug</label>
+        <locationX>182</locationX>
+        <locationY>2882</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Did_We_Find_a_Bug</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Related_Flow__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>FlowId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Bug__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Case_Record_Type</name>
+        <label>Get Case Record Type</label>
+        <locationX>1161</locationX>
+        <locationY>4082</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Group</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Case</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>IT_Department</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Flow</name>
+        <label>Get Flow</label>
+        <locationX>336</locationX>
+        <locationY>866</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Did_We_Find_a_Flow</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Get_Case_Record_Type</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>FlowName</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>FlowRecord</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Group</name>
+        <label>Get Group</label>
+        <locationX>1161</locationX>
+        <locationY>4190</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Populate_Case</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>IT_Department</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>1035</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Did_We_Get_an_Input_Custom_Error</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>ptBugDescription</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>An error occured in the flow &quot;{!FlowName}&quot;.
+
+Custom Error Message:
+{!CustomError}
+
+Record Details:
+{!RecordId}
+
+Link to Record
+https://dfj.lightning.force.com/lightning/r/{!RecordId}/view</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailSubject</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Error in flow {!FlowName} | Record ID: {!RecordId}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>rtCaseDecription</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;Error Message:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!outputCustomError}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;Input Values&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Custom Error:&lt;/strong&gt; {!inputCustomError}&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Flow Name:&lt;/strong&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt; {!inputFlowName}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Record ID:&lt;/strong&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt; {!inputRecordId}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;From Email:&lt;/strong&gt; {!inputFromEmail}&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;To Email:&lt;/strong&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt; {!inputToEmail}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Sender Type:&lt;/strong&gt; {!inputSenderType}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Email Body:&lt;/strong&gt; {!inputEmailBody}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Email Subject:&lt;/strong&gt; {!inputEmailSubject}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>rtEmailBody</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;An error occured in the flow &quot;&lt;/span&gt;&lt;a href=&quot;https://dfj.lightning.force.com/lightning/r/{!FlowId}/view&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;{!FlowName}&lt;/a&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;&quot;.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: var(--slds-g-color-neutral-base-100, var(--lwc-colorBackgroundInput,rgb(255, 255, 255))); color: rgb(0, 0, 0); font-size: var(--lwc-fontSize3,0.8125rem); font-family: var(--lwc-fontFamily,-apple-system, BlinkMacSystemFont, &apos;Segoe UI&apos;, Roboto, Helvetica, Arial, sans-serif, &apos;Apple Color Emoji&apos;, &apos;Segoe UI Emoji&apos;, &apos;Segoe UI Symbol&apos;);&quot;&gt;Custom Error Message:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;{!CustomError}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;Record Details:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;{!RecordId}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://dfj.lightning.force.com/lightning/r/{!RecordId}/view&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Link to Record&lt;/a&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <name>BugOccurence</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Bug_Occurrence__c</objectType>
+    </variables>
+    <variables>
+        <name>Case</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+    <variables>
+        <name>CaseSubject</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>CustomError</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>EmailBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>EmailSubject</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FlowId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FlowName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FromEmail</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>inputCustomError</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>inputEmailBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>inputEmailSubject</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>inputFlowName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>inputFromEmail</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>inputRecordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>inputSenderType</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>inputToEmail</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>IsRecordIdProvided</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>isSuccess</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>outputCustomError</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>RecordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SenderType</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ToEmail</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

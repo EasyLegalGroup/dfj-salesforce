@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Must_Select_Date_from_Current_Time_Sheet</fullName>
+    <active>true</active>
+    <description>Triggers if the user tries to input a date from outside the parent Time Sheet period</description>
+    <errorConditionFormula>YEAR(Date__c) &lt;&gt; YEAR(Time_Sheet__r.Month_Year__c) ||
+MONTH(Date__c) &lt;&gt; MONTH(Time_Sheet__r.Month_Year__c)</errorConditionFormula>
+    <errorDisplayField>Date__c</errorDisplayField>
+    <errorMessage>Please select a date within the month of the Time Sheet you are currently approving.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+  <apiVersion>59.0</apiVersion>
+  <isExposed>true</isExposed>
+
+  <targets>
+    <target>lightning__RecordPage</target>
+    <target>lightning__AppPage</target>
+    <target>lightning__HomePage</target>
+  </targets>
+
+  <targetConfigs>
+    <targetConfig targets="lightning__RecordPage,lightning__AppPage,lightning__HomePage">
+      <property name="flowName"
+                type="String"
+                label="Flow API Name"
+                description="API Name of your Flow (case-sensitive)." />
+
+      <property name="buttonLabel"
+                type="String"
+                label="Button Label"
+                description="Text shown on the button."
+                default="Start Flow" />
+
+      <property name="buttonStyle"
+                type="String"
+                label="Button Style"
+                description="Variant: brand, destructive, success, neutral."
+                default="brand" />
+
+      <property name="recordIdVarName"
+                type="String"
+                label="Record ID Variable Name"
+                description="Flow text variable to receive current recordId."
+                default="recordId" />
+
+      <property name="iconName"
+                type="String"
+                label="Icon Name"
+                description="SLDS icon (e.g. utility:delete or action:add). Leave blank for none."
+                default="" />
+
+      <property name="iconPosition"
+                type="String"
+                label="Icon Position"
+                description="Position of icon relative to label (‘left’ or ‘right’)."
+                default="left" />
+    </targetConfig>
+  </targetConfigs>
+</LightningComponentBundle>

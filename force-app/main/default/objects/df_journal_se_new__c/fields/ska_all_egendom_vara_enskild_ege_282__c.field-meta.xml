@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ska_all_egendom_vara_enskild_ege_282__c</fullName>
+    <defaultValue>false</defaultValue>
+    <externalId>false</externalId>
+    <label>Ska all egendom vara enskild ege 7e07b</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

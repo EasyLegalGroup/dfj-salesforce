@@ -1,0 +1,3322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>DK_Send_Email</name>
+        <label>DK: Send Email</label>
+        <locationX>1766</locationX>
+        <locationY>2706</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <faultConnector>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>FromEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailTemplateId</name>
+            <value>
+                <stringValue>00XAX000000MLIG2A4</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <elementReference>Contact.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>IE_Send_Email</name>
+        <label>IE: Send Email</label>
+        <locationX>8366</locationX>
+        <locationY>2706</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>FromEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailTemplateId</name>
+            <value>
+                <stringValue>00XW500000QitkzMAB</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <elementReference>Contact.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>SE_Send_Email</name>
+        <label>SE: Send Email</label>
+        <locationX>5198</locationX>
+        <locationY>2706</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>FromEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailTemplateId</name>
+            <value>
+                <stringValue>00XAX000000MLJd2AO</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <elementReference>Contact.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Email_about_Missing_Contact</name>
+        <label>Send Email about Missing Contact</label>
+        <locationX>9086</locationX>
+        <locationY>3714</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <stringValue>she@dinfamiliejurist.dk</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>no-reply@dinfamiliejurist.dk</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>composeEmailContent</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Missing Contact for Status Email to Host Account</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <stringValue>&lt;p&gt;We tried to send a status update email regarding this campaign&lt;/p&gt;&lt;p&gt;{!$Record.Venue__c} (Start: {!$Record.Start__c}) but could not find a Contact.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Link to Campaign&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;https://dfj.lightning.force.com/lightning/r/{!$Record.Id}/view&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Link to Account&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;https://dfj.lightning.force.com/lightning/r/{!$Record.Account__c}/view&lt;/span&gt;&lt;/p&gt;</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useLineBreaks</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Email_Alert_to_Campaign_Owner</name>
+        <label>Send Email Alert to Campaign Owner</label>
+        <locationX>2954</locationX>
+        <locationY>3138</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Record.Owner.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>no-reply@dinfamiliejurist.dk</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Email to {!$Record.Host__r.Name} has bounced</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>rtEmailBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>attachmentId</name>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <apiVersion>59.0</apiVersion>
+    <assignments>
+        <name>Assign_Contact_to_Variable</name>
+        <label>Assign Contact to Variable</label>
+        <locationX>10258</locationX>
+        <locationY>684</locationY>
+        <assignmentItems>
+            <assignToReference>Contact</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_Filtered_Contacts</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>IsLoopDone</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Did_We_Find_a_Contact</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Danish_From_Email</name>
+        <label>Assign Danish From Email</label>
+        <locationX>1766</locationX>
+        <locationY>2598</locationY>
+        <assignmentItems>
+            <assignToReference>FromEmail</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>event@dinfamiliejurist.dk</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>DK_Send_Email</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Irish_From_Email</name>
+        <label>Assign Irish From Email</label>
+        <locationX>8366</locationX>
+        <locationY>2598</locationY>
+        <assignmentItems>
+            <assignToReference>FromEmail</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>lecture.invoice@hereslaw.ie</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>IE_Send_Email</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Owner_s_Email_to_Variable</name>
+        <label>Assign Owner&apos;s Email to Variable</label>
+        <locationX>2954</locationX>
+        <locationY>3030</locationY>
+        <assignmentItems>
+            <assignToReference>ToEmailBounceAlert</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Owner.Email</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Email_Alert_to_Campaign_Owner</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Swedish_From_Email</name>
+        <label>Assign Swedish From Email</label>
+        <locationX>5198</locationX>
+        <locationY>2598</locationY>
+        <assignmentItems>
+            <assignToReference>FromEmail</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>foredrag@dinfamiljejurist.nu</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SE_Send_Email</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>DK_Assign_Billing_Information</name>
+        <label>DK: Assign Billing Information</label>
+        <locationX>1766</locationX>
+        <locationY>2274</locationY>
+        <assignmentItems>
+            <assignToReference>varDK_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtDK_BillingInformation</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>DK_Assign_Ending_and_Signature</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>DK_Assign_Ending_and_Signature</name>
+        <label>DK: Assign Ending and Signature</label>
+        <locationX>1766</locationX>
+        <locationY>2382</locationY>
+        <assignmentItems>
+            <assignToReference>varDK_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtDK_Ending_and_Signature</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>DK_Update_Fluid_Email_Field</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>DK_Assign_Greeting</name>
+        <label>DK: Assign Greeting</label>
+        <locationX>1766</locationX>
+        <locationY>684</locationY>
+        <assignmentItems>
+            <assignToReference>varDK_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtDK_Greeting</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>DK_Which_day_is_it</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>DK_Assign_Status_1_Above_95</name>
+        <label>DK: Assign Status #1: Above 95%</label>
+        <locationX>314</locationX>
+        <locationY>1224</locationY>
+        <assignmentItems>
+            <assignToReference>varDK_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtDK_Status1_Above_95</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UPD_DK_Status_1_95_or_above</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>DK_Assign_Status_1_Assign_Looking_Forward</name>
+        <label>DK: Assign Status #1: Assign &quot;Looking Forward&quot;</label>
+        <locationX>314</locationX>
+        <locationY>1008</locationY>
+        <assignmentItems>
+            <assignToReference>varDK_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtDK_Status1_Looking_Forward</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>DK_Status_1_Booking_Percentage</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>DK_Assign_Status_1_Less_than_95</name>
+        <label>DK: Assign Status #1: Less than 95%</label>
+        <locationX>50</locationX>
+        <locationY>1224</locationY>
+        <assignmentItems>
+            <assignToReference>varDK_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtDK_Status1_Less_Than_95</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UPD_DK_Status_1_Less_than_95</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>DK_Assign_Status_2_Above_95</name>
+        <label>DK: Assign Status #2 &quot;Above 95%&quot;</label>
+        <locationX>1898</locationX>
+        <locationY>1224</locationY>
+        <assignmentItems>
+            <assignToReference>varDK_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtDK_Status2_Above_95</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UPD_DK_Status_2_95_or_above</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>DK_Assign_Status_2_Less_than_95</name>
+        <label>DK: Assign Status #2 &quot;Less than 95%&quot;</label>
+        <locationX>1634</locationX>
+        <locationY>1224</locationY>
+        <assignmentItems>
+            <assignToReference>varDK_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtDK_Status2_Less_Than_95</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UPD_DK_Status_2_Less_than_95</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>DK_Assign_Status_2_Looking_Forward</name>
+        <label>DK: Assign Status #2 &quot;Looking Forward&quot;</label>
+        <locationX>1898</locationX>
+        <locationY>1008</locationY>
+        <assignmentItems>
+            <assignToReference>varDK_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtDK_Status2_Looking_Forward</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>DK_Status_2_What_s_the_Booking_Percentage</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>DK_Assign_Status_3_Assign_Booking_Percentage</name>
+        <label>DK: Assign Status #3: Assign &quot;Booking Percentage&quot;</label>
+        <locationX>842</locationX>
+        <locationY>1974</locationY>
+        <assignmentItems>
+            <assignToReference>varDK_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtDK_Status3_Booking_Count</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>DK_Assign_Status_3_Assign_Lecturer_Info</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>DK_Assign_Status_3_Assign_Lecturer_Info</name>
+        <label>DK: Assign Status #3: Assign &quot;Lecturer Info&quot;</label>
+        <locationX>842</locationX>
+        <locationY>2082</locationY>
+        <assignmentItems>
+            <assignToReference>varDK_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtDK_Lecturer_Info</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>DK_Assign_Billing_Information</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>DK_Assign_Status_3_Assign_Looking_Forward_2_or_more</name>
+        <label>DK: Assign Status #3: Assign &quot;Looking Forward 2 or more&quot;</label>
+        <locationX>1106</locationX>
+        <locationY>1008</locationY>
+        <assignmentItems>
+            <assignToReference>varDK_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtDK_Status3_Looking_Forward_2plus</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>DK_Status_3_Booking_Percentage</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>DK_Assign_Status_3_Assign_Looking_Forward_Tomorrow</name>
+        <label>DK: Assign Status #3: Assign &quot;Looking Forward Tomorrow&quot;</label>
+        <locationX>842</locationX>
+        <locationY>1008</locationY>
+        <assignmentItems>
+            <assignToReference>varDK_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtDK_Status3_Looking_Forward_Tomorrow</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>DK_Status_3_Booking_Percentage</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>IE_Assign_Billing_Information</name>
+        <label>IE: Assign Billing Information</label>
+        <locationX>8366</locationX>
+        <locationY>2274</locationY>
+        <assignmentItems>
+            <assignToReference>varIE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtIE_BillingInformation</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>IE_Assign_Ending_and_Signature</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>IE_Assign_Ending_and_Signature</name>
+        <label>IE: Assign Ending and Signature</label>
+        <locationX>8366</locationX>
+        <locationY>2382</locationY>
+        <assignmentItems>
+            <assignToReference>varIE_Email</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>txtIE_Ending_and_Signature</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>IE_Update_Fluid_Email_Field</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>IE_Assign_Greeting</name>
+        <label>IE: Assign Greeting</label>
+        <locationX>8366</locationX>
+        <locationY>684</locationY>
+        <assignmentItems>
+            <assignToReference>varIE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtIE_Greeting</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>EE_Which_day_is_it</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>IE_Assign_Status_1_Above_95</name>
+        <label>IE: Assign Status #1: Above 95%</label>
+        <locationX>6914</locationX>
+        <locationY>1224</locationY>
+        <assignmentItems>
+            <assignToReference>varIE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtIE_Status1_Above_95</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UPD_IE_Status_1_95_or_above</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>IE_Assign_Status_1_Assign_Looking_Forward</name>
+        <label>IE: Assign Status #1: Assign &quot;Looking Forward&quot;</label>
+        <locationX>6914</locationX>
+        <locationY>1008</locationY>
+        <assignmentItems>
+            <assignToReference>varIE_Email</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>txtIE_Status1_Looking_Forward</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>IE_Status_1_Booking_Percentage</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>IE_Assign_Status_1_Less_than_95</name>
+        <label>IE: Assign Status #1: Less than 95%</label>
+        <locationX>6650</locationX>
+        <locationY>1224</locationY>
+        <assignmentItems>
+            <assignToReference>varIE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtIE_Status1_Less_Than_95</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UPD_IE_Status_1_Less_than_95</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>IE_Assign_Status_2_Above_95</name>
+        <label>IE: Assign Status #2 &quot;Above 95%&quot;</label>
+        <locationX>8498</locationX>
+        <locationY>1224</locationY>
+        <assignmentItems>
+            <assignToReference>varIE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtIE_Status2_Above_95</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UPD_IE_Status_2_95_or_above</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>IE_Assign_Status_2_Less_than_95</name>
+        <label>IE: Assign Status #2 &quot;Less than 95%&quot;</label>
+        <locationX>8234</locationX>
+        <locationY>1224</locationY>
+        <assignmentItems>
+            <assignToReference>varIE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtIE_Status2_Less_Than_95</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UPD_IE_Status_2_Less_than_95</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>IE_Assign_Status_2_Looking_Forward</name>
+        <label>IE: Assign Status #2 &quot;Looking Forward&quot;</label>
+        <locationX>8498</locationX>
+        <locationY>1008</locationY>
+        <assignmentItems>
+            <assignToReference>varIE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtIE_Status2_Looking_Forward</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>IE_Status_2_What_s_the_Booking_Percentage</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>IE_Assign_Status_3_Assign_Booking_Percentage</name>
+        <label>IE: Assign Status #3: Assign &quot;Booking Percentage&quot;</label>
+        <locationX>7442</locationX>
+        <locationY>1974</locationY>
+        <assignmentItems>
+            <assignToReference>varIE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtIE_Status3_Booking_Count</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>IE_Assign_Status_3_Assign_Lecturer_Info</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>IE_Assign_Status_3_Assign_Lecturer_Info</name>
+        <label>IE: Assign Status #3: Assign &quot;Lecturer Info&quot;</label>
+        <locationX>7442</locationX>
+        <locationY>2082</locationY>
+        <assignmentItems>
+            <assignToReference>varSE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtSE_Lecturer_Info</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>IE_Assign_Billing_Information</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>IE_Assign_Status_3_Assign_Looking_Forward_2_or_more</name>
+        <label>IE: Assign Status #3: Assign &quot;Looking Forward 2 or more&quot;</label>
+        <locationX>7706</locationX>
+        <locationY>1008</locationY>
+        <assignmentItems>
+            <assignToReference>varIE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtIE_Status3_Looking_Forward_2plus</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>IE_Status_3_Booking_Percentage</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>IE_Assign_Status_3_Assign_Looking_Forward_Tomorrow</name>
+        <label>IE: Assign Status #3: Assign &quot;Looking Forward Tomorrow&quot;</label>
+        <locationX>7442</locationX>
+        <locationY>1008</locationY>
+        <assignmentItems>
+            <assignToReference>varIE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtIE_Status3_Looking_Forward_Tomorrow</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>IE_Status_3_Booking_Percentage</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_Flow_Fault_Message</name>
+        <label>Populate Custom Error with Flow Fault Message</label>
+        <locationX>3086</locationX>
+        <locationY>2814</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Did_Email_Bounce</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SE_Assign_Billing_Information</name>
+        <label>SE: Assign Billing Information</label>
+        <locationX>5198</locationX>
+        <locationY>2274</locationY>
+        <assignmentItems>
+            <assignToReference>varSE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtSE_BillingInformation</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SE_Assign_Ending_and_Signature</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SE_Assign_Ending_and_Signature</name>
+        <label>SE: Assign Ending and Signature</label>
+        <locationX>5198</locationX>
+        <locationY>2382</locationY>
+        <assignmentItems>
+            <assignToReference>varSE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtSE_Ending_and_Signature</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SE_Update_Fluid_Email_Field</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SE_Assign_Greeting</name>
+        <label>SE: Assign Greeting</label>
+        <locationX>5198</locationX>
+        <locationY>684</locationY>
+        <assignmentItems>
+            <assignToReference>varSE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtSE_Greeting</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SE_Which_day_is_it</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SE_Assign_Status_1_Above_95</name>
+        <label>SE: Assign Status #1: Above 95%</label>
+        <locationX>3746</locationX>
+        <locationY>1224</locationY>
+        <assignmentItems>
+            <assignToReference>varSE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtSE_Status1_Above_95</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UPD_SE_Status_1_95_or_above</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SE_Assign_Status_1_Assign_Looking_Forward</name>
+        <label>SE: Assign Status #1: Assign &quot;Looking Forward&quot;</label>
+        <locationX>3746</locationX>
+        <locationY>1008</locationY>
+        <assignmentItems>
+            <assignToReference>varSE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtSE_Status1_Looking_Forward</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SE_Status_1_Booking_Percentage</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SE_Assign_Status_1_Less_than_95</name>
+        <label>SE: Assign Status #1: Less than 95%</label>
+        <locationX>3482</locationX>
+        <locationY>1224</locationY>
+        <assignmentItems>
+            <assignToReference>varSE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtSE_Status1_Less_Than_95</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UPD_SE_Status_1_Less_than_95</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SE_Assign_Status_2_Above_95</name>
+        <label>SE: Assign Status #2 &quot;Above 95%&quot;</label>
+        <locationX>5330</locationX>
+        <locationY>1224</locationY>
+        <assignmentItems>
+            <assignToReference>varSE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtSE_Status2_Above_95</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UPD_SE_Status_2_95_or_above</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SE_Assign_Status_2_Less_than_95</name>
+        <label>SE: Assign Status #2 &quot;Less than 95%&quot;</label>
+        <locationX>5066</locationX>
+        <locationY>1224</locationY>
+        <assignmentItems>
+            <assignToReference>varSE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtSE_Status2_Less_Than_95</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UPD_SE_Status_2_Less_than_95</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SE_Assign_Status_2_Looking_Forward</name>
+        <label>SE: Assign Status #2 &quot;Looking Forward&quot;</label>
+        <locationX>5330</locationX>
+        <locationY>1008</locationY>
+        <assignmentItems>
+            <assignToReference>varSE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtSE_Status2_Looking_Forward</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SE_Status_2_What_s_the_Booking_Percentage</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SE_Assign_Status_3_Assign_Booking_Percentage</name>
+        <label>SE: Assign Status #3: Assign &quot;Booking Percentage&quot;</label>
+        <locationX>4274</locationX>
+        <locationY>1974</locationY>
+        <assignmentItems>
+            <assignToReference>varSE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtSE_Status3_Booking_Count</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SE_Assign_Status_3_Assign_Lecturer_Info</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SE_Assign_Status_3_Assign_Lecturer_Info</name>
+        <label>SE: Assign Status #3: Assign &quot;Lecturer Info&quot;</label>
+        <locationX>4274</locationX>
+        <locationY>2082</locationY>
+        <assignmentItems>
+            <assignToReference>varSE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtSE_Lecturer_Info</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SE_Assign_Billing_Information</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SE_Assign_Status_3_Assign_Looking_Forward_2_or_more</name>
+        <label>SE: Assign Status #3: Assign &quot;Looking Forward 2 or more&quot;</label>
+        <locationX>4538</locationX>
+        <locationY>1008</locationY>
+        <assignmentItems>
+            <assignToReference>varSE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtSE_Status3_Looking_Forward_2plus</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SE_Status_3_Booking_Percentage</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SE_Assign_Status_3_Assign_Looking_Forward_Tomorrow</name>
+        <label>SE: Assign Status #3: Assign &quot;Looking Forward Tomorrow&quot;</label>
+        <locationX>4274</locationX>
+        <locationY>1008</locationY>
+        <assignmentItems>
+            <assignToReference>varSE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtSE_Status3_Looking_Forward_Tomorrow</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SE_Status_3_Booking_Percentage</targetReference>
+        </connector>
+    </assignments>
+    <collectionProcessors>
+        <name>Filter_Contacts</name>
+        <elementSubtype>FilterCollectionProcessor</elementSubtype>
+        <label>Filter Contacts</label>
+        <locationX>10170</locationX>
+        <locationY>468</locationY>
+        <assignNextValueToReference>currentItem_Filter_Contacts</assignNextValueToReference>
+        <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
+        <collectionReference>ContactCollection</collectionReference>
+        <conditionLogic>and</conditionLogic>
+        <conditions>
+            <leftValueReference>currentItem_Filter_Contacts.Email</leftValueReference>
+            <operator>IsNull</operator>
+            <rightValue>
+                <booleanValue>false</booleanValue>
+            </rightValue>
+        </conditions>
+        <connector>
+            <targetReference>Loop_Filtered_Contacts</targetReference>
+        </connector>
+    </collectionProcessors>
+    <decisions>
+        <name>Did_Email_Bounce</name>
+        <label>Did Email Bounce?</label>
+        <locationX>3086</locationX>
+        <locationY>2922</locationY>
+        <defaultConnector>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Email_Bounced</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CustomError</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>The target object email address is currently marked as bounced.</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Owner_s_Email_to_Variable</targetReference>
+            </connector>
+            <label>Email Bounced</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Did_We_Find_a_Contact</name>
+        <label>Did We Find a Contact?</label>
+        <locationX>9086</locationX>
+        <locationY>360</locationY>
+        <defaultConnector>
+            <targetReference>Send_Email_about_Missing_Contact</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Got_Contact</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Contact</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_it_either_Monday_or_Friday</targetReference>
+            </connector>
+            <label>Got Contact</label>
+        </rules>
+        <rules>
+            <name>Got_Multiple_Contacts</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ContactCollection</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>IsLoopDone</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Filter_Contacts</targetReference>
+            </connector>
+            <label>Got Multiple Contacts</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>DK_Friday_How_many_days_until_event</name>
+        <label>DK Friday: How many days until event?</label>
+        <locationX>2162</locationX>
+        <locationY>900</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>DK_Friday_Status_1_3_9_Days_Until_Event</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>StartDate</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>X3DaysFromNow</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>StartDate</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>X9DaysFromNow</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_2_Time__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>DK_Assign_Status_2_Looking_Forward</targetReference>
+            </connector>
+            <label>DK Friday Status #1: 3-9 Days Until Event</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>DK_Monday_How_many_days_until_event</name>
+        <label>DK Monday: How many days until event?</label>
+        <locationX>842</locationX>
+        <locationY>900</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>DK_Monday_Status_1_7_13_Days_Until_Event</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>StartDate</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>X7DaysFromNow</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>StartDate</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>X13DaysFromNow</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_1_Time__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>DK_Assign_Status_1_Assign_Looking_Forward</targetReference>
+            </connector>
+            <label>DK Monday Status #1: 7-13 Days Until Event</label>
+        </rules>
+        <rules>
+            <name>DK_Monday_Status_3_Event_is_Tomorrow</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>StartDate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>X1DayFromNow</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_2__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>95% or above</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_3_Time__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>DK_Assign_Status_3_Assign_Looking_Forward_Tomorrow</targetReference>
+            </connector>
+            <label>DK Monday Status #3: Event is Tomorrow</label>
+        </rules>
+        <rules>
+            <name>DK_Monday_Status_3_2_6_Days_Until_Event</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>StartDate</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>X2DaysFromNow</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>StartDate</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>X6DaysFromNow</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_2__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>95% or above</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_3_Time__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>DK_Assign_Status_3_Assign_Looking_Forward_2_or_more</targetReference>
+            </connector>
+            <label>DK Monday Status #3: 2-6 Days Until Event</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>DK_Status_1_Booking_Percentage</name>
+        <label>DK Status #1: Booking Percentage?</label>
+        <locationX>314</locationX>
+        <locationY>1116</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>DK_Status_1_Less_than_95</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>frmBookingPercentage</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <numberValue>95.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>DK_Assign_Status_1_Less_than_95</targetReference>
+            </connector>
+            <label>DK Status #1: Less than 95%</label>
+        </rules>
+        <rules>
+            <name>DK_Status_1_95_or_above</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>frmBookingPercentage</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>95.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>DK_Assign_Status_1_Above_95</targetReference>
+            </connector>
+            <label>DK Status #1: 95% or above</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>DK_Status_2_What_s_the_Booking_Percentage</name>
+        <label>DK Status #2: What&apos;s the Booking Percentage?</label>
+        <locationX>1898</locationX>
+        <locationY>1116</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>DK_Status_2_Less_than_95</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>frmBookingPercentage</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <numberValue>95.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_1__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>95% or above</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_2_Time__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>DK_Assign_Status_2_Less_than_95</targetReference>
+            </connector>
+            <label>DK Status #2: Less than 95%</label>
+        </rules>
+        <rules>
+            <name>DK_Status_2_95_or_above</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>frmBookingPercentage</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>95.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_1__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>95% or above</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_2_Time__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>DK_Assign_Status_2_Above_95</targetReference>
+            </connector>
+            <label>DK Status #2: 95% or above</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>DK_Status_3_Booking_Percentage</name>
+        <label>DK Status #3: Booking Percentage</label>
+        <locationX>842</locationX>
+        <locationY>1674</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>DK_Status_3_Less_than_95</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Booking_Percentage__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <numberValue>95.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UPD_DK_Status_3_Less_than_95</targetReference>
+            </connector>
+            <label>DK Status #3: Less than 95%</label>
+        </rules>
+        <rules>
+            <name>DK_Status_3_95_or_above</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Booking_Percentage__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>95.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UPD_DK_Status_3_95_or_above</targetReference>
+            </connector>
+            <label>DK Status #3: 95% or above</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>DK_Which_day_is_it</name>
+        <label>DK: Which day is it?</label>
+        <locationX>1766</locationX>
+        <locationY>792</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>DK_Monday</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Weekday_Today</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>mandag</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>DK_Monday_How_many_days_until_event</targetReference>
+            </connector>
+            <label>DK: Monday</label>
+        </rules>
+        <rules>
+            <name>DK_Friday</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Weekday_Today</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>fredag</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>DK_Friday_How_many_days_until_event</targetReference>
+            </connector>
+            <label>DK: Friday</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>EE_Which_day_is_it</name>
+        <label>EE: Which day is it?</label>
+        <locationX>8366</locationX>
+        <locationY>792</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>IE_Monday</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Weekday_Today</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>mandag</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>IE_How_many_days_until_event</targetReference>
+            </connector>
+            <label>IE: Monday</label>
+        </rules>
+        <rules>
+            <name>IE_Friday</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Weekday_Today</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>fredag</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>IE_Friday_How_many_days_until_event</targetReference>
+            </connector>
+            <label>IE: Friday</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>IE_Friday_How_many_days_until_event</name>
+        <label>IE Friday: How many days until event?</label>
+        <locationX>8762</locationX>
+        <locationY>900</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>IE_Friday_Status_1_3_9_Days_Until_Event</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>StartDate</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>X3DaysFromNow</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>StartDate</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>X9DaysFromNow</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_2_Time__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>IE_Assign_Status_2_Looking_Forward</targetReference>
+            </connector>
+            <label>IE Friday Status #1: 3-9 Days Until Event</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>IE_How_many_days_until_event</name>
+        <label>IE: How many days until event?</label>
+        <locationX>7442</locationX>
+        <locationY>900</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>IE_Status_1_7_13_Days_Until_Event</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>StartDate</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>X7DaysFromNow</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>StartDate</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>X13DaysFromNow</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_1_Time__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>IE_Assign_Status_1_Assign_Looking_Forward</targetReference>
+            </connector>
+            <label>IE Status #1: 7-13 Days Until Event</label>
+        </rules>
+        <rules>
+            <name>IE_Status_3_Event_is_Tomorrow</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>StartDate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>X1DayFromNow</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_2__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>95% or above</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_3_Time__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>IE_Assign_Status_3_Assign_Looking_Forward_Tomorrow</targetReference>
+            </connector>
+            <label>IE Status #3: Event is Tomorrow</label>
+        </rules>
+        <rules>
+            <name>IE_Status_3_2_6_Days_Until_Event</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>StartDate</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>X2DaysFromNow</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>StartDate</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>X6DaysFromNow</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_2__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>95% or above</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_3_Time__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>IE_Assign_Status_3_Assign_Looking_Forward_2_or_more</targetReference>
+            </connector>
+            <label>IE Status #3: 2-6 Days Until Event</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>IE_Status_1_Booking_Percentage</name>
+        <label>IE Status #1: Booking Percentage?</label>
+        <locationX>6914</locationX>
+        <locationY>1116</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>IE_Status_1_Less_than_95</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>frmBookingPercentage</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <numberValue>95.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>IE_Assign_Status_1_Less_than_95</targetReference>
+            </connector>
+            <label>IE Status #1: Less than 95%</label>
+        </rules>
+        <rules>
+            <name>IE_Status_1_95_or_above</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>frmBookingPercentage</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>95.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>IE_Assign_Status_1_Above_95</targetReference>
+            </connector>
+            <label>IE Status #1: 95% or above</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>IE_Status_2_What_s_the_Booking_Percentage</name>
+        <label>IE Status #2: What&apos;s the Booking Percentage?</label>
+        <locationX>8498</locationX>
+        <locationY>1116</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>IE_Status_2_Less_than_95</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>frmBookingPercentage</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <numberValue>95.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_1__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>95% or above</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_2_Time__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>IE_Assign_Status_2_Less_than_95</targetReference>
+            </connector>
+            <label>IE Status #2: Less than 95%</label>
+        </rules>
+        <rules>
+            <name>IE_Status_2_95_or_above</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>frmBookingPercentage</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>95.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_1__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>95% or above</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_2_Time__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>IE_Assign_Status_2_Above_95</targetReference>
+            </connector>
+            <label>IE Status #2: 95% or above</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>IE_Status_3_Booking_Percentage</name>
+        <label>IE Status #3: Booking Percentage</label>
+        <locationX>7442</locationX>
+        <locationY>1674</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>IE_Status_3_Less_than_95</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Booking_Percentage__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <numberValue>95.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UPD_IE_Status_3_Less_than_95</targetReference>
+            </connector>
+            <label>IE Status #3: Less than 95%</label>
+        </rules>
+        <rules>
+            <name>IE_Status_3_95_or_above</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Booking_Percentage__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>95.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UPD_IE_Status_3_95_or_above</targetReference>
+            </connector>
+            <label>IE Status #3: 95% or above</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_it_either_Monday_or_Friday</name>
+        <label>Is it either Monday or Friday?</label>
+        <locationX>7739</locationX>
+        <locationY>468</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_it_s_monday_or_friday</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Weekday_Today</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>mandag</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Weekday_Today</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>fredag</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Market_Unit</targetReference>
+            </connector>
+            <label>Yes, it&apos;s monday or friday</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Market_Unit</name>
+        <label>Market Unit</label>
+        <locationX>5660</locationX>
+        <locationY>576</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Denmark</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>DFJ_DK</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>DK_Assign_Greeting</targetReference>
+            </connector>
+            <label>Denmark</label>
+        </rules>
+        <rules>
+            <name>Sweden</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>FA_SE</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SE_Assign_Greeting</targetReference>
+            </connector>
+            <label>Sweden</label>
+        </rules>
+        <rules>
+            <name>Ireland</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ireland</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>IE_Assign_Greeting</targetReference>
+            </connector>
+            <label>Ireland</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>SE_Friday_How_many_days_until_event</name>
+        <label>SE Friday: How many days until event?</label>
+        <locationX>5594</locationX>
+        <locationY>900</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SE_Friday_Status_1_3_9_Days_Until_Event</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>StartDate</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>X3DaysFromNow</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>StartDate</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>X9DaysFromNow</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_2_Time__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SE_Assign_Status_2_Looking_Forward</targetReference>
+            </connector>
+            <label>SE Friday Status #1: 3-9 Days Until Event</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>SE_How_many_days_until_event</name>
+        <label>SE: How many days until event?</label>
+        <locationX>4274</locationX>
+        <locationY>900</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SE_Status_1_7_13_Days_Until_Event</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>StartDate</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>X7DaysFromNow</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>StartDate</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>X13DaysFromNow</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_1_Time__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SE_Assign_Status_1_Assign_Looking_Forward</targetReference>
+            </connector>
+            <label>SE Status #1: 7-13 Days Until Event</label>
+        </rules>
+        <rules>
+            <name>SE_Status_3_Event_is_Tomorrow</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>StartDate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>X1DayFromNow</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_2__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>95% or above</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_3_Time__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SE_Assign_Status_3_Assign_Looking_Forward_Tomorrow</targetReference>
+            </connector>
+            <label>SE Status #3: Event is Tomorrow</label>
+        </rules>
+        <rules>
+            <name>SE_Status_3_2_6_Days_Until_Event</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>StartDate</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>X2DaysFromNow</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>StartDate</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>X6DaysFromNow</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_2__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>95% or above</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_3_Time__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SE_Assign_Status_3_Assign_Looking_Forward_2_or_more</targetReference>
+            </connector>
+            <label>SE Status #3: 2-6 Days Until Event</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>SE_Status_1_Booking_Percentage</name>
+        <label>SE Status #1: Booking Percentage?</label>
+        <locationX>3746</locationX>
+        <locationY>1116</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SE_Status_1_Less_than_95</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>frmBookingPercentage</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <numberValue>95.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SE_Assign_Status_1_Less_than_95</targetReference>
+            </connector>
+            <label>SE Status #1: Less than 95%</label>
+        </rules>
+        <rules>
+            <name>SE_Status_1_95_or_above</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>frmBookingPercentage</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>95.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SE_Assign_Status_1_Above_95</targetReference>
+            </connector>
+            <label>SE Status #1: 95% or above</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>SE_Status_2_What_s_the_Booking_Percentage</name>
+        <label>SE Status #2: What&apos;s the Booking Percentage?</label>
+        <locationX>5330</locationX>
+        <locationY>1116</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SE_Status_2_Less_than_95</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>frmBookingPercentage</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <numberValue>95.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_1__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>95% or above</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_2_Time__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SE_Assign_Status_2_Less_than_95</targetReference>
+            </connector>
+            <label>SE Status #2: Less than 95%</label>
+        </rules>
+        <rules>
+            <name>SE_Status_2_95_or_above</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>frmBookingPercentage</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>95.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_1__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>95% or above</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_for_Host_2_Time__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SE_Assign_Status_2_Above_95</targetReference>
+            </connector>
+            <label>SE Status #2: 95% or above</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>SE_Status_3_Booking_Percentage</name>
+        <label>SE Status #3: Booking Percentage</label>
+        <locationX>4274</locationX>
+        <locationY>1674</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SE_Status_3_Less_than_95</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Booking_Percentage__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <numberValue>95.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UPD_SE_Status_3_Less_than_95</targetReference>
+            </connector>
+            <label>SE Status #3: Less than 95%</label>
+        </rules>
+        <rules>
+            <name>SE_Status_3_95_or_above</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Booking_Percentage__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>95.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UPD_SE_Status_3_95_or_above</targetReference>
+            </connector>
+            <label>SE Status #3: 95% or above</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>SE_Which_day_is_it</name>
+        <label>SE: Which day is it?</label>
+        <locationX>5198</locationX>
+        <locationY>792</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SE_Monday</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Weekday_Today</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>mandag</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SE_How_many_days_until_event</targetReference>
+            </connector>
+            <label>SE: Monday</label>
+        </rules>
+        <rules>
+            <name>SE_Friday</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Weekday_Today</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>fredag</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SE_Friday_How_many_days_until_event</targetReference>
+            </connector>
+            <label>SE: Friday</label>
+        </rules>
+    </decisions>
+    <description>WIP: Updating to support Ireland</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>DK_Weekday_EventStart</name>
+        <dataType>String</dataType>
+        <expression>CASE(
+   MOD( DATEVALUE( {!$Record.Start__c} ) - DATE(1900, 1, 7), 7),
+   0, &quot;søndag&quot;,
+   1, &quot;mandag&quot;,
+   2, &quot;tirsdag&quot;,
+   3, &quot;onsdag&quot;,
+   4, &quot;torsdag&quot;,
+   5, &quot;fredag&quot;,
+   6, &quot;lørdag&quot;,
+   &quot;Error&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>frmBookingPercentage</name>
+        <dataType>Number</dataType>
+        <expression>({!$Record.Booked_Seats_From_Airtable__c} / {!$Record.Capacity__c}) * 100</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>SE_Weekday_EventStart</name>
+        <dataType>String</dataType>
+        <expression>CASE(
+   MOD( DATEVALUE( {!$Record.Start__c} ) - DATE(1900, 1, 7), 7),
+   0, &quot;söndag&quot;,
+   1, &quot;måndag&quot;,
+   2, &quot;tisdag&quot;,
+   3, &quot;onsdag&quot;,
+   4, &quot;torsdag&quot;,
+   5, &quot;fredag&quot;,
+   6, &quot;lördag&quot;,
+   &quot;Error&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>StartDate</name>
+        <dataType>Date</dataType>
+        <expression>{!$Record.Start__c}</expression>
+    </formulas>
+    <formulas>
+        <name>Weekday_Today</name>
+        <dataType>String</dataType>
+        <expression>CASE(
+   MOD( DATEVALUE( NOW() ) - DATE(1900, 1, 7), 7),
+   0, &quot;søndag&quot;,
+   1, &quot;mandag&quot;,
+   2, &quot;tirsdag&quot;,
+   3, &quot;onsdag&quot;,
+   4, &quot;torsdag&quot;,
+   5, &quot;fredag&quot;,
+   6, &quot;lørdag&quot;,
+   &quot;Error&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>X11DaysFromNow</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate}+11</expression>
+    </formulas>
+    <formulas>
+        <name>X13DaysFromNow</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate}+13</expression>
+    </formulas>
+    <formulas>
+        <name>X1DayFromNow</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate}+1</expression>
+    </formulas>
+    <formulas>
+        <name>X2DaysFromNow</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate}+2</expression>
+    </formulas>
+    <formulas>
+        <name>X3DaysFromNow</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate}+3</expression>
+    </formulas>
+    <formulas>
+        <name>X4DaysFromNow</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate}+4</expression>
+    </formulas>
+    <formulas>
+        <name>X6DaysFromNow</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate}+6</expression>
+    </formulas>
+    <formulas>
+        <name>X7DaysFromNow</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate}+7</expression>
+    </formulas>
+    <formulas>
+        <name>X9DaysFromNow</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate}+9</expression>
+    </formulas>
+    <interviewLabel>Host: Status Email Generation Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Host: Status Email Generation Flow</label>
+    <loops>
+        <name>Loop_Filtered_Contacts</name>
+        <label>Loop Filtered Contacts</label>
+        <locationX>10170</locationX>
+        <locationY>576</locationY>
+        <collectionReference>Filter_Contacts</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_Contact_to_Variable</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Send_Email_about_Missing_Contact</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>DK_Update_Fluid_Email_Field</name>
+        <label>DK: Update Fluid Email Field</label>
+        <locationX>1766</locationX>
+        <locationY>2490</locationY>
+        <connector>
+            <targetReference>Assign_Danish_From_Email</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Fluid_Email_Field__c</field>
+            <value>
+                <elementReference>varDK_Email</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>IE_Update_Fluid_Email_Field</name>
+        <label>IE: Update Fluid Email Field</label>
+        <locationX>8366</locationX>
+        <locationY>2490</locationY>
+        <connector>
+            <targetReference>Assign_Irish_From_Email</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Fluid_Email_Field__c</field>
+            <value>
+                <elementReference>varIE_Email</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>SE_Update_Fluid_Email_Field</name>
+        <label>SE: Update Fluid Email Field</label>
+        <locationX>5198</locationX>
+        <locationY>2490</locationY>
+        <connector>
+            <targetReference>Assign_Swedish_From_Email</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Fluid_Email_Field__c</field>
+            <value>
+                <elementReference>varSE_Email</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UPD_DK_Status_1_95_or_above</name>
+        <label>UPD: DK Status 1: 95% or above</label>
+        <locationX>314</locationX>
+        <locationY>1332</locationY>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>DK_Assign_Ending_and_Signature</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Status_for_Host_1_Percentage__c</field>
+            <value>
+                <elementReference>$Record.Booking_Percentage__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_1_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_1__c</field>
+            <value>
+                <stringValue>95% or above</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UPD_DK_Status_1_Less_than_95</name>
+        <label>UPD: DK Status 1: Less than 95%</label>
+        <locationX>50</locationX>
+        <locationY>1332</locationY>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>DK_Assign_Ending_and_Signature</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Status_for_Host_1_Percentage__c</field>
+            <value>
+                <elementReference>$Record.Booking_Percentage__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_1_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_1__c</field>
+            <value>
+                <stringValue>Less than 95%</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UPD_DK_Status_2_95_or_above</name>
+        <label>UPD: DK Status 2: 95% or above</label>
+        <locationX>1898</locationX>
+        <locationY>1332</locationY>
+        <connector>
+            <targetReference>DK_Assign_Billing_Information</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Status_for_Host_2_Percentage__c</field>
+            <value>
+                <elementReference>$Record.Booking_Percentage__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_2_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_2__c</field>
+            <value>
+                <stringValue>95% or above</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UPD_DK_Status_2_Less_than_95</name>
+        <label>UPD: DK Status 2: Less than 95%</label>
+        <locationX>1634</locationX>
+        <locationY>1332</locationY>
+        <connector>
+            <targetReference>DK_Assign_Billing_Information</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Status_for_Host_2_Percentage__c</field>
+            <value>
+                <elementReference>$Record.Booking_Percentage__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_2_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_2__c</field>
+            <value>
+                <stringValue>Less than 95%</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UPD_DK_Status_3_95_or_above</name>
+        <label>UPD: DK Status 3: 95% or above</label>
+        <locationX>842</locationX>
+        <locationY>1782</locationY>
+        <connector>
+            <targetReference>DK_Assign_Status_3_Assign_Booking_Percentage</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Status_for_Host_3_Percentage__c</field>
+            <value>
+                <elementReference>$Record.Booking_Percentage__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_3_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_3__c</field>
+            <value>
+                <stringValue>95% or above</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UPD_DK_Status_3_Less_than_95</name>
+        <label>UPD: DK Status 3: Less than 95%</label>
+        <locationX>578</locationX>
+        <locationY>1782</locationY>
+        <connector>
+            <targetReference>DK_Assign_Status_3_Assign_Booking_Percentage</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Status_for_Host_3_Percentage__c</field>
+            <value>
+                <elementReference>$Record.Booking_Percentage__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_3_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_3__c</field>
+            <value>
+                <stringValue>Less than 95%</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UPD_IE_Status_1_95_or_above</name>
+        <label>UPD: IE Status 1: 95% or above</label>
+        <locationX>6914</locationX>
+        <locationY>1332</locationY>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>IE_Assign_Ending_and_Signature</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Status_for_Host_1_Percentage__c</field>
+            <value>
+                <elementReference>$Record.Booking_Percentage__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_1_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_1__c</field>
+            <value>
+                <stringValue>95% or above</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UPD_IE_Status_1_Less_than_95</name>
+        <label>UPD: IE Status 1: Less than 95%</label>
+        <locationX>6650</locationX>
+        <locationY>1332</locationY>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>IE_Assign_Ending_and_Signature</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Status_for_Host_1_Percentage__c</field>
+            <value>
+                <elementReference>$Record.Booking_Percentage__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_1_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_1__c</field>
+            <value>
+                <stringValue>Less than 95%</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UPD_IE_Status_2_95_or_above</name>
+        <label>UPD: IE Status 2: 95% or above</label>
+        <locationX>8498</locationX>
+        <locationY>1332</locationY>
+        <connector>
+            <targetReference>IE_Assign_Billing_Information</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Status_for_Host_2_Percentage__c</field>
+            <value>
+                <elementReference>$Record.Booking_Percentage__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_2_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_2__c</field>
+            <value>
+                <stringValue>95% or above</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UPD_IE_Status_2_Less_than_95</name>
+        <label>UPD: IE Status 2: Less than 95%</label>
+        <locationX>8234</locationX>
+        <locationY>1332</locationY>
+        <connector>
+            <targetReference>IE_Assign_Billing_Information</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Status_for_Host_2_Percentage__c</field>
+            <value>
+                <elementReference>$Record.Booking_Percentage__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_2_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_2__c</field>
+            <value>
+                <stringValue>Less than 95%</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UPD_IE_Status_3_95_or_above</name>
+        <label>UPD: IE Status 3: 95% or above</label>
+        <locationX>7442</locationX>
+        <locationY>1782</locationY>
+        <connector>
+            <targetReference>IE_Assign_Status_3_Assign_Booking_Percentage</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Status_for_Host_3_Percentage__c</field>
+            <value>
+                <elementReference>$Record.Booking_Percentage__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_3_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_3__c</field>
+            <value>
+                <stringValue>95% or above</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UPD_IE_Status_3_Less_than_95</name>
+        <label>UPD: IE Status 3: Less than 95%</label>
+        <locationX>7178</locationX>
+        <locationY>1782</locationY>
+        <connector>
+            <targetReference>IE_Assign_Status_3_Assign_Booking_Percentage</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Status_for_Host_3_Percentage__c</field>
+            <value>
+                <elementReference>$Record.Booking_Percentage__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_3_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_3__c</field>
+            <value>
+                <stringValue>Less than 95%</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UPD_SE_Status_1_95_or_above</name>
+        <label>UPD: SE Status 1: 95% or above</label>
+        <locationX>3746</locationX>
+        <locationY>1332</locationY>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>SE_Assign_Ending_and_Signature</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Status_for_Host_1_Percentage__c</field>
+            <value>
+                <elementReference>$Record.Booking_Percentage__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_1_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_1__c</field>
+            <value>
+                <stringValue>95% or above</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UPD_SE_Status_1_Less_than_95</name>
+        <label>UPD: SE Status 1: Less than 95%</label>
+        <locationX>3482</locationX>
+        <locationY>1332</locationY>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>SE_Assign_Ending_and_Signature</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Status_for_Host_1_Percentage__c</field>
+            <value>
+                <elementReference>$Record.Booking_Percentage__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_1_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_1__c</field>
+            <value>
+                <stringValue>Less than 95%</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UPD_SE_Status_2_95_or_above</name>
+        <label>UPD: SE Status 2: 95% or above</label>
+        <locationX>5330</locationX>
+        <locationY>1332</locationY>
+        <connector>
+            <targetReference>SE_Assign_Billing_Information</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Status_for_Host_2_Percentage__c</field>
+            <value>
+                <elementReference>$Record.Booking_Percentage__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_2_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_2__c</field>
+            <value>
+                <stringValue>95% or above</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UPD_SE_Status_2_Less_than_95</name>
+        <label>UPD: SE Status 2: Less than 95%</label>
+        <locationX>5066</locationX>
+        <locationY>1332</locationY>
+        <connector>
+            <targetReference>SE_Assign_Billing_Information</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Status_for_Host_2_Percentage__c</field>
+            <value>
+                <elementReference>$Record.Booking_Percentage__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_2_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_2__c</field>
+            <value>
+                <stringValue>Less than 95%</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UPD_SE_Status_3_95_or_above</name>
+        <label>UPD: SE Status 3: 95% or above</label>
+        <locationX>4274</locationX>
+        <locationY>1782</locationY>
+        <connector>
+            <targetReference>SE_Assign_Status_3_Assign_Booking_Percentage</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Status_for_Host_3_Percentage__c</field>
+            <value>
+                <elementReference>$Record.Booking_Percentage__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_3_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_3__c</field>
+            <value>
+                <stringValue>95% or above</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UPD_SE_Status_3_Less_than_95</name>
+        <label>UPD: SE Status 3: Less than 95%</label>
+        <locationX>4010</locationX>
+        <locationY>1782</locationY>
+        <connector>
+            <targetReference>SE_Assign_Status_3_Assign_Booking_Percentage</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Status_for_Host_3_Percentage__c</field>
+            <value>
+                <elementReference>$Record.Booking_Percentage__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_3_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_3__c</field>
+            <value>
+                <stringValue>Less than 95%</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>8960</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>AL_Find_Contacts_Contact_Relations_from_Account_ID</targetReference>
+        </connector>
+        <filterLogic>1 AND 2 AND (3 OR 4 OR 5 OR 6) AND 7</filterLogic>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Scheduled</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Company_Lecture__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Invoicing_Agreement__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Per Booked Seat</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Invoicing_Agreement__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Per Scanned Attendee</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Invoicing_Agreement__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Venue Rental Cost</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Invoicing_Agreement__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Locked-In Booking Count</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Open_for_Bookings__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Campaign</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2024-01-08</startDate>
+            <startTime>12:30:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>AL_Find_Contacts_Contact_Relations_from_Account_ID</name>
+        <label>AL - Find Contacts &amp; Contact Relations from Account ID</label>
+        <locationX>9086</locationX>
+        <locationY>252</locationY>
+        <connector>
+            <targetReference>Did_We_Find_a_Contact</targetReference>
+        </connector>
+        <flowName>AL_Find_Contacts_Contact_Relations_from_Account_ID</flowName>
+        <inputAssignments>
+            <name>AccountId</name>
+            <value>
+                <elementReference>$Record.Account__c</elementReference>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>CustomError</assignToReference>
+            <name>CustomError</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>IsContactSearchSuccess</assignToReference>
+            <name>IsSuccess</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Contact</assignToReference>
+            <name>outputContact</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>ContactCollection</assignToReference>
+            <name>outputContactCollection</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>ContactCount</assignToReference>
+            <name>outputContactCount</name>
+        </outputAssignments>
+    </subflows>
+    <subflows>
+        <name>AL_Send_Error_Email_from_Input_Values</name>
+        <label>AL - Send Error Email from Input Values</label>
+        <locationX>3218</locationX>
+        <locationY>3030</locationY>
+        <flowName>AL_Send_Error_Email_from_Input_Values</flowName>
+        <inputAssignments>
+            <name>inputCustomError</name>
+            <value>
+                <elementReference>CustomError</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputFlowName</name>
+            <value>
+                <stringValue>Host: Status Email Generation Flow</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <textTemplates>
+        <name>rtEmailBody</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;Dear {!$Record.Owner.FirstName},&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;There is an upcoming lecture at {!$Record.Account__r.Name} at {!$Record.Start__c}.&lt;/p&gt;&lt;p&gt;We tried to send a status update, containing information about number of bookings, etc. to the host on the email {!Contact.Email}.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please reach out to the Host and get their updated information&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Error:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!CustomError}&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtDK_BillingInformation</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;color:rgb(0,0,0);font-family:Arial, Helvetica, sans-serif;font-size:14px;&quot;&gt;&lt;strong&gt;Fakturering og betalingsbetingelser&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;color:rgb(0,0,0);font-family:Arial, Helvetica, sans-serif;font-size:14px;&quot;&gt;Send venligst alle fakturaer til&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;mailto:foredrag.faktura@dinfamiliejurist.dk&quot;&gt;&lt;span style=&quot;color:rgb(0,0,0);font-family:Arial, Helvetica, sans-serif;font-size:14px;&quot;&gt;foredrag.faktura@dinfamiliejurist.dk&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;color:rgb(0,0,0);font-family:Arial, Helvetica, sans-serif;font-size:14px;&quot;&gt;. Husk at inkludere bank- og kontooplysninger samt CVR-nummer på alle fakturaer.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtDK_Ending_and_Signature</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p style=&quot;margin: 0; padding: 0;&quot;&gt;Sig endelig til, hvis I har nogen spørgsmål - vi hjælper gerne til, med hvad end det skulle være!&lt;/p&gt;
+&lt;p style=&quot;margin: 0; padding: 0;&quot;&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p style=&quot;margin: 0; padding: 0;&quot;&gt;Med venlig hilsen,&lt;/p&gt;
+&lt;p style=&quot;margin: 0; padding: 0;&quot;&gt;Foredragsteamet&lt;/p&gt;
+&lt;p style=&quot;margin: 0; padding: 0;&quot;&gt;Din Familiejurist&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtDK_Greeting</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;Kære&amp;nbsp;{!$Record.Contact__r.FirstName},&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtDK_Lecturer_Info</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;
+ - {!$Record.Lecturer__r.FirstName} {!$Record.Lecturer__r.LastName} afholder foredraget og ankommer som regel ca. 30 minutter f&amp;oslash;r starttidspunktet.&lt;br /&gt;
+ - {!$Record.Lecturer__r.FirstName} scanner g&amp;aelig;sterne ind, hj&amp;aelig;lper dem med at finde deres plads, osv.&lt;br /&gt;
+ - {!$Record.Lecturer__r.FirstName} fors&amp;oslash;ger selvf&amp;oslash;lgelig ogs&amp;aring; at give g&amp;aelig;sterne et venligt skub op mod baren.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtDK_Status1_Above_95</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;Vi er glade for at kunne meddele at der er booket {!$Record.Booked_Seats_From_Airtable__c} af de {!$Record.Capacity__c} tilgængelige pladser til foredraget.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtDK_Status1_Less_Than_95</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;I skrivende stund er {!$Record.Booked_Seats_From_Airtable__c} af de {!$Record.Capacity__c} pladser blevet booket. Vi skruer lidt op for annonceringen og håber at få booket de resterende pladser også, i løbet af den kommende uge.&lt;/p&gt;
+
+&lt;p&gt;Såfremt I ikke allerede har gjort det, vil vi bede om jeres hjælp til at sprede ordet, f.eks. ved at dele bookinglinket på jeres hjemmeside, sociale medier, o.lign.&lt;/p&gt;
+
+&lt;p&gt;Det vil hjælpe til, at vi får alle pladserne booket og på den måde, sikre en successfuld aften for både for os, jer og kunderne.&lt;/p&gt;
+
+&lt;p&gt;Bookinglinket her her: &lt;/p&gt;
+&lt;p&gt;{!$Record.Webflow_URL__c}&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Uanset hvad, så ser vi frem til et godt event d. {!$Record.Start__c}&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtDK_Status1_Looking_Forward</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;Vi ser frem til foredraget hos jer, næste uge, {!DK_Weekday_EventStart}, d. {!$Record.Start__c}&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtDK_Status2_Above_95</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;Vi sendte dig mandag en opdatering med bookingantallet og kan med glæde meddele at der nu er booket {!$Record.Booked_Seats_From_Airtable__c} af de tilgængelige {!$Record.Capacity__c} pladser.&lt;br /&gt;
+Tusinde tak for indsatsen - vi ses på {!DK_Weekday_EventStart}.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtDK_Status2_Less_Than_95</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;Vi sendte dig mandag en opdatering med bookingantallet.&lt;br /&gt;
+
+I skrivende stund er {!$Record.Booked_Seats_From_Airtable__c} af de {!$Record.Capacity__c} pladser booket. Vi foreslår at lade annonceringen køre weekenden over - og, hvis I ikke allerede har gjort det, vil vi bede jer om at sprede ordet, f.eks. ved at dele bookinglinket på jeres hjemmeside, sociale medier, o.lign.&lt;br /&gt;
+
+&lt;br /&gt;
+
+Bookinglinket her her {!$Record.Webflow_URL__c} &lt;br /&gt;
+
+&lt;br /&gt;
+
+Vi vil gøre hvad vi kan, for at komme nærmere et fuldt booket event og håber at I vil gøre det samme.&amp;nbsp;&lt;br /&gt;
+
+&lt;br /&gt;
+
+Uanset hvad, så ser vi frem til et godt event på {!DK_Weekday_EventStart}.&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtDK_Status2_Looking_Forward</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;Vi ser frem til foredraget hos jer, på {!DK_Weekday_EventStart} d. {!$Record.Start__c}.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtDK_Status3_Booking_Count</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;Der er booket {!$Record.Booked_Seats_From_Airtable__c} af de tilgængelige {!$Record.Capacity__c} pladser.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtDK_Status3_Looking_Forward_2plus</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;Vi ser frem til foredraget hos jer, på {!DK_Weekday_EventStart} d. {!$Record.Start__c}.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtDK_Status3_Looking_Forward_Tomorrow</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;Vi ser frem til foredraget hos jer, i morgen, {!DK_Weekday_EventStart}, d. {!$Record.Start__c}&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtIE_BillingInformation</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;color:rgb(0,0,0);font-family:Arial, Helvetica, sans-serif;font-size:14px;&quot;&gt;&lt;strong&gt;Invoicing and Payment Terms&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;  
+&lt;p&gt;&lt;span style=&quot;color:rgb(0,0,0);font-family:Arial, Helvetica, sans-serif;font-size:14px;&quot;&gt;Please send all invoices to&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;mailto:lecture.invoice@hereslaw.ie&quot;&gt;&lt;span style=&quot;color:rgb(0,0,0);font-family:Arial, Helvetica, sans-serif;font-size:14px;&quot;&gt;lecture.invoice@hereslaw.ie&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;color:rgb(0,0,0);font-family:Arial, Helvetica, sans-serif;font-size:14px;&quot;&gt;. Remember to include bank and account details as well as the organization number on all invoices.&lt;/span&gt;&lt;/p&gt;  
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtIE_Ending_and_Signature</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p style=&quot;margin: 0; padding: 0;&quot;&gt;&amp;nbsp;&lt;/p&gt;  
+&lt;p style=&quot;margin: 0; padding: 0;&quot;&gt;Best regards,&lt;/p&gt;  
+&lt;p style=&quot;margin: 0; padding: 0;&quot;&gt;The Lecture Team&lt;/p&gt;  
+&lt;p style=&quot;margin: 0; padding: 0;&quot;&gt;Heres Law&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtIE_Greeting</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;Hi {!$Record.Contact__r.FirstName},&lt;/p&gt; &lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtIE_Status1_Above_95</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;We are pleased to announce that {!$Record.Booked_Seats_From_Airtable__c} of the {!$Record.Capacity__c} available seats for the lecture have been booked.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtIE_Status1_Less_Than_95</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;At the time of writing, {!$Record.Booked_Seats_From_Airtable__c} of the {!$Record.Capacity__c} seats have been booked. We are increasing the advertising a bit and hope to book the remaining seats as well during the coming week.&lt;/p&gt;
+&lt;p&gt;If you haven’t already done so, we would like to ask for your help in spreading the word, e.g., by sharing the booking link on your website, social media, and similar.&lt;/p&gt;
+&lt;p&gt;This will help us get all seats booked and thereby secure a successful evening for us, you, and the customers.&lt;/p&gt;
+&lt;p&gt;The booking link is here: &lt;/p&gt;
+&lt;p&gt;{!$Record.Webflow_URL__c}&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;In any case, we look forward to a great event on {!$Record.Start__c}&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtIE_Status1_Looking_Forward</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;We look forward to the lecture at your place next week, {!SE_Weekday_EventStart}, on {!$Record.Start__c}&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtIE_Status2_Above_95</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;We sent you an update on Monday about the booking numbers and are happy to announce that {!$Record.Booked_Seats_From_Airtable__c} of the available {!$Record.Capacity__c} seats have now been booked.&lt;br /&gt;  
+Many thanks for your effort – we’ll see you on {!SE_Weekday_EventStart}.&lt;/p&gt;  
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtIE_Status2_Less_Than_95</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;We sent you an update on Monday about the booking numbers.&lt;br /&gt;  
+At the time of writing, {!$Record.Booked_Seats_From_Airtable__c} of the {!$Record.Capacity__c} seats have been booked. We suggest letting the advertising continue over the weekend – and, if you haven’t already done so, we ask you to help spread the word, e.g., by sharing the booking link on your website, social media, and similar.&lt;br /&gt;  
+
+&lt;br /&gt;  
+The booking link is here {!$Record.Webflow_URL__c} &lt;br /&gt;  
+
+&lt;br /&gt;  
+We will do what we can to move towards a fully booked event and hope you will do the same. &lt;br /&gt;  
+
+&lt;br /&gt;  
+In any case, we look forward to a great event on {!SE_Weekday_EventStart}.&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtIE_Status2_Looking_Forward</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;We look forward to the lecture at your place on {!SE_Weekday_EventStart}, {!$Record.Start__c}.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtIE_Status3_Booking_Count</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;{!$Record.Booked_Seats_From_Airtable__c} of the available {!$Record.Capacity__c} seats have been booked.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtIE_Status3_Looking_Forward_2plus</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;We look forward to the lecture at your place on {!SE_Weekday_EventStart}, {!$Record.Start__c}.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtIE_Status3_Looking_Forward_Tomorrow</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;We look forward to the lecture at your place tomorrow, {!SE_Weekday_EventStart}, on {!$Record.Start__c}&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtSE_BillingInformation</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;color:rgb(0,0,0);font-family:Arial, Helvetica, sans-serif;font-size:14px;&quot;&gt;&lt;strong&gt;Fakturering och betalningsvillkor&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;color:rgb(0,0,0);font-family:Arial, Helvetica, sans-serif;font-size:14px;&quot;&gt;Vänligen skicka alla fakturor till&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;mailto:foredrag.faktura@dinfamiljejurist.se&quot;&gt;&lt;span style=&quot;color:rgb(0,0,0);font-family:Arial, Helvetica, sans-serif;font-size:14px;&quot;&gt;foredrag.faktura@dinfamiljejurist.se&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;color:rgb(0,0,0);font-family:Arial, Helvetica, sans-serif;font-size:14px;&quot;&gt;. Kom ihåg att inkludera bank- och kontouppgifter samt organisationsnummer på alla fakturor.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtSE_Ending_and_Signature</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p style=&quot;margin: 0; padding: 0;&quot;&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p style=&quot;margin: 0; padding: 0;&quot;&gt;Med vänliga hälsningar,&lt;/p&gt;
+&lt;p style=&quot;margin: 0; padding: 0;&quot;&gt;Föredragsteamet&lt;/p&gt;
+&lt;p style=&quot;margin: 0; padding: 0;&quot;&gt;Din Familjejurist&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtSE_Greeting</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;Hej {!$Record.Contact__r.FirstName},&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtSE_Lecturer_Info</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt; - {!$Record.Lecturer__r.FirstName} {!$Record.Lecturer__r.LastName}&amp;nbsp;h&amp;aring;ller f&amp;ouml;redraget och anl&amp;auml;nder vanligtvis cirka 30 minuter f&amp;ouml;re starttiden.
+ - {!$Record.Lecturer__r.FirstName} &amp;nbsp;skannar in g&amp;auml;sterna, hj&amp;auml;lper dem att hitta sina platser, osv.
+&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtSE_Status1_Above_95</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;Vi är glada över att kunna meddela att det är bokat {!$Record.Booked_Seats_From_Airtable__c} av de {!$Record.Capacity__c} tillgängliga platserna till föredraget.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtSE_Status1_Less_Than_95</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;I skrivande stund är {!$Record.Booked_Seats_From_Airtable__c} av de {!$Record.Capacity__c} platserna bokade. Vi ökar lite på annonseringen och hoppas kunna boka de återstående platserna också, under den kommande veckan.&lt;/p&gt;
+&lt;p&gt;Om ni inte redan har gjort det, skulle vi vilja be om er hjälp att sprida ordet, t.ex. genom att dela bokningslänken på er hemsida, sociala medier, och liknande.&lt;/p&gt;
+&lt;p&gt;Det kommer att hjälpa oss att få alla platser bokade och på så sätt säkra en framgångsrik kväll för både oss, er och kunderna.&lt;/p&gt;
+&lt;p&gt;Bokningslänken är här: &lt;/p&gt;
+&lt;p&gt;{!$Record.Webflow_URL__c}&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Oavsett vad, ser vi fram emot ett bra event den {!$Record.Start__c}&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtSE_Status1_Looking_Forward</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;Vi ser fram emot föredraget hos er, nästa vecka, {!SE_Weekday_EventStart}, den {!$Record.Start__c}&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtSE_Status2_Above_95</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;Vi skickade dig en uppdatering på måndag om bokningsantalet och är glada att kunna meddela att det nu är bokat {!$Record.Booked_Seats_From_Airtable__c} av de tillgängliga {!$Record.Capacity__c} platserna.&lt;br /&gt;
+Tusen tack för insatsen - vi ses på {!SE_Weekday_EventStart}.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtSE_Status2_Less_Than_95</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;Vi skickade dig en uppdatering på måndag om bokningsantalet.&lt;br /&gt;
+I skrivande stund är {!$Record.Booked_Seats_From_Airtable__c} av de {!$Record.Capacity__c} platserna bokade. Vi föreslår att låta annonseringen fortsätta över helgen - och, om ni inte redan har gjort det, ber vi er att sprida ordet, t.ex. genom att dela bokningslänken på er hemsida, sociala medier, och liknande.&lt;br /&gt;
+
+&lt;br /&gt;
+Bokningslänken är här {!$Record.Webflow_URL__c} &lt;br /&gt;
+
+&lt;br /&gt;
+Vi kommer att göra vad vi kan för att närma oss ett fullbokat evenemang och hoppas att ni kommer att göra detsamma. &lt;br /&gt;
+
+&lt;br /&gt;
+Oavsett vad, ser vi fram emot ett bra evenemang på {!SE_Weekday_EventStart}.&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtSE_Status2_Looking_Forward</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;Vi ser fram emot föredraget hos er, på {!SE_Weekday_EventStart} den {!$Record.Start__c}.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtSE_Status3_Booking_Count</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;Det är bokat {!$Record.Booked_Seats_From_Airtable__c} av de tillgängliga {!$Record.Capacity__c} platserna.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtSE_Status3_Looking_Forward_2plus</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;Vi ser fram emot föredraget hos er, på {!SE_Weekday_EventStart} den {!$Record.Start__c}.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtSE_Status3_Looking_Forward_Tomorrow</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;Vi ser fram emot föredraget hos er, imorgon, {!SE_Weekday_EventStart}, den {!$Record.Start__c}&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <name>Contact</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Contact</objectType>
+    </variables>
+    <variables>
+        <name>ContactCollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Contact</objectType>
+    </variables>
+    <variables>
+        <name>ContactCount</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>currentItem_Filter_Contacts</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Contact</objectType>
+    </variables>
+    <variables>
+        <name>CustomError</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FromEmail</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>IsContactSearchSuccess</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>IsLoopDone</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>ToEmailBounceAlert</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varDK_Email</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varIE_Email</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varSE_Email</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

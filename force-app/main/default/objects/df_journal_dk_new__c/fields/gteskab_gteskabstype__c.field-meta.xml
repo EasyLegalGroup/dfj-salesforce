@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gteskab_gteskabstype__c</fullName>
+    <externalId>false</externalId>
+    <label>Ægteskabstype</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>gteskab_gtepagt_sreje</fullName>
+                <default>false</default>
+                <label>Ægtepagt / Særeje</label>
+            </value>
+            <value>
+                <fullName>gteskab_alm_formueflls</fullName>
+                <default>false</default>
+                <label>Almindeligt Formuefællesskab</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

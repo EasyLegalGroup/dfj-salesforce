@@ -1,0 +1,1075 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Email</name>
+        <label>Send Email</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <faultConnector>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>ToEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>FromEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>composeEmailContent</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>EmailSubject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <stringValue>&lt;p&gt;{!EmailBody}&lt;/p&gt;</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useLineBreaks</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <elementReference>RelatedRecordId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <apiVersion>64.0</apiVersion>
+    <assignments>
+        <name>Assign_Danish_Values</name>
+        <label>Assign Danish Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>SmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptSmsBodyDanish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>EmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptHtmlBodyDanish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>EmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptSubjectDanish</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>What_is_OTP_Medium</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Irish_Values</name>
+        <label>Assign Irish Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>SmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptSmsBodyDanish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>EmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptHtmlBodyEnglish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>EmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptSubjectEnglish</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>What_is_OTP_Medium</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Swedish_Values</name>
+        <label>Assign Swedish Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>SmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptSmsBodyDanish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>EmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptHtmlBodySwedish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>EmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptSubjectSwedish</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>What_is_OTP_Medium</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_Cannot_Find_Value_Lead_Contact_from_Campaign_Member</name>
+        <label>Populate Custom Error with Cannot Find Value Lead/Contact from Campaign Member</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Cannot Find Value Lead/Contact from Campaign Member with ID &quot;{!RelatedRecordId}&quot;</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_Flow_Fault_Message</name>
+        <label>Populate Custom Error with Flow Fault Message</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_Invalid_Market_Unit</name>
+        <label>Populate Custom Error with Invalid Market Unit</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Invalid or Missing Market Unit &quot;{!MarketUnit}&quot;. </stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_Invalid_OTP_Medium</name>
+        <label>Populate Custom Error with Invalid OTP Medium</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Invalid or Missing OTP Medium &quot;{!OtpMedium}&quot;. Valid values are &quot;SMS&quot; and &quot;Email&quot;</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_Invalid_Related_Record_ID</name>
+        <label>Populate Custom Error with Invalid Related Record ID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Call must include either Contact ID, Lead ID or Campaign Member ID.</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_SMS_Record</name>
+        <label>Populate SMS Record</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>Sms.Record_ID__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>RelatedRecordId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Sms.Direction__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Outgoing</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Sms.Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Automated</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Sms.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Pending</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Sms.To_Number__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>PhoneFormatted</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Sms.Message__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SmsBody</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_SMS_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Contact_Values</name>
+        <label>Set Contact Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>RelatedRecordId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Contact.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>PhoneFormatted</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Contact.MobilePhone</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ToEmail</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Contact.Email</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Which_Country_is_the_Campaign_Member_in</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Lead_Values</name>
+        <label>Set Lead Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>RelatedRecordId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Lead.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>MarketUnit</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Lead.Market_Unit__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>PhoneFormatted</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Lead.Phone_Formatted_No_Spaces__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ToEmail</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Lead.Email</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Which_Country_is_the_Campaign_Member_in</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Did_We_Already_Check_Campaign_Member</name>
+        <label>Did We Already Check Campaign Member?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Get_Campaign_Member</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Already_Checked_Campaign_Member</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Campaign_Member</leftValueReference>
+                <operator>WasVisited</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_Custom_Error_with_Cannot_Find_Value_Lead_Contact_from_Campaign_Member</targetReference>
+            </connector>
+            <label>Already Checked Campaign Member</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Do_We_Have_a_Record_ID</name>
+        <label>Do We Have a Record ID?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Populate_Custom_Error_with_Invalid_Related_Record_ID</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Got_Contact_ID</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>RelatedRecordId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>003</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Contact</targetReference>
+            </connector>
+            <label>Got Contact ID</label>
+        </rules>
+        <rules>
+            <name>Got_Lead_ID</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>RelatedRecordId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>00Q</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Lead</targetReference>
+            </connector>
+            <label>Got Lead ID</label>
+        </rules>
+        <rules>
+            <name>Got_Campaign_Member_ID</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>RelatedRecordId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>00v</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Did_We_Already_Check_Campaign_Member</targetReference>
+            </connector>
+            <label>Got Campaign Member ID</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>What_is_OTP_Medium</name>
+        <label>What is OTP Medium?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Populate_Custom_Error_with_Invalid_OTP_Medium</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>OTP_Medium_is_Email</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>OtpMedium</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Email</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Email</targetReference>
+            </connector>
+            <label>OTP Medium is Email</label>
+        </rules>
+        <rules>
+            <name>OTP_Medium_is_SMS</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>OtpMedium</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>SMS</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_SMS_Record</targetReference>
+            </connector>
+            <label>OTP Medium is SMS</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Which_Country_is_the_Campaign_Member_in</name>
+        <label>Which Country is the Campaign Member in?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Populate_Custom_Error_with_Invalid_Market_Unit</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Denmark</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>MarketUnit</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>DFJ_DK</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Danish_Values</targetReference>
+            </connector>
+            <label>Denmark</label>
+        </rules>
+        <rules>
+            <name>Sweden</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>MarketUnit</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>FA_SE</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Swedish_Values</targetReference>
+            </connector>
+            <label>Sweden</label>
+        </rules>
+        <rules>
+            <name>Ireland</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>MarketUnit</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ireland</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Irish_Values</targetReference>
+            </connector>
+            <label>Ireland</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>AL - Send OTP via Email/SMS {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>AL - Send OTP via Email/SMS</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_SMS_Record</name>
+        <label>Create SMS Record</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <inputReference>Sms</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Campaign_Member</name>
+        <label>Get Campaign Member</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Do_We_Have_a_Record_ID</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>RelatedRecordId</elementReference>
+            </value>
+        </filters>
+        <object>CampaignMember</object>
+        <outputAssignments>
+            <assignToReference>RelatedRecordId</assignToReference>
+            <field>LeadOrContactId</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>OtpCode</assignToReference>
+            <field>OTP_Code__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>OtpExpires</assignToReference>
+            <field>OTP_Expires__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>OtpMedium</assignToReference>
+            <field>OTP_Medium__c</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Contact</name>
+        <label>Get Contact</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Set_Contact_Values</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>RelatedRecordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Lead</name>
+        <label>Get Lead</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Set_Lead_Values</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>RelatedRecordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Lead</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Do_We_Have_a_Record_ID</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>AL_Send_Error_Email_from_Input_Values</name>
+        <label>AL - Send Error Email from Input Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <flowName>AL_Send_Error_Email_from_Input_Values</flowName>
+        <inputAssignments>
+            <name>inputCustomError</name>
+            <value>
+                <elementReference>CustomError</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputFlowName</name>
+            <value>
+                <stringValue>RT - Campaign Member: OTP is Updated</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputRecordId</name>
+            <value>
+                <elementReference>RelatedRecordId</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <textTemplates>
+        <name>ptHtmlBodyDanish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;Din engangskode&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body style=&quot;margin:0; padding:0; font-family: Arial, sans-serif; background-color:#f6f6f6;&quot;&gt;
+
+    &lt;table role=&quot;presentation&quot; border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot;&gt;
+      &lt;tr&gt;
+        &lt;td align=&quot;center&quot; style=&quot;padding: 20px 0;&quot;&gt;
+
+          &lt;!-- Main container --&gt;
+          &lt;table role=&quot;presentation&quot; border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;600&quot; style=&quot;background:#ffffff; border-radius:8px; padding: 30px;&quot;&gt;
+            
+            &lt;!-- Logo --&gt;
+            &lt;tr&gt;
+              &lt;td align=&quot;center&quot; style=&quot;padding-bottom:20px;&quot;&gt;
+                &lt;img src=&quot;https://dfj.my.salesforce.com/sfc/p/1t000000w9f2/a/W5000007LddR/SxXvRXF8spDCZOPGAwHjQtPk0B8G7cKoYk2ehJrCMg8&quot;
+                     alt=&quot;Logo&quot; 
+                     width=&quot;180&quot; 
+                     style=&quot;display:block; border:0;&quot;/&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;!-- Title --&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;text-align:center; font-size:20px; font-weight:bold; color:#333333; padding-bottom:20px;&quot;&gt;
+                Din engangskode
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;!-- Intro text --&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;font-size:16px; color:#333333; padding-bottom:20px; text-align:center;&quot;&gt;
+                Brug koden nedenfor for at fuldføre din bekræftelse.&lt;br&gt;
+                Denne kode er gyldig indtil &lt;strong&gt;{!OtpExpires}&lt;/strong&gt;.
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;!-- OTP Code --&gt;
+            &lt;tr&gt;
+              &lt;td align=&quot;center&quot; style=&quot;padding: 20px 0;&quot;&gt;
+                &lt;div style=&quot;font-size:28px; font-weight:bold; letter-spacing:4px; color:#2c3e50; background:#f2f2f2; padding:15px 25px; border-radius:6px; display:inline-block;&quot;&gt;
+                  {!OtpCode}
+                &lt;/div&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;!-- Disclaimer --&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;font-size:14px; color:#666666; padding-top:20px; text-align:center;&quot;&gt;
+                Hvis du ikke har anmodet om denne kode, kan du se bort fra denne e-mail.
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+          &lt;/table&gt;
+
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptHtmlBodyEnglish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;Your One-Time Code&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body style=&quot;margin:0; padding:0; font-family: Arial, sans-serif; background-color:#f6f6f6;&quot;&gt;
+
+    &lt;table role=&quot;presentation&quot; border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot;&gt;
+      &lt;tr&gt;
+        &lt;td align=&quot;center&quot; style=&quot;padding: 20px 0;&quot;&gt;
+
+          &lt;!-- Main container --&gt;
+          &lt;table role=&quot;presentation&quot; border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;600&quot; style=&quot;background:#ffffff; border-radius:8px; padding: 30px;&quot;&gt;
+            
+            &lt;!-- Logo --&gt;
+            &lt;tr&gt;
+              &lt;td align=&quot;center&quot; style=&quot;padding-bottom:20px;&quot;&gt;
+                &lt;img src=&quot;https://dfj.my.salesforce.com/sfc/p/1t000000w9f2/a/W5000007JZ2r/vZlkbe_A6_OyB8boGYQZcMwrnY_QB8c8QFXLC9eckTg&quot;
+                     alt=&quot;Company Logo&quot; 
+                     width=&quot;180&quot; 
+                     style=&quot;display:block; border:0;&quot;/&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;!-- Title --&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;text-align:center; font-size:20px; font-weight:bold; color:#333333; padding-bottom:20px;&quot;&gt;
+                Your One-Time Code
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;!-- Intro text --&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;font-size:16px; color:#333333; padding-bottom:20px; text-align:center;&quot;&gt;
+                Use the code below to complete your verification.  
+                This code is valid until &lt;strong&gt;{!OtpExpires}&lt;/strong&gt;.
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;!-- OTP Code --&gt;
+            &lt;tr&gt;
+              &lt;td align=&quot;center&quot; style=&quot;padding: 20px 0;&quot;&gt;
+                &lt;div style=&quot;font-size:28px; font-weight:bold; letter-spacing:4px; color:#2c3e50; background:#f2f2f2; padding:15px 25px; border-radius:6px; display:inline-block;&quot;&gt;
+                  {!OtpCode}
+                &lt;/div&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;!-- Disclaimer --&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;font-size:14px; color:#666666; padding-top:20px; text-align:center;&quot;&gt;
+                If you didn’t request this code, you can safely ignore this email.
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+          &lt;/table&gt;
+
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptHtmlBodySwedish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;Din engångskod&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body style=&quot;margin:0; padding:0; font-family: Arial, sans-serif; background-color:#f6f6f6;&quot;&gt;
+
+    &lt;table role=&quot;presentation&quot; border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot;&gt;
+      &lt;tr&gt;
+        &lt;td align=&quot;center&quot; style=&quot;padding: 20px 0;&quot;&gt;
+
+          &lt;!-- Main container --&gt;
+          &lt;table role=&quot;presentation&quot; border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;600&quot; style=&quot;background:#ffffff; border-radius:8px; padding: 30px;&quot;&gt;
+            
+            &lt;!-- Logo --&gt;
+            &lt;tr&gt;
+              &lt;td align=&quot;center&quot; style=&quot;padding-bottom:20px;&quot;&gt;
+                &lt;img src=&quot;https://dfj.my.salesforce.com/sfc/p/1t000000w9f2/a/W5000007Ldbp/yWyzcknpEKmmeC63uhPCCqwTVuzyE26aBsEbofgTD5Q&quot;
+                     alt=&quot;Logotyp&quot; 
+                     width=&quot;180&quot; 
+                     style=&quot;display:block; border:0;&quot;/&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;!-- Title --&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;text-align:center; font-size:20px; font-weight:bold; color:#333333; padding-bottom:20px;&quot;&gt;
+                Din engångskod
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;!-- Intro text --&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;font-size:16px; color:#333333; padding-bottom:20px; text-align:center;&quot;&gt;
+                Använd koden nedan för att slutföra din verifiering.&lt;br&gt;
+                Denna kod är giltig till &lt;strong&gt;{!OtpExpires}&lt;/strong&gt;.
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;!-- OTP Code --&gt;
+            &lt;tr&gt;
+              &lt;td align=&quot;center&quot; style=&quot;padding: 20px 0;&quot;&gt;
+                &lt;div style=&quot;font-size:28px; font-weight:bold; letter-spacing:4px; color:#2c3e50; background:#f2f2f2; padding:15px 25px; border-radius:6px; display:inline-block;&quot;&gt;
+                  {!OtpCode}
+                &lt;/div&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;!-- Disclaimer --&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;font-size:14px; color:#666666; padding-top:20px; text-align:center;&quot;&gt;
+                Om du inte har begärt denna kod kan du bortse från detta e-postmeddelande.
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+          &lt;/table&gt;
+
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSmsBodyDanish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Her er din engangskode: {!OtpCode}.
+Den udløber {!OtpExpires}.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSmsBodyEnglish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Here is your one-time code: {!OtpCode}.
+It expires {!OtpExpires}.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSmsBodySwedish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Här är din engångskod: {!OtpCode}.
+Den upphör att gälla {!OtpExpires}.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSubjectDanish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Din Familiejurist | Din engangskode</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSubjectEnglish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Heres Law | Your One-Time Code</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSubjectSwedish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Din Familjejurist | Din engångskod</text>
+    </textTemplates>
+    <variables>
+        <name>CustomError</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>EmailBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>EmailSubject</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FromEmail</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FromNumber</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>inputEmail</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>inputMarketUnit</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>inputPhone</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>IsSmsSubflowSuccess</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>MarketUnit</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>OtpCode</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>OtpExpires</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>OtpExpiryTime</name>
+        <dataType>Time</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>OtpMedium</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>PhoneFormatted</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>RelatedRecordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Sms</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>SMS__c</objectType>
+    </variables>
+    <variables>
+        <name>SmsBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ToEmail</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

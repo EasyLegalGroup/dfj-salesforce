@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Trustpilot_Request_DK</name>
+        <label>Send Trustpilot Request (DK)</label>
+        <locationX>50</locationX>
+        <locationY>2447</locationY>
+        <actionName>TwilioSF__TwilioSendSMS</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Update_Journal</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>fromNumber</name>
+            <value>
+                <stringValue>004581827570</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>message</name>
+            <value>
+                <elementReference>DK_Trustpilot_Request</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>toNumber</name>
+            <value>
+                <elementReference>$Record.Phone_Formatted__c</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>TwilioSF__TwilioSendSMS</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Trustpilot_Request_SE</name>
+        <label>Send Trustpilot Request (SE)</label>
+        <locationX>314</locationX>
+        <locationY>2447</locationY>
+        <actionName>TwilioSF__TwilioSendSMS</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Update_Journal</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>fromNumber</name>
+            <value>
+                <stringValue>0046766753111</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>message</name>
+            <value>
+                <elementReference>SE_Trustpilot_Request</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>toNumber</name>
+            <value>
+                <elementReference>$Record.Phone_Formatted__c</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>TwilioSF__TwilioSendSMS</nameSegment>
+    </actionCalls>
+    <apiVersion>58.0</apiVersion>
+    <assignments>
+        <name>Assign_Account_s_Phone_to_Variable</name>
+        <label>Assign Account&apos;s Phone to Variable</label>
+        <locationX>303</locationX>
+        <locationY>539</locationY>
+        <assignmentItems>
+            <assignToReference>varPhone</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Account__r.Phone_Formatted__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_a_Phone_Number</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Person_1_s_Phone_to_Variable</name>
+        <label>Assign Person 1&apos;s Phone to Variable</label>
+        <locationX>567</locationX>
+        <locationY>863</locationY>
+        <assignmentItems>
+            <assignToReference>varPhone</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Person_1.person_telefonnummer__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_a_Phone_Number</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Is_there_a_Phone_Number_on_Account</name>
+        <label>Is there a Phone Number on Account?</label>
+        <locationX>501</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Get_DocFab_Journal</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Account Phone</defaultConnectorLabel>
+        <rules>
+            <name>Account_Phone_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account__r.Phone_Formatted__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Account_s_Phone_to_Variable</targetReference>
+            </connector>
+            <label>Account Phone Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_there_a_phone_number_on_Journal</name>
+        <label>Is there a phone number on Journal?</label>
+        <locationX>314</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Is_there_a_Phone_Number_on_Account</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Journal Phone</defaultConnectorLabel>
+        <rules>
+            <name>Journal_Phone_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Phone_Formatted__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_there_an_email</targetReference>
+            </connector>
+            <label>Journal Phone Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_there_a_Phone_on_Person_1</name>
+        <label>Is there a Phone on Person 1?</label>
+        <locationX>699</locationX>
+        <locationY>755</locationY>
+        <defaultConnectorLabel>No Person 1 Phone</defaultConnectorLabel>
+        <rules>
+            <name>Person_1_Phone_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Person_1.person_telefonnummer__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Person_1_s_Phone_to_Variable</targetReference>
+            </connector>
+            <label>Person 1 Phone Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_there_a_Responsible_Lawyer_Name</name>
+        <label>Is there a Responsible Lawyer Name?</label>
+        <locationX>314</locationX>
+        <locationY>1631</locationY>
+        <defaultConnector>
+            <targetReference>Get_Responsible_Lawyer</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Responsible_Lawyer_Name_is_there</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Responsible_Lawyer_Name__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_there_a_Trustpilot_Customer_Name</targetReference>
+            </connector>
+            <label>Yes, Responsible Lawyer Name is there</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_there_a_Trustpilot_Customer_Name</name>
+        <label>Is there a Trustpilot Customer Name?</label>
+        <locationX>314</locationX>
+        <locationY>2039</locationY>
+        <defaultConnector>
+            <targetReference>Update_Journal_with_Trustpilot_Customer_Name</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_there_is_a_Trustpilot_Customer_Name</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Trustpilot_Customer_Name__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Which_Market_Unit</targetReference>
+            </connector>
+            <label>Yes, there is a Trustpilot Customer Name</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_there_an_email</name>
+        <label>Is there an email?</label>
+        <locationX>314</locationX>
+        <locationY>1331</locationY>
+        <defaultConnector>
+            <targetReference>Update_Journal_with_Email</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>There_is_an_email</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Email__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_there_a_Responsible_Lawyer_Name</targetReference>
+            </connector>
+            <label>There is an email</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Which_Market_Unit</name>
+        <label>Which Market Unit?</label>
+        <locationX>314</locationX>
+        <locationY>2339</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Denmark</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>DFJ_DK</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Testamente_DK</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Trustpilot_Request_DK</targetReference>
+            </connector>
+            <label>Denmark</label>
+        </rules>
+        <rules>
+            <name>Sweden</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>FA_SE</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Testamente_SV</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Trustpilot_Request_SE</targetReference>
+            </connector>
+            <label>Sweden</label>
+        </rules>
+    </decisions>
+    <description>Changed swedish sms text a bit, on request of Denis</description>
+    <environments>Default</environments>
+    <interviewLabel>Trustpilot: Journal Updated to &quot;Completed&quot; {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Trustpilot: Journal Updated to &quot;Completed&quot;</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_DocFab_Journal</name>
+        <label>Get DocFab Journal</label>
+        <locationX>699</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Person_1</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Journal__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>df_journal_dk_new__c</object>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Person_1</name>
+        <label>Get Person 1</label>
+        <locationX>699</locationX>
+        <locationY>647</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_there_a_Phone_on_Person_1</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>person_hidden_person_1__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>journal_dk_new__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_DocFab_Journal.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>df_160_person__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Responsible_Lawyer</name>
+        <label>Get Responsible Lawyer</label>
+        <locationX>402</locationX>
+        <locationY>1739</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Journal_with_Responsible_Lawyer_Name</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Responsible_Lawyer__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Set_a_Phone_Number</name>
+        <label>Set a Phone Number</label>
+        <locationX>501</locationX>
+        <locationY>1139</locationY>
+        <connector>
+            <targetReference>Is_there_an_email</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Phone__c</field>
+            <value>
+                <elementReference>varPhone</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Journal</name>
+        <label>Update Journal</label>
+        <locationX>314</locationX>
+        <locationY>2639</locationY>
+        <inputAssignments>
+            <field>Time_of_Trustpilot_Request__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Trustpilot_Request_Status__c</field>
+            <value>
+                <stringValue>Request sent</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Journal_with_Email</name>
+        <label>Update Journal with Email</label>
+        <locationX>402</locationX>
+        <locationY>1439</locationY>
+        <connector>
+            <targetReference>Is_there_a_Responsible_Lawyer_Name</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Email__c</field>
+            <value>
+                <elementReference>$Record.Account__r.PersonEmail</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Journal_with_Responsible_Lawyer_Name</name>
+        <label>Update Journal with Responsible Lawyer Name</label>
+        <locationX>402</locationX>
+        <locationY>1847</locationY>
+        <connector>
+            <targetReference>Is_there_a_Trustpilot_Customer_Name</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Responsible_Lawyer_Name__c</field>
+            <value>
+                <elementReference>Get_Responsible_Lawyer.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Journal_with_Trustpilot_Customer_Name</name>
+        <label>Update Journal with Trustpilot Customer Name</label>
+        <locationX>402</locationX>
+        <locationY>2147</locationY>
+        <connector>
+            <targetReference>Which_Market_Unit</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Trustpilot_Customer_Name__c</field>
+            <value>
+                <elementReference>$Record.Name__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_there_a_phone_number_on_Journal</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>1 AND 2 AND 3 AND 4 AND 5 AND (6 OR 7)</filterLogic>
+        <filters>
+            <field>Trustpilot_Reply_Result__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Trustpilot_Response__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Time_of_Trustpilot_Reply__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Time_of_Trustpilot_Request__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Trustpilot_Request_Status__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Reply received</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Journal_States__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>complete</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Journal_States__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Færdig ny process</stringValue>
+            </value>
+        </filters>
+        <object>Journal__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+    <textTemplates>
+        <name>DK_Trustpilot_Request</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Kære {!$Record.Name__c},
+
+Din sag hos Din Familiejurist er nu afsluttet. 
+Information omkring hvad du skal gøre for endeligt at gyldiggøre dine dokumenter, sendes på emailen {!$Record.Email__c}.
+
+Vi forsøger altid er dygtiggøre os og håber derfor at du vil tage dig et par sekunder, til at svare på om du har været tilfreds med din oplevelse hos Din Familiejurist.
+
+Svar JA hvis du er tilfreds
+Svar NEJ hvis du ikke er tilfreds.
+
+Alle deltagende, deltager i konkurrencen om et gavekort på 1.000 kr.
+
+Med ønsket om en dejlig dag.
+Din Familiejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>SE_Trustpilot_Request</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hej {!$Record.Name__c},
+
+Vi strävar alltid efter att förbättra oss och hoppas därför att du vill ta några sekunder för att svara på om du har varit nöjd med din upplevelse hos Din Familjejurist.
+
+Svara JA om du är nöjd.
+Svara NEJ om du inte är nöjd.
+
+Alla deltagare, deltar i tävlingen om ett presentkort på 1.500 kr.
+
+Med önskan om en fin dag.
+Din Familjejurist</text>
+    </textTemplates>
+    <variables>
+        <name>varPhone</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

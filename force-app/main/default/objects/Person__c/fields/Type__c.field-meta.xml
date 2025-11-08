@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Spouse 1</fullName>
+                <default>false</default>
+                <label>Spouse 1</label>
+            </value>
+            <value>
+                <fullName>Spouse 2</fullName>
+                <default>false</default>
+                <label>Spouse 2</label>
+            </value>
+            <value>
+                <fullName>First_Heir (legetar)</fullName>
+                <default>false</default>
+                <label>First_Heir (legetar)</label>
+            </value>
+            <value>
+                <fullName>Guardian 1</fullName>
+                <default>false</default>
+                <label>Guardian 1</label>
+            </value>
+            <value>
+                <fullName>Guardian 2</fullName>
+                <default>false</default>
+                <label>Guardian 2</label>
+            </value>
+            <value>
+                <fullName>Child</fullName>
+                <default>false</default>
+                <label>Child</label>
+            </value>
+            <value>
+                <fullName>Procurator</fullName>
+                <default>false</default>
+                <label>Procurator</label>
+            </value>
+            <value>
+                <fullName>Second_Heir (legatar)</fullName>
+                <default>false</default>
+                <label>Second_Heir (legatar)</label>
+            </value>
+            <value>
+                <fullName>Unwanted Guardian</fullName>
+                <default>false</default>
+                <label>Unwanted Guardian</label>
+            </value>
+            <value>
+                <fullName>Heir (legetar)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Heir (legetar)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

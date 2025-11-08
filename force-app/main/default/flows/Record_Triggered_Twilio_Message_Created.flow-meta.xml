@@ -1,0 +1,1738 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Find_All_Keyword_Matches</name>
+        <label>Find All Keyword Matches</label>
+        <locationX>1639</locationX>
+        <locationY>647</locationY>
+        <actionName>KeywordMatchAction</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>What_is_the_Conversation_Type</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>$Record.TwilioSF__Body__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>keywords</name>
+            <value>
+                <elementReference>SmsConversation.Valid_Keywords__c</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>KeywordMatchAction</nameSegment>
+        <outputParameters>
+            <assignToReference>MatchedKeywords</assignToReference>
+            <name>matchedKeywords</name>
+        </outputParameters>
+    </actionCalls>
+    <apiVersion>58.0</apiVersion>
+    <assignments>
+        <description>0046766753111</description>
+        <name>Assign_Danish_Out_of_Flow_Values</name>
+        <label>Assign Danish Out of Flow Values</label>
+        <locationX>2563</locationX>
+        <locationY>755</locationY>
+        <assignmentItems>
+            <assignToReference>SmsBodyOutOfFlow</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DanishOutOfFlowMessage</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>0046766753111</description>
+        <name>Assign_Danish_Values</name>
+        <label>Assign Danish Values</label>
+        <locationX>897</locationX>
+        <locationY>1379</locationY>
+        <assignmentItems>
+            <assignToReference>CallCampaignName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DanishCallCampaign</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SmsBodyDanish</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Latest_Response_Evaluation_on_SMS_Conversation</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Invalid_or_Missing_Conversation_Type_Values</name>
+        <label>Populate Custom Error with Invalid or Missing Conversation Type Values</label>
+        <locationX>2035</locationX>
+        <locationY>863</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Invalid or Missing Conversation Type &quot;{!SmsConversation.Conversation_Type__c}&quot;</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Invalid_or_Missing_Market_Unit_values_WIP</name>
+        <label>Assign Invalid or Missing Market Unit values (WIP)</label>
+        <locationX>3355</locationX>
+        <locationY>755</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.ActiveStages</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Invalid_Response_Values</name>
+        <label>Assign Invalid Response Values</label>
+        <locationX>1425</locationX>
+        <locationY>1853</locationY>
+        <assignmentItems>
+            <assignToReference>SmsConversation.Number_of_Invalid_Responses__c</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SmsConversation.Response_Evaluation__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Invalid</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>AL_Send_Twilio_SMS</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Irish_Out_of_Flow_Values_NOT_YET_SUPPORTED</name>
+        <label>Assign Irish Out of Flow Values (NOT YET SUPPORTED)</label>
+        <locationX>3091</locationX>
+        <locationY>755</locationY>
+        <assignmentItems>
+            <assignToReference>SmsBodyOutOfFlow</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assign_Swedish_Out_of_Flow_Values</name>
+        <label>Assign Swedish Out of Flow Values</label>
+        <locationX>2827</locationX>
+        <locationY>755</locationY>
+        <assignmentItems>
+            <assignToReference>SmsBodyOutOfFlow</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SwedishOutOfFlowMessage</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assign_Swedish_Values</name>
+        <label>Assign Swedish Values</label>
+        <locationX>1161</locationX>
+        <locationY>1379</locationY>
+        <assignmentItems>
+            <assignToReference>CallCampaignName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SwedishCallCampaign</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SmsBodySwedish</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Latest_Response_Evaluation_on_SMS_Conversation</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Valid_Response_Values_to_SMS_Conversation</name>
+        <label>Assign Valid Response Values to SMS Conversation</label>
+        <locationX>1161</locationX>
+        <locationY>1853</locationY>
+        <assignmentItems>
+            <assignToReference>SmsConversation.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Closed</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SmsConversation.Response_Evaluation__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Valid</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>AL_Send_Twilio_SMS</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>NOT_YET_SUPPORTED_Asign_Irish_Values</name>
+        <label>NOT YET SUPPORTED: Asign Irish Values</label>
+        <locationX>1425</locationX>
+        <locationY>1379</locationY>
+        <assignmentItems>
+            <assignToReference>CallCampaignName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>IrishCallCampaign</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SmsBodyIrish</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_Flow_Fault_Message</name>
+        <label>Populate Custom Error with Flow Fault Message</label>
+        <locationX>2299</locationX>
+        <locationY>755</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_Unsuccessful_Keyword_Parse_Values_WIP</name>
+        <label>Populate Custom Error with Unsuccessful Keyword Parse Values(WIP)</label>
+        <locationX>1986</locationX>
+        <locationY>1271</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.ActiveStages</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Error_with_Invalid_Received_At_Number</name>
+        <label>Populate Error with Invalid &quot;Received At&quot; Number</label>
+        <locationX>1689</locationX>
+        <locationY>1379</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Invalid Received At Number: &quot;{!$Record.TwilioSF__From_Number__c}&quot;</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Form_Submission</name>
+        <label>Populate Form Submission</label>
+        <locationX>446</locationX>
+        <locationY>2825</locationY>
+        <assignmentItems>
+            <assignToReference>FormSubmission.Account__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SmsConversation.Account__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>FormSubmission.Comments__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.TwilioSF__Body__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>FormSubmission.Lead__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SmsConversation.Lead__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>FormSubmission.Contact__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SmsConversation.Contact__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Form_Submission</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Form_Submission_with_Referral_Values</name>
+        <label>Populate Form Submission with Referral Values</label>
+        <locationX>1507</locationX>
+        <locationY>863</locationY>
+        <assignmentItems>
+            <assignToReference>FormSubmission.Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Referral</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>FormSubmission.Source__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Journal Completed Survey</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>DanishCallCampaign</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Denmark: Post-Sale Reference</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SwedishCallCampaign</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Sweden: Post-Sale Reference</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>IrishCallCampaign</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Ireland: Post-Sale Reference</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>AL_Parse_SMS_Reply_Reference_Invitation_X_Days_After_Journal_Finalization</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Form_Submission_with_Review_Values</name>
+        <label>Populate Form Submission with Review Values</label>
+        <locationX>1243</locationX>
+        <locationY>863</locationY>
+        <assignmentItems>
+            <assignToReference>FormSubmission.Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Customer Satisfaction Survey</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>FormSubmission.Source__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Journal Completed Survey</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>DanishCallCampaign</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Denmark: Customer Care (Account)</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SwedishCallCampaign</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Sweden: Customer Care (Account)</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>IrishCallCampaign</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Ireland: Customer Care (Account)</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>AL_Parse_SMS_Reply_Journal_Completed_Satisfaction_Survey</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Latest_Response_Evaluation_on_SMS_Conversation</name>
+        <label>Set Latest Response Evaluation on SMS Conversation</label>
+        <locationX>1293</locationX>
+        <locationY>1637</locationY>
+        <assignmentItems>
+            <assignToReference>SmsConversation.Latest_Response_Evaluation__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.TwilioSF__Date_Sent__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Was_the_Response_Valid</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Did_Keyword_Response_Parse_Succeed</name>
+        <label>Did Keyword Response Parse Succeed?</label>
+        <locationX>1639</locationX>
+        <locationY>1163</locationY>
+        <defaultConnector>
+            <targetReference>Populate_Custom_Error_with_Unsuccessful_Keyword_Parse_Values_WIP</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Keywords_Parsed_Successfully</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsSmsParseSubflowSuccess</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Which_Number_Did_We_Receive_the_Message_on</targetReference>
+            </connector>
+            <label>Keywords Parsed Successfully</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Did_SMS_Send_Subflow_Succeed</name>
+        <label>Did SMS Send Subflow Succeed?</label>
+        <locationX>1293</locationX>
+        <locationY>2153</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SMS_Send_Succeeded</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsSmsSendSubflowSuccess</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Should_We_Continue_Processing_Valid_Response</targetReference>
+            </connector>
+            <label>SMS Send Succeeded</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Did_We_Find_an_SMS_Conversation</name>
+        <label>Did We Find an SMS Conversation?</label>
+        <locationX>2299</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>Which_Out_of_Flow_Response_Should_We_Assign</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Open_SMS_Conversation_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsSmsConversationFound</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Find_All_Keyword_Matches</targetReference>
+            </connector>
+            <label>Open SMS Conversation Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Do_We_Have_an_Account</name>
+        <label>Do We Have an Account?</label>
+        <locationX>446</locationX>
+        <locationY>2369</locationY>
+        <defaultConnector>
+            <targetReference>Populate_Form_Submission</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Got_Account</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>SmsConversation.Account__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Call_Campaign</targetReference>
+            </connector>
+            <label>Got Account</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Should_We_Continue_Processing_Valid_Response</name>
+        <label>Should We Continue Processing Valid Response?</label>
+        <locationX>864</locationX>
+        <locationY>2261</locationY>
+        <defaultConnector>
+            <targetReference>Update_SMS_Conversation</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Don&apos;t Process Invalid Response</defaultConnectorLabel>
+        <rules>
+            <name>Process_Valid_Response</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>IsResponseValid</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Do_We_Have_an_Account</targetReference>
+            </connector>
+            <label>Process Valid Response</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Was_SMS_Conversation_Subflow_Successful</name>
+        <label>Was SMS Conversation Subflow Successful?</label>
+        <locationX>2959</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SMS_Conversation_Subflow_Success</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsSmsConversationSubflowSuccess</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Did_We_Find_an_SMS_Conversation</targetReference>
+            </connector>
+            <label>SMS Conversation Subflow Success</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Was_the_Response_Valid</name>
+        <label>Was the Response Valid?</label>
+        <locationX>1293</locationX>
+        <locationY>1745</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Invalid_Response_Values</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Keyword_Response_was_Valid</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsResponseValid</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Valid_Response_Values_to_SMS_Conversation</targetReference>
+            </connector>
+            <label>Keyword Response was Valid</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>What_is_the_Conversation_Type</name>
+        <label>What is the Conversation Type?</label>
+        <locationX>1639</locationX>
+        <locationY>755</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Invalid_or_Missing_Conversation_Type_Values</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Review_Conversation</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>SmsConversation.Conversation_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Get Review</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_Form_Submission_with_Review_Values</targetReference>
+            </connector>
+            <label>Review Conversation</label>
+        </rules>
+        <rules>
+            <name>Reference_Conversation</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>SmsConversation.Conversation_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Get Reference</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_Form_Submission_with_Referral_Values</targetReference>
+            </connector>
+            <label>Reference Conversation</label>
+        </rules>
+        <rules>
+            <name>Book_Lecture_Conversation</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>SmsConversation.Conversation_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Book Lecture</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <isGoTo>true</isGoTo>
+                <targetReference>Assign_Invalid_or_Missing_Conversation_Type_Values</targetReference>
+            </connector>
+            <label>Book Lecture Conversation</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>+4581827570 // +46766753111 // Awaiting Irish Number</description>
+        <name>Which_Number_Did_We_Receive_the_Message_on</name>
+        <label>Which Number Did We Receive the Message on?</label>
+        <locationX>1293</locationX>
+        <locationY>1271</locationY>
+        <defaultConnector>
+            <targetReference>Populate_Error_with_Invalid_Received_At_Number</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Received_on_Danish_Number</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.TwilioSF__To_Number__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>+4581827570</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Danish_Values</targetReference>
+            </connector>
+            <label>Received on Danish Number</label>
+        </rules>
+        <rules>
+            <name>Received_on_Swedish_Number</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.TwilioSF__To_Number__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>+46766753111</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Swedish_Values</targetReference>
+            </connector>
+            <label>Received on Swedish Number</label>
+        </rules>
+        <rules>
+            <name>Received_on_Irish_Number</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.TwilioSF__To_Number__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>NOT_YET_SUPPORTED_Asign_Irish_Values</targetReference>
+            </connector>
+            <label>Received on Irish Number</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>+4581827570 // +46766753111</description>
+        <name>Which_Out_of_Flow_Response_Should_We_Assign</name>
+        <label>Which Out of Flow Response Should We Assign?</label>
+        <locationX>2959</locationX>
+        <locationY>647</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Invalid_or_Missing_Market_Unit_values_WIP</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Set_Danish_Out_of_Flow_Response</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.TwilioSF__To_Number__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>+4581827570</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Danish_Out_of_Flow_Values</targetReference>
+            </connector>
+            <label>Set Danish Out of Flow Response</label>
+        </rules>
+        <rules>
+            <name>Set_Swedish_Out_of_Flow_Response</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.TwilioSF__To_Number__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>+46766753111</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Swedish_Out_of_Flow_Values</targetReference>
+            </connector>
+            <label>Set Swedish Out of Flow Response</label>
+        </rules>
+        <rules>
+            <name>Set_Irish_Out_of_Flow_Response</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.TwilioSF__To_Number__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Irish_Out_of_Flow_Values_NOT_YET_SUPPORTED</targetReference>
+            </connector>
+            <label>Set Irish Out of Flow Response</label>
+        </rules>
+    </decisions>
+    <description>Drastically simplified the flow and made it instead update the Journal&apos;s Account with a Call Campaign</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>TodayPlus7Days</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()+7</expression>
+    </formulas>
+    <formulas>
+        <name>TrimmedSms</name>
+        <dataType>String</dataType>
+        <expression>LEFT( {!$Record.TwilioSF__Body__c}, 255 )</expression>
+    </formulas>
+    <interviewLabel>Record-Triggered: Twilio Message Created {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Record-Triggered: Twilio Message Created</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Form_Submission</name>
+        <label>Create Form Submission</label>
+        <locationX>446</locationX>
+        <locationY>2933</locationY>
+        <connector>
+            <targetReference>Update_SMS_Conversation</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <inputReference>FormSubmission</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Call_Campaign</name>
+        <label>Get Call Campaign</label>
+        <locationX>50</locationX>
+        <locationY>2477</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Account</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CallCampaignName</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>telegenta__Campaign__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Account</name>
+        <label>Update Account</label>
+        <locationX>50</locationX>
+        <locationY>2585</locationY>
+        <connector>
+            <targetReference>Populate_Form_Submission</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>SmsConversation.Account__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Call_Campaign__pc</field>
+            <value>
+                <elementReference>Get_Call_Campaign.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_SMS_Conversation</name>
+        <label>Update SMS Conversation</label>
+        <locationX>864</locationX>
+        <locationY>3173</locationY>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <inputReference>SmsConversation</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>2833</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>AL_Check_Output_SMS_Conversation_Information</targetReference>
+        </connector>
+        <filterLogic>1 AND (2 OR 3)</filterLogic>
+        <filters>
+            <field>TwilioSF__Direction__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>inbound</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>TwilioSF__To_Number__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>+4581827570</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>TwilioSF__To_Number__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>+46766753111</stringValue>
+            </value>
+        </filters>
+        <object>TwilioSF__Message__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+    <subflows>
+        <name>AL_Check_Output_SMS_Conversation_Information</name>
+        <label>AL - Check &amp; Output SMS Conversation Information</label>
+        <locationX>2959</locationX>
+        <locationY>323</locationY>
+        <connector>
+            <targetReference>Was_SMS_Conversation_Subflow_Successful</targetReference>
+        </connector>
+        <flowName>AL_Check_Output_SMS_Conversation_Information</flowName>
+        <inputAssignments>
+            <name>inputPhoneNumber</name>
+            <value>
+                <elementReference>$Record.TwilioSF__From_Number__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>recordId</name>
+            <value>
+                <elementReference>$Record.TwilioSF__SF_Parent_Record_Id__c</elementReference>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>CountOfOpenConversations</assignToReference>
+            <name>CountOfOpenConversations</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>CustomError</assignToReference>
+            <name>CustomError</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>IsSmsConversationFound</assignToReference>
+            <name>IsSmsConversationFound</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>IsSmsConversationSubflowSuccess</assignToReference>
+            <name>IsSuccess</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>ToEmail</assignToReference>
+            <name>outputEmail</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>FirstName</assignToReference>
+            <name>outputFirstName</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>LastName</assignToReference>
+            <name>outputLastName</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>ToNumber</assignToReference>
+            <name>outputPhone</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>SmsConversation</assignToReference>
+            <name>outputSmsConversation</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>SmsConversationCollection</assignToReference>
+            <name>outputSmsConversationCollection</name>
+        </outputAssignments>
+    </subflows>
+    <subflows>
+        <name>AL_Parse_SMS_Reply_Journal_Completed_Satisfaction_Survey</name>
+        <label>AL - Parse SMS Reply: Journal Completed Satisfaction Survey</label>
+        <locationX>1243</locationX>
+        <locationY>971</locationY>
+        <connector>
+            <targetReference>Did_Keyword_Response_Parse_Succeed</targetReference>
+        </connector>
+        <flowName>AL_Parse_SMS_Reply_Journal_Completed_Satisfaction_Survey</flowName>
+        <inputAssignments>
+            <name>inputEmail</name>
+            <value>
+                <elementReference>ToEmail</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputFirstName</name>
+            <value>
+                <elementReference>FirstName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputLastName</name>
+            <value>
+                <elementReference>LastName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputMatchedKeywordCollection</name>
+            <value>
+                <elementReference>MatchedKeywords</elementReference>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>IsSmsParseSubflowSuccess</assignToReference>
+            <name>IsSuccess</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>SmsBodyDanish</assignToReference>
+            <name>outputDanishSms</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>SmsBodyIrish</assignToReference>
+            <name>outputIrishSms</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>IsResponseValid</assignToReference>
+            <name>outputIsResponseValid</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>SurveyResult</assignToReference>
+            <name>outputSurveyResult</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>SmsBodySwedish</assignToReference>
+            <name>outputSwedishSms</name>
+        </outputAssignments>
+    </subflows>
+    <subflows>
+        <name>AL_Parse_SMS_Reply_Reference_Invitation_X_Days_After_Journal_Finalization</name>
+        <label>AL - Parse SMS Reply: Reference Invitation X Days After Journal Finalization</label>
+        <locationX>1507</locationX>
+        <locationY>971</locationY>
+        <connector>
+            <targetReference>Did_Keyword_Response_Parse_Succeed</targetReference>
+        </connector>
+        <flowName>AL_Parse_SMS_Reply_Reference_Invitation_X_Days_After_Journal_Finalization</flowName>
+        <inputAssignments>
+            <name>inputEmail</name>
+            <value>
+                <elementReference>ToEmail</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputFirstName</name>
+            <value>
+                <elementReference>FirstName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputLastName</name>
+            <value>
+                <elementReference>LastName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputMatchedKeywordCollection</name>
+            <value>
+                <elementReference>MatchedKeywords</elementReference>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>IsSmsParseSubflowSuccess</assignToReference>
+            <name>IsSuccess</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>SmsBodyDanish</assignToReference>
+            <name>outputDanishSms</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>SmsBodyIrish</assignToReference>
+            <name>outputIrishSms</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>IsResponseValid</assignToReference>
+            <name>outputIsResponseValid</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>SurveyResult</assignToReference>
+            <name>outputSurveyResult</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>SmsBodySwedish</assignToReference>
+            <name>outputSwedishSms</name>
+        </outputAssignments>
+    </subflows>
+    <subflows>
+        <name>AL_Send_Error_Email_from_Input_Values</name>
+        <label>AL - Send Error Email from Input Values</label>
+        <locationX>2299</locationX>
+        <locationY>863</locationY>
+        <flowName>AL_Send_Error_Email_from_Input_Values</flowName>
+        <inputAssignments>
+            <name>inputCustomError</name>
+            <value>
+                <elementReference>CustomError</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputFlowName</name>
+            <value>
+                <stringValue>Record-Triggered: Twilio Message Created</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <subflows>
+        <name>AL_Send_Twilio_SMS</name>
+        <label>AL - Send Twilio SMS</label>
+        <locationX>1293</locationX>
+        <locationY>2045</locationY>
+        <connector>
+            <targetReference>Did_SMS_Send_Subflow_Succeed</targetReference>
+        </connector>
+        <flowName>AL_Send_Twilio_SMS</flowName>
+        <inputAssignments>
+            <name>inputFromNumber</name>
+            <value>
+                <stringValue>+4581827570</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputIsUsingDefaultNumber</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputMarketUnit</name>
+            <value>
+                <elementReference>SmsConversation.Market_Unit__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputMessage</name>
+            <value>
+                <elementReference>SmsBody</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputSendUsingMessagingService</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputSendUsingSenderId</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputToNumber</name>
+            <value>
+                <elementReference>$Record.TwilioSF__From_Number__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>recordId</name>
+            <value>
+                <elementReference>SmsConversation.Related_Record_ID__c</elementReference>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>CustomError</assignToReference>
+            <name>CustomError</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>IsSmsSendSubflowSuccess</assignToReference>
+            <name>IsSuccess</name>
+        </outputAssignments>
+    </subflows>
+    <textTemplates>
+        <name>DanishInvalidResponseMessage</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Kære {!$Record.TwilioSF__Contact__r.FirstName},
+
+Tusind tak for din besvarelse.
+
+Vi har dog ikke helt kunnet tolke dit svar - Vores system regnede med at modtage et &quot;ja&quot; eller &quot;nej&quot; på vores tilfredshedsundersøgelse og kunne ikke med sikkerhed regne ud om du var tilfreds eller utilfreds.
+Systemet forstår kun 
+
+&quot;JA&quot; 
+og 
+&quot;NEJ&quot;
+
+Vi vil stadig rigtig gerne høre fra dig - besvar meget gerne denne sms med enten &quot;JA&quot;, hvis du er tilfreds eller &quot;NEJ&quot;, hvis du ikke er tilfreds. 
+
+Med venlig hilsen,
+Din Familiejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>DanishOutOfFlowMessage</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Kære {!$Record.TwilioSF__Contact__r.FirstName},
+
+Vi har netop modtaget en SMS fra dig, på dette nummer.
+Dette nummer bruges dog udelukkende til tilfredshedsundersøgelser og bliver ikke monitoreret.
+
+Da der ikke er en igangværende tilfredshedsundersøgelse forbundet med dit telefonnummer hos os, kan du ikke kommunikere med os på dette nummer.
+
+Ønsker du at komme i kontakt med os? Så tag venligst fat i os enten på
+Email: kontakt@dinfamiliejurist.dk
+
+eller
+
+Telefon: 70 30 55 70
+
+Hav en fortsat god dag.
+Med venlig hilsen,
+Din Familiejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>DanishSatisfiedMessage</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Kære {!$Record.TwilioSF__Contact__r.FirstName},
+
+Det glæder os meget at du er tilfreds! 
+Hvis du har tid og lyst, ville vi blive så glade, hvis du vil give os en anmeldelse på Trustpilot. 
+
+Du modtager inden længe en mail med en invitation til Trustpilot på emailen {!$Record.TwilioSF__Contact__r.Email}.
+
+Såfremt du lægger en anmeldelse, fordobler du din chance for at vinde gavekortet på 1.000 kr.!
+
+Hav en fortsat god dag.
+Med venlig hilsen,
+Din Familiejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>DanishUnsatisfiedMessage</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Kære {!$Record.TwilioSF__Contact__r.FirstName},
+
+Vi er kede af at høre at du ikke har været tilfreds med din oplevelse. 
+Hvis du er interesseret, og ikke allerede har været i dialog med os omkring det, vil vi rigtig gerne høre nærmere omkring hvad du mener kunne have været bedre.
+
+Vi forsøger altid at forbedre os og ved godt at vi ikke rammer rigtigt hver gang - men med din feedback, håber vi at kunne forbedre os.
+
+Du er meget velkommen til at skrive til os på feedback@dinfamiliejurist.dk og fortælle om din oplevelse - og hvis der er noget du mener vi stadig kan nå at gøre, for at løse situationen.
+
+Hav en god dag.
+
+Med venlig hilsen,
+Din Familiejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>rtEmailBody</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;An Error in the &lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Twilio Message Created flow, handling incoming satisfied/unsatisfied responses.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Record Info:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://dfj.lightning.force.com/lightning/r/{!$Record.Id}/view&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Link to Record&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Custom Error Message:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!CustomError}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;This email is being sent from the flow &quot;Record-Triggered: Twilio Message Created&quot;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>SwedishInvalidResponseMessage</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hej {!$Record.TwilioSF__Contact__r.FirstName},
+
+Tusen tack för ditt svar.
+
+Vi har dock inte riktigt kunnat tolka ditt svar - vårt system förväntade sig att få ett &quot;ja&quot; eller &quot;nej&quot; på vår kundnöjdhetsundersökning och kunde inte med säkerhet avgöra om du var nöjd eller missnöjd.
+Systemet förstår endast
+
+&quot;JA&quot;
+och
+&quot;NEJ&quot;
+
+Vi vill fortfarande väldigt gärna höra från dig - svara gärna på detta sms med antingen &quot;JA&quot;, om du är nöjd eller &quot;NEJ&quot;, om du inte är nöjd.
+
+Med vänliga hälsningar,
+Din Familjejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>SwedishOutOfFlowMessage</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hej {!$Record.TwilioSF__Contact__r.FirstName},
+
+Vi har just mottagit ett SMS från dig, på detta nummer. Detta nummer används dock uteslutande för kundnöjdhetundersökningar och övervakas inte.
+
+Eftersom det inte finns en pågående kundnöjdhetundersökning kopplad till ditt telefonnummer hos oss, kan du inte kommunicera med oss på detta nummer.
+
+Önskar du att komma i kontakt med oss? Vänligen kontakta oss antingen på
+E-post: kontakt@dinfamiljejurist.nu
+
+eller
+
+Telefon: +46 (0)40-6060690
+
+Ha en fortsatt trevlig dag.
+Med vänliga hälsningar,
+Din Familjejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>SwedishSatisfiedMessage</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hej {!$Record.TwilioSF__Contact__r.FirstName},
+
+Vi är mycket glada över att du är nöjd!
+Om du har tid och lust, skulle vi bli så glada om du vill ge oss en recension på Trustpilot.
+
+Du kommer inom kort att få ett mail med en inbjudan till Trustpilot till e-postadressen {!$Record.TwilioSF__Contact__r.Email}.
+
+Om du lägger upp en recension, dubblar du din chans att vinna presentkortet på 1.500 kr.!
+
+Ha en fortsatt bra dag.
+Med vänliga hälsningar,
+Din Familjejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>SwedishUnsatisfiedMessage</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hej {!$Record.TwilioSF__Contact__r.FirstName},
+
+Vi är ledsna att höra att du inte har varit nöjd med din upplevelse.
+Om du är intresserad, och inte redan har varit i dialog med oss om det, skulle vi verkligen uppskatta att höra mer om vad du tycker kunde ha varit bättre.
+
+Vi försöker alltid förbättra oss och vet att vi inte alltid träffar rätt - men med din feedback hoppas vi kunna bli bättre.
+
+Du är mycket välkommen att skriva till oss på feedback@dinfamiliejurist.dk och berätta om din upplevelse - och om det är något du anser att vi fortfarande kan göra för att lösa situationen.
+
+Ha en bra dag.
+
+Med vänliga hälsningar,
+Din Familjejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Trustpilot_flow_failed_email_template</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>The flow &quot;Trustpilot: SMS Reply Received&quot; just failed, because we couldn&apos;t find a contact on the incoming message, which is a requirement for the flow to run. 
+
+Twilio Message Record ID: {!$Record.Id}
+Sender Number (The customer&apos;s number): {!$Record.TwilioSF__From_Number__c}
+To Number (Our number): {!$Record.TwilioSF__To_Number__c}
+Parent Record ID: {!$Record.TwilioSF__SF_Parent_Record_Id__c}
+Take a look asap and fix whatever is causing the error.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtSmsForMathias</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>SMS without Contact received.
+From: {!$Record.TwilioSF__From_Number__c}
+To: {!$Record.TwilioSF__To_Number__c}
+Body: 
+{!$Record.TwilioSF__Body__c}</text>
+    </textTemplates>
+    <variables>
+        <name>CallCampaignName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>CountOfOpenConversations</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>CountryManagerRoleName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Currency</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>CustomerName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>CustomError</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>DanishCallCampaign</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>EmailBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>EmailSubject</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FirstName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FormSubmission</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Form_Submission__c</objectType>
+    </variables>
+    <variables>
+        <name>FromEmail</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FromNumber</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>IrishCallCampaign</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>IsOutOfFlow</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>IsResponseValid</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>IsSatisfied</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>IsSmsConversationFound</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>IsSmsConversationSubflowSuccess</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>IsSmsParseSubflowSuccess</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>IsSmsSendSubflowSuccess</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>IsUnsatisfied</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>JournalID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>LastName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>MatchedKeywords</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>MeetingBookerGroupName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>NoteBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>NoteTitle</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>OppNote</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Opportunity</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <name>OpportunityCategory</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>OpportunityName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>OppOwnerId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>OppShare</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>OpportunityShare</objectType>
+    </variables>
+    <variables>
+        <name>OppShareCollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>OpportunityShare</objectType>
+    </variables>
+    <variables>
+        <name>OrderShare</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>OrderShare</objectType>
+    </variables>
+    <variables>
+        <name>PriceBookName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Satisfied</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SenderType</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SmsBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SmsBodyDanish</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SmsBodyIrish</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SmsBodyOutOfFlow</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SmsBodySatisfied</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SmsBodySwedish</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SmsBodyUnsatisfied</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SmsConversation</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>SMS_Conversation__c</objectType>
+    </variables>
+    <variables>
+        <name>SmsConversationCollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>SMS_Conversation__c</objectType>
+    </variables>
+    <variables>
+        <name>SurveyResult</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SwedishCallCampaign</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ToEmail</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ToNumber</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Unsatisfied</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

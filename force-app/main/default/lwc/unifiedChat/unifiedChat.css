@@ -1,0 +1,681 @@
+/* Main Container */
+.unified-chat-container {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+}
+
+/* Loading Overlay */
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Composer Panel - Now at the top */
+.composer-section {
+    flex-shrink: 0;
+}
+
+.composer-input {
+    margin-bottom: 1rem;
+}
+
+.composer-input .slds-rich-text-editor {
+    min-height: 100px;
+}
+
+.composer-editor {
+    --slds-c-input-color-border: var(--slds-g-color-border-base-1);
+    --slds-c-input-radius-border: 0.5rem;
+    --slds-c-input-color-background: var(--slds-g-color-neutral-base-100);
+    --slds-c-input-color-background-focus: var(--slds-g-color-neutral-base-100);
+    --slds-c-textarea-color-background: var(--slds-g-color-neutral-base-100);
+    --slds-c-textarea-color-background-focus: var(--slds-g-color-neutral-base-100);
+}
+
+/* Fix rich text editor specific styling */
+.composer-editor lightning-input-rich-text {
+    --slds-c-rich-text-editor-color-background: var(--slds-g-color-neutral-base-100);
+    --slds-c-rich-text-editor-color-border: var(--slds-g-color-border-base-1);
+}
+
+/* Embedded images in rich text editor */
+.composer-editor lightning-input-rich-text img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.25rem;
+    margin: 0.25rem 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.composer-attachments {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+.file-upload-section {
+    flex: 1;
+}
+
+.file-input {
+    --slds-c-input-color-border: var(--slds-g-color-border-base-1);
+    --slds-c-input-color-background: var(--slds-g-color-neutral-base-100);
+}
+
+/* Selected Files */
+.selected-files {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.selected-file-item {
+    display: flex;
+    align-items: center;
+    background-color: var(--slds-g-color-neutral-base-95);
+    border: 1px solid var(--slds-g-color-border-base-1);
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+}
+
+.file-name {
+    font-weight: 500;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.file-size {
+    color: var(--slds-g-color-neutral-base-40);
+}
+
+.remove-file-btn {
+    --slds-c-button-color-background: transparent;
+    --slds-c-button-color-border: transparent;
+}
+
+/* Composer Actions */
+.composer-actions {
+    flex-shrink: 0;
+}
+
+.send-button {
+    min-width: 80px;
+}
+
+/* Conversation History - Now takes remaining space */
+.conversation-history {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    background-color: var(--slds-g-color-neutral-base-95);
+    scroll-behavior: smooth;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.conversation-history::-webkit-scrollbar {
+    width: 8px;
+}
+
+.conversation-history::-webkit-scrollbar-track {
+    background: var(--slds-g-color-neutral-base-90);
+}
+
+.conversation-history::-webkit-scrollbar-thumb {
+    background-color: var(--slds-g-color-neutral-base-60);
+    border-radius: 4px;
+}
+
+.conversation-history::-webkit-scrollbar-thumb:hover {
+    background-color: var(--slds-g-color-neutral-base-50);
+}
+
+/* Typing Indicator */
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--slds-g-color-neutral-base-90);
+    border-radius: 1rem;
+    max-width: 200px;
+    opacity: 0.8;
+}
+
+.typing-dots {
+    display: flex;
+    gap: 0.2rem;
+    margin-right: 0.5rem;
+}
+
+.typing-dots span {
+    width: 6px;
+    height: 6px;
+    background-color: var(--slds-g-color-neutral-base-40);
+    border-radius: 50%;
+    animation: typing-bounce 1.4s infinite ease-in-out;
+}
+
+.typing-dots span:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.typing-dots span:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+.typing-text {
+    font-size: 0.75rem;
+    color: var(--slds-g-color-neutral-base-30);
+    font-style: italic;
+}
+
+@keyframes typing-bounce {
+    0%, 80%, 100% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Empty State */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    text-align: center;
+    padding: 2rem;
+    color: #706e6b;
+}
+
+.empty-icon {
+    margin-bottom: 1rem;
+    opacity: 0.6;
+}
+
+.empty-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--slds-g-color-neutral-base-10);
+    margin-bottom: 0.5rem;
+}
+
+.empty-description {
+    color: var(--slds-g-color-neutral-base-30);
+    font-size: 0.875rem;
+}
+
+/* Message Items */
+.message-item {
+    display: flex;
+    margin-bottom: 1rem;
+    word-wrap: break-word;
+    max-width: 100%;
+    animation: message-appear-top 0.3s ease-out;
+}
+
+@keyframes message-appear-top {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message-item.current-user {
+    justify-content: flex-end;
+}
+
+.message-item.current-user .message-content {
+    background-color: var(--slds-g-color-brand-base-20);
+    color: #ffffff;
+}
+
+.message-item.other-user {
+    justify-content: flex-start;
+}
+
+.message-item.other-user .message-content {
+    background-color: var(--slds-g-color-neutral-base-100);
+    color: var(--slds-g-color-neutral-base-10);
+}
+
+/* Message Avatar */
+.message-avatar {
+    flex-shrink: 0;
+    margin-right: 0.75rem;
+}
+
+.message-item.current-user .message-avatar {
+    order: 2;
+    margin-right: 0;
+    margin-left: 0.75rem;
+}
+
+.avatar-initials {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: var(--slds-g-color-brand-base-80);
+    color: var(--slds-g-color-neutral-base-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+/* Message Content */
+.message-content {
+    max-width: 85%;
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.message-item.current-user .message-content {
+    border-bottom-right-radius: 0.25rem;
+}
+
+.message-item.other-user .message-content {
+    border-bottom-left-radius: 0.25rem;
+}
+
+/* Message Header */
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.25rem;
+    font-size: 0.75rem;
+}
+
+.message-author {
+    font-weight: 600;
+    color: var(--slds-g-color-neutral-base-30);
+}
+
+.message-timestamp {
+    color: var(--slds-g-color-neutral-base-40);
+    font-size: 0.75rem;
+}
+
+/* Override header colors for current user messages */
+.message-item.current-user .message-header .message-author {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.message-item.current-user .message-header .message-timestamp {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Message Body */
+.message-body {
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.message-body lightning-formatted-rich-text {
+    --slds-c-formatted-text-color-text: inherit;
+}
+
+/* Force white text for current user messages */
+.message-item.current-user .message-body {
+    color: #ffffff !important;
+}
+
+.message-item.current-user .message-body lightning-formatted-rich-text {
+    --slds-c-formatted-text-color-text: #ffffff !important;
+    color: #ffffff !important;
+}
+
+/* Ensure all text elements inside current user messages are white */
+.message-item.current-user .message-content,
+.message-item.current-user .message-content * {
+    color: #ffffff !important;
+}
+
+/* Embedded images in message content */
+.message-body lightning-formatted-rich-text img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.25rem;
+    margin: 0.25rem 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.message-body lightning-formatted-rich-text img:hover {
+    transform: scale(1.02);
+}
+
+/* Message Attachments */
+.message-attachments {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.attachment-item {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 1px solid var(--slds-g-color-border-base-1);
+}
+
+.attachment-image {
+    position: relative;
+}
+
+.attachment-thumbnail {
+    max-width: 200px;
+    max-height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.attachment-thumbnail:hover {
+    opacity: 0.9;
+}
+
+.attachment-file {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: var(--slds-g-color-neutral-base-95);
+    gap: 0.5rem;
+}
+
+.attachment-icon {
+    flex-shrink: 0;
+}
+
+.attachment-link {
+    color: var(--slds-g-color-brand-base-10);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.attachment-link:hover {
+    text-decoration: underline;
+}
+
+.attachment-size {
+    color: var(--slds-g-color-neutral-base-40);
+    font-size: 0.75rem;
+}
+
+/* Image Modal */
+.modal-image {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .unified-chat-container {
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+    
+    .message-content {
+        max-width: 90%;
+    }
+    
+    .composer-attachments {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .composer-actions {
+        align-self: flex-end;
+        margin-top: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .conversation-history {
+        padding: 0.5rem;
+    }
+    
+    .composer-section {
+        padding: 0.5rem;
+    }
+    
+    .message-content {
+        max-width: 95%;
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .attachment-thumbnail {
+        max-width: 150px;
+        max-height: 100px;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .conversation-history {
+        scroll-behavior: auto;
+    }
+    
+    .attachment-thumbnail {
+        transition: none;
+    }
+    
+    .typing-dots span {
+        animation: none;
+    }
+    
+    .message-item {
+        animation: none;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .message-content {
+        border: 2px solid var(--slds-g-color-border-base-1);
+    }
+    
+    .attachment-item {
+        border-width: 2px;
+    }
+}
+
+/* Focus styles for better accessibility */
+.attachment-thumbnail:focus {
+    outline: 2px solid var(--slds-g-color-brand-base-10);
+    outline-offset: 2px;
+}
+
+.attachment-link:focus {
+    outline: 2px solid var(--slds-g-color-brand-base-10);
+    outline-offset: 1px;
+}
+
+/* File upload wrapper - remove all spacing */
+.file-upload-wrapper {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+/* Ultra-aggressive file upload spacing removal */
+.file-upload-compact,
+.file-upload-compact *,
+.file-upload-compact lightning-file-upload,
+.file-upload-compact lightning-file-upload *,
+.composer-section lightning-file-upload,
+.composer-section lightning-file-upload * {
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Target all possible Lightning file upload selectors */
+.file-upload-compact .slds-file-selector,
+.file-upload-compact .slds-file-selector *,
+.file-upload-compact .slds-file-selector__dropzone,
+.file-upload-compact .slds-file-selector__body,
+.file-upload-compact .slds-file-selector__button,
+.file-upload-compact .slds-form-element,
+.file-upload-compact .slds-form-element *,
+.file-upload-compact .slds-form-element__control,
+.file-upload-compact .slds-form-element__label,
+.file-upload-compact .slds-drop-zone,
+.file-upload-compact .slds-drop-zone * {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    min-height: auto !important;
+    height: auto !important;
+}
+
+/* Force the file upload to be inline */
+.file-upload-compact {
+    display: inline-block !important;
+    width: auto !important;
+    border: 1px dashed #d8dde6 !important;
+    border-radius: 0.25rem !important;
+    transition: border-color 0.2s ease !important;
+    line-height: 1 !important;
+}
+
+.file-upload-compact:hover {
+    border-color: #0176d3 !important;
+}
+
+/* Make the button compact */
+.file-upload-compact .slds-file-selector__button {
+    padding: 0.5rem 1rem !important;
+    margin: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    font-size: 0.875rem !important;
+}
+
+/* Remove any wrapper spacing */
+.composer-section .file-upload-compact {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: inline-block !important;
+}
+
+/* Remove any form spacing */
+.file-upload-compact .slds-form-element {
+    margin-bottom: 0 !important;
+}
+
+/* Uploaded files container */
+.uploaded-files-container {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+/* Individual file pills */
+.uploaded-file-pill {
+    display: flex;
+    align-items: center;
+    background-color: var(--slds-g-color-neutral-base-95);
+    border: 1px solid var(--slds-g-color-border-base-1);
+    border-radius: 1rem;
+    padding: 0.25rem 0.5rem;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+    max-width: 200px;
+}
+
+.uploaded-file-pill .file-icon {
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.uploaded-file-pill .file-name {
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.uploaded-file-pill .remove-file-btn {
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+/* Accessibility improvements */
+.message-bubble:focus-within {
+    outline: 2px solid #0176d3;
+    outline-offset: 2px;
+}
+
+.attachment-thumbnail:focus {
+    outline: 2px solid #0176d3;
+    outline-offset: 2px;
+}
+
+/* Button enhancements */
+.slds-button + .slds-button {
+    margin-left: 0.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .composer-section .slds-grid {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .composer-section .slds-col {
+        width: 100%;
+    }
+    
+    .slds-button + .slds-button {
+        margin-left: 0;
+        margin-top: 0.25rem;
+    }
+}
+
+/* Loading states */
+.slds-spinner_container {
+    position: relative;
+}

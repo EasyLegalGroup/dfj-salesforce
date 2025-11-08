@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ska_de_lngst_levande_f_arvet_som_222__c</fullName>
+    <defaultValue>false</defaultValue>
+    <externalId>false</externalId>
+    <label>Ska de längst levande få arvet s 78adf</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

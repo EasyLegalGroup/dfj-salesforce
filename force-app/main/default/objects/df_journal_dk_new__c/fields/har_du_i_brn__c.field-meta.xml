@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>har_du_i_brn__c</fullName>
+    <externalId>false</externalId>
+    <label>Har du/I børn?</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>brn_ja_flles_brn</fullName>
+                <default>false</default>
+                <label>Ja, kun fælles børn</label>
+            </value>
+            <value>
+                <fullName>brn_ja_sammenbragte_brn</fullName>
+                <default>false</default>
+                <label>Ja, sammenbragte børn</label>
+            </value>
+            <value>
+                <fullName>brn_nej_ingen_brn</fullName>
+                <default>false</default>
+                <label>Nej, ingen børn</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

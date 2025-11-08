@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bndlggelse_rateudb_4__c</fullName>
+    <externalId>false</externalId>
+    <label>4. rateudbetaling</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>bndlggelse_rateudb_4_21</fullName>
+                <default>false</default>
+                <label>21 år</label>
+            </value>
+            <value>
+                <fullName>bndlggelse_rateudb_4_22</fullName>
+                <default>false</default>
+                <label>22 år</label>
+            </value>
+            <value>
+                <fullName>bndlggelse_rateudb_4_23</fullName>
+                <default>false</default>
+                <label>23 år</label>
+            </value>
+            <value>
+                <fullName>bndlggelse_rateudb_4_24</fullName>
+                <default>false</default>
+                <label>24 år</label>
+            </value>
+            <value>
+                <fullName>bndlggelse_rateudb_4_25</fullName>
+                <default>false</default>
+                <label>25 år</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>genfuldm_simple__c</fullName>
+    <externalId>false</externalId>
+    <label>Oprettelse af generalfuldmagter</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>genfuldm_simple_p1_til_p2</fullName>
+                <default>false</default>
+                <label>Person 1 opretter fuldmagt til Person 2</label>
+            </value>
+            <value>
+                <fullName>genfuldm_simple_p2_til_p1</fullName>
+                <default>false</default>
+                <label>Person 2 opretter fuldmagt til Person 1</label>
+            </value>
+            <value>
+                <fullName>genfuldm_simple_gensidig</fullName>
+                <default>false</default>
+                <label>Der oprettes fuldmagt til hinanden</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

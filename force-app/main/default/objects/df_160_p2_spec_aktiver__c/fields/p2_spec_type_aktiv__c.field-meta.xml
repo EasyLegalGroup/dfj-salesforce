@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>p2_spec_type_aktiv__c</fullName>
+    <externalId>false</externalId>
+    <label>Type af aktiv</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>p2_spec_type_andet</fullName>
+                <default>false</default>
+                <label>Andet</label>
+            </value>
+            <value>
+                <fullName>p2_spec_aktiv_belb</fullName>
+                <default>false</default>
+                <label>Beløb</label>
+            </value>
+            <value>
+                <fullName>p2_spec_type_aktiv_fast_ejndm</fullName>
+                <default>false</default>
+                <label>Fast ejendom</label>
+            </value>
+            <value>
+                <fullName>p2_spec_type_aktiv_vrdipapir</fullName>
+                <default>false</default>
+                <label>Værdipapirer</label>
+            </value>
+            <value>
+                <fullName>p2_spec_type_aktiv_selsk_virk</fullName>
+                <default>false</default>
+                <label>Selskab/Virksomhed</label>
+            </value>
+            <value>
+                <fullName>p2_spec_type_aktiv_opsp_belb</fullName>
+                <default>false</default>
+                <label>Opsparing/Beløb på bestemt konto</label>
+            </value>
+            <value>
+                <fullName>p2_spec_type_aktiv_kretoj</fullName>
+                <default>false</default>
+                <label>Køretøj</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

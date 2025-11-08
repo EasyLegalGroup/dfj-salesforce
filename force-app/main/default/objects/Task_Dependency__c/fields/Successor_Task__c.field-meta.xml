@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Successor_Task__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Successor Task</label>
+    <referenceTo>Project_Task__c</referenceTo>
+    <relationshipLabel>Task Dependencies (Successor Task)</relationshipLabel>
+    <relationshipName>Task_Dependencies_Successor</relationshipName>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <defaultLandingTab>standard-home</defaultLandingTab>
+    <description>Employee Manager for AppExchange allows small businesses to manage their most important asset; their staff. Employee Manager manages your employee&apos;s personal and business information, salary history, benefit information, paid and unpaid time off and more.</description>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>Employee Manager</label>
+    <logo>Graphics/appxgif.gif</logo>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>SFDC_Employee__c</tabs>
+    <tabs>SFDC_Performance_Review__c</tabs>
+    <tabs>SFDC_PTO_Request__c</tabs>
+    <tabs>SFDC_Job_Function__c</tabs>
+    <tabs>SFDC_Benefit__c</tabs>
+    <tabs>AboutEmployeeManager</tabs>
+    <tabs>Feedback</tabs>
+    <tabs>telegenta__Call_Campaign_State__c</tabs>
+    <tabs>telegenta__Campaign_Session__c</tabs>
+    <tabs>Membership__c</tabs>
+    <tabs>Logging__c</tabs>
+    <tabs>Payments__c</tabs>
+    <tabs>GetAccept__GetAccept_Comment__c</tabs>
+    <tabs>SMS__c</tabs>
+    <tabs>Other_Meetings__c</tabs>
+    <tabs>Appointment__c</tabs>
+    <tabs>Subscriptions__c</tabs>
+    <tabs>License__c</tabs>
+    <tabs>External_Call__c</tabs>
+    <tabs>Work_Schedule_Override__c</tabs>
+    <tabs>Public_Holiday__c</tabs>
+    <tabs>Social_Media_Post__c</tabs>
+    <tabs>Time_Sheet__c</tabs>
+    <tabs>Customer_Profile__c</tabs>
+    <tabs>License_Type__c</tabs>
+    <tabs>Sign_In_to_Google</tabs>
+    <tabs>telegenta__Campaign__c</tabs>
+</CustomApplication>

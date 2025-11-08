@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>journal_dk_new__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>journal_dk_new</label>
+    <referenceTo>df_journal_dk_new__c</referenceTo>
+    <relationshipLabel>Specificerede aktiver (Person 1)</relationshipLabel>
+    <relationshipName>df_160_p1_spec_aktiver</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

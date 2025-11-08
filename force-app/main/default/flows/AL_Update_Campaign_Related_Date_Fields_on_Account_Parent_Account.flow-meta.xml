@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <decisions>
+        <name>Is_this_the_Earliest_Campaign_on_the_Account</name>
+        <label>Is this the Earliest Campaign on the Account?</label>
+        <locationX>176</locationX>
+        <locationY>518</locationY>
+        <defaultConnector>
+            <targetReference>Is_this_the_Earliest_Campaign_on_the_Parent</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Earliest_Campaign</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>inputCampaign</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Is_this_the_Earliest_Campaign_on_the_Parent</targetReference>
+            </connector>
+            <label>Is Earliest Campaign</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_this_the_Earliest_Campaign_on_the_Parent</name>
+        <label>Is this the Earliest Campaign on the Parent?</label>
+        <locationX>176</locationX>
+        <locationY>710</locationY>
+        <defaultConnector>
+            <targetReference>Is_this_the_Next_Upcoming_Campaign_on_the_Account</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Earliest_on_Parent</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>inputCampaign</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Is_this_the_Next_Upcoming_Campaign_on_the_Account</targetReference>
+            </connector>
+            <label>Is Earliest on Parent</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_this_the_First_Campaign_on_the_Account</name>
+        <label>Is this the First Campaign on the Account?</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <defaultConnector>
+            <targetReference>Is_this_the_First_Campaign_on_the_Parent</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_First_on_Account</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>inputCampaign</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Is_this_the_First_Campaign_on_the_Parent</targetReference>
+            </connector>
+            <label>Is First on Account</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_this_the_First_Campaign_on_the_Parent</name>
+        <label>Is this the First Campaign on the Parent?</label>
+        <locationX>176</locationX>
+        <locationY>326</locationY>
+        <defaultConnector>
+            <targetReference>Is_this_the_Earliest_Campaign_on_the_Account</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_First_on_Parent</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>inputCampaign</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Is_this_the_Earliest_Campaign_on_the_Account</targetReference>
+            </connector>
+            <label>Is First on Parent</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_this_the_Last_Campaign_on_the_Account</name>
+        <label>Is this the Last Campaign on the Account?</label>
+        <locationX>176</locationX>
+        <locationY>1286</locationY>
+        <defaultConnector>
+            <targetReference>Is_this_the_Last_Campaign_on_the_Parent</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Last_Campaign</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>inputCampaign</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Is_this_the_Last_Campaign_on_the_Parent</targetReference>
+            </connector>
+            <label>Is Last Campaign</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_this_the_Last_Campaign_on_the_Parent</name>
+        <label>Is this the Last Campaign on the Parent?</label>
+        <locationX>176</locationX>
+        <locationY>1478</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Last_on_Parent</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>inputCampaign</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <label>Is Last on Parent</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_this_the_Next_Campaign_on_the_Parent</name>
+        <label>Is this the Next Campaign on the Parent?</label>
+        <locationX>176</locationX>
+        <locationY>1094</locationY>
+        <defaultConnector>
+            <targetReference>Is_this_the_Last_Campaign_on_the_Account</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Next_on_Parent</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>inputCampaign</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Is_this_the_Last_Campaign_on_the_Account</targetReference>
+            </connector>
+            <label>Is Next on Parent</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_this_the_Next_Upcoming_Campaign_on_the_Account</name>
+        <label>Is this the Next Upcoming Campaign on the Account?</label>
+        <locationX>176</locationX>
+        <locationY>902</locationY>
+        <defaultConnector>
+            <targetReference>Is_this_the_Next_Campaign_on_the_Parent</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Next_Campaign</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>inputCampaign</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Is_this_the_Next_Campaign_on_the_Parent</targetReference>
+            </connector>
+            <label>Is Next Campaign</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>AL - Update Campaign Related Date Fields on Account/Parent Account {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>AL - Update Campaign Related Date Fields on Account/Parent Account</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_this_the_First_Campaign_on_the_Account</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+    <variables>
+        <name>inputCampaign</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Campaign</objectType>
+    </variables>
+</Flow>

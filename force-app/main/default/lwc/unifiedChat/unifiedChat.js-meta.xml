@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Unified Chat</masterLabel>
+    <description>Rich text conversation component with file attachments and notification features</description>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage,lightning__AppPage,lightning__HomePage">
+            <property name="recordId" type="String" label="Record ID" description="ID of the parent record to associate messages with" />
+            <property name="height" type="String" label="Height" description="Height of the chat component" default="500px" />
+            <property name="maxWidth" type="String" label="Max Width" description="Maximum width of the component" default="680px" />
+            <property name="enableRealTime" type="Boolean" label="Enable Real-time" description="Enable automatic refresh and real-time features" default="false" />
+            <property name="placeholder" type="String" label="Placeholder Text" description="Placeholder text for the message input" default="Type a message..." />
+            <property name="emptyStateTitle" type="String" label="Empty State Title" description="Title to show when no messages exist" default="Start a conversation" />
+            <property name="emptyStateMessage" type="String" label="Empty State Message" description="Message to show when no messages exist" default="Send a message to begin the conversation." />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

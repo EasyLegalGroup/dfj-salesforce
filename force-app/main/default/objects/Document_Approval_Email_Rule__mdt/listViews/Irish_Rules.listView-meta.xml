@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Irish_Rules</fullName>
+    <columns>MasterLabel</columns>
+    <columns>DeveloperName</columns>
+    <columns>Document_Type__c</columns>
+    <columns>Requires_Email_on_Approval__c</columns>
+    <columns>Requires_Email_on_Completion__c</columns>
+    <columns>Requires_Public_Registration__c</columns>
+    <columns>Approval_Email_Template_Developer_Name__c</columns>
+    <columns>Completion_Email_Template_Developer_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>Ireland</value>
+    </filters>
+    <label>Irish Rules</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <description>Repurposed to instead add to campaign flow Mersalg FF - DK</description>
+    <environments>Default</environments>
+    <interviewLabel>RT - Order: When Zapier Trigger is Set, Call Create Assets Subflow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RT - Order: When Zapier Trigger is Set, Call Create Assets Subflow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>AL_Check_if_Input_Order_Qualifies_for_Campaign</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Zapier_Trigger_Field__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Order</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+    <subflows>
+        <name>AL_Check_if_Input_Order_Qualifies_for_Campaign</name>
+        <label>AL - Check if Input Order Qualifies for Campaign</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <flowName>AL_Check_if_Input_Order_Qualifies_for_Campaign</flowName>
+        <inputAssignments>
+            <name>inputCampaignName</name>
+            <value>
+                <stringValue>Mersalg FF - DK</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Order</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+</Flow>

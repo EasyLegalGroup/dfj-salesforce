@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Market_Unit__c</columns>
+    <columns>Month_Year__c</columns>
+    <columns>Default_Hours_in_Workday__c</columns>
+    <columns>Potential_Work_Days__c</columns>
+    <columns>Employee__c</columns>
+    <columns>Employee_s_Salesforce_User__c</columns>
+    <columns>Number_of_Days_Arrived_Late__c</columns>
+    <columns>Number_of_Days_Left_Early__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+    <sharedTo>
+        <group>Human_Resources</group>
+    </sharedTo>
+</ListView>

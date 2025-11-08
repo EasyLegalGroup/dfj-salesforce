@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Company_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Company Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Aktieselskab</fullName>
+                <default>false</default>
+                <label>Aktieselskab</label>
+            </value>
+            <value>
+                <fullName>Andelsselskab (-forening) med begrænset ansvar</fullName>
+                <default>false</default>
+                <label>Andelsselskab (-forening) med begrænset ansvar</label>
+            </value>
+            <value>
+                <fullName>Anpartsselskab</fullName>
+                <default>false</default>
+                <label>Anpartsselskab</label>
+            </value>
+            <value>
+                <fullName>Erhvervsdrivende fond</fullName>
+                <default>false</default>
+                <label>Erhvervsdrivende fond</label>
+            </value>
+            <value>
+                <fullName>Filial af udenlandsk aktieselskab, kommanditakties</fullName>
+                <default>false</default>
+                <label>Filial af udenlandsk aktieselskab, kommanditakties</label>
+            </value>
+            <value>
+                <fullName>Folkekirkelige Institutioner</fullName>
+                <default>false</default>
+                <label>Folkekirkelige Institutioner</label>
+            </value>
+            <value>
+                <fullName>Fonde og andre selvejende institutioner</fullName>
+                <default>false</default>
+                <label>Fonde og andre selvejende institutioner</label>
+            </value>
+            <value>
+                <fullName>Forening</fullName>
+                <default>false</default>
+                <label>Forening</label>
+            </value>
+            <value>
+                <fullName>Forening med begrænset ansvar</fullName>
+                <default>false</default>
+                <label>Forening med begrænset ansvar</label>
+            </value>
+            <value>
+                <fullName>Interessentskab</fullName>
+                <default>false</default>
+                <label>Interessentskab</label>
+            </value>
+            <value>
+                <fullName>Kommanditaktieselskab/Partnerselskab</fullName>
+                <default>false</default>
+                <label>Kommanditaktieselskab/Partnerselskab</label>
+            </value>
+            <value>
+                <fullName>Statslig administrativ enhed</fullName>
+                <default>false</default>
+                <label>Statslig administrativ enhed</label>
+            </value>
+            <value>
+                <fullName>Øvrige virksomhedsformer</fullName>
+                <default>false</default>
+                <label>Øvrige virksomhedsformer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

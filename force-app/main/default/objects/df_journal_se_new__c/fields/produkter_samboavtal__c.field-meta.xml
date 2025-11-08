@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>produkter_samboavtal__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>2.090 kr.</description>
+    <externalId>false</externalId>
+    <label>Samboavtal</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

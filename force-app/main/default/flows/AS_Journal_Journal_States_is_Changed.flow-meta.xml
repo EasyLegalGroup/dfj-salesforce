@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <assignments>
+        <name>Assign_Survey_Sent_Values_to_Journal</name>
+        <label>Assign Survey Sent Values to Journal</label>
+        <locationX>1634</locationX>
+        <locationY>971</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Time_of_Trustpilot_Request__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Trustpilot_Request_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Request sent</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Journal</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Tinglysning_Values_and_Clear_Fields</name>
+        <label>Assign Tinglysning Values and Clear Fields</label>
+        <locationX>930</locationX>
+        <locationY>539</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Tinglysning_Completed__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Tinglysning_Completed_Date__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Tinglysning_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Awaiting Tinglysning</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Tinglysning_By__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Tinglysning_in_Progress__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Tinglysning_Ended__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Tinglysning_Started__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.GA_Reply_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Awaiting agent</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Public_Document_Registration_Records</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_Account_Missing</name>
+        <label>Populate Custom Error with Account Missing</label>
+        <locationX>2338</locationX>
+        <locationY>647</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Account missing on completed journal</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Send_Error_Email_from_Input_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_Flow_Fault_Message</name>
+        <label>Populate Custom Error with Flow Fault Message</label>
+        <locationX>402</locationX>
+        <locationY>1055</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Error_Email_from_Input_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Journal_Worklog</name>
+        <label>Populate Journal Worklog</label>
+        <locationX>50</locationX>
+        <locationY>839</locationY>
+        <assignmentItems>
+            <assignToReference>WorkLogRecord.CreatedById</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>WorkLogRecord.Journal__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>WorkLogRecord.New_Journal_States__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Journal_States__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>WorkLogRecord.Old_Journal_States__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record__Prior.Journal_States__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Journal_Worklog</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Initial_Values</name>
+        <label>Set Initial Values</label>
+        <locationX>1326</locationX>
+        <locationY>323</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Previous_Journal_States__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Journal_States__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Time_of_Current_Journal_States__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.TIme_of_Previous_Journal_States__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record__Prior.Time_of_Current_Journal_States__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>What_was_it_changed_into</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Working_Date</name>
+        <label>Set Working Date</label>
+        <locationX>138</locationX>
+        <locationY>647</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Working_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Populate_Journal_Worklog</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Did_Survey_Send</name>
+        <label>Did Survey Send?</label>
+        <locationX>1766</locationX>
+        <locationY>863</locationY>
+        <defaultConnector>
+            <targetReference>Update_Journal</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Survey_Was_Sent</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsSurveySent</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Survey_Sent_Values_to_Journal</targetReference>
+            </connector>
+            <label>Survey Was Sent</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Did_Survey_Subflow_Succeed</name>
+        <label>Did Survey Subflow Succeed?</label>
+        <locationX>1920</locationX>
+        <locationY>755</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Send_Error_Email_from_Input_Values</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Survey_Subflow_Succeeded</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsSurveyError</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Did_Survey_Send</targetReference>
+            </connector>
+            <label>Survey Subflow Succeeded</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Did_We_Find_Any_Public_Document_Registration_Records</name>
+        <label>Did We Find Any Public Document Registration Records?</label>
+        <locationX>930</locationX>
+        <locationY>755</locationY>
+        <defaultConnector>
+            <targetReference>Update_Journal</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Registration_Records_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Public_Document_Registration_Records</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Public_Document_Registration_Records</targetReference>
+            </connector>
+            <label>Registration Records Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Does_Journal_Have_an_Account</name>
+        <label>Does Journal Have an Account?</label>
+        <locationX>2129</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>Populate_Custom_Error_with_Account_Missing</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Account_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_SMS_Satisfaction_Survey</targetReference>
+            </connector>
+            <label>Account Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Working_Date_Already_Populated</name>
+        <label>Is Working Date Already Populated?</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>Set_Working_Date</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Working_Date_is_Populated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Working_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_Journal_Worklog</targetReference>
+            </connector>
+            <label>Working Date is Populated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>The &quot;Complete&quot; path is triggered for both &quot;Færdig&quot; (Used in Denmark and has API name &quot;complete&quot;) and &quot;Færdig ny process&quot; (Used in Sweden)</description>
+        <name>What_was_it_changed_into</name>
+        <label>What was it changed into?</label>
+        <locationX>1326</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Update_Journal</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Gennemgang_Get_Accept</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Journal_States__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Gennemgang Get Accept</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_Working_Date_Already_Populated</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Gennemgang - Get Accept</label>
+        </rules>
+        <rules>
+            <name>Tinglysning</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Journal_States__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Tinglysning</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Journal_States__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Intern - Tinglysning haster</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Tinglysning_Values_and_Clear_Fields</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Tinglysning</label>
+        </rules>
+        <rules>
+            <name>Complete</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Journal_States__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>complete</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Journal_States__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Færdig ny process</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Does_Journal_Have_an_Account</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Complete</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>AS - Journal: Journal States is Changed {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>AS - Journal: Journal States is Changed</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Journal_Worklog</name>
+        <label>Create Journal Worklog</label>
+        <locationX>50</locationX>
+        <locationY>947</locationY>
+        <connector>
+            <targetReference>Update_Journal</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <inputReference>WorkLogRecord</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Public_Document_Registration_Records</name>
+        <label>Get Public Document Registration Records</label>
+        <locationX>930</locationX>
+        <locationY>647</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Did_We_Find_Any_Public_Document_Registration_Records</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Journal__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Public_Document_Registration__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Journal</name>
+        <label>Update Journal</label>
+        <locationX>1326</locationX>
+        <locationY>1487</locationY>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Public_Document_Registration_Records</name>
+        <label>Update Public Document Registration Records</label>
+        <locationX>666</locationX>
+        <locationY>863</locationY>
+        <connector>
+            <targetReference>Update_Journal</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Journal__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Ready for Public Registration</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Public_Document_Registration__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>1200</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_Initial_Values</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Journal_States__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Journal__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+    <subflows>
+        <name>Send_Error_Email_from_Input_Values</name>
+        <label>Send Error Email from Input Values</label>
+        <locationX>402</locationX>
+        <locationY>1163</locationY>
+        <flowName>AL_Send_Error_Email_from_Input_Values</flowName>
+        <inputAssignments>
+            <name>inputCustomError</name>
+            <value>
+                <elementReference>CustomError</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputFlowName</name>
+            <value>
+                <stringValue>AS - Journal: Journal States is Changed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <subflows>
+        <name>Send_SMS_Satisfaction_Survey</name>
+        <label>Send SMS Satisfaction Survey</label>
+        <locationX>1920</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Did_Survey_Subflow_Succeed</targetReference>
+        </connector>
+        <flowName>AL_Send_SMS_Satisfaction_Survey</flowName>
+        <inputAssignments>
+            <name>inputJournal</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>CustomError</assignToReference>
+            <name>CustomError</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>IsSurveyError</assignToReference>
+            <name>IsError</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>IsSurveySent</assignToReference>
+            <name>IsSent</name>
+        </outputAssignments>
+    </subflows>
+    <textTemplates>
+        <name>DanishSmsBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Kære {!CustomerName},
+
+Din sag hos Din Familiejurist er nu afsluttet. 
+Information omkring hvad du skal gøre for endeligt at gyldiggøre dine dokumenter, sendes på emailen {!Email}.
+
+Vi forsøger altid er dygtiggøre os og håber derfor at du vil tage dig et par sekunder, til at svare på om du har været tilfreds med din oplevelse hos Din Familiejurist.
+
+Svar JA hvis du er tilfreds
+Svar NEJ hvis du ikke er tilfreds.
+
+Alle deltagende, deltager i konkurrencen om et gavekort på 1.000 kr.
+
+Med ønsket om en dejlig dag.
+Din Familiejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>SwedishSmsBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hej {!CustomerName},
+
+Vi strävar alltid efter att förbättra oss och hoppas därför att du vill ta några sekunder för att svara på om du har varit nöjd med din upplevelse hos Din Familjejurist.
+
+Svara JA om du är nöjd.
+Svara NEJ om du inte är nöjd.
+
+Alla deltagare, deltar i tävlingen om ett presentkort på 1.500 kr.
+
+Med önskan om en fin dag.
+Din Familjejurist</text>
+    </textTemplates>
+    <variables>
+        <name>CustomerName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>CustomError</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Email</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FromNumber</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>IsSurveyError</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>IsSurveySent</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>Phone</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SmsBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>WorkLogRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Journal_Worklog__c</objectType>
+    </variables>
+</Flow>

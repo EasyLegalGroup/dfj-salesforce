@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Sign_up__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This field is populated by the agent during the initial consultation and hold information about why the customer registered for the given campaign.</inlineHelpText>
+    <label>Reason for Sign-Up</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

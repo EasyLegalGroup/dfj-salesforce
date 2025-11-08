@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Largest_Positive_Work_Hour_Deviation__c</fullName>
+    <externalId>false</externalId>
+    <label>Largest Positive Work Hour Deviation</label>
+    <summarizedField>Time_Sheet_Correction__c.Deviation_in_Work_Hours__c</summarizedField>
+    <summaryForeignKey>Time_Sheet_Correction__c.Time_Sheet__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

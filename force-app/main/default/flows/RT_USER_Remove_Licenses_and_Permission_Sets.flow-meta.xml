@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <decisions>
+        <name>Check_if_Permission_Set_Licenses_Exist</name>
+        <label>Check if Permission Set Licenses Exist</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>UserPackageLicenseAssignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Licenses Found</defaultConnectorLabel>
+        <rules>
+            <name>Licenses_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_User_Package_Licenses</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete_Permission_Set_License_Assignments</targetReference>
+            </connector>
+            <label>Licenses Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_if_User_Package_Licenses_Exist</name>
+        <label>Check if User Package Licenses Exist</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>No Package Licenses Found</defaultConnectorLabel>
+        <rules>
+            <name>Package_Licenses_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>UserPackageLicenseAssignment</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete_User_Package_License_Assignments</targetReference>
+            </connector>
+            <label>Package Licenses Found</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>RT - USER: Remove Licenses and Permission Sets {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RT - USER: Remove Licenses and Permission Sets.</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordDeletes>
+        <name>Delete_Permission_Set_License_Assignments</name>
+        <label>Delete Permission Set License Assignments</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>UserPackageLicenseAssignment</targetReference>
+        </connector>
+        <inputReference>Get_User_Package_Licenses</inputReference>
+    </recordDeletes>
+    <recordDeletes>
+        <name>Delete_User_Package_License_Assignments</name>
+        <label>Delete User Package License Assignments</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputReference>UserPackageLicenseAssignment</inputReference>
+    </recordDeletes>
+    <recordLookups>
+        <name>Get_User_Package_Licenses</name>
+        <label>Get User Package Licenses</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_if_Permission_Set_Licenses_Exist</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AssigneeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>PermissionSetLicenseAssign</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>AssigneeId</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>UserPackageLicenseAssignment</name>
+        <label>Get Package License Assignments</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_if_User_Package_Licenses_Exist</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>UserId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>UserPackageLicense</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>UserId</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_User_Package_Licenses</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>IsActive</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>User</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

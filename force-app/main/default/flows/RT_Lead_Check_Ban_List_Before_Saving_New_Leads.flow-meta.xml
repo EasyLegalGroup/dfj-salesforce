@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <decisions>
+        <name>Does_a_Ban_List_Record_Exist</name>
+        <label>Does a Ban List Record Exist?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Ban_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Communication_Ban</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Lead</targetReference>
+            </connector>
+            <label>Ban Exists</label>
+        </rules>
+    </decisions>
+    <description>Check the Communication Ban object for a matching record. If it exists, immediately blacklist the Lead, mark it as Unqualified and have it lookup to the Communication Ban.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>frmPhone</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  BEGINS(SUBSTITUTE({!$Record.Phone}, &quot; &quot;, &quot;&quot;), &quot;+45&quot;),
+  SUBSTITUTE({!$Record.Phone}, &quot; &quot;, &quot;&quot;),
+  IF(
+    BEGINS(SUBSTITUTE({!$Record.Phone}, &quot; &quot;, &quot;&quot;), &quot;45&quot;),
+    &quot;+&quot; &amp; SUBSTITUTE({!$Record.Phone}, &quot; &quot;, &quot;&quot;),
+    IF(
+      AND(
+        NOT(BEGINS(SUBSTITUTE({!$Record.Phone}, &quot; &quot;, &quot;&quot;), &quot;+45&quot;)),
+        OR(
+          TEXT({!$Record.Market_Unit__c}) = &quot;DFJ_DK&quot;,
+          TEXT({!$Record.Market_Unit__c}) = &quot;Testamente_DK&quot;
+        )
+      ),
+      &quot;+45&quot; &amp; SUBSTITUTE({!$Record.Phone}, &quot; &quot;, &quot;&quot;),
+      IF(
+        AND(
+          NOT(BEGINS(SUBSTITUTE({!$Record.Phone}, &quot; &quot;, &quot;&quot;), &quot;+&quot;)),
+          OR(
+            TEXT({!$Record.Market_Unit__c}) = &quot;DFJ_DK&quot;,
+            TEXT({!$Record.Market_Unit__c}) = &quot;Testamente_DK&quot;
+          )
+        ),
+        &quot;+&quot; &amp; SUBSTITUTE({!$Record.Phone}, &quot; &quot;, &quot;&quot;),
+        IF(
+          BEGINS(SUBSTITUTE({!$Record.Phone}, &quot; &quot;, &quot;&quot;), &quot;+46&quot;),
+          SUBSTITUTE({!$Record.Phone}, &quot; &quot;, &quot;&quot;),
+          IF(
+            BEGINS(SUBSTITUTE({!$Record.Phone}, &quot; &quot;, &quot;&quot;), &quot;46&quot;),
+            &quot;+&quot; &amp; SUBSTITUTE({!$Record.Phone}, &quot; &quot;, &quot;&quot;),
+            IF(
+              AND(
+                NOT(BEGINS(SUBSTITUTE({!$Record.Phone}, &quot; &quot;, &quot;&quot;), &quot;+46&quot;)),
+                TEXT({!$Record.Market_Unit__c}) = &quot;FA_SE&quot;
+              ),
+              &quot;+46&quot; &amp; SUBSTITUTE({!$Record.Phone}, &quot; &quot;, &quot;&quot;),
+              IF(
+                AND(
+                  NOT(BEGINS(SUBSTITUTE({!$Record.Phone}, &quot; &quot;, &quot;&quot;), &quot;+&quot;)),
+                  TEXT({!$Record.Market_Unit__c}) = &quot;FA_SE&quot;
+                ),
+                &quot;+&quot; &amp; SUBSTITUTE({!$Record.Phone}, &quot; &quot;, &quot;&quot;),
+                IF(
+                  BEGINS(SUBSTITUTE({!$Record.Phone}, &quot; &quot;, &quot;&quot;), &quot;+353&quot;),
+                  SUBSTITUTE({!$Record.Phone}, &quot; &quot;, &quot;&quot;),
+                  IF(
+                    BEGINS(SUBSTITUTE({!$Record.Phone}, &quot; &quot;, &quot;&quot;), &quot;353&quot;),
+                    &quot;+&quot; &amp; SUBSTITUTE({!$Record.Phone}, &quot; &quot;, &quot;&quot;),
+                    IF(
+                      AND(
+                        NOT(BEGINS(SUBSTITUTE({!$Record.Phone}, &quot; &quot;, &quot;&quot;), &quot;+353&quot;)),
+                        TEXT({!$Record.Market_Unit__c}) = &quot;Ireland&quot;
+                      ),
+                      &quot;+353&quot; &amp; SUBSTITUTE({!$Record.Phone}, &quot; &quot;, &quot;&quot;),
+                      IF(
+                        AND(
+                          NOT(BEGINS(SUBSTITUTE({!$Record.Phone}, &quot; &quot;, &quot;&quot;), &quot;+&quot;)),
+                          TEXT({!$Record.Market_Unit__c}) = &quot;Ireland&quot;
+                        ),
+                        &quot;+&quot; &amp; SUBSTITUTE({!$Record.Phone}, &quot; &quot;, &quot;&quot;),
+                        SUBSTITUTE({!$Record.Phone}, &quot; &quot;, &quot;&quot;)
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          )
+        )
+      )
+    )
+  )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>frmPhone2</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  BEGINS(SUBSTITUTE({!$Record.Phone2__c}, &quot; &quot;, &quot;&quot;), &quot;+45&quot;),
+  SUBSTITUTE({!$Record.Phone2__c}, &quot; &quot;, &quot;&quot;),
+  IF(
+    BEGINS(SUBSTITUTE({!$Record.Phone2__c}, &quot; &quot;, &quot;&quot;), &quot;45&quot;),
+    &quot;+&quot; &amp; SUBSTITUTE({!$Record.Phone2__c}, &quot; &quot;, &quot;&quot;),
+    IF(
+      AND(
+        NOT(BEGINS(SUBSTITUTE({!$Record.Phone2__c}, &quot; &quot;, &quot;&quot;), &quot;+45&quot;)),
+        OR(
+          TEXT({!$Record.Market_Unit__c}) = &quot;DFJ_DK&quot;,
+          TEXT({!$Record.Market_Unit__c}) = &quot;Testamente_DK&quot;
+        )
+      ),
+      &quot;+45&quot; &amp; SUBSTITUTE({!$Record.Phone2__c}, &quot; &quot;, &quot;&quot;),
+      IF(
+        AND(
+          NOT(BEGINS(SUBSTITUTE({!$Record.Phone2__c}, &quot; &quot;, &quot;&quot;), &quot;+&quot;)),
+          OR(
+            TEXT({!$Record.Market_Unit__c}) = &quot;DFJ_DK&quot;,
+            TEXT({!$Record.Market_Unit__c}) = &quot;Testamente_DK&quot;
+          )
+        ),
+        &quot;+&quot; &amp; SUBSTITUTE({!$Record.Phone2__c}, &quot; &quot;, &quot;&quot;),
+        IF(
+          BEGINS(SUBSTITUTE({!$Record.Phone2__c}, &quot; &quot;, &quot;&quot;), &quot;+46&quot;),
+          SUBSTITUTE({!$Record.Phone2__c}, &quot; &quot;, &quot;&quot;),
+          IF(
+            BEGINS(SUBSTITUTE({!$Record.Phone2__c}, &quot; &quot;, &quot;&quot;), &quot;46&quot;),
+            &quot;+&quot; &amp; SUBSTITUTE({!$Record.Phone2__c}, &quot; &quot;, &quot;&quot;),
+            IF(
+              AND(
+                NOT(BEGINS(SUBSTITUTE({!$Record.Phone2__c}, &quot; &quot;, &quot;&quot;), &quot;+46&quot;)),
+                TEXT({!$Record.Market_Unit__c}) = &quot;FA_SE&quot;
+              ),
+              &quot;+46&quot; &amp; SUBSTITUTE({!$Record.Phone2__c}, &quot; &quot;, &quot;&quot;),
+              IF(
+                AND(
+                  NOT(BEGINS(SUBSTITUTE({!$Record.Phone2__c}, &quot; &quot;, &quot;&quot;), &quot;+&quot;)),
+                  TEXT({!$Record.Market_Unit__c}) = &quot;FA_SE&quot;
+                ),
+                &quot;+&quot; &amp; SUBSTITUTE({!$Record.Phone2__c}, &quot; &quot;, &quot;&quot;),
+                IF(
+                  BEGINS(SUBSTITUTE({!$Record.Phone2__c}, &quot; &quot;, &quot;&quot;), &quot;+353&quot;),
+                  SUBSTITUTE({!$Record.Phone2__c}, &quot; &quot;, &quot;&quot;),
+                  IF(
+                    BEGINS(SUBSTITUTE({!$Record.Phone2__c}, &quot; &quot;, &quot;&quot;), &quot;353&quot;),
+                    &quot;+&quot; &amp; SUBSTITUTE({!$Record.Phone2__c}, &quot; &quot;, &quot;&quot;),
+                    IF(
+                      AND(
+                        NOT(BEGINS(SUBSTITUTE({!$Record.Phone2__c}, &quot; &quot;, &quot;&quot;), &quot;+353&quot;)),
+                        TEXT({!$Record.Market_Unit__c}) = &quot;Ireland&quot;
+                      ),
+                      &quot;+353&quot; &amp; SUBSTITUTE({!$Record.Phone2__c}, &quot; &quot;, &quot;&quot;),
+                      IF(
+                        AND(
+                          NOT(BEGINS(SUBSTITUTE({!$Record.Phone2__c}, &quot; &quot;, &quot;&quot;), &quot;+&quot;)),
+                          TEXT({!$Record.Market_Unit__c}) = &quot;Ireland&quot;
+                        ),
+                        &quot;+&quot; &amp; SUBSTITUTE({!$Record.Phone2__c}, &quot; &quot;, &quot;&quot;),
+                        SUBSTITUTE({!$Record.Phone2__c}, &quot; &quot;, &quot;&quot;)
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          )
+        )
+      )
+    )
+  )
+)</expression>
+    </formulas>
+    <interviewLabel>RT - Lead: Check Ban List Before Saving New Leads {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RT - Lead: Check Ban List Before Saving New Leads</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Communication_Ban</name>
+        <label>Get Communication Ban</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Does_a_Ban_List_Record_Exist</targetReference>
+        </connector>
+        <filterLogic>(1 AND 2) OR (3 AND 4) OR (5 AND 6) OR (7 AND 8)</filterLogic>
+        <filters>
+            <field>Email__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Email</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Email__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Phone_E164__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>frmPhone</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Phone_E164__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Phone_E164__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>frmPhone2</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Phone_E164__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Email__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Email2__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Email__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Communication_Ban__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Lead</name>
+        <label>Update Lead</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Communication_Ban__c</field>
+            <value>
+                <elementReference>Get_Communication_Ban.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Unqualified</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>telegenta__Invalid_Reason__c</field>
+            <value>
+                <stringValue>Blacklist</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Communication_Ban</targetReference>
+        </connector>
+        <filterFormula>OR(
+  /* Created + any present */
+  AND(
+    ISBLANK({!$Record__Prior.Id}),
+    OR(
+      NOT(ISBLANK({!$Record.Email})),
+      NOT(ISBLANK({!$Record.Phone})),
+      NOT(ISBLANK({!$Record.Email2__c})),
+      NOT(ISBLANK({!$Record.Phone2__c}))
+    )
+  ),
+  /* Updated + any changed */
+  AND(
+    NOT(ISBLANK({!$Record__Prior.Id})),
+    OR(
+      {!$Record.Email} &lt;&gt; {!$Record__Prior.Email},
+      {!$Record.Phone} &lt;&gt; {!$Record__Prior.Phone},
+      {!$Record.Email2__c} &lt;&gt; {!$Record__Prior.Email2__c},
+      {!$Record.Phone2__c} &lt;&gt; {!$Record__Prior.Phone2__c}
+    )
+  )
+)</filterFormula>
+        <object>Lead</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

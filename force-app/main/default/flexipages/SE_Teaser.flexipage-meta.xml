@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>allowChanges</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>alternativeText</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>Center</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>imgPath</name>
+                    <value>{[devName:dfjlogosepng]}</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginBottom</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginLeft</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginRight</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginTop</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>objectFit</name>
+                    <value>fill</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>40</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:image</componentName>
+                <identifier>contentbuilder_image</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-ea24dc88-440f-46c7-8b98-d4c96985c3ed</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columnBody</name>
+                    <value>Facet-ea24dc88-440f-46c7-8b98-d4c96985c3ed</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columnSpacer</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>padding</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlign</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>100%</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:column</componentName>
+                <identifier>contentbuilder_column</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-808373c0-6ad8-45dd-a8ef-7336f5b98ae6</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>allowChanges</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>linkedToDesignKit</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginBottom</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginLeft</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginRight</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginTop</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;Hej [{{{Hosts__c.Name}}}],&lt;/p&gt;
+
+&lt;p&gt;Vi har lagt m&amp;auml;rke till er fantastiska plats och tror att den skulle vara den perfekta milj&amp;ouml;n f&amp;ouml;r en eller flera av v&amp;aring;ra kommande f&amp;ouml;rel&amp;auml;sningskv&amp;auml;llar, som handlar om arv och testamente.&lt;/p&gt;
+
+&lt;p&gt;Vi f&amp;ouml;rest&amp;auml;ller oss att dessa evenemang inte bara kommer att tillf&amp;ouml;ra v&amp;auml;rde f&amp;ouml;r v&amp;aring;ra deltagare, utan &amp;auml;ven f&amp;ouml;r er, genom att locka nya g&amp;auml;ster och &amp;ouml;ka er synlighet genom v&amp;aring;r marknadsf&amp;ouml;ringsinsats.&lt;/p&gt;
+
+&lt;p&gt;Vi har tidigare anordnat liknande framg&amp;aring;ngsrika evenemang och ser fram emot m&amp;ouml;jligheten att skapa &amp;auml;nnu en fantastisk upplevelse i samarbete med er.&lt;/p&gt;
+
+&lt;p&gt;F&amp;ouml;r att m&amp;ouml;ta era behov och era g&amp;auml;sters komfort, f&amp;ouml;resl&amp;aring;r vi f&amp;ouml;ljande struktur:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Struktur:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tid&lt;/strong&gt;: M&amp;aring;ndag till torsdag, kl. 18:00 &amp;ndash; 21:00 (+/- 30 min).&lt;br /&gt;
+&lt;strong&gt;Kapacitet:&lt;/strong&gt;&amp;nbsp;150 till 300 deltagare.&lt;br /&gt;
+&lt;strong&gt;Format:&lt;/strong&gt; Cirka 1,5 timmars f&amp;ouml;rel&amp;auml;sning med optimal synlighet och ljud utan st&amp;ouml;rningar.&lt;br /&gt;
+&lt;strong&gt;Tekniskt&lt;/strong&gt;: M&amp;ouml;jlighet att anv&amp;auml;nda projektor och duk.&lt;br /&gt;
+&lt;strong&gt;Ekonomiskt&lt;/strong&gt;: Vi &amp;ouml;nskar att hyra en lokal f&amp;ouml;r att h&amp;aring;lla f&amp;ouml;rel&amp;auml;sningen f&amp;ouml;r {{{Hosts__c.Suggested_Venue_Rental_Cost__c}}}.&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;V&amp;aring;r marknadsf&amp;ouml;ringsinsats inkluderar annonsering p&amp;aring; sociala medier, d&amp;auml;r vi investerar 5.000-10.000 kr. f&amp;ouml;r att fr&amp;auml;mja evenemanget.&lt;/p&gt;
+
+&lt;p&gt;Detta kommer ocks&amp;aring; att &amp;ouml;ka medvetenheten om er plats bland en ny publik.&lt;/p&gt;
+
+&lt;p&gt;Vi vill boka tre evenemang med start {{{Hosts__c.Lecture_Date_Proposal__c}}}. L&amp;aring;t oss prata ihop oss f&amp;ouml;r att hitta de b&amp;auml;sta datumen och diskutera ytterligare detaljer.&lt;/p&gt;
+
+&lt;p&gt;Vi ser fram emot m&amp;ouml;jligheten till ett fruktbart och &amp;ouml;msesidigt givande samarbete.&lt;/p&gt;
+
+&lt;p&gt;Jag ser fram emot att h&amp;ouml;ra fr&amp;aring;n dig och &amp;ouml;nskar dig en fantastisk dag.&lt;/p&gt;
+
+&lt;p&gt;Med v&amp;auml;nlig h&amp;auml;lsning,&lt;br /&gt;
+{{{Sender.Name}}}&lt;br /&gt;
+Din Familjejurist&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:richText</componentName>
+                <identifier>contentbuilder_richText</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>allowChanges</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>alternativeText</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>left</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>imgPath</name>
+                    <value>{[devName:dfjlogosepng]}</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginBottom</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginLeft</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginRight</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginTop</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>objectFit</name>
+                    <value>fill</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>33</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:image</componentName>
+                <identifier>contentbuilder_image2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-2bf900ce-ed05-4e23-8c19-f7df6f809e56</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columnBody</name>
+                    <value>Facet-2bf900ce-ed05-4e23-8c19-f7df6f809e56</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columnSpacer</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>padding</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlign</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>100%</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:column</componentName>
+                <identifier>contentbuilder_column2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-e441c765-9041-4154-914c-4082ce5de64a</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-808373c0-6ad8-45dd-a8ef-7336f5b98ae6</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlignment</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:row</componentName>
+                <identifier>contentbuilder_row</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-e441c765-9041-4154-914c-4082ce5de64a</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlignment</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:row</componentName>
+                <identifier>contentbuilder_row2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>main</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>SE_Teaser</masterLabel>
+    <template>
+        <name>contentpage:defaultEmailTemplatePageTemplate</name>
+        <properties>
+            <name>backgroundColor</name>
+            <value>#E9EAEC</value>
+        </properties>
+        <properties>
+            <name>backgroundImageUrl</name>
+        </properties>
+        <properties>
+            <name>bodyColor</name>
+            <value>#FFFFFF</value>
+        </properties>
+        <properties>
+            <name>paddingBottom</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingLeft</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingRight</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingTop</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>preheader</name>
+            <value>Fyll era lokaler för en kväll - utan besvär! Din Familjejurist presenterar ett exklusivt föredrag</value>
+        </properties>
+    </template>
+    <type>EmailTemplatePage</type>
+</FlexiPage>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <description>Updates name using a formula</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>frmName</name>
+        <dataType>String</dataType>
+        <expression>UPPER(LEFT({!$Record.User__r.Email}, FIND(&quot;@&quot;, {!$Record.User__r.Email}) - 1)) &amp;
+&quot; - &quot; &amp;
+CASE(
+   1 ,
+    1, &quot;January&quot;,
+    2, &quot;February&quot;,
+    3, &quot;March&quot;,
+    4, &quot;April&quot;,
+    5, &quot;May&quot;,
+    6, &quot;June&quot;,
+    7, &quot;July&quot;,
+    8, &quot;August&quot;,
+    9, &quot;September&quot;,
+    10, &quot;October&quot;,
+    11, &quot;November&quot;,
+    12, &quot;December&quot;,
+    &quot;Invalid Month&quot;
+) &amp;
+&quot; &quot; &amp;
+TEXT({!$Record.Year__c})</expression>
+    </formulas>
+    <interviewLabel>RT - Revenue Target Created {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RT - Revenue Target Created</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Target</name>
+        <label>Update Target</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>frmName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Target</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Target_Metric__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Revenue</stringValue>
+            </value>
+        </filters>
+        <object>Targets__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

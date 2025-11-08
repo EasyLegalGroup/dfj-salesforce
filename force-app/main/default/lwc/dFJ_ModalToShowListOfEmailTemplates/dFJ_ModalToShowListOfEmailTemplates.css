@@ -1,0 +1,99 @@
+/* Force all text in modal body to stay on one line */
+lightning-modal-body {
+    overflow-x: hidden;
+}
+
+/* Ensure radio button labels stay on one line with ellipsis */
+lightning-radio-group ::part(label),
+lightning-radio-group label,
+lightning-radio-group span {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 100% !important;
+    display: block !important;
+}
+
+/* Target all SLDS form element labels */
+.slds-form-element__label,
+.slds-radio__label,
+.slds-radio_faux + span,
+.slds-form-element__control span {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    display: block !important;
+    max-width: 100% !important;
+}
+
+/* Additional override for any nested spans */
+lightning-radio-group * {
+    white-space: nowrap !important;
+}
+
+/* Prevent wrapping in the entire radio group */
+.slds-radio,
+.slds-form-element {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+}
+
+/* Make modal body taller and contain content properly */
+.modal-body-container {
+    min-height: 500px;
+    max-height: 600px;
+}
+
+/* Wrapper to contain both template list and preview */
+.modal-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 500px;
+}
+
+/* Scrollable Template Selection Area */
+.template-selection-area {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 8px;
+    margin-bottom: 16px;
+    min-height: 300px;
+}
+
+/* Pinned Preview Section at Bottom - properly contained */
+.pinned-preview-section {
+    background: #f3f3f3;
+    border-top: 2px solid #d8dde6;
+    border-radius: 6px;
+    padding: 16px;
+    margin-top: auto;
+}
+
+.preview-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    color: #3e3e3c;
+    font-weight: 600;
+}
+
+.preview-title {
+    font-size: 14px;
+}
+
+.preview-content {
+    background: white;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #d8dde6;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-height: 150px;
+    overflow-y: auto;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #3e3e3c;
+}

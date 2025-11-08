@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>genfuldm_fuldmhaver_p1__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Fuldmagtshaver</label>
+    <referenceTo>df_160_person__c</referenceTo>
+    <relationshipLabel>genfuldm_fuldmhaver_p1</relationshipLabel>
+    <relationshipName>genfuldm_fuldmhaver_p1</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

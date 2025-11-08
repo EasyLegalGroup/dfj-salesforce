@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>eksisterer_der_allerede_en_gtepa_93__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Hvis I har en ægtepagt i forvejen, vil den blive ugyldig, og den nye ægtepagt vil i stedet bestemme, hvad der skal gælde mellem jer som ægtefæller.</description>
+    <externalId>false</externalId>
+    <label>Eksisterer der allerede en ægtep d8c3a</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

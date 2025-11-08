@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>tilbagebetaling_gldsbrev__c</fullName>
+    <externalId>false</externalId>
+    <label>Tilbagebetaling</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>tilbbetal_rente_afdr_gldsbrev</fullName>
+                <default>false</default>
+                <label>Lånet er rente- og afdragsfrit</label>
+            </value>
+            <value>
+                <fullName>tilbbetal_best_dato_gldsbrev</fullName>
+                <default>false</default>
+                <label>På bestemt dato</label>
+            </value>
+            <value>
+                <fullName>tilbbetal_v_afdrag_gldsbrev</fullName>
+                <default>false</default>
+                <label>Ved afdrag</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

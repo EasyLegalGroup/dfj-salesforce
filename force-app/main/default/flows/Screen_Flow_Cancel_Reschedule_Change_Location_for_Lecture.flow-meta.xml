@@ -1,0 +1,1709 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <actionCalls>
+        <name>Send_Email_to_Hostaaa</name>
+        <label>Send Email to Host</label>
+        <locationX>6545</locationX>
+        <locationY>1700</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Send_Email_to_Attendees</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <stringValue>mt@dinfamiliejurist.dk</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Lecture is cancelled/rescheduled/location changed</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>HostEmailBody</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Assign_Cancel_Text_to_Send_to_Danish_Host</name>
+        <label>Assign Cancel Text to Send to Danish Host</label>
+        <locationX>622</locationX>
+        <locationY>1340</locationY>
+        <assignmentItems>
+            <assignToReference>HostEmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Eventet er cancelled (DK)</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Email_to_Hostaaa</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Cancel_Text_to_Send_to_Swedish_Host</name>
+        <label>Assign Cancel Text to Send to Swedish Host</label>
+        <locationX>5154</locationX>
+        <locationY>1232</locationY>
+        <assignmentItems>
+            <assignToReference>HostEmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Eventet er cancelled (SE)</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Email_to_Hostaaa</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_DK_Attendee_Email_Action_Error_to_Variable</name>
+        <label>Assign DK Attendee Email Action Error to Variable</label>
+        <locationX>5522</locationX>
+        <locationY>2132</locationY>
+        <assignmentItems>
+            <assignToReference>ErrorMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Cannot Determine which Action to Perfor when sending to Attendee</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_DK_Host_Picklist_Cancel_Reason</name>
+        <label>Assign DK Host Picklist Cancel Reason</label>
+        <locationX>50</locationX>
+        <locationY>1148</locationY>
+        <assignmentItems>
+            <assignToReference>varReason</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>plSelectReasonForCancellation</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Cancel_Text_to_Send_to_Danish_Host</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_DK_Host_Written_Cancel_Reason</name>
+        <label>Assign DK Host Written Cancel Reason</label>
+        <locationX>754</locationX>
+        <locationY>890</locationY>
+        <assignmentItems>
+            <assignToReference>varReason</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>PLACEHOLDER MANUAL INPUT</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Cancel_Text_to_Send_to_Danish_Host</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Host_Email_Action_Error_to_Variable</name>
+        <label>Assign Host Email Action Error to Variable</label>
+        <locationX>3922</locationX>
+        <locationY>782</locationY>
+        <assignmentItems>
+            <assignToReference>ErrorMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Cannot Determine which Action to Perfor when sending to Host</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Location_Changed_Text_to_Send_to_Danish_Host</name>
+        <label>Assign Location Changed Text to Send to Danish Host</label>
+        <locationX>3394</locationX>
+        <locationY>1040</locationY>
+        <assignmentItems>
+            <assignToReference>HostEmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Eventet er location changed (DK)</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Email_to_Hostaaa</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Location_Changed_Text_to_Send_to_Swedish_Host</name>
+        <label>Assign Location Changed Text to Send to Swedish Host</label>
+        <locationX>7002</locationX>
+        <locationY>1040</locationY>
+        <assignmentItems>
+            <assignToReference>HostEmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Eventet er location changed (SE)</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Email_to_Hostaaa</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Missing_Attendee_Market_Unit_Missing_to_Error</name>
+        <label>Assign Missing Attendee Market Unit Missing to Error</label>
+        <locationX>6842</locationX>
+        <locationY>2024</locationY>
+        <assignmentItems>
+            <assignToReference>ErrorMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Cannot Determine Attendee Market Unit</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Missing_Host_Market_Unit_Error_Text</name>
+        <label>Assign Missing Host Market Unit Error Text</label>
+        <locationX>7794</locationX>
+        <locationY>674</locationY>
+        <assignmentItems>
+            <assignToReference>ErrorMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Cannot Identify Host&apos;s Market Unit</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Error_Screen</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Reschedule_Text_to_Send_to_Danish_Host</name>
+        <label>Assign Reschedule Text to Send to Danish Host</label>
+        <locationX>2382</locationX>
+        <locationY>1166</locationY>
+        <assignmentItems>
+            <assignToReference>HostEmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Eventet er rescheduled (DK)</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Email_to_Hostaaa</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Reschedule_Text_to_Send_to_Swedish_Host</name>
+        <label>Assign Reschedule Text to Send to Swedish Host</label>
+        <locationX>6210</locationX>
+        <locationY>1040</locationY>
+        <assignmentItems>
+            <assignToReference>HostEmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Eventet er rescheduled (SE)</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Email_to_Hostaaa</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_SE_Attendee_Email_Action_Error_to_Variable</name>
+        <label>Assign SE Attendee Email Action Error to Variable</label>
+        <locationX>6578</locationX>
+        <locationY>2132</locationY>
+        <assignmentItems>
+            <assignToReference>ErrorMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Cannot Determine which Action to Perfor when sending to Attendee</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_2_of_Assign_Host_Email_Action_Error_to_Variable</name>
+        <label>Copy 2 of Assign Host Email Action Error to Variable</label>
+        <locationX>7530</locationX>
+        <locationY>782</locationY>
+        <assignmentItems>
+            <assignToReference>ErrorMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Cannot Determine which Action to Perfor when sending to Host</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <name>Cancel_Lecture</name>
+        <choiceText>Cancel Lecture</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Cancel Lecture</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Change_Location_of_Lecture</name>
+        <choiceText>Change Location of Lecture</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Change Location of Lecture</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>choiceNotifyAttendees</name>
+        <choiceText>Notify Attendees</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>choiceNotifyAttendees</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>choiceNotifyHost</name>
+        <choiceText>Notify Host</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>choiceNotifyHost</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>No_do_not_send_notifications</name>
+        <choiceText>No, do not send notifications</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>No_do_not_send_notifications</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Reschedule_Lecture</name>
+        <choiceText>Reschedule Lecture</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Reschedule Lecture</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Yes_send_notifications</name>
+        <choiceText>Yes, send notifications</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Yes, send notifications</stringValue>
+        </value>
+    </choices>
+    <decisions>
+        <name>Attendee_Market_Unit</name>
+        <label>Attendee Market Unit</label>
+        <locationX>5984</locationX>
+        <locationY>1916</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Missing_Attendee_Market_Unit_Missing_to_Error</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Error in Attendee Market Unit</defaultConnectorLabel>
+        <rules>
+            <name>Danish_Attendees</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Campaign.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>DFJ_DK</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Campaign.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Testamente_DK</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Which_Email_to_Send_to_Danish_Attendees</targetReference>
+            </connector>
+            <label>Danish Attendees</label>
+        </rules>
+        <rules>
+            <name>Swedish_Attendees</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Campaign.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>FA_SE</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Campaign.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Testamente_SV</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Which_Email_to_Send_to_Swedish_Attendees</targetReference>
+            </connector>
+            <label>Swedish Attendees</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Danish_Cancellation_Input_Type</name>
+        <label>Danish Cancellation Input Type</label>
+        <locationX>622</locationX>
+        <locationY>782</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>DK Host Cancel Can&apos;t Determine</defaultConnectorLabel>
+        <rules>
+            <name>Picklist_Danish_Host_Cancel</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plReasonInputType</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Select from picklist</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Danish_Host_Reason_for_Cancellation</targetReference>
+            </connector>
+            <label>Picklist Danish Host Cancel</label>
+        </rules>
+        <rules>
+            <name>Write_Danish_Host_Cancel</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plReasonInputType</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Write text</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_DK_Host_Written_Cancel_Reason</targetReference>
+            </connector>
+            <label>Write Danish Host Cancel</label>
+        </rules>
+        <rules>
+            <name>None_Danish_Host_Cancel</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plReasonInputType</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Don&apos;t add a reason</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Cancel_Text_to_Send_to_Danish_Host</targetReference>
+            </connector>
+            <label>None Danish Host Cancel</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Danish_Change_Location_Input_Type</name>
+        <label>Danish Change Location Input Type</label>
+        <locationX>3394</locationX>
+        <locationY>782</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Picklist_Danish_Host_Change_Location</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plChangeLocationReasonInput</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Select from picklist</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Location_Changed_Text_to_Send_to_Danish_Host</targetReference>
+            </connector>
+            <label>Picklist Danish Host Change Location</label>
+        </rules>
+        <rules>
+            <name>Write_Danish_Host_Change_Location</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plChangeLocationReasonInput</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Write text</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Location_Changed_Text_to_Send_to_Danish_Host</targetReference>
+            </connector>
+            <label>Write Danish Host Change Location</label>
+        </rules>
+        <rules>
+            <name>None_Danish_Host_Change_Location</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plChangeLocationReasonInput</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Don&apos;t add a reason</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Location_Changed_Text_to_Send_to_Danish_Host</targetReference>
+            </connector>
+            <label>None Danish Host Change Location</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Danish_Host_Reason_for_Cancellation</name>
+        <label>Danish Host Reason for Cancellation</label>
+        <locationX>50</locationX>
+        <locationY>890</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Too_few_bookings_Danish_Host_Cancellation</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plSelectReasonForCancellation</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Too few bookings</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_DK_Host_Picklist_Cancel_Reason</targetReference>
+            </connector>
+            <label>Too few bookings - Danish Host Cancellation</label>
+        </rules>
+        <rules>
+            <name>Illness_Danish_Host_Cancellation</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plSelectReasonForCancellation</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Illness</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_DK_Host_Picklist_Cancel_Reason</targetReference>
+            </connector>
+            <label>Illness - Danish Host Cancellation</label>
+        </rules>
+        <rules>
+            <name>Issue_with_Lecturer_Danish_Host_Cancellation</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plSelectReasonForCancellation</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Issue with Lecturer</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_DK_Host_Picklist_Cancel_Reason</targetReference>
+            </connector>
+            <label>Issue with Lecturer - Danish Host Cancellation</label>
+        </rules>
+        <rules>
+            <name>Host_cancelled_event_Danish_Host_Cancellation</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plSelectReasonForCancellation</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Host cancelled event</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_DK_Host_Picklist_Cancel_Reason</targetReference>
+            </connector>
+            <label>Host cancelled event - Danish Host Cancellation</label>
+        </rules>
+        <rules>
+            <name>Host_no_longer_in_business_Danish_Host_Cancellation</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plSelectReasonForCancellation</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Host no longer in business</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_DK_Host_Picklist_Cancel_Reason</targetReference>
+            </connector>
+            <label>Host no longer in business - Danish Host Cancellation</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Danish_Host_Reason_for_Rescheduling</name>
+        <label>Danish Host Reason for Rescheduling</label>
+        <locationX>1898</locationX>
+        <locationY>890</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Reschedule_Text_to_Send_to_Danish_Host</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Copy_1_of_Too_few_bookings</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <operator>None</operator>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Reschedule_Text_to_Send_to_Danish_Host</targetReference>
+            </connector>
+            <label>Copy 1 of Too few bookings</label>
+        </rules>
+        <rules>
+            <name>Copy_1_of_Illness</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <operator>None</operator>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Reschedule_Text_to_Send_to_Danish_Host</targetReference>
+            </connector>
+            <label>Copy 1 of Illness</label>
+        </rules>
+        <rules>
+            <name>Copy_1_of_Issue_with_Lecturer</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <operator>None</operator>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Reschedule_Text_to_Send_to_Danish_Host</targetReference>
+            </connector>
+            <label>Copy 1 of Issue with Lecturer</label>
+        </rules>
+        <rules>
+            <name>Copy_1_of_Host_cancelled_event</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <operator>None</operator>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Reschedule_Text_to_Send_to_Danish_Host</targetReference>
+            </connector>
+            <label>Copy 1 of Host cancelled event</label>
+        </rules>
+        <rules>
+            <name>Copy_1_of_Host_no_longer_in_business</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <operator>None</operator>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Reschedule_Text_to_Send_to_Danish_Host</targetReference>
+            </connector>
+            <label>Copy 1 of Host no longer in business</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Danish_Reschedule_Input_Type</name>
+        <label>Danish Reschedule Input Type</label>
+        <locationX>2382</locationX>
+        <locationY>782</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Picklist_Danish_Host_Reschedule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plReschedulingReasonInput</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Select from picklist</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Danish_Host_Reason_for_Rescheduling</targetReference>
+            </connector>
+            <label>Picklist Danish Host Reschedule</label>
+        </rules>
+        <rules>
+            <name>Write_Danish_Host_Reschedule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plReschedulingReasonInput</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Write text</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Reschedule_Text_to_Send_to_Danish_Host</targetReference>
+            </connector>
+            <label>Write Danish Host Reschedule</label>
+        </rules>
+        <rules>
+            <name>None_Danish_Host_Reschedule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plReschedulingReasonInput</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Don&apos;t add a reason</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Reschedule_Text_to_Send_to_Danish_Host</targetReference>
+            </connector>
+            <label>None Danish Host Reschedule</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Host_Market_Unit</name>
+        <label>Host Market Unit</label>
+        <locationX>5033</locationX>
+        <locationY>566</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Missing_Host_Market_Unit_Error_Text</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Host Market Unit</defaultConnectorLabel>
+        <rules>
+            <name>Danish_Host</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Campaign.Host__r.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>DFJ_DK</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Campaign.Host__r.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Testamente_DK</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Which_Email_to_Send_to_Danish_Host</targetReference>
+            </connector>
+            <label>Danish Host</label>
+        </rules>
+        <rules>
+            <name>Swedish_Host</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Campaign.Host__r.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>FA_SE</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Campaign.Host__r.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Testamente_SV</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Which_Email_to_Send_to_Swedish_Host</targetReference>
+            </connector>
+            <label>Swedish Host</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Send_Email_to_Attendees</name>
+        <label>Send Email to Attendees?</label>
+        <locationX>6545</locationX>
+        <locationY>1808</locationY>
+        <defaultConnectorLabel>No, Don&apos;t Email Attendees</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Email_Attendees</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>choiceNotifyAttendees</leftValueReference>
+                <operator>WasSelected</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Attendee_Market_Unit</targetReference>
+            </connector>
+            <label>Yes, Email Attendees</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Send_Email_to_Host</name>
+        <label>Send Email to Host?</label>
+        <locationX>6545</locationX>
+        <locationY>458</locationY>
+        <defaultConnector>
+            <targetReference>Send_Email_to_Hostaaa</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Don&apos;t Email Host</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Email_Host</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>choiceNotifyHost</leftValueReference>
+                <operator>WasSelected</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Host_Market_Unit</targetReference>
+            </connector>
+            <label>Yes, Email Host</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Swedish_Cancellation_Input_Type</name>
+        <label>Swedish Cancellation Input Type</label>
+        <locationX>5154</locationX>
+        <locationY>782</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Picklist_Swedish_Host_Cancel</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plReasonInputType</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Select from picklist</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Swedish_Host_Reason_for_Cancellation</targetReference>
+            </connector>
+            <label>Picklist Swedish Host Cancel</label>
+        </rules>
+        <rules>
+            <name>Write_Swedish_Host_Cancel</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plReasonInputType</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Write text</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Cancel_Text_to_Send_to_Swedish_Host</targetReference>
+            </connector>
+            <label>Write Swedish Host Cancel</label>
+        </rules>
+        <rules>
+            <name>None_Swedish_Host_Cancel</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plReasonInputType</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Don&apos;t add a reason</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Cancel_Text_to_Send_to_Swedish_Host</targetReference>
+            </connector>
+            <label>None Swedish Host Cancel</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Swedish_Change_Location_Input_Type</name>
+        <label>Swedish Change Location Input Type</label>
+        <locationX>7002</locationX>
+        <locationY>782</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Picklist_Swedish_Host_Change_Location</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plChangeLocationReasonInput</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Select from picklist</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Location_Changed_Text_to_Send_to_Swedish_Host</targetReference>
+            </connector>
+            <label>Picklist Swedish Host Change Location</label>
+        </rules>
+        <rules>
+            <name>Write_Swedish_Host_Change_Location</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plChangeLocationReasonInput</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Write text</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Location_Changed_Text_to_Send_to_Swedish_Host</targetReference>
+            </connector>
+            <label>Write Swedish Host Change Location</label>
+        </rules>
+        <rules>
+            <name>None_Swedish_Host_Change_Location</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plChangeLocationReasonInput</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Don&apos;t add a reason</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Location_Changed_Text_to_Send_to_Swedish_Host</targetReference>
+            </connector>
+            <label>None Swedish Host Change Location</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Swedish_Host_Reason_for_Cancellation</name>
+        <label>Swedish Host Reason for Cancellation</label>
+        <locationX>4626</locationX>
+        <locationY>890</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Too_few_bookings_Swedish_Host_Cancellation</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plSelectReasonForCancellation</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Too few bookings</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Cancel_Text_to_Send_to_Swedish_Host</targetReference>
+            </connector>
+            <label>Too few bookings - Swedish Host Cancellation</label>
+        </rules>
+        <rules>
+            <name>Illness_Swedish_Host_Cancellation</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plSelectReasonForCancellation</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Illness</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Cancel_Text_to_Send_to_Swedish_Host</targetReference>
+            </connector>
+            <label>Illness - Swedish Host Cancellation</label>
+        </rules>
+        <rules>
+            <name>Issue_with_Lecturer_Swedish_Host_Cancellation</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plSelectReasonForCancellation</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Issue with Lecturer</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Cancel_Text_to_Send_to_Swedish_Host</targetReference>
+            </connector>
+            <label>Issue with Lecturer - Swedish Host Cancellation</label>
+        </rules>
+        <rules>
+            <name>Host_cancelled_event_Swedish_Host_Cancellation</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plSelectReasonForCancellation</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Host cancelled event</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Cancel_Text_to_Send_to_Swedish_Host</targetReference>
+            </connector>
+            <label>Host cancelled event - Swedish Host Cancellation</label>
+        </rules>
+        <rules>
+            <name>Host_no_longer_in_business_Swedish_Host_Cancellation</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plSelectReasonForCancellation</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Host no longer in business</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Cancel_Text_to_Send_to_Swedish_Host</targetReference>
+            </connector>
+            <label>Host no longer in business - Swedish Host Cancellation</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Swedish_Reschedule_Input_Type</name>
+        <label>Swedish Reschedule Input Type</label>
+        <locationX>6210</locationX>
+        <locationY>782</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Picklist_Swedish_Host_Reschedule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plReschedulingReasonInput</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Select from picklist</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Reschedule_Text_to_Send_to_Swedish_Host</targetReference>
+            </connector>
+            <label>Picklist Swedish Host Reschedule</label>
+        </rules>
+        <rules>
+            <name>Write_Swedish_Host_Reschedule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plReschedulingReasonInput</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Write text</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Reschedule_Text_to_Send_to_Swedish_Host</targetReference>
+            </connector>
+            <label>Write Swedish Host Reschedule</label>
+        </rules>
+        <rules>
+            <name>None_Swedish_Host_Reschedule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plReschedulingReasonInput</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Don&apos;t add a reason</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Reschedule_Text_to_Send_to_Swedish_Host</targetReference>
+            </connector>
+            <label>None Swedish Host Reschedule</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Which_Email_to_Send_to_Danish_Attendees</name>
+        <label>Which Email to Send to Danish Attendees?</label>
+        <locationX>5126</locationX>
+        <locationY>2024</locationY>
+        <defaultConnector>
+            <targetReference>Assign_DK_Attendee_Email_Action_Error_to_Variable</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Error in Attendees Email Action</defaultConnectorLabel>
+        <rules>
+            <name>Send_Cancel_Email_to_Danish_Attendees</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>radActionSelection</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Cancel_Lecture</elementReference>
+                </rightValue>
+            </conditions>
+            <label>Send Cancel Email to Danish Attendees</label>
+        </rules>
+        <rules>
+            <name>Send_Reschedule_Email_to_Danish_Attendees</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>radActionSelection</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Reschedule_Lecture</elementReference>
+                </rightValue>
+            </conditions>
+            <label>Send Reschedule Email to Danish Attendees</label>
+        </rules>
+        <rules>
+            <name>Send_Location_Change_Email_to_Danish_Attendees</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>radActionSelection</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Change_Location_of_Lecture</elementReference>
+                </rightValue>
+            </conditions>
+            <label>Send Location Change Email to Danish Attendees</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Which_Email_to_Send_to_Danish_Host</name>
+        <label>Which Email to Send to Danish Host?</label>
+        <locationX>2272</locationX>
+        <locationY>674</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Host_Email_Action_Error_to_Variable</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Error in Host Email Action</defaultConnectorLabel>
+        <rules>
+            <name>Send_Cancel_Email_to_Danish_Host</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>radActionSelection</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Cancel_Lecture</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Danish_Cancellation_Input_Type</targetReference>
+            </connector>
+            <label>Send Cancel Email to Danish Host</label>
+        </rules>
+        <rules>
+            <name>Send_Reschedule_Email_to_Host</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>radActionSelection</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Reschedule_Lecture</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Danish_Reschedule_Input_Type</targetReference>
+            </connector>
+            <label>Send Reschedule Email to Danish Host</label>
+        </rules>
+        <rules>
+            <name>Send_Location_Change_Email_to_Danish_Host</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>radActionSelection</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Change_Location_of_Lecture</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Danish_Change_Location_Input_Type</targetReference>
+            </connector>
+            <label>Send Location Change Email to Danish Host</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Which_Email_to_Send_to_Swedish_Attendees</name>
+        <label>Which Email to Send to Swedish Attendees?</label>
+        <locationX>6182</locationX>
+        <locationY>2024</locationY>
+        <defaultConnector>
+            <targetReference>Assign_SE_Attendee_Email_Action_Error_to_Variable</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Error in Attendee Email Action</defaultConnectorLabel>
+        <rules>
+            <name>Send_Cancel_Email_to_Swedish_Attendees</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>radActionSelection</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Cancel_Lecture</elementReference>
+                </rightValue>
+            </conditions>
+            <label>Send Cancel Email to Swedish Attendees</label>
+        </rules>
+        <rules>
+            <name>Send_Reschedule_Email_to_Swedish_Attendees</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>radActionSelection</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Reschedule_Lecture</elementReference>
+                </rightValue>
+            </conditions>
+            <label>Send Reschedule Email to Swedish Attendees</label>
+        </rules>
+        <rules>
+            <name>Send_Location_Change_Email_to_Swedish_Attendees</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>radActionSelection</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Change_Location_of_Lecture</elementReference>
+                </rightValue>
+            </conditions>
+            <label>Send Location Change Email to Swedish Attendees</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Which_Email_to_Send_to_Swedish_Host</name>
+        <label>Which Email to Send to Swedish Host?</label>
+        <locationX>6342</locationX>
+        <locationY>674</locationY>
+        <defaultConnector>
+            <targetReference>Copy_2_of_Assign_Host_Email_Action_Error_to_Variable</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Error in Host Email Action</defaultConnectorLabel>
+        <rules>
+            <name>Send_Cancel_Email_to_Swedish_Host</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>radActionSelection</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Cancel_Lecture</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Swedish_Cancellation_Input_Type</targetReference>
+            </connector>
+            <label>Send Cancel Email to Swedish Host</label>
+        </rules>
+        <rules>
+            <name>Send_Reschedule_Email_to_Swedish_Host</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>radActionSelection</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Reschedule_Lecture</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Swedish_Reschedule_Input_Type</targetReference>
+            </connector>
+            <label>Send Reschedule Email to Swedish Host</label>
+        </rules>
+        <rules>
+            <name>Send_Location_Change_Email_to_Swedish_Host</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>radActionSelection</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Change_Location_of_Lecture</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Swedish_Change_Location_Input_Type</targetReference>
+            </connector>
+            <label>Send Location Change Email to Swedish Host</label>
+        </rules>
+    </decisions>
+    <dynamicChoiceSets>
+        <name>pcsReasonForLocationChange</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Reason_for_Location_Change_Input__c</picklistField>
+        <picklistObject>Campaign</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>pcsReasonForRescheduling</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Reason_for_Rescheduling_Input__c</picklistField>
+        <picklistObject>Campaign</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>pcsReasonInputType</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Reason_for_Cancellation_Input__c</picklistField>
+        <picklistObject>Campaign</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>pcsReasonSelection</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Reason_for_Cancellation__c</picklistField>
+        <picklistObject>Campaign</picklistObject>
+    </dynamicChoiceSets>
+    <environments>Default</environments>
+    <formulas>
+        <name>frmReason</name>
+        <dataType>String</dataType>
+        <expression>{!Get_Campaign.Market_Unit__c}
+{!radActionSelection}
+{!Cancel_Lecture}
+{!plReasonInputType}
+{!Reschedule_Lecture}
+{!plReschedulingReasonInput}
+{!Change_Location_of_Lecture}
+{!plChangeLocationReasonInput}</expression>
+    </formulas>
+    <formulas>
+        <name>frmTrueIfDoNotSendNotifications</name>
+        <dataType>Boolean</dataType>
+        <expression>IF({!radSendNotificationEmails} != {!Yes_send_notifications}, true, false)</expression>
+    </formulas>
+    <interviewLabel>Screen Flow: Cancel/Reschedule/Change Location for Lecture {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Screen Flow: Cancel/Reschedule/Change Location for Lecture</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Get_Campaign</name>
+        <label>Get Campaign</label>
+        <locationX>6545</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_User</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Campaign</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_User</name>
+        <label>Get User</label>
+        <locationX>6545</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Screen_1_Decide_on_Action</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <screens>
+        <name>Error_Screen</name>
+        <label>Error Screen</label>
+        <locationX>7794</locationX>
+        <locationY>782</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>DisplayError</name>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Screen_1_Decide_on_Action</name>
+        <label>Screen 1 - Decide on Action</label>
+        <locationX>6545</locationX>
+        <locationY>350</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Send_Email_to_Host</targetReference>
+        </connector>
+        <fields>
+            <name>Screen_1_Decide_on_Action_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Screen_1_Decide_on_Action_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>radActionSelection</name>
+                    <choiceReferences>Cancel_Lecture</choiceReferences>
+                    <choiceReferences>Reschedule_Lecture</choiceReferences>
+                    <choiceReferences>Change_Location_of_Lecture</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Select Action</fieldText>
+                    <fieldType>RadioButtons</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Screen_1_Decide_on_Action_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>plReasonInputType</name>
+                    <choiceReferences>pcsReasonInputType</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Add a Reason?</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>radActionSelection</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <elementReference>Cancel_Lecture</elementReference>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>plChangeLocationReasonInput</name>
+                    <choiceReferences>pcsReasonForLocationChange</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Change Location</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>radActionSelection</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <elementReference>Change_Location_of_Lecture</elementReference>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>plReschedulingReasonInput</name>
+                    <choiceReferences>pcsReasonForRescheduling</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Reason for Rescheduling</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>radActionSelection</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <elementReference>Reschedule_Lecture</elementReference>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Screen_1_Decide_on_Action_Section1_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>plSelectReasonForCancellation</name>
+                    <choiceReferences>choiceNotifyAttendees</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Select Reason for Cancellation</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>plReasonInputType</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Select from picklist</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>txtSelectReasonForCancellation</name>
+                    <dataType>String</dataType>
+                    <fieldText>Write Reason for Cancellation</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>plReasonInputType</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Write text</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>plSelectReasonForRescheduling</name>
+                    <choiceReferences>No_do_not_send_notifications</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Select Reason For Rescheduling</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>plReschedulingReasonInput</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Select from picklist</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>txtSelectReasonForRescheduling</name>
+                    <dataType>String</dataType>
+                    <fieldText>Write Reason for Rescheduling</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>plReschedulingReasonInput</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Write text</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>plSelectReasonForLocationChange</name>
+                    <choiceReferences>No_do_not_send_notifications</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Select Reason For Location Change</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>plReasonInputType</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Select from picklist</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>txtSelectReasonForLocationChange</name>
+                    <dataType>String</dataType>
+                    <fieldText>Write Reason for Location Change</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>plChangeLocationReasonInput</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Write text</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Screen_1_Decide_on_Action_Section2</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Screen_1_Decide_on_Action_Section2_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>radSendNotificationEmails</name>
+                    <choiceReferences>Yes_send_notifications</choiceReferences>
+                    <choiceReferences>No_do_not_send_notifications</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Do you want to send out notification email?</fieldText>
+                    <fieldType>RadioButtons</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Screen_1_Decide_on_Action_Section2_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>cgNotifyHostAndOrAttendees</name>
+                    <choiceReferences>choiceNotifyHost</choiceReferences>
+                    <choiceReferences>choiceNotifyAttendees</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Who do you want to notify?</fieldText>
+                    <fieldType>MultiSelectCheckboxes</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isDisabled>
+                        <elementReference>frmTrueIfDoNotSendNotifications</elementReference>
+                    </isDisabled>
+                    <isRequired>true</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>6419</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Campaign</targetReference>
+        </connector>
+    </start>
+    <status>InvalidDraft</status>
+    <textTemplates>
+        <name>DanishHostEmailBase</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://dfj.file.force.com/sfc/servlet.shepherd/version/download/068W500000C4jpv?asPdf=false&amp;amp;operationContext=CHATTER&quot; alt=&quot;dfj-logo-1024x401 (1).png&quot;&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Kære&amp;nbsp;{!Get_Campaign.Host__r.Name},&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;{!varDanishHostEmailBody}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;De bedste hilsner,&lt;/p&gt;&lt;p&gt;Din Familiejurist&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;https://dfj.file.force.com/sfc/servlet.shepherd/version/download/068W500000C4Ca1?asPdf=false&amp;amp;operationContext=CHATTER&quot; alt=&quot;logo_smaller.png&quot;&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <name>ErrorMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>HostEmailBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varDanishHostEmailBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varReason</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

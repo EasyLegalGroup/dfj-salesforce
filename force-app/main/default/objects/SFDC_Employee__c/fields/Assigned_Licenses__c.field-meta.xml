@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assigned_Licenses__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Excludes Licenses that are not Active and/or are marked as &quot;Is Free&quot;</inlineHelpText>
+    <label>Assigned Licenses</label>
+    <summaryFilterItems>
+        <field>License__c.Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>License__c.isFree__c</field>
+        <operation>equals</operation>
+        <value>False</value>
+    </summaryFilterItems>
+    <summaryForeignKey>License__c.Employee__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

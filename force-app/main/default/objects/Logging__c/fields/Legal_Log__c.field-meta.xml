@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Legal_Log__c</fullName>
+    <externalId>false</externalId>
+    <label>Legal Log</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>30% regel</fullName>
+                <default>false</default>
+                <label>30% regel</label>
+            </value>
+            <value>
+                <fullName>Andet (Se note)</fullName>
+                <default>false</default>
+                <label>Andet (Se note)</label>
+            </value>
+            <value>
+                <fullName>Arvefordeling</fullName>
+                <default>false</default>
+                <label>Arvefordeling</label>
+            </value>
+            <value>
+                <fullName>Beboelsesret</fullName>
+                <default>false</default>
+                <label>Beboelsesret</label>
+            </value>
+            <value>
+                <fullName>Boafgift og skat</fullName>
+                <default>false</default>
+                <label>Boafgift og skat</label>
+            </value>
+            <value>
+                <fullName>Båndlæggelse</fullName>
+                <default>false</default>
+                <label>Båndlæggelse</label>
+            </value>
+            <value>
+                <fullName>Børnetestamente</fullName>
+                <default>false</default>
+                <label>Børnetestamente</label>
+            </value>
+            <value>
+                <fullName>Ejendomshandel</fullName>
+                <default>false</default>
+                <label>Ejendomshandel</label>
+            </value>
+            <value>
+                <fullName>FF rækkefølge</fullName>
+                <default>false</default>
+                <label>FF rækkefølge</label>
+            </value>
+            <value>
+                <fullName>Genstandslegat</fullName>
+                <default>false</default>
+                <label>Genstandslegat</label>
+            </value>
+            <value>
+                <fullName>Gravstedsvedligeholdelse</fullName>
+                <default>false</default>
+                <label>Gravstedsvedligeholdelse</label>
+            </value>
+            <value>
+                <fullName>Manglende forståelse</fullName>
+                <default>false</default>
+                <label>Manglende forståelse</label>
+            </value>
+            <value>
+                <fullName>Notar og tinglysning</fullName>
+                <default>false</default>
+                <label>Notar og tinglysning</label>
+            </value>
+            <value>
+                <fullName>Virksomhedsrelateret</fullName>
+                <default>false</default>
+                <label>Virksomhedsrelateret</label>
+            </value>
+            <value>
+                <fullName>Skræddersyet</fullName>
+                <default>false</default>
+                <label>Skræddersyet</label>
+            </value>
+            <value>
+                <fullName>Stamdata</fullName>
+                <default>false</default>
+                <label>Stamdata</label>
+            </value>
+            <value>
+                <fullName>Successionsrækkefølge</fullName>
+                <default>false</default>
+                <label>Successionsrækkefølge</label>
+            </value>
+            <value>
+                <fullName>Sumlegat</fullName>
+                <default>false</default>
+                <label>Sumlegat</label>
+            </value>
+            <value>
+                <fullName>Særeje</fullName>
+                <default>false</default>
+                <label>Særeje</label>
+            </value>
+            <value>
+                <fullName>Testationsret</fullName>
+                <default>false</default>
+                <label>Testationsret</label>
+            </value>
+            <value>
+                <fullName>Tvangsarv</fullName>
+                <default>false</default>
+                <label>Tvangsarv</label>
+            </value>
+            <value>
+                <fullName>Udenlandske forhold</fullName>
+                <default>false</default>
+                <label>Udenlandske forhold</label>
+            </value>
+            <value>
+                <fullName>Uskiftet Bo</fullName>
+                <default>false</default>
+                <label>Uskiftet Bo</label>
+            </value>
+            <value>
+                <fullName>Ægtepagt</fullName>
+                <default>false</default>
+                <label>Ægtepagt</label>
+            </value>
+            <value>
+                <fullName>Legat</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Legat</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

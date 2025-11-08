@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Assign_Lead_s_Meeting_Booker_to_Order</name>
+        <label>Assign Lead&apos;s Meeting Booker to Order</label>
+        <locationX>402</locationX>
+        <locationY>660</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Meeting_Booker__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Lead__r.Meeting_booker__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Order</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_True_to_From_Meeting_Booker</name>
+        <label>Assign True to From Meeting Booker</label>
+        <locationX>314</locationX>
+        <locationY>360</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Is_from_Internal_Meeting_Booker__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Does_Meeting_Booker_Exist</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Does_it_Match_Lead_s_M_debooker</name>
+        <label>Does it Match Lead&apos;s Mødebooker?</label>
+        <locationX>50</locationX>
+        <locationY>660</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Assign_Lead_s_Meeting_Booker_to_Order</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Update Booker</defaultConnectorLabel>
+        <rules>
+            <name>Booker_Matches</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CompareIDs</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Order</targetReference>
+            </connector>
+            <label>Booker Matches</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Does_Meeting_Booker_Exist</name>
+        <label>Does Meeting Booker Exist?</label>
+        <locationX>226</locationX>
+        <locationY>552</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Lead_s_Meeting_Booker_to_Order</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Meeting Booker</defaultConnectorLabel>
+        <rules>
+            <name>Meeting_Booker_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Meeting_Booker__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Does_it_Match_Lead_s_M_debooker</targetReference>
+            </connector>
+            <label>Meeting Booker Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_From_Meeting_Booker_Checkbox_Checked</name>
+        <label>Is From Meeting Booker Checkbox Checked?</label>
+        <locationX>226</locationX>
+        <locationY>252</locationY>
+        <defaultConnector>
+            <targetReference>Assign_True_to_From_Meeting_Booker</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>From_Meeting_Booker_is_Checked</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Is_from_Internal_Meeting_Booker__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Does_Meeting_Booker_Exist</targetReference>
+            </connector>
+            <label>From Meeting Booker is Checked</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>CompareIDs</name>
+        <dataType>Boolean</dataType>
+        <expression>LEFT({!$Record.Meeting_Booker_User_ID__c}, 15) = LEFT({!$Record.Lead__r.Meeting_booker__c}, 15)</expression>
+    </formulas>
+    <interviewLabel>Scheduled: Update Meeting Booker on Existing Leads {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Scheduled: Update Meeting Booker on Existing Leads</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Order</name>
+        <label>Update Order</label>
+        <locationX>226</locationX>
+        <locationY>1002</locationY>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>100</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_From_Meeting_Booker_Checkbox_Checked</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Meeting_Booker_User_ID__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Order</object>
+        <schedule>
+            <frequency>Once</frequency>
+            <startDate>2024-08-21</startDate>
+            <startTime>09:59:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

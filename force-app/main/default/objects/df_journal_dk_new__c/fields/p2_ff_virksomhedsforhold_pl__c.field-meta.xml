@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>p2_ff_virksomhedsforhold_pl__c</fullName>
+    <externalId>false</externalId>
+    <label>Virksomhedsforhold</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>p2_ff_virkfor_evt_fremt</fullName>
+                <default>false</default>
+                <label>Ja, tilføj evt. fremtidig virksomhed</label>
+            </value>
+            <value>
+                <fullName>p2_ff_virkfor_ingen_virk</fullName>
+                <default>false</default>
+                <label>Person 2 driver ikke virksomhed</label>
+            </value>
+            <value>
+                <fullName>p2_ff_virkfor_ja</fullName>
+                <default>false</default>
+                <label>Ja, virksomhed(er) skal indgå i fuldmagten</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

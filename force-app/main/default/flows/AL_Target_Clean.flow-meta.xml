@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <environments>Default</environments>
+    <formulas>
+        <name>frmTargetName</name>
+        <dataType>String</dataType>
+        <expression>UPPER(
+  LEFT({!Loop_Target_Links.CreatedBy.Email}, FIND(&quot;@&quot;, {!Loop_Target_Links.CreatedBy.Email}) - 1)
+)
+&amp; &quot; | Partner Referrals (&quot;
+&amp; CASE(
+    7,
+      1, &quot;January&quot;,   2, &quot;February&quot;,  3, &quot;March&quot;,
+      4, &quot;April&quot;,     5, &quot;May&quot;,       6, &quot;June&quot;,
+      7, &quot;July&quot;,      8, &quot;August&quot;,    9, &quot;September&quot;,
+     10, &quot;October&quot;,  11, &quot;November&quot;, 12, &quot;December&quot;,
+    &quot;Invalid Month&quot;
+  )
+&amp; &quot; &quot;
+&amp; TEXT(
+    FLOOR(2025)
+)
+&amp; &quot;)&quot;</expression>
+    </formulas>
+    <interviewLabel>AL - Target Clean {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>AL - Target Clean</label>
+    <loops>
+        <name>Loop_Target_Links</name>
+        <label>Loop Target Links</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>Get_Target_Links</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>AL_Create_Update_Targets_and_Target_Links_Flow_1</targetReference>
+        </nextValueConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordDeletes>
+        <name>Delete_Target_Link</name>
+        <label>Delete Target Link</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Loop_Target_Links</targetReference>
+        </connector>
+        <inputReference>Loop_Target_Links</inputReference>
+    </recordDeletes>
+    <recordLookups>
+        <name>Get_Target_Links</name>
+        <label>Get Target Links</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Target_Links</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Target__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>a6lW500000001ovIAA</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>CreatedById</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>005AX000000K0OZ</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Target_Link__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Target_Links</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+    <subflows>
+        <name>AL_Create_Update_Targets_and_Target_Links_Flow_1</name>
+        <label>AL - Create/Update Targets and Target Links Flow 1</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Delete_Target_Link</targetReference>
+        </connector>
+        <flowName>AL_Create_Update_Targets_and_Target_Links</flowName>
+        <inputAssignments>
+            <name>inputIsActive</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputIsUserTarget</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputLeadId</name>
+            <value>
+                <elementReference>Loop_Target_Links.Lead__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputMarketUnit</name>
+            <value>
+                <stringValue>DFJ_DK</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputMetric</name>
+            <value>
+                <stringValue>Partner Referral</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputMonthNumber</name>
+            <value>
+                <numberValue>7.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputTag</name>
+            <value>
+                <stringValue>Partner Referral</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputTargetLinkName</name>
+            <value>
+                <stringValue>Partner Referral | ({!Loop_Target_Links.Value__c})</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputTargetName</name>
+            <value>
+                <elementReference>frmTargetName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputTargetPeriod</name>
+            <value>
+                <stringValue>Month</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputTargetType</name>
+            <value>
+                <stringValue>Numerical</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputUserId</name>
+            <value>
+                <elementReference>Loop_Target_Links.CreatedById</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputValue</name>
+            <value>
+                <elementReference>Loop_Target_Links.Value__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputYear</name>
+            <value>
+                <numberValue>2025.0</numberValue>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+</Flow>

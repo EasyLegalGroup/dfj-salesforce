@@ -1,0 +1,37 @@
+<template>
+    <lightning-modal-header label="Select from Email Templates." ></lightning-modal-header>
+    <lightning-modal-body class="modal-body-container">
+
+        <template lwc:if={isOptionsForEmailTemplateSelectionAvailable}>
+            <div class="modal-content-wrapper">
+                <!-- Scrollable template selection area -->
+                <div class="template-selection-area">
+                    <lightning-radio-group
+                    label="Select the Email Template."
+                    options={optionsForEmailTemplateSelection}
+                    value={selectedEmailTemplateId}
+                    onchange= {logSelectedEmailTemplateValue}
+                    ></lightning-radio-group>
+                </div>
+                
+                <!-- Pinned Preview Section at Bottom -->
+                <template lwc:if={selectedTemplatePreview}>
+                    <div class="pinned-preview-section">
+                        <div class="preview-header">
+                            <lightning-icon icon-name="utility:preview" size="x-small"></lightning-icon>
+                            <span class="preview-title">Template Preview:</span>
+                        </div>
+                        <div class="preview-content">
+                            {selectedTemplatePreview}
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </template>
+
+    </lightning-modal-body>
+    
+    <lightning-modal-footer>
+        <lightning-button label="Insert" onclick={handleOkay} variant="brand"></lightning-button>
+    </lightning-modal-footer>
+</template>

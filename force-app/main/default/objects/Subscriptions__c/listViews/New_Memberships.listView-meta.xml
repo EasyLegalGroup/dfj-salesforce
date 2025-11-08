@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Memberships</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Subscriptions_Status__c</columns>
+    <columns>Lead__c</columns>
+    <columns>Account__c</columns>
+    <columns>Payments__c</columns>
+    <columns>Plan_Name__c</columns>
+    <columns>Plan_ID__c</columns>
+    <columns>Trial_Start_Date__c</columns>
+    <columns>Trial_End_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Plan_ID__c</field>
+        <operation>equals</operation>
+        <value>medlemskab</value>
+    </filters>
+    <label>ViewAll Memberships</label>
+</ListView>

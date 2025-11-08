@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bndlggelse_rateudb_1__c</fullName>
+    <externalId>false</externalId>
+    <label>1. rateudbetaling</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>bndlggelse_rateudb_1_33</fullName>
+                <default>false</default>
+                <label>33 år</label>
+            </value>
+            <value>
+                <fullName>bndlggelse_rateudb_1_34</fullName>
+                <default>false</default>
+                <label>34 år</label>
+            </value>
+            <value>
+                <fullName>bndlggelse_rateudb_1_35</fullName>
+                <default>false</default>
+                <label>35 år</label>
+            </value>
+            <value>
+                <fullName>bndlggelse_rateudb_1_36</fullName>
+                <default>false</default>
+                <label>36 år</label>
+            </value>
+            <value>
+                <fullName>bndlggelse_rateudb_1_37</fullName>
+                <default>false</default>
+                <label>37 år</label>
+            </value>
+            <value>
+                <fullName>bndlggelse_rateudb_1_38</fullName>
+                <default>false</default>
+                <label>38 år</label>
+            </value>
+            <value>
+                <fullName>bndlggelse_rateudb_1_39</fullName>
+                <default>false</default>
+                <label>39 år</label>
+            </value>
+            <value>
+                <fullName>bndlggelse_rateudb_1_40</fullName>
+                <default>false</default>
+                <label>40 år</label>
+            </value>
+            <value>
+                <fullName>bndlggelse_rateudb_1_26</fullName>
+                <default>false</default>
+                <label>26 år</label>
+            </value>
+            <value>
+                <fullName>bndlggelse_rateudb_1_27</fullName>
+                <default>false</default>
+                <label>27 år</label>
+            </value>
+            <value>
+                <fullName>bndlggelse_rateudb_1_28</fullName>
+                <default>false</default>
+                <label>28 år</label>
+            </value>
+            <value>
+                <fullName>bndlggelse_rateudb_1_29</fullName>
+                <default>false</default>
+                <label>29 år</label>
+            </value>
+            <value>
+                <fullName>bndlggelse_rateudb_1_18</fullName>
+                <default>false</default>
+                <label>18 år</label>
+            </value>
+            <value>
+                <fullName>bndlggelse_rateudb_1_19</fullName>
+                <default>false</default>
+                <label>19 år</label>
+            </value>
+            <value>
+                <fullName>bndlggelse_rateudb_1_20</fullName>
+                <default>false</default>
+                <label>20 år</label>
+            </value>
+            <value>
+                <fullName>bndlggelse_rateudb_1_21</fullName>
+                <default>false</default>
+                <label>21 år</label>
+            </value>
+            <value>
+                <fullName>bndlggelse_rateudb_1_22</fullName>
+                <default>false</default>
+                <label>22 år</label>
+            </value>
+            <value>
+                <fullName>bndlggelse_rateudb_1_23</fullName>
+                <default>false</default>
+                <label>23 år</label>
+            </value>
+            <value>
+                <fullName>bndlggelse_rateudb_1_24</fullName>
+                <default>false</default>
+                <label>24 år</label>
+            </value>
+            <value>
+                <fullName>bndlggelse_rateudb_1_25</fullName>
+                <default>false</default>
+                <label>25 år</label>
+            </value>
+            <value>
+                <fullName>bndlggelse_rateudb_1_30</fullName>
+                <default>false</default>
+                <label>30 år</label>
+            </value>
+            <value>
+                <fullName>bndlggelse_rateudb_1_31</fullName>
+                <default>false</default>
+                <label>31 år</label>
+            </value>
+            <value>
+                <fullName>bndlggelse_rateudb_1_32</fullName>
+                <default>false</default>
+                <label>32 år</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

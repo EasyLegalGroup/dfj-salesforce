@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <environments>Default</environments>
+    <interviewLabel>RT - Shared Document: OTP is Updated {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RT - Shared Document: OTP is Set/Updated</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>AL_Send_Twilio_SMS</targetReference>
+        </connector>
+        <filterFormula>OR(
+  ISNEW() &amp;&amp; NOT(ISBLANK({!$Record.OTP_Code__c})),
+  ISCHANGED({!$Record.OTP_Code__c}) &amp;&amp; NOT(ISBLANK({!$Record.OTP_Code__c}))
+)</filterFormula>
+        <object>Shared_Document__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>AL_Send_Twilio_SMS</name>
+        <label>AL - Send Twilio SMS</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <flowName>AL_Send_Twilio_SMS</flowName>
+        <inputAssignments>
+            <name>inputMarketUnit</name>
+            <value>
+                <elementReference>$Record.Account__r.Market_Unit__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputMessage</name>
+            <value>
+                <elementReference>SmsBody</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputSendUsingSenderId</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputToNumber</name>
+            <value>
+                <elementReference>$Record.Account__r.Phone</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>recordId</name>
+            <value>
+                <elementReference>$Record.Account__c</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <textTemplates>
+        <name>SmsBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Her er dit engangskodeord: 
+{!$Record.OTP_Code__c}
+
+Det udløber {!$Record.OTP_Expires__c}</text>
+    </textTemplates>
+</Flow>

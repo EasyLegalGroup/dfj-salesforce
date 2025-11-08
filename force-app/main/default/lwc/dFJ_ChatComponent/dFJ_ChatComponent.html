@@ -1,0 +1,178 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-around_small">
+            
+            <!-- iPhone Frame -->
+            <div class="iphone-frame">
+                <!-- iPhone Notch -->
+                <div class="iphone-notch"></div>
+                
+                <!-- iPhone Screen -->
+                <div class="iphone-screen">
+                    
+                    <!-- Loading Spinner Overlay -->
+                    <template lwc:if={isLoading}>
+                        <div class="loading-overlay">
+                            <lightning-spinner 
+                                alternative-text="Loading" 
+                                size="small"
+                                variant="brand"
+                            ></lightning-spinner>
+                        </div>
+                    </template>
+                    
+                    <!-- Header with Customer Name and Filter -->
+                    <div class="iphone-header">
+                        <div class="header-content">
+                            <span class="back-arrow">‹</span>
+                            <div class="contact-info">
+                                <span class="contact-name">{customerName}</span>
+                                <div class="filter-status">{filterStatusText}</div>
+                            </div>
+                            <div class="filter-icon-wrapper">
+                                <lightning-button-icon 
+                                    alternative-text="Filter messages"
+                                    icon-name="utility:filterList"
+                                    onclick={handleFilterIconClick}
+                                    variant="bare"
+                                    class="filter-btn"
+                                ></lightning-button-icon>
+                                <template lwc:if={totalUnreadCount}>
+                                    <span class="unread-badge">{totalUnreadCount}</span>
+                                </template>
+                            </div>
+                            <lightning-button-icon 
+                                alternative-text="Refresh"
+                                icon-name="utility:refresh"
+                                onclick={handleRefreshIconClick}
+                                variant="bare"
+                                class="refresh-btn"
+                            ></lightning-button-icon>
+                        </div>
+                    </div>
+
+                    <!-- Messages Container -->
+                    <div class="messages-container">
+                        <template lwc:if={isShowMessageToNotifyOfNoExistingConversation}>
+                            <div class="no-messages">
+                                No messages yet
+                            </div>
+                        </template>
+                        <template lwc:else>
+                            <template for:each={smsRecordsToShow} for:item="currentSmsRecord">
+                                <div key={currentSmsRecord.Id} class="message-group">
+                                    <div class="message-time">{currentSmsRecord.createdDateToShowOnUI}</div>
+                                    
+                                    <template lwc:if={currentSmsRecord.isIncoming}>
+                                        <div class="message-bubble incoming-bubble">
+                                            <div class="bubble-text">{currentSmsRecord.Message__c}</div>
+                                        </div>
+                                    </template>
+                                    
+                                    <template lwc:else>
+                                        <div class="message-bubble outgoing-bubble">
+                                            <div class="bubble-text">{currentSmsRecord.Message__c}</div>
+                                        </div>
+                                    </template>
+                                </div>
+                            </template>
+                        </template>
+                    </div>
+
+                    <!-- Input Area -->
+                    <div class="input-area">
+                        <div class="input-container">
+                            <lightning-button-icon
+                                icon-name="utility:file"
+                                alternative-text="Attach template"
+                                onclick={handleFileIconClickBelowChatInterface}
+                                variant="bare"
+                                class="attach-btn"
+                            ></lightning-button-icon>
+                            
+                            <div class="message-input-wrapper">
+                                <textarea
+                                    class="message-input"
+                                    placeholder="Text Message"
+                                    value={chatTextInputBoxValue}
+                                    oninput={handleChangeInTextInput}
+                                ></textarea>
+                            </div>
+                            
+                            <lightning-button-icon
+                                icon-name="utility:send"
+                                alternative-text="Send"
+                                onclick={handleSendButtonClick}
+                                variant="bare"
+                                class={sendButtonClass}
+                            ></lightning-button-icon>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- iPhone Home Indicator -->
+                <div class="iphone-home-indicator"></div>
+            </div>
+
+            <!-- Configuration Options Below iPhone -->
+            <div class="config-section">
+                <div class="slds-grid slds-wrap slds-gutters_small">
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-combobox
+                            label="Send from"
+                            value={valueOfSendFromOption}
+                            options={optionsForSendFromDropdown}
+                            onchange={handleChangeOfSendFromDropdown}
+                        ></lightning-combobox>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-combobox
+                            label="Send to"
+                            value={valueOfSendToOption}
+                            options={optionsForSendToDropdown}
+                            onchange={handleChangeOfSendToDropdown}
+                        ></lightning-combobox>
+                        <template lwc:if={isValueOfSendToOptionEqualsNull}>
+                            <div class="slds-text-color_error slds-text-body_small slds-m-top_xx-small">
+                                Phone Number Missing
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+        <!-- Filter Modal -->
+        <template lwc:if={showFilterModal}>
+            <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <h2 class="slds-modal__title slds-hyphenate">Only display messages to/from...</h2>
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={handleCloseFilterModal}>
+                            <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <div class="filter-options-list">
+                            <template for:each={phoneFilterOptionsWithUnread} for:item="option">
+                                <div key={option.value} class="filter-option-item" onclick={handleFilterOptionSelect} data-value={option.value}>
+                                    <div class="filter-option-content">
+                                        <lightning-icon icon-name="utility:check" size="x-small" class={option.iconClass}></lightning-icon>
+                                        <span class="filter-option-label">{option.label}</span>
+                                    </div>
+                                    <template lwc:if={option.unreadCount}>
+                                        <span class="filter-unread-count">{option.unreadCount}</span>
+                                    </template>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+    </lightning-card>
+</template>

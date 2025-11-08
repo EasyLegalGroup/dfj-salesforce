@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Add_Record_to_Collection</name>
+        <label>Add Record to Collection</label>
+        <locationX>264</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>initialConsultationCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Initial_Consultations</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Initial_Consultations</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Profile_Type_to_Record</name>
+        <label>Assign Profile Type to Record</label>
+        <locationX>264</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>Loop_Initial_Consultations.Profile_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Initial Consultation</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_Record_to_Collection</targetReference>
+        </connector>
+    </assignments>
+    <environments>Default</environments>
+    <interviewLabel>Action Flow: Update Initial Consultation Records {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Action Flow: Update Initial Consultation Records</label>
+    <loops>
+        <name>Loop_Initial_Consultations</name>
+        <label>Loop Initial Consultations</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <collectionReference>Get_Initial_Consultations</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_Profile_Type_to_Record</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_Initials_Consultations</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Initial_Consultations</name>
+        <label>Get Initial Consultations</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Initial_Consultations</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Profile_Type__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Customer_Profile__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Initials_Consultations</name>
+        <label>Update Initials Consultations</label>
+        <locationX>176</locationX>
+        <locationY>650</locationY>
+        <inputReference>initialConsultationCollection</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Initial_Consultations</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+    <variables>
+        <name>initialConsultationCollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Customer_Profile__c</objectType>
+    </variables>
+</Flow>

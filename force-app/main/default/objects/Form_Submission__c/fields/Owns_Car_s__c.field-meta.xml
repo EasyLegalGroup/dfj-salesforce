@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Owns_Car_s__c</fullName>
+    <externalId>false</externalId>
+    <label>Owns Car(s)</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No</fullName>
+                <default>false</default>
+                <label>No</label>
+            </value>
+            <value>
+                <fullName>Yes, 1 car</fullName>
+                <default>false</default>
+                <label>Yes, 1 car</label>
+            </value>
+            <value>
+                <fullName>Yes, 2 cars</fullName>
+                <default>false</default>
+                <label>Yes, 2 cars</label>
+            </value>
+            <value>
+                <fullName>Yes, more than 2 cars</fullName>
+                <default>false</default>
+                <label>Yes, more than 2 cars</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

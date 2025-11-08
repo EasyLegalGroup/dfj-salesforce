@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Absence_Compensation</fullName>
+    <active>true</active>
+    <description>Ensures that when Attendance Status is Absent, Absence Category is populated and, unless the category is Default Work Schedule, Compensation is also populated.</description>
+    <errorConditionFormula>AND(
+  ISPICKVAL(Attendance_Status__c, &quot;Absent&quot;),
+  OR(
+    /* Category must be filled */
+    ISBLANK(TEXT(Absence_Category__c)),
+    /* Compensation must be filled unless category is Default Work Schedule */
+    AND(
+      NOT(ISPICKVAL(Absence_Category__c, &quot;Default Work Schedule&quot;)),
+      ISBLANK(TEXT(Compensation__c))
+    )
+  )
+)</errorConditionFormula>
+    <errorMessage>Absence Category and Compensation are required when Attendance Status is Absent (Compensation not required if Category is Default Work Schedule).</errorMessage>
+</ValidationRule>

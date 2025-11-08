@@ -1,0 +1,11 @@
+@isTest
+global with sharing class DFJ_SendSMS_MockUtility_Test implements HttpCalloutMock{
+    global HTTPResponse respond(HTTPRequest req) {
+         HttpResponse res = new HttpResponse();
+            res.setStatusCode(200);
+            res.setStatus('OK');
+            res.setBody('Mock response body');
+            return res;
+    }
+
+}

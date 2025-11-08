@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>dato_underskr_eksis_gtepagt__c</fullName>
+    <externalId>false</externalId>
+    <label>Dato for underskrift af den eksi e56ee</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

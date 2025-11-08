@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Lecture Registration Form is also known as &quot;Tilmeldingsblanket&quot;</inlineHelpText>
+    <label>Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Questionnaire</fullName>
+                <default>false</default>
+                <label>Questionnaire</label>
+            </value>
+            <value>
+                <fullName>Lecture Registration Form</fullName>
+                <default>false</default>
+                <label>Lecture Registration Form</label>
+            </value>
+            <value>
+                <fullName>Risk Assessment</fullName>
+                <default>false</default>
+                <label>Risk Assessment</label>
+            </value>
+            <value>
+                <fullName>Future Assurance Form</fullName>
+                <default>false</default>
+                <label>Future Assurance Form</label>
+            </value>
+            <value>
+                <fullName>Customer Satisfaction Survey</fullName>
+                <default>false</default>
+                <label>Customer Satisfaction Survey</label>
+            </value>
+            <value>
+                <fullName>Referral</fullName>
+                <default>false</default>
+                <label>Referral</label>
+            </value>
+            <value>
+                <fullName>Document Review Request</fullName>
+                <default>false</default>
+                <label>Document Review Request</label>
+            </value>
+            <value>
+                <fullName>Lead Screening</fullName>
+                <default>false</default>
+                <label>Lead Screening</label>
+            </value>
+            <value>
+                <fullName>Advisor Discovery</fullName>
+                <default>false</default>
+                <label>Advisor Discovery</label>
+            </value>
+            <value>
+                <fullName>Marketing Cloud Form Submission</fullName>
+                <default>false</default>
+                <label>Marketing Cloud Form Submission</label>
+            </value>
+            <value>
+                <fullName>Rebooking</fullName>
+                <default>false</default>
+                <label>Rebooking</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

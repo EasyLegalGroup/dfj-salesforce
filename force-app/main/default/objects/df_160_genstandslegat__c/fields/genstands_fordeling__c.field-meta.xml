@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>genstands_fordeling__c</fullName>
+    <externalId>false</externalId>
+    <label>Hvornår skal genstandslegatet fo e8aa3</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>genstands_fordeling_frst</fullName>
+                <default>false</default>
+                <label>Efter førstafdøde</label>
+            </value>
+            <value>
+                <fullName>genstands_fordeling_lngst</fullName>
+                <default>false</default>
+                <label>Efter længstlevende</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

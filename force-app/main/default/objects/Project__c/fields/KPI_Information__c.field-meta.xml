@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>KPI_Information__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>If possible, enter information about how the project is measurable in terms of success - how can we prove that the project has lived up to its goals?</inlineHelpText>
+    <label>KPI Information</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>6</visibleLines>
+</CustomField>

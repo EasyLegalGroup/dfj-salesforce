@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trustpilot_Review_Compact_Layout</fullName>
+    <fields>Journal__c</fields>
+    <fields>Account__c</fields>
+    <fields>Title__c</fields>
+    <fields>Stars__c</fields>
+    <fields>Responsible_Lawyer__c</fields>
+    <fields>Link_to_Review__c</fields>
+    <label>Trustpilot Review Compact Layout</label>
+</CompactLayout>

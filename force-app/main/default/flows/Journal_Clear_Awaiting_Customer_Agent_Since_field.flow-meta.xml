@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <decisions>
+        <name>Which_field_do_we_need_to_clear</name>
+        <label>Which field do we need to clear?</label>
+        <locationX>314</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Clear_Awaiting_Agent</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Awaiting_customer_since__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.GA_Reply_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Awaiting customer</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Clear_Awaiting_X_Since_Value__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Clear Awaiting Agent Since</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Journal_Clear_Awaiting_Agent</targetReference>
+            </connector>
+            <label>Clear Awaiting Agent</label>
+        </rules>
+        <rules>
+            <name>Clear_Awaiting_Customer</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Awaiting_agent_since__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.GA_Reply_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Awaiting agent</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Clear_Awaiting_X_Since_Value__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Clear Awaiting Customer Since</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Journal_Clear_Awaiting_Customer</targetReference>
+            </connector>
+            <label>Clear Awaiting Customer</label>
+        </rules>
+    </decisions>
+    <description>The triggers when the Action buttons on Journal is used. It uses a picklist value set via pre-defined values as a trigger, together with the &quot;GA - Reply Status&quot; field and the &quot;Awaiting Customer/Agent Since&quot; fields.</description>
+    <environments>Default</environments>
+    <interviewLabel>Journal: Clear &quot;Awaiting Customer/Agent Since&quot; field {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Journal: Clear &quot;Awaiting Customer/Agent Since&quot; field</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Journal_Clear_Awaiting_Agent</name>
+        <label>Update Journal - Clear Awaiting Agent</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>Awaiting_agent_since__c</field>
+            <value>
+                <elementReference>DateTime_Null</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Clear_Awaiting_X_Since_Value__c</field>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Journal_Clear_Awaiting_Customer</name>
+        <label>Update Journal - Clear Awaiting Customer</label>
+        <locationX>314</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>Awaiting_customer_since__c</field>
+            <value>
+                <elementReference>DateTime_Null</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Clear_Awaiting_X_Since_Value__c</field>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Which_field_do_we_need_to_clear</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>(1 AND 2 AND 3) OR (4 AND 5 AND 6)</filterLogic>
+        <filters>
+            <field>Awaiting_customer_since__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>GA_Reply_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Awaiting customer</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Clear_Awaiting_X_Since_Value__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Clear Awaiting Agent Since</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Awaiting_agent_since__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>GA_Reply_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Awaiting agent</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Clear_Awaiting_X_Since_Value__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Clear Awaiting Customer Since</stringValue>
+            </value>
+        </filters>
+        <object>Journal__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+    <variables>
+        <name>DateTime_Null</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

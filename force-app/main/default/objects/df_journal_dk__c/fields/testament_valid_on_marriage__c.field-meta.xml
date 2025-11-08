@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>testament_valid_on_marriage__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Skal testamentet fortsat gælde hvis I bliver gift?</description>
+    <externalId>false</externalId>
+    <label>Skal testamentet fortsat gælde h ce131</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

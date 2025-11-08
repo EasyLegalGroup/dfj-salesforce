@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>primr_eller_sekundr_primr_vrge__c</fullName>
+    <externalId>false</externalId>
+    <label>Primær eller sekundær? (Primær v 1d361</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>prim_prim_vrge</fullName>
+                <default>false</default>
+                <label>Primær</label>
+            </value>
+            <value>
+                <fullName>sekun_prim_vrge</fullName>
+                <default>false</default>
+                <label>Sekundær</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>tilladelse_til_gpssporingsenhed_106__c</fullName>
+    <defaultValue>false</defaultValue>
+    <externalId>false</externalId>
+    <label>Tilladelse til GPS-sporingsenhed ce07a</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Review_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Review Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1-2-1</fullName>
+                <default>false</default>
+                <label>1-2-1</label>
+            </value>
+            <value>
+                <fullName>Performance Review</fullName>
+                <default>false</default>
+                <label>Performance Review</label>
+            </value>
+            <value>
+                <fullName>Touch Base</fullName>
+                <default>false</default>
+                <label>Touch Base</label>
+            </value>
+            <value>
+                <fullName>Coaching Session</fullName>
+                <default>false</default>
+                <label>Coaching Session</label>
+            </value>
+            <value>
+                <fullName>Absence Review</fullName>
+                <default>false</default>
+                <label>Absence Review</label>
+            </value>
+            <value>
+                <fullName>Salary Review</fullName>
+                <default>false</default>
+                <label>Salary Review</label>
+            </value>
+            <value>
+                <fullName>Annual</fullName>
+                <default>false</default>
+                <label>Annual</label>
+            </value>
+            <value>
+                <fullName>Monitoring</fullName>
+                <default>false</default>
+                <label>Monitoring</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

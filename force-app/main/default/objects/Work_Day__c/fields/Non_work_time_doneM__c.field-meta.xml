@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Non_work_time_doneM__c</fullName>
+    <externalId>false</externalId>
+    <label>Non work time done(sec)</label>
+    <summarizedField>Work_Activity_Log__c.DurationFormula__c</summarizedField>
+    <summaryFilterItems>
+        <field>Work_Activity_Log__c.Work_Type__c</field>
+        <operation>equals</operation>
+        <value>Non working</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Work_Activity_Log__c.Work_Day__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

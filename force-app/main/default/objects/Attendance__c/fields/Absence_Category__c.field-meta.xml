@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Absence_Category__c</fullName>
+    <externalId>false</externalId>
+    <label>Absence Category</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Attendance_Status__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Absence_Category</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Absent</controllingFieldValue>
+            <controllingFieldValue>Partial Day</controllingFieldValue>
+            <controllingFieldValue>Weekend</controllingFieldValue>
+            <valueName>Vacation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Absent</controllingFieldValue>
+            <controllingFieldValue>Partial Day</controllingFieldValue>
+            <controllingFieldValue>Weekend</controllingFieldValue>
+            <valueName>Sick Leave</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Absent</controllingFieldValue>
+            <controllingFieldValue>Partial Day</controllingFieldValue>
+            <controllingFieldValue>Weekend</controllingFieldValue>
+            <valueName>Child Sick</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Absent</controllingFieldValue>
+            <controllingFieldValue>Partial Day</controllingFieldValue>
+            <controllingFieldValue>Weekend</controllingFieldValue>
+            <valueName>Funeral of Close Relative</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Absent</controllingFieldValue>
+            <controllingFieldValue>Partial Day</controllingFieldValue>
+            <controllingFieldValue>Weekend</controllingFieldValue>
+            <valueName>Funeral of Relative not in Close Family</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Absent</controllingFieldValue>
+            <controllingFieldValue>Partial Day</controllingFieldValue>
+            <controllingFieldValue>Weekend</controllingFieldValue>
+            <valueName>Garden Leave (Released from Work)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Absent</controllingFieldValue>
+            <controllingFieldValue>Partial Day</controllingFieldValue>
+            <controllingFieldValue>Weekend</controllingFieldValue>
+            <valueName>Suspended</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Absent</controllingFieldValue>
+            <controllingFieldValue>Partial Day</controllingFieldValue>
+            <controllingFieldValue>Weekend</controllingFieldValue>
+            <valueName>Moving Day</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Absent</controllingFieldValue>
+            <controllingFieldValue>Partial Day</controllingFieldValue>
+            <controllingFieldValue>Weekend</controllingFieldValue>
+            <valueName>Other (See note)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Absent</controllingFieldValue>
+            <controllingFieldValue>Partial Day</controllingFieldValue>
+            <controllingFieldValue>Weekend</controllingFieldValue>
+            <valueName>Public Holiday</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Absent</controllingFieldValue>
+            <controllingFieldValue>Partial Day</controllingFieldValue>
+            <controllingFieldValue>Weekend</controllingFieldValue>
+            <valueName>Unspecified</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Absent</controllingFieldValue>
+            <controllingFieldValue>Partial Day</controllingFieldValue>
+            <controllingFieldValue>Weekend</controllingFieldValue>
+            <valueName>Default Work Schedule</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

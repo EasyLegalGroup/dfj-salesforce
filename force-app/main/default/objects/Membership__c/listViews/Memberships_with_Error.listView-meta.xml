@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Memberships_with_Error</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Platform_Create_State__c</columns>
+    <columns>Email__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Responsible_Lawyer__c</columns>
+    <columns>Lead__c</columns>
+    <columns>Sign_up_Date__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Platform_Create_State__c</field>
+        <operation>equals</operation>
+        <value>ERROR</value>
+    </filters>
+    <filters>
+        <field>Email__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Memberships with Error</label>
+</ListView>

@@ -1,0 +1,537 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-horizontal_medium slds-p-vertical_small">
+            <div class="slds-box">
+                <div class="slds-p-around_x-small">
+                    <lightning-card title="History By Child Contacts">
+                        <div class="slds-p-left_small slds-p-right_small slds-p-bottom_small">
+                            <template lwc:if={isContactsWithHistoryDataEmpty}>
+                                No Child Contacts.
+                            </template>
+                            <template lwc:else>
+                                <lightning-accordion allow-multiple-sections-open="true">
+                                    <template for:each={contactsWithHistoryData} for:item="contactWithHistoryData">
+                                        <lightning-accordion-section key={contactWithHistoryData.contactId}
+                                                                     label={contactWithHistoryData.contactName}
+                                                                     name={contactWithHistoryData.contactId}>
+                                            <template for:each={contactWithHistoryData.listOfDataToShowInHistory}
+                                                      for:item="currentData" for:index="indexofcurrenthistorydata">
+
+                                                <template if:true={currentData.isNote}>
+                                                    <div class="slds-media slds-timeline__item_expandable slds-timeline__item_email"
+                                                         key={currentData.record.Id}>
+                                                        <div class="slds-media__figure">
+                                                            <lightning-icon
+                                                                    class="slds-m-left_large slds-timeline__icon"
+                                                                    icon-name="standard:record" size="small"
+                                                                    variant="inverse"></lightning-icon>
+                                                        </div>
+                                                        <div class="slds-media__body">
+                                                            <lightning-layout horizontal-align="spread"
+                                                                              vertical-align="center">
+                                                                <lightning-layout-item> Note created by <b>{currentData.record.CreatedBy.Name}</b>
+                                                                </lightning-layout-item>
+                                                                <lightning-layout-item>
+                                                                    <div class="slds-timeline__actions slds-timeline__actions_inline">
+                                                                        <div class="slds-timeline__date">
+                                                                            <span>{currentData.record.formattedDate}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </lightning-layout-item>
+                                                            </lightning-layout>
+                                                            <div class="slds-m-top_xx-small">
+                                                                <article
+                                                                        class="slds-box slds-theme_shade slds-m-top_xx-small slds-m-horizontal_xx-small">
+                                                                    <div class="slds-text-align_left">
+                                                                        <lightning-formatted-text
+                                                                                value={currentData.record.Body}></lightning-formatted-text>
+                                                                    </div>
+                                                                </article>
+                                                            </div>
+                                                        </div>
+                                                        <div class="slds-media__figure slds-media__figure_reverse"></div>
+                                                    </div>
+                                                </template>
+<!--                                                <template if:true={currentData.isCallCampaignStateHistory}>-->
+<!--                                                    <div class="slds-media slds-timeline__item_expandable slds-timeline__item_email"-->
+<!--                                                         key={currentData.record.Id}>-->
+<!--                                                        <div class="slds-media__figure">-->
+<!--                                                            <lightning-icon-->
+<!--                                                                    class="slds-m-left_large slds-timeline__icon"-->
+<!--                                                                    icon-name="standard:record" size="small"-->
+<!--                                                                    variant="inverse"></lightning-icon>-->
+<!--                                                        </div>-->
+<!--                                                        <div class="slds-media__body">-->
+<!--                                                            <lightning-layout horizontal-align="spread"-->
+<!--                                                                              vertical-align="center">-->
+<!--                                                                <template-->
+<!--                                                                        if:true={currentData.isCallCampaignNewValueEmpty}>-->
+<!--                                                                    <lightning-layout-item>-->
+<!--                                                                        <b>{currentData.record.CreatedBy.Name}</b>-->
+<!--                                                                        changed-->
+<!--                                                                        outcome to <b>{currentData.record.NewValue}{currentData.record.OldValue}</b>-->
+<!--                                                                        &lt;!&ndash;                                                        {currentData.callCampaignName}&ndash;&gt;-->
+<!--                                                                    </lightning-layout-item>-->
+<!--                                                                </template>-->
+<!--                                                                <template-->
+<!--                                                                        if:false={currentData.isCallCampaignNewValueEmpty}>-->
+<!--                                                                    <lightning-layout-item>-->
+<!--                                                                        <b>{currentData.record.CreatedBy.Name}</b>-->
+<!--                                                                        changed-->
+<!--                                                                        outcome from-->
+<!--                                                                        <b>{currentData.record.OldValue}</b>-->
+<!--                                                                        -> <b>{currentData.record.NewValue}</b>-->
+<!--                                                                        &lt;!&ndash;                                                        {currentData.callCampaignName}&ndash;&gt;-->
+<!--                                                                    </lightning-layout-item>-->
+<!--                                                                </template>-->
+<!--                                                                <lightning-layout-item>-->
+<!--                                                                    <div class="slds-timeline__actions slds-timeline__actions_inline">-->
+<!--                                                                        <div class="slds-timeline__date"><span>{currentData.record.formattedDate}</span>-->
+<!--                                                                        </div>-->
+<!--                                                                    </div>-->
+<!--                                                                </lightning-layout-item>-->
+<!--                                                            </lightning-layout>-->
+<!--                                                            <div class="slds-m-top_xx-small"></div>-->
+<!--                                                        </div>-->
+<!--                                                        <div class="slds-media__figure slds-media__figure_reverse"></div>-->
+<!--                                                    </div>-->
+<!--                                                </template>-->
+                                                <template if:true={currentData.isCallHistory}>
+                                                    <div class="slds-media slds-timeline__item_expandable slds-timeline__item_call"
+                                                         key={currentData.record.Id}>
+                                                        <div class="slds-media__figure">
+                                                            <lightning-icon
+                                                                    class="slds-m-left_large slds-timeline__icon"
+                                                                    icon-name="standard:log_a_call" size="small"
+                                                                    variant="inverse"></lightning-icon>
+                                                        </div>
+                                                        <div class="slds-media__body">
+                                                            <lightning-layout horizontal-align="spread"
+                                                                              vertical-align="center">
+                                                                <lightning-layout-item>
+                                                                    <template if:true={currentData.isOutbound}>
+                                                                        <b>{currentData.record.CreatedBy.Name}</b>
+                                                                        Called
+                                                                        Out
+                                                                        {currentData.record.telegenta__Destination_number__c}
+                                                                    </template>
+
+                                                                    <template if:false={currentData.isOutbound}>
+                                                                        <template if:true={currentData.isInbound}>
+                                                                            <b>{currentData.record.telegenta__Contact__r.Name}</b>
+                                                                            Called
+                                                                            In
+                                                                            {currentData.record.telegenta__Destination_number__c}
+                                                                        </template>
+                                                                    </template>
+
+                                                                </lightning-layout-item>
+                                                                <lightning-layout-item>
+                                                                    <div class="slds-timeline__actions slds-timeline__actions_inline">
+                                                                        <div class="slds-timeline__date">
+                                                                            <span>{currentData.record.formattedDate}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </lightning-layout-item>
+                                                            </lightning-layout>
+                                                            <div class="slds-grid">
+                                                                <div class="slds-col" style="max-width: fit-content">
+                                                                    <template if:false={currentData.isExpanded}>
+                                                                        <lightning-button-icon
+                                                                                alternative-text="right"
+                                                                                data-id={currentData.record.Id}
+                                                                                data-indexofcurrenthistorydata={indexofcurrenthistorydata}
+                                                                                icon-name="utility:chevronright"
+                                                                                key={currentData.record.Id}
+                                                                                onclick={handleIsExpandedToggleForHistoryDataOfChildObject}
+                                                                                variant="bare">
+                                                                        </lightning-button-icon>
+                                                                    </template>
+                                                                    <template if:true={currentData.isExpanded}>
+                                                                        <lightning-button-icon
+                                                                                alternative-text="down"
+                                                                                data-id={currentData.record.Id}
+                                                                                data-indexofcurrenthistorydata={indexofcurrenthistorydata}
+                                                                                icon-name="utility:chevrondown"
+                                                                                key={currentData.record.Id}
+                                                                                onclick={handleIsExpandedToggleForHistoryDataOfChildObject}
+                                                                                variant="bare">
+                                                                        </lightning-button-icon>
+                                                                    </template>
+                                                                    &nbsp;
+                                                                </div>
+                                                                <div class="slds-col">
+                                                                    <div>
+                                                                        Disposition: <span>{currentData.record.telegenta__Disposition__c}</span>&nbsp;
+                                                                        | Duration:
+                                                                        {currentData.record.telegenta__Active_Duration__c}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--                                            for showing details -->
+                                                            <template if:true={currentData.isExpanded}>
+                                                                <article
+                                                                        class="slds-box slds-theme_shade slds-m-top_xx-small slds-m-horizontal_xx-small "
+                                                                        style="text-align: -webkit-left;">
+                                                                    <div>
+                                                                        <p> Type:
+                                                                            {currentData.record.telegenta__Direction__c}</p>
+                                                                        <template if:true={currentData.isOutbound}>
+                                                                            <p> Phone number:
+                                                                                {currentData.record.telegenta__Destination_number__c}</p>
+                                                                        </template>
+                                                                        <p> Active duration:
+                                                                            {currentData.record.telegenta__Active_Duration__c}</p>
+                                                                        <p> Total duration:
+                                                                            {currentData.record.telegenta__Total_Duration__c}</p>
+                                                                        <template if:true={currentData.isOutbound}>
+                                                                            <p> Destination:
+                                                                                {currentData.record.telegenta__Destination_Country__c}</p>
+                                                                        </template>
+                                                                        <template if:true={currentData.isInbound}>
+                                                                            <p> Incoming Number:
+                                                                                {currentData.record.telegenta__Incoming_Number__c}</p>
+                                                                        </template>
+                                                                        <div></div>
+                                                                    </div>
+                                                                </article>
+                                                            </template>
+
+                                                        </div>
+                                                        <div class="slds-media__figure slds-media__figure_reverse"></div>
+                                                    </div>
+                                                </template>
+                                                <template if:true={currentData.isEventHistory}>
+                                                    <div class="slds-media slds-timeline__item_expandable slds-timeline__item_email"
+                                                         key={currentData.record.Id}>
+                                                        <div class="slds-media__figure">
+                                                            <lightning-icon
+                                                                    class="slds-m-left_large slds-timeline__icon"
+                                                                    icon-name="standard:event"
+                                                                    size="small" variant="inverse"></lightning-icon>
+                                                        </div>
+                                                        <div class="slds-media__body">
+                                                            <lightning-layout horizontal-align="spread"
+                                                                              vertical-align="center">
+                                                                <lightning-layout-item>
+                                                                    <b>{currentData.record.CreatedBy.Name}</b> created :
+                                                                    {currentData.record.Subject}
+                                                                </lightning-layout-item>
+                                                                <lightning-layout-item>
+                                                                    <div class="slds-timeline__actions slds-timeline__actions_inline">
+                                                                        <div class="slds-timeline__date"><span>{currentData.record.formattedDate}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </lightning-layout-item>
+                                                            </lightning-layout>
+                                                            <div class="slds-m-top_xx-small "></div>
+                                                            <article
+                                                                    class="slds-text-align_left slds-box slds-theme_shade slds-m-top_xx-small ">
+                                                                <b>Start : {currentData.record.StartDateTime} -
+                                                                    {currentData.record.EndDateTime}</b><br/>
+                                                                <div class="slds-align_absolute-left">
+                                                                    {currentData.record.Description}
+                                                                </div>
+                                                            </article>
+                                                        </div>
+                                                        <div class="slds-media__figure slds-media__figure_reverse"></div>
+                                                    </div>
+                                                </template>
+                                                <template if:true={currentData.isFieldHistory}>
+                                                    <div class="slds-media slds-timeline__item_expandable slds-timeline__item_email"
+                                                         key={currentData.record.Id}>
+                                                        <div class="slds-media__figure">
+                                                            <lightning-icon
+                                                                    class="slds-m-left_large slds-timeline__icon"
+                                                                    icon-name={currentData.fieldHistoryIconName}
+                                                                    size="small"
+                                                                    variant="inverse"></lightning-icon>
+                                                        </div>
+                                                        <div class="slds-media__body">
+                                                            <lightning-layout horizontal-align="spread"
+                                                                              vertical-align="center">
+                                                                <lightning-layout-item>
+                                                                    Lead status changed by <b>{currentData.record.CreatedBy.Name}</b>
+                                                                    from:
+                                                                    {currentData.record.OldValue} -> <b>{currentData.record.NewValue}</b>
+                                                                </lightning-layout-item>
+                                                                <lightning-layout-item>
+                                                                    <div class="slds-timeline__actions slds-timeline__actions_inline">
+                                                                        <div class="slds-timeline__date"><span>{currentData.record.formattedDate}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </lightning-layout-item>
+                                                            </lightning-layout>
+                                                            <div class="slds-m-top_xx-small"></div>
+                                                        </div>
+                                                        <div class="slds-media__figure slds-media__figure_reverse"></div>
+                                                    </div>
+
+                                                </template>
+
+                                            </template>
+                                        </lightning-accordion-section>
+                                    </template>
+                                </lightning-accordion>
+                            </template>
+                        </div>
+                    </lightning-card>
+                </div>
+                <div class="slds-p-around_x-small">
+                    <lightning-card title={titleTextToShowAboveCurrentRecordHistory}>
+                        <div class="slds-p-left_small slds-p-right_small slds-p-bottom_small">
+                            <template lwc:if={isCurrentRecordHistoryDataEmpty}>
+                                No associated notes with current record.
+                            </template>
+                            <template lwc:else>
+                                <template for:each={currentRecordHistoryData} for:index="indexofcurrenthistorydata"
+                                          for:item="currentData">
+                                    <template if:true={currentData.isNote}>
+                                        <div class="slds-media slds-timeline__item_expandable slds-timeline__item_email"
+                                             key={currentData.record.Id}>
+                                            <div class="slds-media__figure">
+                                                <lightning-icon class="slds-m-left_large slds-timeline__icon"
+                                                                icon-name="standard:record" size="small"
+                                                                variant="inverse"></lightning-icon>
+                                            </div>
+                                            <div class="slds-media__body">
+                                                <lightning-layout horizontal-align="spread" vertical-align="center">
+                                                    <lightning-layout-item> Note created by <b>{currentData.record.CreatedBy.Name}</b>
+                                                    </lightning-layout-item>
+                                                    <lightning-layout-item>
+                                                        <div class="slds-timeline__actions slds-timeline__actions_inline">
+                                                            <div class="slds-timeline__date">
+                                                                <span>{currentData.record.formattedDate}</span>
+                                                            </div>
+                                                        </div>
+                                                    </lightning-layout-item>
+                                                </lightning-layout>
+                                                <div class="slds-m-top_xx-small">
+                                                    <article
+                                                            class="slds-box slds-theme_shade slds-m-top_xx-small slds-m-horizontal_xx-small">
+                                                        <div class="slds-text-align_left">
+                                                            <lightning-formatted-text
+                                                                    value={currentData.record.Body}></lightning-formatted-text>
+                                                        </div>
+                                                    </article>
+                                                </div>
+                                            </div>
+                                            <div class="slds-media__figure slds-media__figure_reverse"></div>
+                                        </div>
+                                    </template>
+<!--                                    <template if:true={currentData.isCallCampaignStateHistory}>-->
+<!--                                        <div class="slds-media slds-timeline__item_expandable slds-timeline__item_email"-->
+<!--                                             key={currentData.record.Id}>-->
+<!--                                            <div class="slds-media__figure">-->
+<!--                                                <lightning-icon class="slds-m-left_large slds-timeline__icon"-->
+<!--                                                                icon-name="standard:record" size="small"-->
+<!--                                                                variant="inverse"></lightning-icon>-->
+<!--                                            </div>-->
+<!--                                            <div class="slds-media__body">-->
+<!--                                                <lightning-layout horizontal-align="spread" vertical-align="center">-->
+<!--                                                    <template if:true={currentData.isCallCampaignNewValueEmpty}>-->
+<!--                                                        <lightning-layout-item>-->
+<!--                                                            <b>{currentData.record.CreatedBy.Name}</b> changed outcome-->
+<!--                                                            to-->
+<!--                                                            <b>{currentData.record.NewValue}{currentData.record.OldValue}</b>-->
+<!--                                                            &lt;!&ndash;                                                        {currentData.callCampaignName}&ndash;&gt;-->
+<!--                                                        </lightning-layout-item>-->
+<!--                                                    </template>-->
+<!--                                                    <template if:false={currentData.isCallCampaignNewValueEmpty}>-->
+<!--                                                        <lightning-layout-item>-->
+<!--                                                            <b>{currentData.record.CreatedBy.Name}</b> changed outcome-->
+<!--                                                            from-->
+<!--                                                            <b>{currentData.record.OldValue}</b>-->
+<!--                                                            -> <b>{currentData.record.NewValue}</b>-->
+<!--                                                            &lt;!&ndash;                                                        ( {currentData.callCampaignName} )&ndash;&gt;-->
+<!--                                                        </lightning-layout-item>-->
+<!--                                                    </template>-->
+<!--                                                    <lightning-layout-item>-->
+<!--                                                        <div class="slds-timeline__actions slds-timeline__actions_inline">-->
+<!--                                                            <div class="slds-timeline__date"><span>{currentData.record.formattedDate}</span>-->
+<!--                                                            </div>-->
+<!--                                                        </div>-->
+<!--                                                    </lightning-layout-item>-->
+<!--                                                </lightning-layout>-->
+<!--                                                <div class="slds-m-top_xx-small"></div>-->
+<!--                                            </div>-->
+<!--                                            <div class="slds-media__figure slds-media__figure_reverse"></div>-->
+<!--                                        </div>-->
+<!--                                    </template>-->
+                                    <template if:true={currentData.isCallHistory}>
+                                        <div class="slds-media slds-timeline__item_expandable slds-timeline__item_call"
+                                             key={currentData.record.Id}>
+                                            <div class="slds-media__figure">
+                                                <lightning-icon class="slds-m-left_large slds-timeline__icon"
+                                                                icon-name="standard:log_a_call" size="small"
+                                                                variant="inverse"></lightning-icon>
+                                            </div>
+                                            <div class="slds-media__body">
+                                                <lightning-layout horizontal-align="spread" vertical-align="center">
+                                                    <lightning-layout-item>
+                                                        <template if:true={currentData.isOutbound}>
+                                                            <b>{currentData.record.CreatedBy.Name}</b> Called Out
+                                                            {currentData.record.telegenta__Destination_number__c}
+                                                        </template>
+                                                        <template if:false={currentData.isOutbound}>
+                                                            <template if:true={currentData.isInbound}>
+                                                                <b>{currentData.record.telegenta__Account__r.Name}</b>&nbsp;
+                                                                Called
+                                                                In
+                                                                {currentData.record.telegenta__Destination_number__c}
+                                                            </template>
+                                                        </template>
+                                                    </lightning-layout-item>
+                                                    <lightning-layout-item>
+                                                        <div class="slds-timeline__actions slds-timeline__actions_inline">
+                                                            <div class="slds-timeline__date">
+                                                            <span>
+                                                                {currentData.record.formattedDate}
+
+                                                            </span>
+                                                            </div>
+                                                        </div>
+                                                    </lightning-layout-item>
+                                                </lightning-layout>
+
+                                                <div class="slds-grid">
+                                                    <div class="slds-col" style="max-width: fit-content">
+                                                        <template if:false={currentData.isExpanded}>
+                                                            <lightning-button-icon
+                                                                    alternative-text="right"
+                                                                    data-id={currentData.record.Id}
+                                                                    data-indexofcurrenthistorydata={indexofcurrenthistorydata}
+                                                                    icon-name="utility:chevronright"
+                                                                    key={currentData.record.Id}
+                                                                    onclick={handleToggleDetails}
+                                                                    variant="bare">
+                                                            </lightning-button-icon>
+                                                        </template>
+                                                        <template if:true={currentData.isExpanded}>
+                                                            <lightning-button-icon
+                                                                    alternative-text="down"
+                                                                    data-id={currentData.record.Id}
+                                                                    data-indexofcurrenthistorydata={indexofcurrenthistorydata}
+                                                                    icon-name="utility:chevrondown"
+                                                                    key={currentData.record.Id}
+                                                                    onclick={handleToggleDetails}
+                                                                    variant="bare">
+                                                            </lightning-button-icon>
+                                                        </template>
+                                                        &nbsp;
+                                                    </div>
+                                                    <div class="slds-col">
+                                                        <div>
+                                                            Disposition: <span>{currentData.record.telegenta__Disposition__c}</span>&nbsp;
+                                                            | Duration:
+                                                            {currentData.record.telegenta__Active_Duration__c}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--                                            for showing details -->
+                                                <template if:true={currentData.isExpanded}>
+                                                    <article
+                                                            class="slds-box slds-theme_shade slds-m-top_xx-small slds-m-horizontal_xx-small "
+                                                            style="text-align: -webkit-left;">
+                                                        <div>
+                                                            <p> Type: {currentData.record.telegenta__Direction__c}</p>
+                                                            <template if:true={currentData.isOutbound}>
+                                                                <p> Phone number:
+                                                                    {currentData.record.telegenta__Destination_number__c}</p>
+                                                            </template>
+                                                            <p> Active duration:
+                                                                {currentData.record.telegenta__Active_Duration__c}</p>
+                                                            <p> Total duration:
+                                                                {currentData.record.telegenta__Total_Duration__c}</p>
+                                                            <template if:true={currentData.isOutbound}>
+                                                                <p> Destination:
+                                                                    {currentData.record.telegenta__Destination_Country__c}</p>
+                                                            </template>
+                                                            <template if:true={currentData.isInbound}>
+                                                                <p> Incoming Number:
+                                                                    {currentData.record.telegenta__Incoming_Number__c}</p>
+                                                            </template>
+                                                            <div></div>
+                                                        </div>
+                                                    </article>
+                                                </template>
+                                            </div>
+                                            <div class="slds-media__figure slds-media__figure_reverse"></div>
+                                        </div>
+                                    </template>
+                                    <template if:true={currentData.isEventHistory}>
+                                        <div class="slds-media slds-timeline__item_expandable slds-timeline__item_email"
+                                             key={currentData.record.Id}>
+                                            <div class="slds-media__figure">
+                                                <lightning-icon class="slds-m-left_large slds-timeline__icon"
+                                                                icon-name="standard:event"
+                                                                size="small" variant="inverse"></lightning-icon>
+                                            </div>
+                                            <div class="slds-media__body">
+                                                <lightning-layout horizontal-align="spread" vertical-align="center">
+                                                    <lightning-layout-item>
+                                                        <b>{currentData.record.CreatedBy.Name}</b> created :
+                                                        {currentData.record.Subject}
+                                                    </lightning-layout-item>
+                                                    <lightning-layout-item>
+                                                        <div class="slds-timeline__actions slds-timeline__actions_inline">
+                                                            <div class="slds-timeline__date"><span>{currentData.record.formattedDate}</span>
+                                                            </div>
+                                                        </div>
+                                                    </lightning-layout-item>
+                                                </lightning-layout>
+                                                <div class="slds-m-top_xx-small "></div>
+                                                <article
+                                                        class="slds-text-align_left slds-box slds-theme_shade slds-m-top_xx-small ">
+                                                    <b>Start : {currentData.record.StartDateTime} -
+                                                        {currentData.record.EndDateTime}</b><br/>
+                                                    <div class="slds-align_absolute-left">
+                                                        {currentData.record.Description}
+                                                    </div>
+                                                </article>
+                                            </div>
+                                            <div class="slds-media__figure slds-media__figure_reverse"></div>
+                                        </div>
+                                    </template>
+                                    <template if:true={currentData.isFieldHistory}>
+                                        <div class="slds-media slds-timeline__item_expandable slds-timeline__item_email"
+                                             key={currentData.record.Id}>
+                                            <div class="slds-media__figure">
+                                                <lightning-icon class="slds-m-left_large slds-timeline__icon"
+                                                                icon-name={currentData.fieldHistoryIconName}
+                                                                size="small"
+                                                                variant="inverse"></lightning-icon>
+                                            </div>
+                                            <div class="slds-media__body">
+                                                <lightning-layout horizontal-align="spread" vertical-align="center">
+                                                    <lightning-layout-item>
+                                                        {objectApiName} status changed by <b>{currentData.record.CreatedBy.Name}</b>
+                                                        from:
+                                                        {currentData.record.OldValue} ->
+                                                        <b>{currentData.record.NewValue}</b>
+                                                    </lightning-layout-item>
+                                                    <lightning-layout-item>
+                                                        <div class="slds-timeline__actions slds-timeline__actions_inline">
+                                                            <div class="slds-timeline__date"><span>{currentData.record.formattedDate}</span>
+                                                            </div>
+                                                        </div>
+                                                    </lightning-layout-item>
+                                                </lightning-layout>
+                                                <div class="slds-m-top_xx-small"></div>
+                                            </div>
+                                            <div class="slds-media__figure slds-media__figure_reverse"></div>
+                                        </div>
+
+                                    </template>
+
+
+                                </template>
+                            </template>
+                        </div>
+                    </lightning-card>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

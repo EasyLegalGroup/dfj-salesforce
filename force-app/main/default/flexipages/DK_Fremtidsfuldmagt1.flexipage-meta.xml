@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>allowChanges</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>alternativeText</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>Center</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>imgPath</name>
+                    <value>{[devName:dfjlogo]}</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginBottom</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginLeft</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginRight</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginTop</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>objectFit</name>
+                    <value>fill</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>40</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:image</componentName>
+                <identifier>contentbuilder_image27</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-ea24dc88-440f-46c7-8b98-d4c96985c3ed</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columnBody</name>
+                    <value>Facet-ea24dc88-440f-46c7-8b98-d4c96985c3ed</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columnSpacer</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>padding</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlign</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>100%</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:column</componentName>
+                <identifier>contentbuilder_column79</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-808373c0-6ad8-45dd-a8ef-7336f5b98ae6</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>allowChanges</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>linkedToDesignKit</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginBottom</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginLeft</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginRight</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginTop</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p style=&quot;color:#333333;font-family:Arial;font-size:16px;font-weight:normal;margin:0;&quot;&gt;&lt;span style=&quot;font-size:14px;&quot;&gt;K&amp;aelig;re {{{Recipient.FirstName}}}&lt;/span&gt;&lt;span style=&quot;font-size:14px;&quot;&gt;,&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Den endelige version af din/jeres fremtidsfuldmagt(er) er nu registreret og gjort klar til den digitale underskrift.&lt;/p&gt;
+
+&lt;p&gt;L&amp;aelig;s nedenst&amp;aring;ende grundigt igennem:&lt;/p&gt;
+
+&lt;h3&gt;Dine opgaver er:&lt;/h3&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;Underskriv fremtidsfuldmagten digitalt p&amp;aring; &lt;a href=&quot;https://www.tinglysning.dk&quot;&gt;tinglysning.dk&lt;/a&gt;.&lt;/li&gt;
+	&lt;li&gt;Book tid hos notaren (senest 6 m&amp;aring;neder efter oprettelse af fuldmagten).&lt;/li&gt;
+	&lt;li&gt;M&amp;oslash;d op hos notaren og vedkend fuldmagten.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;OBS:&lt;/strong&gt; Efter 6 m&amp;aring;neder slettes anmeldelsen af din fremtidsfuldmagt, og du vil skulle tinglyse p&amp;aring; ny. Det er derfor meget vigtigt, at du booker tid hos notaren inden for 6 m&amp;aring;neder fra den dag, du f&amp;oslash;rst modtog mail fra tinglysningsretten.&lt;/p&gt;
+
+&lt;h3&gt;Vigtigt:&lt;/h3&gt;
+
+&lt;p&gt;- Dit/jeres &lt;strong&gt;sagsnummer/tinglysningsnummer&lt;/strong&gt; er dit/jeres &lt;strong&gt;fulde navn&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;- Da processen udelukkende er digital, er det&amp;nbsp;det er vigtigt at underskrive med MitID, dokumentet&amp;nbsp;skal derfor ikke udskrives og medbringes fysisk hos notaren.&amp;nbsp;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h2&gt;Hvordan underskriver jeg min fremtidsfuldmagt digitalt?&lt;/h2&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;G&amp;aring; ind p&amp;aring; hjemmesiden &lt;a href=&quot;https://www.tinglysning.dk&quot;&gt;www.tinglysning.dk&lt;/a&gt;.&lt;/li&gt;
+	&lt;li&gt;Klik p&amp;aring; &amp;rdquo;Underskriv dokument&amp;rdquo;.&lt;/li&gt;
+	&lt;li&gt;Log ind med MitID.&lt;/li&gt;
+	&lt;li&gt;Tryk nu p&amp;aring; &amp;ldquo;underskriv&amp;rdquo; (blyanten) i 6. kolonne.&lt;/li&gt;
+	&lt;li&gt;Scroll hele vejen ned til bunden af dit dokument, f&amp;oslash;r du kan trykke &amp;rsquo;&amp;rsquo;videre til underskrift&amp;rsquo;&amp;rsquo;.&lt;/li&gt;
+	&lt;li&gt;Underskriv med NemID/MitID.&lt;/li&gt;
+	&lt;li&gt;Vigtigt: Du skal underskrive fremtidsfuldmagten p&amp;aring; tinglysning.dk f&amp;oslash;r du st&amp;aring;r hos notaren &amp;ndash; ellers kan den ikke noteres.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Har du brug for en vejledning? Se guiden her: &lt;a href=&quot;https://scribehow.com/shared/Sadan_underskriver_du_fremtidsfuldmagten_pa_Tinglysning__nupQz3tIRjm36cpx9C-hRg&quot;&gt;S&amp;aring;dan underskriver du fremtidsfuldmagten p&amp;aring; Tinglysning&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h2&gt;Gode r&amp;aring;d, f&amp;oslash;r du g&amp;aring;r i gang&lt;/h2&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Find NemID/MitID frem.&lt;/li&gt;
+	&lt;li&gt;Tip: Det kan v&amp;aelig;re en fordel at &amp;aring;bne guiden p&amp;aring; din mobiltelefon ved siden af computeren.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Har du problemer med tinglysningen? Kontakt Tinglysningsretten direkte:&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Telefon: 99 68 58 00&lt;/li&gt;
+	&lt;li&gt;Kontaktformular: &lt;a href=&quot;https://domstol.dk/tinglysningsretten/kontakt/&quot;&gt;Tinglysningsretten &amp;ndash; Kontakt&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h2&gt;Ofte stillede sp&amp;oslash;rgsm&amp;aring;l&lt;/h2&gt;
+
+&lt;h3&gt;Hvordan booker jeg tid hos notaren?&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Notarerne har kontorer ved landets byretter, og det er oftest n&amp;oslash;dvendigt at bestille tid.&lt;/li&gt;
+	&lt;li&gt;Nogle steder kan du booke online, andre kr&amp;aelig;ver telefonbooking.&lt;/li&gt;
+	&lt;li&gt;Find din n&amp;aelig;rmeste retskreds her: &lt;a href=&quot;https://domstol.dk/selvbetjening/notarbooking/&quot;&gt;Notarbooking &amp;ndash; Domstol.dk&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Hvad skal jeg medbringe hos notaren?&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Billedlegitimation med CPR-nummer (f.eks. k&amp;oslash;rekort eller pas).&lt;/li&gt;
+	&lt;li&gt;300 kr. i retsafgift (kan betales kontant, med dansk Visa/Dankort eller MobilePay).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Hvad sikrer en notar?&lt;/h3&gt;
+
+&lt;p&gt;Notaren sikrer, at du:&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Er ved dine fulde fem.&lt;/li&gt;
+	&lt;li&gt;Er den, du udgiver dig for at v&amp;aelig;re.&lt;/li&gt;
+	&lt;li&gt;Er bevidst om, hvad du underskriver.&lt;/li&gt;
+	&lt;li&gt;Underskriver frivilligt.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h2&gt;Hvordan s&amp;aelig;ttes fremtidsfuldmagten i kraft?&lt;/h2&gt;
+
+&lt;p&gt;Hvis en fremtidsfuldmagt skal aktiveres, sker det ud fra en l&amp;aelig;gefaglig vurdering, som meddeles Familieretshuset.&lt;/p&gt;
+
+&lt;p&gt;Familieretshuset vurderer, om betingelserne i fremtidsfuldmagten er opfyldt.&lt;/p&gt;
+
+&lt;p&gt;Gebyr: Hvis fremtidsfuldmagten skal aktiveres, skal der betales et gebyr til Familieretshuset.&lt;/p&gt;
+
+&lt;p&gt;Se aktuelle gebyrer her: &lt;a href=&quot;https://familieretshuset.dk/om-familieretshuset/betaling-af-gebyr&quot;&gt;Betaling af gebyr &amp;ndash; Familieretshuset&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h2&gt;Hvorn&amp;aring;r er fremtidsfuldmagten gyldig?&lt;/h2&gt;
+
+&lt;p&gt;Fuldmagten er f&amp;oslash;rst gyldig, n&amp;aring;r du har v&amp;aelig;ret hos notaren. Dette skal ske senest 6 m&amp;aring;neder efter udf&amp;aelig;rdigelsen af fuldmagten.&lt;br /&gt;
+&amp;nbsp;&lt;/p&gt;
+
+&lt;h2&gt;Hvad nu, hvis jeg ikke kan komme til notaren?&lt;/h2&gt;
+
+&lt;p&gt;Hvis du ikke kan komme til notaren, f.eks. pga. sygdom, kan du aftale, at notaren kommer hjem til dig. V&amp;aelig;r opm&amp;aelig;rksom p&amp;aring;, at du skal betale for notarens transport.&lt;/p&gt;
+
+&lt;p&gt;Find din lokale byret her: &lt;a href=&quot;https://www.domstol.dk/selvbetjening/find-ret/&quot;&gt;Find Ret &amp;ndash; Domstol.dk&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Hvad nu, hvis jeg er digitalt fritaget og ikke har NemID/MitID?&lt;/h2&gt;
+
+&lt;p&gt;Hvis du er fritaget fra digital kommunikation, skal du m&amp;oslash;de personligt op i Familieretshuset med din fremtidsfuldmagt.&lt;/p&gt;
+
+&lt;p&gt;Du underskriver fremtidsfuldmagten fysisk hos Familieretshuset. Hvis du g&amp;oslash;r dette, beh&amp;oslash;ver du ikke notarens attest.&lt;/p&gt;
+
+&lt;p&gt;L&amp;aelig;s mere her: &lt;a href=&quot;https://familieretshuset.dk/fremtidsfuldmagt/fremtidsfuldmagt/hvis-du-vil-oprette-en-fremtidsfuldmagt&quot;&gt;Fremtidsfuldmagt uden NemID/MitID &amp;ndash; Familieretshuset&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;Du &amp;oslash;nskes en god dag! 😊&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:richText</componentName>
+                <identifier>contentbuilder_richText53</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-2bf900ce-ed05-4e23-8c19-f7df6f809e56</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columnBody</name>
+                    <value>Facet-2bf900ce-ed05-4e23-8c19-f7df6f809e56</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columnSpacer</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>padding</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlign</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>100%</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:column</componentName>
+                <identifier>contentbuilder_column80</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-e441c765-9041-4154-914c-4082ce5de64a</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-808373c0-6ad8-45dd-a8ef-7336f5b98ae6</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlignment</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:row</componentName>
+                <identifier>contentbuilder_row79</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-e441c765-9041-4154-914c-4082ce5de64a</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlignment</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:row</componentName>
+                <identifier>contentbuilder_row80</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>main</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>DK_Fremtidsfuldmagt1</masterLabel>
+    <template>
+        <name>contentpage:defaultEmailTemplatePageTemplate</name>
+        <properties>
+            <name>backgroundColor</name>
+            <value>#E9EAEC</value>
+        </properties>
+        <properties>
+            <name>backgroundImageUrl</name>
+        </properties>
+        <properties>
+            <name>bodyColor</name>
+            <value>#FFFFFF</value>
+        </properties>
+        <properties>
+            <name>paddingBottom</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingLeft</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingRight</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingTop</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>preheader</name>
+            <value>Sådan skal du gøre med dit/jeres underskrevne dokument(er)</value>
+        </properties>
+    </template>
+    <type>EmailTemplatePage</type>
+</FlexiPage>

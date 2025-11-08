@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>er_adressen_forskellige_fra_den_82__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Relevant hvis samejeoverenskomsten f.eks. skal dække over et sommerhus, som har anden adresse end den primære bolig</description>
+    <externalId>false</externalId>
+    <label>Er boligen den samme adresse som fa660</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>include_unwanted_guardian__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Skal der indsættes en uønsket værge?</description>
+    <externalId>false</externalId>
+    <label>Skal der indsættes en uønsket væ b6410</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

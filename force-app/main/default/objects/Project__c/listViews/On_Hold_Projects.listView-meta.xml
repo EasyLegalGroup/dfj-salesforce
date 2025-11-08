@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>On_Hold_Projects</fullName>
+    <columns>NAME</columns>
+    <columns>Parent_Project__c</columns>
+    <columns>Project_Start_Date__c</columns>
+    <columns>Deadline__c</columns>
+    <columns>Project_Status__c</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Project__c.Project,Project__c.Parent_Project</value>
+    </filters>
+    <filters>
+        <field>Project_Status__c</field>
+        <operation>equals</operation>
+        <value>On Hold</value>
+    </filters>
+    <label>On-Hold Projects</label>
+</ListView>

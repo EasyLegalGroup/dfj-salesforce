@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rejected_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Rejected Reason</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Feasible</fullName>
+                <default>false</default>
+                <label>Not Feasible</label>
+            </value>
+            <value>
+                <fullName>Too Costly</fullName>
+                <default>false</default>
+                <label>Too Costly</label>
+            </value>
+            <value>
+                <fullName>Better Alternative Exists</fullName>
+                <default>false</default>
+                <label>Better Alternative Exists</label>
+            </value>
+            <value>
+                <fullName>Low Business Impact</fullName>
+                <default>false</default>
+                <label>Low Business Impact</label>
+            </value>
+            <value>
+                <fullName>Conflicts with Existing Processes</fullName>
+                <default>false</default>
+                <label>Conflicts with Existing Processes</label>
+            </value>
+            <value>
+                <fullName>Requires External Dependencies</fullName>
+                <default>false</default>
+                <label>Requires External Dependencies</label>
+            </value>
+            <value>
+                <fullName>Not a Current Priority</fullName>
+                <default>false</default>
+                <label>Not a Current Priority</label>
+            </value>
+            <value>
+                <fullName>Security Concerns</fullName>
+                <default>false</default>
+                <label>Security Concerns</label>
+            </value>
+            <value>
+                <fullName>Compliance Restrictions</fullName>
+                <default>false</default>
+                <label>Compliance Restrictions</label>
+            </value>
+            <value>
+                <fullName>Duplicates an Existing Feature</fullName>
+                <default>false</default>
+                <label>Duplicates an Existing Feature</label>
+            </value>
+            <value>
+                <fullName>Limited Technical Feasibility</fullName>
+                <default>false</default>
+                <label>Limited Technical Feasibility</label>
+            </value>
+            <value>
+                <fullName>Requires Significant Maintenance Effort</fullName>
+                <default>false</default>
+                <label>Requires Significant Maintenance Effort</label>
+            </value>
+            <value>
+                <fullName>Lack of User Demand</fullName>
+                <default>false</default>
+                <label>Lack of User Demand</label>
+            </value>
+            <value>
+                <fullName>Future Consideration</fullName>
+                <default>false</default>
+                <label>Future Consideration</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

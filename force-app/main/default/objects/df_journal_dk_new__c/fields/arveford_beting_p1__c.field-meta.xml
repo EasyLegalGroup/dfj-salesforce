@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>arveford_beting_p1__c</fullName>
+    <externalId>false</externalId>
+    <label>Arvefordeling hvis Person 1 går  1ad0e</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>arveford_beting_p1_egne_lige</fullName>
+                <default>false</default>
+                <label>Mest muligt ligedelt til egne livsarvinger</label>
+            </value>
+            <value>
+                <fullName>arveford_beting_mest_partner_p1</fullName>
+                <default>false</default>
+                <label>Mest muligt til partner</label>
+            </value>
+            <value>
+                <fullName>arveford_beting_mest_brn_p1</fullName>
+                <default>false</default>
+                <label>Mest muligt ligedelt mellem børn</label>
+            </value>
+            <value>
+                <fullName>arveford_beting_procent_p1</fullName>
+                <default>false</default>
+                <label>Procentfordeling</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

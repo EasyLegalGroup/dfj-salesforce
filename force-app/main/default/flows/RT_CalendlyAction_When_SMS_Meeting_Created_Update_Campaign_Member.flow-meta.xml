@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <assignments>
+        <name>Populate_Custom_Error_with_Flow_Fault_Message</name>
+        <label>Populate Custom Error with Flow Fault Message</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_Invalid_Related_Record_ID_on_Campaign_Member</name>
+        <label>Populate Custom Error with Invalid Related Record ID on Campaign Member</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Invalid Related Record ID on Campaign Member &quot;{!Get_Campaign_Member.LeadOrContactId}&quot;</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_SMS_Booking_From_Unknown_Campaign_Member</name>
+        <label>Populate Custom Error with SMS Booking From Unknown Campaign Member</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptNoCampaignMemberFound</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Did_We_Find_a_Campaign_Member</name>
+        <label>Did We Find a Campaign Member?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Populate_Custom_Error_with_SMS_Booking_From_Unknown_Campaign_Member</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Got_Campaign_Member</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Campaign_Member</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Campaign_Member</targetReference>
+            </connector>
+            <label>Got Campaign Member</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Which_Related_Record_Do_We_Have</name>
+        <label>Which Related Record Do We Have?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Populate_Custom_Error_with_Invalid_Related_Record_ID_on_Campaign_Member</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Related_Contact</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Campaign_Member.LeadOrContactId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>003</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_PersonAccount</targetReference>
+            </connector>
+            <label>Related Contact</label>
+        </rules>
+        <rules>
+            <name>Related_Lead</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Campaign_Member.LeadOrContactId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>00Q</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Lead</targetReference>
+            </connector>
+            <label>Related Lead</label>
+        </rules>
+    </decisions>
+    <description>Updated with error paths and updating of Event Mødestatus on Campaign Member and it&apos;s related Lead or Contact.
+If a Campaign Member isn&apos;t found, logs error as well</description>
+    <environments>Default</environments>
+    <interviewLabel>RT - CalendlyAction {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RT - CalendlyAction: When SMS Meeting Created, Update Campaign Member</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Campaign_Member</name>
+        <label>Get Campaign Member</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Did_We_Find_a_Campaign_Member</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>External_ID__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Calendly__UtmTerm__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Campaign_Member</name>
+        <label>Update Campaign Member</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Which_Related_Record_Do_We_Have</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Campaign_Member.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Event_m_destatus__c</field>
+            <value>
+                <stringValue>Tilmeldingsblanket</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Lecture_Form_Invite_Status__c</field>
+            <value>
+                <stringValue>Reply received</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Time_of_Lecture_Form_Reply__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Lead</name>
+        <label>Update Lead</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Campaign_Member.LeadOrContactId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Event_moedestatus_c__c</field>
+            <value>
+                <stringValue>Tilmeldingsblanket</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Lead</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_PersonAccount</name>
+        <label>Update PersonAccount</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>PersonContactId__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Campaign_Member.LeadOrContactId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Event_m_destatus__pc</field>
+            <value>
+                <stringValue>Tilmeldingsblanket</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Campaign_Member</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Calendly__UtmTerm__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Calendly__UtmMedium__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>TmSmsInvite</stringValue>
+            </value>
+        </filters>
+        <object>Calendly__CalendlyAction__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>AL_Send_Error_Email_from_Input_Values</name>
+        <label>AL - Send Error Email from Input Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <flowName>AL_Send_Error_Email_from_Input_Values</flowName>
+        <inputAssignments>
+            <name>inputCustomError</name>
+            <value>
+                <elementReference>CustomError</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputFlowName</name>
+            <value>
+                <stringValue>RT - CalendlyAction: When SMS Meeting Created, Update Campaign Member</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <textTemplates>
+        <name>ptNoCampaignMemberFound</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>SMS Booking from unknown Campaign Member
+
+Customer Name: {!$Record.Calendly__InviteeName__c}
+Created Date: {!$Record.CreatedDate}
+Booked with: {!$Record.Calendly__EventPrimaryPublisherName__c}
+Calendly Meeting Start: {!$Record.Calendly__EventStartTime__c}
+UTM Term/External ID Used to Search for Campaign Member: {!$Record.Calendly__UtmTerm__c}
+
+Link to Calendly Action:
+https://dfj.lightning.force.com/lightning/r/{!$Record.Id}/view</text>
+    </textTemplates>
+    <variables>
+        <name>CustomError</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

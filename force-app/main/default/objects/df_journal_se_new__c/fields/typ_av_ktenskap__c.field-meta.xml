@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>typ_av_ktenskap__c</fullName>
+    <externalId>false</externalId>
+    <label>Typ av äktenskap</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>ktenskapsfrord_enskild_egendom</fullName>
+                <default>false</default>
+                <label>Äktenskapsförord/enskild egendom</label>
+            </value>
+            <value>
+                <fullName>inget_ktenskapsfrord_giftorttsgods_enbart</fullName>
+                <default>false</default>
+                <label>Inget äktenskapsförord/giftorättsgods enbart</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

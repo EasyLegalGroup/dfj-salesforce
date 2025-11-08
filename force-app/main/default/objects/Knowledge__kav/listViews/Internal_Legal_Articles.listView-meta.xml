@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Internal_Legal_Articles</fullName>
+    <columns>TITLE</columns>
+    <columns>ABSTRACT</columns>
+    <columns>ARTICLE_NUMBER</columns>
+    <columns>LANGUAGE</columns>
+    <columns>PUBLISH_STATUS</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Knowledge__kav.Internal_Legal</value>
+    </filters>
+    <label>Internal Legal Articles</label>
+</ListView>

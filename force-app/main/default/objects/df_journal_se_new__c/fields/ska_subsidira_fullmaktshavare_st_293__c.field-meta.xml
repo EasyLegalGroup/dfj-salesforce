@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ska_subsidira_fullmaktshavare_st_293__c</fullName>
+    <externalId>false</externalId>
+    <label>Ska subsidiära fullmaktshavare s f717b</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>tilsammans_p2</fullName>
+                <default>false</default>
+                <label>Tilsammans</label>
+            </value>
+            <value>
+                <fullName>prioritetsordning_p2</fullName>
+                <default>false</default>
+                <label>Prioritetsordning</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

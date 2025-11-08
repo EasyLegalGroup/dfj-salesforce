@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Match_Market_Unit_If_Present</fullName>
+    <active>true</active>
+    <description>If a Market Unit is specified on the related Account, Lead, or Campaign, it must match the Market Unit on the related Target record.</description>
+    <errorConditionFormula>(
+  NOT(ISBLANK(TEXT(Account__r.Market_Unit__c))) &amp;&amp;
+  TEXT(Account__r.Market_Unit__c) &lt;&gt; TEXT(Target__r.Market_Unit__c)
+)
+||
+(
+  NOT(ISBLANK(TEXT(Lead__r.Market_Unit__c))) &amp;&amp;
+  TEXT(Lead__r.Market_Unit__c) &lt;&gt; TEXT(Target__r.Market_Unit__c)
+)
+||
+(
+  NOT(ISBLANK(TEXT(Campaign__r.Market_Unit__c))) &amp;&amp;
+  TEXT(Campaign__r.Market_Unit__c) &lt;&gt; TEXT(Target__r.Market_Unit__c)
+)</errorConditionFormula>
+    <errorMessage>If Market Unit is set on Account, Lead, or Campaign, it must match the Market Unit on the related Target record.</errorMessage>
+</ValidationRule>

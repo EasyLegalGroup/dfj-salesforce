@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Danish_Categories</fullName>
+    <columns>Is_Active__c</columns>
+    <columns>NAME</columns>
+    <columns>Calculated_Priority__c</columns>
+    <columns>Manual_Priority_Adjustment__c</columns>
+    <columns>Number_of_Criteria__c</columns>
+    <columns>Minimum_Product_Count__c</columns>
+    <columns>Standard_Production_Time__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Is_Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Active Danish Categories</label>
+</ListView>

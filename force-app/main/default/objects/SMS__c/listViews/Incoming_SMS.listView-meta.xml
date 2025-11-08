@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Incoming_SMS</fullName>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>From_Number__c</columns>
+    <columns>To_Number__c</columns>
+    <columns>Record_ID__c</columns>
+    <columns>Contact__c</columns>
+    <columns>Lead__c</columns>
+    <columns>Message__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Direction__c</field>
+        <operation>equals</operation>
+        <value>Incoming</value>
+    </filters>
+    <label>Incoming SMS</label>
+</ListView>

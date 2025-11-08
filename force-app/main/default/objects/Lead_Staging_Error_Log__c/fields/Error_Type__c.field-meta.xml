@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Error_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Error Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Invalid Email</fullName>
+                <default>false</default>
+                <label>Invalid Email</label>
+            </value>
+            <value>
+                <fullName>Invalid Phone Number</fullName>
+                <default>false</default>
+                <label>Invalid Phone Number</label>
+            </value>
+            <value>
+                <fullName>Missing Required Field</fullName>
+                <default>false</default>
+                <label>Missing Required Field</label>
+            </value>
+            <value>
+                <fullName>Validation Failure</fullName>
+                <default>false</default>
+                <label>Validation Failure</label>
+            </value>
+            <value>
+                <fullName>Duplicate Record Detected</fullName>
+                <default>false</default>
+                <label>Duplicate Record Detected</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

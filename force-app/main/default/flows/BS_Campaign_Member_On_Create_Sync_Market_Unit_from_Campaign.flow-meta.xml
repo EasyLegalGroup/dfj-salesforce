@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <decisions>
+        <name>Does_Market_Unit_Match_Campaign_s_Market_Unit</name>
+        <label>Does Market Unit Match Campaign&apos;s Market Unit?</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Update_Campaign_Member</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Match</defaultConnectorLabel>
+        <rules>
+            <name>Market_Unit_Match</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Campaign.Market_Unit__c</elementReference>
+                </rightValue>
+            </conditions>
+            <label>Market Unit Match</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>BS - Campaign Member: On Create Sync Market Unit from Campaign {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>BS - Campaign Member: On Create Sync Market Unit from Campaign</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Campaign_Member</name>
+        <label>Update Campaign Member</label>
+        <locationX>264</locationX>
+        <locationY>395</locationY>
+        <inputAssignments>
+            <field>Market_Unit__c</field>
+            <value>
+                <elementReference>$Record.Campaign.Market_Unit__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Does_Market_Unit_Match_Campaign_s_Market_Unit</targetReference>
+        </connector>
+        <object>CampaignMember</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

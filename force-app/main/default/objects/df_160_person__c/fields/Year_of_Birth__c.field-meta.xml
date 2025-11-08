@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Year_of_Birth__c</fullName>
+    <externalId>false</externalId>
+    <formula>TEXT(
+    IF(
+        VALUE(RIGHT(Birthday__c, 2)) &lt;= 24,
+        2000 + VALUE(RIGHT(Birthday__c, 2)),
+        1900 + VALUE(RIGHT(Birthday__c, 2))
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Year of Birth</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

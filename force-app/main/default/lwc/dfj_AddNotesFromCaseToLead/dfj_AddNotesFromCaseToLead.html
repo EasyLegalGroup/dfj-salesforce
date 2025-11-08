@@ -1,0 +1,21 @@
+<template>
+    <div>
+        <div class="slds-p-around_small backgroundColor">
+
+            <div>
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item size="12" large-device-size="12" medium-device-size="12" small-device-size="12">
+                        <div>
+                            <lightning-textarea name="input1" label="Note" value={noteContent} onchange={handleNoteChange}></lightning-textarea>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" large-device-size="12" medium-device-size="12" small-device-size="12">
+                        <div style="float: right;">
+                            <lightning-button variant="brand" label="Add Note" onclick={saveNote}></lightning-button>
+                        </div>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+            </div>
+            </div>
+</template>

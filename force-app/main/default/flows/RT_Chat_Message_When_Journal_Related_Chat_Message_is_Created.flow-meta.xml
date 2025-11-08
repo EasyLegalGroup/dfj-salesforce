@@ -1,0 +1,1130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Email</name>
+        <label>Send Email</label>
+        <locationX>182</locationX>
+        <locationY>2669</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Set_Notification_Sent_Values</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>SpouseEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>FromAddress</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useEmailTemplate</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailTemplateId</name>
+            <value>
+                <elementReference>Get_Email_Template.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <elementReference>Get_Journal.Account__r.PersonContactId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <apiVersion>57.0</apiVersion>
+    <assignments>
+        <name>Add_Agent_s_Account_Note_to_Collection</name>
+        <label>Add Agent&apos;s Account Note to Collection</label>
+        <locationX>600</locationX>
+        <locationY>1421</locationY>
+        <assignmentItems>
+            <assignToReference>NoteCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Note</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Populate_Agent_s_Journal_Note</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Add_Agent_s_Journal_Note_to_Collection</name>
+        <label>Add Agent&apos;s Journal Note to Collection</label>
+        <locationX>600</locationX>
+        <locationY>1637</locationY>
+        <assignmentItems>
+            <assignToReference>NoteCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Note</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_Status_Already_Awaiting_Customer</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Add_Customer_s_Account_Note_to_Collection</name>
+        <label>Add Customer&apos;s Account Note to Collection</label>
+        <locationX>1326</locationX>
+        <locationY>1421</locationY>
+        <assignmentItems>
+            <assignToReference>NoteCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Note</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Populate_Customer_s_Journal_Note</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Add_Customer_s_Journal_Note_to_Collection</name>
+        <label>Add Customer&apos;s Journal Note to Collection</label>
+        <locationX>1326</locationX>
+        <locationY>1637</locationY>
+        <assignmentItems>
+            <assignToReference>NoteCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Note</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_Status_Already_Awaiting_Agent</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Account_to_Comment</name>
+        <label>Assign Account to Comment</label>
+        <locationX>1007</locationX>
+        <locationY>431</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Account__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Journal__r.Account__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Journal</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Basic_Comment_Values</name>
+        <label>Assign Basic Comment Values</label>
+        <locationX>1139</locationX>
+        <locationY>1097</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Journal.GA_Most_Recent_Comment_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.CreatedDate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_Journal.Latest_GetAccept_Comment_2__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Journal.Latest_GetAccept_Comment__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_Journal.Latest_GetAccept_Comment_3__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Journal.Latest_GetAccept_Comment_2__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_Journal.Latest_GetAccept_Comment__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Body__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Who_commented</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Danish_Values</name>
+        <label>Assign Danish Values</label>
+        <locationX>743</locationX>
+        <locationY>839</locationY>
+        <assignmentItems>
+            <assignToReference>EmailTemplateName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>DK_New_Chat_Message_Notification_for_Customer_1754920730683</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>FromAddress</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>no-reply@dinfamiliejurist.dk</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Basic_Comment_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Irish_Values</name>
+        <label>Assign Irish Values</label>
+        <locationX>1271</locationX>
+        <locationY>839</locationY>
+        <assignmentItems>
+            <assignToReference>EmailTemplateName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>IE_New_Chat_Message_Notification_for_Customer_1755017242071</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>FromAddress</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>no-reply@hereslaw.ie</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Basic_Comment_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Swedish_Values</name>
+        <label>Assign Swedish Values</label>
+        <locationX>1007</locationX>
+        <locationY>839</locationY>
+        <assignmentItems>
+            <assignToReference>EmailTemplateName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>SE_New_Chat_Message_Notification_for_Customer_1755002525648</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>FromAddress</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>no-reply@dinfamiljejurist.se</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Basic_Comment_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Clear_Awaiting_Agent_Since</name>
+        <label>Clear Awaiting Agent Since</label>
+        <locationX>600</locationX>
+        <locationY>2045</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Journal.Awaiting_agent_since__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>Are_We_Free_of_Chat_Notification_Timeout</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Clear_Awaiting_Customer</name>
+        <label>Clear Awaiting Customer Since</label>
+        <locationX>1326</locationX>
+        <locationY>2045</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Journal.Awaiting_customer_since__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>Was_Journal_Archived</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Agent_s_Account_Note</name>
+        <label>Populate Agent&apos;s Account Note</label>
+        <locationX>600</locationX>
+        <locationY>1313</locationY>
+        <assignmentItems>
+            <assignToReference>Note.Body</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmAgentCommentAccount</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Note.Title</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Name</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Note.ParentId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Journal.Account__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_Agent_s_Account_Note_to_Collection</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Agent_s_Journal_Note</name>
+        <label>Populate Agent&apos;s Journal Note</label>
+        <locationX>600</locationX>
+        <locationY>1529</locationY>
+        <assignmentItems>
+            <assignToReference>Note.Body</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmAgentCommentJournal</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Note.Title</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Name</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Note.ParentId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Journal.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_Agent_s_Journal_Note_to_Collection</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_Cannot_Identify_Who_Commented</name>
+        <label>Populate Custom Error with Cannot Identify Who Commented</label>
+        <locationX>1678</locationX>
+        <locationY>1313</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Cannot Identify Who Commented Based on Is_Inbound__c Value &quot;{!$Record.Is_Inbound__c}&quot;</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_Flow_Fault_Message</name>
+        <label>Populate Custom Error with Flow Fault Message</label>
+        <locationX>2734</locationX>
+        <locationY>731</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_Invalid_Market_Unit</name>
+        <label>Populate Custom Error with Invalid Market Unit</label>
+        <locationX>1535</locationX>
+        <locationY>839</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Chat Message Created on Journal with Invalid Market Unit ({!Get_Journal.Market_Unit__c})</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Customer_s_Account_Note</name>
+        <label>Populate Customer&apos;s Account Note</label>
+        <locationX>1326</locationX>
+        <locationY>1313</locationY>
+        <assignmentItems>
+            <assignToReference>Note.Body</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmCustomerCommentAccount</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Note.Title</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Name</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Note.ParentId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Journal.Account__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_Customer_s_Account_Note_to_Collection</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Customer_s_Journal_Note</name>
+        <label>Populate Customer&apos;s Journal Note</label>
+        <locationX>1326</locationX>
+        <locationY>1529</locationY>
+        <assignmentItems>
+            <assignToReference>Note.Body</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmCustomerCommentJournal</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Note.Title</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Name</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Note.ParentId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Journal.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_Customer_s_Journal_Note_to_Collection</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_SpouseEmail_Variable_with_Spouse_s_Email</name>
+        <label>Populate SpouseEmail Variable with Spouse&apos;s Email</label>
+        <locationX>50</locationX>
+        <locationY>2477</locationY>
+        <assignmentItems>
+            <assignToReference>SpouseEmail</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Journal.Account__r.Spouse_Email__pc</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Email</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Awaiting_Agent_on_Journal</name>
+        <label>Set Awaiting Agent on Journal</label>
+        <locationX>1414</locationX>
+        <locationY>1853</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Journal.GA_Reply_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Awaiting agent</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_Journal.Awaiting_agent_since__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Clear_Awaiting_Customer</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Awaiting_Customer_on_Journal</name>
+        <label>Set Awaiting Customer on Journal</label>
+        <locationX>688</locationX>
+        <locationY>1853</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Journal.GA_Reply_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Awaiting customer</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_Journal.Awaiting_customer_since__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Clear_Awaiting_Agent_Since</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Journal_States_Gennemgang_GetAccept</name>
+        <label>Set Journal States &quot;Gennemgang GetAccept&quot;</label>
+        <locationX>1194</locationX>
+        <locationY>2261</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Journal.Journal_States__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Gennemgang Get Accept</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Notes</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Notification_Sent_Values</name>
+        <label>Set Notification Sent Values</label>
+        <locationX>182</locationX>
+        <locationY>2777</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Is_Email_Notification_Sent__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_Journal.Chat_Notification_Timeout__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmNotificationTimeout</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Notes</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Are_We_Free_of_Chat_Notification_Timeout</name>
+        <label>Are We Free of Chat Notification Timeout?</label>
+        <locationX>600</locationX>
+        <locationY>2153</locationY>
+        <defaultConnector>
+            <targetReference>Create_Notes</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Free_of_Time_Out</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Journal.Chat_Notification_Timeout__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>$Flow.CurrentDateTime</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Journal.Chat_Notification_Timeout__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Email_Template</targetReference>
+            </connector>
+            <label>Free of Time Out</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Do_We_Have_a_Spouse_to_Alert_as_Well</name>
+        <label>Do We Have a Spouse to Alert as Well?</label>
+        <locationX>182</locationX>
+        <locationY>2369</locationY>
+        <defaultConnector>
+            <targetReference>Send_Email</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Got_Spouse_to_Alert</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Journal.Account__r.Is_Spouse_Shared_Document_Recipient__pc</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_SpouseEmail_Variable_with_Spouse_s_Email</targetReference>
+            </connector>
+            <label>Got Spouse to Alert</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>The purpose of this step is to not reset the Timestamp, in case e.g. the customer has been waiting for a week and then submits another chat message. If it&apos;s already Awaiting Agent, we do not set status nor update the Timestamp.</description>
+        <name>Is_Status_Already_Awaiting_Agent</name>
+        <label>Is Status Already Awaiting Agent?</label>
+        <locationX>1326</locationX>
+        <locationY>1745</locationY>
+        <defaultConnector>
+            <targetReference>Set_Awaiting_Agent_on_Journal</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Awaiting Agent</defaultConnectorLabel>
+        <rules>
+            <name>Already_Awaiting_Agent</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Journal.GA_Reply_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Awaiting agent</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Clear_Awaiting_Customer</targetReference>
+            </connector>
+            <label>Already Awaiting Agent</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>The purpose of this step is to not reset the Timestamp, in case e.g. the Agent submitted a chat message a week ago then submits another chat message. If it&apos;s already Awaiting Customer, we do not set status nor update the Timestamp.</description>
+        <name>Is_Status_Already_Awaiting_Customer</name>
+        <label>Is Status Already Awaiting Customer?</label>
+        <locationX>600</locationX>
+        <locationY>1745</locationY>
+        <defaultConnector>
+            <targetReference>Set_Awaiting_Customer_on_Journal</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Awaiting Customer</defaultConnectorLabel>
+        <rules>
+            <name>Already_Awaiting_Customer</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Journal.GA_Reply_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Awaiting customer</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Clear_Awaiting_Agent_Since</targetReference>
+            </connector>
+            <label>Already Awaiting Customer</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Checks if Comment already has an existing Account and if the related GetAccept Document has one. If Comment does not have one, but Document does, it sets it on Comment.</description>
+        <name>Should_we_set_Account_on_Comment</name>
+        <label>Should we set Account on Comment?</label>
+        <locationX>1139</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Get_Journal</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Account Set</defaultConnectorLabel>
+        <rules>
+            <name>Set_Account_on_Comment</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Journal__r.Account__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Account_to_Comment</targetReference>
+            </connector>
+            <label>Set Account on Comment</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Was_Journal_Archived</name>
+        <label>Was Journal Archived?</label>
+        <locationX>1326</locationX>
+        <locationY>2153</locationY>
+        <defaultConnector>
+            <targetReference>Create_Notes</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Journal_was_Archived</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Journal.Journal_States__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Arkiveret (Intet svar)</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Journal_States_Gennemgang_GetAccept</targetReference>
+            </connector>
+            <label>Journal was Archived</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Which_Market_Unit_is_the_Journal</name>
+        <label>Which Market Unit is the Journal?</label>
+        <locationX>1139</locationX>
+        <locationY>731</locationY>
+        <defaultConnector>
+            <targetReference>Populate_Custom_Error_with_Invalid_Market_Unit</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Danish_Market_Unit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Journal.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>DFJ_DK</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Danish_Values</targetReference>
+            </connector>
+            <label>Danish Market Unit</label>
+        </rules>
+        <rules>
+            <name>Swedish_Market_Unit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Journal.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>FA_SE</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Swedish_Values</targetReference>
+            </connector>
+            <label>Swedish Market Unit</label>
+        </rules>
+        <rules>
+            <name>Irish_Market_Unit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Journal.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ireland</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Irish_Values</targetReference>
+            </connector>
+            <label>Irish Market Unit</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Who_commented</name>
+        <label>Who commented?</label>
+        <locationX>1139</locationX>
+        <locationY>1205</locationY>
+        <defaultConnector>
+            <targetReference>Populate_Custom_Error_with_Cannot_Identify_Who_Commented</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Agent_commented</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Is_Inbound__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_Agent_s_Account_Note</targetReference>
+            </connector>
+            <label>Agent commented</label>
+        </rules>
+        <rules>
+            <name>Customer_commented</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Is_Inbound__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_Customer_s_Account_Note</targetReference>
+            </connector>
+            <label>Customer commented</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>frmAgentCommentAccount</name>
+        <dataType>String</dataType>
+        <expression>SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+{!txtAgentCommentAccount},
+&quot;&lt;p&gt;&quot;, &quot;&quot;),
+&quot;&lt;/p&gt;&quot;, BR() ),
+&quot;&lt;br&gt;&quot;, BR() ),
+&quot;&lt;br/&gt;&quot;, BR() ),
+&quot;&lt;div&gt;&quot;, &quot;&quot;),
+&quot;&lt;/div&gt;&quot;, BR() ),
+&quot;&lt;strong&gt;&quot;, &quot;&quot;),
+&quot;&lt;/strong&gt;&quot;, &quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>frmAgentCommentJournal</name>
+        <dataType>String</dataType>
+        <expression>SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+{!txtAgentCommentJournal},
+&quot;&lt;p&gt;&quot;, &quot;&quot;),
+&quot;&lt;/p&gt;&quot;, BR() ),
+&quot;&lt;br&gt;&quot;, BR() ),
+&quot;&lt;br/&gt;&quot;, BR() ),
+&quot;&lt;div&gt;&quot;, &quot;&quot;),
+&quot;&lt;/div&gt;&quot;, BR() ),
+&quot;&lt;strong&gt;&quot;, &quot;&quot;),
+&quot;&lt;/strong&gt;&quot;, &quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>frmCustomerCommentAccount</name>
+        <dataType>String</dataType>
+        <expression>SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+{!txtCustomerCommentAccount},
+&quot;&lt;p&gt;&quot;, &quot;&quot;),
+&quot;&lt;/p&gt;&quot;, BR() ),
+&quot;&lt;br&gt;&quot;, BR() ),
+&quot;&lt;br/&gt;&quot;, BR() ),
+&quot;&lt;div&gt;&quot;, &quot;&quot;),
+&quot;&lt;/div&gt;&quot;, BR() ),
+&quot;&lt;strong&gt;&quot;, &quot;&quot;),
+&quot;&lt;/strong&gt;&quot;, &quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>frmCustomerCommentJournal</name>
+        <dataType>String</dataType>
+        <expression>SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+{!txtCustomerCommentJournal},
+&quot;&lt;p&gt;&quot;, &quot;&quot;),
+&quot;&lt;/p&gt;&quot;, BR() ),
+&quot;&lt;br&gt;&quot;, BR() ),
+&quot;&lt;br/&gt;&quot;, BR() ),
+&quot;&lt;div&gt;&quot;, &quot;&quot;),
+&quot;&lt;/div&gt;&quot;, BR() ),
+&quot;&lt;strong&gt;&quot;, &quot;&quot;),
+&quot;&lt;/strong&gt;&quot;, &quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>frmNotificationTimeout</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW() + (10/1440)</expression>
+    </formulas>
+    <interviewLabel>RT - Chat Message: When Journal Related Chat Message is Created {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RT - Chat Message: When Journal Related Chat Message is Created</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Notes</name>
+        <label>Create Notes</label>
+        <locationX>1139</locationX>
+        <locationY>3053</locationY>
+        <connector>
+            <targetReference>Update_Journal</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <inputReference>NoteCollection</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Email_Template</name>
+        <label>Get Email Template</label>
+        <locationX>182</locationX>
+        <locationY>2261</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Do_We_Have_a_Spouse_to_Alert_as_Well</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>EmailTemplateName</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>EmailTemplate</object>
+        <queriedFields>Subject</queriedFields>
+        <queriedFields>HtmlValue</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Journal</name>
+        <label>Get Journal</label>
+        <locationX>1139</locationX>
+        <locationY>623</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Which_Market_Unit_is_the_Journal</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Journal__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Journal__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Chat_Message</name>
+        <label>Update Chat Message</label>
+        <locationX>1139</locationX>
+        <locationY>3269</locationY>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Journal</name>
+        <label>Update Journal</label>
+        <locationX>1139</locationX>
+        <locationY>3161</locationY>
+        <connector>
+            <targetReference>Update_Chat_Message</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <inputReference>Get_Journal</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>1013</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Should_we_set_Account_on_Comment</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Journal__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>ChatMessage__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>AL_Send_Error_Email_from_Input_Values</name>
+        <label>AL - Send Error Email from Input Values</label>
+        <locationX>2734</locationX>
+        <locationY>839</locationY>
+        <flowName>AL_Send_Error_Email_from_Input_Values</flowName>
+        <inputAssignments>
+            <name>inputCustomError</name>
+            <value>
+                <elementReference>CustomError</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputFlowName</name>
+            <value>
+                <stringValue>RT - Chat Message: When Journal Related Chat Message is Created</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <textTemplates>
+        <name>txtAgentCommentAccount</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!$Record.CreatedBy.FirstName} {!$Record.CreatedBy.LastName}: 
+Journal: {!Get_Journal.Name}
+{!$Record.Body__c}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtAgentCommentJournal</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!$Record.CreatedBy.FirstName} {!$Record.CreatedBy.LastName}: 
+{!$Record.Body__c}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtCustomerCommentAccount</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!$Record.Journal__r.Account__r.FirstName} {!$Record.Journal__r.Account__r.LastName}: 
+Journal: {!Get_Journal.Name}
+{!$Record.Body__c}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtCustomerCommentJournal</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!$Record.Journal__r.Account__r.FirstName} {!$Record.Journal__r.Account__r.LastName} : 
+{!$Record.Body__c}</text>
+    </textTemplates>
+    <variables>
+        <name>CustomError</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>EmailTemplateName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FromAddress</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Note</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Note</objectType>
+    </variables>
+    <variables>
+        <name>NoteCollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Note</objectType>
+    </variables>
+    <variables>
+        <name>SpouseEmail</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

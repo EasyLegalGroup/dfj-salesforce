@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <description>If a Campaign Member with Tickets in Order is created or Tickets in Order is updated, then this flow runs and calls the AL - Create Target Links from Input Campaign subflow</description>
+    <environments>Default</environments>
+    <interviewLabel>RT - Campaign Member: When Created, {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RT - Campaign Member: Lecture Campaign Member is Created/Updated</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Campaign</name>
+        <label>Get Campaign</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>AL_Create_Target_Links_from_Input_Campaign</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.CampaignId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Campaign</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Campaign</targetReference>
+        </connector>
+        <filterFormula>OR(
+  AND(
+    ISNEW(),
+    {!$Record.Tickets_in_order__c} &gt; 0
+  ),
+  ISCHANGED({!$Record.Tickets_in_order__c})
+)</filterFormula>
+        <object>CampaignMember</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>AL_Create_Target_Links_from_Input_Campaign</name>
+        <label>AL - Create Target Links from Input Campaign</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <flowName>AL_Create_Target_Links_from_Input_Campaign</flowName>
+        <inputAssignments>
+            <name>Campaign</name>
+            <value>
+                <elementReference>Get_Campaign</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+</Flow>

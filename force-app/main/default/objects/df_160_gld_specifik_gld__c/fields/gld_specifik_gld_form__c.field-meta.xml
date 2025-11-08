@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gld_specifik_gld_form__c</fullName>
+    <externalId>false</externalId>
+    <label>Hvilken form for gæld?</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>gld_specifik_gld_af_spec_type</fullName>
+                <default>false</default>
+                <label>Specifik type gæld</label>
+            </value>
+            <value>
+                <fullName>gld_specifik_gld_spec_kreditor</fullName>
+                <default>false</default>
+                <label>Gæld til specifik kreditor</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

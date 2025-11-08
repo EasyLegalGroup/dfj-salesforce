@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>When Phone is updated, we set the formatting to +45/+46 and remove spaces</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>PhoneFormatted</name>
+        <dataType>String</dataType>
+        <expression>IF( 
+    BEGINS(SUBSTITUTE($Record.Phone__c , &quot; &quot;, &quot;&quot;), &apos;+45&apos;), 
+    SUBSTITUTE($Record.Phone__c , &quot; &quot;, &quot;&quot;),
+    IF(
+        BEGINS(SUBSTITUTE($Record.Phone__c , &quot; &quot;, &quot;&quot;), &apos;45&apos;), 
+        &apos;+&apos; + SUBSTITUTE($Record.Phone__c , &quot; &quot;, &quot;&quot;),
+        IF(
+            AND(
+                NOT(BEGINS(SUBSTITUTE($Record.Phone__c , &quot; &quot;, &quot;&quot;), &apos;+45&apos;)), 
+                OR( 
+                    ISPICKVAL($Record.Market_Unit__c, &apos;DFJ_DK&apos;), 
+                    ISPICKVAL($Record.Market_Unit__c, &apos;Testamente_DK&apos;)
+                )
+            ), 
+            &apos;+45&apos; + SUBSTITUTE($Record.Phone__c , &quot; &quot;, &quot;&quot;),
+            IF(
+                AND(
+                    NOT(BEGINS(SUBSTITUTE($Record.Phone__c , &quot; &quot;, &quot;&quot;), &apos;+&apos;)), 
+                    OR( 
+                        ISPICKVAL($Record.Market_Unit__c, &apos;DFJ_DK&apos;), 
+                        ISPICKVAL($Record.Market_Unit__c, &apos;Testamente_DK&apos;)
+                    )
+                ), 
+                &apos;+&apos; + SUBSTITUTE($Record.Phone__c , &quot; &quot;, &quot;&quot;),
+                IF(
+                    BEGINS(SUBSTITUTE($Record.Phone__c , &quot; &quot;, &quot;&quot;), &apos;+46&apos;), 
+                    SUBSTITUTE($Record.Phone__c , &quot; &quot;, &quot;&quot;),
+                    IF(
+                        BEGINS(SUBSTITUTE($Record.Phone__c , &quot; &quot;, &quot;&quot;), &apos;46&apos;), 
+                        &apos;+&apos; + SUBSTITUTE($Record.Phone__c , &quot; &quot;, &quot;&quot;),
+                        IF(
+                            AND(
+                                NOT(BEGINS(SUBSTITUTE($Record.Phone__c , &quot; &quot;, &quot;&quot;), &apos;+46&apos;)), 
+                                ISPICKVAL($Record.Market_Unit__c, &apos;FA_SE&apos;)
+                            ), 
+                            &apos;+46&apos; + SUBSTITUTE($Record.Phone__c , &quot; &quot;, &quot;&quot;),
+                            IF(
+                                AND(
+                                    NOT(BEGINS(SUBSTITUTE($Record.Phone__c , &quot; &quot;, &quot;&quot;), &apos;+&apos;)), 
+                                    ISPICKVAL($Record.Market_Unit__c, &apos;FA_SE&apos;)
+                                ), 
+                                &apos;+&apos; + SUBSTITUTE($Record.Phone__c , &quot; &quot;, &quot;&quot;),
+                                SUBSTITUTE($Record.Phone__c , &quot; &quot;, &quot;&quot;)
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    )
+)</expression>
+    </formulas>
+    <interviewLabel>BS - Opportunity: Phone is Updated {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>BS - Opportunity: Phone is Updated</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Opportunity</name>
+        <label>Update Opportunity</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <inputAssignments>
+            <field>Phone__c</field>
+            <value>
+                <elementReference>PhoneFormatted</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Opportunity</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Phone__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

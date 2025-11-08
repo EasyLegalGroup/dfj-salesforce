@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>sameje_betalt_mest__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Hvem har betalt mest?</label>
+    <referenceTo>df_160_person__c</referenceTo>
+    <relationshipLabel>sameje_betalt_mest</relationshipLabel>
+    <relationshipName>sameje_betalt_mest</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

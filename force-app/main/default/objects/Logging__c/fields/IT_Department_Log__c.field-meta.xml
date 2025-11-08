@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IT_Department_Log__c</fullName>
+    <externalId>false</externalId>
+    <label>IT Department Log</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Andet (Se note)</fullName>
+                <default>false</default>
+                <label>Andet (Se note)</label>
+            </value>
+            <value>
+                <fullName>Juridisk</fullName>
+                <default>false</default>
+                <label>Juridisk</label>
+            </value>
+            <value>
+                <fullName>Afklaring omkring emne</fullName>
+                <default>false</default>
+                <label>Afklaring omkring emne</label>
+            </value>
+            <value>
+                <fullName>IT vedligehold (Hardware)</fullName>
+                <default>false</default>
+                <label>IT vedligehold (Hardware)</label>
+            </value>
+            <value>
+                <fullName>IT vedligehold (Software)</fullName>
+                <default>false</default>
+                <label>IT vedligehold (Software)</label>
+            </value>
+            <value>
+                <fullName>Feature idea</fullName>
+                <default>false</default>
+                <label>Feature idea</label>
+            </value>
+            <value>
+                <fullName>Fejl ved emne</fullName>
+                <default>false</default>
+                <label>Fejl ved emne</label>
+            </value>
+            <value>
+                <fullName>Dubletemne</fullName>
+                <default>false</default>
+                <label>Dubletemne</label>
+            </value>
+            <value>
+                <fullName>Spørgsmål til funktionalitet</fullName>
+                <default>false</default>
+                <label>Spørgsmål til funktionalitet</label>
+            </value>
+            <value>
+                <fullName>Report request</fullName>
+                <default>false</default>
+                <label>Report request</label>
+            </value>
+            <value>
+                <fullName>Salesforce bug</fullName>
+                <default>false</default>
+                <label>Salesforce bug</label>
+            </value>
+            <value>
+                <fullName>Konverteringsproblem</fullName>
+                <default>false</default>
+                <label>Konverteringsproblem</label>
+            </value>
+            <value>
+                <fullName>Betalingsproblem</fullName>
+                <default>false</default>
+                <label>Betalingsproblem</label>
+            </value>
+            <value>
+                <fullName>Rabatkode</fullName>
+                <default>false</default>
+                <label>Rabatkode</label>
+            </value>
+            <value>
+                <fullName>Ledelse</fullName>
+                <default>false</default>
+                <label>Ledelse</label>
+            </value>
+            <value>
+                <fullName>Salgstræning</fullName>
+                <default>false</default>
+                <label>Salgstræning</label>
+            </value>
+            <value>
+                <fullName>Spørgsmål til journal</fullName>
+                <default>false</default>
+                <label>Spørgsmål til journal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

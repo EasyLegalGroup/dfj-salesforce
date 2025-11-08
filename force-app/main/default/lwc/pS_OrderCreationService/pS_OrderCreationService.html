@@ -1,0 +1,503 @@
+<template>
+   
+    <lightning-layout multiple-rows="false">
+        <lightning-layout-item size="12" small-device-size="12" large-device-size="12" medium-device-size="12">
+            <div align="right" class="slds-p-around_x-small slds-card">
+              
+                    <button class="slds-button slds-button_brand slds-button_stretch" onclick={handleCreateOrderService}>
+                      <lightning-icon icon-name="utility:add" variant="inverse" size="xx-small" alternative-text="icon" class="margin"></lightning-icon>
+                      Create Additional Order
+                    </button>
+             
+            </div>
+
+        </lightning-layout-item>
+    </lightning-layout>
+   
+
+      <template if:true={isAddProductModalOpen}>
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-03" aria-modal="true" aria-describedby="modal-content-id-3" class="slds-modal slds-fade-in-open slds-modal_medium">
+                <div class="slds-modal__container" style="width:100%">
+                    
+                    <div class="slds-modal__content slds-p-around_small bodyHeight" id="modal-content-id-3">
+                        <div>
+                            <header class="slds-modal__header">
+                                <!--// DFJ-330 changes start-->
+                                <template lwc:if={isShowProductsInAddProductModal}>
+                                    <h2 class="slds-text-heading_medium slds-hyphenate">Add Products</h2>
+                                </template>
+                                <template lwc:else>
+                                    <h2 class="slds-text-heading_medium slds-hyphenate">Select Pricebook</h2>
+                                </template>
+                                <!--                        // DFJ-330 changes end-->
+                            </header>
+
+<!--                            // DFJ-330 changes start-->
+                                <lightning-combobox
+                                        label="Select Price Book"
+                                        value={selectedPriceBookIdUsingCombobox}
+                                        disabled={isPricebookSelectionDisabled}
+                                        placeholder="Choose a Price Book"
+                                        options={priceBookOptionsForCombobox}
+                                        onchange={handleSelectionOfPricebook}
+                                ></lightning-combobox>
+<!--                            // DFJ-330 changes end-->
+
+                        <!-- <hr style="color: #ccc;"> -->
+                          <!-- End -->
+                            <!-- <div class="slds-text-heading_medium slds-text-align_center slds-border_bottom">Selected pricebook : {selectedPriceBookName}</div> -->
+                            
+                        </div>
+
+                        <div>
+
+                            <!--                        DFJ-330 changes start-->
+                            <template lwc:if={isShowProductsInAddProductModal}>
+                            <div>
+                                <div class="slds-p-vertical_small slds-border_bottom">
+                                    <div class="slds-text-heading_medium slds-text-align_center">Selected
+                                        pricebook : {selectedPriceBookName}
+                                    </div>
+                                </div>
+                                <!--                        DFJ-330 changes end-->
+                                <lightning-layout multiple-rows="true" vertical-align="center"
+                                                  horizontal-align="center">
+
+                                    <lightning-layout-item size="6" padding="around-small">
+                                        <div class="slds-truncate slds-text-align_center "><strong>PRODUCT NAME</strong>
+                                        </div>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="2" padding="around-small">
+                                        <div class="slds-truncate slds-text-align_center "><strong>ITEM PRICE</strong>
+                                        </div>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="3" padding="around-small">
+                                        <div class="slds-truncate slds-text-align_center"><strong>AMOUNT</strong></div>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+
+                                <template for:each={currentProductList} for:item="proL" for:index="tabIndex">
+                                    <div key={proL.Id}>
+                                        <lightning-layout multiple-rows="true" vertical-align="center"
+                                                          horizontal-align="center">
+                                            <lightning-layout-item size="6" padding="around-small">
+                                                <div class="slds-truncate slds-text-align_left">{proL.Name}</div>
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size="2" padding="around-small">
+                                                <div class="slds-truncate slds-text-align_center">
+                                                    <lightning-formatted-number value={proL.UnitPrice}
+                                                                                format-style="currency"
+                                                                                currency-code={proL.Product2.CurrencyIsoCode}
+                                                                                currency-display-as="symbol"></lightning-formatted-number>
+                                                </div>
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size="3" padding="around-small">
+                                                <div class="slds-truncate slds-text-align_center">
+                                                    <lightning-layout multiple-rows="false">
+                                                        <lightning-layout-item size="3">
+                                                            <lightning-button-icon icon-name="utility:dash"
+                                                                                   alternative-text="subtract"
+                                                                                   name="subtract" size="medium"
+                                                                                   data-index={tabIndex}
+                                                                                   onclick={increaseDecreaseButton}></lightning-button-icon>
+                                                        </lightning-layout-item>
+
+                                                        <lightning-layout-item size="6" class="slds-p-left_xx-small">
+                                                            <lightning-input label="" variant="label-hidden"
+                                                                             type="number" name={tabIndex}
+                                                                             onchange={changeIntValue}
+                                                                             value={proL.quantity}></lightning-input>
+                                                        </lightning-layout-item>
+
+                                                        <lightning-layout-item size="3" class="slds-p-left_xx-small">
+                                                            <lightning-button-icon icon-name="utility:add"
+                                                                                   alternative-text="subtract"
+                                                                                   name="add" size="medium"
+                                                                                   onclick={increaseDecreaseButton}
+                                                                                   data-index={tabIndex}></lightning-button-icon>
+                                                        </lightning-layout-item>
+                                                    </lightning-layout>
+                                                </div>
+                                            </lightning-layout-item>
+                                        </lightning-layout>
+                                    </div>
+                                </template>
+                            </div>
+                            </template>
+
+                        </div>
+
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <!--                        DFJ-330 changes start-->
+                        <template lwc:if={isShowProductsInAddProductModal}>
+                        <lightning-button type="button" label="Add Products" icon-name="utility:add" icon-position="left" onclick={addProductsToOrderItems} variant="brand" >Add Products</lightning-button>
+                        </template>
+                        <lightning-button type="button" label="Cancel" name = "cancelButtonOnAddProductModal" icon-name="utility:close" icon-position="left" onclick={closeModal} variant="neutral" class="addSpaceInFooter">Cancel</lightning-button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+
+<!-- Changes starts DFJ-77 -->
+        <template if:true={isRelateJournal}>
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-03" aria-modal="true" aria-describedby="modal-content-id-3" class="slds-modal slds-fade-in-open slds-modal_medium">
+                <div class="slds-modal__container" style="width:100%">
+                    
+                    <div class="slds-modal__content slds-p-around_small bodyHeight" id="modal-content-id-4">
+                        <div>
+                            <header class="slds-modal__header">
+                                <h2 id="modal-heading-04" class="slds-text-heading_medium slds-hyphenate">Select Related Journal</h2>
+                                
+                            </header>
+                           
+                            <lightning-combobox 
+                            label="Related Journal" 
+                            value={selectedJournal} 
+                            options={associatedJournals} 
+                            title="Select Journal to relate with Order"
+                            placeholder="--None--" 
+                            dropdown-alignment="auto"
+                            onchange={handleJournalSelect}>
+                            </lightning-combobox>
+                            
+                          
+                        </div>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <lightning-button type="button" label="Back"  onclick={goBackToRelateJournalModal} variant="brand" class="slds-float_left">Back</lightning-button>
+                        <!-- <template if:true={confirmJournalOnAccount}> -->
+                            <lightning-button type="button" label="Create Order" onclick={checkandCreateOrderOnAccount} variant="brand" >Create Order</lightning-button>
+                        <!-- </template> -->
+                        <!-- <template if:false={confirmJournalOnAccount}>
+                            <lightning-button type="button" label="Create Order" onclick={confirmJournal} variant="brand" >Create Order</lightning-button>
+                        </template> -->
+                        <lightning-button type="button" label="Cancel" icon-name="utility:close" icon-position="left" onclick={closeModal} variant="neutral" class="addSpaceInFooter">Cancel</lightning-button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+            
+        </template>
+        <!-- End -->
+
+
+        <!-- journal confirmation model pop up -->
+        <template if:true={showJournalLinkingCOnfirmationModel}>
+            
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-03" aria-modal="true" aria-describedby="modal-content-id-3" class="slds-modal slds-fade-in-open slds-modal_medium">
+                <div class="slds-modal__container" style="width:100%">
+                    
+                    <div class="slds-modal__content slds-p-around_small bodyHeight" id="modal-content-id-6">
+                        <div>
+                            <header class="slds-modal__header">
+                                <h2 id="modal-heading-06" class="slds-text-heading_medium slds-hyphenate">Are you sure you want to create the order without relating a journal?</h2>
+                                
+                            </header>
+                           
+                        </div>
+                    </div>
+
+                    <footer class="slds-modal__footer">
+                        <lightning-button type="button" label="Back"  onclick={showModelToRelateJournal} variant="brand" class="slds-float_left">Back</lightning-button>
+                        <lightning-button type="button" label="Create Order" onclick={handleJournalLinkingNext} variant="brand" >Next</lightning-button>
+                                              
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+        <!-- End -->
+
+         <!-- DFJ-80 Changes -->
+         <template if:true={showPaymentModal}>
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-03" aria-modal="true" aria-describedby="modal-content-id-3" class="slds-modal slds-fade-in-open slds-modal_medium">
+                <div class="slds-modal__container" style="width:100%">
+                    
+                    <div class="slds-modal__content slds-p-around_small bodyHeight" id="modal-content-id-7">
+                        <div>
+                            <header class="slds-modal__header">
+                                <h2 id="modal-heading-07" class="slds-text-heading_medium slds-hyphenate">Proceed to Payment</h2>
+                                
+                            </header>
+                           
+                        </div>  
+                    </div>
+
+                    <footer class="slds-modal__footer">
+                        <lightning-button type="button" label="Back"  onclick={showJournalLinkingModal} variant="brand" class="slds-float_left">Back</lightning-button>
+                        <lightning-button type="button" label="Cancel" onclick={closeModal} class="addSpaceInFooter" variant="brand" >Cancel</lightning-button>
+                        <lightning-button type="button" label="Customer Already Paid" class="addSpaceInFooter " onclick={handleCustomerPaidConfirmation} variant="brand" >Customer Already Paid</lightning-button>
+                        <c-p-s_-enhanced-create-payment class="slds-float_right addSpaceInFooter" order-fixed-discount = {orderFixedDiscount} order-record={orderRecord} selected-journal={selectedJournal} record-id={recordId} order-products={orderProducts} object-api-name={objectApiName} onsuccessmessage={updateMessage}></c-p-s_-enhanced-create-payment>
+
+                                              
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+
+        <template if:true={handleCustomerPaidConfirmationModal}>
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-08" aria-modal="true" aria-describedby="modal-content-id-10" class="slds-modal slds-fade-in-open slds-modal_medium">
+                <div class="slds-modal__container" style="width:100%">
+                    
+                    <div class="slds-modal__content slds-p-around_small bodyHeight" id="modal-content-id-11">
+                        <div>
+                            <header class="slds-modal__header">
+                                <h2 id="modal-heading-08" class="slds-text-heading_medium slds-hyphenate">Customer already paid</h2>
+                                
+                            </header>
+                            <div class="slds-text-heading_small  slds-text-align_center">
+                                <p>By clicking this button you confirm that the customer has already paid <b><lightning-formatted-number
+                                    value={orderTotal}
+                                    format-style="currency"
+                                    currency-code={isoCode}
+                                    currency-display-as="symbol"
+                                ></lightning-formatted-number> </b></p>
+                                </div>
+                           
+                        </div>  
+                    </div>
+
+                    <footer class="slds-modal__footer">
+                        <lightning-button type="button" label="Back"  onclick={showCreatePaymentModal} variant="brand" class="slds-float_left">Back</lightning-button>
+                        <lightning-button type="button" label="Confirm" onclick={handleCustomerPaid} class="addSpaceInFooter" variant="brand" >Confirm</lightning-button>
+                                              
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+
+        <!-- End -->
+<!-- DFJ-80 Changes -->
+<template if:true={showUpdatedPaymentModal}>
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-03" aria-modal="true" aria-describedby="modal-content-id-3" class="slds-modal slds-fade-in-open slds-modal_medium">
+        <div class="slds-modal__container" style="width:100%">
+            
+            <div class="slds-modal__content slds-p-around_small bodyHeight" id="modal-content-id-9">
+                <div>
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                            <lightning-icon icon-name="utility:close"
+                                alternative-text="close"
+                                variant="inverse"
+                                size="small" ></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 id="modal-heading-09" class="slds-text-heading_medium slds-hyphenate">Payment Status</h2>
+                        
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-10">
+                        <button class="slds-button slds-button_icon slds-float_right" title="Refresh" onclick={handleRefresh}>
+                            <lightning-icon icon-name="utility:refresh" size="small" alternative-text="Refresh"></lightning-icon>
+                        </button>
+                            <!-- <legend class="slds-text-heading_medium slds-text-align_center"><strong>Payment Status</strong></legend> -->
+                                <div class=" slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-vertical_none">
+                                    <div class="slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+                                        
+                                           
+                                  
+                                        <div class="slds-text-heading_small slds-text-align_left">
+                                        <p><b>{billingInfo}</b></p>
+                                    <p>{updatedPayment.BillingStreet__c}</p>  
+                                    <p>{updatedPayment.BillingCity__c}</p>
+                                    <p>{updatedPayment.BillingState__c}</p>
+                                    <p>{updatedPayment.Billing_PostalCode__c}</p>
+                                    <p>{updatedPayment.BillingCountry__c}</p>  
+                                    </div>
+                                      
+                                       &nbsp;&nbsp;
+                                   
+                                        <div class="slds-text-heading_small  slds-text-align_left">
+                                        <p><b>{subscriptionInfo}</b> </p>
+                                        <p>{subscriptionStatus} <b style={getSubscriptionStyle}>{updatedPayment.Subscription_status__c}</b> </p>
+                                        </div>
+                                       
+                                    &nbsp;&nbsp;
+                                   
+                                   
+                                        <div class="slds-text-heading_small  slds-text-align_left">
+                                        <p><b>{orderValue}</b> <lightning-formatted-number
+                                            value={updatedPayment.Amount__c}
+                                            format-style="currency"
+                                            currency-code={updatedPayment.CurrencyIsoCode}
+                                            currency-display-as="symbol"
+                                        ></lightning-formatted-number> </p>
+                                        </div>
+                                        
+                                    &nbsp;&nbsp;
+                                  
+                                        <div class="slds-text-heading_small  slds-text-align_left">
+                                        <p><b>{paymentStatus}</b> <b style={getPaymentStyle}>{updatedPayment.Status__c}</b>  </p>
+                                        <p><a href={updatedPayment.Payment_link__c} target="_blank" onclick={openLink} >{paymentLink}</a> </p>
+                                        </div>
+                                       
+                                  &nbsp;&nbsp;
+                                  
+                                 </div>
+                                 </div>
+                    </div>
+                   
+                </div>  
+            </div>
+
+            <footer class="slds-modal__footer">
+                <!-- <lightning-button type="button" label="Back"  onclick={showJournalLinkingModal} variant="brand" class="slds-float_left">Back</lightning-button> -->
+                <lightning-button type="button" label="Close" onclick={closeModal} class="slds-float_right" variant="brand" >Close</lightning-button>
+                <!-- <lightning-button type="button" label="Customer Already Paid" onclick={handleCustomerPaid} class="addSpaceInFooter" variant="brand" >Customer Already Paid</lightning-button> -->
+                <!-- <c-p-s_-enhanced-create-payment order-fixed-discount = {orderFixedDiscount} record-id={recordId} order-products={orderProducts} class="addSpaceInFooter" object-api-name={objectApiName} onsuccessmessage={updateMessage}></c-p-s_-enhanced-create-payment> -->
+
+                                      
+            </footer>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+<!-- End -->
+
+  <template if:true={isConfirmModalOpen}>
+
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-03" aria-modal="true" aria-describedby="modal-content-id-3" class="slds-modal slds-fade-in-open slds-modal_medium">
+                <div class="slds-modal__container" style="width:100%">
+                    <header class="slds-modal__header">
+
+                        <h2 id="modal-heading-02" class="slds-text-heading_medium slds-hyphenate">Order Confirmation</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_small bodyHeight" id="modal-content-id-2">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered anotherhover " style="table-layout: fixed;">
+                <thead>
+                  <tr class="slds-line-height_reset">
+                    <th class="slds-text-title_caps slds-cell-wrap" scope="col">
+                      <div class="slds-truncate slds-text-align_center slds-p-around_x-small" title="Product Name">Product</div>
+                    </th>
+                    <th class="slds-text-title_caps slds-cell-wrap" scope="col">
+                      <div class="slds-truncate slds-text-align_center slds-p-around_x-small" title="Item Price">Item price</div>
+                    </th>
+                    <th class="slds-text-title_caps slds-cell-wrap" scope="col">
+                      <div class="slds-truncate slds-text-align_center slds-p-around_x-small" title="Quantity">Quanity</div>
+                    </th>
+                    <th class="slds-text-title_caps slds-cell-wrap" scope="col">
+                      <div class="slds-truncate slds-text-align_center slds-p-around_x-small" title="Discount">Discount %</div>
+                    </th>
+                    <th class="slds-text-title_caps slds-cell-wrap" scope="col">
+                      <div class="slds-truncate slds-text-align_center slds-p-around_x-small" title="Subtotal">Subtotal</div>
+                    </th>
+                    <th class="slds-text-title_caps slds-cell-wrap" scope="col">
+                        <div class="slds-truncate slds-text-align_center slds-p-around_x-small" title="Subtotal">Action</div>
+                      </th>
+                  </tr>
+                </thead>
+                <tbody class="">
+                   
+                    <template for:each={orderProducts} for:item="pro" for:index="tabIndex">
+                        
+                            <tr  key={pro.Id} class="slds-hint-parent">
+                                <th class="slds-cell-wrap" scope="col">
+                                    <div class="slds-truncate  slds-text-align_left" title={pro.Name}><b><lightning-formatted-text  value={pro.Name}></lightning-formatted-text></b></div>
+                                </th>
+                               
+                                <th scope="col" class="slds-cell-wrap ">
+                                    <div class="slds-truncate slds-text-align_center">
+                                        <lightning-formatted-number value={pro.UnitPrice} format-style="currency"  currency-code={pro.CurrencyIsoCode} currency-display-as="symbol" ></lightning-formatted-number>
+                                        <!--{!pro.CurrencyIsoCode}&nbsp;&nbsp;{!pro.Item_Price__c}-->
+                                    </div>
+                                </th>
+                                <th class="slds-cell-wrap " scope="col">
+                                    <template if:true={pro.isEditable}>
+                                    <lightning-input label="" variant="label-hidden" type="number" value={pro.Quantity} name="quantity" onchange={changeQuantity} ></lightning-input>
+                                    </template>
+                                    <template if:false={pro.isEditable}>
+                                    <div align="right" class="slds-truncate slds-text-align_center">
+                                        {pro.Quantity}
+                                    </div>
+                                    </template>
+                                    
+                                </th>
+                            <th class="slds-cell-wrap slds-text-align_center" scope="col">
+                                <template if:true={pro.isEditable}>
+
+                                    <lightning-input label="" variant="label-hidden" type="number" step="any" value={pro.Discount__c} name="discount" onchange={changeQuantity}></lightning-input>
+                                </template>
+                                <template if:false={pro.isEditable}>
+                                    <div align="right" class="slds-truncate slds-text-align_center">
+                                        <lightning-formatted-number value={pro.Discount__c}  minimum-fraction-digits="2" maximum-fraction-digits="4" ></lightning-formatted-number>
+                                    </div>
+                                  </template>
+                            </th>
+                            <th class="slds-cell-wrap " scope="col">
+                                <div class="slds-truncate slds-text-align_center">
+                                    <lightning-formatted-number value={pro.totalPrice} format-style="currency"  currency-code={pro.CurrencyIsoCode} currency-display-as="symbol" ></lightning-formatted-number>
+                                    <!--<div class="slds-truncate slds-text-align_center">{!pro.CurrencyIsoCode}&nbsp;&nbsp;{!pro.totalPrice}</div>-->
+                                </div>
+                            </th>
+                            <th class="slds-cell-wrap " scope="col">
+                                <div class="slds-truncate slds-text-align_center">
+                                    <template if:true={pro.isEditable}>
+                                    <lightning-button-icon icon-name= "utility:check" variant="border" name="Save" title="Save" onclick={editButtonClicked} alternative-text="Save" data-index={tabIndex} ></lightning-button-icon>
+
+                                    </template>
+                                    <template if:false={pro.isEditable}>
+                                    <lightning-button-icon icon-name= "utility:edit" variant="border" name="Edit" title="Edit" onclick={editButtonClicked} alternative-text="Edit" data-index={tabIndex} ></lightning-button-icon>
+                                    </template>
+                                </div>
+                            </th>
+                             </tr>
+                        </template>
+                       
+                    
+                </tbody>
+               
+            </table>
+            &nbsp;&nbsp;
+            
+            <!--Changes Start DFJ-46-->
+            <lightning-layout multiple-rows="true" > 
+                <lightning-layout-item size="12" large-device-size="1" medium-device-size="1" small-device-size="12">
+                    <div class="slds-truncate slds-text-align_center" title="Sub Total"><strong>Sub Total</strong></div>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" large-device-size="1" medium-device-size="1" small-device-size="12">
+                   
+                </lightning-layout-item>
+                <lightning-layout-item size="12" large-device-size="2" medium-device-size="2" small-device-size="4" >
+                    <div><lightning-formatted-number value={total} format-style="currency" currency-code={isoCode} currency-display-as="symbol" ></lightning-formatted-number></div>
+                </lightning-layout-item>
+            </lightning-layout> &nbsp;&nbsp;
+
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item size="12" large-device-size="2" medium-device-size="2" small-device-size="12">
+                    <div class="slds-truncate slds-text-align_center slds-p-around_x-small" title="Fixed Discount Amount"><strong>Fixed Discount Amount</strong></div>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" large-device-size="2" medium-device-size="4" small-device-size="4">
+                    <div> <lightning-input value={orderRecord.Fixed_discount_Type__c} onchange={handlerFixedDiscountInput} variant="label-hidden"  style=" width: 100%;"></lightning-input></div>
+                </lightning-layout-item>            
+            </lightning-layout> &nbsp;&nbsp;
+        
+            <lightning-layout multiple-rows="true"> 
+                <lightning-layout-item size="12" large-device-size="1" medium-device-size="1" small-device-size="12" >
+                    <div class="slds-truncate slds-text-align_center slds-p-left_small" title="Order Total"><strong>Order Total</strong></div>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" large-device-size="1" medium-device-size="1" small-device-size="12">
+                </lightning-layout-item>
+                <lightning-layout-item size="12" large-device-size="2" medium-device-size="2" small-device-size="4">
+                    <lightning-formatted-number value={orderTotal} format-style="currency" currency-code={isoCode} currency-display-as="symbol" ></lightning-formatted-number>
+                </lightning-layout-item>
+            
+            </lightning-layout> 
+            <!--End-->
+            </div>
+            <footer class="slds-modal__footer">
+        <!-- Changes starts DFJ-77 Change the Back onClick-->
+             <lightning-button type="button" label="Back"  onclick={goBackToProductModal} variant="brand" class="slds-float_left">Back</lightning-button>
+        <!-- End -->
+            <lightning-button type="button" label="Next"  onclick={handleNext} variant="brand" >Next</lightning-button>
+            
+            <lightning-button type="button" label="Cancel"  onclick={closeModal} variant="neutral" class="addSpaceInFooter">Cancel</lightning-button>
+                
+            </footer>
+            </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+         </template>
+</template>

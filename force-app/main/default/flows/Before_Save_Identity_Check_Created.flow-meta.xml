@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Assign_CPR_Event_ID_to_Lookup</name>
+        <label>Assign CPR Event ID to Lookup</label>
+        <locationX>50</locationX>
+        <locationY>695</locationY>
+        <assignmentItems>
+            <assignToReference>CprEventId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Record_Id__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Records</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Errored_Identity_Check_Name</name>
+        <label>Assign Errored Identity Check Name</label>
+        <locationX>314</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>Name</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>IdentityCheckNameError</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Can_we_match_it_to_a_CPR_Event</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Successful_Identity_Check_Name</name>
+        <label>Assign Successful Identity Check Name</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>Name</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>IdentityCheckNameSuccess</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Can_we_match_it_to_a_CPR_Event</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Can_we_match_it_to_a_CPR_Event</name>
+        <label>Can we match it to a CPR Event?</label>
+        <locationX>182</locationX>
+        <locationY>587</locationY>
+        <defaultConnector>
+            <targetReference>Update_Records</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Can_Match_to_CPR_Event</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Record_Id__c</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>a3c</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_CPR_Event_ID_to_Lookup</targetReference>
+            </connector>
+            <label>Can Match to CPR Event</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Did_Submission_Succeed</name>
+        <label>Did Submission Succeed?</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Errored_Identity_Check_Name</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Error</defaultConnectorLabel>
+        <rules>
+            <name>Success</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Outcome__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Success</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Successful_Identity_Check_Name</targetReference>
+            </connector>
+            <label>Success</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>FormattedNationalIdentificationNumber</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    CONTAINS({!$Record.National_Identification_Number__c}, &quot;-&quot;),
+    {!$Record.National_Identification_Number__c},
+    LEFT({!$Record.National_Identification_Number__c}, 6) &amp; &quot;-&quot; &amp; MID({!$Record.National_Identification_Number__c}, 7, 4)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>MaskedIdentificationNumber</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    CONTAINS({!$Record.National_Identification_Number__c}, &quot;-&quot;),
+    LEFT({!$Record.National_Identification_Number__c}, LEN({!$Record.National_Identification_Number__c}) - 4) &amp; &quot;****&quot;,
+    LEFT({!$Record.National_Identification_Number__c}, 6) &amp; &quot;-&quot; &amp; MID({!$Record.National_Identification_Number__c}, 7, LEN({!$Record.National_Identification_Number__c}) - 6 - 4) &amp; &quot;****&quot;
+)</expression>
+    </formulas>
+    <interviewLabel>Before Save: Identity Check Created {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Before Save: Identity Check Created</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Records</name>
+        <label>Update Records</label>
+        <locationX>182</locationX>
+        <locationY>887</locationY>
+        <inputAssignments>
+            <field>CPR_Event__c</field>
+            <value>
+                <elementReference>CprEventId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>National_Identification_Number__c</field>
+            <value>
+                <elementReference>FormattedNationalIdentificationNumber</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Did_Submission_Succeed</targetReference>
+        </connector>
+        <object>Identity_Check__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>IdentityCheckNameError</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Error: {!MaskedIdentificationNumber}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>IdentityCheckNameSuccess</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!$Record.Name__c}: {!MaskedIdentificationNumber}</text>
+    </textTemplates>
+    <variables>
+        <name>CprEventId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Name</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

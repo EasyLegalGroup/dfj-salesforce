@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>children_type__c</fullName>
+    <description>Er børn sammenbragte eller fælles?</description>
+    <externalId>false</externalId>
+    <label>Type børn</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>common</fullName>
+                <default>false</default>
+                <label>Fælles</label>
+            </value>
+            <value>
+                <fullName>brought_together</fullName>
+                <default>false</default>
+                <label>Sammenbragte</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

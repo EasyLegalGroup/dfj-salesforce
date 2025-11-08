@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_Category_Definition__c</fullName>
+    <externalId>false</externalId>
+    <label>Order Category Definition</label>
+    <referenceTo>Order_Category_Definition__c</referenceTo>
+    <relationshipLabel>Order Category Criteria</relationshipLabel>
+    <relationshipName>Order_Category_Criteria</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

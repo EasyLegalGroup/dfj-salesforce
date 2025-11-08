@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V_rter_Mangler_Info_Denmark</fullName>
+    <columns>CREATED_DATE</columns>
+    <columns>Host_ID__c</columns>
+    <columns>Status__c</columns>
+    <columns>NAME</columns>
+    <columns>Phone__c</columns>
+    <columns>Name_of_Contact__c</columns>
+    <columns>Email__c</columns>
+    <columns>Contact_Person_Info__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Contact__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Værter - Mangler Info (Denmark)</label>
+</ListView>

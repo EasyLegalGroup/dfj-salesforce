@@ -1,0 +1,11 @@
+<template>
+    <span class="slds-m-bottom_large slds-text-body_small"> 
+        <div class="slds-text-heading_small">Calendar appointments</div>
+    </span>
+    <lightning-datatable data={appointmentdata} columns={columnList} hide-checkbox-column="true" key-field="id"> </lightning-datatable>
+    <template lwc:if={dataNotPresent}>
+        <div class="slds-truncate slds-text-align_center slds-text-heading_small">
+            There are no appointment.
+        </div>
+    </template>
+</template>

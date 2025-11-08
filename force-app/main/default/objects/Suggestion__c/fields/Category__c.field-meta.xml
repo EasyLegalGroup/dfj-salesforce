@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <externalId>false</externalId>
+    <label>Category</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Automation</fullName>
+                <default>false</default>
+                <label>Automation</label>
+            </value>
+            <value>
+                <fullName>Integration</fullName>
+                <default>false</default>
+                <label>Integration</label>
+            </value>
+            <value>
+                <fullName>Security &amp; Access</fullName>
+                <default>false</default>
+                <label>Security &amp; Access</label>
+            </value>
+            <value>
+                <fullName>UI/UX Improvement</fullName>
+                <default>false</default>
+                <label>UI/UX Improvement</label>
+            </value>
+            <value>
+                <fullName>Workflow Optimization</fullName>
+                <default>false</default>
+                <label>Workflow Optimization</label>
+            </value>
+            <value>
+                <fullName>Reporting &amp; Analytics</fullName>
+                <default>false</default>
+                <label>Reporting &amp; Analytics</label>
+            </value>
+            <value>
+                <fullName>Data Management</fullName>
+                <default>false</default>
+                <label>Data Management</label>
+            </value>
+            <value>
+                <fullName>Notifications &amp; Alerts</fullName>
+                <default>false</default>
+                <label>Notifications &amp; Alerts</label>
+            </value>
+            <value>
+                <fullName>Integration with Marketing Cloud</fullName>
+                <default>false</default>
+                <label>Integration with Marketing Cloud</label>
+            </value>
+            <value>
+                <fullName>Mobile Optimization</fullName>
+                <default>false</default>
+                <label>Mobile Optimization</label>
+            </value>
+            <value>
+                <fullName>System Performance</fullName>
+                <default>false</default>
+                <label>System Performance</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <assignments>
+        <name>Assign_FromPhoneNumber</name>
+        <label>Assign FromPhoneNumber</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>FromPhoneNumber</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmFormattedFromNumber</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_SMS</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_ToNumber</name>
+        <label>Assign ToNumber</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>ToPhoneNumber</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmFormattedToNumber</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Do_We_Have_a_From_Number</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Do_We_Have_a_From_Number</name>
+        <label>Do We Have a From Number?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Update_SMS</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Got_From_Number</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.From_Number__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_FromPhoneNumber</targetReference>
+            </connector>
+            <label>Got From Number</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Do_We_Have_a_To_Number</name>
+        <label>Do We Have a To Number?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Do_We_Have_a_From_Number</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Got_To_Number</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.To_Number__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_ToNumber</targetReference>
+            </connector>
+            <label>Got To Number</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>frmCleanFromNumber</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  BEGINS({!frmCleanRawFromNumber},&quot;00&quot;),
+  &quot;+&quot; &amp; RIGHT({!frmCleanRawFromNumber}, LEN({!frmCleanRawFromNumber})-2),
+  {!frmCleanRawFromNumber}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>frmCleanRawFromNumber</name>
+        <dataType>String</dataType>
+        <expression>SUBSTITUTE(
+  SUBSTITUTE(
+    SUBSTITUTE(
+      SUBSTITUTE(
+        TRIM({!$Record.From_Number__c}),
+      &quot; &quot;,&quot;&quot;),
+    &quot;(&quot;,&quot;&quot;),
+  &quot;)&quot;,&quot;&quot;),
+&quot;-&quot;,&quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>frmCleanRawToNumber</name>
+        <dataType>String</dataType>
+        <expression>SUBSTITUTE(
+  SUBSTITUTE(
+    SUBSTITUTE(
+      SUBSTITUTE(
+        TRIM({!$Record.To_Number__c}),
+      &quot; &quot;,&quot;&quot;),
+    &quot;(&quot;,&quot;&quot;),
+  &quot;)&quot;,&quot;&quot;),
+&quot;-&quot;,&quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>frmCleanToNumber</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  BEGINS({!frmCleanRawToNumber},&quot;00&quot;),
+  &quot;+&quot; &amp; RIGHT({!frmCleanRawToNumber}, LEN({!frmCleanRawToNumber})-2),
+  {!frmCleanRawToNumber}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>frmFormattedFromNumber</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  OR(
+    BEGINS({!frmCleanFromNumber},&quot;+45&quot;),
+    BEGINS({!frmCleanFromNumber},&quot;+46&quot;),
+    BEGINS({!frmCleanFromNumber},&quot;+353&quot;)
+  ),
+  {!frmCleanFromNumber},
+
+  IF(
+    OR(
+      BEGINS({!frmCleanFromNumber},&quot;45&quot;),
+      BEGINS({!frmCleanFromNumber},&quot;46&quot;),
+      BEGINS({!frmCleanFromNumber},&quot;353&quot;)
+    ),
+    &quot;+&quot; &amp; {!frmCleanFromNumber},
+
+    IF(
+      AND(
+        TEXT({!$Record.Market_Unit__c})=&quot;DFJ_DK&quot;,
+        NOT( OR(BEGINS({!frmCleanFromNumber},&quot;+&quot;), BEGINS({!frmCleanFromNumber},&quot;45&quot;)) )
+      ),
+      &quot;+45&quot; &amp; {!frmCleanFromNumber},
+
+      IF(
+        AND(
+          TEXT({!$Record.Market_Unit__c})=&quot;FA_SE&quot;,
+          NOT( OR(BEGINS({!frmCleanFromNumber},&quot;+&quot;), BEGINS({!frmCleanFromNumber},&quot;46&quot;)) )
+        ),
+        &quot;+46&quot; &amp; {!frmCleanFromNumber},
+
+        IF(
+          AND(
+            TEXT({!$Record.Market_Unit__c})=&quot;Ireland&quot;,
+            NOT( OR(BEGINS({!frmCleanFromNumber},&quot;+&quot;), BEGINS({!frmCleanFromNumber},&quot;353&quot;)) )
+          ),
+          &quot;+353&quot; &amp; {!frmCleanFromNumber},
+
+          IF(
+            BEGINS({!frmCleanFromNumber},&quot;+&quot;),
+            {!frmCleanFromNumber},
+            &quot;+&quot; &amp; {!frmCleanFromNumber}
+          )
+        )
+      )
+    )
+  )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>frmFormattedToNumber</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  OR(
+    BEGINS({!frmCleanToNumber},&quot;+45&quot;),
+    BEGINS({!frmCleanToNumber},&quot;+46&quot;),
+    BEGINS({!frmCleanToNumber},&quot;+353&quot;)
+  ),
+  {!frmCleanToNumber},
+
+  IF(
+    OR(
+      BEGINS({!frmCleanToNumber},&quot;45&quot;),
+      BEGINS({!frmCleanToNumber},&quot;46&quot;),
+      BEGINS({!frmCleanToNumber},&quot;353&quot;)
+    ),
+    &quot;+&quot; &amp; {!frmCleanToNumber},
+
+    IF(
+      AND(
+        TEXT({!$Record.Market_Unit__c})=&quot;DFJ_DK&quot;,
+        NOT( OR(BEGINS({!frmCleanToNumber},&quot;+&quot;), BEGINS({!frmCleanToNumber},&quot;45&quot;)) )
+      ),
+      &quot;+45&quot; &amp; {!frmCleanToNumber},
+
+      IF(
+        AND(
+          TEXT({!$Record.Market_Unit__c})=&quot;FA_SE&quot;,
+          NOT( OR(BEGINS({!frmCleanToNumber},&quot;+&quot;), BEGINS({!frmCleanToNumber},&quot;46&quot;)) )
+        ),
+        &quot;+46&quot; &amp; {!frmCleanToNumber},
+
+        IF(
+          AND(
+            TEXT({!$Record.Market_Unit__c})=&quot;Ireland&quot;,
+            NOT( OR(BEGINS({!frmCleanToNumber},&quot;+&quot;), BEGINS({!frmCleanToNumber},&quot;353&quot;)) )
+          ),
+          &quot;+353&quot; &amp; {!frmCleanToNumber},
+
+          IF(
+            BEGINS({!frmCleanToNumber},&quot;+&quot;),
+            {!frmCleanToNumber},
+            &quot;+&quot; &amp; {!frmCleanToNumber}
+          )
+        )
+      )
+    )
+  )
+)</expression>
+    </formulas>
+    <interviewLabel>RT - SMS: Clean &amp; Format To- and From Number {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RT - SMS: Clean &amp; Format To- and From Number</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_SMS</name>
+        <label>Update SMS</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>From_Phone__c</field>
+            <value>
+                <elementReference>FromPhoneNumber</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>To_Phone__c</field>
+            <value>
+                <elementReference>ToPhoneNumber</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Do_We_Have_a_To_Number</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>To_Number__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>From_Number__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>SMS__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <triggerOrder>10</triggerOrder>
+    <variables>
+        <name>FromPhoneNumber</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ToPhoneNumber</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

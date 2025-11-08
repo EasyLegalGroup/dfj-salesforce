@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>testa_samtyk_tilbagekald__c</fullName>
+    <externalId>false</externalId>
+    <label>Samtykke ved tilbagekaldelse</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>testa_tilbagekald_krv_samtyk</fullName>
+                <default>false</default>
+                <label>Tilbagekaldelse kræver samtykke</label>
+            </value>
+            <value>
+                <fullName>testa_tilbagekald_krv_ikke_samtyk</fullName>
+                <default>false</default>
+                <label>Tilbagekaldelse kræver ikke samtykke</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

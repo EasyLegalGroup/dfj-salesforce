@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open</fullName>
+    <columns>NAME</columns>
+    <columns>Title__c</columns>
+    <columns>Status__c</columns>
+    <columns>Severity__c</columns>
+    <columns>Total_Occurrences__c</columns>
+    <columns>Last_Occurence_Date__c</columns>
+    <columns>First_Occurence_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>New,Investigating,In Progress</value>
+    </filters>
+    <label>Open</label>
+</ListView>

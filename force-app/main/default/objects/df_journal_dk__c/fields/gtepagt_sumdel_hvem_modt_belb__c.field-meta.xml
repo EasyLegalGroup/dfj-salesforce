@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gtepagt_sumdel_hvem_modt_belb__c</fullName>
+    <externalId>false</externalId>
+    <label>Hvem skal modtage et beløb?</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>gtepagt_sumdel_modt_p1</fullName>
+                <default>false</default>
+                <label>{person_1_first_name} {person_1_last_name}</label>
+            </value>
+            <value>
+                <fullName>gtepagt_sumdel_modt_p2</fullName>
+                <default>false</default>
+                <label>{person_2_first_name} {person_2_last_name}</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

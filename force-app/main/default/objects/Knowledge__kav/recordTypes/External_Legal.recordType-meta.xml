@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>External_Legal</fullName>
+    <active>true</active>
+    <label>External - Legal</label>
+    <picklistValues>
+        <picklist>ChatGPT_Model__c</picklist>
+        <values>
+            <fullName>GPT-4%2E5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>gpt-3%2E5-turbo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>gpt-4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>gpt-4o</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>gpt-4o-mini</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>o1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>o3-mini</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Sender_ID_when_enabled</fullName>
+    <active>false</active>
+    <errorConditionFormula>Send_From_Alphanumeric_Sender_ID__c = TRUE &amp;&amp; ISBLANK(Alphanumeric_Sender_ID__c)</errorConditionFormula>
+    <errorDisplayField>Alphanumeric_Sender_ID__c</errorDisplayField>
+    <errorMessage>&quot;Alphanumeric Sender ID&quot; cannot be blank when &quot;Send From Alphanumeric Sender ID&quot; is checked.</errorMessage>
+</ValidationRule>

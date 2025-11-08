@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recent_Days</fullName>
+    <columns>NAME</columns>
+    <columns>Date__c</columns>
+    <columns>Day_of_the_Year__c</columns>
+    <columns>Month__c</columns>
+    <columns>Month_Numeric__c</columns>
+    <columns>Public_Holiday__c</columns>
+    <columns>Week_Day__c</columns>
+    <columns>Week_Day_Numeric__c</columns>
+    <columns>Week_Number__c</columns>
+    <columns>Year__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>LAST_MONTH</value>
+    </filters>
+    <label>Recent Days</label>
+</ListView>

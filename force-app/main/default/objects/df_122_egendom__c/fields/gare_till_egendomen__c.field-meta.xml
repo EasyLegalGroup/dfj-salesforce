@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gare_till_egendomen__c</fullName>
+    <externalId>false</externalId>
+    <label>Ägare till egendomen</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>gare_person1_egendom</fullName>
+                <default>false</default>
+                <label>{frnamn_person1} {efternamn_person1}</label>
+            </value>
+            <value>
+                <fullName>gare_person2_egendom</fullName>
+                <default>false</default>
+                <label>{person_2_frnamn} {efternamn_person2}</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gtepagt_gld_omfang__c</fullName>
+    <externalId>false</externalId>
+    <label>Type af gæld som ønskes gjort ti d22ea</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>gtepagt_gld_omf_fr_gteskab</fullName>
+                <default>false</default>
+                <label>Kun gæld fra før vi blev gift</label>
+            </value>
+            <value>
+                <fullName>gtepagt_gld_omf_alt</fullName>
+                <default>false</default>
+                <label>Alt gæld (Både fra før og efter ægteskabsindgåelsen)</label>
+            </value>
+            <value>
+                <fullName>gtepagt_gld_omf_specifik</fullName>
+                <default>false</default>
+                <label>Kun specifik gæld</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

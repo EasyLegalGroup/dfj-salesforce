@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Active_Categories</fullName>
+    <columns>Is_Active__c</columns>
+    <columns>NAME</columns>
+    <columns>Calculated_Priority__c</columns>
+    <columns>Number_of_Criteria__c</columns>
+    <columns>Minimum_Product_Count__c</columns>
+    <columns>Market_Unit__c</columns>
+    <columns>Order_Category_Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Is_Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Order_Category_Type__c</field>
+        <operation>equals</operation>
+        <value>Category</value>
+    </filters>
+    <label>All Active Categories</label>
+</ListView>

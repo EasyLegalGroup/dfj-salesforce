@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>former_legal_wills__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Er der allerede oprettet et testamente som skal tages højde for?</description>
+    <externalId>false</externalId>
+    <label>Har Du/I tidligere oprettet test 9b8db</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

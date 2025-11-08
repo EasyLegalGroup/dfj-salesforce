@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>hvor_meget_skal_vre_omfattet_af_95__c</fullName>
+    <externalId>false</externalId>
+    <label>Hvor meget skal være omfattet af f338f</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>alt_skal_omfattes_gtepagt</fullName>
+                <default>false</default>
+                <label>Alt skal omfattes</label>
+            </value>
+            <value>
+                <fullName>kun_hvad_vi_ejede_fr_gteskabet_skal_omfattes_gtepagt</fullName>
+                <default>false</default>
+                <label>Kun hvad vi ejede før ægteskabet skal omfattes</label>
+            </value>
+            <value>
+                <fullName>kun_specifikke_ejendel_eller_belb_skal_omfattes_gtepagt</fullName>
+                <default>false</default>
+                <label>Kun specifikke ejendele eller beløb skal omfattes</label>
+            </value>
+            <value>
+                <fullName>gtepagt_specif_aktiver</fullName>
+                <default>false</default>
+                <label>Specifikke aktiver</label>
+            </value>
+            <value>
+                <fullName>omfattes_bestemt_andel_brker</fullName>
+                <default>false</default>
+                <label>En bestemt andel skal omfattes</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,21 @@
+/**
+ * Created by ca on 08/10/24.
+ */
+.table-for-order-information {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-for-order-information th,
+.table-for-order-information td {
+    padding: 8px; /* Adjust vertical spacing */
+}
+
+.order-info-first-column {
+    /*width: 55%; !* Occupies 75% of the table *!*/
+    text-align: left; /* Center the content */
+}
+
+.order-info-second-column {
+    text-align: left; /* Left align the content */
+}

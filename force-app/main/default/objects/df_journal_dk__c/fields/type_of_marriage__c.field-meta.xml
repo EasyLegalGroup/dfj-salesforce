@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>type_of_marriage__c</fullName>
+    <description>Hvilken type ægteskab er der indgået?</description>
+    <externalId>false</externalId>
+    <label>Ægteskabstype</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>prenuptial_agreement_or_separate_property</fullName>
+                <default>false</default>
+                <label>Ægtepagt / Særeje</label>
+            </value>
+            <value>
+                <fullName>Joint_ownership_of_property</fullName>
+                <default>false</default>
+                <label>Almindeligt Formuefællesskab</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

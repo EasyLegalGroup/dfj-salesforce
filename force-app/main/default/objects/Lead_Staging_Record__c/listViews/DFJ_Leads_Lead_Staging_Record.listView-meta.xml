@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DFJ_Leads_Lead_Staging_Record</fullName>
+    <filterScope>Queue</filterScope>
+    <label>DFJ Leads</label>
+    <queue>DFJ_Leads</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

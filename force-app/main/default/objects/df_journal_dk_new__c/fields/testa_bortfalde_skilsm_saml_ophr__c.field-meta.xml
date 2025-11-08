@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>testa_bortfalde_skilsm_saml_ophr__c</fullName>
+    <externalId>false</externalId>
+    <label>Skal testamentet bortfalde ved æ 735f4</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>testa_helt_bortfalde</fullName>
+                <default>false</default>
+                <label>Ja, testamentet skal helt bortfalde</label>
+            </value>
+            <value>
+                <fullName>testa_delvist_bortfalde</fullName>
+                <default>false</default>
+                <label>Ja, men visse paragraffer skal bibeholdes</label>
+            </value>
+            <value>
+                <fullName>testa_ej_bortfalde</fullName>
+                <default>false</default>
+                <label>Nej</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

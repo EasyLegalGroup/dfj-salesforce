@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlg_organisation_til_30reglen__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Vælg organisation til 30%-reglen</label>
+    <referenceTo>df_160_person__c</referenceTo>
+    <relationshipLabel>vlg_organisation_til_30reglen</relationshipLabel>
+    <relationshipName>vlg_organisation_til_30reglen</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

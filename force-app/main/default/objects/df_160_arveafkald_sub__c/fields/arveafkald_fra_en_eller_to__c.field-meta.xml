@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>arveafkald_fra_en_eller_to__c</fullName>
+    <externalId>false</externalId>
+    <label>Gives der arveafkald fra en elle f6cf7</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>arveafkald_fra_en</fullName>
+                <default>false</default>
+                <label>Arveafkald fra én person</label>
+            </value>
+            <value>
+                <fullName>arveafkald_fra_to</fullName>
+                <default>false</default>
+                <label>Arveafkald fra to personer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

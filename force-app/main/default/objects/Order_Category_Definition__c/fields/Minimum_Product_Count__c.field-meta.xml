@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Minimum_Product_Count__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Accumulates the &quot;Minimum Quantity&quot; from each Critera to calculate the minimum count of products required to qualify for this Category Definition</inlineHelpText>
+    <label>Minimum Product Count</label>
+    <summarizedField>Order_Category_Criteria__c.Minimum_Quantity__c</summarizedField>
+    <summaryForeignKey>Order_Category_Criteria__c.Order_Category_Definition__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

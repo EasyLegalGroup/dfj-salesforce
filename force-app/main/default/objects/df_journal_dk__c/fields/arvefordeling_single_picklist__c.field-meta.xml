@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>arvefordeling_single_picklist__c</fullName>
+    <externalId>false</externalId>
+    <label>Arvefordeling (Single)</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>alt_til_børn</fullName>
+                <default>false</default>
+                <label>Alt til børn</label>
+            </value>
+            <value>
+                <fullName>30_procent_reglen_single</fullName>
+                <default>false</default>
+                <label>30% reglen</label>
+            </value>
+            <value>
+                <fullName>procentfordeling_single</fullName>
+                <default>false</default>
+                <label>Procentfordeling</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

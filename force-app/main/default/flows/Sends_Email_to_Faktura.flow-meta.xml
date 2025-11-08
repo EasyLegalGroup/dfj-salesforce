@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Order_Confirmation_Seren_Pension</name>
+        <label>Order Confirmation Seren Pension</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <actionName>Order.Order_Confirmations</actionName>
+        <actionType>emailAlert</actionType>
+        <faultConnector>
+            <targetReference>Error</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Order.Order_Confirmations</nameSegment>
+    </actionCalls>
+    <apiVersion>63.0</apiVersion>
+    <environments>Default</environments>
+    <interviewLabel>Sends Email to Faktura {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Sends Email to Faktura</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Order_Confirmation_Seren_Pension</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Payment_method__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Seren Pensionsfakturering</stringValue>
+            </value>
+        </filters>
+        <object>Order</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+    <subflows>
+        <name>Error</name>
+        <label>Error</label>
+        <locationX>440</locationX>
+        <locationY>431</locationY>
+        <flowName>AL_Send_Error_Email_from_Input_Values</flowName>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <textTemplates>
+        <description>For Faktura</description>
+        <name>EmailBodyTemplate</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;Hello Tina,&lt;/p&gt;&lt;p&gt;A new Order with Payment Method Seren PensionsFakturering has been created. See details below:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Order: {!$Record.OrderNumber}&lt;/li&gt;&lt;li&gt;Amount{!$Record.TotalAmount}: &lt;/li&gt;&lt;li&gt;Order Value: {!$Record.OriginalOrder.Order_Price__c}&lt;/li&gt;&lt;li&gt;Price: {!$Record.Total_Cost__c}&lt;/li&gt;&lt;li&gt;Dokumenter: {!$Record}&lt;/li&gt;&lt;li&gt;Purchased: {!Order.Account.Products_Purchased__c}&lt;/li&gt;&lt;/ul&gt;</text>
+    </textTemplates>
+    <variables>
+        <name>CustomError</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Order</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>PaymentMethod</objectType>
+    </variables>
+</Flow>

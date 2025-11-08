@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>anvnda_varandra_bara_som_en_av_n_265__c</fullName>
+    <defaultValue>false</defaultValue>
+    <externalId>false</externalId>
+    <label>Använda varandra bara som af av  750f6</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

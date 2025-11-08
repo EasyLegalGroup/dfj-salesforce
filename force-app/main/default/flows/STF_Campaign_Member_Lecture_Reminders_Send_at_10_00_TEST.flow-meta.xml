@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <environments>Default</environments>
+    <formulas>
+        <name>frmDaysUntilStart</name>
+        <dataType>Number</dataType>
+        <expression>{!$Record.Campaign.StartDate} - {!$Flow.CurrentDate}</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>frmPhoneFormatted</name>
+        <dataType>String</dataType>
+        <expression>SUBSTITUTE($Record.Phone_Formatted__c, &quot;+&quot;, &quot;&quot;)</expression>
+    </formulas>
+    <interviewLabel>STF - Campaign Member: Lecture Reminders (Send at 10:00) (TEST) {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>STF - Campaign Member: Lecture Reminders (Send at 10:00) (TEST)</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>AL_Campaign_Member_Lecture_Reminder_Sendouts</targetReference>
+        </connector>
+        <filterLogic>1 AND 2 AND 3 AND (4 OR 5 OR 6 OR 7 OR 8)</filterLogic>
+        <filters>
+            <field>Booking_Status_Formula__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Booked</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Campaign_Record_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Lecture</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Event_m_destatus__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Booked</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Venue__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Restaurant 0</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Venue__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Restaurant 1</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Venue__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Restaurant 7</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Venue__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Restaurant 10</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Venue__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Restaurant 28</stringValue>
+            </value>
+        </filters>
+        <object>CampaignMember</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2025-09-09</startDate>
+            <startTime>23:37:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>AL_Campaign_Member_Lecture_Reminder_Sendouts</name>
+        <label>AL - Campaign Member: Lecture Reminder Sendouts</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <flowName>AL_Campaign_Member_Lecture_Reminder_Sendouts</flowName>
+        <inputAssignments>
+            <name>inputCampaignMemberId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Send0DayReminder</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Send10DayReminder</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Send1DayReminder</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Send28DayReminder</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Send7DayReminder</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <textTemplates>
+        <name>ptAddress</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!$Record.Host_Address_Street__c}, {!$Record.Host_Address_Zip_Code__c} {!$Record.Host_Address_City__c}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailSubject10DaysDanish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Husk foredrag om 10 dage</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailSubject10DaysEnglish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Remember the lecture in 10 days</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailSubject10DaysSwedish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Kom ihåg föredraget om 10 dagar</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailSubject28DaysDanish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Husk foredrag {!$Record.Start_Date_Time_Pretty__c}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailSubject28DaysEnglish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Remember lecture {!$Record.Start_Date_Time_Pretty__c}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailSubject28DaysSwedish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Kom ihåg föredrag {!$Record.Start_Date_Time_Pretty__c}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSmsReminder0DaysDanish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Kære {!$Record.FirstName},
+
+Jeg glæder mig til at se dig til foredrag om arv og testamente og byde på gratis middag – kokken er i fuld gang med at forberede din ret. Dørene åbner {!$Record.Start_Date_Time_Pretty__c}, på {!$Record.Venue__c}!
+Adressen er: {!Address}.
+
+Ved udeblivelse vil du blive opkrævet et gebyr på 150,00 kr. per deltager, da kokken tilbereder mad til dig/jer.
+
+Jeg glæder mig til at se dig!
+
+Med venlig hilsen
+Din Familiejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSmsReminder10DaysDanish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Kære {!$Record.FirstName},
+
+Du er tilmeldt foredrag om arv &amp; testamente inkl. gratis middag næste uge, {!$Record.Start_Date_Time_Pretty__c}, på {!$Record.Venue__c}!
+
+Adressen er: {!Address}.
+
+Ved udeblivelse vil du blive opkrævet et gebyr på 150,00 kr. per deltager, da kokken tilbereder mad til dig/jer. I dag er sidste chance for at afmelde. Det kan gøres via dette link: {!CancellationUrl}.
+
+Jeg glæder mig til at se dig!</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSmsReminder1DayDanish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Kære {!$Record.FirstName},
+
+Du er tilmeldt foredrag om arv &amp; testamente inkl. gratis middag i morgen, {!$Record.Start_Date_Time_Pretty__c}, på {!$Record.Venue__c}!
+Adressen er: {!Address}.
+Jeg glæder mig til at se dig!
+
+Med venlig hilsen
+Din Familiejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>rtEmailBody10DaysDanish</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;color: rgb(255, 255, 255); font-family: Colfax, Helvetica, Arial, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;Om arv og testamente inkl. middag&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: rgb(250, 250, 250); font-family: Colfax, Helvetica, Arial, sans-serif; font-size: 24px; color: rgb(0, 38, 67);&quot;&gt;Jeg glæder mig til et hyggeligt foredrag, om hvordan du bedst sikrer dig og din familie gennem arv og testamente inkl. gratis middag,&lt;/strong&gt;&lt;strong style=&quot;background-color: rgb(250, 250, 250); font-family: Colfax, Helvetica, Arial, sans-serif; font-size: 24px;&quot;&gt; &lt;/strong&gt;&lt;strong style=&quot;font-size: 24px; color: rgb(0, 38, 67);&quot;&gt;{!$Record.Start_Date_Time_Pretty__c} &lt;/strong&gt;&lt;strong style=&quot;font-size: 24px; color: rgb(0, 38, 67); background-color: rgb(250, 250, 250); font-family: Colfax, Helvetica, Arial, sans-serif;&quot;&gt;på {!$Record.Venue__c}.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: inherit; font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;Antal billetter: {!$Record.Remaining_Tickets__c}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: inherit; font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;Billetnummer: {!$Record.External_ID__c}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: inherit; font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;Vi ses på {!$Record.Venue__c}, {!Address}.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: inherit; font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;I døren skal du blot sige dit navn, så finder jeg din billet.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: inherit; font-size: 18px; color: rgb(0, 38, 67);&quot;&gt;VIGTIGT: Nu er chancen for at melde afbud.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: inherit; font-size: 18px; color: rgb(0, 38, 67);&quot;&gt;Hvis dine planer ændrer sig, og du ikke kan deltage, bedes du venligst afmelde dig i dag via dette&lt;/span&gt;&lt;span style=&quot;font-family: inherit; font-size: 18px; color: rgb(11, 149, 255);&quot;&gt; &lt;/span&gt;&lt;a href=&quot;{!CancellationUrl}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: inherit; font-size: 18px; color: rgb(0, 38, 67);&quot;&gt;link til afmelding&lt;/a&gt;&lt;span style=&quot;font-family: inherit; font-size: 18px; color: rgb(0, 38, 67);&quot;&gt;. Dette giver os mulighed for at tilbyde din plads til andre på ventelisten.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px; color: rgb(0, 38, 67);&quot;&gt;Ved udeblivelse uden afbud, vil du blive opkrævet et gebyr på 150,00 kr. per deltager, da kokken tilbereder mad til dig/jer.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: inherit; font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;Jeg ser frem til at se dig!&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: inherit; font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;Med venlig hilsen, &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: inherit; font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;{!$Record.Lecturer_Name__c}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: inherit; font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;Din Familiejurist&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>rtEmailBody10DaysEnglish</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;strong style=&quot;font-size: 18px; color: rgb(255, 255, 255);&quot;&gt;About inheritance and wills incl. dinner&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 18px;&quot;&gt;I look forward to a pleasant lecture on how you can best secure yourself and your family through inheritance and wills, including a free dinner, on {!$Record.Start_Date_Time_Pretty__c} at {!$Record.Venue__c}.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Number of tickets: {!$Record.Remaining_Tickets__c}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Ticket number: {!$Record.External_ID__c}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 18px;&quot;&gt;We’ll see each other at {!$Record.Venue__c}, {!Address}.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;At the entrance, simply say your name, and I will find your ticket.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 18px;&quot;&gt;IMPORTANT: Now is the chance to cancel.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;If your plans change and you cannot attend, please cancel today via this cancellation link. This allows us to offer your seat to others on the waiting list.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;If you do not show up without cancelling, you will be charged a fee of DKK 150 per participant, as the chef will have prepared food for you.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;I look forward to seeing you!&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Kind regards,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;{!$Record.Lecturer_Name__c}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Heres Law&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>rtEmailBody10DaysSwedish</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;font-size: 18px; color: rgb(255, 255, 255);&quot;&gt;Sista chansen att avboka&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 18px;&quot;&gt;Jag ser fram emot att se dig till föreläsningen om arv och testamente &lt;/strong&gt;&lt;strong style=&quot;font-size: 18px; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;{!$Record.Start_Date_Time_Pretty__c}&lt;/strong&gt;&lt;strong style=&quot;font-size: 18px; color: rgb(0, 0, 0);&quot;&gt; &lt;/strong&gt;&lt;strong style=&quot;font-size: 18px;&quot;&gt;på &lt;/strong&gt;&lt;strong style=&quot;font-size: 18px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: inherit;&quot;&gt;{!$Record.Venue__c},&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Antal biljetter: &lt;/span&gt;&lt;span style=&quot;font-size: 18px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);&quot;&gt;{!$Record.Remaining_Tickets__c}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Biljettnummer: &lt;/span&gt;&lt;span style=&quot;font-size: 18px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);&quot;&gt;{!$Record.External_ID__c}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 18px;&quot;&gt;Adress: &lt;/strong&gt;&lt;strong style=&quot;font-size: 18px; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); font-family: inherit;&quot;&gt;{!$Record.Venue__c}, {!Address}&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 18px;&quot;&gt;VIGTIGT: Detta är sista chansen att avboka&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Vid utebliven närvaro utan avanmälan kommer en avgift på 100,00 kr per deltagare att debiteras.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Om dina planer ändras och du inte kan delta, vänligen avanmäl dig så snabbt som möjligt via &lt;/span&gt;&lt;a href=&quot;{!CancellationUrl}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 18px;&quot;&gt;denna länk&lt;/a&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt; till avanmälan. Detta ger oss möjlighet att erbjuda din plats till andra på väntelistan.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Jag ser fram emot att se dig!&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Med vänlig hälsning, &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Din Familjejurist&lt;/span&gt;&lt;span style=&quot;color: rgb(255, 255, 255); font-family: Colfax, Helvetica, Arial, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;m arv og testamente inkl. mid&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>rtEmailBody28DaysDanish</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;color: rgb(255, 255, 255); font-family: Colfax, Helvetica, Arial, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;Om arv og testamente inkl. middag&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: inherit; font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;Jeg glæder mig til at byde på middag og se dig til foredrag om, hvordan du bedst sikrer dig og din familie gennem arv og testamente {!$Record.Start_Date_Time_Pretty__c}.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: inherit; font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;Antal billetter: {!$Record.Remaining_Tickets__c}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: inherit; font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;Billetnummer: {!$Record.External_ID__c}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: inherit; font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;Vi ses på {!$Record.Venue__c}, {!Address}.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: inherit; font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;I døren skal du blot sige dit navn, så finder jeg din billet.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: inherit; font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;VIGTIGT: Afmelding hvis du bliver forhindret&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: inherit; font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;Hvis dine planer ændrer sig, og du ikke kan deltage, bedes du venligst afmelde dig hurtigst muligt via &lt;/span&gt;&lt;a href=&quot;{!CancellationUrl}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: inherit; font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;dette link til afmelding&lt;/a&gt;&lt;span style=&quot;font-family: inherit; font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;. Dette giver os mulighed for at tilbyde din plads til andre på ventelisten.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: inherit; font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;Ved udeblivelse uden afbud, vil du blive opkrævet et gebyr på 150,00 kr. per deltager, &lt;/span&gt;&lt;span style=&quot;font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;da kokken tilbereder mad til dig/jer.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: inherit; font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;Jeg glæder frem til at se dig!&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: inherit; font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;Med venlig hilsen, &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: inherit; font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;{!$Record.Lecturer_Name__c}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: inherit; font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;Din Familiejurist&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>rtEmailBody28DaysEnglish</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;strong style=&quot;font-size: 18px; color: rgb(255, 255, 255);&quot;&gt;About inheritance and wills incl. dinner&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 18px;&quot;&gt;I look forward to inviting you to dinner and seeing you at the lecture on how you can best secure yourself and your family through inheritance and wills on {!$Record.Start_Date_Time_Pretty__c}.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Number of tickets: {!$Record.Remaining_Tickets__c}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Ticket number: {!$Record.External_ID__c}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 18px;&quot;&gt;We’ll see each other at {!$Record.Venue__c}, {!Address}.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;At the entrance, simply say your name, and I will find your ticket.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 18px;&quot;&gt;IMPORTANT: Cancellation if you are unable to attend&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;If your plans change and you cannot participate, please cancel as soon as possible via this cancellation link. This allows us to offer your seat to others on the waiting list.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;If you do not show up without cancelling, you will be charged a fee of DKK 150 per participant, as the chef will have prepared food for you.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;I look forward to seeing you!&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Kind regards,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;{!$Record.Lecturer_Name__c}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Heres Law&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>rtEmailBody28DaysSwedish</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 38, 67); font-size: 24px;&quot;&gt;Påminnelse: Du är anmäld till föreläsningen om arv och testamente {!$Record.Start_Date_Time_Pretty__c} på {!$Record.Venue__c}!&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 38, 67); font-size: 18px; font-family: inherit;&quot;&gt;Antal biljetter: {!$Record.Remaining_Tickets__c}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 38, 67); font-size: 18px; font-family: inherit;&quot;&gt;Biljettnummer: ﻿{!$Record.External_ID__c}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 38, 67); font-size: 18px; font-family: inherit;&quot;&gt;Adress:  {!$Record.Venue__c}, {!Address}.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 38, 67); font-size: 18px; font-family: inherit;&quot;&gt;VIGTIGT: Avanmälan om du blir förhindrad&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 38, 67); font-size: 18px; font-family: inherit;&quot;&gt;Om dina planer ändras och du inte kan delta, vänligen avanmäl dig så snabbt som möjligt via &lt;/span&gt;&lt;a href=&quot;{!CancellationUrl}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: rgb(0, 144, 255); font-size: 18px; font-family: inherit;&quot;&gt;denna länk till avanmälan&lt;/a&gt;&lt;span style=&quot;color: rgb(0, 38, 67); font-size: 18px; font-family: inherit;&quot;&gt;. Detta ger oss möjlighet att erbjuda din plats till andra på väntelistan.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 38, 67); font-size: 18px; font-family: inherit;&quot;&gt;Vid utebliven närvaro utan avanmälan kommer en avgift på 100,00 kr per deltagare att debiteras.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 38, 67); font-size: 18px;&quot;&gt;Jag ser fram emot att se dig!&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 38, 67); font-size: 18px;&quot;&gt;Med vänlig hälsning, &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 38, 67); font-size: 18px;&quot;&gt;Din Familjejurist&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <name>Address</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>CancellationUrl</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>CustomError</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>DanishCancellationUrl</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>DanishEmailBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>DanishEmailSubject</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>DanishSmsBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>EmailBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>EmailSubject</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>EnglishEmailBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>EnglishEmailSubject</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>EnglishSmsBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FromAddress</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>IrishCancellationUrl</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>IsSendEmail</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>IsSendSms</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>IsSmsSubflowSuccess</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>RecipientId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Sms</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>SMS__c</objectType>
+    </variables>
+    <variables>
+        <name>SmsBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SwedishCancellationUrl</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SwedishEmailBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SwedishEmailSubject</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SwedishSmsBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

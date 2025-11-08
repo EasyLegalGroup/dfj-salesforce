@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opening_Hours__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Write as
+Mon-Fri: 09:00 - 21:00
+Sat-Sun: Closed</inlineHelpText>
+    <label>Opening Hours</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

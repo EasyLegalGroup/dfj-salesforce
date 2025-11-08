@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bndlggelse_livstruende_fuld_frig_328__c</fullName>
+    <defaultValue>false</defaultValue>
+    <externalId>false</externalId>
+    <label>Livstruende sygdom hos arving, e d2095</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

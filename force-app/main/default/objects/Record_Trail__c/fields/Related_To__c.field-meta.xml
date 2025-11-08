@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Related_To__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISBLANK(Account__c)), &quot;Account&quot;,
+    IF(NOT(ISBLANK(Lead__c)), &quot;Lead&quot;,
+        IF(NOT(ISBLANK(Journal__c)), &quot;Journal&quot;,
+            IF(NOT(ISBLANK(Order__c)), &quot;Order&quot;,
+                IF(NOT(ISBLANK(Campaign__c)), &quot;Campaign&quot;,
+                    IF(NOT(ISBLANK(Contact__c)), &quot;Contact&quot;, &quot;&quot;)
+                )
+            )
+        )
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Related To</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

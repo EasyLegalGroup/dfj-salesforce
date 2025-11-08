@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Record_ID_Prefix_Validation</fullName>
+    <active>true</active>
+    <description>Ensures that Record_ID__c values start only with valid Salesforce object prefixes (00Q for Lead or 003 for Contact).</description>
+    <errorConditionFormula>AND(
+  ISPICKVAL(Direction__c, &quot;Outgoing&quot;),
+  ISBLANK(Twilio_Message__c),
+  NOT(
+    OR(
+      BEGINS(Record_ID__c, &quot;00Q&quot;),
+      BEGINS(Record_ID__c, &quot;005&quot;),
+      BEGINS(Record_ID__c, &quot;003&quot;)
+    )
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Record_ID__c</errorDisplayField>
+    <errorMessage>Record ID must start with 00Q (Lead) or 003 (Contact).
+If adding a PersonAccount use PersonAccountId, which starts with 003-</errorMessage>
+</ValidationRule>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deed_Distribution__c</fullName>
+    <externalId>false</externalId>
+    <label>Deed Distribution</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>50/50</fullName>
+                <default>false</default>
+                <label>50/50</label>
+            </value>
+            <value>
+                <fullName>Person 1 is owner</fullName>
+                <default>false</default>
+                <label>Person 1 is owner</label>
+            </value>
+            <value>
+                <fullName>Person 2 is owner</fullName>
+                <default>false</default>
+                <label>Person 2 is owner</label>
+            </value>
+            <value>
+                <fullName>Other Distribution (See note)</fullName>
+                <default>false</default>
+                <label>Other Distribution (See note)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

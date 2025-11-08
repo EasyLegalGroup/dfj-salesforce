@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <assignments>
+        <name>Set_SFMC_Trigger_to_0_Days</name>
+        <label>Set SFMC Trigger to 0 Days</label>
+        <locationX>1106</locationX>
+        <locationY>360</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Trigger_SFMC_Reminder__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>0 days prior</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Campaign</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_SFMC_Trigger_to_10_Days</name>
+        <label>Set SFMC Trigger to 10 Days</label>
+        <locationX>314</locationX>
+        <locationY>360</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Trigger_SFMC_Reminder__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>10 days prior</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Campaign</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_SFMC_Trigger_to_1_Days</name>
+        <label>Set SFMC Trigger to 1 Days</label>
+        <locationX>842</locationX>
+        <locationY>360</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Trigger_SFMC_Reminder__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>1 day prior</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Campaign</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_SFMC_Trigger_to_28_Days</name>
+        <label>Set SFMC Trigger to 28 Days</label>
+        <locationX>50</locationX>
+        <locationY>360</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Trigger_SFMC_Reminder__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>28 days prior</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Campaign</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_SFMC_Trigger_to_7_Days</name>
+        <label>Set SFMC Trigger to 7 Days</label>
+        <locationX>578</locationX>
+        <locationY>360</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Trigger_SFMC_Reminder__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>7 days prior</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Campaign</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>When_is_the_Event</name>
+        <label>When is the Event?</label>
+        <locationX>710</locationX>
+        <locationY>252</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>In_28_Days</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsEventIn28Days</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_SFMC_Trigger_to_28_Days</targetReference>
+            </connector>
+            <label>In 28 Days</label>
+        </rules>
+        <rules>
+            <name>In_10_Days</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsEventIn10Days</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_SFMC_Trigger_to_10_Days</targetReference>
+            </connector>
+            <label>In 10 Days</label>
+        </rules>
+        <rules>
+            <name>In_7_Days</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsEventIn7Days</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_SFMC_Trigger_to_7_Days</targetReference>
+            </connector>
+            <label>In 7 Days</label>
+        </rules>
+        <rules>
+            <name>In_1_Day</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsEventIn1Day</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_SFMC_Trigger_to_1_Days</targetReference>
+            </connector>
+            <label>In 1 Day</label>
+        </rules>
+        <rules>
+            <name>Today</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsEventToday</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_SFMC_Trigger_to_0_Days</targetReference>
+            </connector>
+            <label>Today</label>
+        </rules>
+    </decisions>
+    <description>This is a Schedule-Triggered Flow.
+The flow starts by querying scheduled campaigns where the &apos;Lecture__c&apos; field is true. It then checks the proximity of each event to the current date and sets a reminder (&apos;Trigger_SFMC_Reminder__c&apos;) accordingly. The reminders can be set for 28 days, 10 days, 7 days, 1 day, or today before the event. Finally, it updates the campaign members with the new reminder values.
+
+Several objects and their fields worth mentioning. Below are the details (the format is given as: object_name - field_name: interaction)
+  * Campaign - Status : Filters campaigns based on status and Lecture__c field
+  * CampaignMember - Remaining_Tickets__c : Updates campaign members with new reminder values</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>IsEventIn10Days</name>
+        <dataType>Boolean</dataType>
+        <expression>IF( DATEVALUE({!$Record.Start__c}) = TODAY() + 10, TRUE, FALSE )</expression>
+    </formulas>
+    <formulas>
+        <name>IsEventIn1Day</name>
+        <dataType>Boolean</dataType>
+        <expression>IF( DATEVALUE({!$Record.Start__c}) = TODAY() + 1, TRUE, FALSE )</expression>
+    </formulas>
+    <formulas>
+        <name>IsEventIn28Days</name>
+        <dataType>Boolean</dataType>
+        <expression>IF( DATEVALUE({!$Record.Start__c}) = TODAY() + 28, TRUE, FALSE )</expression>
+    </formulas>
+    <formulas>
+        <name>IsEventIn7Days</name>
+        <dataType>Boolean</dataType>
+        <expression>IF( DATEVALUE({!$Record.Start__c}) = TODAY() + 7, TRUE, FALSE )</expression>
+    </formulas>
+    <formulas>
+        <name>IsEventToday</name>
+        <dataType>Boolean</dataType>
+        <expression>IF( DATEVALUE({!$Record.Start__c}) = TODAY(), TRUE, FALSE )</expression>
+    </formulas>
+    <interviewLabel>SF - Daily: Set Trigger SFMC Reminders for Lecture Campaigns {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>SF - Daily: Set Trigger SFMC Reminders for Lecture Campaigns</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Campaign</name>
+        <label>Update Campaign</label>
+        <locationX>710</locationX>
+        <locationY>552</locationY>
+        <connector>
+            <targetReference>Update_Campaign_Members</targetReference>
+        </connector>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Campaign_Members</name>
+        <label>Update Campaign Members</label>
+        <locationX>710</locationX>
+        <locationY>660</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>CampaignId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Remaining_Tickets__c</field>
+            <operator>GreaterThanOrEqualTo</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Trigger_SFMC_Reminder__c</field>
+            <value>
+                <elementReference>$Record.Trigger_SFMC_Reminder__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
+    </recordUpdates>
+    <start>
+        <locationX>584</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>When_is_the_Event</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Scheduled</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Lecture__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Campaign</object>
+        <schedule>
+            <frequency>Once</frequency>
+            <startDate>2025-03-01</startDate>
+            <startTime>01:15:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

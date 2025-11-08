@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <description>When the OTP Code is updated on a Campaign Member, trigger this flow to send the Campaign Member the OTP Code on their chosen medium</description>
+    <environments>Default</environments>
+    <interviewLabel>RT - Campaign Member: OTP is Updated {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RT - Campaign Member: OTP is Updated</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OTP_Code__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>CampaignMember</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <scheduledPaths>
+            <connector>
+                <targetReference>AL_Send_OTP_via_Email_SMS</targetReference>
+            </connector>
+            <pathType>AsyncAfterCommit</pathType>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>AL_Send_OTP_via_Email_SMS</name>
+        <label>AL - Send OTP via Email/SMS</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <flowName>AL_Send_OTP_via_Email_SMS</flowName>
+        <inputAssignments>
+            <name>RelatedRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <textTemplates>
+        <name>ptHtmlBodyDanish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;Din engangskode&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body style=&quot;margin:0; padding:0; font-family: Arial, sans-serif; background-color:#f6f6f6;&quot;&gt;
+
+    &lt;table role=&quot;presentation&quot; border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot;&gt;
+      &lt;tr&gt;
+        &lt;td align=&quot;center&quot; style=&quot;padding: 20px 0;&quot;&gt;
+
+          &lt;!-- Main container --&gt;
+          &lt;table role=&quot;presentation&quot; border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;600&quot; style=&quot;background:#ffffff; border-radius:8px; padding: 30px;&quot;&gt;
+            
+            &lt;!-- Logo --&gt;
+            &lt;tr&gt;
+              &lt;td align=&quot;center&quot; style=&quot;padding-bottom:20px;&quot;&gt;
+                &lt;img src=&quot;https://dfj.my.salesforce.com/sfc/p/1t000000w9f2/a/W5000007LddR/SxXvRXF8spDCZOPGAwHjQtPk0B8G7cKoYk2ehJrCMg8&quot;
+                     alt=&quot;Logo&quot; 
+                     width=&quot;180&quot; 
+                     style=&quot;display:block; border:0;&quot;/&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;!-- Title --&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;text-align:center; font-size:20px; font-weight:bold; color:#333333; padding-bottom:20px;&quot;&gt;
+                Din engangskode
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;!-- Intro text --&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;font-size:16px; color:#333333; padding-bottom:20px; text-align:center;&quot;&gt;
+                Brug koden nedenfor for at fuldføre din bekræftelse.&lt;br&gt;
+                Denne kode er gyldig indtil &lt;strong&gt;{!$Record.OTP_Expires__c}&lt;/strong&gt;.
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;!-- OTP Code --&gt;
+            &lt;tr&gt;
+              &lt;td align=&quot;center&quot; style=&quot;padding: 20px 0;&quot;&gt;
+                &lt;div style=&quot;font-size:28px; font-weight:bold; letter-spacing:4px; color:#2c3e50; background:#f2f2f2; padding:15px 25px; border-radius:6px; display:inline-block;&quot;&gt;
+                  {!$Record.OTP_Code__c}
+                &lt;/div&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;!-- Disclaimer --&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;font-size:14px; color:#666666; padding-top:20px; text-align:center;&quot;&gt;
+                Hvis du ikke har anmodet om denne kode, kan du se bort fra denne e-mail.
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+          &lt;/table&gt;
+
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptHtmlBodyEnglish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;Your One-Time Code&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body style=&quot;margin:0; padding:0; font-family: Arial, sans-serif; background-color:#f6f6f6;&quot;&gt;
+
+    &lt;table role=&quot;presentation&quot; border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot;&gt;
+      &lt;tr&gt;
+        &lt;td align=&quot;center&quot; style=&quot;padding: 20px 0;&quot;&gt;
+
+          &lt;!-- Main container --&gt;
+          &lt;table role=&quot;presentation&quot; border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;600&quot; style=&quot;background:#ffffff; border-radius:8px; padding: 30px;&quot;&gt;
+            
+            &lt;!-- Logo --&gt;
+            &lt;tr&gt;
+              &lt;td align=&quot;center&quot; style=&quot;padding-bottom:20px;&quot;&gt;
+                &lt;img src=&quot;https://dfj.my.salesforce.com/sfc/p/1t000000w9f2/a/W5000007JZ2r/vZlkbe_A6_OyB8boGYQZcMwrnY_QB8c8QFXLC9eckTg&quot;
+                     alt=&quot;Company Logo&quot; 
+                     width=&quot;180&quot; 
+                     style=&quot;display:block; border:0;&quot;/&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;!-- Title --&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;text-align:center; font-size:20px; font-weight:bold; color:#333333; padding-bottom:20px;&quot;&gt;
+                Your One-Time Code
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;!-- Intro text --&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;font-size:16px; color:#333333; padding-bottom:20px; text-align:center;&quot;&gt;
+                Use the code below to complete your verification.  
+                This code is valid until &lt;strong&gt;{!$Record.OTP_Expires__c}&lt;/strong&gt;.
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;!-- OTP Code --&gt;
+            &lt;tr&gt;
+              &lt;td align=&quot;center&quot; style=&quot;padding: 20px 0;&quot;&gt;
+                &lt;div style=&quot;font-size:28px; font-weight:bold; letter-spacing:4px; color:#2c3e50; background:#f2f2f2; padding:15px 25px; border-radius:6px; display:inline-block;&quot;&gt;
+                  {!$Record.OTP_Code__c}
+                &lt;/div&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;!-- Disclaimer --&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;font-size:14px; color:#666666; padding-top:20px; text-align:center;&quot;&gt;
+                If you didn’t request this code, you can safely ignore this email.
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+          &lt;/table&gt;
+
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptHtmlBodySwedish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;Din engångskod&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body style=&quot;margin:0; padding:0; font-family: Arial, sans-serif; background-color:#f6f6f6;&quot;&gt;
+
+    &lt;table role=&quot;presentation&quot; border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot;&gt;
+      &lt;tr&gt;
+        &lt;td align=&quot;center&quot; style=&quot;padding: 20px 0;&quot;&gt;
+
+          &lt;!-- Main container --&gt;
+          &lt;table role=&quot;presentation&quot; border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;600&quot; style=&quot;background:#ffffff; border-radius:8px; padding: 30px;&quot;&gt;
+            
+            &lt;!-- Logo --&gt;
+            &lt;tr&gt;
+              &lt;td align=&quot;center&quot; style=&quot;padding-bottom:20px;&quot;&gt;
+                &lt;img src=&quot;https://dfj.my.salesforce.com/sfc/p/1t000000w9f2/a/W5000007Ldbp/yWyzcknpEKmmeC63uhPCCqwTVuzyE26aBsEbofgTD5Q&quot;
+                     alt=&quot;Logotyp&quot; 
+                     width=&quot;180&quot; 
+                     style=&quot;display:block; border:0;&quot;/&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;!-- Title --&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;text-align:center; font-size:20px; font-weight:bold; color:#333333; padding-bottom:20px;&quot;&gt;
+                Din engångskod
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;!-- Intro text --&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;font-size:16px; color:#333333; padding-bottom:20px; text-align:center;&quot;&gt;
+                Använd koden nedan för att slutföra din verifiering.&lt;br&gt;
+                Denna kod är giltig till &lt;strong&gt;{!$Record.OTP_Expires__c}&lt;/strong&gt;.
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;!-- OTP Code --&gt;
+            &lt;tr&gt;
+              &lt;td align=&quot;center&quot; style=&quot;padding: 20px 0;&quot;&gt;
+                &lt;div style=&quot;font-size:28px; font-weight:bold; letter-spacing:4px; color:#2c3e50; background:#f2f2f2; padding:15px 25px; border-radius:6px; display:inline-block;&quot;&gt;
+                  {!$Record.OTP_Code__c}
+                &lt;/div&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;!-- Disclaimer --&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;font-size:14px; color:#666666; padding-top:20px; text-align:center;&quot;&gt;
+                Om du inte har begärt denna kod kan du bortse från detta e-postmeddelande.
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+          &lt;/table&gt;
+
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSmsBodyDanish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Her er din engangskode: {!$Record.OTP_Code__c}.
+Den udløber {!$Record.OTP_Expires__c}.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSmsBodyEnglish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Here is your one-time code: {!$Record.OTP_Code__c}.
+It expires {!$Record.OTP_Expires__c}.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSmsBodySwedish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Här är din engångskod: {!$Record.OTP_Code__c}.
+Den upphör att gälla {!$Record.OTP_Expires__c}.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSubjectDanish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Din Familiejurist | Din engangskode</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSubjectEnglish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Heres Law | Your One-Time Code</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSubjectSwedish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Din Familjejurist | Din engångskod</text>
+    </textTemplates>
+    <variables>
+        <name>CustomError</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>EmailBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>EmailSubject</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FromEmail</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FromNumber</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>IsSmsSubflowSuccess</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>RelatedRecordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SmsBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

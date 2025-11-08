@@ -1,0 +1,214 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-around_medium">
+
+            <div>
+                <lightning-button stretch="true" label="Refund" variant="brand" onclick={handleRefundButtonClick}>
+                </lightning-button>
+            </div>
+
+            <template if:true={isOpenProductSelectionModal}>
+                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                    aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_medium">
+                    <div class="slds-modal__container">
+                        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                            <fieldset class="slds-box">
+                                <legend class="slds-text-heading_medium">&nbsp;Refund&nbsp;</legend>
+
+                                <!-- Table for displaying payment order lines -->
+                                <template if:false={showPlanInfo}>
+                                    <table class="slds-table slds-table_bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Description</th>
+                                                <th>Quantity</th>
+                                                <th>Unit Price</th>
+                                                <th>Subtotal</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <template for:each={paymentOrderLines} for:item="line">
+                                                <tr key={line.Id}>
+                                                    <!-- Description (editable text input) -->
+                                                    <td style="width: 50%">
+                                                        <lightning-input value={line.Description}
+                                                            onchange={handleInputChange} data-id={line.Id}
+                                                            data-field="Description" label=''></lightning-input>
+                                                    </td>
+
+                                                    <!-- Quantity (editable number input) -->
+                                                    <td>
+                                                        <lightning-input type="number" value={line.Quantity__c}
+                                                            onchange={handleInputChange} data-id={line.Id}
+                                                            data-field="Quantity__c" label=''></lightning-input>
+                                                    </td>
+
+                                                    <!-- Unit Price (editable number input) -->
+                                                    <td>
+                                                        <lightning-input type="number" label='' value={line.UnitPrice}
+                                                            onchange={handleInputChange} data-id={line.Id}
+                                                            data-field="UnitPrice"></lightning-input>
+                                                    </td>
+
+                                                    <!-- Subtotal (calculated) -->
+                                                    <td>
+                                                        <lightning-formatted-number value={line.Subtotal}
+                                                            format-style="currency" currency-code="DKK"
+                                                            currency-display-as="code"></lightning-formatted-number>
+                                                    </td>
+
+                                                    <!-- Delete Button -->
+                                                    <td>
+                                                        <lightning-button-icon icon-name="action:delete"
+                                                            onclick={handleDeleteRow} data-id={line.Id}
+                                                            alternative-text="Delete" size="small">
+                                                        </lightning-button-icon>
+                                                    </td>
+                                                </tr>
+                                            </template>
+                                        </tbody>
+                                    </table>
+                                </template>
+                                <!-- DFJ-318-V2 -->
+                                <template if:true={showPlanInfo}>
+                                    <table class="slds-table slds-table_bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Plan Name</th>
+                                                <th>Quantity</th>
+                                                <th>Plan Amount</th>
+                                                <!-- <th>Subtotal</th> -->
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            
+                                                <tr>
+                                                    <!-- Description (editable text input) -->
+                                                    <td style="width: 50%">
+                                                        <lightning-input value={planName}
+                                                            onchange={handlePlanInputChange} data-field="Name"
+                                                             label=''></lightning-input>
+                                                    </td>
+
+                                                    <!-- Quantity (editable number input) -->
+                                                    <td>
+                                                        <lightning-input type="number" value=1 aria-readonly="true"
+                                                             data-field="quantity"
+                                                             label=''></lightning-input>
+                                                    </td>
+
+                                                    <!-- Unit Price (editable number input) -->
+                                                    <td>
+                                                        <lightning-input type="number" label='' value={planAmount}
+                                                            onchange={handlePlanInputChange} data-field="amount"
+                                                            ></lightning-input>
+                                                    </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                                </template>
+
+                                <!--                                toggle for manual refund -->
+                                <div class="slds-m-top_medium">
+                                    <lightning-input type="checkbox" label='Manual Refund' message-toggle-active=""
+                                        message-toggle-inactive="" disabled={isPaymentTypeManual}
+                                        checked={initialValueOfCheckbox} onchange={handleToggleInputForManualRefund}>
+                                    </lightning-input>
+                                </div>
+
+                                <template lwc:if={hasUserOptedForManualRefund}>
+                                    <div class="slds-m-top_medium">
+                                        <table class="tableUsedInManualRefundTab">
+                                            <tr>
+                                                <td>
+                                                    <lightning-input label="Comment"
+                                                        onchange={handleCommentInputForManualRefund}></lightning-input>
+                                                </td>
+                                                <td>
+                                                    <lightning-input label="Reference"
+                                                        onchange={handleReferenceInputForManualRefund}>
+                                                    </lightning-input>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <lightning-combobox label="Method" required="true"
+                                                        value={defaultValueOfMethodForManualRefund} disabled="true"
+                                                        options={optionsForMethodOfManualRefund}></lightning-combobox>
+                                                </td>
+                                                <td>
+                                                    <lightning-input label="Payment Date" required="true" type="date"
+                                                        value={dateInputForManualRefund} disabled="true">
+                                                    </lightning-input>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </template>
+
+                                <div class="slds-m-top_medium" style="text-align: right">
+                                    <table class="tableUsedToShowAmountRelatedInfo">
+                                        <tr>
+                                            <td><strong>Currently selected amount for Refund:</strong></td>
+                                            <td>
+                                                <lightning-formatted-number value={totalPaymentAmountCalculated}
+                                                    format-style="currency" currency-code="DKK"
+                                                    currency-display-as="code"></lightning-formatted-number>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Amount Available for Refund:</strong></td>
+                                            <td>
+                                                <lightning-formatted-number value={amountAvailableForRefund}
+                                                    format-style="currency" currency-code="DKK"
+                                                    currency-display-as="code"></lightning-formatted-number>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Total Payment Amount:</strong></td>
+                                            <td>
+                                                <lightning-formatted-number
+                                                    value={totalFetchedPaymentAmount}
+                                                    format-style="currency" currency-code="DKK"
+                                                    currency-display-as="code"></lightning-formatted-number>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <template
+                                        lwc:if={greaterCalculatedAmount}>
+                                        <div class="slds-m-top_medium slds-p-around_medium">
+                                            <div class="slds-text-heading_small" style="color: red;">
+                                                <b>{greaterCalculatedAmountMsg}</b>
+                                            </div>
+                                        </div>
+                                    </template>
+
+                                    <div class="slds-m-top_large">
+                                        <lightning-button label="Cancel" onclick={handleCancelButtonClick}>
+                                        </lightning-button>&nbsp;&nbsp;
+                                        <template lwc:if={hasUserOptedForManualRefund}>
+
+                                            <lightning-button label="Confirm" variant="brand"
+                                                disabled={isConfirmButtonDisabled}
+                                                onclick={handleConfirmButtonClickForManualRefund}>
+                                            </lightning-button>
+                                        </template>
+                                        <template lwc:else>
+                                            <lightning-button label="Confirm" variant="brand"
+                                                disabled={isConfirmButtonDisabled} onclick={handleConfirmButtonClick}>
+                                            </lightning-button>
+                                        </template>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

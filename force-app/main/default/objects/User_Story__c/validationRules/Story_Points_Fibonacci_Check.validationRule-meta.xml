@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Story_Points_Fibonacci_Check</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(
+  OR(
+    Story_Points__c = 1,
+    Story_Points__c = 2,
+    Story_Points__c = 3,
+    Story_Points__c = 5,
+    Story_Points__c = 8,
+    Story_Points__c = 13,
+    Story_Points__c = 21,
+    Story_Points__c = 34,
+    Story_Points__c = 55,
+    Story_Points__c = 89,
+    Story_Points__c = 144,
+    Story_Points__c = 233,
+    Story_Points__c = 377,
+    Story_Points__c = 610,
+    Story_Points__c = 987
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Story_Points__c</errorDisplayField>
+    <errorMessage>Only Fibonacci sequence numbers are allowed (1, 2, 3, 5, 8, 13, 21, 34, etc.).</errorMessage>
+</ValidationRule>

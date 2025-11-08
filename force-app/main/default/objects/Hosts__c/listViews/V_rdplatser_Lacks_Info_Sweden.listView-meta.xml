@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V_rdplatser_Lacks_Info_Sweden</fullName>
+    <booleanFilter>1 AND (2 OR 3 OR 4 OR 5)</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Phone__c</columns>
+    <columns>Email__c</columns>
+    <columns>Name_of_Contact__c</columns>
+    <columns>Address__c</columns>
+    <columns>City__c</columns>
+    <columns>Zip_Code__c</columns>
+    <columns>County__c</columns>
+    <columns>Standard_Venue_Rental_Cost__c</columns>
+    <columns>Standard_Price_Per_Cover__c</columns>
+    <columns>Capacity__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>FA_SE,Testamente_SV</value>
+    </filters>
+    <filters>
+        <field>Name_of_Contact__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Standard_Venue_Rental_Cost__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Email__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Phone__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Värdplatser - Lacks Info (Sweden)</label>
+</ListView>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Master_Data_and_Spelling_Check__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>If you have any additional notes, add them here.</inlineHelpText>
+    <label>Master Data and Spelling Check</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

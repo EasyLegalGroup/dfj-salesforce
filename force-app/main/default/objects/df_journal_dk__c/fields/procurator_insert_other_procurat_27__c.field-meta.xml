@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>procurator_insert_other_procurat_27__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Skal der indsættes andre fuldmægte end gensidige?</description>
+    <externalId>false</externalId>
+    <label>Skal der indsættes andre fuldmæg 4b35f</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

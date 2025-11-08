@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <assignments>
+        <name>Populate_Custom_Error_with_Flow_Fault_Message</name>
+        <label>Populate Custom Error with Flow Fault Message</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Danish_Values</name>
+        <label>Populate Danish Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>SmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptDanishSmsBody</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>AL_Send_Twilio_SMS</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Irish_Values</name>
+        <label>Populate Irish Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>SmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptIrishSmsBody</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Populate_SMS_Conversation</name>
+        <label>Populate SMS Conversation</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>SmsConversation.Account__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Account__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SmsConversation.Conversation_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Get Reference</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SmsConversation.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Open</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_SMS_Conversation</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Swedish_Values</name>
+        <label>Populate Swedish Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>SmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptSwedishSmsBody</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>AL_Send_Twilio_SMS</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Did_SMS_Subflow_Succeed</name>
+        <label>Did SMS Subflow Succeed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SMS_Subflow_Success</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsSmsSubflowSuccess</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_SMS_Conversation</targetReference>
+            </connector>
+            <label>SMS Subflow Success</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Which_Country_are_we_sending_to</name>
+        <label>Which Country are we sending to?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Send_Danish_SMS</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>DFJ_DK</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_Danish_Values</targetReference>
+            </connector>
+            <label>Send Danish SMS</label>
+        </rules>
+        <rules>
+            <name>Send_Swedish_SMS</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>FA_SE</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_Swedish_Values</targetReference>
+            </connector>
+            <label>Send Swedish SMS</label>
+        </rules>
+        <rules>
+            <name>Send_Irish_SMS</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ireland</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_Irish_Values</targetReference>
+            </connector>
+            <label>Send Irish SMS</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>RT - Journal: Send Reference SMS 60 Days After Completion {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RT - Journal: Send Reference SMS 60 Days After Completion</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_SMS_Conversation</name>
+        <label>Create SMS Conversation</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <faultConnector>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <inputReference>SmsConversation</inputReference>
+    </recordCreates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Journal_States__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>complete</stringValue>
+            </value>
+        </filters>
+        <object>Journal__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <scheduledPaths>
+            <name>X60_Days_After_Completion</name>
+            <connector>
+                <targetReference>Which_Country_are_we_sending_to</targetReference>
+            </connector>
+            <label>60 Days After Completion</label>
+            <offsetNumber>60</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>Completed_Date__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+    <subflows>
+        <name>AL_Send_Error_Email_from_Input_Values</name>
+        <label>AL - Send Error Email from Input Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <flowName>AL_Send_Error_Email_from_Input_Values</flowName>
+        <inputAssignments>
+            <name>inputCustomError</name>
+            <value>
+                <elementReference>CustomError</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputFlowName</name>
+            <value>
+                <stringValue>RT - Journal: Send Reference SMS 60 Days After Completion</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <subflows>
+        <name>AL_Send_Twilio_SMS</name>
+        <label>AL - Send Twilio SMS</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Did_SMS_Subflow_Succeed</targetReference>
+        </connector>
+        <flowName>AL_Send_Twilio_SMS</flowName>
+        <inputAssignments>
+            <name>inputIsUsingDefaultNumber</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputMarketUnit</name>
+            <value>
+                <elementReference>$Record.Market_Unit__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputMessage</name>
+            <value>
+                <elementReference>ptDanishSmsBody</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputToNumber</name>
+            <value>
+                <elementReference>$Record.Account__r.Phone_Formatted__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>recordId</name>
+            <value>
+                <elementReference>$Record.Account__c</elementReference>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>CustomError</assignToReference>
+            <name>CustomError</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>IsSmsSubflowSuccess</assignToReference>
+            <name>IsSuccess</name>
+        </outputAssignments>
+    </subflows>
+    <textTemplates>
+        <name>ptDanishSmsBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Kære {!$Record.Account__r.FirstName} {!$Record.Account__r.LastName},
+
+Vi håber at du er glade for dine dokumenter.
+Ønsker du at referére en du kender?
+Svar JA, hvis du gerne vil
+Svar NEJ, hvis du ikke vil.
+
+Med venlig hilsen,
+Din Familiejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptIrishSmsBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Dear {!$Record.Account__r.FirstName} {!$Record.Account__r.LastName},
+
+We hope you are happy with your documents.
+
+Would you like to refer someone you know?
+Reply YES if you would.
+Reply NO if you would not.
+
+Kind regards,
+Heres Law</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSwedishSmsBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hej {!$Record.Account__r.FirstName} {!$Record.Account__r.LastName},
+
+Vi hoppas att du är nöjd med dina dokument.
+
+Vill du rekommendera någon du känner?
+Svara JA om du vill.
+Svara NEJ om du inte vill.
+
+Med vänliga hälsningar,
+Din Familjejurist</text>
+    </textTemplates>
+    <variables>
+        <name>CustomError</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>IsSmsSubflowSuccess</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>SmsBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SmsConversation</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>SMS_Conversation__c</objectType>
+    </variables>
+</Flow>

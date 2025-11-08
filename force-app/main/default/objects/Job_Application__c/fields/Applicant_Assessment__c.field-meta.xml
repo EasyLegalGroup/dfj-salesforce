@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Applicant_Assessment__c</fullName>
+    <externalId>false</externalId>
+    <label>Application Assessment</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Strong Contender</fullName>
+                <default>false</default>
+                <label>Strong Contender</label>
+            </value>
+            <value>
+                <fullName>Worth Considering</fullName>
+                <default>false</default>
+                <label>Worth Considering</label>
+            </value>
+            <value>
+                <fullName>Undecided</fullName>
+                <default>false</default>
+                <label>Undecided</label>
+            </value>
+            <value>
+                <fullName>Unlikely Fit</fullName>
+                <default>false</default>
+                <label>Unlikely Fit</label>
+            </value>
+            <value>
+                <fullName>Not the Right Fit</fullName>
+                <default>false</default>
+                <label>Not the Right Fit</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

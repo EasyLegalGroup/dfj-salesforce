@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Danish_Capacity_Targets</fullName>
+    <columns>NAME</columns>
+    <columns>Target_Metric__c</columns>
+    <columns>Week_Number__c</columns>
+    <columns>Target__c</columns>
+    <columns>Progress__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>DFJ_DK</value>
+    </filters>
+    <filters>
+        <field>Target_Metric__c</field>
+        <operation>equals</operation>
+        <value>Capacity Booked</value>
+    </filters>
+    <label>Danish Capacity Targets</label>
+</ListView>

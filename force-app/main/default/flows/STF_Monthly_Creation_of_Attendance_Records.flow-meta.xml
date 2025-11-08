@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <decisions>
+        <name>Is_it_the_First_of_the_Month</name>
+        <label>Is it the First of the Month?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_First_of_Month</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>frmIsFirstDayInMonth</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AL_Auto_Generate_Time_Sheets</targetReference>
+            </connector>
+            <label>Is First of Month</label>
+        </rules>
+    </decisions>
+    <description>Flow runs once per month and creates Attendance records, for a single month, one year ahead.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>frmIsFirstDayInMonth</name>
+        <dataType>Boolean</dataType>
+        <expression>DAY( TODAY() ) = 1</expression>
+    </formulas>
+    <interviewLabel>STF - Monthly Creation of Attendance Records {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>STF - Monthly Creation of Attendance Records</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_it_the_First_of_the_Month</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Employment_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Active</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Required_to_Approve_Time_Sheets__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>SFDC_Employee__c</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2025-08-01</startDate>
+            <startTime>02:15:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>AL_Auto_Generate_Time_Sheets</name>
+        <label>AL - Auto-Generate Time Sheets</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <flowName>AL_Auto_Generate_Time_Sheets_and_Attendance_Records</flowName>
+        <inputAssignments>
+            <name>inputEmployee</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+</Flow>

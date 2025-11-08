@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source__c</fullName>
+    <externalId>false</externalId>
+    <label>Source</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Customer Profiler</fullName>
+                <default>false</default>
+                <label>Customer Profiler</label>
+            </value>
+            <value>
+                <fullName>dinfamiliejurist.dk</fullName>
+                <default>false</default>
+                <label>dinfamiliejurist.dk</label>
+            </value>
+            <value>
+                <fullName>totalliv.dk</fullName>
+                <default>false</default>
+                <label>totalliv.dk</label>
+            </value>
+            <value>
+                <fullName>totalliv.se</fullName>
+                <default>false</default>
+                <label>totalliv.se</label>
+            </value>
+            <value>
+                <fullName>Customer Care</fullName>
+                <default>false</default>
+                <label>Customer Care</label>
+            </value>
+            <value>
+                <fullName>Website</fullName>
+                <default>false</default>
+                <label>Website</label>
+            </value>
+            <value>
+                <fullName>Totalliv</fullName>
+                <default>false</default>
+                <label>Totalliv</label>
+            </value>
+            <value>
+                <fullName>Referral Form</fullName>
+                <default>false</default>
+                <label>Referral Form</label>
+            </value>
+            <value>
+                <fullName>Meeting Booker</fullName>
+                <default>false</default>
+                <label>Meeting Booker</label>
+            </value>
+            <value>
+                <fullName>Lecture</fullName>
+                <default>false</default>
+                <label>Lecture</label>
+            </value>
+            <value>
+                <fullName>Agentforce Conversation</fullName>
+                <default>false</default>
+                <label>Agentforce Conversation</label>
+            </value>
+            <value>
+                <fullName>Journal Completed Survey</fullName>
+                <default>false</default>
+                <label>Journal Completed Survey</label>
+            </value>
+            <value>
+                <fullName>Email Marketing</fullName>
+                <default>false</default>
+                <label>Email Marketing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

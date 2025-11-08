@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <decisions>
+        <name>Did_We_Find_a_Campaign_Member</name>
+        <label>Did We Find a Campaign Member?</label>
+        <locationX>446</locationX>
+        <locationY>360</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Campaign_Member_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Campaign_Member</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>When_is_Event_Start</targetReference>
+            </connector>
+            <label>Campaign Member Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>When_is_Event_Start</name>
+        <label>When is Event Start?</label>
+        <locationX>50</locationX>
+        <locationY>468</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>In_28_Days</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsEventIn28Days</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>In 28 Days</label>
+        </rules>
+        <rules>
+            <name>In_10_Days</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsEventIn10Days</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>In 10 Days</label>
+        </rules>
+        <rules>
+            <name>In_7_Days</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsEventIn7Days</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>In 7 Days</label>
+        </rules>
+        <rules>
+            <name>In_4_Days</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsEventIn4Days</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>In 4 Days</label>
+        </rules>
+        <rules>
+            <name>In_1_Day</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsEventIn1Day</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>In 1 Day</label>
+        </rules>
+        <rules>
+            <name>Today</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsEventIn0Days</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Today</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>IsEventIn0Days</name>
+        <dataType>Boolean</dataType>
+        <expression>IF( DATEVALUE({!$Record.Event_Start__c}) = TODAY(), TRUE, FALSE )</expression>
+    </formulas>
+    <formulas>
+        <name>IsEventIn10Days</name>
+        <dataType>Boolean</dataType>
+        <expression>IF( DATEVALUE({!$Record.Event_Start__c}) = TODAY() + 10, TRUE, FALSE )</expression>
+    </formulas>
+    <formulas>
+        <name>IsEventIn1Day</name>
+        <dataType>Boolean</dataType>
+        <expression>IF( DATEVALUE({!$Record.Event_Start__c}) = TODAY() + 1, TRUE, FALSE )</expression>
+    </formulas>
+    <formulas>
+        <name>IsEventIn28Days</name>
+        <dataType>Boolean</dataType>
+        <expression>IF( DATEVALUE({!$Record.Event_Start__c}) = TODAY() + 28, TRUE, FALSE )</expression>
+    </formulas>
+    <formulas>
+        <name>IsEventIn4Days</name>
+        <dataType>Boolean</dataType>
+        <expression>IF( DATEVALUE({!$Record.Event_Start__c}) = TODAY() + 7, TRUE, FALSE )</expression>
+    </formulas>
+    <formulas>
+        <name>IsEventIn7Days</name>
+        <dataType>Boolean</dataType>
+        <expression>IF( DATEVALUE({!$Record.Event_Start__c}) = TODAY() + 7, TRUE, FALSE )</expression>
+    </formulas>
+    <interviewLabel>SF - Daily: Send Reminder to Lecture Attendee {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>SF - Daily: Send Reminder to Lecture Attendee</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Campaign_Member</name>
+        <label>Get Campaign Member</label>
+        <locationX>446</locationX>
+        <locationY>252</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Did_We_Find_a_Campaign_Member</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Registration_Staging__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Remaining_Tickets__c</field>
+            <operator>GreaterThanOrEqualTo</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>320</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Campaign_Member</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Is_Event_in_the_Future__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Registration_Staging__c</object>
+        <schedule>
+            <frequency>Once</frequency>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>InvalidDraft</status>
+</Flow>

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <assignments>
+        <name>Add_the_Post_Sale_Call_Campaign</name>
+        <label>Add the Post-Sale Call Campaign</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>ActiveCallCampaigns</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>;{!CallCampaignName}</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Account</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Active_Call_Campaigns_to_Text_Variable</name>
+        <label>Assign Active Call Campaigns to Text Variable</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>ActiveCallCampaigns</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Active_Call_Campaigns__pc</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>What_is_the_Market_Unit</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Danish_Values</name>
+        <label>Assign Danish Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CallCampaignName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Denmark: Document Review</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Does_Active_Call_Campaigns_Already_Contain_the_Call_Campaign</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Irish_Values</name>
+        <label>Assign Irish Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CallCampaignName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Ireland: Document Review</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Does_Active_Call_Campaigns_Already_Contain_the_Call_Campaign</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Swedish_Values</name>
+        <label>Assign Swedish Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CallCampaignName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Sweden: Document Review</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Does_Active_Call_Campaigns_Already_Contain_the_Call_Campaign</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Does_Active_Call_Campaigns_Already_Contain_the_Call_Campaign</name>
+        <label>Does Active Call Campaigns Already Contain the Call Campaign?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Add_the_Post_Sale_Call_Campaign</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Call_Campaign_Already_Present</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ActiveCallCampaigns</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>CallCampaignName</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Account</targetReference>
+            </connector>
+            <label>Call Campaign Already Present</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>What_is_the_Market_Unit</name>
+        <label>What is the Market Unit?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Danish_Market_Unit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>DFJ_DK</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Danish_Values</targetReference>
+            </connector>
+            <label>Danish Market Unit</label>
+        </rules>
+        <rules>
+            <name>Swedish_Market_Unit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>FA_SE</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Swedish_Values</targetReference>
+            </connector>
+            <label>Swedish Market Unit</label>
+        </rules>
+        <rules>
+            <name>Irish_Market_Unit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ireland</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Irish_Values</targetReference>
+            </connector>
+            <label>Irish Market Unit</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>RT - Account: Add Call Campaign When Updated to Review Required, {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RT - Account: Add Call Campaign When Updated to Review Required,</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Account</name>
+        <label>Update Account</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Active_Call_Campaigns__pc</field>
+            <value>
+                <elementReference>ActiveCallCampaigns</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Assign_Active_Call_Campaigns_to_Text_Variable</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Document_Review_Status__pc</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Review Required</stringValue>
+            </value>
+        </filters>
+        <object>Account</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>ActiveCallCampaigns</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>CallCampaignName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>med_hvem_er_det_tidligere_testam_109__c</fullName>
+    <externalId>false</externalId>
+    <label>Med hvem er det tidligere testam 6981e</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>tidl_testamente_sammen</fullName>
+                <default>false</default>
+                <label>Oprettet sammen</label>
+            </value>
+            <value>
+                <fullName>tidl_testamente_p1</fullName>
+                <default>false</default>
+                <label>{person_1_first_name} {person_1_last_name} har oprettet testamentet</label>
+            </value>
+            <value>
+                <fullName>tidl_testamente_p2</fullName>
+                <default>false</default>
+                <label>{person_2_first_name} {person_2_last_name} har oprettet testamentet</label>
+            </value>
+            <value>
+                <fullName>tidl_testamente_p1_tidl</fullName>
+                <default>false</default>
+                <label>{person_1_first_name} {person_1_last_name} har oprettet med tidl. partner</label>
+            </value>
+            <value>
+                <fullName>tidl_testamente_p2_tidl</fullName>
+                <default>false</default>
+                <label>{person_2_first_name} {person_2_last_name} har oprettet med tidl. partner</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

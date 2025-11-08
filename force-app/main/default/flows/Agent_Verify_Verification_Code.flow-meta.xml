@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Verify Code</description>
+        <name>VerifyCustomerCode</name>
+        <label>Verify Customer Code</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>verifyCustomerCode</actionName>
+        <actionType>verifyCustomerCode</actionType>
+        <connector>
+            <targetReference>DoCodesMatch</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customerCode</name>
+            <value>
+                <elementReference>customerCode</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>authenticationKey</name>
+            <value>
+                <elementReference>authenticationKey</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>verifyCustomerCode</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>64.0</apiVersion>
+    <assignments>
+        <description>Sets the isVerified variable to false.</description>
+        <name>SetIsVerifiedToFalse</name>
+        <label>Set Verified to False</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>isVerified</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Sets the isVerified variable to true.</description>
+        <name>SetIsVerifiedToTrue</name>
+        <label>Set Verified to True</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>isVerified</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <description>Determines whether the customerCode value matches the verificationCode value.</description>
+        <name>DoCodesMatch</name>
+        <label>Do Codes Match?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>SetIsVerifiedToFalse</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No(Default)</defaultConnectorLabel>
+        <rules>
+            <name>CodesMatch</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>VerifyCustomerCode.isVerified</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SetIsVerifiedToTrue</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Agent: Verify Verification Code {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Agent: Verify Verification Code</label>
+    <overriddenFlow>SvcCopilotTmpl__VerifyCode</overriddenFlow>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>VerifyCustomerCode</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>authenticationKey</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Stores the user-provided verification code that&apos;s passed into the flow.</description>
+        <name>customerCode</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Stores a boolean value that represents whether the codes passed into the flow match. Is available for output.</description>
+        <name>isVerified</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

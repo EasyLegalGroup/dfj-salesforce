@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>insert_special_escrow_conditions__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Skal er indsættes særlige betingelser i båndlæggelsestiden?</description>
+    <externalId>false</externalId>
+    <label>Skal er indsættes særlige beting 1cd95</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

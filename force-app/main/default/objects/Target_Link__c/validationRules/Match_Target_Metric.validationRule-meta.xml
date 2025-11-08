@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Match_Target_Metric</fullName>
+    <active>true</active>
+    <description>Ensures that the Target Metric on this record matches the Target Metric on the related Target record.</description>
+    <errorConditionFormula>TEXT(Target_Metric__c) &lt;&gt; TEXT(Target__r.Target_Metric__c)</errorConditionFormula>
+    <errorDisplayField>Target_Metric__c</errorDisplayField>
+    <errorMessage>Target Metric must match the value on the related Target record.</errorMessage>
+</ValidationRule>

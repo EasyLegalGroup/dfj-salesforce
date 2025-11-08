@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Creat_Host_In_Dffrnt_Market_Un</fullName>
+    <active>true</active>
+    <description>You cannot create a Host in a different Market Unit.</description>
+    <errorConditionFormula>AND(
+    ISNEW(),
+    NOT(TEXT($User.Market_Unit__c) = TEXT(Market_Unit__c))
+)</errorConditionFormula>
+    <errorMessage>You cannot create a Host in a different Market Unit.</errorMessage>
+</ValidationRule>

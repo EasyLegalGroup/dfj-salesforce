@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Referral_Conversations</fullName>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>Related_Record_ID__c</columns>
+    <columns>Status__c</columns>
+    <columns>Conversation_Type__c</columns>
+    <columns>Is_Keyword_Reply_Expected__c</columns>
+    <columns>Valid_Keywords__c</columns>
+    <columns>Account__c</columns>
+    <columns>Phone__c</columns>
+    <columns>Market_Unit__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Conversation_Type__c</field>
+        <operation>equals</operation>
+        <value>Get Reference</value>
+    </filters>
+    <label>Referral Conversations</label>
+</ListView>

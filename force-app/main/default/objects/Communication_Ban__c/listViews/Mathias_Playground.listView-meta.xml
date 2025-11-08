@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mathias_Playground</fullName>
+    <columns>NAME</columns>
+    <columns>Name__c</columns>
+    <columns>Email__c</columns>
+    <columns>Expiry_Date__c</columns>
+    <columns>Phone_E164__c</columns>
+    <columns>Notes__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Email__c</field>
+        <operation>contains</operation>
+        <value>@dinfamiliejurist.dk</value>
+    </filters>
+    <label>Mathias Playground</label>
+</ListView>

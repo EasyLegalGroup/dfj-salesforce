@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>afdragenes_frekvens_gldsbrev__c</fullName>
+    <externalId>false</externalId>
+    <label>Afdragenes frekvens</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>afdr_frekv_mndligt</fullName>
+                <default>false</default>
+                <label>Månedligt</label>
+            </value>
+            <value>
+                <fullName>afdr_frekv_kvartal</fullName>
+                <default>false</default>
+                <label>Kvartalsvist</label>
+            </value>
+            <value>
+                <fullName>afdr_frekv_halvrligt</fullName>
+                <default>false</default>
+                <label>Halvårligt</label>
+            </value>
+            <value>
+                <fullName>afdr_frekv_rligt</fullName>
+                <default>false</default>
+                <label>Årligt</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

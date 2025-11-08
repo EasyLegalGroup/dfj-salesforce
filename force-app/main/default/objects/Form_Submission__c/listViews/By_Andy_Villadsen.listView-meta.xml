@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>By_Andy_Villadsen</fullName>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>Source__c</columns>
+    <columns>Type__c</columns>
+    <columns>External_ID__c</columns>
+    <columns>Lead__c</columns>
+    <columns>Account__c</columns>
+    <columns>Campaign__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>equals</operation>
+        <value>Andy Villadsen</value>
+    </filters>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Questionnaire</value>
+    </filters>
+    <label>By Andy Villadsen</label>
+</ListView>

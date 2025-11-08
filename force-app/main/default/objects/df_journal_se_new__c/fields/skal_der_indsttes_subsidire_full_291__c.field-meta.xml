@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>skal_der_indsttes_subsidire_full_291__c</fullName>
+    <defaultValue>false</defaultValue>
+    <externalId>false</externalId>
+    <label>Skal der indsættes subsidiære fu 3e086</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>tales_der_om_en_specifik_type_gl_182__c</fullName>
+    <externalId>false</externalId>
+    <label>Tales der om en specifik type gæ 9a808</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>bestemt_type_gld</fullName>
+                <default>false</default>
+                <label>Bestemt type gæld (F.eks. studiegæld, spillegæld, virksomhedsgæld)</label>
+            </value>
+            <value>
+                <fullName>bestemt_kreditor</fullName>
+                <default>false</default>
+                <label>Bestemt kreditor</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

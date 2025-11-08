@@ -1,0 +1,2682 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Format_DateTime_TZ_DST_safe</name>
+        <label>Format DateTime (TZ/DST-safe)</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>DFJ_TimeFormatter</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Which_Related_Record_Do_We_Have</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>marketUnitKey</name>
+            <value>
+                <elementReference>CampaignMember.Market_Unit__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>value</name>
+            <value>
+                <elementReference>CampaignMember.Campaign.Start__c</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>DFJ_TimeFormatter</nameSegment>
+        <outputParameters>
+            <assignToReference>txtStartDateTime</assignToReference>
+            <name>formatted</name>
+        </outputParameters>
+        <outputParameters>
+            <assignToReference>PatternUsed</assignToReference>
+            <name>patternUsed</name>
+        </outputParameters>
+        <outputParameters>
+            <assignToReference>txtStartTime</assignToReference>
+            <name>timeOnly</name>
+        </outputParameters>
+        <outputParameters>
+            <assignToReference>TimeZoneUsed</assignToReference>
+            <name>timeZoneUsed</name>
+        </outputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Email</name>
+        <label>Send Email</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Should_We_Send_an_SMS_Reminder</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>FromAddress</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>composeEmailContent</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>EmailSubject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <stringValue>{!EmailBody}</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useLineBreaks</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <elementReference>RecipientId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <apiVersion>64.0</apiVersion>
+    <assignments>
+        <name>Assign_0_Day_Send_Out_Media</name>
+        <label>Assign 0 Day Send-Out Media</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>IsSendEmail</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>IsSendSms</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Populate_0_Days_Email_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_10_Days_Send_Out_Media</name>
+        <label>Assign 10 Days Send-Out Media</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>IsSendEmail</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>IsSendSms</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Populate_10_Days_Email_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_1_Day_Send_Out_Media</name>
+        <label>Assign 1 Day Send-Out Media</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>IsSendEmail</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>IsSendSms</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Populate_1_Day_Email_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_28_Days_Send_Out_Media</name>
+        <label>Assign 28 Days Send-Out Media</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>IsSendEmail</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>IsSendSms</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Populate_28_Days_Email_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_7_Days_Send_Out_Media</name>
+        <label>Assign 7 Days Send-Out Media</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>IsSendEmail</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>IsSendSms</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Populate_7_Days_Email_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Campaign_Member_to_Variable</name>
+        <label>Assign Campaign Member to Variable</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CampaignMember</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Campaign_Member</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>What_is_the_Host_Type</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Contact_Values</name>
+        <label>Assign Contact Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>RecipientId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CampaignMember.ContactId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Populate_Initial_Text_Variables</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Danish_Cancellation_URL</name>
+        <label>Assign Danish Cancellation URL</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CancellationUrl</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DanishCancellationUrl</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Which_Reminder_Should_We_Send</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Danish_Values</name>
+        <label>Assign Danish Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>EmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DanishEmailBody</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DanishSmsBody</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>EmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DanishEmailSubject</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>FromAddress</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>foredrag@dinfamiliejurist.dk</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>TEMP_SETTING_IsSendEmail_TO_FALSE</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Irish_Cancellation_URL</name>
+        <label>Assign Irish Cancellation URL</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CancellationUrl</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>IrishCancellationUrl</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Which_Reminder_Should_We_Send</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Temporarily sets &quot;IsSendSms&quot; to False, as we do not have an Irish Number atm.</description>
+        <name>Assign_Irish_Values</name>
+        <label>Assign Irish Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>EmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>EnglishEmailBody</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>EnglishSmsBody</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>EmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>EnglishEmailSubject</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>FromAddress</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>lectures@hereslaw.ie</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>IsSendSms</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>TEMP_SETTING_IsSendEmail_TO_FALSE</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Lead_Values</name>
+        <label>Assign Lead Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>RecipientId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CampaignMember.LeadId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Populate_Initial_Text_Variables</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Swedish_Cancellation_URL</name>
+        <label>Assign Swedish Cancellation URL</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CancellationUrl</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SwedishCancellationUrl</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Which_Reminder_Should_We_Send</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Swedish_Values</name>
+        <label>Assign Swedish Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>EmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SwedishEmailBody</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SwedishSmsBody</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>EmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SwedishEmailSubject</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>FromAddress</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>foredrag@dinfamiljejurist.se</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>TEMP_SETTING_IsSendEmail_TO_FALSE</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_0_Days_Email_Values</name>
+        <label>Populate 0 Days Email Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>DanishEmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailBody0DaysDanish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SwedishEmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailBody0DaysSwedish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>EnglishEmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailBody0DaysEnglish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>DanishEmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailSubject0DaysDanish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SwedishEmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailSubject0DaysSwedish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>EnglishEmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailSubject0DaysEnglish</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Populate_0_Days_SMS_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_0_Days_SMS_Values</name>
+        <label>Populate 0 Days SMS Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>DanishSmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptSmsReminder0DaysDanish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SwedishSmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptSmsReminder0DaySwedish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>EnglishSmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptSmsReminder0DayEnglish</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>What_is_the_Market_Unit</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_10_Days_Email_Values</name>
+        <label>Populate 10 Days Email Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>DanishEmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailBody10DaysDanish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SwedishEmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailBody10DaysSwedish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>EnglishEmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailBody10DaysEnglish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>DanishEmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailSubject10DaysDanish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SwedishEmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailSubject10DaysSwedish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>EnglishEmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailSubject10DaysEnglish</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Populate_10_Days_SMS_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_10_Days_SMS_Values</name>
+        <label>Populate 10 Days SMS Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>DanishSmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptSmsReminder10DaysDanish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SwedishSmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptSmsReminder10DaysSwedish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>EnglishSmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptSmsReminder10DaysEnglish</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>What_is_the_Market_Unit</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_1_Day_Email_Values</name>
+        <label>Populate 1 Day Email Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>DanishEmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailBody1DayDanish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SwedishEmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailBody1DaySwedish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>EnglishEmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailBody1DayEnglish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>DanishEmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailSubject1DayDanish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SwedishEmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailSubject1DaySwedish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>EnglishEmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailSubject1DayEnglish</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Populate_1_Day_SMS_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_1_Day_SMS_Values</name>
+        <label>Populate 1 Day SMS Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>DanishSmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptSmsReminder1DayDanish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SwedishSmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptSmsReminder1DaySwedish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>EnglishSmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptSmsReminder1DayEnglish</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>What_is_the_Market_Unit</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_28_Days_Email_Values</name>
+        <label>Populate 28 Days Email Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>DanishEmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailBody28DaysDanish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SwedishEmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailBody28DaysSwedish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>EnglishEmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailBody28DaysEnglish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>DanishEmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailSubject28DaysDanish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SwedishEmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailSubject28DaysSwedish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>EnglishEmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailSubject28DaysEnglish</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>What_is_the_Market_Unit</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_7_Days_Email_Values</name>
+        <label>Populate 7 Days Email Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>DanishEmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailBody7DaysDanish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SwedishEmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailBody7DaysSwedish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>EnglishEmailBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailBody7DaysEnglish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>DanishEmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailSubject7DaysDanish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SwedishEmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailSubject7DaysSwedish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>EnglishEmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptEmailSubject7DaysEnglish</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>What_is_the_Market_Unit</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_Flow_Fault_Message</name>
+        <label>Populate Custom Error with Flow Fault Message</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_Invalid_Market_Unit</name>
+        <label>Populate Custom Error with Invalid Market Unit</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Invalid or Missing Market Unit &quot;{!CampaignMember.Market_Unit__c}&quot;</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_Invalid_Related_Record</name>
+        <label>Populate Custom Error with Invalid Related Record</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Invalid or Missing Related Record (Lead ID: {!CampaignMember.LeadId} // Contact ID: {!CampaignMember.ContactId})</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Initial_Text_Variables</name>
+        <label>Populate Initial Text Variables</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>Address</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptAddress</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>DanishCancellationUrl</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>https://afmeld.dinfamiliejurist.dk/</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SwedishCancellationUrl</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>https://avboka.dinfamiljejurist.se/</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>IrishCancellationUrl</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>https://cancel.hereslaw.ie/</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Which_Cancellation_URL_Should_We_Use</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_SMS_Variable</name>
+        <label>Populate SMS Variable</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>Sms.Record_ID__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>RecipientId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Sms.Direction__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Outgoing</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Sms.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Pending</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Sms.Message__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SmsBody</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Sms.To_Number__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmPhoneFormatted</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Sms.Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Automated</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Sms.Market_Unit__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CampaignMember.Campaign.Market_Unit__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Sms.Send_From__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Alphanumeric Sender ID</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_SMS</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>TEMP_SETTING_IsSendEmail_TO_FALSE</name>
+        <label>TEMP SETTING IsSendEmail TO FALSE</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>IsSendEmail</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Should_We_Send_an_Email_Reminder</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Should_We_Send_an_Email_Reminder</name>
+        <label>Should We Send an Email Reminder?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Should_We_Send_an_SMS_Reminder</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Send_Email_Reminder</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsSendEmail</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Email</targetReference>
+            </connector>
+            <label>Send Email Reminder</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Should_We_Send_an_SMS_Reminder</name>
+        <label>Should We Send an SMS Reminder?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Send_SMS_Reminder</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsSendSms</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_SMS_Variable</targetReference>
+            </connector>
+            <label>Send SMS Reminder</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>What_is_the_Host_Type</name>
+        <label>What is the Host Type?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Anything_but_Association</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMember.Campaign.Account__r.Host_Type__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Association</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Format_DateTime_TZ_DST_safe</targetReference>
+            </connector>
+            <label>Anything but Association</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>What_is_the_Market_Unit</name>
+        <label>What is the Market Unit?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Invalid_Market_Unit</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Danish_Market_Unit</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMember.Campaign.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>DFJ_DK</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Danish_Values</targetReference>
+            </connector>
+            <label>Danish Market Unit</label>
+        </rules>
+        <rules>
+            <name>Swedish_Market_Unit</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMember.Campaign.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>FA_SE</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Swedish_Values</targetReference>
+            </connector>
+            <label>Swedish Market Unit</label>
+        </rules>
+        <rules>
+            <name>Irish_Market_Unit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMember.Campaign.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ireland</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Irish_Values</targetReference>
+            </connector>
+            <label>Irish Market Unit</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Which_Cancellation_URL_Should_We_Use</name>
+        <label>Which Cancellation URL Should We Use?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Populate_Custom_Error_with_Invalid_Market_Unit</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Set_Danish_Cancellation_URL</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMember.Campaign.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>DFJ_DK</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Danish_Cancellation_URL</targetReference>
+            </connector>
+            <label>Set Danish Cancellation URL</label>
+        </rules>
+        <rules>
+            <name>Set_Swedish_Cancellation_URL</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMember.Campaign.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>FA_SE</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Swedish_Cancellation_URL</targetReference>
+            </connector>
+            <label>Set Swedish Cancellation URL</label>
+        </rules>
+        <rules>
+            <name>Set_Irish_Cancellation_URL</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMember.Campaign.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ireland</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Irish_Cancellation_URL</targetReference>
+            </connector>
+            <label>Set Irish Cancellation URL</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Which_Related_Record_Do_We_Have</name>
+        <label>Which Related Record Do We Have?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Populate_Custom_Error_with_Invalid_Related_Record</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Got_Related_Contact</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMember.ContactId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Contact_Values</targetReference>
+            </connector>
+            <label>Got Related Contact</label>
+        </rules>
+        <rules>
+            <name>Got_Related_Lead</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMember.LeadId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Lead_Values</targetReference>
+            </connector>
+            <label>Got Related Lead</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Which_Reminder_Should_We_Send</name>
+        <label>Which Reminder Should We Send?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>X28_Days_Until_Start</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>frmDaysUntilStart</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>28.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Send28DayReminder</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_28_Days_Send_Out_Media</targetReference>
+            </connector>
+            <label>28 Days Until Start</label>
+        </rules>
+        <rules>
+            <name>X10_Days_Until_Start</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>frmDaysUntilStart</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>10.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Send10DayReminder</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_10_Days_Send_Out_Media</targetReference>
+            </connector>
+            <label>10 Days Until Start</label>
+        </rules>
+        <rules>
+            <name>X7_Days_Until_Start</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>frmDaysUntilStart</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>7.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Send7DayReminder</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_7_Days_Send_Out_Media</targetReference>
+            </connector>
+            <label>7 Days Until Start</label>
+        </rules>
+        <rules>
+            <name>X1_Days_Until_Start</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>frmDaysUntilStart</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>1.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Send1DayReminder</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_1_Day_Send_Out_Media</targetReference>
+            </connector>
+            <label>1 Days Until Start</label>
+        </rules>
+        <rules>
+            <name>X0_Days_Until_Start</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>frmDaysUntilStart</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Send0DayReminder</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_0_Day_Send_Out_Media</targetReference>
+            </connector>
+            <label>0 Days Until Start</label>
+        </rules>
+    </decisions>
+    <description>Fixed non-gsm values</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>frmDaysUntilStart</name>
+        <dataType>Number</dataType>
+        <expression>{!CampaignMember.Campaign.StartDate} - {!$Flow.CurrentDate}</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>frmPhoneFormatted</name>
+        <dataType>String</dataType>
+        <expression>SUBSTITUTE({!CampaignMember.Phone_Formatted__c}, &quot;+&quot;, &quot;&quot;)</expression>
+    </formulas>
+    <interviewLabel>STF - Campaign Member: Lecture Reminder Sendouts {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>AL - Campaign Member: Lecture Reminder Sendouts</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_SMS</name>
+        <label>Create SMS</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <inputReference>Sms</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Campaign_Member</name>
+        <label>Get Campaign Member</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Campaign_Member_to_Variable</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>inputCampaignMemberId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Campaign_Member</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+    <subflows>
+        <name>AL_Send_Error_Email_from_Input_Values</name>
+        <label>AL - Send Error Email from Input Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Invalid_Market_Unit</targetReference>
+        </connector>
+        <flowName>AL_Send_Error_Email_from_Input_Values</flowName>
+        <inputAssignments>
+            <name>inputCustomError</name>
+            <value>
+                <elementReference>CustomError</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputFlowName</name>
+            <value>
+                <stringValue>STF - Campaign Member: Lecture Reminder Sendouts</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputRecordId</name>
+            <value>
+                <elementReference>CampaignMember.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <textTemplates>
+        <name>ptAddress</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!CampaignMember.Host_Address_Street__c}, {!CampaignMember.Host_Address_Zip_Code__c} {!CampaignMember.Host_Address_City__c}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailBody0DaysDanish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;html&gt;
+  &lt;body style=&quot;font-family: Arial, sans-serif; color: #333; font-size: 15px; line-height: 1.6;&quot;&gt;
+    &lt;table width=&quot;100%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;max-width:600px; margin:0 auto;&quot;&gt;
+      &lt;tr&gt;
+        &lt;td align=&quot;center&quot; style=&quot;padding:20px;&quot;&gt;
+          &lt;img src=&quot;https://www.dinfamiliejurist.dk/wp-content/uploads/2023/01/danish_logo-1.png&quot; alt=&quot;Din Familiejurist&quot; width=&quot;200&quot; style=&quot;max-width:200px; height:auto;&quot;&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td style=&quot;padding:20px; background:#fff; border:1px solid #ddd; border-radius:12px;&quot;&gt;
+          &lt;h2 style=&quot;color:#2c3e50; margin-top:0;&quot;&gt;Foredrag om arv &amp;amp; testamente inkl. gratis middag&lt;/h2&gt;
+
+          &lt;p&gt;Jeg glæder mig til at se dig senere og byde på gratis middag – kokken er i fuld gang med at forberede din ret.&lt;/p&gt;
+
+          &lt;p&gt;
+            Husk du er tilmeldt foredrag om, hvordan du bedst sikrer dig og din familie gennem arv og testamente
+            &lt;strong&gt;{!txtStartTime}.&lt;/strong&gt;.
+          &lt;/p&gt;
+
+          &lt;p&gt;Vi ses på &lt;strong&gt;{!CampaignMember.Venue__c}&lt;/strong&gt;, &lt;strong&gt;{!Address}&lt;/strong&gt;.&lt;/p&gt;
+
+          &lt;p&gt;
+            &lt;strong&gt;Antal billetter:&lt;/strong&gt; {!CampaignMember.Remaining_Tickets__c}&lt;br&gt;
+            &lt;strong&gt;Billetnummer:&lt;/strong&gt; {!CampaignMember.External_ID__c}
+          &lt;/p&gt;
+
+          &lt;p&gt;I døren skal du blot sige dit navn, så finder jeg din billet.&lt;/p&gt;
+
+          &lt;hr style=&quot;border:none; border-top:1px solid #ddd; margin:20px 0;&quot;&gt;
+
+          &lt;p style=&quot;color:#c0392b; font-weight:bold;&quot;&gt;VIGTIGT:&lt;/p&gt;
+          &lt;p&gt;&lt;strong&gt;Ved udeblivelse vil du blive opkrævet et gebyr på 150,00 kr. per deltager, da kokken tilbereder mad til dig/jer.&lt;/strong&gt;&lt;/p&gt;
+
+          &lt;p&gt;Jeg ser frem til at se dig!&lt;/p&gt;
+
+          &lt;p&gt;
+            Med venlig hilsen,&lt;br&gt;
+            &lt;strong&gt;{!CampaignMember.Lecturer_Name__c}&lt;/strong&gt; fra Din Familiejurist
+          &lt;/p&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailBody0DaysEnglish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;html&gt;
+  &lt;body style=&quot;font-family: Arial, sans-serif; color: #333; font-size: 15px; line-height: 1.6;&quot;&gt;
+    &lt;table width=&quot;100%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;max-width:600px; margin:0 auto;&quot;&gt;
+      &lt;tr&gt;
+        &lt;td align=&quot;center&quot; style=&quot;padding:20px;&quot;&gt;
+          &lt;img src=&quot;https://hereslaw.ie/wp-content/uploads/2025/09/Heres_Law_Logo.png&quot; alt=&quot;Heres Law&quot; width=&quot;200&quot; style=&quot;max-width:200px; height:auto;&quot;&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td style=&quot;padding:20px; background:#fff; border:1px solid #ddd; border-radius:12px;&quot;&gt;
+          &lt;h2 style=&quot;color:#2c3e50; margin-top:0;&quot;&gt;Lecture on inheritance &amp;amp; wills incl. free dinner&lt;/h2&gt;
+
+          &lt;p&gt;We look forward to seeing you later and treating you to dinner — the chef is already preparing your meal.&lt;/p&gt;
+
+          &lt;p&gt;
+            Remember, you’re registered for the lecture on how to best secure yourself and your family through inheritance and wills on
+            &lt;strong&gt;{!txtStartTime}&lt;/strong&gt;.
+          &lt;/p&gt;
+
+          &lt;p&gt;We’ll see you at &lt;strong&gt;{!CampaignMember.Venue__c}&lt;/strong&gt;, &lt;strong&gt;{!Address}&lt;/strong&gt;.&lt;/p&gt;
+
+          &lt;p&gt;
+            &lt;strong&gt;Number of tickets:&lt;/strong&gt; {!CampaignMember.Remaining_Tickets__c}&lt;br&gt;
+            &lt;strong&gt;Ticket number:&lt;/strong&gt; {!CampaignMember.External_ID__c}
+          &lt;/p&gt;
+
+          &lt;p&gt;At the entrance, simply say your name and we’ll find your ticket.&lt;/p&gt;
+
+          &lt;hr style=&quot;border:none; border-top:1px solid #ddd; margin:20px 0;&quot;&gt;
+
+          &lt;p style=&quot;color:#c0392b; font-weight:bold;&quot;&gt;IMPORTANT:&lt;/p&gt;
+          &lt;p&gt;&lt;strong&gt;If you do not show up, a fee of DKK 150 per participant will be charged, as the chef will have prepared food for you.&lt;/strong&gt;&lt;/p&gt;
+
+          &lt;p&gt;We look forward to seeing you!&lt;/p&gt;
+
+          &lt;p&gt;
+            Kind regards,&lt;br&gt;
+            &lt;strong&gt;{!CampaignMember.Lecturer_Name__c}&lt;/strong&gt;&lt;br&gt;
+            Heres Law
+          &lt;/p&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailBody0DaysSwedish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;html&gt;
+  &lt;body style=&quot;font-family: Arial, sans-serif; color: #333; font-size: 15px; line-height: 1.6;&quot;&gt;
+    &lt;table width=&quot;100%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;max-width:600px; margin:0 auto;&quot;&gt;
+      &lt;tr&gt;
+        &lt;td align=&quot;center&quot; style=&quot;padding:20px;&quot;&gt;
+          &lt;img src=&quot;https://www.dinfamiliejurist.dk/wp-content/uploads/2023/01/dfj-se-logo.png&quot; alt=&quot;Din Familjejurist&quot; width=&quot;200&quot; style=&quot;max-width:200px; height:auto;&quot;&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td style=&quot;padding:20px; background:#fff; border:1px solid #ddd; border-radius:12px;&quot;&gt;
+          &lt;h2 style=&quot;color:#2c3e50; margin-top:0;&quot;&gt;Påminnelse: Föreläsning om arv &amp;amp; testamente ikväll&lt;/h2&gt;
+
+          &lt;p&gt;Jag ser fram emot att träffa dig ikväll för föreläsningen om arv &amp;amp; testamente.&lt;/p&gt;
+
+          &lt;p&gt;
+            &lt;strong&gt;Föreläsningen börjar:&lt;/strong&gt; {!txtStartTime}&lt;br&gt;
+            &lt;strong&gt;Plats:&lt;/strong&gt; {!CampaignMember.Venue__c}&lt;br&gt;
+            &lt;strong&gt;Adress:&lt;/strong&gt; {!Address}
+          &lt;/p&gt;
+
+          &lt;p&gt;&lt;strong&gt;Om föreläsningen:&lt;/strong&gt;&lt;br&gt;
+            Du får insikt i hur du bäst skyddar dig och din familj genom arv och testamente och förstå hur lagstiftningen påverkar just din familiesituation.
+          &lt;/p&gt;
+
+          &lt;p&gt;
+            &lt;strong&gt;Antal biljetter:&lt;/strong&gt; {!CampaignMember.Remaining_Tickets__c}&lt;br&gt;
+            &lt;strong&gt;Biljettnummer:&lt;/strong&gt; {!CampaignMember.External_ID__c}
+          &lt;/p&gt;
+
+          &lt;hr style=&quot;border:none; border-top:1px solid #ddd; margin:20px 0;&quot;&gt;
+
+          &lt;p style=&quot;color:#c0392b; font-weight:bold;&quot;&gt;VIKTIG:&lt;/p&gt;
+          &lt;p&gt;&lt;strong&gt;Vid utebliven närvaro utan avanmälan kommer en avgift på 100,00 kr per deltagare att debiteras.&lt;/strong&gt;&lt;/p&gt;
+
+          &lt;p&gt;Jag ser fram emot att se dig!&lt;/p&gt;
+
+          &lt;p&gt;
+            Med vänlig hälsning,&lt;br&gt;
+            Din Familjejurist
+          &lt;/p&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailBody10DaysDanish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;html&gt;
+  &lt;body style=&quot;font-family: Arial, sans-serif; color: #333; font-size: 15px; line-height: 1.6;&quot;&gt;
+    &lt;table width=&quot;100%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;max-width:600px; margin:0 auto;&quot;&gt;
+      &lt;tr&gt;
+        &lt;td align=&quot;center&quot; style=&quot;padding:20px;&quot;&gt;
+          &lt;img src=&quot;https://www.dinfamiliejurist.dk/wp-content/uploads/2023/01/danish_logo-1.png&quot; 
+     alt=&quot;Din Familiejurist&quot; width=&quot;200&quot; style=&quot;max-width:200px; height:auto;&quot;&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td style=&quot;padding:20px; background:#fff; border:1px solid #ddd; border-radius:12px;&quot;&gt;
+          &lt;h2 style=&quot;color:#2c3e50; margin-top:0;&quot;&gt;Om arv og testamente inkl. middag&lt;/h2&gt;
+          &lt;p&gt;Jeg glæder mig til et hyggeligt foredrag, om hvordan du bedst sikrer dig og din familie gennem arv og testamente inkl. gratis middag, 
+             &lt;strong&gt;{!txtStartDateTime}&lt;/strong&gt; 
+             på &lt;strong&gt;{!CampaignMember.Venue__c}&lt;/strong&gt;.
+          &lt;/p&gt;
+          &lt;p&gt;
+            &lt;strong&gt;Antal billetter:&lt;/strong&gt; {!CampaignMember.Remaining_Tickets__c}&lt;br&gt;
+            &lt;strong&gt;Billetnummer:&lt;/strong&gt; {!CampaignMember.External_ID__c}
+          &lt;/p&gt;
+          &lt;p&gt;Vi ses på &lt;strong&gt;{!Address}&lt;/strong&gt;.&lt;/p&gt;
+          &lt;p&gt;I døren skal du blot sige dit navn, så finder jeg din billet.&lt;/p&gt;
+          &lt;hr style=&quot;border:none; border-top:1px solid #ddd; margin:20px 0;&quot;&gt;
+          &lt;p style=&quot;color:#c0392b; font-weight:bold;&quot;&gt;VIGTIGT: Nu er chancen for at melde afbud.&lt;/p&gt;
+          &lt;p&gt;Hvis dine planer ændrer sig, og du ikke kan deltage, bedes du venligst afmelde dig i dag via 
+             &lt;a href=&quot;{!CancellationUrl}&quot; style=&quot;color:#c0392b; text-decoration:underline;&quot;&gt;dette link&lt;/a&gt;. 
+             Dette giver os mulighed for at tilbyde din plads til andre på ventelisten.
+          &lt;/p&gt;
+          &lt;p&gt;&lt;strong&gt;Ved udeblivelse uden afbud, vil du blive opkrævet et gebyr på 150,00 kr. per deltager, da kokken tilbereder mad til dig/jer.&lt;/strong&gt;&lt;/p&gt;
+          &lt;p&gt;Jeg ser frem til at se dig!&lt;/p&gt;
+          &lt;p&gt;Med venlig hilsen,&lt;br&gt;
+             &lt;strong&gt;{!CampaignMember.Lecturer_Name__c}&lt;/strong&gt;&lt;br&gt;
+             Din Familiejurist
+          &lt;/p&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailBody10DaysEnglish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;html&gt;
+
+ &lt;body style=&quot;font-family: Arial, sans-serif; color: #333; font-size: 15px; line-height: 1.6;&quot;&gt;
+
+  &lt;table width=&quot;100%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;max-width:600px; margin:0 auto;&quot;&gt;
+
+   &lt;tr&gt;
+
+    &lt;td align=&quot;center&quot; style=&quot;padding:20px;&quot;&gt;
+
+     &lt;img src=&quot;https://hereslaw.ie/wp-content/uploads/2025/09/Heres_Law_Logo.png&quot; alt=&quot;Heres Law&quot; width=&quot;200&quot; style=&quot;max-width:200px; height:auto;&quot;&gt;
+
+    &lt;/td&gt;
+
+   &lt;/tr&gt;
+
+   &lt;tr&gt;
+
+    &lt;td style=&quot;padding:20px; background:#fff; border:1px solid #ddd; border-radius:12px;&quot;&gt;
+
+     &lt;h2 style=&quot;color:#2c3e50; margin-top:0;&quot;&gt;About inheritance and wills incl. dinner&lt;/h2&gt;
+
+     &lt;p&gt;
+
+      I look forward to a pleasant lecture on how you can best secure yourself and your family through inheritance and wills, including a free dinner,
+
+      on &lt;strong&gt;{!txtStartDateTime}&lt;/strong&gt; at &lt;strong&gt;{!CampaignMember.Venue__c}&lt;/strong&gt;.
+
+     &lt;/p&gt;
+
+
+
+     &lt;p&gt;
+
+      &lt;strong&gt;Number of tickets:&lt;/strong&gt; {!CampaignMember.Remaining_Tickets__c}&lt;br&gt;
+
+      &lt;strong&gt;Ticket number:&lt;/strong&gt; {!CampaignMember.External_ID__c}
+
+     &lt;/p&gt;
+
+
+
+     &lt;p&gt;We’ll see each other at &lt;strong&gt;{!CampaignMember.Venue__c}&lt;/strong&gt;, &lt;strong&gt;{!Address}&lt;/strong&gt;.&lt;/p&gt;
+
+     &lt;p&gt;At the entrance, simply say your name, and I will find your ticket.&lt;/p&gt;
+
+
+
+     &lt;hr style=&quot;border:none; border-top:1px solid #ddd; margin:20px 0;&quot;&gt;
+
+
+
+     &lt;p style=&quot;color:#c0392b; font-weight:bold;&quot;&gt;IMPORTANT: Now is the chance to cancel.&lt;/p&gt;
+
+     &lt;p&gt;
+
+      If your plans change and you cannot attend, please cancel today via
+
+      &lt;a href=&quot;{!CancellationUrl}&quot; style=&quot;color:#c0392b; text-decoration:underline;&quot;&gt;this cancellation link&lt;/a&gt;.
+
+      This allows us to offer your seat to others on the waiting list.
+
+     &lt;/p&gt;
+
+     &lt;p&gt;&lt;strong&gt;If you do not show up without cancelling, you will be charged a fee of DKK 150 per participant, as the chef will have prepared food for you.&lt;/strong&gt;&lt;/p&gt;
+
+
+
+     &lt;p&gt;I look forward to seeing you!&lt;/p&gt;
+
+
+
+     &lt;p&gt;
+
+      Kind regards,&lt;br&gt;
+
+      &lt;strong&gt;{!CampaignMember.Lecturer_Name__c}&lt;/strong&gt;&lt;br&gt;
+
+      Heres Law
+
+     &lt;/p&gt;
+
+    &lt;/td&gt;
+
+   &lt;/tr&gt;
+
+  &lt;/table&gt;
+
+ &lt;/body&gt;
+
+&lt;/html&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailBody10DaysSwedish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;html&gt;
+  &lt;body style=&quot;font-family: Arial, sans-serif; color: #333; font-size: 15px; line-height: 1.6;&quot;&gt;
+    &lt;table width=&quot;100%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;max-width:600px; margin:0 auto;&quot;&gt;
+      &lt;tr&gt;
+        &lt;td align=&quot;center&quot; style=&quot;padding:20px;&quot;&gt;
+          &lt;img src=&quot;https://www.dinfamiliejurist.dk/wp-content/uploads/2023/01/dfj-se-logo.png&quot; alt=&quot;Din Familjejurist&quot; width=&quot;200&quot; style=&quot;max-width:200px; height:auto;&quot;&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td style=&quot;padding:20px; background:#fff; border:1px solid #ddd; border-radius:12px;&quot;&gt;
+          &lt;h2 style=&quot;color:#2c3e50; margin-top:0;&quot;&gt;Sista chansen att avboka&lt;/h2&gt;
+          &lt;p&gt;
+            Jag ser fram emot att se dig till föreläsningen om arv och testamente
+            &lt;strong&gt;{!txtStartDateTime}&lt;/strong&gt;
+            på &lt;strong&gt;{!CampaignMember.Venue__c}&lt;/strong&gt;.
+          &lt;/p&gt;
+
+          &lt;p&gt;
+            &lt;strong&gt;Antal biljetter:&lt;/strong&gt; {!CampaignMember.Remaining_Tickets__c}&lt;br&gt;
+            &lt;strong&gt;Biljettnummer:&lt;/strong&gt; {!CampaignMember.External_ID__c}
+          &lt;/p&gt;
+
+          &lt;p&gt;Vi ses på &lt;strong&gt;{!Address}&lt;/strong&gt;.&lt;/p&gt;
+
+          &lt;hr style=&quot;border:none; border-top:1px solid #ddd; margin:20px 0;&quot;&gt;
+
+          &lt;p style=&quot;color:#c0392b; font-weight:bold;&quot;&gt;VIKTIGT: Detta är sista chansen att avboka&lt;/p&gt;
+          &lt;p&gt;
+            Om dina planer ändras och du inte kan delta, vänligen avanmäl dig så snabbt som möjligt via
+            &lt;a href=&quot;{!CancellationUrl}&quot; style=&quot;color:#c0392b; text-decoration:underline;&quot;&gt;denna länk&lt;/a&gt;.
+            Detta ger oss möjlighet att erbjuda din plats till andra på väntelistan.
+          &lt;/p&gt;
+          &lt;p&gt;&lt;strong&gt;Vid utebliven närvaro utan avanmälan kommer en avgift på 100,00 kr per deltagare att debiteras.&lt;/strong&gt;&lt;/p&gt;
+
+          &lt;p&gt;Jag ser fram emot att se dig!&lt;/p&gt;
+
+          &lt;p&gt;
+            Med vänlig hälsning,&lt;br&gt;
+            &lt;strong&gt;{!CampaignMember.Lecturer_Name__c}&lt;/strong&gt;&lt;br&gt;
+            Din Familjejurist
+          &lt;/p&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailBody1DayDanish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;html&gt;
+  &lt;body style=&quot;font-family: Arial, sans-serif; color: #333; font-size: 15px; line-height: 1.6;&quot;&gt;
+    &lt;table width=&quot;100%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;max-width:600px; margin:0 auto;&quot;&gt;
+      &lt;tr&gt;
+        &lt;td align=&quot;center&quot; style=&quot;padding:20px;&quot;&gt;
+          &lt;img src=&quot;https://www.dinfamiliejurist.dk/wp-content/uploads/2023/01/danish_logo-1.png&quot; alt=&quot;Din Familiejurist&quot; width=&quot;200&quot; style=&quot;max-width:200px; height:auto;&quot;&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td style=&quot;padding:20px; background:#fff; border:1px solid #ddd; border-radius:12px;&quot;&gt;
+          &lt;h2 style=&quot;color:#2c3e50; margin-top:0;&quot;&gt;Foredrag om arv &amp;amp; testamente inkl. gratis middag&lt;/h2&gt;
+
+          &lt;p&gt;
+            Jeg glæder mig til at se dig i morgen til foredrag om arv &amp;amp; testamente inkl. gratis middag
+            kl. &lt;strong&gt;{!txtStartTime}&lt;/strong&gt;.
+          &lt;/p&gt;
+
+          &lt;p&gt;
+            &lt;strong&gt;Antal billetter:&lt;/strong&gt; {!CampaignMember.Remaining_Tickets__c}&lt;br&gt;
+            &lt;strong&gt;Billetnummer:&lt;/strong&gt; {!CampaignMember.External_ID__c}
+          &lt;/p&gt;
+
+          &lt;p&gt;Vi ses på &lt;strong&gt;{!CampaignMember.Venue__c}&lt;/strong&gt;, &lt;strong&gt;{!Address}&lt;/strong&gt;.&lt;/p&gt;
+          &lt;p&gt;I døren skal du blot sige dit navn, så finder jeg din billet.&lt;/p&gt;
+
+          &lt;hr style=&quot;border:none; border-top:1px solid #ddd; margin:20px 0;&quot;&gt;
+
+          &lt;p style=&quot;color:#c0392b; font-weight:bold;&quot;&gt;VIGTIGT:&lt;/p&gt;
+          &lt;p&gt;&lt;strong&gt;Ved udeblivelse vil du blive opkrævet et gebyr på 150,00 kr. per deltager, da kokken tilbereder mad til dig/jer.&lt;/strong&gt;&lt;/p&gt;
+
+          &lt;p&gt;Jeg ser frem til at se dig!&lt;/p&gt;
+
+          &lt;p&gt;
+            Med venlig hilsen,&lt;br&gt;
+            &lt;strong&gt;{!CampaignMember.Lecturer_Name__c}&lt;/strong&gt; fra Din Familiejurist
+          &lt;/p&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailBody1DayEnglish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;html&gt;
+  &lt;body style=&quot;font-family: Arial, sans-serif; color: #333; font-size: 15px; line-height: 1.6;&quot;&gt;
+    &lt;table width=&quot;100%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;max-width:600px; margin:0 auto;&quot;&gt;
+      &lt;tr&gt;
+        &lt;td align=&quot;center&quot; style=&quot;padding:20px;&quot;&gt;
+          &lt;img src=&quot;https://hereslaw.ie/wp-content/uploads/2025/09/Heres_Law_Logo.png&quot; alt=&quot;Heres Law&quot; width=&quot;200&quot; style=&quot;max-width:200px; height:auto;&quot;&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td style=&quot;padding:20px; background:#fff; border:1px solid #ddd; border-radius:12px;&quot;&gt;
+          &lt;h2 style=&quot;color:#2c3e50; margin-top:0;&quot;&gt;Lecture on inheritance &amp;amp; wills incl. free dinner&lt;/h2&gt;
+
+          &lt;p&gt;
+            I look forward to seeing you tomorrow for the lecture on inheritance &amp;amp; wills incl. free dinner
+            at &lt;strong&gt;{!txtStartTime}&lt;/strong&gt;.
+          &lt;/p&gt;
+
+          &lt;p&gt;
+            &lt;strong&gt;Number of tickets:&lt;/strong&gt; {!CampaignMember.Remaining_Tickets__c}&lt;br&gt;
+            &lt;strong&gt;Ticket number:&lt;/strong&gt; {!CampaignMember.External_ID__c}
+          &lt;/p&gt;
+
+          &lt;p&gt;We&apos;ll see you at &lt;strong&gt;{!CampaignMember.Venue__c}&lt;/strong&gt;, &lt;strong&gt;{!Address}&lt;/strong&gt;.&lt;/p&gt;
+          &lt;p&gt;At the entrance, simply say your name and we&apos;ll find your ticket.&lt;/p&gt;
+
+          &lt;hr style=&quot;border:none; border-top:1px solid #ddd; margin:20px 0;&quot;&gt;
+
+          &lt;p style=&quot;color:#c0392b; font-weight:bold;&quot;&gt;IMPORTANT:&lt;/p&gt;
+          &lt;p&gt;&lt;strong&gt;If you do not show up, a fee of DKK 150 per participant will be charged, as the chef will have prepared food for you.&lt;/strong&gt;&lt;/p&gt;
+
+          &lt;p&gt;We look forward to seeing you!&lt;/p&gt;
+
+          &lt;p&gt;
+            Kind regards,&lt;br&gt;
+            &lt;strong&gt;{!CampaignMember.Lecturer_Name__c}&lt;/strong&gt;&lt;br&gt;
+            Heres Law
+          &lt;/p&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailBody1DaySwedish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;html&gt;
+  &lt;body style=&quot;font-family: Arial, sans-serif; color: #333; font-size: 15px; line-height: 1.6;&quot;&gt;
+    &lt;table width=&quot;100%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;max-width:600px; margin:0 auto;&quot;&gt;
+      &lt;tr&gt;
+        &lt;td align=&quot;center&quot; style=&quot;padding:20px;&quot;&gt;
+          &lt;img src=&quot;https://www.dinfamiliejurist.dk/wp-content/uploads/2023/01/dfj-se-logo.png&quot; alt=&quot;Din Familjejurist&quot; width=&quot;200&quot; style=&quot;max-width:200px; height:auto;&quot;&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td style=&quot;padding:20px; background:#fff; border:1px solid #ddd; border-radius:12px;&quot;&gt;
+          &lt;h2 style=&quot;color:#2c3e50; margin-top:0;&quot;&gt;Påminnelse: Föreläsning om arv &amp;amp; testamente&lt;/h2&gt;
+
+          &lt;p&gt;Jag ser fram emot att träffa dig imorgon för föreläsningen om arv &amp;amp; testamente.&lt;/p&gt;
+
+          &lt;p&gt;
+            &lt;strong&gt;Föreläsningen börjar:&lt;/strong&gt; {!txtStartTime}&lt;br&gt;
+            &lt;strong&gt;Plats:&lt;/strong&gt; {!CampaignMember.Venue__c}&lt;br&gt;
+            &lt;strong&gt;Adress:&lt;/strong&gt; {!Address}
+          &lt;/p&gt;
+
+          &lt;p&gt;
+            &lt;strong&gt;Antal biljetter:&lt;/strong&gt; {!CampaignMember.Remaining_Tickets__c}&lt;br&gt;
+            &lt;strong&gt;Biljettnummer:&lt;/strong&gt; {!CampaignMember.External_ID__c}
+          &lt;/p&gt;
+
+          &lt;p&gt;&lt;strong&gt;Om föreläsningen:&lt;/strong&gt;&lt;br&gt;
+            Du får insikt i hur du bäst skyddar dig och din familj genom arv och testamente och förstå hur lagstiftningen påverkar just din familiesituation.
+          &lt;/p&gt;
+
+          &lt;hr style=&quot;border:none; border-top:1px solid #ddd; margin:20px 0;&quot;&gt;
+
+          &lt;p style=&quot;color:#c0392b; font-weight:bold;&quot;&gt;VIKTIG:&lt;/p&gt;
+          &lt;p&gt;&lt;strong&gt;Vid utebliven närvaro utan avanmälan kommer en avgift på 100,00 kr per deltagare att debiteras.&lt;/strong&gt;&lt;/p&gt;
+
+          &lt;p&gt;Jag ser fram emot att se dig!&lt;/p&gt;
+
+          &lt;p&gt;
+            Med vänlig hälsning,&lt;br&gt;
+            Din Familjejurist
+          &lt;/p&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailBody28DaysDanish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;html&gt;
+  &lt;body style=&quot;font-family: Arial, sans-serif; color: #333; font-size: 15px; line-height: 1.6;&quot;&gt;
+    &lt;table width=&quot;100%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;max-width:600px; margin:0 auto;&quot;&gt;
+      &lt;tr&gt;
+        &lt;td align=&quot;center&quot; style=&quot;padding:20px;&quot;&gt;
+          &lt;img src=&quot;https://www.dinfamiliejurist.dk/wp-content/uploads/2023/01/danish_logo-1.png&quot; alt=&quot;Din Familiejurist&quot; width=&quot;200&quot; style=&quot;max-width:200px; height:auto;&quot;&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td style=&quot;padding:20px; background:#fff; border:1px solid #ddd; border-radius:12px;&quot;&gt;
+          &lt;h2 style=&quot;color:#2c3e50; margin-top:0;&quot;&gt;Om arv og testamente inkl. middag&lt;/h2&gt;
+
+          &lt;p&gt;
+            Jeg glæder mig til at byde på middag og se dig til foredrag om, hvordan du bedst sikrer dig og din familie gennem arv og testamente
+            &lt;strong&gt;{!txtStartDateTime}&lt;/strong&gt; på
+            &lt;strong&gt;{!CampaignMember.Venue__c}&lt;/strong&gt;.
+          &lt;/p&gt;
+
+          &lt;p&gt;
+            &lt;strong&gt;Antal billetter:&lt;/strong&gt; {!CampaignMember.Remaining_Tickets__c}&lt;br&gt;
+            &lt;strong&gt;Billetnummer:&lt;/strong&gt; {!CampaignMember.External_ID__c}
+          &lt;/p&gt;
+
+          &lt;p&gt;Vi ses på &lt;strong&gt;{!CampaignMember.Venue__c}&lt;/strong&gt;, &lt;strong&gt;{!Address}&lt;/strong&gt;.&lt;/p&gt;
+          &lt;p&gt;I døren skal du blot sige dit navn, så finder jeg din billet.&lt;/p&gt;
+
+          &lt;hr style=&quot;border:none; border-top:1px solid #ddd; margin:20px 0;&quot;&gt;
+
+          &lt;p style=&quot;color:#c0392b; font-weight:bold;&quot;&gt;VIGTIGT: Afmelding hvis du bliver forhindret&lt;/p&gt;
+          &lt;p&gt;
+            Hvis dine planer ændrer sig, og du ikke kan deltage, bedes du venligst afmelde dig hurtigst muligt via
+            &lt;a href=&quot;{!CancellationUrl}&quot; style=&quot;color:#c0392b; text-decoration:underline;&quot;&gt;dette link til afmelding&lt;/a&gt;.
+            Dette giver os mulighed for at tilbyde din plads til andre på ventelisten.
+          &lt;/p&gt;
+          &lt;p&gt;&lt;strong&gt;Ved udeblivelse uden afbud, vil du blive opkrævet et gebyr på 150,00 kr. per deltager, da kokken tilbereder mad til dig/jer.&lt;/strong&gt;&lt;/p&gt;
+
+          &lt;p&gt;Jeg glæder mig til at se dig!&lt;/p&gt;
+
+          &lt;p&gt;
+            Med venlig hilsen,&lt;br&gt;
+            &lt;strong&gt;{!CampaignMember.Lecturer_Name__c}&lt;/strong&gt;&lt;br&gt;
+            Din Familiejurist
+          &lt;/p&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailBody28DaysEnglish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;html&gt;
+  &lt;body style=&quot;font-family: Arial, sans-serif; color: #333; font-size: 15px; line-height: 1.6;&quot;&gt;
+    &lt;table width=&quot;100%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;max-width:600px; margin:0 auto;&quot;&gt;
+      &lt;tr&gt;
+        &lt;td align=&quot;center&quot; style=&quot;padding:20px;&quot;&gt;
+          &lt;img src=&quot;https://hereslaw.ie/wp-content/uploads/2025/09/Heres_Law_Logo.png&quot; alt=&quot;Heres Law&quot; width=&quot;200&quot; style=&quot;max-width:200px; height:auto;&quot;&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td style=&quot;padding:20px; background:#fff; border:1px solid #ddd; border-radius:12px;&quot;&gt;
+          &lt;h2 style=&quot;color:#2c3e50; margin-top:0;&quot;&gt;About inheritance and wills incl. dinner&lt;/h2&gt;
+
+          &lt;p&gt;
+            I look forward to inviting you to dinner and seeing you at the lecture on how you can best secure yourself and your family through inheritance and wills on
+            &lt;strong&gt;{!txtStartDateTime}&lt;/strong&gt; at
+            &lt;strong&gt;{!CampaignMember.Venue__c}&lt;/strong&gt;.
+          &lt;/p&gt;
+
+          &lt;p&gt;
+            &lt;strong&gt;Number of tickets:&lt;/strong&gt; {!CampaignMember.Remaining_Tickets__c}&lt;br&gt;
+            &lt;strong&gt;Ticket number:&lt;/strong&gt; {!CampaignMember.External_ID__c}
+          &lt;/p&gt;
+
+          &lt;p&gt;We’ll see each other at &lt;strong&gt;{!CampaignMember.Venue__c}&lt;/strong&gt;, &lt;strong&gt;{!Address}&lt;/strong&gt;.&lt;/p&gt;
+          &lt;p&gt;At the entrance, simply say your name, and I will find your ticket.&lt;/p&gt;
+
+          &lt;hr style=&quot;border:none; border-top:1px solid #ddd; margin:20px 0;&quot;&gt;
+
+          &lt;p style=&quot;color:#c0392b; font-weight:bold;&quot;&gt;IMPORTANT: Cancellation if you are unable to attend&lt;/p&gt;
+          &lt;p&gt;
+            If your plans change and you cannot participate, please cancel as soon as possible via
+            &lt;a href=&quot;{!CancellationUrl}&quot; style=&quot;color:#c0392b; text-decoration:underline;&quot;&gt;this cancellation link&lt;/a&gt;.
+            This allows us to offer your seat to others on the waiting list.
+          &lt;/p&gt;
+          &lt;p&gt;&lt;strong&gt;If you do not show up without cancelling, you will be charged a fee of DKK 150 per participant, as the chef will have prepared food for you.&lt;/strong&gt;&lt;/p&gt;
+
+          &lt;p&gt;I look forward to seeing you!&lt;/p&gt;
+
+          &lt;p&gt;
+            Kind regards,&lt;br&gt;
+            &lt;strong&gt;{!CampaignMember.Lecturer_Name__c}&lt;/strong&gt;&lt;br&gt;
+            Heres Law
+          &lt;/p&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailBody28DaysSwedish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;html&gt;
+  &lt;body style=&quot;font-family: Arial, sans-serif; color: #333; font-size: 15px; line-height: 1.6;&quot;&gt;
+    &lt;table width=&quot;100%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;max-width:600px; margin:0 auto;&quot;&gt;
+      &lt;tr&gt;
+        &lt;td align=&quot;center&quot; style=&quot;padding:20px;&quot;&gt;
+          &lt;img src=&quot;https://www.dinfamiliejurist.dk/wp-content/uploads/2023/01/dfj-se-logo.png&quot; alt=&quot;Din Familjejurist&quot; width=&quot;200&quot; style=&quot;max-width:200px; height:auto;&quot;&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td style=&quot;padding:20px; background:#fff; border:1px solid #ddd; border-radius:12px;&quot;&gt;
+          &lt;h2 style=&quot;color:#2c3e50; margin-top:0;&quot;&gt;Påminnelse: Du är anmäld till föreläsningen&lt;/h2&gt;
+
+          &lt;p&gt;
+            Påminnelse: Du är anmäld till föreläsningen om arv och testamente
+            &lt;strong&gt;{!txtStartDateTime}&lt;/strong&gt; på
+            &lt;strong&gt;{!CampaignMember.Venue__c}&lt;/strong&gt;!
+          &lt;/p&gt;
+
+          &lt;p&gt;
+            &lt;strong&gt;Antal biljetter:&lt;/strong&gt; {!CampaignMember.Remaining_Tickets__c}&lt;br&gt;
+            &lt;strong&gt;Biljettnummer:&lt;/strong&gt; {!CampaignMember.External_ID__c}
+          &lt;/p&gt;
+
+          &lt;p&gt;Adress: &lt;strong&gt;{!CampaignMember.Venue__c}&lt;/strong&gt;, &lt;strong&gt;{!Address}&lt;/strong&gt;.&lt;/p&gt;
+
+          &lt;hr style=&quot;border:none; border-top:1px solid #ddd; margin:20px 0;&quot;&gt;
+
+          &lt;p style=&quot;color:#c0392b; font-weight:bold;&quot;&gt;VIKTIGT: Avanmälan om du blir förhindrad&lt;/p&gt;
+          &lt;p&gt;
+            Om dina planer ändras och du inte kan delta, vänligen avanmäl dig så snabbt som möjligt via
+            &lt;a href=&quot;{!CancellationUrl}&quot; style=&quot;color:#c0392b; text-decoration:underline;&quot;&gt;denna länk till avanmälan&lt;/a&gt;.
+            Detta ger oss möjlighet att erbjuda din plats till andra på väntelistan.
+          &lt;/p&gt;
+          &lt;p&gt;&lt;strong&gt;Vid utebliven närvaro utan avanmälan kommer en avgift på 100,00 kr per deltagare att debiteras.&lt;/strong&gt;&lt;/p&gt;
+
+          &lt;p&gt;Jag ser fram emot att se dig!&lt;/p&gt;
+
+          &lt;p&gt;
+            Med vänlig hälsning,&lt;br&gt;
+            &lt;strong&gt;{!CampaignMember.Lecturer_Name__c}&lt;/strong&gt;&lt;br&gt;
+            Din Familjejurist
+          &lt;/p&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailBody7DaysDanish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;html&gt;
+  &lt;body style=&quot;font-family: Arial, sans-serif; color: #333; font-size: 15px; line-height: 1.6;&quot;&gt;
+    &lt;table width=&quot;100%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;max-width:600px; margin:0 auto;&quot;&gt;
+      &lt;tr&gt;
+        &lt;td align=&quot;center&quot; style=&quot;padding:20px;&quot;&gt;
+          &lt;img src=&quot;https://www.dinfamiliejurist.dk/wp-content/uploads/2023/01/danish_logo-1.png&quot; alt=&quot;Din Familiejurist&quot; width=&quot;200&quot; style=&quot;max-width:200px; height:auto;&quot;&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td style=&quot;padding:20px; background:#fff; border:1px solid #ddd; border-radius:12px;&quot;&gt;
+          &lt;h2 style=&quot;color:#2c3e50; margin-top:0;&quot;&gt;Om arv og testamente inkl. gratis middag&lt;/h2&gt;
+
+          &lt;p&gt;
+            Du er tilmeldt foredrag næste uge om, hvordan du bedst sikrer dig og din familie gennem arv og testamente
+            &lt;strong&gt;{!txtStartDateTime}&lt;/strong&gt; på
+            &lt;strong&gt;{!CampaignMember.Venue__c}&lt;/strong&gt;.
+          &lt;/p&gt;
+
+          &lt;p&gt;
+            &lt;strong&gt;Antal billetter:&lt;/strong&gt; {!CampaignMember.Remaining_Tickets__c}&lt;br&gt;
+            &lt;strong&gt;Billetnummer:&lt;/strong&gt; {!CampaignMember.External_ID__c}
+          &lt;/p&gt;
+
+          &lt;p&gt;Vi ses på &lt;strong&gt;{!CampaignMember.Venue__c}&lt;/strong&gt;, &lt;strong&gt;{!Address}&lt;/strong&gt;.&lt;/p&gt;
+          &lt;p&gt;I døren skal du blot sige dit navn, så finder jeg din billet.&lt;/p&gt;
+
+          &lt;hr style=&quot;border:none; border-top:1px solid #ddd; margin:20px 0;&quot;&gt;
+
+          &lt;p style=&quot;color:#c0392b; font-weight:bold;&quot;&gt;VIGTIGT&lt;/p&gt;
+          &lt;p&gt;&lt;strong&gt;Ved udeblivelse uden afbud vil du blive opkrævet et gebyr på 150,00 kr. per deltager, da kokken tilbereder mad til dig/jer.&lt;/strong&gt;&lt;/p&gt;
+
+          &lt;p&gt;Jeg glæder mig til at se dig!&lt;/p&gt;
+
+          &lt;p&gt;
+            Med venlig hilsen,&lt;br&gt;
+            &lt;strong&gt;{!CampaignMember.Lecturer_Name__c}&lt;/strong&gt; fra Din Familiejurist
+          &lt;/p&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailBody7DaysEnglish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;html&gt;
+  &lt;body style=&quot;font-family: Arial, sans-serif; color: #333; font-size: 15px; line-height: 1.6;&quot;&gt;
+    &lt;table width=&quot;100%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;max-width:600px; margin:0 auto;&quot;&gt;
+      &lt;tr&gt;
+        &lt;td align=&quot;center&quot; style=&quot;padding:20px;&quot;&gt;
+          &lt;img src=&quot;https://hereslaw.ie/wp-content/uploads/2025/09/Heres_Law_Logo.png&quot; alt=&quot;Heres Law&quot; width=&quot;200&quot; style=&quot;max-width:200px; height:auto;&quot;&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td style=&quot;padding:20px; background:#fff; border:1px solid #ddd; border-radius:12px;&quot;&gt;
+          &lt;h2 style=&quot;color:#2c3e50; margin-top:0;&quot;&gt;About inheritance and wills incl. free dinner&lt;/h2&gt;
+
+          &lt;p&gt;
+            You&apos;re registered for next week&apos;s lecture on how to best secure yourself and your family through inheritance and wills on
+            &lt;strong&gt;{!txtStartDateTime}&lt;/strong&gt; at
+            &lt;strong&gt;{!CampaignMember.Venue__c}&lt;/strong&gt;.
+          &lt;/p&gt;
+
+          &lt;p&gt;
+            &lt;strong&gt;Number of tickets:&lt;/strong&gt; {!CampaignMember.Remaining_Tickets__c}&lt;br&gt;
+            &lt;strong&gt;Ticket number:&lt;/strong&gt; {!CampaignMember.External_ID__c}
+          &lt;/p&gt;
+
+          &lt;p&gt;We&apos;ll see you at &lt;strong&gt;{!CampaignMember.Venue__c}&lt;/strong&gt;, &lt;strong&gt;{!Address}&lt;/strong&gt;.&lt;/p&gt;
+          &lt;p&gt;At the entrance, simply say your name and we&apos;ll find your ticket.&lt;/p&gt;
+
+          &lt;hr style=&quot;border:none; border-top:1px solid #ddd; margin:20px 0;&quot;&gt;
+
+          &lt;p style=&quot;color:#c0392b; font-weight:bold;&quot;&gt;IMPORTANT&lt;/p&gt;
+          &lt;p&gt;
+            If your plans change and you cannot attend, please cancel as soon as possible via
+            &lt;a href=&quot;{!CancellationUrl}&quot; style=&quot;color:#c0392b; text-decoration:underline;&quot;&gt;this cancellation link&lt;/a&gt;.
+            This lets us offer your seat to someone on the waiting list.
+          &lt;/p&gt;
+          &lt;p&gt;&lt;strong&gt;If you do not show up without cancelling, a fee of DKK 150 per participant will be charged, as the chef will have prepared food for you.&lt;/strong&gt;&lt;/p&gt;
+
+          &lt;p&gt;We look forward to seeing you!&lt;/p&gt;
+
+          &lt;p&gt;
+            Kind regards,&lt;br&gt;
+            &lt;strong&gt;{!CampaignMember.Lecturer_Name__c}&lt;/strong&gt;&lt;br&gt;
+            Heres Law
+          &lt;/p&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailBody7DaysSwedish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;html&gt;
+  &lt;body style=&quot;font-family: Arial, sans-serif; color: #333; font-size: 15px; line-height: 1.6;&quot;&gt;
+    &lt;table width=&quot;100%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;max-width:600px; margin:0 auto;&quot;&gt;
+      &lt;tr&gt;
+        &lt;td align=&quot;center&quot; style=&quot;padding:20px;&quot;&gt;
+          &lt;img src=&quot;https://www.dinfamiliejurist.dk/wp-content/uploads/2023/01/dfj-se-logo.png&quot; alt=&quot;Din Familjejurist&quot; width=&quot;200&quot; style=&quot;max-width:200px; height:auto;&quot;&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td style=&quot;padding:20px; background:#fff; border:1px solid #ddd; border-radius:12px;&quot;&gt;
+          &lt;h2 style=&quot;color:#2c3e50; margin-top:0;&quot;&gt;Påminnelse: Föreläsning om arv och testamente&lt;/h2&gt;
+
+          &lt;p&gt;
+            Föreläsningen äger rum &lt;strong&gt;{!txtStartDateTime}&lt;/strong&gt; på
+            &lt;strong&gt;{!CampaignMember.Venue__c}&lt;/strong&gt;.
+          &lt;/p&gt;
+
+          &lt;p&gt;&lt;strong&gt;Om föreläsningen:&lt;/strong&gt;&lt;br&gt;
+            Du får insikt i hur du bäst skyddar dig och din familj genom arv och testamente och förstå hur lagstiftningen påverkar just din familiesituation.
+          &lt;/p&gt;
+
+          &lt;p&gt;Adress: &lt;strong&gt;{!CampaignMember.Venue__c}&lt;/strong&gt;, &lt;strong&gt;{!Address}&lt;/strong&gt;.&lt;/p&gt;
+
+          &lt;p&gt;
+            &lt;strong&gt;Antal biljetter:&lt;/strong&gt; {!CampaignMember.Remaining_Tickets__c}&lt;br&gt;
+            &lt;strong&gt;Biljettnummer:&lt;/strong&gt; {!CampaignMember.External_ID__c}
+          &lt;/p&gt;
+
+          &lt;hr style=&quot;border:none; border-top:1px solid #ddd; margin:20px 0;&quot;&gt;
+
+          &lt;p style=&quot;color:#c0392b; font-weight:bold;&quot;&gt;VIKTIGT: Avanmälan om du blir förhindrad&lt;/p&gt;
+          &lt;p&gt;
+            Om dina planer ändras och du inte kan delta, vänligen avanmäl dig så snabbt som möjligt via
+            &lt;a href=&quot;{!CancellationUrl}&quot; style=&quot;color:#c0392b; text-decoration:underline;&quot;&gt;denna länk till avanmälan&lt;/a&gt;.
+            Detta ger oss möjlighet att erbjuda din plats till andra på väntelistan.
+          &lt;/p&gt;
+          &lt;p&gt;&lt;strong&gt;Vid utebliven närvaro utan avanmälan kommer en avgift på 100,00 kr per deltagare att debiteras.&lt;/strong&gt;&lt;/p&gt;
+
+          &lt;p&gt;Jag ser fram emot att se dig!&lt;/p&gt;
+
+          &lt;p&gt;
+            Med vänlig hälsning,&lt;br&gt;
+            Din Familjejurist
+          &lt;/p&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailSubject0DaysDanish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Husk foredrag i dag kl. {!txtStartTime}!</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailSubject0DaysEnglish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Remember lecture today at {!txtStartTime}!</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailSubject0DaysSwedish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Föreläsningen idag kl. {!txtStartTime}!</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailSubject10DaysDanish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Husk foredrag om 10 dage</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailSubject10DaysEnglish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Remember the lecture in 10 days</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailSubject10DaysSwedish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Kom ihåg föredraget om 10 dagar</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailSubject1DayDanish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Husk foredrag i morgen!</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailSubject1DayEnglish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Remember lecture tomorrow!</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailSubject1DaySwedish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Kom ihåg föreläsningen imorgon!</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailSubject28DaysDanish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Husk foredrag {!CampaignMember.Campaign.StartDate}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailSubject28DaysEnglish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Remember lecture {!CampaignMember.Campaign.StartDate}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailSubject28DaysSwedish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Kom ihåg föredrag {!CampaignMember.Campaign.StartDate}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailSubject7DaysDanish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Husk foredrag og middag næste uge</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailSubject7DaysEnglish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Remember lecture and dinner next week</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptEmailSubject7DaysSwedish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Föreläsning om arv och testamente om en vecka</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSmsReminder0DayEnglish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hi {!CampaignMember.FirstName},
+We look forward to seeing you later and treating you to a free dinner - the chef is already preparing your meal.
+You&apos;re registered for our talk on how to best protect you and your family through inheritance &amp; wills.
+Doors open at {!txtStartTime} at {!CampaignMember.Venue__c}
+Address: {!Address}
+
+Number of tickets: 
+Ticket number: 
+At the entrance, simply say your name and we&apos;ll find your ticket.
+
+IMPORTANT:
+If you do not attend, a fee of €20 per participant will be charged, as the chef will have prepared food for you.
+We look forward to seeing you!
+
+Kind regards, 
+Heres Law</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSmsReminder0DaysDanish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Kære {!CampaignMember.FirstName},
+
+Jeg glæder mig til at se dig til foredrag om arv og testamente og byde på gratis middag - kokken er i fuld gang med at forberede din ret. Dørene åbner {!txtStartTime}, på {!CampaignMember.Venue__c}!
+Adressen er: {!Address}.
+
+Ved udeblivelse vil du blive opkrævet et gebyr på 150,00 kr. per deltager, da kokken tilbereder mad til dig/jer.
+
+Jeg glæder mig til at se dig!
+
+Med venlig hilsen
+Din Familiejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSmsReminder0DaySwedish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hej {!CampaignMember.FirstName},
+Jag ser fram emot att träffa dig ikväll till föreläsningen om arv &amp; testamente.
+Föreläsningen börjar {!txtStartTime}
+Plats: {!CampaignMember.Venue__c}
+Adress: {!Address}
+
+Om föreläsningen:
+Du får insikt i hur du bäst skyddar dig och din familj genom arv och testamente och förstå hur lagstiftningen påverkar just din familiesituation.
+
+Antal biljetter: {!CampaignMember.Remaining_Tickets__c}
+Biljettnummer: {!CampaignMember.External_ID__c}
+
+VIKTIG:
+Vid utebliven närvaro utan avanmälan kommer en avgift på 100,00 kr per deltagare att debiteras.
+Jag ser fram emot att se dig!
+
+Med vänlig hälsning, Din Familjejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSmsReminder10DaysDanish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Kære {!CampaignMember.FirstName},
+
+Du er tilmeldt foredrag om arv &amp; testamente inkl. gratis middag næste uge, {!txtStartDateTime}, på {!CampaignMember.Venue__c}!
+
+Adressen er: {!Address}.
+
+Ved udeblivelse vil du blive opkrævet et gebyr på 150,00 kr. per deltager, da kokken tilbereder mad til dig/jer. I dag er sidste chance for at afmelde. Det kan gøres via dette link: {!CancellationUrl}.
+
+Jeg glæder mig til at se dig!</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSmsReminder10DaysEnglish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hi {!CampaignMember.FirstName},
+
+You&apos;re registered for the lecture on inheritance &amp; wills, including a free dinner, next week on {!txtStartDateTime} at {!CampaignMember.Venue__c}!
+
+The address is: {!Address}.
+
+If you do not attend without cancelling, you will be charged a fee of €20 per participant, as the chef will have prepared food for you. Today is the last chance to cancel. You can do so via this link: {!CancellationUrl}.
+
+I look forward to seeing you!</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSmsReminder10DaysSwedish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hej {!CampaignMember.FirstName},
+
+Du är anmäld till föreläsningen den {!txtStartDateTime}, på {!CampaignMember.Venue__c}!
+Adressen är: {!Address}.
+
+Har du blivit förhindrad att delta? Meddela oss i god tid - du kan avanmäla dig här: {!CancellationUrl}
+
+Vid utebliven närvaro utan avanmälan kommer en avgift på 100,00 kr per deltagare att debiteras.
+
+Jag ser fram emot att se dig!
+
+Med vänlig hälsning
+Din Familjejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSmsReminder1DayDanish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Kære {!CampaignMember.FirstName},
+
+Du er tilmeldt foredrag om arv &amp; testamente inkl. gratis middag i morgen, {!txtStartDateTime}, på {!CampaignMember.Venue__c}!
+Adressen er: {!Address}.
+Jeg glæder mig til at se dig!
+
+Med venlig hilsen
+Din Familiejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSmsReminder1DayEnglish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hi {!CampaignMember.FirstName},
+
+You&apos;re registered for tomorrow&apos;s lecture on inheritance &amp; wills, including a free dinner, on {!txtStartDateTime} at {!CampaignMember.Venue__c}.
+Address: {!Address}
+
+We look forward to seeing you!
+Kind regards, 
+Heres Law</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSmsReminder1DaySwedish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hej {!CampaignMember.FirstName},
+
+Jag ser fram emot att träffa dig imorgon till föreläsningen om arv &amp; testamente. 
+Föreläsningen börjar {!txtStartDateTime} på {!CampaignMember.Venue__c}.
+Adressen är: {!Address}.
+
+Vi ser fram emot att se dig!
+
+Med vänlig hälsning, 
+Din Familjejurist</text>
+    </textTemplates>
+    <variables>
+        <name>Address</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>CampaignMember</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>CampaignMember</objectType>
+    </variables>
+    <variables>
+        <name>CancellationUrl</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>CustomError</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>DanishCancellationUrl</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>DanishEmailBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>DanishEmailSubject</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>DanishSmsBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>EmailBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>EmailSubject</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>EnglishEmailBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>EnglishEmailSubject</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>EnglishSmsBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FromAddress</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>inputCampaignMemberId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>IrishCancellationUrl</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>IsSendEmail</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>IsSendSms</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>IsSmsSubflowSuccess</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>PatternUsed</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>RecipientId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Send0DayReminder</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>Send10DayReminder</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>Send1DayReminder</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>Send28DayReminder</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>Send7DayReminder</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>Sms</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>SMS__c</objectType>
+    </variables>
+    <variables>
+        <name>SmsBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SwedishCancellationUrl</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SwedishEmailBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SwedishEmailSubject</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SwedishSmsBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>TimeZoneUsed</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>txtStartDateTime</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>txtStartTime</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

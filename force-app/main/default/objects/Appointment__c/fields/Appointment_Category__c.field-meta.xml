@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Appointment_Category__c</fullName>
+    <description>Used to differentiate and assign categories to Appointment Type. Mainly used for reporting</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  CONTAINS(
+    LOWER(Subject__c), &quot;calendly&quot;
+  ),
+  &quot;Booked via Calendly&quot;,
+  IF(
+    CONTAINS(
+      LOWER(Subject__c), &quot;call with&quot;
+    ),
+    &quot;Booked by Advisor&quot;,
+    &quot;Other&quot;
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Appointment Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

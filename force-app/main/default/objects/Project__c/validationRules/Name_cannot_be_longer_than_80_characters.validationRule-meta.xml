@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Name_cannot_be_longer_than_80_characters</fullName>
+    <active>true</active>
+    <errorConditionFormula>LEN(Name) &gt; 80</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>Please shorten the name to maximum 80 characters</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enforce_Not_Hired_Reason_Requirement</fullName>
+    <active>true</active>
+    <description>Prevents users from setting the Not_Hired_Reason__c field unless Application_Status__c is set to &quot;Candidate Not Hired&quot;. This ensures that a reason is only provided when a candidate is explicitly marked as not hired.</description>
+    <errorConditionFormula>AND(
+    NOT(ISBLANK(TEXT(Not_Hired_Reason__c))), 
+    TEXT(Application_Status__c) &lt;&gt; &quot;Candidate Not Hired&quot;
+)</errorConditionFormula>
+    <errorDisplayField>Not_Hired_Reason__c</errorDisplayField>
+    <errorMessage>You cannot set a &quot;Not Hired Reason&quot; unless the Application Status is &quot;Candidate Not Hired&quot;.
+Please update the Application Status before specifying a reason.</errorMessage>
+</ValidationRule>

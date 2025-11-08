@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>blankt_arveafkald_picklist__c</fullName>
+    <externalId>false</externalId>
+    <label>Blankt arveafkald</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>blankt_arveafkald_ja</fullName>
+                <default>false</default>
+                <label>Ja, blankt arveafkald</label>
+            </value>
+            <value>
+                <fullName>blankt_arveafkald_nej</fullName>
+                <default>false</default>
+                <label>Nej, arv skal gå videre til livsarvinger</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

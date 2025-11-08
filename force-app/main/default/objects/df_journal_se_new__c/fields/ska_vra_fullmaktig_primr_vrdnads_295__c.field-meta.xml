@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ska_vra_fullmaktig_primr_vrdnads_295__c</fullName>
+    <defaultValue>false</defaultValue>
+    <externalId>false</externalId>
+    <label>Ska vära fullmaktig d9200</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

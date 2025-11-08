@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>DFJ_CPRServiceFlowInvoker</name>
+        <label>DFJ_CPRServiceFlowInvoker</label>
+        <locationX>578</locationX>
+        <locationY>384</locationY>
+        <actionName>DFJ_CPRServiceFlowInvoker</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Did_CPR_Checker_Succeed</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>cprNumber</name>
+            <value>
+                <elementReference>ptCprNumber</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>DFJ_CPRServiceFlowInvoker</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Slack_Message_to_cpr_feed</name>
+        <label>Send Slack Message to cpr-feed</label>
+        <locationX>578</locationX>
+        <locationY>792</locationY>
+        <actionName>slackPostMessage</actionName>
+        <actionType>slackPostMessage</actionType>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>slackAppIdForToken</name>
+            <value>
+                <stringValue>A03269G3DNE</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackWorkspaceIdForToken</name>
+            <value>
+                <stringValue>TVAHYDPPH</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackConversationId</name>
+            <value>
+                <stringValue>C09BJ6TTQA1</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackMessage</name>
+            <value>
+                <elementReference>SlackMessage</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>slackPostMessage</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>63.0</apiVersion>
+    <assignments>
+        <name>Assign_Errored_CPR_Checker_Slack_message_to_Variable</name>
+        <label>Assign Errored CPR Checker Slack message to Variable</label>
+        <locationX>710</locationX>
+        <locationY>600</locationY>
+        <assignmentItems>
+            <assignToReference>SlackMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptSlackErrorMessage</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Slack_Message_to_cpr_feed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Successful_CPR_Checker_Slack_message_to_Variable</name>
+        <label>Assign Successful CPR Checker Slack message to Variable</label>
+        <locationX>446</locationX>
+        <locationY>600</locationY>
+        <assignmentItems>
+            <assignToReference>SlackMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptSlackSuccessMessage</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Slack_Message_to_cpr_feed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_Flow_Fault_Message</name>
+        <label>Populate Custom Error with Flow Fault Message</label>
+        <locationX>1238</locationX>
+        <locationY>492</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Did_CPR_Checker_Succeed</name>
+        <label>Did CPR Checker Succeed?</label>
+        <locationX>578</locationX>
+        <locationY>492</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Errored_CPR_Checker_Slack_message_to_Variable</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CPR_Checker_Succeeded</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>DFJ_CPRServiceFlowInvoker.statusCode</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>200</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Successful_CPR_Checker_Slack_message_to_Variable</targetReference>
+            </connector>
+            <label>CPR Checker Succeeded</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Person_Valid_for_CPR_Subscription</name>
+        <label>Is Person Valid for CPR Subscription?</label>
+        <locationX>1040</locationX>
+        <locationY>276</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Valid_Person</name>
+            <conditionLogic>(1 OR 2) AND 3 AND 4</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.person_hidden_person_1__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.person_hidden_person_2__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.person_medlem_dfj__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.journal_dk_new__r.Account__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>DFJ_CPRServiceFlowInvoker</targetReference>
+            </connector>
+            <label>Is Valid Person</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Was_Contact_Creation_Successful</name>
+        <label>Was Contact Creation Successful?</label>
+        <locationX>50</locationX>
+        <locationY>384</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Contact_Create_Successful</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsContactCreateSuccess</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Contact Create Successful</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>frmBirthday</name>
+        <dataType>Date</dataType>
+        <expression>DATE(
+    VALUE({!$Record.Year_of_Birth__c}),
+    VALUE({!$Record.Month_of_Birth__c}),
+    VALUE({!$Record.Day_of_Birth__c})
+)</expression>
+    </formulas>
+    <formulas>
+        <name>frmFirstName</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  ISBLANK({!$Record.person_fornavn__c}),
+  &quot;UNKNOWN FIRST NAME&quot;,
+  IF(
+    LEN({!$Record.person_fornavn__c}) &lt;= 40,
+    {!$Record.person_fornavn__c},
+    LEFT({!$Record.person_fornavn__c}, 37) &amp; &quot;...&quot;
+  )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>frmIsEmailValid</name>
+        <dataType>Boolean</dataType>
+        <expression>REGEX({!$Record.person_email__c}, &quot;^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*\\.[a-zA-Z]{2,4}$&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>frmLastName</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!$Record.person_efternavn__c}), &apos;UNKNOWN LAST NAME&apos;, {!$Record.person_efternavn__c})</expression>
+    </formulas>
+    <formulas>
+        <name>frmParent</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    {!$Record.person_hidden_barn_flles__c},
+    &quot;Child of Both Parents&quot;,
+    IF(
+        {!$Record.person_hidden_barn_p1__c},
+        &quot;Child of Person 1&quot;,
+        IF(
+            {!$Record.person_hidden_barn_p2__c},
+            &quot;Child of Person 2&quot;,
+            IF(
+                {!$Record.person_hidden_barn_single__c},
+                &quot;Child of Single Parent&quot;,
+                &quot;&quot;
+            )
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>frmPersonType</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    {!$Record.person_hidden_person_1__c},
+    &quot;Primary Person&quot;,
+    IF(
+        {!$Record.person_hidden_person_2__c},
+        &quot;Spouse / Partner&quot;,
+        IF(
+            {!$Record.person_hf_barn__c},
+            &quot;Child&quot;,
+            &quot;Unspecified&quot;
+        )
+    )
+)</expression>
+    </formulas>
+    <interviewLabel>RT - Person Journal DK 2.0: Account is Populated {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RT - Person Journal DK 2.0: Account is Populated</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>221</locationX>
+        <locationY>0</locationY>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>journal_dk_new__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Account__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>df_160_person__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <scheduledPaths>
+            <connector>
+                <targetReference>AL_Create_Contact_from_Input_Journal_DK_2_0_Person</targetReference>
+            </connector>
+            <pathType>AsyncAfterCommit</pathType>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>X2_Minutes_After</name>
+            <connector>
+                <targetReference>Is_Person_Valid_for_CPR_Subscription</targetReference>
+            </connector>
+            <label>2 Minutes After</label>
+            <offsetNumber>2</offsetNumber>
+            <offsetUnit>Minutes</offsetUnit>
+            <timeSource>RecordTriggerEvent</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>AL_Create_Contact_from_Input_Journal_DK_2_0_Person</name>
+        <label>AL - Create Contact from Input Journal DK 2.0 Person</label>
+        <locationX>50</locationX>
+        <locationY>276</locationY>
+        <connector>
+            <targetReference>Was_Contact_Creation_Successful</targetReference>
+        </connector>
+        <flowName>AL_Create_Contact_from_Input_Journal_DK_2_0_Person</flowName>
+        <inputAssignments>
+            <name>inputPerson</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>Contact</assignToReference>
+            <name>Contact</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>CustomError</assignToReference>
+            <name>CustomError</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>IsContactCreateSuccess</assignToReference>
+            <name>IsSuccess</name>
+        </outputAssignments>
+    </subflows>
+    <subflows>
+        <name>AL_Send_Error_Email_from_Input_Values</name>
+        <label>AL - Send Error Email from Input Values</label>
+        <locationX>1238</locationX>
+        <locationY>600</locationY>
+        <flowName>AL_Send_Error_Email_from_Input_Values</flowName>
+        <inputAssignments>
+            <name>inputCustomError</name>
+            <value>
+                <elementReference>CustomError</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputFlowName</name>
+            <value>
+                <stringValue>RT - Person Journal DK 2.0: Person is Created</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <textTemplates>
+        <name>ptCprCheckerError</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>CPR Checker Error Values:
+Status Code: {!DFJ_CPRServiceFlowInvoker.statusCode}
+Error Message: {!DFJ_CPRServiceFlowInvoker.errorMessage}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptCprNumber</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!$Record.Birthday__c}{!$Record.Last_4_Digits_of_CPR_Number__c}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSlackErrorMessage</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>*🚨 Automated CPR-Check Failed for New Subscriber 🚨*
+
+• *Name:* &lt;https://dfj.lightning.force.com/lightning/r/{!$Record.Id}/view|{!$Record.person_fornavn__c} {!$Record.person_efternavn__c}&gt;  
+• *Created By:* {!$Record.CreatedBy.FirstName} {!$Record.CreatedBy.LastName}
+
+*❌ Error Messages:*
+• *Custom Flow Error:* {!CustomError}
+• *API Status Code:* {!DFJ_CPRServiceFlowInvoker.statusCode}
+• *API Error Message:* {!DFJ_CPRServiceFlowInvoker.errorMessage}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSlackSuccessMessage</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>*✅ Automated CPR-Check Succeeded for New Subscriber ✅*
+
+*📋 Output Values:*  
+• *Name:* &lt;https://dfj.lightning.force.com/lightning/r/{!$Record.Id}/view|{!$Record.person_fornavn__c} {!$Record.person_efternavn__c}&gt;  
+• *Gender:* {!DFJ_CPRServiceFlowInvoker.gender}
+• *Address:* {!DFJ_CPRServiceFlowInvoker.address}
+• *Postal Code:* {!DFJ_CPRServiceFlowInvoker.postalCode}
+• *City:* {!DFJ_CPRServiceFlowInvoker.city}</text>
+    </textTemplates>
+    <variables>
+        <name>AccountId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>AssociatedPerson</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Associated_Person__c</objectType>
+    </variables>
+    <variables>
+        <name>Contact</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Contact</objectType>
+    </variables>
+    <variables>
+        <name>CustomError</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>IsContactCreateSuccess</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>LeadId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SlackMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

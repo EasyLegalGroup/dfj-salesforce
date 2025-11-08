@@ -1,0 +1,1027 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Assign_End_before_Start_to_Custom_Error</name>
+        <label>Assign End before Start to Custom Error</label>
+        <locationX>578</locationX>
+        <locationY>1598</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>You can&apos;t have Work End be before Work Start</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Error_Screen</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Step_s_Process_Instance_ID</name>
+        <label>Assign Step&apos;s Process Instance ID</label>
+        <locationX>611</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>processInstanceId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Process_Instance_Step.ProcessInstanceId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>targetObjectId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Process_Instance_Step.ProcessInstance.TargetObjectId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Time_Sheet</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Unknown_ID_to_Custom_Error</name>
+        <label>Assign Unknown ID to Custom Error</label>
+        <locationX>875</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Cannot Read Record ID: {!recordId}</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Work_Item_s_Process_Instance_ID</name>
+        <label>Assign Work Item&apos;s Process Instance ID</label>
+        <locationX>347</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>processInstanceId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Approval_Request.ProcessInstanceId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>targetObjectId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Approval_Request.ProcessInstance.TargetObjectId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Time_Sheet</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Count_Corrections</name>
+        <label>Count Corrections</label>
+        <locationX>611</locationX>
+        <locationY>758</locationY>
+        <assignmentItems>
+            <assignToReference>numTimeSheetCorrections</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>Get_Time_Sheet_Corrections</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Did_We_Find_a_Time_Sheet</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Did_not_Work</name>
+        <label>Populate &quot;Did not Work&quot;</label>
+        <locationX>314</locationX>
+        <locationY>1706</locationY>
+        <assignmentItems>
+            <assignToReference>correctionRecord.Did_not_work__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>boolDidNotWork</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Populate_Remaining_Time_Sheet_Correction_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Remaining_Time_Sheet_Correction_Values</name>
+        <label>Populate Remaining Time Sheet Correction Values</label>
+        <locationX>182</locationX>
+        <locationY>1898</locationY>
+        <assignmentItems>
+            <assignToReference>correctionRecord.Time_Sheet__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Time_Sheet.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>correctionRecord.Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>inputDate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>correctionRecord.Hours_in_Workday__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Time_Sheet.Default_Hours_in_Workday__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>correctionRecord.Process_Instance_ID__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>processInstanceId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Time_Sheet_Correction</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Work_Hours</name>
+        <label>Populate Work Hours</label>
+        <locationX>50</locationX>
+        <locationY>1706</locationY>
+        <assignmentItems>
+            <assignToReference>correctionRecord.Start_Time__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>plWorkStart</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>correctionRecord.End_Time__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>plWorkEnd</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Populate_Remaining_Time_Sheet_Correction_Values</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Did_Employee_Work</name>
+        <label>Did Employee Work?</label>
+        <locationX>182</locationX>
+        <locationY>1598</locationY>
+        <defaultConnector>
+            <targetReference>Populate_Did_not_Work</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Employee_Worked</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>boolDidNotWork</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_Work_Hours</targetReference>
+            </connector>
+            <label>Employee Worked</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Did_We_Find_a_Time_Sheet</name>
+        <label>Did We Find a Time Sheet?</label>
+        <locationX>611</locationX>
+        <locationY>866</locationY>
+        <defaultConnector>
+            <targetReference>Not_Relevant_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Got_Time_Sheet</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Time_Sheet</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Screen_1</targetReference>
+            </connector>
+            <label>Got Time Sheet</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Start_Before_End</name>
+        <label>Is Start Before End?</label>
+        <locationX>380</locationX>
+        <locationY>1490</locationY>
+        <defaultConnector>
+            <targetReference>Assign_End_before_Start_to_Custom_Error</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Start Not Before End</defaultConnectorLabel>
+        <rules>
+            <name>Start_is_before_End</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>frmWorkStart</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>frmWorkEnd</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Did_Employee_Work</targetReference>
+            </connector>
+            <label>Start is before End</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Process_Instance_Step_or_Process_Instance_Work_Item</name>
+        <label>Process Instance Step or Process Instance Work Item?</label>
+        <locationX>611</locationX>
+        <locationY>134</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Unknown_ID_to_Custom_Error</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Process_Instance_Work_Item</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>recordId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>04i</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Approval_Request</targetReference>
+            </connector>
+            <label>Process Instance Work Item</label>
+        </rules>
+        <rules>
+            <name>Process_Instance_Step</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>recordId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>04h</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Process_Instance_Step</targetReference>
+            </connector>
+            <label>Process Instance Step</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Was_Date_a_Week_Day</name>
+        <label>Was Date a Week Day?</label>
+        <locationX>380</locationX>
+        <locationY>1190</locationY>
+        <defaultConnector>
+            <targetReference>Screen_3_Weekday_Alert</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Weekend Day Selected</defaultConnectorLabel>
+        <rules>
+            <name>Date_was_a_Week_Day</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>frmWeekDay</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Sunday</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>frmWeekDay</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Saturday</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_Start_Before_End</targetReference>
+            </connector>
+            <label>Date was a Week Day</label>
+        </rules>
+    </decisions>
+    <description>This Screen Flow appears on the Approval Request page and allows the user to add Time Sheet Corrections (which is a child of Time Sheets) to the related Time Sheet, before approving it.</description>
+    <dynamicChoiceSets>
+        <name>pcsTimeInput</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Start_Time__c</picklistField>
+        <picklistObject>Time_Sheet_Correction__c</picklistObject>
+    </dynamicChoiceSets>
+    <environments>Default</environments>
+    <formulas>
+        <name>dateTimeWorkEnd</name>
+        <dataType>DateTime</dataType>
+        <expression>DATETIMEVALUE(&quot;1970-01-01 &quot; &amp; {!plWorkEnd} &amp; &quot;:00.000&quot;) - (1/24)</expression>
+    </formulas>
+    <formulas>
+        <name>dateTimeWorkStart</name>
+        <dataType>DateTime</dataType>
+        <expression>DATETIMEVALUE(&quot;1970-01-01 &quot; &amp; {!plWorkStart} &amp; &quot;:00.000&quot;) - (1/24)</expression>
+    </formulas>
+    <formulas>
+        <name>frmWeekDay</name>
+        <dataType>String</dataType>
+        <expression>CASE(
+  WEEKDAY({!inputDate}),
+  1, &quot;Sunday&quot;,
+  2, &quot;Monday&quot;,
+  3, &quot;Tuesday&quot;,
+  4, &quot;Wednesday&quot;,
+  5, &quot;Thursday&quot;,
+  6, &quot;Friday&quot;,
+  7, &quot;Saturday&quot;,
+  &quot;Error&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>frmWorkEnd</name>
+        <dataType>Number</dataType>
+        <expression>CASE(
+  {!plWorkEnd},
+  &quot;00:00&quot;, 0,
+  &quot;00:15&quot;, 15,
+  &quot;00:30&quot;, 30,
+  &quot;00:45&quot;, 45,
+  &quot;01:00&quot;, 60,
+  &quot;01:15&quot;, 75,
+  &quot;01:30&quot;, 90,
+  &quot;01:45&quot;, 105,
+  &quot;02:00&quot;, 120,
+  &quot;02:15&quot;, 135,
+  &quot;02:30&quot;, 150,
+  &quot;02:45&quot;, 165,
+  &quot;03:00&quot;, 180,
+  &quot;03:15&quot;, 195,
+  &quot;03:30&quot;, 210,
+  &quot;03:45&quot;, 225,
+  &quot;04:00&quot;, 240,
+  &quot;04:15&quot;, 255,
+  &quot;04:30&quot;, 270,
+  &quot;04:45&quot;, 285,
+  &quot;05:00&quot;, 300,
+  &quot;05:15&quot;, 315,
+  &quot;05:30&quot;, 330,
+  &quot;05:45&quot;, 345,
+  &quot;06:00&quot;, 360,
+  &quot;06:15&quot;, 375,
+  &quot;06:30&quot;, 390,
+  &quot;06:45&quot;, 405,
+  &quot;07:00&quot;, 420,
+  &quot;07:15&quot;, 435,
+  &quot;07:30&quot;, 450,
+  &quot;07:45&quot;, 465,
+  &quot;08:00&quot;, 480,
+  &quot;08:15&quot;, 495,
+  &quot;08:30&quot;, 510,
+  &quot;08:45&quot;, 525,
+  &quot;09:00&quot;, 540,
+  &quot;09:15&quot;, 555,
+  &quot;09:30&quot;, 570,
+  &quot;09:45&quot;, 585,
+  &quot;10:00&quot;, 600,
+  &quot;10:15&quot;, 615,
+  &quot;10:30&quot;, 630,
+  &quot;10:45&quot;, 645,
+  &quot;11:00&quot;, 660,
+  &quot;11:15&quot;, 675,
+  &quot;11:30&quot;, 690,
+  &quot;11:45&quot;, 705,
+  &quot;12:00&quot;, 720,
+  &quot;12:15&quot;, 735,
+  &quot;12:30&quot;, 750,
+  &quot;12:45&quot;, 765,
+  &quot;13:00&quot;, 780,
+  &quot;13:15&quot;, 795,
+  &quot;13:30&quot;, 810,
+  &quot;13:45&quot;, 825,
+  &quot;14:00&quot;, 840,
+  &quot;14:15&quot;, 855,
+  &quot;14:30&quot;, 870,
+  &quot;14:45&quot;, 885,
+  &quot;15:00&quot;, 900,
+  &quot;15:15&quot;, 915,
+  &quot;15:30&quot;, 930,
+  &quot;15:45&quot;, 945,
+  &quot;16:00&quot;, 960,
+  &quot;16:15&quot;, 975,
+  &quot;16:30&quot;, 990,
+  &quot;16:45&quot;, 1005,
+  &quot;17:00&quot;, 1020,
+  &quot;17:15&quot;, 1035,
+  &quot;17:30&quot;, 1050,
+  &quot;17:45&quot;, 1065,
+  &quot;18:00&quot;, 1080,
+  &quot;18:15&quot;, 1095,
+  &quot;18:30&quot;, 1110,
+  &quot;18:45&quot;, 1125,
+  &quot;19:00&quot;, 1140,
+  &quot;19:15&quot;, 1155,
+  &quot;19:30&quot;, 1170,
+  &quot;19:45&quot;, 1185,
+  &quot;20:00&quot;, 1200,
+  &quot;20:15&quot;, 1215,
+  &quot;20:30&quot;, 1230,
+  &quot;20:45&quot;, 1245,
+  &quot;21:00&quot;, 1260,
+  &quot;21:15&quot;, 1275,
+  &quot;21:30&quot;, 1290,
+  &quot;21:45&quot;, 1305,
+  &quot;22:00&quot;, 1320,
+  &quot;22:15&quot;, 1335,
+  &quot;22:30&quot;, 1350,
+  &quot;22:45&quot;, 1365,
+  &quot;23:00&quot;, 1380,
+  &quot;23:15&quot;, 1395,
+  &quot;23:30&quot;, 1410,
+  &quot;23:45&quot;, 1425,
+  0  
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>frmWorkStart</name>
+        <dataType>Number</dataType>
+        <expression>CASE(
+  {!plWorkStart},
+  &quot;00:00&quot;, 0,
+  &quot;00:15&quot;, 15,
+  &quot;00:30&quot;, 30,
+  &quot;00:45&quot;, 45,
+  &quot;01:00&quot;, 60,
+  &quot;01:15&quot;, 75,
+  &quot;01:30&quot;, 90,
+  &quot;01:45&quot;, 105,
+  &quot;02:00&quot;, 120,
+  &quot;02:15&quot;, 135,
+  &quot;02:30&quot;, 150,
+  &quot;02:45&quot;, 165,
+  &quot;03:00&quot;, 180,
+  &quot;03:15&quot;, 195,
+  &quot;03:30&quot;, 210,
+  &quot;03:45&quot;, 225,
+  &quot;04:00&quot;, 240,
+  &quot;04:15&quot;, 255,
+  &quot;04:30&quot;, 270,
+  &quot;04:45&quot;, 285,
+  &quot;05:00&quot;, 300,
+  &quot;05:15&quot;, 315,
+  &quot;05:30&quot;, 330,
+  &quot;05:45&quot;, 345,
+  &quot;06:00&quot;, 360,
+  &quot;06:15&quot;, 375,
+  &quot;06:30&quot;, 390,
+  &quot;06:45&quot;, 405,
+  &quot;07:00&quot;, 420,
+  &quot;07:15&quot;, 435,
+  &quot;07:30&quot;, 450,
+  &quot;07:45&quot;, 465,
+  &quot;08:00&quot;, 480,
+  &quot;08:15&quot;, 495,
+  &quot;08:30&quot;, 510,
+  &quot;08:45&quot;, 525,
+  &quot;09:00&quot;, 540,
+  &quot;09:15&quot;, 555,
+  &quot;09:30&quot;, 570,
+  &quot;09:45&quot;, 585,
+  &quot;10:00&quot;, 600,
+  &quot;10:15&quot;, 615,
+  &quot;10:30&quot;, 630,
+  &quot;10:45&quot;, 645,
+  &quot;11:00&quot;, 660,
+  &quot;11:15&quot;, 675,
+  &quot;11:30&quot;, 690,
+  &quot;11:45&quot;, 705,
+  &quot;12:00&quot;, 720,
+  &quot;12:15&quot;, 735,
+  &quot;12:30&quot;, 750,
+  &quot;12:45&quot;, 765,
+  &quot;13:00&quot;, 780,
+  &quot;13:15&quot;, 795,
+  &quot;13:30&quot;, 810,
+  &quot;13:45&quot;, 825,
+  &quot;14:00&quot;, 840,
+  &quot;14:15&quot;, 855,
+  &quot;14:30&quot;, 870,
+  &quot;14:45&quot;, 885,
+  &quot;15:00&quot;, 900,
+  &quot;15:15&quot;, 915,
+  &quot;15:30&quot;, 930,
+  &quot;15:45&quot;, 945,
+  &quot;16:00&quot;, 960,
+  &quot;16:15&quot;, 975,
+  &quot;16:30&quot;, 990,
+  &quot;16:45&quot;, 1005,
+  &quot;17:00&quot;, 1020,
+  &quot;17:15&quot;, 1035,
+  &quot;17:30&quot;, 1050,
+  &quot;17:45&quot;, 1065,
+  &quot;18:00&quot;, 1080,
+  &quot;18:15&quot;, 1095,
+  &quot;18:30&quot;, 1110,
+  &quot;18:45&quot;, 1125,
+  &quot;19:00&quot;, 1140,
+  &quot;19:15&quot;, 1155,
+  &quot;19:30&quot;, 1170,
+  &quot;19:45&quot;, 1185,
+  &quot;20:00&quot;, 1200,
+  &quot;20:15&quot;, 1215,
+  &quot;20:30&quot;, 1230,
+  &quot;20:45&quot;, 1245,
+  &quot;21:00&quot;, 1260,
+  &quot;21:15&quot;, 1275,
+  &quot;21:30&quot;, 1290,
+  &quot;21:45&quot;, 1305,
+  &quot;22:00&quot;, 1320,
+  &quot;22:15&quot;, 1335,
+  &quot;22:30&quot;, 1350,
+  &quot;22:45&quot;, 1365,
+  &quot;23:00&quot;, 1380,
+  &quot;23:15&quot;, 1395,
+  &quot;23:30&quot;, 1410,
+  &quot;23:45&quot;, 1425,
+  0 
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>Screen Flow: Make Corrections to Time Sheet {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Screen Flow: Make Corrections to Time Sheet</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>Create_Time_Sheet_Correction</name>
+        <label>Create Time Sheet Correction</label>
+        <locationX>182</locationX>
+        <locationY>2006</locationY>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Process_Instance_Step_or_Process_Instance_Work_Item</targetReference>
+        </connector>
+        <inputReference>correctionRecord</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Approval_Request</name>
+        <label>Get Approval Request</label>
+        <locationX>347</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Work_Item_s_Process_Instance_ID</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ProcessInstanceWorkitem</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Process_Instance_Step</name>
+        <label>Get Process Instance Step</label>
+        <locationX>611</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Step_s_Process_Instance_ID</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ProcessInstanceStep</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Time_Sheet</name>
+        <label>Get Time Sheet</label>
+        <locationX>611</locationX>
+        <locationY>542</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Time_Sheet_Corrections</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>targetObjectId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Time_Sheet__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Time_Sheet_Corrections</name>
+        <label>Get Time Sheet Corrections</label>
+        <locationX>611</locationX>
+        <locationY>650</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Count_Corrections</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Time_Sheet__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Time_Sheet.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Time_Sheet_Correction__c</object>
+        <sortField>Date__c</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <screens>
+        <name>Error_Screen</name>
+        <label>Error Screen</label>
+        <locationX>578</locationX>
+        <locationY>1706</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>false</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>displayCustomError</name>
+            <fieldText>&lt;p&gt;{!CustomError}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Not_Relevant_Screen</name>
+        <label>Not Relevant Screen</label>
+        <locationX>842</locationX>
+        <locationY>974</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>displayNotRelevant</name>
+            <fieldText>&lt;p&gt; &lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Screen_1</name>
+        <label>Screen 1</label>
+        <locationX>380</locationX>
+        <locationY>974</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Screen_2_Make_Corrections</targetReference>
+        </connector>
+        <fields>
+            <name>headerScreen2_NoCorrections</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 20px;&quot;&gt;Make Corrections&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;Use this flow to make corrections to the Time Sheet&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>numTimeSheetCorrections</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <numberValue>0.0</numberValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>headerScreen2_CorrectionsExist</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 20px;&quot;&gt;Corrections for {!Get_Time_Sheet.Name}&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>numTimeSheetCorrections</leftValueReference>
+                    <operator>GreaterThan</operator>
+                    <rightValue>
+                        <numberValue>0.0</numberValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>dtTimeSheetCorrections</name>
+            <dataTypeMappings>
+                <typeName>T</typeName>
+                <typeValue>Time_Sheet_Correction__c</typeValue>
+            </dataTypeMappings>
+            <extensionName>flowruntime:datatable</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Corrections</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>selectionMode</name>
+                <value>
+                    <stringValue>NO_SELECTION</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>minRowSelection</name>
+                <value>
+                    <numberValue>0.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>shouldDisplayLabel</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>tableData</name>
+                <value>
+                    <elementReference>Get_Time_Sheet_Corrections</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>maxRowSelection</name>
+                <value>
+                    <numberValue>0.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>columns</name>
+                <value>
+                    <stringValue>[{&quot;apiName&quot;:&quot;Week_Day__c&quot;,&quot;guid&quot;:&quot;column-c3e7&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Week Day&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Date__c&quot;,&quot;guid&quot;:&quot;column-4122&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Date&quot;,&quot;type&quot;:&quot;date-local&quot;},{&quot;apiName&quot;:&quot;Did_not_work__c&quot;,&quot;guid&quot;:&quot;column-8a19&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Did not work&quot;,&quot;type&quot;:&quot;boolean&quot;},{&quot;apiName&quot;:&quot;Start_Time__c&quot;,&quot;guid&quot;:&quot;column-562a&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;Start Time&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;End_Time__c&quot;,&quot;guid&quot;:&quot;column-9a3e&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;End Time&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>numTimeSheetCorrections</leftValueReference>
+                    <operator>GreaterThan</operator>
+                    <rightValue>
+                        <numberValue>0.0</numberValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <nextOrFinishButtonLabel>Add Correction</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Screen_2_Make_Corrections</name>
+        <label>Screen 2 - Make Corrections</label>
+        <locationX>380</locationX>
+        <locationY>1082</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Was_Date_a_Week_Day</targetReference>
+        </connector>
+        <fields>
+            <name>Screen_2_Make_Corrections_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Screen_2_Make_Corrections_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>inputDate</name>
+                    <dataType>Date</dataType>
+                    <defaultValue>
+                        <elementReference>Get_Time_Sheet.Month_Year__c</elementReference>
+                    </defaultValue>
+                    <fieldText>Date</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <validationRule>
+                        <errorMessage>&lt;p&gt;The date you input must be within the month you&apos;re submitting corrections for&lt;/p&gt;</errorMessage>
+                        <formulaExpression>YEAR({!inputDate}) = YEAR({!Get_Time_Sheet.Month_Year__c}) &amp;&amp; MONTH({!inputDate}) = MONTH({!Get_Time_Sheet.Month_Year__c})</formulaExpression>
+                    </validationRule>
+                </fields>
+                <fields>
+                    <name>boolDidNotWork</name>
+                    <dataType>Boolean</dataType>
+                    <defaultValue>
+                        <booleanValue>false</booleanValue>
+                    </defaultValue>
+                    <fieldText>Did Not Work</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Screen_2_Make_Corrections_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>plWorkStart</name>
+                    <choiceReferences>pcsTimeInput</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <stringValue>09:00</stringValue>
+                    </defaultValue>
+                    <fieldText>Work Start</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isDisabled>
+                        <elementReference>boolDidNotWork</elementReference>
+                    </isDisabled>
+                    <isRequired>true</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Screen_2_Make_Corrections_Section1_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>plWorkEnd</name>
+                    <choiceReferences>pcsTimeInput</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <stringValue>17:00</stringValue>
+                    </defaultValue>
+                    <fieldText>Work End</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isDisabled>
+                        <elementReference>boolDidNotWork</elementReference>
+                    </isDisabled>
+                    <isRequired>true</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <nextOrFinishButtonLabel>Add Correction</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Screen_3_Weekday_Alert</name>
+        <label>Screen 3 - Weekday Alert</label>
+        <locationX>468</locationX>
+        <locationY>1298</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <backButtonLabel>No, go back and select another day</backButtonLabel>
+        <connector>
+            <targetReference>Is_Start_Before_End</targetReference>
+        </connector>
+        <fields>
+            <name>displayWeekday</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(221, 1, 1); font-size: 20px;&quot;&gt;You have input a correction for a {!frmWeekDay}&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Are you sure you want to add a correction for a weekend day?&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Proceed with Weekend Correction</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>485</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Process_Instance_Step_or_Process_Instance_Work_Item</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>approvalRequestRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>ProcessInstanceWorkitem</objectType>
+    </variables>
+    <variables>
+        <name>correctionRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Time_Sheet_Correction__c</objectType>
+    </variables>
+    <variables>
+        <name>CustomError</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>numTimeSheetCorrections</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <name>processInstanceId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>targetObjectId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>text</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

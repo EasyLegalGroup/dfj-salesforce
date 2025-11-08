@@ -1,0 +1,51 @@
+<template>
+    <div>
+        <div class="slds-p-around_small backgroundColor">
+
+            <div>
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item size="12" large-device-size="12" medium-device-size="12" small-device-size="12">
+                        <div>
+                            <lightning-textarea name="input1" label="Note" value={noteContent} onchange={handleNoteChange}></lightning-textarea>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" large-device-size="12" medium-device-size="12" small-device-size="12">
+                        <div style="float: right;">
+                            <lightning-button variant="brand" label="Add Note" onclick={saveNote}></lightning-button>
+                        </div>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+            <!--Showing the previously created notes-->
+            <!-- <div>
+                <template if:true={isNotesVisible}>
+                    <template for:each={notesList} for:item="note" for:index="index">
+                        <div class="slds-media slds-timeline__item_expandable slds-timeline__item_call" key={note.Id}>
+                            <div class="slds-media__figure">
+                                <lightning-icon class="slds-m-left_large slds-timeline__icon" icon-name="doctype:box_notes" size="small" variant="inverse"></lightning-icon>
+                            </div>
+                            <div class="slds-media__body">
+                                <lightning-layout horizontal-align="spread" vertical-align="center">
+                                    <lightning-layout-item>
+                                        <b>{note.Title}</b>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                                <div class="slds-m-top_xx-small">
+                                    <article class="slds-box slds-theme_shade slds-m-top_xx-small slds-m-horizontal_xx-small">
+                                        <div class="contentClass">
+                                            <div>
+                                                <lightning-formatted-text value={note.Body}></lightning-formatted-text>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="slds-media__figure slds-media__figure_reverse"></div>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+            </div> -->
+
+        </div>
+    </div>
+</template>

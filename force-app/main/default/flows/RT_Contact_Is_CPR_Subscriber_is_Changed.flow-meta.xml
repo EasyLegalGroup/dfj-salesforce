@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <assignments>
+        <description>OP indicates that we&apos;re adding a record</description>
+        <name>Populate_CPR_Subsription_Add_with_OP</name>
+        <label>Populate CPR Subsription Add with OP</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CprSubscriptionAdd.Operation__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>OP</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Populate_Remaining_CPR_Subscription_Add_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>SL indicates that we&apos;re removing a record</description>
+        <name>Populate_CPR_Subsription_Add_with_SL</name>
+        <label>Populate CPR Subsription Add with SL</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CprSubscriptionAdd.Operation__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>SL</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Populate_Remaining_CPR_Subscription_Add_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_Flow_Fault_Message</name>
+        <label>Populate Custom Error with Flow Fault Message</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_Invalid_Is_CPR_Subscriber_Value</name>
+        <label>Populate Custom Error with Invalid Is_CPR_Subscriber Value</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptIsCprSubscriberError</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_Missing_CPR_Number_on_Subscriber</name>
+        <label>Populate Custom Error with Missing CPR Number on Subscriber</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Missing CPR Number on Subscriber</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Remaining_CPR_Subscription_Add_Values</name>
+        <label>Populate Remaining CPR Subscription Add Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CprSubscriptionAdd.Account__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Journal__r.Account__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CprSubscriptionAdd.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>New</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CprSubscriptionAdd.CPR__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.CPR__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CprSubscriptionAdd.Contact__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_CPR_Subscription_Add</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Do_We_Have_a_CPR_Number</name>
+        <label>Do We Have a CPR Number?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Populate_Custom_Error_with_Missing_CPR_Number_on_Subscriber</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Got_CPR_Number</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CPR__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>What_was_CPR_Subscriber_Changed_to</targetReference>
+            </connector>
+            <label>Got CPR Number</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>What_was_CPR_Subscriber_Changed_to</name>
+        <label>What was CPR Subscriber Changed to?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Populate_Custom_Error_with_Invalid_Is_CPR_Subscriber_Value</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Add_to_Subscribers</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Is_CPR_Subscriber__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_CPR_Subsription_Add_with_OP</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Add to Subscribers</label>
+        </rules>
+        <rules>
+            <name>Remove_from_Subscribers</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Is_CPR_Subscriber__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_CPR_Subsription_Add_with_SL</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Remove from Subscribers</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>RT - Contact: Is CPR Subscriber is Changed {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RT - Contact: Is CPR Subscriber is Changed</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_CPR_Subscription_Add</name>
+        <label>Create CPR Subscription Add</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <faultConnector>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <inputReference>CprSubscriptionAdd</inputReference>
+    </recordCreates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Do_We_Have_a_CPR_Number</targetReference>
+        </connector>
+        <filterFormula>OR(
+  AND(ISBLANK({!$Record__Prior.Id}), {!$Record.Is_CPR_Subscriber__c}),
+  ISCHANGED({!$Record.Is_CPR_Subscriber__c})
+)</filterFormula>
+        <object>Contact</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>AL_Send_Error_Email_from_Input_Values</name>
+        <label>AL - Send Error Email from Input Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <flowName>AL_Send_Error_Email_from_Input_Values</flowName>
+        <inputAssignments>
+            <name>inputCustomError</name>
+            <value>
+                <elementReference>CustomError</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputFlowName</name>
+            <value>
+                <stringValue>RT - Contact: Is CPR Subscriber is Changed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <textTemplates>
+        <name>ptIsCprSubscriberError</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Cannot Read Change to Is_CPR_Subscriber properly.
+Previous Value: {!$Record__Prior.Is_CPR_Subscriber__c}
+New Value: {!$Record.Is_CPR_Subscriber__c}</text>
+    </textTemplates>
+    <variables>
+        <name>CprSubscriptionAdd</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>CPR_Subscription_Add__c</objectType>
+    </variables>
+    <variables>
+        <name>CustomError</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

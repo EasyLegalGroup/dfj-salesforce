@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlg_service__c</fullName>
+    <externalId>false</externalId>
+    <label>Vælg service</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>service_beboelsesret</fullName>
+                <default>false</default>
+                <label>Beboelsesret</label>
+            </value>
+            <value>
+                <fullName>service_gnnemls_dok</fullName>
+                <default>false</default>
+                <label>Gennemlæsning af dokument</label>
+            </value>
+            <value>
+                <fullName>service_pers_mde</fullName>
+                <default>false</default>
+                <label>Personligt møde</label>
+            </value>
+            <value>
+                <fullName>service_klarg_brnetesta</fullName>
+                <default>false</default>
+                <label>Klargøring af børnetestamente til notar</label>
+            </value>
+            <value>
+                <fullName>service_30_prc_regel</fullName>
+                <default>false</default>
+                <label>Benyttelse af 30%-reglen</label>
+            </value>
+            <value>
+                <fullName>service_begunst</fullName>
+                <default>false</default>
+                <label>Formulering af begunstigelseserklæring</label>
+            </value>
+            <value>
+                <fullName>service_kodicil</fullName>
+                <default>false</default>
+                <label>Oprettelse af kodicil</label>
+            </value>
+            <value>
+                <fullName>service_tingl_fremt</fullName>
+                <default>false</default>
+                <label>Tinglysning af fremtidsfuldmagt</label>
+            </value>
+            <value>
+                <fullName>service_tilb_testamente</fullName>
+                <default>false</default>
+                <label>Tilbagekaldelse af testamente</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

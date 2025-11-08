@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_of_First_Booking__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This field is set when the first booking happens with a Host. It is the Created Date of the first event on a Host - not related to the date of the actual event.</inlineHelpText>
+    <label>Date of First Booking</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

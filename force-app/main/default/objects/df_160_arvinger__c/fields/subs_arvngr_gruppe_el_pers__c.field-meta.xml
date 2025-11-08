@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>subs_arvngr_gruppe_el_pers__c</fullName>
+    <externalId>false</externalId>
+    <label>Bestemt person eller gruppe</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>subs_arvngr_vlg_person</fullName>
+                <default>false</default>
+                <label>Tilføj bestemt person</label>
+            </value>
+            <value>
+                <fullName>subs_arvngr_vlg_gruppe</fullName>
+                <default>false</default>
+                <label>Tilføj gruppe af personer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

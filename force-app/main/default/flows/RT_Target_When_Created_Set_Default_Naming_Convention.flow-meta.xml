@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <assignments>
+        <name>Assign_Target_Period_to_Period</name>
+        <label>Assign Target Period to Period</label>
+        <locationX>710</locationX>
+        <locationY>953</locationY>
+        <assignmentItems>
+            <assignToReference>Period</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptPeriod</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Target</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Alias_to_CountryAlias</name>
+        <label>Set Alias to CountryAlias</label>
+        <locationX>842</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>Alias</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmCountryAlias</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>What_is_the_Period</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Alias_to_User_Alias</name>
+        <label>Set Alias to User Alias</label>
+        <locationX>578</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>Alias</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmUserAlias</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>What_is_the_Period</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Period_as_Day</name>
+        <label>Set Period as Day</label>
+        <locationX>50</locationX>
+        <locationY>695</locationY>
+        <assignmentItems>
+            <assignToReference>TargetPeriod</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmDay</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Target_Period_to_Period</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Period_as_Month</name>
+        <label>Set Period as Month</label>
+        <locationX>578</locationX>
+        <locationY>695</locationY>
+        <assignmentItems>
+            <assignToReference>TargetPeriod</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmMonth</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Target_Period_to_Period</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Period_as_Quarter</name>
+        <label>Set Period as Quarter</label>
+        <locationX>842</locationX>
+        <locationY>695</locationY>
+        <assignmentItems>
+            <assignToReference>TargetPeriod</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmQuarter</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Target_Period_to_Period</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Period_as_Week</name>
+        <label>Set Period as Week</label>
+        <locationX>314</locationX>
+        <locationY>695</locationY>
+        <assignmentItems>
+            <assignToReference>TargetPeriod</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmWeek</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Target_Period_to_Period</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Period_as_Year</name>
+        <label>Set Period as Year</label>
+        <locationX>1106</locationX>
+        <locationY>695</locationY>
+        <assignmentItems>
+            <assignToReference>Period</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Year__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Update_Target</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Do_We_Have_a_User</name>
+        <label>Do We Have a User?</label>
+        <locationX>710</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Set_Alias_to_CountryAlias</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Got_User</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.User__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Alias_to_User_Alias</targetReference>
+            </connector>
+            <label>Got User</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>What_is_the_Period</name>
+        <label>What is the Period?</label>
+        <locationX>710</locationX>
+        <locationY>587</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Period_is_Day</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Target_Period__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Day</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Period_as_Day</targetReference>
+            </connector>
+            <label>Period is Day</label>
+        </rules>
+        <rules>
+            <name>Period_is_Week</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Target_Period__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Week</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Period_as_Week</targetReference>
+            </connector>
+            <label>Period is Week</label>
+        </rules>
+        <rules>
+            <name>Period_is_Month</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Target_Period__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Month</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Period_as_Month</targetReference>
+            </connector>
+            <label>Period is Month</label>
+        </rules>
+        <rules>
+            <name>Period_is_Quarter</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Target_Period__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Quarter</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Period_as_Quarter</targetReference>
+            </connector>
+            <label>Period is Quarter</label>
+        </rules>
+        <rules>
+            <name>Period_is_Year</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Target_Period__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Year</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Period_as_Year</targetReference>
+            </connector>
+            <label>Period is Year</label>
+        </rules>
+    </decisions>
+    <description>Further streamlined naming convention. It now sets name dynamically based on whether its a user target or not (may add support for team targets later) and the period so it will be e.g. &quot;GBE | Partner Referrals (July 2025)&quot; or &quot;DK | Capacity Booked (Q1 2025)&quot;</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>frmCapacityBookedName</name>
+        <dataType>String</dataType>
+        <expression>CASE(
+  {!$Record.Market_Unit__c},
+  &quot;DFJ_DK&quot;,&quot;DK&quot;,
+  &quot;Testamente&quot;,&quot;DK&quot;,
+  &quot;FA_SE&quot;,&quot;SE&quot;,
+  &quot;Testamente_SV&quot;,&quot;SE&quot;,
+  &quot;Ireland&quot;,&quot;IE&quot;,
+&quot;&quot;
+)
+&amp; &quot; - Capacity Week &quot;
+&amp; TEXT({!$Record.Week_Number__c})
+&amp; &quot; &quot;
+&amp; TEXT({!$Record.Year__c})</expression>
+    </formulas>
+    <formulas>
+        <name>frmCountryAlias</name>
+        <dataType>String</dataType>
+        <expression>CASE(
+  TEXT({!$Record.Market_Unit__c}),
+  &quot;DFJ_DK&quot;, &quot;DK&quot;,
+  &quot;FA_SE&quot;, &quot;SE&quot;,
+  &quot;Ireland&quot;, &quot;IE&quot;,
+  &quot;Unknown&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>frmDay</name>
+        <dataType>String</dataType>
+        <expression>/* Construct the date first */
+CASE(
+  DAY(DATE(VALUE(TEXT({!$Record.Year__c})), 1, 1) + ({!$Record.Day_Number__c} - 1)),
+  1, &quot;1st&quot;,
+  2, &quot;2nd&quot;,
+  3, &quot;3rd&quot;,
+  21, &quot;21st&quot;,
+  22, &quot;22nd&quot;,
+  23, &quot;23rd&quot;,
+  31, &quot;31st&quot;,
+  TEXT(
+    DAY(DATE(VALUE(TEXT({!$Record.Year__c})), 1, 1) + ({!$Record.Day_Number__c} - 1))
+  ) &amp; &quot;th&quot;
+)
+&amp; &quot; &quot;
+&amp; CASE(
+  MONTH(DATE(VALUE(TEXT({!$Record.Year__c})), 1, 1) + ({!$Record.Day_Number__c} - 1)),
+  1, &quot;January&quot;,
+  2, &quot;February&quot;,
+  3, &quot;March&quot;,
+  4, &quot;April&quot;,
+  5, &quot;May&quot;,
+  6, &quot;June&quot;,
+  7, &quot;July&quot;,
+  8, &quot;August&quot;,
+  9, &quot;September&quot;,
+  10, &quot;October&quot;,
+  11, &quot;November&quot;,
+  12, &quot;December&quot;,
+  &quot;Invalid&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>frmMonth</name>
+        <dataType>String</dataType>
+        <expression>CASE(
+  {!$Record.Month_Number__c},
+  1, &quot;January&quot;,
+  2, &quot;February&quot;,
+  3, &quot;March&quot;,
+  4, &quot;April&quot;,
+  5, &quot;May&quot;,
+  6, &quot;June&quot;,
+  7, &quot;July&quot;,
+  8, &quot;August&quot;,
+  9, &quot;September&quot;,
+  10, &quot;October&quot;,
+  11, &quot;November&quot;,
+  12, &quot;December&quot;,
+  &quot;Invalid Month&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>frmQuarter</name>
+        <dataType>String</dataType>
+        <expression>&quot;Q&quot; &amp; TEXT({!$Record.Quarter_Number__c})</expression>
+    </formulas>
+    <formulas>
+        <name>frmRevenueName</name>
+        <dataType>String</dataType>
+        <expression>UPPER(LEFT({!$Record.User__r.Email}, FIND(&quot;@&quot;, {!$Record.User__r.Email}) - 1)) &amp;
+&quot; - &quot; &amp;
+CASE(
+   1 ,
+    1, &quot;January&quot;,
+    2, &quot;February&quot;,
+    3, &quot;March&quot;,
+    4, &quot;April&quot;,
+    5, &quot;May&quot;,
+    6, &quot;June&quot;,
+    7, &quot;July&quot;,
+    8, &quot;August&quot;,
+    9, &quot;September&quot;,
+    10, &quot;October&quot;,
+    11, &quot;November&quot;,
+    12, &quot;December&quot;,
+    &quot;Invalid Month&quot;
+) &amp;
+&quot; &quot; &amp;
+TEXT({!$Record.Year__c})</expression>
+    </formulas>
+    <formulas>
+        <name>frmSeatsBookedName</name>
+        <dataType>String</dataType>
+        <expression>CASE(
+  {!$Record.Market_Unit__c},
+  &quot;DFJ_DK&quot;,&quot;DK&quot;,
+  &quot;Testamente&quot;,&quot;DK&quot;,
+  &quot;FA_SE&quot;,&quot;SE&quot;,
+  &quot;Testamente_SV&quot;,&quot;SE&quot;,
+  &quot;Ireland&quot;,&quot;IE&quot;,
+&quot;&quot;
+)
+&amp; &quot; - Seats Week &quot;
+&amp; TEXT({!$Record.Week_Number__c})
+&amp; &quot; &quot;
+&amp; TEXT({!$Record.Year__c})</expression>
+    </formulas>
+    <formulas>
+        <name>frmUserAlias</name>
+        <dataType>String</dataType>
+        <expression>UPPER(LEFT({!$Record.User__r.Email}, FIND(&quot;@&quot;, {!$Record.User__r.Email}) - 1))</expression>
+    </formulas>
+    <formulas>
+        <name>frmWeek</name>
+        <dataType>String</dataType>
+        <expression>&quot;Week &quot; &amp; TEXT({!$Record.Week_Number__c})</expression>
+    </formulas>
+    <formulas>
+        <name>frmYear</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!$Record.Year__c})</expression>
+    </formulas>
+    <interviewLabel>RT - Target: When Created Set Default Naming Convention {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RT - Target: When Created Set Default Naming Convention</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Target</name>
+        <label>Update Target</label>
+        <locationX>710</locationX>
+        <locationY>1061</locationY>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>ptTargetName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>584</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Do_We_Have_a_User</targetReference>
+        </connector>
+        <object>Targets__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>ptPeriod</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!TargetPeriod} {!frmYear}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptTargetName</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!Alias} | {!$Record.Target_Metric__c} ({!Period})</text>
+    </textTemplates>
+    <variables>
+        <name>Alias</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Period</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>TargetName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>TargetPeriod</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

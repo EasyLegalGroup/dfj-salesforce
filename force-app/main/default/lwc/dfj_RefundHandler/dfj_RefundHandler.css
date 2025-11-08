@@ -1,0 +1,11 @@
+.tableUsedInManualRefundTab tr {
+    margin: 12px;
+}
+
+.tableUsedInManualRefundTab tr td {
+    padding: 4px;
+}
+
+.tableUsedToShowAmountRelatedInfo tr td{
+    text-align: right;
+}

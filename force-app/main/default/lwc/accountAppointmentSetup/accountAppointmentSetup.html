@@ -1,0 +1,60 @@
+<template>
+    <div class="slds-card">
+    <button class="slds-button slds-button_brand slds-button_stretch" onclick={handleButtonClick}>Create Appointment</button>
+        <c-dfj-modal-test id="test-modal" heading="" onmodalclose={resetValues} contains-picklist>
+            <div slot="body" class="slds-p-around_medium">
+               <template lwc:if={showQuestions}>          
+                    <lightning-combobox name="Meeting_Type__c" label="Meeting Type" value={accountFields.Meeting_Type__c} placeholder="Select Meeting Type" options={meetingTypeOptions} onchange={handlePicklistChange} required="true" data-id="reset"></lightning-combobox>
+                    <template if:true={showServiceTypePicklist}>
+                        <lightning-combobox name="Service_call__c" label="Service Type" value={accountFields.Service_call__c} placeholder="Select Service Type" options={serviceCallOptions} onchange={handlePicklistChange} required="true" data-id="reset"></lightning-combobox>
+                    </template>
+                    <template if:true={showSalesTypePicklist}>
+                        <lightning-combobox name="Sales_meeting__c" label="Sales Type" value={accountFields.Sales_meeting__c} placeholder="Select Sales Type" options={salesMeetingOptions} onchange={handlePicklistChange} required="true" ></lightning-combobox>
+                    </template>
+                    <template lwc:if={showLegalAssistanceTypePicklist}>
+                        <lightning-combobox name="Legal_assistance__c" label="Legal Assistance Type" value={accountFields.Legal_assistance__c} placeholder="Select Legal Assistance Type" options={legalAssistanceOptions} onchange={handlePicklistChange} required="true"></lightning-combobox>
+                    </template>
+                    <lightning-combobox name="Send_SMS_Reminders__c" label="Send SMS Reminder" value={smsValue} placeholder="Send SMS Reminder" options={sendSMSReminderOptions} onchange={handlePicklistChange} ></lightning-combobox>
+               </template>
+               <template lwc:if={showAppointmentModal}>
+                    <lightning-layout horizontal-align='start' vertical-align='start' multiple-rows>
+                        <lightning-layout-item padding='around-small' size="6" large-device-size="6" small-device-size="6" medium-device-size="6">
+                            <div class="slds-text-heading_small">Recall appointment</div>
+                            <!-- <lightning-input name="startDateTime" label="Select the recall date and time" type="datetime-local" onchange={handleDateChange}></lightning-input> -->
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col">
+                                    <lightning-input name ="startDate" label="Select the date" type="date" onchange={handleDateChange} data-id="reset" required="true"></lightning-input>
+                                </div>
+                                <div class="slds-col">
+                                    <lightning-input name ="StartTime" label="Select the time" type="time" onchange={handleDateChange} data-id="reset" required="true"></lightning-input>
+                                </div>
+                              </div>
+                               <!-- <lightning-input name ="startDate" label="Select the recall date and time" type="date" onchange={handleDateChange}></lightning-input>
+                            <lightning-input name ="StartTime" label="Select the recall date and time" type="time" onchange={handleDateChange}></lightning-input> -->
+
+                            <lightning-combobox name='appointmentSelect' label='Appointment duration (In mins)' value={timeDuration} placeholder='Time Duration' options={appointmentOptions} onchange={handleDurationHandler} ></lightning-combobox>
+
+                            <lightning-combobox name='Appointmentowner' label='Appointment owner' value={crrUserValue} options={userOptions} onchange={handleChange} ></lightning-combobox>
+                            <lightning-textarea name="input1" label="Description" value={descriptionvalue}
+                            onchange={DescriptionChange} data-id="reset"></lightning-textarea>
+                        </lightning-layout-item>
+                        <lightning-layout-item padding='around-small' size="6" large-device-size="6" small-device-size="6" medium-device-size="6">
+                            
+                            <c-calender-appointments selected-date-time={dateTimevalue} selected-user={crrUserValue} appointmentdata={appointmentdata}></c-calender-appointments>
+                        
+                        </lightning-layout-item>
+                    </lightning-layout>
+               </template>
+            </div>
+            <div slot="footer">
+                <template if:true={showAppointmentButton}>
+                    <lightning-button onclick={handleSave} label='Add appointment' variant="brand" class="slds-m-horizontal_medium"></lightning-button>
+                </template>
+                <lightning-button onclick={closeModal} label='Close' class="slds-m-horizontal_medium" ></lightning-button>
+                <template if:true={showNextButton}>
+                    <lightning-button onclick={navigateToNextWindow} label='Next' variant="brand"></lightning-button>
+                </template>
+            </div>
+        </c-dfj-modal-test>
+    </div>
+</template>

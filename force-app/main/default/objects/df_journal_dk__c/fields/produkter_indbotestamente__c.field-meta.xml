@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>produkter_indbotestamente__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Original pris: 995 kr.</description>
+    <externalId>false</externalId>
+    <label>Indbotestamente</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

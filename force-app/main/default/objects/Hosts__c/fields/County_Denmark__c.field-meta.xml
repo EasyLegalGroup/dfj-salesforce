@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>County_Denmark__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(VALUE( Host_Address__PostalCode__s ) &lt;= 999, &quot;Specielle postnumre til organisationer og virksomheder med meget store mængder post&quot;, 
+                    IF(VALUE(Host_Address__PostalCode__s ) &lt;= 3699, &quot;Sjælland&quot;, 
+                        IF(VALUE(Host_Address__PostalCode__s ) &lt;= 3799, &quot;Bornholm&quot;, 
+                            IF(VALUE(Host_Address__PostalCode__s ) &lt;= 3899, &quot;Oprindeligt Færøerne, men dér benyttes nu et selvstændigt tre-cifret system&quot;, 
+                                IF(VALUE(Host_Address__PostalCode__s ) &lt;= 3999, &quot;Grønland&quot;, 
+                                    IF(VALUE(Host_Address__PostalCode__s ) &lt;= 4999, &quot;Sjælland&quot;, 
+                                        IF(VALUE(Host_Address__PostalCode__s ) &lt;= 5999, &quot;Fyn&quot;, 
+                                                        IF(VALUE(Host_Address__PostalCode__s ) &lt;= 9999, &quot;Jylland&quot;, 
+                                                            &quot;Unknown&quot;
+                                                        )
+                                    )
+                    )
+                )
+            )
+        )
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>County (Denmark)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

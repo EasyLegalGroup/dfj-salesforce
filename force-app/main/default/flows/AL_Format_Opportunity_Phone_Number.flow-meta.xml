@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <assignments>
+        <name>Add_to_Collection</name>
+        <label>Add to Collection</label>
+        <locationX>264</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>OppCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Opps</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Opps</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Phone_Number</name>
+        <label>Update Phone Number</label>
+        <locationX>264</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>Loop_Opps.Phone__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>PhoneFormatted</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_to_Collection</targetReference>
+        </connector>
+    </assignments>
+    <environments>Default</environments>
+    <formulas>
+        <name>PhoneFormatted</name>
+        <dataType>String</dataType>
+        <expression>IF( 
+    BEGINS(SUBSTITUTE({!Loop_Opps.Phone__c}, &quot; &quot;, &quot;&quot;), &apos;+45&apos;), 
+    SUBSTITUTE({!Loop_Opps.Phone__c}, &quot; &quot;, &quot;&quot;),
+    IF(
+        BEGINS(SUBSTITUTE({!Loop_Opps.Phone__c}, &quot; &quot;, &quot;&quot;), &apos;45&apos;), 
+        &apos;+&apos; + SUBSTITUTE({!Loop_Opps.Phone__c}, &quot; &quot;, &quot;&quot;),
+        IF(
+            AND(
+                NOT(BEGINS(SUBSTITUTE({!Loop_Opps.Phone__c}, &quot; &quot;, &quot;&quot;), &apos;+45&apos;)), 
+                OR( 
+                    ISPICKVAL({!Loop_Opps.Market_Unit__c}, &apos;DFJ_DK&apos;), 
+                    ISPICKVAL({!Loop_Opps.Market_Unit__c}, &apos;Testamente_DK&apos;)
+                )
+            ), 
+            &apos;+45&apos; + SUBSTITUTE({!Loop_Opps.Phone__c}, &quot; &quot;, &quot;&quot;),
+            IF(
+                AND(
+                    NOT(BEGINS(SUBSTITUTE({!Loop_Opps.Phone__c}, &quot; &quot;, &quot;&quot;), &apos;+&apos;)), 
+                    OR( 
+                        ISPICKVAL({!Loop_Opps.Market_Unit__c}, &apos;DFJ_DK&apos;), 
+                        ISPICKVAL({!Loop_Opps.Market_Unit__c}, &apos;Testamente_DK&apos;)
+                    )
+                ), 
+                &apos;+&apos; + SUBSTITUTE({!Loop_Opps.Phone__c}, &quot; &quot;, &quot;&quot;),
+                IF(
+                    BEGINS(SUBSTITUTE({!Loop_Opps.Phone__c}, &quot; &quot;, &quot;&quot;), &apos;+46&apos;), 
+                    SUBSTITUTE({!Loop_Opps.Phone__c}, &quot; &quot;, &quot;&quot;),
+                    IF(
+                        BEGINS(SUBSTITUTE({!Loop_Opps.Phone__c}, &quot; &quot;, &quot;&quot;), &apos;46&apos;), 
+                        &apos;+&apos; + SUBSTITUTE({!Loop_Opps.Phone__c}, &quot; &quot;, &quot;&quot;),
+                        IF(
+                            AND(
+                                NOT(BEGINS(SUBSTITUTE({!Loop_Opps.Phone__c}, &quot; &quot;, &quot;&quot;), &apos;+46&apos;)), 
+                                ISPICKVAL({!Loop_Opps.Market_Unit__c}, &apos;FA_SE&apos;)
+                            ), 
+                            &apos;+46&apos; + SUBSTITUTE({!Loop_Opps.Phone__c}, &quot; &quot;, &quot;&quot;),
+                            IF(
+                                AND(
+                                    NOT(BEGINS(SUBSTITUTE({!Loop_Opps.Phone__c}, &quot; &quot;, &quot;&quot;), &apos;+&apos;)), 
+                                    ISPICKVAL({!Loop_Opps.Market_Unit__c}, &apos;FA_SE&apos;)
+                                ), 
+                                &apos;+&apos; + SUBSTITUTE({!Loop_Opps.Phone__c}, &quot; &quot;, &quot;&quot;),
+                                SUBSTITUTE({!Loop_Opps.Phone__c}, &quot; &quot;, &quot;&quot;)
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    )
+)</expression>
+    </formulas>
+    <interviewLabel>AL - Format Opportunity Phone Number {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>AL - Format Opportunity Phone Number</label>
+    <loops>
+        <name>Loop_Opps</name>
+        <label>Loop Opps</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <collectionReference>Get_Opportunities</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Update_Phone_Number</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_Opportunity</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Opportunities</name>
+        <label>Get Opportunities</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Opps</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Phone__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Opportunity</name>
+        <label>Update Opportunity</label>
+        <locationX>176</locationX>
+        <locationY>650</locationY>
+        <inputReference>OppCollection</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Opportunities</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+    <variables>
+        <name>OppCollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+</Flow>

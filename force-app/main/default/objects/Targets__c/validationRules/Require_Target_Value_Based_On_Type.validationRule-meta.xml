@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Target_Value_Based_On_Type</fullName>
+    <active>true</active>
+    <description>Ensures the correct target field is filled based on the selected Target Type:
+If Target Type is Percentage, then Percent_Target__c must be filled.
+If Target Type is Numerical, then Target__c must be filled.</description>
+    <errorConditionFormula>OR(
+  AND(
+    ISPICKVAL(Target_Type__c, &quot;Percentage&quot;),
+    ISBLANK(Percent_Target__c)
+  ),
+  AND(
+    ISPICKVAL(Target_Type__c, &quot;Numerical&quot;),
+    ISBLANK(Target__c)
+  )
+)</errorConditionFormula>
+    <errorMessage>You must fill in Percent Target if Target Type is Percentage,
+You must fill in Target if Target Type is Numerical.</errorMessage>
+</ValidationRule>

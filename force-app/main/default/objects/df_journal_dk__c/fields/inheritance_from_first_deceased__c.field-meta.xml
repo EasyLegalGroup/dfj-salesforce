@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>inheritance_from_first_deceased__c</fullName>
+    <description>Vælg arvefordeling efter førsteafdøde</description>
+    <externalId>false</externalId>
+    <label>Vælg arvefordeling efter førstea c9922</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>full_beneficiary_partner</fullName>
+                <default>false</default>
+                <label>Fuld begunstigelse partner</label>
+            </value>
+            <value>
+                <fullName>percentage_distribution</fullName>
+                <default>false</default>
+                <label>Procent fordeling</label>
+            </value>
+            <value>
+                <fullName>full_beneficiary_children</fullName>
+                <default>false</default>
+                <label>Fuld begunstigelse børn</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

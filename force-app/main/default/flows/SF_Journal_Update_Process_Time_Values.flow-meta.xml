@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <decisions>
+        <name>Did_Subflow_Succeed</name>
+        <label>Did Subflow Succeed?</label>
+        <locationX>182</locationX>
+        <locationY>468</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Subflow_Success</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CustomError</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Journal</targetReference>
+            </connector>
+            <label>Subflow Success</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Does_Order_Have_Category</name>
+        <label>Does Order Have Category?</label>
+        <locationX>380</locationX>
+        <locationY>252</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Order_has_Category</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Order__r.Order_Category__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AL_Calculate_Total_Time_Spend_from_Input_Journal</targetReference>
+            </connector>
+            <label>Order has Category</label>
+        </rules>
+    </decisions>
+    <description>This is a Schedule-Triggered Flow.
+The flow starts by checking if a journal is complete, has no associated account, lead, or order, and either has no pre-sale time or a pre-sale time of 0. If these conditions are met, it checks if the order has a category. If yes, it calculates total time spent from the input journal using a subflow &apos;AL_Calculate_Total_Time_Spend_from_Input_Journal&apos;. After the subflow, it updates the journal record with the calculated times. If the order doesn&apos;t have a category, it follows the default outcome.
+
+These are the subflow(s):
+  * [AL_Calculate_Total_Time_Spend_from_Input_Journal]
+
+Several objects and their fields worth mentioning. Below are the details (the format is given as: object_name - field_name: interaction)
+  * Journal__c - Journal_States__c : Checks if the journal state is &apos;complete&apos;.
+  * Journal__c - Account__c : Checks if the journal has an associated account.
+  * Journal__c - Lead__c : Checks if the journal has an associated lead.
+  * Journal__c - Order__c : Checks if the journal has an associated order.
+  * Order__c - Order_Category__c : Checks if the order has a category.
+
+Flows referenced by Subflow elements:
+AL_Calculate_Total_Time_Spend_from_Input_Journal</description>
+    <environments>Default</environments>
+    <interviewLabel>SF - Journal: Update Process Time Values {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>SF - Journal: Update Process Time Values</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Journal</name>
+        <label>Update Journal</label>
+        <locationX>50</locationX>
+        <locationY>576</locationY>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>254</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Does_Order_Have_Category</targetReference>
+        </connector>
+        <filterLogic>1 AND 2 AND 3 AND 4 AND (5 OR 6) AND 7</filterLogic>
+        <filters>
+            <field>Journal_States__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>complete</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Account__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Lead__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Order__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Pre_Sale_Time__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Pre_Sale_Time__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Time_of_Trustpilot_Request__c</field>
+            <operator>GreaterThanOrEqualTo</operator>
+            <value>
+                <dateTimeValue>2025-01-31T23:00:00.000Z</dateTimeValue>
+            </value>
+        </filters>
+        <object>Journal__c</object>
+        <schedule>
+            <frequency>Once</frequency>
+            <startDate>2025-03-11</startDate>
+            <startTime>15:51:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Obsolete</status>
+    <subflows>
+        <name>AL_Calculate_Total_Time_Spend_from_Input_Journal</name>
+        <label>AL - Calculate Total Time Spend from Input Journal</label>
+        <locationX>182</locationX>
+        <locationY>360</locationY>
+        <connector>
+            <targetReference>Did_Subflow_Succeed</targetReference>
+        </connector>
+        <flowName>AL_Calculate_Total_Time_Spend_from_Input_Journal</flowName>
+        <inputAssignments>
+            <name>Journal</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>CustomError</assignToReference>
+            <name>CustomError</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>$Record.Post_Sale_Time__c</assignToReference>
+            <name>PostSaleTime</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>$Record.Pre_Sale_Time__c</assignToReference>
+            <name>PreSaleTime</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>$Record.Production_Time__c</assignToReference>
+            <name>ProductionTime</name>
+        </outputAssignments>
+    </subflows>
+    <variables>
+        <name>CustomError</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

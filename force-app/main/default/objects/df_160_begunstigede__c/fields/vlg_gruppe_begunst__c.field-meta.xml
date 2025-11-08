@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlg_gruppe_begunst__c</fullName>
+    <externalId>false</externalId>
+    <label>Vælg gruppeb</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>vlg_gruppe_begunst_brn</fullName>
+                <default>false</default>
+                <label>Børn</label>
+            </value>
+            <value>
+                <fullName>vlg_gruppe_begunst_brnebrn</fullName>
+                <default>false</default>
+                <label>Børnebørn</label>
+            </value>
+            <value>
+                <fullName>vlg_gruppe_begunst_nev_niece</fullName>
+                <default>false</default>
+                <label>Nevøer/Niecer</label>
+            </value>
+            <value>
+                <fullName>vlg_gruppe_begunst_sskende</fullName>
+                <default>false</default>
+                <label>Søskende</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

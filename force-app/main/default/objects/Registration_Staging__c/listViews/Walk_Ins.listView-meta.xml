@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Walk_Ins</fullName>
+    <columns>NAME</columns>
+    <columns>Processing_Status__c</columns>
+    <columns>Outcome__c</columns>
+    <columns>Lead__c</columns>
+    <columns>Account__c</columns>
+    <columns>Booked_Tickets__c</columns>
+    <columns>Time_of_Booking__c</columns>
+    <columns>Lead_Staging__c</columns>
+    <columns>External_ID__c</columns>
+    <columns>Campaign__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Is_Walk_In__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Walk-Ins</label>
+</ListView>

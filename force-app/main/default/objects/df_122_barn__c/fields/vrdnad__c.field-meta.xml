@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vrdnad__c</fullName>
+    <externalId>false</externalId>
+    <label>Vårdnad</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>delad_vrdnad</fullName>
+                <default>false</default>
+                <label>Delad vårdnad</label>
+            </value>
+            <value>
+                <fullName>gemensam_vrdnad</fullName>
+                <default>false</default>
+                <label>Gemensam vårdnad</label>
+            </value>
+            <value>
+                <fullName>full_vrdnad</fullName>
+                <default>false</default>
+                <label>Full vårdnad</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

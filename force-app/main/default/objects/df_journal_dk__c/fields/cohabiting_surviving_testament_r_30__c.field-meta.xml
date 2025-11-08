@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cohabiting_surviving_testament_r_30__c</fullName>
+    <description>Længstlevendes testationsret</description>
+    <externalId>false</externalId>
+    <label>Længstlevendes testationsret 604e5</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>ja</fullName>
+                <default>false</default>
+                <label>Ja</label>
+            </value>
+            <value>
+                <fullName>nej</fullName>
+                <default>false</default>
+                <label>Nej</label>
+            </value>
+            <value>
+                <fullName>50_percent</fullName>
+                <default>false</default>
+                <label>50%</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

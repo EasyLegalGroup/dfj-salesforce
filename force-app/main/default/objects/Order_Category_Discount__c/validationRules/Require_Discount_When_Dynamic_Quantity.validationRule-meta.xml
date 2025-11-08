@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Discount_When_Dynamic_Quantity</fullName>
+    <active>true</active>
+    <description>Prevent save if Dynamic Quantity is checked but Discount Related To is blank</description>
+    <errorConditionFormula>AND(
+  Is_Using_Dynamic_Quantity__c,
+  ISBLANK( Discount_Related_To__c )
+)</errorConditionFormula>
+    <errorDisplayField>Discount_Related_To__c</errorDisplayField>
+    <errorMessage>Please select a &quot;Discount Related To&quot; Product here, when using Dynamic Quantity.</errorMessage>
+</ValidationRule>

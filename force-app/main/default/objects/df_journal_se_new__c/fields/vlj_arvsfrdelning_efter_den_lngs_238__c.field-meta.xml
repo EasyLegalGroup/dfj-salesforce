@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlj_arvsfrdelning_efter_den_lngs_238__c</fullName>
+    <externalId>false</externalId>
+    <label>Välj arvsfördelning efter den lä 981a2</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>procentfrdelning_frst_avlidne</fullName>
+                <default>false</default>
+                <label>Procentfördelning</label>
+            </value>
+            <value>
+                <fullName>Likadelning_lngst</fullName>
+                <default>false</default>
+                <label>Likadelning</label>
+            </value>
+            <value>
+                <fullName>arv_efter_gren</fullName>
+                <default>false</default>
+                <label>Arv efter gren</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

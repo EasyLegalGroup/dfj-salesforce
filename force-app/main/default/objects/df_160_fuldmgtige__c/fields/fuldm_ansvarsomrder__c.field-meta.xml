@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fuldm_ansvarsomrder__c</fullName>
+    <externalId>false</externalId>
+    <label>Ansvarsområder</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>fuldm_ansv_kun_konomisk</fullName>
+                <default>false</default>
+                <label>Kun økonomiske forhold</label>
+            </value>
+            <value>
+                <fullName>fuldm_ansv_kun_personlige</fullName>
+                <default>false</default>
+                <label>Kun personlige forhold</label>
+            </value>
+            <value>
+                <fullName>fuldm_ansv_pers_og_konomi</fullName>
+                <default>false</default>
+                <label>Både personlige- og økonomiske forhold</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

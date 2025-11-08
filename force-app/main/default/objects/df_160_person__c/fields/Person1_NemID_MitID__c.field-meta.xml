@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Person1_NemID_MitID__c</fullName>
+    <externalId>false</externalId>
+    <formula>AND(person_hidden_person_1__c = true, journal_dk_new__r.p1_ff_nemid_mitid__c = true)</formula>
+    <label>Person1 NemID / MitID</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

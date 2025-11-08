@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Assign_Default_Type_to_Error_Type_Variable</name>
+        <label>Assign Default Type to Error Type Variable</label>
+        <locationX>314</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>ErrorType</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Type Undefined</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Lead_Staging_Error_Log</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Existing_Type_s_Value_to_Error_Type_Variable</name>
+        <label>Assign Existing Type&apos;s Value to Error Type Variable</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>ErrorType</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Error_Type__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Lead_Staging_Error_Log</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Do_we_have_an_Error_Type</name>
+        <label>Do we have an Error Type?</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Default_Type_to_Error_Type_Variable</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Error Type</defaultConnectorLabel>
+        <rules>
+            <name>Error_Type_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Error_Type__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Existing_Type_s_Value_to_Error_Type_Variable</targetReference>
+            </connector>
+            <label>Error Type Exists</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Before-Save: Lead Staging Error Log Created {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Before-Save: Lead Staging Error Log Created</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Lead_Staging_Error_Log</name>
+        <label>Update Lead Staging Error Log</label>
+        <locationX>182</locationX>
+        <locationY>587</locationY>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <stringValue>Error: {!ErrorType}</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Do_we_have_an_Error_Type</targetReference>
+        </connector>
+        <object>Lead_Staging_Error_Log__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>ErrorType</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

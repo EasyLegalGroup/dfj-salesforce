@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <customErrors>
+        <name>ERROR_Do_Not_Delete_Opportunities</name>
+        <label>ERROR: Do Not Delete Opportunities</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <customErrorMessages>
+            <errorMessage>Deleting of Opportunities has been blocked. If for some reason, the Opportunities is required to be DELETED, contact your administrator.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Who_Deleted_It</name>
+        <label>Who Deleted It?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>ERROR_Do_Not_Delete_Opportunities</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Non-IT User</defaultConnectorLabel>
+        <rules>
+            <name>IT_User</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$User.Department</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>IT</stringValue>
+                </rightValue>
+            </conditions>
+            <label>IT User</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Deletion of Opportunity: Block if not done by IT {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Deletion of Opportunity: Block if not done by IT</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Who_Deleted_It</targetReference>
+        </connector>
+        <object>Opportunity</object>
+        <recordTriggerType>Delete</recordTriggerType>
+        <triggerType>RecordBeforeDelete</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

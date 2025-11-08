@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Work_Week_Absence</fullName>
+    <columns>NAME</columns>
+    <columns>Employee__c</columns>
+    <columns>Absence_Category__c</columns>
+    <columns>Country__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Attendance_Status__c</field>
+        <operation>equals</operation>
+        <value>Absent,Partial Day</value>
+    </filters>
+    <filters>
+        <field>Day_of_the_Week_Numeric__c</field>
+        <operation>lessOrEqual</operation>
+        <value>5</value>
+    </filters>
+    <label>Work Week Absence</label>
+</ListView>

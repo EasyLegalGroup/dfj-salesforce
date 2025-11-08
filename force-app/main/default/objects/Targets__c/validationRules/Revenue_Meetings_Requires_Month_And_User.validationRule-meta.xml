@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Revenue_Meetings_Requires_Month_And_User</fullName>
+    <active>true</active>
+    <description>Enforces that when the target metric is Revenue or Meetings Booked, the Period must be Month, and both Month Number and User must be populated.</description>
+    <errorConditionFormula>AND(
+  OR(
+    TEXT(Target_Metric__c) = &quot;Revenue&quot;,
+    TEXT(Target_Metric__c) = &quot;Meetings Booked&quot;
+  ),
+  OR(
+    TEXT(Target_Period__c) &lt;&gt; &quot;Month&quot;,
+    ISBLANK(Month_Number__c),
+    ISBLANK(User__c),
+    TEXT(Market_Unit__c) &lt;&gt; TEXT(User__r.Market_Unit__c)
+  )
+)</errorConditionFormula>
+    <errorMessage>For Revenue and Meetings Booked metrics, you must select Period = Month, specify a Month Number, and assign a User.
+Market Unit cannot differ from Selected User&apos;s Market Unit</errorMessage>
+</ValidationRule>

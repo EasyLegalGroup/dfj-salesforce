@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>p1_spec_belb_pristalsreg__c</fullName>
+    <defaultValue>false</defaultValue>
+    <externalId>false</externalId>
+    <label>Skal beløbet årligt pristalsregu dd97e</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

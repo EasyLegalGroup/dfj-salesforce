@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>beboelsesret_til_hvlkn_adr__c</fullName>
+    <externalId>false</externalId>
+    <label>Adresse som afgives beboelsesret 1bb72</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>beboelsesret_adr_p1</fullName>
+                <default>false</default>
+                <label>Adressen indtastet på Person 1</label>
+            </value>
+            <value>
+                <fullName>beboelsesret_adr_p2</fullName>
+                <default>false</default>
+                <label>Adressen indtastet på Person 2</label>
+            </value>
+            <value>
+                <fullName>beboelsesret_adr_anden</fullName>
+                <default>false</default>
+                <label>Anden adresse</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Campaign__c</columns>
+    <columns>Social_Media_Profile_ID__c</columns>
+    <columns>Post_ID__c</columns>
+    <columns>Post_URL__c</columns>
+    <columns>Market_Unit__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

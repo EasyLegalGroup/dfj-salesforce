@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cohabiting_should_surviving_inhe_2__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Skal længstlevende modtage arven som særeje?</description>
+    <externalId>false</externalId>
+    <label>Skal længstlevende modtage arven c4df2</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>See_All_Page_Layout_Components</name>
+    </customPermissions>
+    <description>This permission set contains various permissions that grant additional access outside the norm, e.g. seeing all components on a page layouts, even if they&apos;d otherwise not be visible to them</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Salesforce Superuser</label>
+</PermissionSet>

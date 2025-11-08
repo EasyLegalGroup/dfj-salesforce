@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>servicepakke_picklist__c</fullName>
+    <externalId>false</externalId>
+    <label>Servicepakke</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>servicepakke_picklist_mini_1</fullName>
+                <default>false</default>
+                <label>Servicepakke Mini (1 service)</label>
+            </value>
+            <value>
+                <fullName>servicepakke_picklist_lille_2</fullName>
+                <default>false</default>
+                <label>Servicepakke Lille (2 services)</label>
+            </value>
+            <value>
+                <fullName>servicepakke_picklist_mellem_4</fullName>
+                <default>false</default>
+                <label>Servicepakke Mellem (4 services)</label>
+            </value>
+            <value>
+                <fullName>servicepakke_picklist_stor_alle</fullName>
+                <default>false</default>
+                <label>Servicepakke Stor (alle nødvendige services)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

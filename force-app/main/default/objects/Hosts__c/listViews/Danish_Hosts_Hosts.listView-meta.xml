@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Danish_Hosts_Hosts</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Danish Event Coordinators</label>
+    <queue>Danish_Event_Bookers</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

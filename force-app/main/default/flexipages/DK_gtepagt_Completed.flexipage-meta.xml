@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>allowChanges</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>alternativeText</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>Center</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>imgPath</name>
+                    <value>{[devName:dfjlogo]}</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginBottom</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginLeft</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginRight</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginTop</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>objectFit</name>
+                    <value>fill</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>40</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:image</componentName>
+                <identifier>contentbuilder_image</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-ea24dc88-440f-46c7-8b98-d4c96985c3ed</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columnBody</name>
+                    <value>Facet-ea24dc88-440f-46c7-8b98-d4c96985c3ed</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columnSpacer</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>padding</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlign</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>100%</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:column</componentName>
+                <identifier>contentbuilder_column</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-808373c0-6ad8-45dd-a8ef-7336f5b98ae6</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>allowChanges</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>linkedToDesignKit</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginBottom</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginLeft</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginRight</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginTop</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;K&amp;aelig;re {{{Recipient.FirstName}}},&lt;/p&gt;
+
+&lt;p&gt;Den endelige version af jeres &amp;aelig;gtepagt er nu registreret og gjort klar til den digitale underskrift.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;L&amp;aelig;s nedenst&amp;aring;ende grundigt igennem:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;VIGTIGT!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Resten af processen for gyldigg&amp;oslash;relsen af &amp;aelig;gtepagten har I nu selv ansvaret for.&lt;/p&gt;
+
+&lt;p&gt;Din Familiejurist vil, n&amp;aring;r I anmelder jeres &amp;aelig;gtepagt til tinglysning, ikke have mulighed for at se ind i den konkrete sag eller f&amp;aring; opdateringer omkring processen. Det er udelukkende jer selv og Tinglysningsretten, der herfra har overblik over jeres sag. Det er desuden ogs&amp;aring; kun jer, som f&amp;aring;r besked, n&amp;aring;r &amp;aelig;gtepagten er godkendt eller, i sj&amp;aelig;ldne tilf&amp;aelig;lde, hvis den bliver afvist.&lt;/p&gt;
+
+&lt;p&gt;Det er derfor meget vigtigt, at I f&amp;oslash;lger vejledningen for at f&amp;aelig;rdigg&amp;oslash;re processen og gyldigg&amp;oslash;re dokumentet.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Dine opgaver er:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;Underskriv og anmeld &amp;aelig;gtepagten digitalt p&amp;aring; &lt;a href=&quot;https://www.tinglysning.dk&quot;&gt;tinglysning.dk&lt;/a&gt;.&lt;br /&gt;
+	Efter 6 m&amp;aring;neder slettes anmeldelsen af &amp;aelig;gtepagten, og du vil skulle tinglyse p&amp;aring; ny. Det er derfor meget vigtigt, at denne bliver anmeldt til tinglysningsretten fra dagen, du f&amp;oslash;rst modtog mail fra os om digital underskrift.&lt;/li&gt;
+	&lt;li&gt;Afvent svar fra tinglysningsretten om, at denne er godkendt.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Vigtigt:&lt;/strong&gt; Tinglysningsafgiften vil f&amp;oslash;rst blive trukket, n&amp;aring;r anmeldelsen er godkendt af tinglysningsretten. Afgiften vil ikke blive trukket, hvis den i et sj&amp;aelig;ldent tilf&amp;aelig;lde bliver afvist.&lt;/p&gt;
+
+&lt;p&gt;Guiden gennemg&amp;aring;r meget n&amp;oslash;je alle de trin, I skal fuldf&amp;oslash;re. S&amp;aring; l&amp;aelig;nge I f&amp;oslash;lger guiden, n&amp;aring;r I anmelder &amp;aelig;gtepagten til tinglysning, vil alt g&amp;aring; fint.&lt;/p&gt;
+
+&lt;p&gt;Skulle I have problemer med at &amp;aring;bne den vedh&amp;aelig;ftede guide, s&amp;aring; kan I finde vejledningen via linket her:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://scribehow.com/viewer/Sadan_underskriver_og_anmelder_I_aegtepagten_pa_Tinglysning__ae3wG4kyT9W7CeiV_PPhcA&quot;&gt;Link til guiden&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Gode r&amp;aring;d, f&amp;oslash;r I g&amp;aring;r i gang med at anmelde &amp;aelig;gtepagten til tinglysning:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Find begge jeres NemID/MitID frem.&lt;/li&gt;
+	&lt;li&gt;Find jeres betalingskort klar &amp;ndash; Det koster 1.850 kr. i tinglysningsgebyr at tinglyse en &amp;aelig;gtepagt.&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Valgfrit:&lt;/strong&gt; Det kan hj&amp;aelig;lpe nogle kunder at &amp;aring;bne guiden p&amp;aring; mobiltelefonen ved siden af computeren, s&amp;aring; I kan se b&amp;aring;de guiden og &lt;a href=&quot;https://www.tinglysning.dk&quot;&gt;www.tinglysning.dk&lt;/a&gt; p&amp;aring; samme tid.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Skulle der alligevel opst&amp;aring; problemer i forbindelse med tinglysningen, kan I kontakte Tinglysningsretten direkte via:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Telefon:&lt;/strong&gt; 99 68 58 00&lt;br /&gt;
+&lt;strong&gt;Kontaktformular:&lt;/strong&gt; &lt;a href=&quot;https://domstol.dk/tinglysningsretten/kontakt/&quot;&gt;https://domstol.dk/tinglysningsretten/kontakt/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Tinglysningen af en &amp;aelig;gtepagt er en betingelse for, at &amp;aelig;gtepagten er gyldig. Hvis I laver en &amp;aelig;gtepagt, men ikke tinglyser den, medf&amp;oslash;rer det, at &amp;aelig;gtepagten hverken er gyldig mellem jer som &amp;aelig;gtef&amp;aelig;ller eller over for andre. &amp;AElig;gtepagten skal derfor altid tinglyses.&lt;/p&gt;
+
+&lt;p&gt;Du &amp;oslash;nskes en god dag.&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:richText</componentName>
+                <identifier>contentbuilder_richText</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-2bf900ce-ed05-4e23-8c19-f7df6f809e56</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columnBody</name>
+                    <value>Facet-2bf900ce-ed05-4e23-8c19-f7df6f809e56</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columnSpacer</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>padding</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlign</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>100%</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:column</componentName>
+                <identifier>contentbuilder_column2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-e441c765-9041-4154-914c-4082ce5de64a</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-808373c0-6ad8-45dd-a8ef-7336f5b98ae6</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlignment</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:row</componentName>
+                <identifier>contentbuilder_row</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-e441c765-9041-4154-914c-4082ce5de64a</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlignment</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:row</componentName>
+                <identifier>contentbuilder_row2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>main</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>DK_gtepagt_Completed</masterLabel>
+    <template>
+        <name>contentpage:defaultEmailTemplatePageTemplate</name>
+        <properties>
+            <name>backgroundColor</name>
+            <value>#E9EAEC</value>
+        </properties>
+        <properties>
+            <name>backgroundImageUrl</name>
+        </properties>
+        <properties>
+            <name>bodyColor</name>
+            <value>#FFFFFF</value>
+        </properties>
+        <properties>
+            <name>paddingBottom</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingLeft</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingRight</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingTop</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>preheader</name>
+            <value>Jeres ægtepagt er nu blevet tinglyst</value>
+        </properties>
+    </template>
+    <type>EmailTemplatePage</type>
+</FlexiPage>

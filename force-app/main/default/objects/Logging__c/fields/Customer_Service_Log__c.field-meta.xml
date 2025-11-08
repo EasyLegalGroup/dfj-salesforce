@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Service_Log__c</fullName>
+    <externalId>false</externalId>
+    <label>Customer Service Log</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Andet (Se note)</fullName>
+                <default>false</default>
+                <label>Andet (Se note)</label>
+            </value>
+            <value>
+                <fullName>Spørgsmål internt (Se note)</fullName>
+                <default>false</default>
+                <label>Spørgsmål internt (Se note)</label>
+            </value>
+            <value>
+                <fullName>Spørgsmål til juristen</fullName>
+                <default>false</default>
+                <label>Spørgsmål til juristen</label>
+            </value>
+            <value>
+                <fullName>Tilbagekald fra rådgiver</fullName>
+                <default>false</default>
+                <label>Tilbagekald fra rådgiver</label>
+            </value>
+            <value>
+                <fullName>Spørgsmål til tinglysning</fullName>
+                <default>false</default>
+                <label>Spørgsmål til tinglysning</label>
+            </value>
+            <value>
+                <fullName>Spørgsmål til dokumenter</fullName>
+                <default>false</default>
+                <label>Spørgsmål til dokumenter</label>
+            </value>
+            <value>
+                <fullName>Spørgsmål til proces</fullName>
+                <default>false</default>
+                <label>Spørgsmål til proces</label>
+            </value>
+            <value>
+                <fullName>Spørgsmål til faktura</fullName>
+                <default>false</default>
+                <label>Spørgsmål til faktura</label>
+            </value>
+            <value>
+                <fullName>Booking/afbooking af foredrag</fullName>
+                <default>false</default>
+                <label>Booking/afbooking af foredrag</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

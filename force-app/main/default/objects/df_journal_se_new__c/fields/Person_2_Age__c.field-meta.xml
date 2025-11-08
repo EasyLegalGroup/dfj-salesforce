@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Person_2_Age__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    OR(
+        MONTH(TODAY()) &gt; MONTH( DATE(
+            VALUE(LEFT( person_2_personnummer__c ,4)),
+            VALUE(MID(person_2_personnummer__c ,5,2)),
+            VALUE(MID(person_2_personnummer__c ,7,2))
+        )),
+        AND(
+            MONTH(TODAY()) = MONTH( DATE(
+                VALUE(LEFT(person_2_personnummer__c ,4)),
+                VALUE(MID(person_2_personnummer__c ,5,2)),
+                VALUE(MID(person_2_personnummer__c ,7,2))
+            )),
+            DAY(TODAY()) &gt;= DAY( DATE(
+                VALUE(LEFT(person_2_personnummer__c ,4)),
+                VALUE(MID(person_2_personnummer__c ,5,2)),
+                VALUE(MID(person_2_personnummer__c ,7,2))
+            ))
+        )
+    ),
+    YEAR(TODAY()) - YEAR(DATE(
+        VALUE(LEFT(person_2_personnummer__c ,4)),
+        VALUE(MID(person_2_personnummer__c ,5,2)),
+        VALUE(MID(person_2_personnummer__c ,7,2))
+    )),
+ YEAR(TODAY()) - YEAR(DATE(
+        VALUE(LEFT(person_2_personnummer__c ,4)),
+        VALUE(MID(person_2_personnummer__c ,5,2)),
+        VALUE(MID(person_2_personnummer__c ,7,2))
+    )) - 1
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Person 2 Age</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

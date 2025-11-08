@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V_rter_Denmark</fullName>
+    <columns>Host_ID__c</columns>
+    <columns>NAME</columns>
+    <columns>Phone__c</columns>
+    <columns>Name_of_Contact__c</columns>
+    <columns>Contact_First_Name__c</columns>
+    <columns>Contact_Last_Name__c</columns>
+    <columns>Email__c</columns>
+    <columns>Website__c</columns>
+    <columns>Projector__c</columns>
+    <columns>Projector_Screen__c</columns>
+    <columns>Contact_Creator__c</columns>
+    <columns>Contact__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>DFJ_DK,Testamente_DK</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Closed - Lost</value>
+    </filters>
+    <filters>
+        <field>Test_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Company_Lecture__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Værter (Denmark)</label>
+</ListView>

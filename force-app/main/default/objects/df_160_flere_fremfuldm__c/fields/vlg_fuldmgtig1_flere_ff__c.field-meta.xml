@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlg_fuldmgtig1_flere_ff__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Vælg fuldmægtig</label>
+    <referenceTo>df_160_person__c</referenceTo>
+    <relationshipLabel>vlg_fuldmgtig1_flere_ff</relationshipLabel>
+    <relationshipName>vlg_fuldmgtig1_flere_ff</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

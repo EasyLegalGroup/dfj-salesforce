@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_Active_Employee_Must_have_SF_User</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISPICKVAL(Employment_Status__c, &quot;Active&quot;),
+    ISBLANK(SF_User__c)
+)</errorConditionFormula>
+    <errorDisplayField>SF_User__c</errorDisplayField>
+    <errorMessage>Please link to the corresponding Salesforce User. If there is no Salesforce User, select the user &quot;Din Familiejurist&quot;</errorMessage>
+</ValidationRule>

@@ -1,0 +1,973 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>DK_Send_Email</name>
+        <label>DK: Send Email</label>
+        <locationX>314</locationX>
+        <locationY>1608</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>event@dinfamiliejurist.dk</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <elementReference>$Record.Contact__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailTemplateId</name>
+            <value>
+                <stringValue>00XAX000000MLIG2A4</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>SE_Send_Email</name>
+        <label>SE: Send Email</label>
+        <locationX>1106</locationX>
+        <locationY>1608</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>foredrag@dinfamiljejurist.nu</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <elementReference>$Record.Contact__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailTemplateId</name>
+            <value>
+                <stringValue>00XAX000000MLJd2AO</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <apiVersion>59.0</apiVersion>
+    <assignments>
+        <name>DK_Assign_Billing_Information</name>
+        <label>DK: Assign &quot;Billing Information&quot;</label>
+        <locationX>314</locationX>
+        <locationY>1284</locationY>
+        <assignmentItems>
+            <assignToReference>varDK_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtDK_BillingInformation</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>DK_Assign_Ending_and_Signature</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>DK_Assign_Ending_and_Signature</name>
+        <label>DK: Assign Ending and Signature</label>
+        <locationX>314</locationX>
+        <locationY>1392</locationY>
+        <assignmentItems>
+            <assignToReference>varDK_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtDK_Ending_and_Signature</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>DK_Update_Fluid_Email_Field</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>DK_Assign_Greeting</name>
+        <label>DK: Assign Greeting</label>
+        <locationX>314</locationX>
+        <locationY>360</locationY>
+        <assignmentItems>
+            <assignToReference>varDK_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtDK_Greeting</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>DK_When_is_the_Event</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>DK_Assign_Looking_Forward_2_Days</name>
+        <label>DK: Assign &quot;Looking Forward&quot; (2 Days)</label>
+        <locationX>314</locationX>
+        <locationY>576</locationY>
+        <assignmentItems>
+            <assignToReference>varDK_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtDK_Looking_Forward_2_Days</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UPD_DK_Status_2</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>DK_Assign_Looking_Forward_Next_Week</name>
+        <label>DK: Assign &quot;Looking Forward&quot; (Next Week)</label>
+        <locationX>50</locationX>
+        <locationY>576</locationY>
+        <assignmentItems>
+            <assignToReference>varDK_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtDK_Looking_Forward_Next_Week</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UPD_DK_Status_1</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>DK_Assign_Overbooked_False</name>
+        <label>DK: Assign Overbooked False</label>
+        <locationX>314</locationX>
+        <locationY>984</locationY>
+        <assignmentItems>
+            <assignToReference>varDK_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtDK_Overbooked_False</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>DK_Assign_Status_3_Assign_Lecturer_Info</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>DK_Assign_Overbooked_True</name>
+        <label>DK: Assign Overbooked True</label>
+        <locationX>50</locationX>
+        <locationY>984</locationY>
+        <assignmentItems>
+            <assignToReference>varDK_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtDK_Overbooked_True</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>DK_Assign_Status_3_Assign_Lecturer_Info</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>DK_Assign_Status_3_Assign_Lecturer_Info</name>
+        <label>DK: Assign Status #3: Assign &quot;Lecturer Info&quot;</label>
+        <locationX>314</locationX>
+        <locationY>1176</locationY>
+        <assignmentItems>
+            <assignToReference>varDK_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtDK_Lecturer_Info</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>DK_Assign_Billing_Information</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SE_Assign_Billing_Information</name>
+        <label>SE: Assign Billing Information</label>
+        <locationX>1106</locationX>
+        <locationY>1284</locationY>
+        <assignmentItems>
+            <assignToReference>varSE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtSE_BillingInformation</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SE_Assign_Ending_and_Signature</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SE_Assign_Ending_and_Signature</name>
+        <label>SE: Assign Ending and Signature</label>
+        <locationX>1106</locationX>
+        <locationY>1392</locationY>
+        <assignmentItems>
+            <assignToReference>varSE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtSE_Ending_and_Signature</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SE_Update_Fluid_Email_Field</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SE_Assign_Greeting</name>
+        <label>SE: Assign Greeting</label>
+        <locationX>1106</locationX>
+        <locationY>360</locationY>
+        <assignmentItems>
+            <assignToReference>varSE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtSE_Greeting</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SE_When_is_the_Event</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SE_Assign_Looking_Forward_2_Days</name>
+        <label>SE: Assign &quot;Looking Forward&quot; (2 Days)</label>
+        <locationX>1106</locationX>
+        <locationY>576</locationY>
+        <assignmentItems>
+            <assignToReference>varSE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtSE_Looking_Forward_2_Days</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UPD_SE_Status_2</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SE_Assign_Looking_Forward_Next_Week</name>
+        <label>SE: Assign &quot;Looking Forward&quot; (Next Week)</label>
+        <locationX>842</locationX>
+        <locationY>576</locationY>
+        <assignmentItems>
+            <assignToReference>varSE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtSE_Looking_Forward_Next_Week</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UPD_SE_Status_1</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SE_Assign_Overbooked_False</name>
+        <label>SE: Assign Overbooked False</label>
+        <locationX>1106</locationX>
+        <locationY>984</locationY>
+        <assignmentItems>
+            <assignToReference>varSE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtSE_Overbooked_False</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SE_Assign_Status_3_Assign_Lecturer_Info</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SE_Assign_Overbooked_True</name>
+        <label>SE: Assign Overbooked True</label>
+        <locationX>842</locationX>
+        <locationY>984</locationY>
+        <assignmentItems>
+            <assignToReference>varSE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtSE_Overbooked_True</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SE_Assign_Status_3_Assign_Lecturer_Info</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SE_Assign_Status_3_Assign_Lecturer_Info</name>
+        <label>SE: Assign Status #3: Assign &quot;Lecturer Info&quot;</label>
+        <locationX>1106</locationX>
+        <locationY>1176</locationY>
+        <assignmentItems>
+            <assignToReference>varSE_Email</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>txtSE_Lecturer_Info</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SE_Assign_Billing_Information</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>DK_Is_it_overbooked</name>
+        <label>DK: Is it overbooked?</label>
+        <locationX>314</locationX>
+        <locationY>876</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>DK_Event_is_Overbooked</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Booked_Seats__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <elementReference>$Record.Capacity__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>DK_Assign_Overbooked_True</targetReference>
+            </connector>
+            <label>DK: Event is Overbooked</label>
+        </rules>
+        <rules>
+            <name>DK_Not_Overbooked</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Booked_Seats__c</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Capacity__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>DK_Assign_Overbooked_False</targetReference>
+            </connector>
+            <label>DK: Not Overbooked</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>DK_When_is_the_Event</name>
+        <label>DK: When is the Event?</label>
+        <locationX>314</locationX>
+        <locationY>468</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>DK_Event_is_Next_Week</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>X7DaysFromNow</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>StartDate</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>DK_Assign_Looking_Forward_Next_Week</targetReference>
+            </connector>
+            <label>DK: Event is Next Week</label>
+        </rules>
+        <rules>
+            <name>DK_Event_is_2_Days_From_Now</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>X2DaysFromNow</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>StartDate</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>DK_Assign_Looking_Forward_2_Days</targetReference>
+            </connector>
+            <label>DK: Event is 2 Days From Now</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Market_Unit</name>
+        <label>Market Unit</label>
+        <locationX>930</locationX>
+        <locationY>252</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Denmark</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>DFJ_DK</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Testamente_DK</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>DK_Assign_Greeting</targetReference>
+            </connector>
+            <label>Denmark</label>
+        </rules>
+        <rules>
+            <name>Sweden</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>FA_SE</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Testamente_SV</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SE_Assign_Greeting</targetReference>
+            </connector>
+            <label>Sweden</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>SE_Is_it_overbooked</name>
+        <label>SE: Is it overbooked?</label>
+        <locationX>1106</locationX>
+        <locationY>876</locationY>
+        <defaultConnector>
+            <targetReference>SE_Assign_Status_3_Assign_Lecturer_Info</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SE_Event_is_Overbooked</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Booked_Seats__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <elementReference>$Record.Capacity__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SE_Assign_Overbooked_True</targetReference>
+            </connector>
+            <label>SE: Event is Overbooked</label>
+        </rules>
+        <rules>
+            <name>SE_Not_Overbooked</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Booked_Seats__c</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Capacity__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SE_Assign_Overbooked_False</targetReference>
+            </connector>
+            <label>SE: Not Overbooked</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>SE_When_is_the_Event</name>
+        <label>SE: When is the Event?</label>
+        <locationX>1106</locationX>
+        <locationY>468</locationY>
+        <defaultConnector>
+            <targetReference>SE_Is_it_overbooked</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SE_Event_is_Next_Week</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>X7DaysFromNow</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>StartDate</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SE_Assign_Looking_Forward_Next_Week</targetReference>
+            </connector>
+            <label>SE: Event is Next Week</label>
+        </rules>
+        <rules>
+            <name>SE_Event_is_2_Days_From_Now</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>X2DaysFromNow</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>StartDate</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SE_Assign_Looking_Forward_2_Days</targetReference>
+            </connector>
+            <label>SE: Event is 2 Days From Now</label>
+        </rules>
+    </decisions>
+    <description>Updated text bits to include the venue name.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>DK_Weekday_EventStart</name>
+        <dataType>String</dataType>
+        <expression>CASE(
+   MOD( DATEVALUE( {!$Record.Start__c} ) - DATE(1900, 1, 7), 7),
+   0, &quot;søndag&quot;,
+   1, &quot;mandag&quot;,
+   2, &quot;tirsdag&quot;,
+   3, &quot;onsdag&quot;,
+   4, &quot;torsdag&quot;,
+   5, &quot;fredag&quot;,
+   6, &quot;lørdag&quot;,
+   &quot;Error&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>SE_Weekday_EventStart</name>
+        <dataType>String</dataType>
+        <expression>CASE(
+   MOD( DATEVALUE( {!$Record.Start__c} ) - DATE(1900, 1, 7), 7),
+   0, &quot;söndag&quot;,
+   1, &quot;måndag&quot;,
+   2, &quot;tisdag&quot;,
+   3, &quot;onsdag&quot;,
+   4, &quot;torsdag&quot;,
+   5, &quot;fredag&quot;,
+   6, &quot;lördag&quot;,
+   &quot;Error&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>StartDate</name>
+        <dataType>Date</dataType>
+        <expression>{!$Record.Start__c}</expression>
+    </formulas>
+    <formulas>
+        <name>Weekday_Today</name>
+        <dataType>String</dataType>
+        <expression>CASE(
+   MOD( DATEVALUE( NOW() ) - DATE(1900, 1, 7), 7),
+   0, &quot;søndag&quot;,
+   1, &quot;mandag&quot;,
+   2, &quot;tirsdag&quot;,
+   3, &quot;onsdag&quot;,
+   4, &quot;torsdag&quot;,
+   5, &quot;fredag&quot;,
+   6, &quot;lørdag&quot;,
+   &quot;Error&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>X11DaysFromNow</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate}+11</expression>
+    </formulas>
+    <formulas>
+        <name>X13DaysFromNow</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate}+13</expression>
+    </formulas>
+    <formulas>
+        <name>X1DayFromNow</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate}+1</expression>
+    </formulas>
+    <formulas>
+        <name>X2DaysFromNow</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate}+2</expression>
+    </formulas>
+    <formulas>
+        <name>X3DaysFromNow</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate}+3</expression>
+    </formulas>
+    <formulas>
+        <name>X4DaysFromNow</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate}+4</expression>
+    </formulas>
+    <formulas>
+        <name>X6DaysFromNow</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate}+6</expression>
+    </formulas>
+    <formulas>
+        <name>X7DaysFromNow</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate}+7</expression>
+    </formulas>
+    <formulas>
+        <name>X9DaysFromNow</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate}+9</expression>
+    </formulas>
+    <interviewLabel>Host: Status Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Host: Status Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>DK_Update_Fluid_Email_Field</name>
+        <label>DK: Update Fluid Email Field</label>
+        <locationX>314</locationX>
+        <locationY>1500</locationY>
+        <connector>
+            <targetReference>DK_Send_Email</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Fluid_Email_Field__c</field>
+            <value>
+                <elementReference>varDK_Email</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>SE_Update_Fluid_Email_Field</name>
+        <label>SE: Update Fluid Email Field</label>
+        <locationX>1106</locationX>
+        <locationY>1500</locationY>
+        <connector>
+            <targetReference>SE_Send_Email</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Fluid_Email_Field__c</field>
+            <value>
+                <elementReference>varDK_Email</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UPD_DK_Status_1</name>
+        <label>UPD: DK Status 1</label>
+        <locationX>50</locationX>
+        <locationY>684</locationY>
+        <connector>
+            <targetReference>DK_Is_it_overbooked</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Status_for_Host_1_Percentage__c</field>
+            <value>
+                <elementReference>$Record.Booking_Percentage__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_1_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UPD_DK_Status_2</name>
+        <label>UPD: DK Status 2</label>
+        <locationX>314</locationX>
+        <locationY>684</locationY>
+        <connector>
+            <targetReference>DK_Is_it_overbooked</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Status_for_Host_2_Percentage__c</field>
+            <value>
+                <elementReference>$Record.Booking_Percentage__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_2_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UPD_SE_Status_1</name>
+        <label>UPD: SE Status 1</label>
+        <locationX>842</locationX>
+        <locationY>684</locationY>
+        <connector>
+            <targetReference>SE_Is_it_overbooked</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Status_for_Host_1_Percentage__c</field>
+            <value>
+                <elementReference>$Record.Booking_Percentage__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_1_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UPD_SE_Status_2</name>
+        <label>UPD: SE Status 2</label>
+        <locationX>1106</locationX>
+        <locationY>684</locationY>
+        <connector>
+            <targetReference>SE_Is_it_overbooked</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Status_for_Host_2_Percentage__c</field>
+            <value>
+                <elementReference>$Record.Booking_Percentage__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_for_Host_2_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>804</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Market_Unit</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Contact__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Scheduled</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Company_Lecture__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Start__c</field>
+            <operator>GreaterThan</operator>
+            <value>
+                <dateTimeValue>2024-01-13T23:00:00.000Z</dateTimeValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Invoicing_Agreement__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Locked-In Booking Count</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Open_for_Bookings__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Campaign</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2024-01-08</startDate>
+            <startTime>12:30:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>txtDK_BillingInformation</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;color:rgb(0,0,0);font-family:Arial, Helvetica, sans-serif;font-size:14px;&quot;&gt;&lt;strong&gt;Fakturering og betalingsbetingelser&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;color:rgb(0,0,0);font-family:Arial, Helvetica, sans-serif;font-size:14px;&quot;&gt;Send venligst alle fakturaer til&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;mailto:foredrag.faktura@dinfamiliejurist.dk&quot;&gt;&lt;span style=&quot;color:rgb(0,0,0);font-family:Arial, Helvetica, sans-serif;font-size:14px;&quot;&gt;foredrag.faktura@dinfamiliejurist.dk&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;color:rgb(0,0,0);font-family:Arial, Helvetica, sans-serif;font-size:14px;&quot;&gt;. Husk at inkludere bank- og kontooplysninger samt CVR-nummer på alle fakturaer.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtDK_Ending_and_Signature</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p style=&quot;margin: 0; padding: 0;&quot;&gt;Sig endelig til, hvis I har nogen spørgsmål - vi hjælper gerne til, med hvad end det skulle være!&lt;/p&gt;
+&lt;p style=&quot;margin: 0; padding: 0;&quot;&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p style=&quot;margin: 0; padding: 0;&quot;&gt;Med venlig hilsen,&lt;/p&gt;
+&lt;p style=&quot;margin: 0; padding: 0;&quot;&gt;Foredragsteamet&lt;/p&gt;
+&lt;p style=&quot;margin: 0; padding: 0;&quot;&gt;Din Familiejurist&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtDK_Greeting</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;Kære&amp;nbsp;{!$Record.Contact__r.FirstName},&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtDK_Lecturer_Info</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;
+ - {!$Record.Lecturer__r.FirstName} {!$Record.Lecturer__r.LastName} afholder foredraget og ankommer som regel ca. 30 minutter f&amp;oslash;r starttidspunktet.&lt;br /&gt;
+ - {!$Record.Lecturer__r.FirstName} scanner g&amp;aelig;sterne ind, hj&amp;aelig;lper dem med at finde deres plads, osv.&lt;br /&gt;
+ - {!$Record.Lecturer__r.FirstName} fors&amp;oslash;ger selvf&amp;oslash;lgelig ogs&amp;aring; at give g&amp;aelig;sterne et venligt skub op mod baren.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtDK_Looking_Forward_2_Days</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;Vi ser frem til foredraget hos jer, på {!$Record.Venue__c}, om to dage, {!DK_Weekday_EventStart}, d. {!$Record.Start__c}&lt;/p&gt; &lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtDK_Looking_Forward_Next_Week</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;Vi ser frem til foredraget hos jer, på {!$Record.Venue__c}, næste uge, {!DK_Weekday_EventStart}, d. {!$Record.Start__c}&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtDK_Overbooked_False</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;font-family:Arial,Helvetica,sans-serif&quot;&gt;Der er, i skrivende stund, booket {!$Record.Booked_Seats_From_Airtable__c} af de tilg&amp;aelig;ngelige {!$Record.Capacity__c} pladser.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtDK_Overbooked_True</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;font-family:Arial,Helvetica,sans-serif&quot;&gt;Der er, i skrivende stund, booket {!$Record.Booked_Seats_From_Airtable__c} af de tilg&amp;aelig;ngelige {!$Record.Capacity__c} pladser.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtSE_BillingInformation</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;color:rgb(0,0,0);font-family:Arial, Helvetica, sans-serif;font-size:14px;&quot;&gt;&lt;strong&gt;Fakturering och betalningsvillkor&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;color:rgb(0,0,0);font-family:Arial, Helvetica, sans-serif;font-size:14px;&quot;&gt;Vänligen skicka alla fakturor till&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;mailto:foredrag.faktura@dinfamiliejurist.dk&quot;&gt;&lt;span style=&quot;color:rgb(0,0,0);font-family:Arial, Helvetica, sans-serif;font-size:14px;&quot;&gt;foredrag.faktura@dinfamiliejurist.dk&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;color:rgb(0,0,0);font-family:Arial, Helvetica, sans-serif;font-size:14px;&quot;&gt;. Kom ihåg att inkludera bank- och kontouppgifter samt organisationsnummer på alla fakturor.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtSE_Ending_and_Signature</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p style=&quot;margin: 0; padding: 0;&quot;&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p style=&quot;margin: 0; padding: 0;&quot;&gt;Med vänliga hälsningar,&lt;/p&gt;
+&lt;p style=&quot;margin: 0; padding: 0;&quot;&gt;Föredragsteamet&lt;/p&gt;
+&lt;p style=&quot;margin: 0; padding: 0;&quot;&gt;Din Familjejurist&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtSE_Greeting</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;Hej {!$Record.Contact__r.FirstName},&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtSE_Lecturer_Info</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt; - {!$Record.Lecturer__r.FirstName} {!$Record.Lecturer__r.LastName}&amp;nbsp;h&amp;aring;ller f&amp;ouml;redraget och anl&amp;auml;nder vanligtvis cirka 30 minuter f&amp;ouml;re starttiden.
+ - {!$Record.Lecturer__r.FirstName} &amp;nbsp;skannar in g&amp;auml;sterna, hj&amp;auml;lper dem att hitta sina platser, osv.
+&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtSE_Looking_Forward_2_Days</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;Vi ser fram emot föreläsningen hos er, på {!$Record.Venue__c}, om två dagar, {!SE_Weekday_EventStart}, den {!$Record.Start__c}&lt;/p&gt; &lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtSE_Looking_Forward_Next_Week</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;Vi ser fram emot föreläsningen hos er, på {!$Record.Venue__c}, nästa vecka, {!SE_Weekday_EventStart}, den {!$Record.Start__c}&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtSE_Overbooked_False</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;font-family:Arial,Helvetica,sans-serif&quot;&gt;Det är, vid tidpunkten för detta skrivande, bokat {!$Record.Booked_Seats_From_Airtable__c} av de tillgängliga {!$Record.Capacity__c} platserna.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtSE_Overbooked_True</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;font-family:Arial,Helvetica,sans-serif&quot;&gt;Det är, vid tidpunkten för detta skrivande, bokat {!$Record.Booked_Seats_From_Airtable__c} av de tillgängliga {!$Record.Capacity__c} platserna.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <name>varDK_Email</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varSE_Email</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

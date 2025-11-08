@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>plCounty__c</fullName>
+    <externalId>false</externalId>
+    <label>County</label>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Market_Unit__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>County</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>DFJ_DK</controllingFieldValue>
+            <valueName>Fyn</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DFJ_DK</controllingFieldValue>
+            <valueName>Jylland</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DFJ_DK</controllingFieldValue>
+            <valueName>Sjælland</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DFJ_DK</controllingFieldValue>
+            <valueName>Bornholm</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FA_SE</controllingFieldValue>
+            <valueName>Blekinge län</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FA_SE</controllingFieldValue>
+            <valueName>Dalarnas län</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FA_SE</controllingFieldValue>
+            <valueName>Gotlands län</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FA_SE</controllingFieldValue>
+            <valueName>Gävleborgs län</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FA_SE</controllingFieldValue>
+            <valueName>Hallands län</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FA_SE</controllingFieldValue>
+            <valueName>Jämtlands län</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FA_SE</controllingFieldValue>
+            <valueName>Jönköpings län</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FA_SE</controllingFieldValue>
+            <valueName>Kalmar län</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FA_SE</controllingFieldValue>
+            <valueName>Kronobergs län</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FA_SE</controllingFieldValue>
+            <valueName>Norrbottens län</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FA_SE</controllingFieldValue>
+            <valueName>Skåne län</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FA_SE</controllingFieldValue>
+            <valueName>Stockholms län</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FA_SE</controllingFieldValue>
+            <valueName>Södermanlands län</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FA_SE</controllingFieldValue>
+            <valueName>Uppsala län</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FA_SE</controllingFieldValue>
+            <valueName>Värmlands län</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FA_SE</controllingFieldValue>
+            <valueName>Västerbottens län</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FA_SE</controllingFieldValue>
+            <valueName>Västernorrlands län</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FA_SE</controllingFieldValue>
+            <valueName>Västmanlands län</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FA_SE</controllingFieldValue>
+            <valueName>Västra Götalands län</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FA_SE</controllingFieldValue>
+            <valueName>Örebro län</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FA_SE</controllingFieldValue>
+            <valueName>Östergötlands län</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

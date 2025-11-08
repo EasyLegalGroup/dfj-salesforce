@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Employees_Unapproved_Time_Sheets</fullName>
+    <columns>Employee__c</columns>
+    <columns>NAME</columns>
+    <columns>Approval_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Approval_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Approved</value>
+    </filters>
+    <filters>
+        <field>Relation_to_Employee__c</field>
+        <operation>equals</operation>
+        <value>Supervisor,Manager</value>
+    </filters>
+    <filters>
+        <field>Employment_Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>Month_Year__c</field>
+        <operation>lessThan</operation>
+        <value>THIS_MONTH</value>
+    </filters>
+    <filters>
+        <field>Template_Time_Sheet__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>My Employees&apos; Unapproved Time Sheets</label>
+</ListView>

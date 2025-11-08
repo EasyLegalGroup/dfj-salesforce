@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Company_Hosts_Working</fullName>
+    <columns>NAME</columns>
+    <columns>Email__c</columns>
+    <columns>Status__c</columns>
+    <columns>Zip_Code__c</columns>
+    <columns>Default_Attendance_Format__c</columns>
+    <columns>Company_Lecture__c</columns>
+    <columns>Company_Type__c</columns>
+    <columns>Industry__c</columns>
+    <columns>Industry_Code__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Company_Lecture__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Working</value>
+    </filters>
+    <label>My Company Hosts (Working)</label>
+</ListView>

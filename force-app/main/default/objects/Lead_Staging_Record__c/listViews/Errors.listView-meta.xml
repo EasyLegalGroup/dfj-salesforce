@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Errors</fullName>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>Full_Name__c</columns>
+    <columns>External_ID__c</columns>
+    <columns>Interaction__c</columns>
+    <columns>Outcome__c</columns>
+    <columns>Processing_Status__c</columns>
+    <columns>Source__c</columns>
+    <columns>Lead__c</columns>
+    <columns>Account__c</columns>
+    <columns>Error_Count__c</columns>
+    <columns>Number_of_Records_Merged__c</columns>
+    <columns>Associated_Records__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Processing_Status__c</field>
+        <operation>equals</operation>
+        <value>Error</value>
+    </filters>
+    <label>Errors</label>
+</ListView>

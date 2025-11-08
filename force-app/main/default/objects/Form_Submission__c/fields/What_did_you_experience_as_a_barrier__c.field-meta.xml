@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>What_did_you_experience_as_a_barrier__c</fullName>
+    <externalId>false</externalId>
+    <label>What did you experience as a barrier?</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Advisor mismatch</fullName>
+                <default>false</default>
+                <label>Advisor mismatch</label>
+            </value>
+            <value>
+                <fullName>Offer/promotion confusion</fullName>
+                <default>false</default>
+                <label>Offer/promotion confusion</label>
+            </value>
+            <value>
+                <fullName>Pricing concerns</fullName>
+                <default>false</default>
+                <label>Pricing concerns</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

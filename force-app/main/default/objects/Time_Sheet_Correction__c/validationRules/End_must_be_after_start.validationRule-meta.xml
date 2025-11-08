@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>End_must_be_after_start</fullName>
+    <active>true</active>
+    <description>Triggers if the end time is not set to be after the start time</description>
+    <errorConditionFormula>Work_End__c &lt;= Work_Start__c</errorConditionFormula>
+    <errorMessage>Work End must be set to be after Work Start</errorMessage>
+</ValidationRule>

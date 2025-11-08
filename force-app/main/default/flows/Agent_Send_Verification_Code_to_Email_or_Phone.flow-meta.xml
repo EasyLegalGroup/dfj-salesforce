@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Generate_verification_code</name>
+        <label>Generate verification code</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>generateVerificationCode</actionName>
+        <actionType>generateVerificationCode</actionType>
+        <connector>
+            <targetReference>Which_Medium_Should_We_Use</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Which_Country_Did_We_Get_an_Error_From</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <nameSegment>generateVerificationCode</nameSegment>
+        <outputParameters>
+            <assignToReference>VerificationCode</assignToReference>
+            <name>verificationCode</name>
+        </outputParameters>
+        <outputParameters>
+            <assignToReference>AuthenticationKey</assignToReference>
+            <name>authenticationKey</name>
+        </outputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Email</name>
+        <label>Send Email</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Assign_Email_Medium_Values</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Which_Country_Did_We_Get_an_Error_From</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>emailAddress</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>no-reply@dinfamiliejurist.dk</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>composeEmailContent</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Din Familiejurist | Engangskode til verificering</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <stringValue>&lt;p&gt;Kære {!CustomerName},&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Her er din engangskode:&lt;/p&gt;&lt;p&gt;{!VerificationCode}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Med venlig hilsen,&lt;/p&gt;&lt;p&gt;Din Familiejurist&lt;/p&gt;</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useLineBreaks</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <apiVersion>64.0</apiVersion>
+    <assignments>
+        <name>Assign_Danish_Error_Values</name>
+        <label>Assign Danish Error Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>FlowErrorMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Vi kunne desværre ikke finde din konto</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assign_Email_Medium_Values</name>
+        <label>Assign Email Medium Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>Medium</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>email</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Which_Country_Do_We_Have</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Irish_Error_Values</name>
+        <label>Assign Irish Error Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>FlowErrorMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Unfortunately, we could not find your account.</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>You will receive a 6-digit one-time code shortly at {!frmCustomerToVerify}. Enter it here to complete the verification.</description>
+        <name>Assign_Irish_Values</name>
+        <label>Assign Irish Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>FlowSuccessMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>You will receive a 6-digit one-time code shortly at {!frmCustomerToVerify}. Enter it here to complete the verification.</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assign_SMS_Medium_Values</name>
+        <label>Assign SMS Medium Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>Medium</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>SMS</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Which_Country_Do_We_Have</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Swedish_Error_Values</name>
+        <label>Assign Swedish Error Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>FlowErrorMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Tyvärr kunde vi inte hitta ditt konto.</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assign_Swedish_Values</name>
+        <label>Assign Swedish Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>FlowSuccessMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Du kommer strax att få en 6-siffrig engångskod på {!frmCustomerToVerify}. Ange den här för att slutföra verifieringen.</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assignment_5</name>
+        <label>Assign Danish Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>FlowSuccessMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Du modtager om et øjeblik en 6-cifret engangskode på {!frmCustomerToVerify}. Indtast den her, for at fuldende verificeringen.</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Set_Medium</name>
+        <label>Set Medium</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>Medium</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmMedium</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Generate_verification_code</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Did_SMS_Subflow_Suceed</name>
+        <label>Did SMS Subflow Suceed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Which_Country_Did_We_Get_an_Error_From</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SMS_Subflow_Success</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AL_Send_Twilio_SMS_Flow.IsSuccess</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_SMS_Medium_Values</targetReference>
+            </connector>
+            <label>SMS Subflow Success</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Did_We_Find_an_Account_through_Phone_Number</name>
+        <label>Did We Find an Account through Phone Number?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Which_Country_Did_We_Get_an_Error_From</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Got_Account_through_Phone</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>phoneNumber</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Medium</targetReference>
+            </connector>
+            <label>Got Account through Phone</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Which_Country_Did_We_Get_an_Error_From</name>
+        <label>Which Country Did We Get an Error From?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Assign_Irish_Error_Values</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Got_Danish_Error</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Country</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Denmark</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Danish_Error_Values</targetReference>
+            </connector>
+            <label>Got Danish Error</label>
+        </rules>
+        <rules>
+            <name>Got_Swedish_Error</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Country</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sweden</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Swedish_Error_Values</targetReference>
+            </connector>
+            <label>Got Swedish Error</label>
+        </rules>
+        <rules>
+            <name>Got_Irish_Error</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Country</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ireland</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Irish_Error_Values</targetReference>
+            </connector>
+            <label>Got Irish Error</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Which_Country_Do_We_Have</name>
+        <label>Which Country Do We Have?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Which_Country_Did_We_Get_an_Error_From</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Got_Denmark</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Country</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Denmark</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assignment_5</targetReference>
+            </connector>
+            <label>Got Denmark</label>
+        </rules>
+        <rules>
+            <name>Got_Sweden</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Country</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sweden</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Swedish_Values</targetReference>
+            </connector>
+            <label>Got Sweden</label>
+        </rules>
+        <rules>
+            <name>Got_Ireland</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Country</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ireland</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Irish_Values</targetReference>
+            </connector>
+            <label>Got Ireland</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Which_Medium_Should_We_Use</name>
+        <label>Which Medium Should We Use?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Which_Country_Did_We_Get_an_Error_From</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Use_Phone</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>phoneNumber</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AL_Send_Twilio_SMS_Flow</targetReference>
+            </connector>
+            <label>Use Phone</label>
+        </rules>
+        <rules>
+            <name>Use_Email</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>emailAddress</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Email</targetReference>
+            </connector>
+            <label>Use Email</label>
+        </rules>
+    </decisions>
+    <description>Updated to only use one input</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>frmCustomerToVerify</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  CONTAINS({!customerToVerify},&quot;@&quot;),
+  {!customerToVerify},
+  IF(
+    BEGINS(SUBSTITUTE({!customerToVerify},&quot; &quot;,&quot;&quot;),&quot;+45&quot;),
+    SUBSTITUTE({!customerToVerify},&quot; &quot;,&quot;&quot;),
+    IF(
+      BEGINS(SUBSTITUTE({!customerToVerify},&quot; &quot;,&quot;&quot;),&quot;45&quot;),
+      &quot;+&quot; &amp; SUBSTITUTE({!customerToVerify},&quot; &quot;,&quot;&quot;),
+      IF(
+        AND(
+          NOT(BEGINS(SUBSTITUTE({!customerToVerify},&quot; &quot;,&quot;&quot;),&quot;+45&quot;)),
+          OR(
+            {!Country}=&quot;Denmark&quot;,
+            {!Country}=&quot;Testamente_DK&quot;
+          )
+        ),
+        &quot;+45&quot; &amp; SUBSTITUTE({!customerToVerify},&quot; &quot;,&quot;&quot;),
+        IF(
+          AND(
+            NOT(BEGINS(SUBSTITUTE({!customerToVerify},&quot; &quot;,&quot;&quot;),&quot;+&quot;)),
+            OR(
+              {!Country}=&quot;Denmark&quot;,
+              {!Country}=&quot;Testamente_DK&quot;
+            )
+          ),
+          &quot;+&quot; &amp; SUBSTITUTE({!customerToVerify},&quot; &quot;,&quot;&quot;),
+          IF(
+            BEGINS(SUBSTITUTE({!customerToVerify},&quot; &quot;,&quot;&quot;),&quot;+46&quot;),
+            SUBSTITUTE({!customerToVerify},&quot; &quot;,&quot;&quot;),
+            IF(
+              BEGINS(SUBSTITUTE({!customerToVerify},&quot; &quot;,&quot;&quot;),&quot;46&quot;),
+              &quot;+&quot; &amp; SUBSTITUTE({!customerToVerify},&quot; &quot;,&quot;&quot;),
+              IF(
+                AND(
+                  NOT(BEGINS(SUBSTITUTE({!customerToVerify},&quot; &quot;,&quot;&quot;),&quot;+46&quot;)),
+                  {!Country}=&quot;Sweden&quot;
+                ),
+                &quot;+46&quot; &amp; SUBSTITUTE({!customerToVerify},&quot; &quot;,&quot;&quot;),
+                IF(
+                  AND(
+                    NOT(BEGINS(SUBSTITUTE({!customerToVerify},&quot; &quot;,&quot;&quot;),&quot;+&quot;)),
+                    {!Country}=&quot;Sweden&quot;
+                  ),
+                  &quot;+&quot; &amp; SUBSTITUTE({!customerToVerify},&quot; &quot;,&quot;&quot;),
+                  IF(
+                    BEGINS(SUBSTITUTE({!customerToVerify},&quot; &quot;,&quot;&quot;),&quot;+353&quot;),
+                    SUBSTITUTE({!customerToVerify},&quot; &quot;,&quot;&quot;),
+                    IF(
+                      BEGINS(SUBSTITUTE({!customerToVerify},&quot; &quot;,&quot;&quot;),&quot;353&quot;),
+                      &quot;+&quot; &amp; SUBSTITUTE({!customerToVerify},&quot; &quot;,&quot;&quot;),
+                      IF(
+                        AND(
+                          NOT(BEGINS(SUBSTITUTE({!customerToVerify},&quot; &quot;,&quot;&quot;),&quot;+353&quot;)),
+                          {!Country}=&quot;Ireland&quot;
+                        ),
+                        &quot;+353&quot; &amp; SUBSTITUTE({!customerToVerify},&quot; &quot;,&quot;&quot;),
+                        IF(
+                          AND(
+                            NOT(BEGINS(SUBSTITUTE({!customerToVerify},&quot; &quot;,&quot;&quot;),&quot;+&quot;)),
+                            {!Country}=&quot;Ireland&quot;
+                          ),
+                          &quot;+&quot; &amp; SUBSTITUTE({!customerToVerify},&quot; &quot;,&quot;&quot;),
+                          SUBSTITUTE({!customerToVerify},&quot; &quot;,&quot;&quot;)
+                        )
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          )
+        )
+      )
+    )
+  )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>frmMedium</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  CONTAINS({!frmCustomerToVerify},&quot;@&quot;),
+  &quot;email&quot;,
+  IF(
+    BEGINS(SUBSTITUTE({!frmCustomerToVerify},&quot; &quot;,&quot;&quot;), &quot;+&quot;),
+    &quot;SMS&quot;,
+    &quot;Invalid&quot;
+  )
+)</expression>
+    </formulas>
+    <interviewLabel>Agent: Verify Customer via Input Phone or Email {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Agent: Send Verification Code to Email or Phone</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Person_Account</name>
+        <label>Get Person Account</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Did_We_Find_an_Account_through_Phone_Number</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Which_Country_Did_We_Get_an_Error_From</targetReference>
+        </faultConnector>
+        <filterLogic>1 AND (2 OR 3)</filterLogic>
+        <filters>
+            <field>IsPersonAccount</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Phone_Formatted__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>frmCustomerToVerify</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>PersonEmail</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>frmCustomerToVerify</elementReference>
+            </value>
+        </filters>
+        <object>Account</object>
+        <outputAssignments>
+            <assignToReference>PersonAccountId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>marketUnit</assignToReference>
+            <field>Market_Unit__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>CustomerName</assignToReference>
+            <field>Name</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>phoneNumber</assignToReference>
+            <field>Phone_Formatted__c</field>
+        </outputAssignments>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Desc</sortOrder>
+    </recordLookups>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Person_Account</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>AL_Send_Twilio_SMS_Flow</name>
+        <label>AL - Send Twilio SMS Flow</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Did_SMS_Subflow_Suceed</targetReference>
+        </connector>
+        <flowName>AL_Send_Twilio_SMS</flowName>
+        <inputAssignments>
+            <name>inputIsUsingDefaultNumber</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputMarketUnit</name>
+            <value>
+                <elementReference>marketUnit</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputMessage</name>
+            <value>
+                <elementReference>ptSmsBody</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputSendUsingSenderId</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputToNumber</name>
+            <value>
+                <elementReference>phoneNumber</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>recordId</name>
+            <value>
+                <elementReference>PersonAccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <textTemplates>
+        <name>ptSmsBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Din engangskode er:
+
+{!VerificationCode}
+
+Med venlig hilsen,
+Din Familiejurist</text>
+    </textTemplates>
+    <variables>
+        <name>AuthenticationKey</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>Country</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Denmark</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>CustomerName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>customerToVerify</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>emailAddress</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>If the flow errors for any reason, this variable contains the response that the agent will provide to the customer.</description>
+        <name>FlowErrorMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>After a successful flow, the agent will send this exact message to the customer.</description>
+        <name>FlowSuccessMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>marketUnit</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Medium</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>PersonAccountId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>phoneNumber</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>This is the automated, single-use 6 digit code, that we&apos;ve sent to the customer. They will have to confirm this code.</description>
+        <name>VerificationCode</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

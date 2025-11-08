@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_Projects_Kanban</fullName>
+    <columns>NAME</columns>
+    <columns>Priority__c</columns>
+    <columns>Estimation_Hours__c</columns>
+    <columns>Parent_Project__c</columns>
+    <columns>Category__c</columns>
+    <columns>Project_Status__c</columns>
+    <columns>Project_Start_Date__c</columns>
+    <columns>Deadline__c</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Project__c.Project</value>
+    </filters>
+    <filters>
+        <field>Project_Status__c</field>
+        <operation>equals</operation>
+        <value>Planning,In Progress,Under Review</value>
+    </filters>
+    <filters>
+        <field>Is_Long_Term_Project__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Open Projects (Kanban)</label>
+</ListView>

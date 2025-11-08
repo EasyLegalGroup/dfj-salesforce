@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ensure_First_Day_of_Month</fullName>
+    <active>true</active>
+    <errorConditionFormula>DAY(Month_Year__c) &lt;&gt; 1</errorConditionFormula>
+    <errorDisplayField>Month_Year__c</errorDisplayField>
+    <errorMessage>You must set the date to the first of the selected month</errorMessage>
+</ValidationRule>

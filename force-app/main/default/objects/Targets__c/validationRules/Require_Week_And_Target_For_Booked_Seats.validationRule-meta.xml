@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Week_And_Target_For_Booked_Seats</fullName>
+    <active>true</active>
+    <description>When the Target_Metric__c picklist = “Booked Seats”, both Seat_Target__c (lookup) and Week_Number__c (number) must be populated.</description>
+    <errorConditionFormula>AND(
+  ISPICKVAL(Target_Metric__c, &quot;Booked Seats&quot;),
+  OR(
+    ISBLANK(Target__c),
+    ISBLANK(Week_Number__c)
+  )
+)</errorConditionFormula>
+    <errorMessage>“You must select a Seat Target and enter a Week Number when Metric = Booked Seats.”</errorMessage>
+</ValidationRule>

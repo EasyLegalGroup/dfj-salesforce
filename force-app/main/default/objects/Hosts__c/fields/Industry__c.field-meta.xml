@@ -1,0 +1,1696 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industry__c</fullName>
+    <externalId>false</externalId>
+    <label>Industry</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Administration af og bidrag til erhvervsfremme</fullName>
+                <default>false</default>
+                <label>Administration af og bidrag til erhvervsfremme</label>
+            </value>
+            <value>
+                <fullName>Administration af sundhedsvæsen, undervisning, kultur og sociale forhold undtagen social sikring</fullName>
+                <default>false</default>
+                <label>Administration af sundhedsvæsen, undervisning, kultur og sociale forhold undtagen social sikring</label>
+            </value>
+            <value>
+                <fullName>Aldersintegrerede institutioner</fullName>
+                <default>false</default>
+                <label>Aldersintegrerede institutioner</label>
+            </value>
+            <value>
+                <fullName>Almennyttige boligselskaber</fullName>
+                <default>false</default>
+                <label>Almennyttige boligselskaber</label>
+            </value>
+            <value>
+                <fullName>Almindelig rengøring i bygninger</fullName>
+                <default>false</default>
+                <label>Almindelig rengøring i bygninger</label>
+            </value>
+            <value>
+                <fullName>Anden agenturhandel med føde-, drikke- og tobaksvarer</fullName>
+                <default>false</default>
+                <label>Anden agenturhandel med føde-, drikke- og tobaksvarer</label>
+            </value>
+            <value>
+                <fullName>Anden anlægsvirksomhed i.a.n.</fullName>
+                <default>false</default>
+                <label>Anden anlægsvirksomhed i.a.n.</label>
+            </value>
+            <value>
+                <fullName>Anden bygge- og anlægsvirksomhed, som kræver specialisering</fullName>
+                <default>false</default>
+                <label>Anden bygge- og anlægsvirksomhed, som kræver specialisering</label>
+            </value>
+            <value>
+                <fullName>Anden bygningsinstallationsvirksomhed</fullName>
+                <default>false</default>
+                <label>Anden bygningsinstallationsvirksomhed</label>
+            </value>
+            <value>
+                <fullName>Anden detailhandel med fødevarer i specialforretninger</fullName>
+                <default>false</default>
+                <label>Anden detailhandel med fødevarer i specialforretninger</label>
+            </value>
+            <value>
+                <fullName>Anden forretningsservice i.a.n.</fullName>
+                <default>false</default>
+                <label>Anden forretningsservice i.a.n.</label>
+            </value>
+            <value>
+                <fullName>Anden forskning og eksperimentel udvikling inden for naturvidenskab og teknik</fullName>
+                <default>false</default>
+                <label>Anden forskning og eksperimentel udvikling inden for naturvidenskab og teknik</label>
+            </value>
+            <value>
+                <fullName>Anden it-servicevirksomhed</fullName>
+                <default>false</default>
+                <label>Anden it-servicevirksomhed</label>
+            </value>
+            <value>
+                <fullName>Anden måling og teknisk analyse</fullName>
+                <default>false</default>
+                <label>Anden måling og teknisk analyse</label>
+            </value>
+            <value>
+                <fullName>Anden personaleformidling</fullName>
+                <default>false</default>
+                <label>Anden personaleformidling</label>
+            </value>
+            <value>
+                <fullName>Anden rengøring af bygninger og rengøring af erhvervslokaler</fullName>
+                <default>false</default>
+                <label>Anden rengøring af bygninger og rengøring af erhvervslokaler</label>
+            </value>
+            <value>
+                <fullName>Anden trykning</fullName>
+                <default>false</default>
+                <label>Anden trykning</label>
+            </value>
+            <value>
+                <fullName>Anden udgivelse af software</fullName>
+                <default>false</default>
+                <label>Anden udgivelse af software</label>
+            </value>
+            <value>
+                <fullName>Anden udgivervirksomhed</fullName>
+                <default>false</default>
+                <label>Anden udgivervirksomhed</label>
+            </value>
+            <value>
+                <fullName>Anden undervisning i.a.n.</fullName>
+                <default>false</default>
+                <label>Anden undervisning i.a.n.</label>
+            </value>
+            <value>
+                <fullName>Andre former for institutionsophold</fullName>
+                <default>false</default>
+                <label>Andre former for institutionsophold</label>
+            </value>
+            <value>
+                <fullName>Andre hjælpetjenester i forbindelse med finansiel formidling</fullName>
+                <default>false</default>
+                <label>Andre hjælpetjenester i forbindelse med finansiel formidling</label>
+            </value>
+            <value>
+                <fullName>Andre hjælpetjenester i forbindelse med forsikring og pensionsforsikring</fullName>
+                <default>false</default>
+                <label>Andre hjælpetjenester i forbindelse med forsikring og pensionsforsikring</label>
+            </value>
+            <value>
+                <fullName>Andre informationstjenester i.a.n.</fullName>
+                <default>false</default>
+                <label>Andre informationstjenester i.a.n.</label>
+            </value>
+            <value>
+                <fullName>Andre liberale, videnskabelige og tekniske tjenesteydelser i.a.n.</fullName>
+                <default>false</default>
+                <label>Andre liberale, videnskabelige og tekniske tjenesteydelser i.a.n.</label>
+            </value>
+            <value>
+                <fullName>Andre organisationer og foreninger i.a.n.</fullName>
+                <default>false</default>
+                <label>Andre organisationer og foreninger i.a.n.</label>
+            </value>
+            <value>
+                <fullName>Andre post- og kurertjenester</fullName>
+                <default>false</default>
+                <label>Andre post- og kurertjenester</label>
+            </value>
+            <value>
+                <fullName>Andre rengøringsydelser</fullName>
+                <default>false</default>
+                <label>Andre rengøringsydelser</label>
+            </value>
+            <value>
+                <fullName>Andre reservationstjenesteydelser og tjenesteydelser i forbindelse hermed</fullName>
+                <default>false</default>
+                <label>Andre reservationstjenesteydelser og tjenesteydelser i forbindelse hermed</label>
+            </value>
+            <value>
+                <fullName>Andre sociale foranstaltninger uden institutionsophold i.a.n.</fullName>
+                <default>false</default>
+                <label>Andre sociale foranstaltninger uden institutionsophold i.a.n.</label>
+            </value>
+            <value>
+                <fullName>Anlæg af jernbaner og undergrundsbaner</fullName>
+                <default>false</default>
+                <label>Anlæg af jernbaner og undergrundsbaner</label>
+            </value>
+            <value>
+                <fullName>Anlæg af ledningsnet til elektricitet og kommunikation</fullName>
+                <default>false</default>
+                <label>Anlæg af ledningsnet til elektricitet og kommunikation</label>
+            </value>
+            <value>
+                <fullName>Anlæg af ledningsnet til væsker</fullName>
+                <default>false</default>
+                <label>Anlæg af ledningsnet til væsker</label>
+            </value>
+            <value>
+                <fullName>Anlæg af veje og motorveje</fullName>
+                <default>false</default>
+                <label>Anlæg af veje og motorveje</label>
+            </value>
+            <value>
+                <fullName>Arbejdsformidlingskontorer</fullName>
+                <default>false</default>
+                <label>Arbejdsformidlingskontorer</label>
+            </value>
+            <value>
+                <fullName>Arkitektvirksomhed</fullName>
+                <default>false</default>
+                <label>Arkitektvirksomhed</label>
+            </value>
+            <value>
+                <fullName>Autoreparationsværksteder mv.</fullName>
+                <default>false</default>
+                <label>Autoreparationsværksteder mv.</label>
+            </value>
+            <value>
+                <fullName>Behandling og bortskaffelse af ikke-farligt affald</fullName>
+                <default>false</default>
+                <label>Behandling og bortskaffelse af ikke-farligt affald</label>
+            </value>
+            <value>
+                <fullName>Behandlingshjem for stofmisbrugere og alkoholskadede</fullName>
+                <default>false</default>
+                <label>Behandlingshjem for stofmisbrugere og alkoholskadede</label>
+            </value>
+            <value>
+                <fullName>Beskyttede boliger o.l.</fullName>
+                <default>false</default>
+                <label>Beskyttede boliger o.l.</label>
+            </value>
+            <value>
+                <fullName>Bogføring og revision: skatterådgivning</fullName>
+                <default>false</default>
+                <label>Bogføring og revision: skatterådgivning</label>
+            </value>
+            <value>
+                <fullName>Boliganvisning, ferieboligudlejning mv.</fullName>
+                <default>false</default>
+                <label>Boliganvisning, ferieboligudlejning mv.</label>
+            </value>
+            <value>
+                <fullName>Botaniske og zoologiske haver samt naturreservater</fullName>
+                <default>false</default>
+                <label>Botaniske og zoologiske haver samt naturreservater</label>
+            </value>
+            <value>
+                <fullName>Brandvæsen</fullName>
+                <default>false</default>
+                <label>Brandvæsen</label>
+            </value>
+            <value>
+                <fullName>Brydning af pynte- og bygningssten, kalksten, gips, kridt og skifer</fullName>
+                <default>false</default>
+                <label>Brydning af pynte- og bygningssten, kalksten, gips, kridt og skifer</label>
+            </value>
+            <value>
+                <fullName>Bygning af skibe og flydende materiel</fullName>
+                <default>false</default>
+                <label>Bygning af skibe og flydende materiel</label>
+            </value>
+            <value>
+                <fullName>Børnehaver</fullName>
+                <default>false</default>
+                <label>Børnehaver</label>
+            </value>
+            <value>
+                <fullName>Call centres virksomhed</fullName>
+                <default>false</default>
+                <label>Call centres virksomhed</label>
+            </value>
+            <value>
+                <fullName>Charter- og taxiflyvning</fullName>
+                <default>false</default>
+                <label>Charter- og taxiflyvning</label>
+            </value>
+            <value>
+                <fullName>Computer facility management</fullName>
+                <default>false</default>
+                <label>Computer facility management</label>
+            </value>
+            <value>
+                <fullName>Computerprogrammering</fullName>
+                <default>false</default>
+                <label>Computerprogrammering</label>
+            </value>
+            <value>
+                <fullName>Dækservice</fullName>
+                <default>false</default>
+                <label>Dækservice</label>
+            </value>
+            <value>
+                <fullName>Dagcentre mv.</fullName>
+                <default>false</default>
+                <label>Dagcentre mv.</label>
+            </value>
+            <value>
+                <fullName>Databehandling, webhosting og lignende serviceydelser</fullName>
+                <default>false</default>
+                <label>Databehandling, webhosting og lignende serviceydelser</label>
+            </value>
+            <value>
+                <fullName>Detailhandel med brød, konditori- og sukkervarer</fullName>
+                <default>false</default>
+                <label>Detailhandel med brød, konditori- og sukkervarer</label>
+            </value>
+            <value>
+                <fullName>Detailhandel med bøger</fullName>
+                <default>false</default>
+                <label>Detailhandel med bøger</label>
+            </value>
+            <value>
+                <fullName>Detailhandel med bøger, kontorartikler, musik eller film via internet</fullName>
+                <default>false</default>
+                <label>Detailhandel med bøger, kontorartikler, musik eller film via internet</label>
+            </value>
+            <value>
+                <fullName>Detailhandel med dagligvarer via internet</fullName>
+                <default>false</default>
+                <label>Detailhandel med dagligvarer via internet</label>
+            </value>
+            <value>
+                <fullName>Detailhandel med elektroniske eller elektriske apparater samt fotoudstyr via internet</fullName>
+                <default>false</default>
+                <label>Detailhandel med elektroniske eller elektriske apparater samt fotoudstyr via internet</label>
+            </value>
+            <value>
+                <fullName>Detailhandel med personbiler, varebiler og minibusser</fullName>
+                <default>false</default>
+                <label>Detailhandel med personbiler, varebiler og minibusser</label>
+            </value>
+            <value>
+                <fullName>Detailhandel med spil og legetøj</fullName>
+                <default>false</default>
+                <label>Detailhandel med spil og legetøj</label>
+            </value>
+            <value>
+                <fullName>Detailhandel med tøj, sko, lædervarer, ure eller babyudstyr via internet</fullName>
+                <default>false</default>
+                <label>Detailhandel med tøj, sko, lædervarer, ure eller babyudstyr via internet</label>
+            </value>
+            <value>
+                <fullName>Discountforretninger</fullName>
+                <default>false</default>
+                <label>Discountforretninger</label>
+            </value>
+            <value>
+                <fullName>Distribution af elektricitet</fullName>
+                <default>false</default>
+                <label>Distribution af elektricitet</label>
+            </value>
+            <value>
+                <fullName>Distribution af film, video- og tv-programmer</fullName>
+                <default>false</default>
+                <label>Distribution af film, video- og tv-programmer</label>
+            </value>
+            <value>
+                <fullName>Drift af betalingsveje, -broer og -tunneler</fullName>
+                <default>false</default>
+                <label>Drift af betalingsveje, -broer og -tunneler</label>
+            </value>
+            <value>
+                <fullName>Drift af sportsanlæg</fullName>
+                <default>false</default>
+                <label>Drift af sportsanlæg</label>
+            </value>
+            <value>
+                <fullName>Drift af teater- og koncertsale, kulturhuse mv.</fullName>
+                <default>false</default>
+                <label>Drift af teater- og koncertsale, kulturhuse mv.</label>
+            </value>
+            <value>
+                <fullName>Dyrkning af andre etårige afgrøder</fullName>
+                <default>false</default>
+                <label>Dyrkning af andre etårige afgrøder</label>
+            </value>
+            <value>
+                <fullName>Dyrkning af andre træfrugter, bær og nødder</fullName>
+                <default>false</default>
+                <label>Dyrkning af andre træfrugter, bær og nødder</label>
+            </value>
+            <value>
+                <fullName>Dyrkning af kernefrugter og stenfrugter</fullName>
+                <default>false</default>
+                <label>Dyrkning af kernefrugter og stenfrugter</label>
+            </value>
+            <value>
+                <fullName>Dyrkning af krydderiplanter, aromaplanter og lægeplanter</fullName>
+                <default>false</default>
+                <label>Dyrkning af krydderiplanter, aromaplanter og lægeplanter</label>
+            </value>
+            <value>
+                <fullName>Dyrlæger</fullName>
+                <default>false</default>
+                <label>Dyrlæger</label>
+            </value>
+            <value>
+                <fullName>Døgninstitutioner for børn og unge</fullName>
+                <default>false</default>
+                <label>Døgninstitutioner for børn og unge</label>
+            </value>
+            <value>
+                <fullName>Døgninstitutioner for personer med fysisk handicap</fullName>
+                <default>false</default>
+                <label>Døgninstitutioner for personer med fysisk handicap</label>
+            </value>
+            <value>
+                <fullName>Døgninstitutioner for personer med psykiske handicap</fullName>
+                <default>false</default>
+                <label>Døgninstitutioner for personer med psykiske handicap</label>
+            </value>
+            <value>
+                <fullName>Ejendomsmæglere mv.</fullName>
+                <default>false</default>
+                <label>Ejendomsmæglere mv.</label>
+            </value>
+            <value>
+                <fullName>El-installation</fullName>
+                <default>false</default>
+                <label>El-installation</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med andre husholdningsartikler</fullName>
+                <default>false</default>
+                <label>Engroshandel med andre husholdningsartikler</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med andre maskiner og andet udstyr</fullName>
+                <default>false</default>
+                <label>Engroshandel med andre maskiner og andet udstyr</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med andre råvarer og halvfabrikata</fullName>
+                <default>false</default>
+                <label>Engroshandel med andre råvarer og halvfabrikata</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med beklædning</fullName>
+                <default>false</default>
+                <label>Engroshandel med beklædning</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med computere, ydre enheder og software</fullName>
+                <default>false</default>
+                <label>Engroshandel med computere, ydre enheder og software</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med cykler, sportsartikler og lystbåde</fullName>
+                <default>false</default>
+                <label>Engroshandel med cykler, sportsartikler og lystbåde</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med elektronisk udstyr</fullName>
+                <default>false</default>
+                <label>Engroshandel med elektronisk udstyr</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med fast, flydende og luftformigt brændstof og lignende varer</fullName>
+                <default>false</default>
+                <label>Engroshandel med fast, flydende og luftformigt brændstof og lignende varer</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med fisk og fiskeprodukter</fullName>
+                <default>false</default>
+                <label>Engroshandel med fisk og fiskeprodukter</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med fodtøj</fullName>
+                <default>false</default>
+                <label>Engroshandel med fodtøj</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med frugt og grøntsager</fullName>
+                <default>false</default>
+                <label>Engroshandel med frugt og grøntsager</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med hårde hvidevarer</fullName>
+                <default>false</default>
+                <label>Engroshandel med hårde hvidevarer</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med indspillede videoer, cd&apos;er, dvd&apos;er mv.</fullName>
+                <default>false</default>
+                <label>Engroshandel med indspillede videoer, cd&apos;er, dvd&apos;er mv.</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med isenkram, varmeanlæg og tilbehør</fullName>
+                <default>false</default>
+                <label>Engroshandel med isenkram, varmeanlæg og tilbehør</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med kaffe, te, kakao og krydderier</fullName>
+                <default>false</default>
+                <label>Engroshandel med kaffe, te, kakao og krydderier</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med kemiske produkter</fullName>
+                <default>false</default>
+                <label>Engroshandel med kemiske produkter</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med kontormøbler</fullName>
+                <default>false</default>
+                <label>Engroshandel med kontormøbler</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med korn, uforarbejdet tobak, såsæd og foderstoffer</fullName>
+                <default>false</default>
+                <label>Engroshandel med korn, uforarbejdet tobak, såsæd og foderstoffer</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med kufferter og lædervarer</fullName>
+                <default>false</default>
+                <label>Engroshandel med kufferter og lædervarer</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med kød og kødprodukter</fullName>
+                <default>false</default>
+                <label>Engroshandel med kød og kødprodukter</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med læge- og hospitalsartikler</fullName>
+                <default>false</default>
+                <label>Engroshandel med læge- og hospitalsartikler</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med lak, maling, tapet, gulvbelægning mv.</fullName>
+                <default>false</default>
+                <label>Engroshandel med lak, maling, tapet, gulvbelægning mv.</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med landbrugsmaskiner, -udstyr og tilbehør hertil</fullName>
+                <default>false</default>
+                <label>Engroshandel med landbrugsmaskiner, -udstyr og tilbehør hertil</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med levende dyr</fullName>
+                <default>false</default>
+                <label>Engroshandel med levende dyr</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med maskiner til minedrift og bygge- og anlægsvirksomhed</fullName>
+                <default>false</default>
+                <label>Engroshandel med maskiner til minedrift og bygge- og anlægsvirksomhed</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med medicinalvarer og sygeplejeartikler</fullName>
+                <default>false</default>
+                <label>Engroshandel med medicinalvarer og sygeplejeartikler</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med mejeriprodukter, æg samt spiselige olier og fedtstoffer</fullName>
+                <default>false</default>
+                <label>Engroshandel med mejeriprodukter, æg samt spiselige olier og fedtstoffer</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med metaller og metalmalme</fullName>
+                <default>false</default>
+                <label>Engroshandel med metaller og metalmalme</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med møbler, tæpper og belysningsartikler</fullName>
+                <default>false</default>
+                <label>Engroshandel med møbler, tæpper og belysningsartikler</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med parfumerivarer og kosmetik</fullName>
+                <default>false</default>
+                <label>Engroshandel med parfumerivarer og kosmetik</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med personbiler, varebiler og minibusser</fullName>
+                <default>false</default>
+                <label>Engroshandel med personbiler, varebiler og minibusser</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med porcelæns- og glasvarer</fullName>
+                <default>false</default>
+                <label>Engroshandel med porcelæns- og glasvarer</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med radio og tv mv.</fullName>
+                <default>false</default>
+                <label>Engroshandel med radio og tv mv.</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med rengøringsmidler</fullName>
+                <default>false</default>
+                <label>Engroshandel med rengøringsmidler</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med reservedele og tilbehør til motorkøretøjer</fullName>
+                <default>false</default>
+                <label>Engroshandel med reservedele og tilbehør til motorkøretøjer</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med tekstiler</fullName>
+                <default>false</default>
+                <label>Engroshandel med tekstiler</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med telekommunikationsudstyr</fullName>
+                <default>false</default>
+                <label>Engroshandel med telekommunikationsudstyr</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med træ, trælast og byggematerialer</fullName>
+                <default>false</default>
+                <label>Engroshandel med træ, trælast og byggematerialer</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med værktøjsmaskiner</fullName>
+                <default>false</default>
+                <label>Engroshandel med værktøjsmaskiner</label>
+            </value>
+            <value>
+                <fullName>Engroshandel med vin og spiritus</fullName>
+                <default>false</default>
+                <label>Engroshandel med vin og spiritus</label>
+            </value>
+            <value>
+                <fullName>Engros- og detailhandel med lastbiler og påhængsvogne mv.</fullName>
+                <default>false</default>
+                <label>Engros- og detailhandel med lastbiler og påhængsvogne mv.</label>
+            </value>
+            <value>
+                <fullName>Erhvervshavne</fullName>
+                <default>false</default>
+                <label>Erhvervshavne</label>
+            </value>
+            <value>
+                <fullName>Erhvervs- og arbejdsgiverorganisationer</fullName>
+                <default>false</default>
+                <label>Erhvervs- og arbejdsgiverorganisationer</label>
+            </value>
+            <value>
+                <fullName>Fagforeninger</fullName>
+                <default>false</default>
+                <label>Fagforeninger</label>
+            </value>
+            <value>
+                <fullName>Faglige sammenslutninger</fullName>
+                <default>false</default>
+                <label>Faglige sammenslutninger</label>
+            </value>
+            <value>
+                <fullName>Farve- og tapetforretninger</fullName>
+                <default>false</default>
+                <label>Farve- og tapetforretninger</label>
+            </value>
+            <value>
+                <fullName>Fastnetbaseret telekommunikation</fullName>
+                <default>false</default>
+                <label>Fastnetbaseret telekommunikation</label>
+            </value>
+            <value>
+                <fullName>Ferieboliger og andre indlogeringsfaciliteter til kortvarige ophold</fullName>
+                <default>false</default>
+                <label>Ferieboliger og andre indlogeringsfaciliteter til kortvarige ophold</label>
+            </value>
+            <value>
+                <fullName>Ferskvandsbrug</fullName>
+                <default>false</default>
+                <label>Ferskvandsbrug</label>
+            </value>
+            <value>
+                <fullName>Flytteforretninger</fullName>
+                <default>false</default>
+                <label>Flytteforretninger</label>
+            </value>
+            <value>
+                <fullName>Folkeskoler o.lign.</fullName>
+                <default>false</default>
+                <label>Folkeskoler o.lign.</label>
+            </value>
+            <value>
+                <fullName>Forarbejdning af frø/sædekorn til udsæd</fullName>
+                <default>false</default>
+                <label>Forarbejdning af frø/sædekorn til udsæd</label>
+            </value>
+            <value>
+                <fullName>Forarbejdning og konservering af fisk, krebsdyr og bløddyr, undtagen fiskemel</fullName>
+                <default>false</default>
+                <label>Forarbejdning og konservering af fisk, krebsdyr og bløddyr, undtagen fiskemel</label>
+            </value>
+            <value>
+                <fullName>Forberedende byggepladsarbejder</fullName>
+                <default>false</default>
+                <label>Forberedende byggepladsarbejder</label>
+            </value>
+            <value>
+                <fullName>Foreninger, legater og fonde med sygdomsbekæmpende, sociale og velgørende formål</fullName>
+                <default>false</default>
+                <label>Foreninger, legater og fonde med sygdomsbekæmpende, sociale og velgørende formål</label>
+            </value>
+            <value>
+                <fullName>Forlystelsesparker o.l.</fullName>
+                <default>false</default>
+                <label>Forlystelsesparker o.l.</label>
+            </value>
+            <value>
+                <fullName>Formueforvaltning</fullName>
+                <default>false</default>
+                <label>Formueforvaltning</label>
+            </value>
+            <value>
+                <fullName>Forsikringsagenters og forsikringsmægleres virksomhed</fullName>
+                <default>false</default>
+                <label>Forsikringsagenters og forsikringsmægleres virksomhed</label>
+            </value>
+            <value>
+                <fullName>Forskning og eksperimentel udvikling inden for samfundsvidenskab og humanistiske videnskaber</fullName>
+                <default>false</default>
+                <label>Forskning og eksperimentel udvikling inden for samfundsvidenskab og humanistiske videnskaber</label>
+            </value>
+            <value>
+                <fullName>Fotokopiering, dokumentbehandling og anden specialiseret kontorservice</fullName>
+                <default>false</default>
+                <label>Fotokopiering, dokumentbehandling og anden specialiseret kontorservice</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af æteriske olier</fullName>
+                <default>false</default>
+                <label>Fremstilling af æteriske olier</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af andet elektrisk udstyr</fullName>
+                <default>false</default>
+                <label>Fremstilling af andet elektrisk udstyr</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af andre dele og tilbehør til motorkøretøjer</fullName>
+                <default>false</default>
+                <label>Fremstilling af andre dele og tilbehør til motorkøretøjer</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af andre færdige metalprodukter i.a.n.</fullName>
+                <default>false</default>
+                <label>Fremstilling af andre færdige metalprodukter i.a.n.</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af andre fødevarer i.a.n.</fullName>
+                <default>false</default>
+                <label>Fremstilling af andre fødevarer i.a.n.</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af andre gummiprodukter</fullName>
+                <default>false</default>
+                <label>Fremstilling af andre gummiprodukter</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af andre kemiske produkter i.a.n.</fullName>
+                <default>false</default>
+                <label>Fremstilling af andre kemiske produkter i.a.n.</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af andre maskiner til generelle formål i.a.n.</fullName>
+                <default>false</default>
+                <label>Fremstilling af andre maskiner til generelle formål i.a.n.</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af andre møbler</fullName>
+                <default>false</default>
+                <label>Fremstilling af andre møbler</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af andre organiske basiskemikalier</fullName>
+                <default>false</default>
+                <label>Fremstilling af andre organiske basiskemikalier</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af andre papir- og papvarer</fullName>
+                <default>false</default>
+                <label>Fremstilling af andre papir- og papvarer</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af andre plastprodukter</fullName>
+                <default>false</default>
+                <label>Fremstilling af andre plastprodukter</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af andre pumper og kompressorer</fullName>
+                <default>false</default>
+                <label>Fremstilling af andre pumper og kompressorer</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af andre træprodukter: fremstilling af varer af kork, strå og flettematerialer</fullName>
+                <default>false</default>
+                <label>Fremstilling af andre træprodukter: fremstilling af varer af kork, strå og flettematerialer</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af andre uorganiske basiskemikalier</fullName>
+                <default>false</default>
+                <label>Fremstilling af andre uorganiske basiskemikalier</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af andre værktøjsmaskiner</fullName>
+                <default>false</default>
+                <label>Fremstilling af andre værktøjsmaskiner</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af asfalt og tagpap</fullName>
+                <default>false</default>
+                <label>Fremstilling af asfalt og tagpap</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af bestrålingsudstyr og elektromedicinsk og elektroterapeutisk udstyr</fullName>
+                <default>false</default>
+                <label>Fremstilling af bestrålingsudstyr og elektromedicinsk og elektroterapeutisk udstyr</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af boligtekstiler</fullName>
+                <default>false</default>
+                <label>Fremstilling af boligtekstiler</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af byggematerialer af beton</fullName>
+                <default>false</default>
+                <label>Fremstilling af byggematerialer af beton</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af bygningsartikler af plast</fullName>
+                <default>false</default>
+                <label>Fremstilling af bygningsartikler af plast</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af bølgepap og pap og emballage af papir og pap</fullName>
+                <default>false</default>
+                <label>Fremstilling af bølgepap og pap og emballage af papir og pap</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af computere og ydre enheder</fullName>
+                <default>false</default>
+                <label>Fremstilling af computere og ydre enheder</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af døre og vinduer af metal</fullName>
+                <default>false</default>
+                <label>Fremstilling af døre og vinduer af metal</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af elektriske belysningsartikler</fullName>
+                <default>false</default>
+                <label>Fremstilling af elektriske belysningsartikler</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af elektriske fordelings- og kontrolapparater</fullName>
+                <default>false</default>
+                <label>Fremstilling af elektriske fordelings- og kontrolapparater</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af elektriske husholdningsapparater</fullName>
+                <default>false</default>
+                <label>Fremstilling af elektriske husholdningsapparater</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af elektriske motorer, generatorer og transformere</fullName>
+                <default>false</default>
+                <label>Fremstilling af elektriske motorer, generatorer og transformere</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af elektroniske komponenter og plader</fullName>
+                <default>false</default>
+                <label>Fremstilling af elektroniske komponenter og plader</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af færdige foderblandinger til landbrugsdyr</fullName>
+                <default>false</default>
+                <label>Fremstilling af færdige foderblandinger til landbrugsdyr</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af færdige tekstilvarer undtagen boligtekstiler og beklædningsartikler</fullName>
+                <default>false</default>
+                <label>Fremstilling af færdige tekstilvarer undtagen boligtekstiler og beklædningsartikler</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af farmaceutiske råvarer</fullName>
+                <default>false</default>
+                <label>Fremstilling af farmaceutiske råvarer</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af farvestoffer og pigmenter</fullName>
+                <default>false</default>
+                <label>Fremstilling af farvestoffer og pigmenter</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af fiberdug og varer af fiberdug undtagen beklædningsartikler</fullName>
+                <default>false</default>
+                <label>Fremstilling af fiberdug og varer af fiberdug undtagen beklædningsartikler</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af friske bageriprodukter</fullName>
+                <default>false</default>
+                <label>Fremstilling af friske bageriprodukter</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af håndværktøj</fullName>
+                <default>false</default>
+                <label>Fremstilling af håndværktøj</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af hydraulisk udstyr</fullName>
+                <default>false</default>
+                <label>Fremstilling af hydraulisk udstyr</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af industrigasser</fullName>
+                <default>false</default>
+                <label>Fremstilling af industrigasser</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af kakao, chokolade og sukkervarer</fullName>
+                <default>false</default>
+                <label>Fremstilling af kakao, chokolade og sukkervarer</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af keramiske sanitetsartikler</fullName>
+                <default>false</default>
+                <label>Fremstilling af keramiske sanitetsartikler</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af kommunikationsudstyr</fullName>
+                <default>false</default>
+                <label>Fremstilling af kommunikationsudstyr</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af konsumis</fullName>
+                <default>false</default>
+                <label>Fremstilling af konsumis</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af kontor- og butiksmøbler</fullName>
+                <default>false</default>
+                <label>Fremstilling af kontor- og butiksmøbler</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af køle- og ventilationsanlæg (til industriel brug)</fullName>
+                <default>false</default>
+                <label>Fremstilling af køle- og ventilationsanlæg (til industriel brug)</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af læskedrikke: fremstilling af mineralvand og andet vand på flaske</fullName>
+                <default>false</default>
+                <label>Fremstilling af læskedrikke: fremstilling af mineralvand og andet vand på flaske</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af landbrugs- og skovbrugsmaskiner</fullName>
+                <default>false</default>
+                <label>Fremstilling af landbrugs- og skovbrugsmaskiner</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af låse og hængsler</fullName>
+                <default>false</default>
+                <label>Fremstilling af låse og hængsler</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af lejer, tandhjul, tandhjulsudvekslinger og drivelementer</fullName>
+                <default>false</default>
+                <label>Fremstilling af lejer, tandhjul, tandhjulsudvekslinger og drivelementer</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af lokomotiver og andet rullende materiel til jernbaner og sporveje</fullName>
+                <default>false</default>
+                <label>Fremstilling af lokomotiver og andet rullende materiel til jernbaner og sporveje</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af lukkeanordninger, bolte, skruer og møtrikker</fullName>
+                <default>false</default>
+                <label>Fremstilling af lukkeanordninger, bolte, skruer og møtrikker</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af løfte- og håndteringsudstyr</fullName>
+                <default>false</default>
+                <label>Fremstilling af løfte- og håndteringsudstyr</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af madrasser</fullName>
+                <default>false</default>
+                <label>Fremstilling af madrasser</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af maskiner til føde-, drikke- og tobaksvareindustrien</fullName>
+                <default>false</default>
+                <label>Fremstilling af maskiner til føde-, drikke- og tobaksvareindustrien</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af maskiner til produktion af plast og gummi</fullName>
+                <default>false</default>
+                <label>Fremstilling af maskiner til produktion af plast og gummi</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af medicinske og dentale instrumenter samt udstyr hertil</fullName>
+                <default>false</default>
+                <label>Fremstilling af medicinske og dentale instrumenter samt udstyr hertil</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af metalforarbejdende værktøjsmaskiner</fullName>
+                <default>false</default>
+                <label>Fremstilling af metalforarbejdende værktøjsmaskiner</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af metalkonstruktioner og dele heraf</fullName>
+                <default>false</default>
+                <label>Fremstilling af metalkonstruktioner og dele heraf</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af motorcykler</fullName>
+                <default>false</default>
+                <label>Fremstilling af motorcykler</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af motorkøretøjer</fullName>
+                <default>false</default>
+                <label>Fremstilling af motorkøretøjer</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af mølleriprodukter</fullName>
+                <default>false</default>
+                <label>Fremstilling af mølleriprodukter</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af ovne, ildsteder og fyringsaggregater</fullName>
+                <default>false</default>
+                <label>Fremstilling af ovne, ildsteder og fyringsaggregater</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af parfume, hårshampoo, tandpasta mv.</fullName>
+                <default>false</default>
+                <label>Fremstilling af parfume, hårshampoo, tandpasta mv.</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af plader, ark, rør og slanger samt profiler af plast</fullName>
+                <default>false</default>
+                <label>Fremstilling af plader, ark, rør og slanger samt profiler af plast</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af plastemballage</fullName>
+                <default>false</default>
+                <label>Fremstilling af plastemballage</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af plast i ubearbejdet form</fullName>
+                <default>false</default>
+                <label>Fremstilling af plast i ubearbejdet form</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af printplader o.l.</fullName>
+                <default>false</default>
+                <label>Fremstilling af printplader o.l.</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af råjern og råstål samt jernlegeringer</fullName>
+                <default>false</default>
+                <label>Fremstilling af råjern og råstål samt jernlegeringer</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af reb, tovværk, sejlgarn og netstoffer</fullName>
+                <default>false</default>
+                <label>Fremstilling af reb, tovværk, sejlgarn og netstoffer</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af rør og hule profiler og tilhørende fittings af stål</fullName>
+                <default>false</default>
+                <label>Fremstilling af rør og hule profiler og tilhørende fittings af stål</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af sæbe, rengørings- og rensemidler samt poleremidler</fullName>
+                <default>false</default>
+                <label>Fremstilling af sæbe, rengørings- og rensemidler samt poleremidler</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af spil og legetøj</fullName>
+                <default>false</default>
+                <label>Fremstilling af spil og legetøj</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af stivelse og stivelsesprodukter</fullName>
+                <default>false</default>
+                <label>Fremstilling af stivelse og stivelsesprodukter</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af tilbehør til ledninger og kabler</fullName>
+                <default>false</default>
+                <label>Fremstilling af tilbehør til ledninger og kabler</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af trådvarer, kæder og fjedre</fullName>
+                <default>false</default>
+                <label>Fremstilling af trådvarer, kæder og fjedre</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af træemballage</fullName>
+                <default>false</default>
+                <label>Fremstilling af træemballage</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af udstyr til måling, afprøvning, navigation og kontrol</fullName>
+                <default>false</default>
+                <label>Fremstilling af udstyr til måling, afprøvning, navigation og kontrol</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af øl</fullName>
+                <default>false</default>
+                <label>Fremstilling af øl</label>
+            </value>
+            <value>
+                <fullName>Fremstilling af øvrige maskiner til specielle formål i.a.n.</fullName>
+                <default>false</default>
+                <label>Fremstilling af øvrige maskiner til specielle formål i.a.n.</label>
+            </value>
+            <value>
+                <fullName>Fysio- og ergoterapeuter</fullName>
+                <default>false</default>
+                <label>Fysio- og ergoterapeuter</label>
+            </value>
+            <value>
+                <fullName>Genbrug af sorterede materialer</fullName>
+                <default>false</default>
+                <label>Genbrug af sorterede materialer</label>
+            </value>
+            <value>
+                <fullName>Generelle offentlige tjenester</fullName>
+                <default>false</default>
+                <label>Generelle offentlige tjenester</label>
+            </value>
+            <value>
+                <fullName>Gennemførelse af byggeprojekter</fullName>
+                <default>false</default>
+                <label>Gennemførelse af byggeprojekter</label>
+            </value>
+            <value>
+                <fullName>Geologiske undersøgelser og prospektering, landinspektører mv.</fullName>
+                <default>false</default>
+                <label>Geologiske undersøgelser og prospektering, landinspektører mv.</label>
+            </value>
+            <value>
+                <fullName>Glarmestervirksomhed</fullName>
+                <default>false</default>
+                <label>Glarmestervirksomhed</label>
+            </value>
+            <value>
+                <fullName>Gymnasier, studenter- og HF-kurser</fullName>
+                <default>false</default>
+                <label>Gymnasier, studenter- og HF-kurser</label>
+            </value>
+            <value>
+                <fullName>Handel med elektricitet</fullName>
+                <default>false</default>
+                <label>Handel med elektricitet</label>
+            </value>
+            <value>
+                <fullName>Handel med gas gennem rørledninger</fullName>
+                <default>false</default>
+                <label>Handel med gas gennem rørledninger</label>
+            </value>
+            <value>
+                <fullName>Hjemmehjælp</fullName>
+                <default>false</default>
+                <label>Hjemmehjælp</label>
+            </value>
+            <value>
+                <fullName>Hoteller</fullName>
+                <default>false</default>
+                <label>Hoteller</label>
+            </value>
+            <value>
+                <fullName>Ikke-finansielle hovedsæders virksomhed</fullName>
+                <default>false</default>
+                <label>Ikke-finansielle hovedsæders virksomhed</label>
+            </value>
+            <value>
+                <fullName>Ikke-specialiseret engroshandel</fullName>
+                <default>false</default>
+                <label>Ikke-specialiseret engroshandel</label>
+            </value>
+            <value>
+                <fullName>Ikke-specialiseret engroshandel med føde-, drikke- og tobaksvarer</fullName>
+                <default>false</default>
+                <label>Ikke-specialiseret engroshandel med føde-, drikke- og tobaksvarer</label>
+            </value>
+            <value>
+                <fullName>Indsamling af ikke-farligt affald</fullName>
+                <default>false</default>
+                <label>Indsamling af ikke-farligt affald</label>
+            </value>
+            <value>
+                <fullName>Industriel fremstilling af brød: kager mv.</fullName>
+                <default>false</default>
+                <label>Industriel fremstilling af brød: kager mv.</label>
+            </value>
+            <value>
+                <fullName>Indvinding og agglomerering af tørv</fullName>
+                <default>false</default>
+                <label>Indvinding og agglomerering af tørv</label>
+            </value>
+            <value>
+                <fullName>Inkassovirksomhed og kreditoplysning</fullName>
+                <default>false</default>
+                <label>Inkassovirksomhed og kreditoplysning</label>
+            </value>
+            <value>
+                <fullName>Installation af industrimaskiner og -udstyr</fullName>
+                <default>false</default>
+                <label>Installation af industrimaskiner og -udstyr</label>
+            </value>
+            <value>
+                <fullName>Institutionsophold med sygepleje i.a.n.</fullName>
+                <default>false</default>
+                <label>Institutionsophold med sygepleje i.a.n.</label>
+            </value>
+            <value>
+                <fullName>Kombinerede administrationsserviceydelser</fullName>
+                <default>false</default>
+                <label>Kombinerede administrationsserviceydelser</label>
+            </value>
+            <value>
+                <fullName>Kombinerede serviceydelser</fullName>
+                <default>false</default>
+                <label>Kombinerede serviceydelser</label>
+            </value>
+            <value>
+                <fullName>Kommunikationsdesign og grafisk design</fullName>
+                <default>false</default>
+                <label>Kommunikationsdesign og grafisk design</label>
+            </value>
+            <value>
+                <fullName>Konferencecentre og kursusejendomme</fullName>
+                <default>false</default>
+                <label>Konferencecentre og kursusejendomme</label>
+            </value>
+            <value>
+                <fullName>Konsulentbistand vedrørende informationsteknologi</fullName>
+                <default>false</default>
+                <label>Konsulentbistand vedrørende informationsteknologi</label>
+            </value>
+            <value>
+                <fullName>Kunstnerisk skaben</fullName>
+                <default>false</default>
+                <label>Kunstnerisk skaben</label>
+            </value>
+            <value>
+                <fullName>Landbrugskonsulenter</fullName>
+                <default>false</default>
+                <label>Landbrugskonsulenter</label>
+            </value>
+            <value>
+                <fullName>Landskabspleje</fullName>
+                <default>false</default>
+                <label>Landskabspleje</label>
+            </value>
+            <value>
+                <fullName>Lotteri- og anden spillevirksomhed</fullName>
+                <default>false</default>
+                <label>Lotteri- og anden spillevirksomhed</label>
+            </value>
+            <value>
+                <fullName>Lovpligtig socialsikring mv.</fullName>
+                <default>false</default>
+                <label>Lovpligtig socialsikring mv.</label>
+            </value>
+            <value>
+                <fullName>Lufttransport af gods</fullName>
+                <default>false</default>
+                <label>Lufttransport af gods</label>
+            </value>
+            <value>
+                <fullName>Malerforretninger</fullName>
+                <default>false</default>
+                <label>Malerforretninger</label>
+            </value>
+            <value>
+                <fullName>Markedsanalyse og offentlig meningsmåling</fullName>
+                <default>false</default>
+                <label>Markedsanalyse og offentlig meningsmåling</label>
+            </value>
+            <value>
+                <fullName>Maskinforarbejdning</fullName>
+                <default>false</default>
+                <label>Maskinforarbejdning</label>
+            </value>
+            <value>
+                <fullName>Mejerier samt ostefremstilling</fullName>
+                <default>false</default>
+                <label>Mejerier samt ostefremstilling</label>
+            </value>
+            <value>
+                <fullName>Murere</fullName>
+                <default>false</default>
+                <label>Murere</label>
+            </value>
+            <value>
+                <fullName>Museer</fullName>
+                <default>false</default>
+                <label>Museer</label>
+            </value>
+            <value>
+                <fullName>Møbelforretninger</fullName>
+                <default>false</default>
+                <label>Møbelforretninger</label>
+            </value>
+            <value>
+                <fullName>Nedrivning</fullName>
+                <default>false</default>
+                <label>Nedrivning</label>
+            </value>
+            <value>
+                <fullName>Opførelse af bygninger</fullName>
+                <default>false</default>
+                <label>Opførelse af bygninger</label>
+            </value>
+            <value>
+                <fullName>Oplagrings- og pakhusvirksomhed</fullName>
+                <default>false</default>
+                <label>Oplagrings- og pakhusvirksomhed</label>
+            </value>
+            <value>
+                <fullName>Opsamling og behandling af spildevand</fullName>
+                <default>false</default>
+                <label>Opsamling og behandling af spildevand</label>
+            </value>
+            <value>
+                <fullName>Organisering af kongresser, messer og udstillinger</fullName>
+                <default>false</default>
+                <label>Organisering af kongresser, messer og udstillinger</label>
+            </value>
+            <value>
+                <fullName>Overfladebehandling af metal</fullName>
+                <default>false</default>
+                <label>Overfladebehandling af metal</label>
+            </value>
+            <value>
+                <fullName>Oversættelse og tolkning</fullName>
+                <default>false</default>
+                <label>Oversættelse og tolkning</label>
+            </value>
+            <value>
+                <fullName>Overvågning</fullName>
+                <default>false</default>
+                <label>Overvågning</label>
+            </value>
+            <value>
+                <fullName>Planteforhandlere og havecentre</fullName>
+                <default>false</default>
+                <label>Planteforhandlere og havecentre</label>
+            </value>
+            <value>
+                <fullName>Planteformering</fullName>
+                <default>false</default>
+                <label>Planteformering</label>
+            </value>
+            <value>
+                <fullName>Plejehjem</fullName>
+                <default>false</default>
+                <label>Plejehjem</label>
+            </value>
+            <value>
+                <fullName>Politiske partier</fullName>
+                <default>false</default>
+                <label>Politiske partier</label>
+            </value>
+            <value>
+                <fullName>Praktiserende speciallæger</fullName>
+                <default>false</default>
+                <label>Praktiserende speciallæger</label>
+            </value>
+            <value>
+                <fullName>Praktiserende tandlæger</fullName>
+                <default>false</default>
+                <label>Praktiserende tandlæger</label>
+            </value>
+            <value>
+                <fullName>Prepress- og premedia-arbejde</fullName>
+                <default>false</default>
+                <label>Prepress- og premedia-arbejde</label>
+            </value>
+            <value>
+                <fullName>Private vagt- og sikkerhedstjenester</fullName>
+                <default>false</default>
+                <label>Private vagt- og sikkerhedstjenester</label>
+            </value>
+            <value>
+                <fullName>Produktion af film og videofilm</fullName>
+                <default>false</default>
+                <label>Produktion af film og videofilm</label>
+            </value>
+            <value>
+                <fullName>Produktion af kød- og fjerkrækødprodukter</fullName>
+                <default>false</default>
+                <label>Produktion af kød- og fjerkrækødprodukter</label>
+            </value>
+            <value>
+                <fullName>Produktion af tv-programmer</fullName>
+                <default>false</default>
+                <label>Produktion af tv-programmer</label>
+            </value>
+            <value>
+                <fullName>Rådgivende ingeniørvirksomhed inden for byggeri og anlægsarbejder</fullName>
+                <default>false</default>
+                <label>Rådgivende ingeniørvirksomhed inden for byggeri og anlægsarbejder</label>
+            </value>
+            <value>
+                <fullName>Rådgivende ingeniørvirksomhed inden for produktions- og maskinteknik</fullName>
+                <default>false</default>
+                <label>Rådgivende ingeniørvirksomhed inden for produktions- og maskinteknik</label>
+            </value>
+            <value>
+                <fullName>Radiovirksomhed</fullName>
+                <default>false</default>
+                <label>Radiovirksomhed</label>
+            </value>
+            <value>
+                <fullName>Rejsearrangører</fullName>
+                <default>false</default>
+                <label>Rejsearrangører</label>
+            </value>
+            <value>
+                <fullName>Rejsebureauer</fullName>
+                <default>false</default>
+                <label>Rejsebureauer</label>
+            </value>
+            <value>
+                <fullName>Reklamebureauer</fullName>
+                <default>false</default>
+                <label>Reklamebureauer</label>
+            </value>
+            <value>
+                <fullName>Reklameplads i medier</fullName>
+                <default>false</default>
+                <label>Reklameplads i medier</label>
+            </value>
+            <value>
+                <fullName>Religiøse institutioner og foreninger</fullName>
+                <default>false</default>
+                <label>Religiøse institutioner og foreninger</label>
+            </value>
+            <value>
+                <fullName>Reparation af andre varer til personligt brug og husholdningsbrug</fullName>
+                <default>false</default>
+                <label>Reparation af andre varer til personligt brug og husholdningsbrug</label>
+            </value>
+            <value>
+                <fullName>Reparation af computere og ydre enheder</fullName>
+                <default>false</default>
+                <label>Reparation af computere og ydre enheder</label>
+            </value>
+            <value>
+                <fullName>Reparation af elektrisk udstyr</fullName>
+                <default>false</default>
+                <label>Reparation af elektrisk udstyr</label>
+            </value>
+            <value>
+                <fullName>Reparation af jern- og metalvarer</fullName>
+                <default>false</default>
+                <label>Reparation af jern- og metalvarer</label>
+            </value>
+            <value>
+                <fullName>Reparation af kommunikationsudstyr</fullName>
+                <default>false</default>
+                <label>Reparation af kommunikationsudstyr</label>
+            </value>
+            <value>
+                <fullName>Reparation af maskiner</fullName>
+                <default>false</default>
+                <label>Reparation af maskiner</label>
+            </value>
+            <value>
+                <fullName>Reparation af møbler og boligudstyr</fullName>
+                <default>false</default>
+                <label>Reparation af møbler og boligudstyr</label>
+            </value>
+            <value>
+                <fullName>Reparation og vedligeholdelse af skibe og både</fullName>
+                <default>false</default>
+                <label>Reparation og vedligeholdelse af skibe og både</label>
+            </value>
+            <value>
+                <fullName>Restauranter</fullName>
+                <default>false</default>
+                <label>Restauranter</label>
+            </value>
+            <value>
+                <fullName>Risiko- og skadesvurdering</fullName>
+                <default>false</default>
+                <label>Risiko- og skadesvurdering</label>
+            </value>
+            <value>
+                <fullName>Rutebuskørsel, fjerntrafik og skolebusser</fullName>
+                <default>false</default>
+                <label>Rutebuskørsel, fjerntrafik og skolebusser</label>
+            </value>
+            <value>
+                <fullName>Servicestationer</fullName>
+                <default>false</default>
+                <label>Servicestationer</label>
+            </value>
+            <value>
+                <fullName>Serviceydelser i forbindelse med husdyravl</fullName>
+                <default>false</default>
+                <label>Serviceydelser i forbindelse med husdyravl</label>
+            </value>
+            <value>
+                <fullName>Serviceydelser i forbindelse med indvinding af råolie og naturgas</fullName>
+                <default>false</default>
+                <label>Serviceydelser i forbindelse med indvinding af råolie og naturgas</label>
+            </value>
+            <value>
+                <fullName>Serviceydelser i forbindelse med sikkerhedssystemer</fullName>
+                <default>false</default>
+                <label>Serviceydelser i forbindelse med sikkerhedssystemer</label>
+            </value>
+            <value>
+                <fullName>Smedning, presning, sænksmedning og valsning af metal: pulvermetallurgi</fullName>
+                <default>false</default>
+                <label>Smedning, presning, sænksmedning og valsning af metal: pulvermetallurgi</label>
+            </value>
+            <value>
+                <fullName>Specialiseret engroshandel med fødevarer i.a.n.</fullName>
+                <default>false</default>
+                <label>Specialiseret engroshandel med fødevarer i.a.n.</label>
+            </value>
+            <value>
+                <fullName>Specialskoler for handicappede</fullName>
+                <default>false</default>
+                <label>Specialskoler for handicappede</label>
+            </value>
+            <value>
+                <fullName>Speditører</fullName>
+                <default>false</default>
+                <label>Speditører</label>
+            </value>
+            <value>
+                <fullName>Sportsklubber</fullName>
+                <default>false</default>
+                <label>Sportsklubber</label>
+            </value>
+            <value>
+                <fullName>Stationer, godsterminaler mv.</fullName>
+                <default>false</default>
+                <label>Stationer, godsterminaler mv.</label>
+            </value>
+            <value>
+                <fullName>Støbning af andre ikke-jernholdige metalprodukter</fullName>
+                <default>false</default>
+                <label>Støbning af andre ikke-jernholdige metalprodukter</label>
+            </value>
+            <value>
+                <fullName>Støbning af letmetalprodukter</fullName>
+                <default>false</default>
+                <label>Støbning af letmetalprodukter</label>
+            </value>
+            <value>
+                <fullName>Sundhedspleje, hjemmesygepleje og jordemødre mv.</fullName>
+                <default>false</default>
+                <label>Sundhedspleje, hjemmesygepleje og jordemødre mv.</label>
+            </value>
+            <value>
+                <fullName>Supermarkeder</fullName>
+                <default>false</default>
+                <label>Supermarkeder</label>
+            </value>
+            <value>
+                <fullName>Sø- og kysttransport af gods</fullName>
+                <default>false</default>
+                <label>Sø- og kysttransport af gods</label>
+            </value>
+            <value>
+                <fullName>Sø- og kysttransport af passagerer</fullName>
+                <default>false</default>
+                <label>Sø- og kysttransport af passagerer</label>
+            </value>
+            <value>
+                <fullName>Tagdækningsvirksomhed</fullName>
+                <default>false</default>
+                <label>Tagdækningsvirksomhed</label>
+            </value>
+            <value>
+                <fullName>Taxikørsel</fullName>
+                <default>false</default>
+                <label>Taxikørsel</label>
+            </value>
+            <value>
+                <fullName>Teater- og koncertvirksomhed</fullName>
+                <default>false</default>
+                <label>Teater- og koncertvirksomhed</label>
+            </value>
+            <value>
+                <fullName>Teknisk afprøvning og kontrol</fullName>
+                <default>false</default>
+                <label>Teknisk afprøvning og kontrol</label>
+            </value>
+            <value>
+                <fullName>Tekniske skoler og fagskoler</fullName>
+                <default>false</default>
+                <label>Tekniske skoler og fagskoler</label>
+            </value>
+            <value>
+                <fullName>Trådløs telekommunikation</fullName>
+                <default>false</default>
+                <label>Trådløs telekommunikation</label>
+            </value>
+            <value>
+                <fullName>Trykning af dagblade</fullName>
+                <default>false</default>
+                <label>Trykning af dagblade</label>
+            </value>
+            <value>
+                <fullName>Turistkørsel og anden landpassagertransport</fullName>
+                <default>false</default>
+                <label>Turistkørsel og anden landpassagertransport</label>
+            </value>
+            <value>
+                <fullName>Tømrer- og bygningssnedkervirksomhed</fullName>
+                <default>false</default>
+                <label>Tømrer- og bygningssnedkervirksomhed</label>
+            </value>
+            <value>
+                <fullName>Udførelse af gulvbelægninger og vægbeklædning</fullName>
+                <default>false</default>
+                <label>Udførelse af gulvbelægninger og vægbeklædning</label>
+            </value>
+            <value>
+                <fullName>Udgivelse af aviser og dagblade</fullName>
+                <default>false</default>
+                <label>Udgivelse af aviser og dagblade</label>
+            </value>
+            <value>
+                <fullName>Udgivelse af bøger</fullName>
+                <default>false</default>
+                <label>Udgivelse af bøger</label>
+            </value>
+            <value>
+                <fullName>Udgivelse af ugeblade og magasiner</fullName>
+                <default>false</default>
+                <label>Udgivelse af ugeblade og magasiner</label>
+            </value>
+            <value>
+                <fullName>Udlejning af erhvervsejendomme</fullName>
+                <default>false</default>
+                <label>Udlejning af erhvervsejendomme</label>
+            </value>
+            <value>
+                <fullName>Udlejning og leasing af andet materiel, udstyr og andre materielle aktiver i.a.n.</fullName>
+                <default>false</default>
+                <label>Udlejning og leasing af andet materiel, udstyr og andre materielle aktiver i.a.n.</label>
+            </value>
+            <value>
+                <fullName>Udlejning og leasing af biler og lette motorkøretøjer</fullName>
+                <default>false</default>
+                <label>Udlejning og leasing af biler og lette motorkøretøjer</label>
+            </value>
+            <value>
+                <fullName>Udlejning og leasing af entreprenørmateriel</fullName>
+                <default>false</default>
+                <label>Udlejning og leasing af entreprenørmateriel</label>
+            </value>
+            <value>
+                <fullName>Udsavning og høvling af træ</fullName>
+                <default>false</default>
+                <label>Udsavning og høvling af træ</label>
+            </value>
+            <value>
+                <fullName>Undervisning i kulturelle discipliner</fullName>
+                <default>false</default>
+                <label>Undervisning i kulturelle discipliner</label>
+            </value>
+            <value>
+                <fullName>Undervisning inden for sport og fritid</fullName>
+                <default>false</default>
+                <label>Undervisning inden for sport og fritid</label>
+            </value>
+            <value>
+                <fullName>Ungdoms- og efterskoler</fullName>
+                <default>false</default>
+                <label>Ungdoms- og efterskoler</label>
+            </value>
+            <value>
+                <fullName>Værdipapir- og varemægling</fullName>
+                <default>false</default>
+                <label>Værdipapir- og varemægling</label>
+            </value>
+            <value>
+                <fullName>Varmeforsyning</fullName>
+                <default>false</default>
+                <label>Varmeforsyning</label>
+            </value>
+            <value>
+                <fullName>Vejgodstransport</fullName>
+                <default>false</default>
+                <label>Vejgodstransport</label>
+            </value>
+            <value>
+                <fullName>Videregående uddannelser ikke på universitetsniveau</fullName>
+                <default>false</default>
+                <label>Videregående uddannelser ikke på universitetsniveau</label>
+            </value>
+            <value>
+                <fullName>Vikarbureauer</fullName>
+                <default>false</default>
+                <label>Vikarbureauer</label>
+            </value>
+            <value>
+                <fullName>Virksomhedsrådgivning og anden rådgivning om driftsledelse</fullName>
+                <default>false</default>
+                <label>Virksomhedsrådgivning og anden rådgivning om driftsledelse</label>
+            </value>
+            <value>
+                <fullName>VVS- og blikkenslagerforretninger</fullName>
+                <default>false</default>
+                <label>VVS- og blikkenslagerforretninger</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

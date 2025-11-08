@@ -1,0 +1,981 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Format_DateTime_TZ_DST_safe</name>
+        <label>Format DateTime (TZ/DST-safe)</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>DFJ_TimeFormatter</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>What_is_the_Market_Unit</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>formatKey</name>
+            <value>
+                <stringValue>LONG</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>marketUnitKey</name>
+            <value>
+                <elementReference>Get_Campaign_Member.Campaign.Market_Unit__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>value</name>
+            <value>
+                <elementReference>Get_Campaign_Member.Campaign.Start__c</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>DFJ_TimeFormatter</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>65.0</apiVersion>
+    <assignments>
+        <name>Assign_Cancelled_Tickets_to_Campaign_Member_Variable</name>
+        <label>Assign Cancelled Tickets to Campaign Member Variable</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Campaign_Member.Cancelled_tickets__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>numCancelledTickets</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Were_All_Tickets_Cancelled</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Danish_Values</name>
+        <label>Assign Danish Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>SmsBodyFullCancel</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptSmsBodyFullCancelDanish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SmsBodyPartialCancel</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptSmsBodyPartialCancelDanish</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Screen_1</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Full_Cancel_SMS_Body_to_SMS_Body</name>
+        <label>Assign Full Cancel SMS Body to SMS Body</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>SmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SmsBodyFullCancel</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Campaign_Member</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Irish_Values</name>
+        <label>Assign Irish Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>SmsBodyFullCancel</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptSmsBodyFullCancelIrish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SmsBodyPartialCancel</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptSmsBodyPartialCancelIrish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>OverviewUrl</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>Screen_1</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_IsCancelledTicketsInvalid_False</name>
+        <label>Assign IsCancelledTicketsInvalid False</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>IsCancelledTicketsInvalid</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_Cancelled_Tickets_Amount_Valid</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_IsCancelledTicketsInvalid_True</name>
+        <label>Assign IsCancelledTicketsInvalid True</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>IsCancelledTicketsInvalid</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Populate_Custom_Error_with_Invalid_Cancelled_Tickets_Amount</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_IsSuccess_True</name>
+        <label>Assign IsSuccess True</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>IsSuccess</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>numSuccessfullyCancelledTickets</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>numCancelledTickets</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Get_Campaign_Member</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Partial_Cancel_SMS_Body_to_SMS_Body</name>
+        <label>Assign Partial Cancel SMS Body to SMS Body</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>SmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SmsBodyPartialCancel</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Campaign_Member</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Swedish_Values</name>
+        <label>Assign Swedish Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>SmsBodyFullCancel</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptSmsBodyFullCancelSwedish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SmsBodyPartialCancel</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptSmsBodyPartialCancelSwedish</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>OverviewUrl</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>Screen_1</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Clear_Success_Variables</name>
+        <label>Clear Success Variables</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>IsSuccess</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>numSuccessfullyCancelledTickets</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_IsCancelledTicketsInvalid_False</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_Flow_Fault_Message</name>
+        <label>Populate Custom Error with Flow Fault Message</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Error_Screen</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Number of cancelled tickets ({!numCancelledTickets}) has to be at least 1 and cannot be more than Tickets Booked ({!Get_Campaign_Member.Tickets_in_order__c})</description>
+        <name>Populate_Custom_Error_with_Invalid_Cancelled_Tickets_Amount</name>
+        <label>Populate Custom Error with Invalid Cancelled Tickets Amount</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>InvalidCancelledTicketsErrorMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>rtInvalidCancelledTicketsError</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Screen_1</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_Invalid_or_Missing_Market_Unit</name>
+        <label>Populate Custom Error with Invalid or Missing Market Unit</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Invalid or Missing Market Unit: {!Get_Campaign_Member.Campaign.Market_Unit__c}</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Danish_Overview_URL</name>
+        <label>Populate Danish Overview URL</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>OverviewUrl</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>https://www.totalliv.dk/find-foredrag</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Danish_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Does not yet exist, this is just a placeholder</description>
+        <name>Populate_Irish_Overview_URL</name>
+        <label>Populate Irish Overview URL</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>OverviewUrl</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Irish_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Does not yet exist, this is just a placeholder</description>
+        <name>Populate_Swedish_Overview_URL</name>
+        <label>Populate Swedish Overview URL</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>OverviewUrl</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Swedish_Values</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Did_SMS_Subflow_Succeed</name>
+        <label>Did SMS Subflow Succeed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SMS_Subflow_Was_Successful</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsSmsSubflowSuccessful</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_IsSuccess_True</targetReference>
+            </connector>
+            <label>SMS Subflow Was Successful</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Cancelled_Tickets_Amount_Valid</name>
+        <label>Is Cancelled Tickets Amount Valid?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Assign_IsCancelledTicketsInvalid_True</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Valid_Cancelled_Tickets_Amount</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>numCancelledTickets</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>1.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>numCancelledTickets</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>Get_Campaign_Member.Tickets_in_order__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>numCancelledTickets</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>Get_Campaign_Member.Cancelled_tickets__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Cancelled_Tickets_to_Campaign_Member_Variable</targetReference>
+            </connector>
+            <label>Valid Cancelled Tickets Amount</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Were_All_Tickets_Cancelled</name>
+        <label>Were All Tickets Cancelled?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Full_Cancel_SMS_Body_to_SMS_Body</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Full Cancellation</defaultConnectorLabel>
+        <rules>
+            <name>It_is_a_Partial_Cancellation</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>frmRemainingTickets</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>1.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Partial_Cancel_SMS_Body_to_SMS_Body</targetReference>
+            </connector>
+            <label>It is a Partial Cancellation</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>What_is_the_Market_Unit</name>
+        <label>What is the Market Unit?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Populate_Custom_Error_with_Invalid_or_Missing_Market_Unit</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Danish_Market_Unit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Campaign_Member.Campaign.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>DFJ_DK</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_Danish_Overview_URL</targetReference>
+            </connector>
+            <label>Danish Market Unit</label>
+        </rules>
+        <rules>
+            <name>Swedish_Market_Unit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Campaign_Member.Campaign.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>FA_SE</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_Swedish_Overview_URL</targetReference>
+            </connector>
+            <label>Swedish Market Unit</label>
+        </rules>
+        <rules>
+            <name>Irish_Market_Unit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Campaign_Member.Campaign.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ireland</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_Irish_Overview_URL</targetReference>
+            </connector>
+            <label>Irish Market Unit</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>frmRemainingTickets</name>
+        <dataType>Number</dataType>
+        <expression>{!Get_Campaign_Member.Tickets_in_order__c} - {!numCancelledTickets}</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>SF - Campaign Member: Manual Ticket Cancellation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>SF - Campaign Member: Manually Cancel Tickets</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Get_Campaign_Member</name>
+        <label>Get Campaign Member</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Format_DateTime_TZ_DST_safe</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Campaign_Member</name>
+        <label>Update Campaign Member</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>AL_Create_Outbound_SMS</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <inputReference>Get_Campaign_Member</inputReference>
+    </recordUpdates>
+    <screens>
+        <name>Error_Screen</name>
+        <label>Error Screen</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>displayCustomError</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 20px; color: rgb(255, 0, 0);&quot;&gt;Something went wrong...&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;Error message:&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;{!CustomError}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Screen_1</name>
+        <label>Screen 1</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Clear_Success_Variables</targetReference>
+        </connector>
+        <fields>
+            <name>displayHeaderScreen1</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 20px; color: rgb(0, 0, 0);&quot;&gt;Cancel Tickets&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>displaySuccessMessage</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(0, 115, 14);&quot;&gt;&lt;em&gt;You&apos;ve successfully cancelled {!numSuccessfullyCancelledTickets} tickets&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>numSuccessfullyCancelledTickets</leftValueReference>
+                    <operator>GreaterThanOrEqualTo</operator>
+                    <rightValue>
+                        <numberValue>1.0</numberValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Screen_1_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Screen_1_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>numTicketsBooked</name>
+                    <dataType>Number</dataType>
+                    <defaultValue>
+                        <elementReference>Get_Campaign_Member.Tickets_in_order__c</elementReference>
+                    </defaultValue>
+                    <fieldText>Tickets Booked</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isDisabled>
+                        <booleanValue>true</booleanValue>
+                    </isDisabled>
+                    <isRequired>false</isRequired>
+                    <scale>0</scale>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Screen_1_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>numCancelledTickets</name>
+                    <dataType>Number</dataType>
+                    <defaultValue>
+                        <elementReference>Get_Campaign_Member.Cancelled_tickets__c</elementReference>
+                    </defaultValue>
+                    <fieldText>Cancelled Tickets</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <scale>0</scale>
+                </fields>
+                <fields>
+                    <name>displayRemainingTicketsCannotGoBelowZero</name>
+                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;em style=&quot;color: rgb(255, 0, 0);&quot;&gt;You cannot cancel more tickets than the customer has booked&lt;/em&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>numRemainingTickets</leftValueReference>
+                            <operator>LessThan</operator>
+                            <rightValue>
+                                <numberValue>0.0</numberValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>displayIsCancelledTicketsInvalidAlert</name>
+                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;{!InvalidCancelledTicketsErrorMessage}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>IsCancelledTicketsInvalid</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <booleanValue>true</booleanValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Screen_1_Section1_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>numRemainingTickets</name>
+                    <dataType>Number</dataType>
+                    <defaultValue>
+                        <elementReference>frmRemainingTickets</elementReference>
+                    </defaultValue>
+                    <fieldText>Remaining Tickets</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isDisabled>
+                        <booleanValue>true</booleanValue>
+                    </isDisabled>
+                    <isRequired>false</isRequired>
+                    <scale>0</scale>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>displaySmsConfirmation</name>
+            <fieldText>&lt;p&gt;&lt;strong&gt;The customer will receive an SMS Confirmation, once the tickets have been cancelled.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>displayFullCancelSmsBody</name>
+            <fieldText>&lt;p&gt;&lt;em style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;{!SmsBodyFullCancel}&lt;/em&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>numRemainingTickets</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <numberValue>0.0</numberValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>numCancelledTickets</leftValueReference>
+                    <operator>GreaterThanOrEqualTo</operator>
+                    <rightValue>
+                        <numberValue>1.0</numberValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>displayPartialCancelSmsBody</name>
+            <fieldText>&lt;p&gt;&lt;em&gt;{!SmsBodyPartialCancel}&lt;/em&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>numRemainingTickets</leftValueReference>
+                    <operator>GreaterThanOrEqualTo</operator>
+                    <rightValue>
+                        <numberValue>1.0</numberValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>numCancelledTickets</leftValueReference>
+                    <operator>GreaterThanOrEqualTo</operator>
+                    <rightValue>
+                        <numberValue>1.0</numberValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <nextOrFinishButtonLabel>Cancel Tickets</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Campaign_Member</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>AL_Create_Outbound_SMS</name>
+        <label>AL - Create Outbound SMS</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Did_SMS_Subflow_Succeed</targetReference>
+        </connector>
+        <flowName>AL_Create_Outbound_SMS</flowName>
+        <inputAssignments>
+            <name>MarketUnit</name>
+            <value>
+                <elementReference>Get_Campaign_Member.Market_Unit__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Message</name>
+            <value>
+                <elementReference>SmsBody</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>RelatedRecordId</name>
+            <value>
+                <elementReference>Get_Campaign_Member.LeadOrContactId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>SendFrom</name>
+            <value>
+                <stringValue>Alpha</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>ToNumber</name>
+            <value>
+                <elementReference>Get_Campaign_Member.Phone_Formatted__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Type</name>
+            <value>
+                <stringValue>Manually Triggered</stringValue>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>CustomError</assignToReference>
+            <name>CustomError</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>IsSmsSubflowSuccessful</assignToReference>
+            <name>IsSuccess</name>
+        </outputAssignments>
+    </subflows>
+    <textTemplates>
+        <name>ptSmsBodyFullCancelDanish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hej {!Get_Campaign_Member.FirstName},
+
+Som aftalt, har vi afmeldt {!numCancelledTickets} billet(ter) til foredraget på {!Get_Campaign_Member.Venue__c}, {!Format_DateTime_TZ_DST_safe.formatted}.
+
+Vi håber at se dig til et foredrag en anden gang.
+{!OverviewUrl}
+
+Med venlig hilsen,
+Din Familiejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSmsBodyFullCancelIrish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hi {!Get_Campaign_Member.FirstName},
+
+As agreed, we have cancelled {!numCancelledTickets} ticket(s) for the lecture at {!Get_Campaign_Member.Venue__c} on {!Format_DateTime_TZ_DST_safe.formatted}.
+
+We hope to see you at another lecture sometime.
+
+Kind regards,
+Heres Law</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSmsBodyFullCancelSwedish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hej {!Get_Campaign_Member.FirstName},
+
+Som överenskommet har vi avbokat {!numCancelledTickets} biljet(ter) till föreläsningen på {!Get_Campaign_Member.Venue__c} den {!Format_DateTime_TZ_DST_safe.formatted}.
+
+Vi hoppas att få se dig på en annan föreläsning någon gång.
+
+Med vänliga hälsningar,
+Din Familjejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSmsBodyPartialCancelDanish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hej {!Get_Campaign_Member.FirstName}, 
+
+Som aftalt, har vi afmeldt {!numCancelledTickets} billet(ter) til foredraget på {!Get_Campaign_Member.Venue__c}, d. {!Format_DateTime_TZ_DST_safe.formatted}. 
+
+Du har stadig {!frmRemainingTickets} billet(ter) tilbage og vi glæder os til at se dig.
+
+Med venlig hilsen, Din Familiejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSmsBodyPartialCancelIrish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hi {!Get_Campaign_Member.FirstName},
+
+As agreed, we have cancelled {!numCancelledTickets} ticket(s) for the lecture at {!Get_Campaign_Member.Venue__c} on {!Format_DateTime_TZ_DST_safe.formatted}.
+
+You still have {!frmRemainingTickets} ticket(s) remaining, and we look forward to seeing you.
+
+Kind regards,
+Heres Law</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSmsBodyPartialCancelSwedish</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hej {!Get_Campaign_Member.FirstName},
+
+Som överenskommet har vi avbokat {!numCancelledTickets} biljet(ter) till föreläsningen på {!Get_Campaign_Member.Venue__c} den {!Format_DateTime_TZ_DST_safe.formatted}.
+
+Du har fortfarande {!frmRemainingTickets} biljet(ter) kvar, och vi ser fram emot att träffa dig.
+
+Med vänliga hälsningar,
+Din Familjejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>rtInvalidCancelledTicketsError</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 0, 0);&quot;&gt;Invalid Number of Cancelled Tickets&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;em&gt;You&apos;ve selected that you want to cancel &lt;/em&gt;&lt;em style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;{!numCancelledTickets} tickets&lt;/em&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Number of cancelled tickets has to be at least 1&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Number of cancelled tickets c&lt;/span&gt;annot be more than Tickets Booked (Tickets Booked: {!Get_Campaign_Member.Tickets_in_order__c})&lt;/li&gt;&lt;li&gt;Number of cancelled tickets cannot be less than what was already cancelled&lt;/li&gt;&lt;/ul&gt;</text>
+    </textTemplates>
+    <variables>
+        <name>CustomError</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>InvalidCancelledTicketsErrorMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>IsCancelledTicketsInvalid</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>IsSmsSubflowSuccessful</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>IsSuccess</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>numSuccessfullyCancelledTickets</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>OverviewUrl</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SmsBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SmsBodyFullCancel</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SmsBodyPartialCancel</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

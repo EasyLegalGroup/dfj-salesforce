@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Journal_persons_2</fullName>
+    <fields>Full_Name__c</fields>
+    <fields>CPR__c</fields>
+    <fields>Email__c</fields>
+    <fields>Phone__c</fields>
+    <label>Journal persons 2</label>
+</CompactLayout>

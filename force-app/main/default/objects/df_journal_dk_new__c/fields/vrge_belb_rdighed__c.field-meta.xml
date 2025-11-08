@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vrge_belb_rdighed__c</fullName>
+    <externalId>false</externalId>
+    <label>Beløbets rådighed for værgen</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>vrge_belb_rdighed_mned</fullName>
+                <default>false</default>
+                <label>Værgen kan månedligt hæve det nævnte beløb</label>
+            </value>
+            <value>
+                <fullName>vrge_belb_rdighed_frit</fullName>
+                <default>false</default>
+                <label>Værgen kan frit hæve af beløbet</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>omfatt_pens_forsik__c</fullName>
+    <externalId>false</externalId>
+    <label>Omfattede pensions- og forsikrin 44e19</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>omfatt_pens_forsik_generelt</fullName>
+                <default>false</default>
+                <label>Generelt</label>
+            </value>
+            <value>
+                <fullName>omfatt_pens_forsik_specif</fullName>
+                <default>false</default>
+                <label>Specifikt</label>
+            </value>
+            <value>
+                <fullName>omfatt_pens_forsik_overskud</fullName>
+                <default>false</default>
+                <label>Overskudsdeling</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

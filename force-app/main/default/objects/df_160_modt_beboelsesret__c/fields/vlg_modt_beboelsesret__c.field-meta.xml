@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlg_modt_beboelsesret__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Vælg person, der skal have beboe a693a</label>
+    <referenceTo>df_160_person__c</referenceTo>
+    <relationshipLabel>vlg_modt_beboelsesret</relationshipLabel>
+    <relationshipName>vlg_modt_beboelsesret</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Assign_Present_to_Status</name>
+        <label>Assign Present to Status</label>
+        <locationX>176</locationX>
+        <locationY>503</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Attendance_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Present</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Attendance</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Time_Sheet</name>
+        <label>Assign Time Sheet</label>
+        <locationX>176</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Time_Sheet__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Time_Sheet.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Present_to_Status</targetReference>
+        </connector>
+    </assignments>
+    <environments>Default</environments>
+    <formulas>
+        <name>frmWorkMonth</name>
+        <dataType>String</dataType>
+        <expression>CASE(
+    MONTH({!$Record.Date__c}), 
+    1, &quot;January&quot;, 
+    2, &quot;February&quot;, 
+    3, &quot;March&quot;, 
+    4, &quot;April&quot;, 
+    5, &quot;May&quot;, 
+    6, &quot;June&quot;, 
+    7, &quot;July&quot;, 
+    8, &quot;August&quot;, 
+    9, &quot;September&quot;, 
+    10, &quot;October&quot;, 
+    11, &quot;November&quot;, 
+    12, &quot;December&quot;, 
+    &quot;&quot;
+) 
+&amp; &quot; &quot; &amp; TEXT(YEAR({!$Record.Date__c}))</expression>
+    </formulas>
+    <formulas>
+        <name>today</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()</expression>
+    </formulas>
+    <interviewLabel>Before Save: Attendance Created {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Before Save: Attendance Created</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Time_Sheet</name>
+        <label>Get Time Sheet</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Time_Sheet</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Employee__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Employee__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Work_Month__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>frmWorkMonth</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Time_Sheet__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Attendance</name>
+        <label>Update Attendance</label>
+        <locationX>176</locationX>
+        <locationY>611</locationY>
+        <inputAssignments>
+            <field>Time_Sheet__c</field>
+            <value>
+                <elementReference>$Record.Time_Sheet__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Time_Sheet</targetReference>
+        </connector>
+        <object>Attendance__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+    <variables>
+        <name>category</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>compensation</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>country</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

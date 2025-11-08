@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Period_Start__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(
+  Target_Period__c ,
+  
+  /* Quarter → first day of quarter */
+  &quot;Quarter&quot;,
+    DATE(
+      Year__c,
+      (Quarter_Number__c - 1) * 3 + 1,
+      1
+    ),
+  
+  /* Month → first day of month */
+  &quot;Month&quot;,
+    DATE( Year__c, Month_Number__c, 1 ),
+  
+  /* Week → Monday of ISO week */
+  &quot;Week&quot;,
+    DATE( Year__c, 1, 4 )
+    - MOD( WEEKDAY( DATE( Year__c, 1, 4 ) ) + 5, 7 )
+    + ( Week_Number__c - 1 ) * 7,
+  
+  /* Day → that day of the year */
+  &quot;Day&quot;,
+    DATE( Year__c, 1, 1 ) + Day_Number__c - 1,
+  
+  /* default */
+  NULL
+)</formula>
+    <label>Period Start</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

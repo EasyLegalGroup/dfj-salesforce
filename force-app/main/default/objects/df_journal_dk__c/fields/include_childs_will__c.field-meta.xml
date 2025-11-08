@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>include_childs_will__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Gælder kun ved mindreårige børn</description>
+    <externalId>false</externalId>
+    <label>Skal der indsættes børnetestamen 46e02</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

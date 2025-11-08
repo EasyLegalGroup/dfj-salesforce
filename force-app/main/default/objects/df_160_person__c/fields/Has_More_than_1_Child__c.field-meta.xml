@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_More_than_1_Child__c</fullName>
+    <externalId>false</externalId>
+    <formula>journal_dk_new__r.har_du_i_mere_end_t_barn__c = TRUE</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Has More than 1 Child</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

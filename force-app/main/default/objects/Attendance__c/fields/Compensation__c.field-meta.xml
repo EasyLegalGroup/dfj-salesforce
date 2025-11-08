@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Compensation__c</fullName>
+    <externalId>false</externalId>
+    <label>Compensation</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Attendance_Status__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Absence_Compensation</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Absent</controllingFieldValue>
+            <controllingFieldValue>Partial Day</controllingFieldValue>
+            <controllingFieldValue>Weekend</controllingFieldValue>
+            <valueName>Paid Leave</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Absent</controllingFieldValue>
+            <controllingFieldValue>Partial Day</controllingFieldValue>
+            <controllingFieldValue>Weekend</controllingFieldValue>
+            <valueName>Unpaid Leave</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Partial Day</controllingFieldValue>
+            <controllingFieldValue>Weekend</controllingFieldValue>
+            <valueName>Relative to Hours Worked</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

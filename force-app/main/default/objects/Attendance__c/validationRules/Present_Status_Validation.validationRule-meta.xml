@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Present_Status_Validation</fullName>
+    <active>true</active>
+    <description>Ensure that if Attendance_Status__c is &quot;Present,&quot; both Absence_Category__c and Compensation__c must be empty:</description>
+    <errorConditionFormula>AND(
+  ISPICKVAL(Attendance_Status__c, &quot;Present&quot;),
+  OR(
+    NOT(ISBLANK(TEXT(Absence_Category__c))),
+    NOT(ISBLANK(TEXT(Compensation__c)))
+  )
+)</errorConditionFormula>
+    <errorMessage>You cannot set Compensation and Absence Category, if Attendance Status is &quot;Present&quot;</errorMessage>
+</ValidationRule>

@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>allowChanges</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>alternativeText</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>Center</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>imgPath</name>
+                    <value>{[devName:dfjlogosepng]}</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginBottom</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginLeft</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginRight</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginTop</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>objectFit</name>
+                    <value>fill</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>40</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:image</componentName>
+                <identifier>contentbuilder_image11</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-ea24dc88-440f-46c7-8b98-d4c96985c3ed</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columnBody</name>
+                    <value>Facet-ea24dc88-440f-46c7-8b98-d4c96985c3ed</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columnSpacer</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>padding</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlign</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>100%</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:column</componentName>
+                <identifier>contentbuilder_column15</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-808373c0-6ad8-45dd-a8ef-7336f5b98ae6</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>allowChanges</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>linkedToDesignKit</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginBottom</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginLeft</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginRight</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginTop</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;Hej Medarbetare,&lt;/p&gt;
+
+&lt;p&gt;Vi &amp;auml;r glada &amp;ouml;ver att kunna bjuda in dig till ett s&amp;auml;rskilt f&amp;ouml;redrag hos {{{Hosts__c.Name}}}, d&amp;auml;r vi kommer att f&amp;ouml;rdjupa oss i viktiga &amp;auml;mnen som testamenten, framtidsfullmakter, arv, sjukdomar och mycket mer.&lt;/p&gt;
+
+&lt;p&gt;Detta &amp;auml;r en unik m&amp;ouml;jlighet att f&amp;aring; insikt och svar p&amp;aring; dina fr&amp;aring;gor om dessa ofta f&amp;ouml;rbisedda, men viktiga aspekter av livsplanering.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Praktisk Information:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;N&amp;auml;r:&amp;nbsp;&lt;/strong&gt;{{{Hosts__c.Campaign_Info_List__c}}}&lt;br /&gt;
+&lt;strong&gt;Var:&amp;nbsp;&lt;/strong&gt;{{{Hosts__c.Address__c}}}&lt;br /&gt;
+&lt;br /&gt;
+&lt;strong&gt;Om F&amp;ouml;redraget: &lt;/strong&gt;&lt;br /&gt;
+V&amp;aring;r expert kommer att guida dig genom nyckelpunkterna du b&amp;ouml;r &amp;ouml;verv&amp;auml;ga n&amp;auml;r det g&amp;auml;ller framtidsplanering. Oavsett om det handlar om att uppr&amp;auml;tta ett testamente, f&amp;ouml;rst&amp;aring; arvsregler eller betydelsen av en framtidsfullmakt, &amp;auml;r m&amp;aring;let att utrusta dig med kunskap s&amp;aring; att du kan fatta de b&amp;auml;sta besluten f&amp;ouml;r dig och din familj.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Hur anm&amp;auml;ler du dig?&lt;/strong&gt;&lt;br /&gt;
+Det &amp;auml;r enkelt!&lt;br /&gt;
+{{{Hosts__c.Company_Lecture_Booking_URL__c}}} f&amp;ouml;r att reservera din plats. Kom ih&amp;aring;g att platserna &amp;auml;r begr&amp;auml;nsade, s&amp;aring; tveka inte att anm&amp;auml;la dig.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Vad h&amp;auml;nder efter anm&amp;auml;lan?&lt;/strong&gt;&lt;br /&gt;
+Efter att du har anm&amp;auml;lt dig skickar vi dig en bekr&amp;auml;ftelse samt en p&amp;aring;minnelse n&amp;aring;gra dagar f&amp;ouml;re f&amp;ouml;redraget. Du kommer inte att kontaktas ytterligare, s&amp;aring;vida du inte sj&amp;auml;lv v&amp;auml;ljer att fylla i ett kontaktformul&amp;auml;r efter f&amp;ouml;redraget f&amp;ouml;r att f&amp;aring; mer information eller st&amp;auml;lla uppf&amp;ouml;ljningsfr&amp;aring;gor.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Har du fr&amp;aring;gor?&lt;/strong&gt;&lt;br /&gt;
+Eventuella fr&amp;aring;gor kan riktas till {{{Recipient.Name}}}. Vi &amp;auml;r h&amp;auml;r f&amp;ouml;r att se till att du f&amp;aring;r ut s&amp;aring; mycket som m&amp;ouml;jligt av denna upplevelse.&lt;/p&gt;
+
+&lt;p&gt;Vi ser fram emot att v&amp;auml;lkomna dig och utforska dessa viktiga &amp;auml;mnen tillsammans med dig.&lt;/p&gt;
+
+&lt;p&gt;Med v&amp;auml;nliga h&amp;auml;lsningar,&lt;/p&gt;
+
+&lt;p&gt;{{{Recipient.Name}}} {{{Recipient.Email}}}&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:richText</componentName>
+                <identifier>contentbuilder_richText13</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>allowChanges</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>alternativeText</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>left</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>imgPath</name>
+                    <value>{[devName:dfjlogosepng]}</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginBottom</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginLeft</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginRight</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginTop</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>objectFit</name>
+                    <value>fill</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>33</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:image</componentName>
+                <identifier>contentbuilder_image12</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>allowChanges</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>linkedToDesignKit</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginBottom</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginLeft</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginRight</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginTop</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;&lt;br /&gt;
+&lt;span style=&quot;font-size:11pt&quot;&gt;&lt;span style=&quot;background:white&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;b&gt;&lt;span style=&quot;font-size:9.0pt&quot;&gt;&lt;span style=&quot;color:black&quot;&gt;CONFIDENTIALITY&lt;/span&gt;&lt;/span&gt;&lt;/b&gt;&lt;br /&gt;
+&lt;span style=&quot;font-size:9.0pt&quot;&gt;&lt;span style=&quot;color:black&quot;&gt;This message and any attachment are&amp;nbsp;confidential and may be privileged or&amp;nbsp;otherwise protected from disclosure.&amp;nbsp;&lt;br /&gt;
+If you are not the intended recipient,&amp;nbsp;please&amp;nbsp;notify DinFamilieJurist ApS&amp;nbsp;immediately by&amp;nbsp;reply email and delete&amp;nbsp;&lt;br /&gt;
+the message and any attachment from&amp;nbsp;your&amp;nbsp;system.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:richText</componentName>
+                <identifier>contentbuilder_richText14</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-2bf900ce-ed05-4e23-8c19-f7df6f809e56</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columnBody</name>
+                    <value>Facet-2bf900ce-ed05-4e23-8c19-f7df6f809e56</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columnSpacer</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>padding</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlign</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>100%</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:column</componentName>
+                <identifier>contentbuilder_column16</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-e441c765-9041-4154-914c-4082ce5de64a</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-808373c0-6ad8-45dd-a8ef-7336f5b98ae6</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlignment</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:row</componentName>
+                <identifier>contentbuilder_row15</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-e441c765-9041-4154-914c-4082ce5de64a</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlignment</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:row</componentName>
+                <identifier>contentbuilder_row16</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>main</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>SE_Booking_Confirmation_Company_Promo</masterLabel>
+    <template>
+        <name>contentpage:defaultEmailTemplatePageTemplate</name>
+        <properties>
+            <name>backgroundColor</name>
+            <value>#E9EAEC</value>
+        </properties>
+        <properties>
+            <name>backgroundImageUrl</name>
+        </properties>
+        <properties>
+            <name>bodyColor</name>
+            <value>#FFFFFF</value>
+        </properties>
+        <properties>
+            <name>paddingBottom</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingLeft</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingRight</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingTop</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>preheader</name>
+            <value>Förbered dig för vårt samarbete: Se detaljerna för våra kommande evenemang.</value>
+        </properties>
+    </template>
+    <type>EmailTemplatePage</type>
+</FlexiPage>

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <decisions>
+        <description>This step checks if we have the necessary information to create a contact (Phone, Email and Name of Contact) and if Contact is Null (So if we have all the information to create a contact, but there is no contact, we create one, based on the information we have)</description>
+        <name>Do_we_need_to_create_a_contact</name>
+        <label>Do we need to create a contact?</label>
+        <locationX>380</locationX>
+        <locationY>623</locationY>
+        <defaultConnectorLabel>Contact Exists</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Create_Contact</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Phone__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Email__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Name_of_Contact__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Contact__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_for_Duplicate_Contact</targetReference>
+            </connector>
+            <label>Yes, Create Contact</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Does_Currency_Match_Expectations</name>
+        <label>Does Currency Match Expectations?</label>
+        <locationX>380</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Set_Currency</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Update Currency</defaultConnectorLabel>
+        <rules>
+            <name>Currency_Matches</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CurrencyIsoCode</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>frmCurrency</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Do_we_need_to_create_a_contact</targetReference>
+            </connector>
+            <label>Currency Matches</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_there_a_contact_with_that_email</name>
+        <label>Is there a contact with that email?</label>
+        <locationX>182</locationX>
+        <locationY>839</locationY>
+        <defaultConnector>
+            <targetReference>Create_Contact</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Contact_Exists_Already</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Check_for_Duplicate_Contact</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Host_with_Existing_Contact</targetReference>
+            </connector>
+            <label>Yes, Contact Exists Already</label>
+        </rules>
+    </decisions>
+    <description>Saved to run the flow when a record is updated as well.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>frmCurrency</name>
+        <dataType>String</dataType>
+        <expression>CASE(
+    TEXT({!$Record.Market_Unit__c}),
+    &quot;FA_SE&quot;, &quot;SEK&quot;,
+    &quot;Testamente_SV&quot;, &quot;SEK&quot;,
+    &quot;DFJ_DK&quot;, &quot;DKK&quot;,
+    &quot;Testamente_DK&quot;, &quot;DKK&quot;,
+    NULL
+)</expression>
+    </formulas>
+    <interviewLabel>Lecture: Update Host&apos;s Contact Field {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lecture: Update Host&apos;s Contact Field</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Contact</name>
+        <label>Create Contact</label>
+        <locationX>314</locationX>
+        <locationY>947</locationY>
+        <connector>
+            <targetReference>Update_Host_with_New_Contact</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Email</field>
+            <value>
+                <elementReference>$Record.Email__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>FirstName</field>
+            <value>
+                <elementReference>$Record.Contact_First_Name__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Host__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LastName</field>
+            <value>
+                <elementReference>$Record.Contact_Last_Name__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>MobilePhone</field>
+            <value>
+                <elementReference>$Record.Phone_Formatted_Formula__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OtherPhone</field>
+            <value>
+                <elementReference>$Record.Other_Phone_Formatted__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Phone</field>
+            <value>
+                <elementReference>$Record.Phone_Formatted_Formula__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>Check_for_Duplicate_Contact</name>
+        <label>Check for Duplicate Contact</label>
+        <locationX>182</locationX>
+        <locationY>731</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_there_a_contact_with_that_email</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Email</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Email__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Set_Currency</name>
+        <label>Set Currency</label>
+        <locationX>468</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>Do_we_need_to_create_a_contact</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>CurrencyIsoCode</field>
+            <value>
+                <elementReference>frmCurrency</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Host_with_Existing_Contact</name>
+        <label>Update Host with Existing Contact</label>
+        <locationX>50</locationX>
+        <locationY>947</locationY>
+        <inputAssignments>
+            <field>Contact_Creator__c</field>
+            <value>
+                <stringValue>Contact Created</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Contact__c</field>
+            <value>
+                <elementReference>Check_for_Duplicate_Contact.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Host_with_New_Contact</name>
+        <label>Update Host with New Contact</label>
+        <locationX>314</locationX>
+        <locationY>1055</locationY>
+        <inputAssignments>
+            <field>Contact_Creator__c</field>
+            <value>
+                <stringValue>Contact Created</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Contact__c</field>
+            <value>
+                <elementReference>Create_Contact</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>254</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Does_Currency_Match_Expectations</targetReference>
+        </connector>
+        <object>Hosts__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>person_hidden_p2_ff_primr_fuldm__c</fullName>
+    <defaultValue>false</defaultValue>
+    <externalId>false</externalId>
+    <label>Hidden Field - P2 - FF - Primær  3554e</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

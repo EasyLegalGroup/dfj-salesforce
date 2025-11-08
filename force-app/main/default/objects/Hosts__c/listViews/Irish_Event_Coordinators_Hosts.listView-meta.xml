@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Irish_Event_Coordinators_Hosts</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Irish Event Coordinators</label>
+    <queue>Irish_Event_Coordinators</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

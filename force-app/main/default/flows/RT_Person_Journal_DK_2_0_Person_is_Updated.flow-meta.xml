@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <assignments>
+        <name>Assign_Journal_DK_s_Account_ID_to_Variable</name>
+        <label>Assign Journal DK&apos;s Account ID to Variable</label>
+        <locationX>314</locationX>
+        <locationY>539</locationY>
+        <assignmentItems>
+            <assignToReference>AccountId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.journal_dk_new__r.Account__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Customer_Profile</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Person_s_Account_ID_to_Variable</name>
+        <label>Assign Person&apos;s Account ID to Variable</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <assignmentItems>
+            <assignToReference>AccountId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Account__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Customer_Profile</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Related_Journal_s_Account_ID_to_Variable</name>
+        <label>Assign Related Journal&apos;s Account ID to Variable</label>
+        <locationX>578</locationX>
+        <locationY>647</locationY>
+        <assignmentItems>
+            <assignToReference>AccountId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.journal_dk_new__r.Journal__r.Account__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Customer_Profile</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Related_Journal_s_Lead_ID_to_Variable</name>
+        <label>Assign Related Journal&apos;s Lead ID to Variable</label>
+        <locationX>842</locationX>
+        <locationY>755</locationY>
+        <assignmentItems>
+            <assignToReference>LeadId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.journal_dk_new__r.Journal__r.Lead__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Customer_Profile</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Did_We_Find_a_Customer_Profile</name>
+        <label>Did We Find a Customer Profile?</label>
+        <locationX>297</locationX>
+        <locationY>1307</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Customer_Profile_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Customer_Profile</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AL_Create_Associated_Person_from_Input_Variables</targetReference>
+            </connector>
+            <label>Customer Profile Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Do_We_Have_a_Lead_on_Related_Journal</name>
+        <label>Do We Have a Lead on Related Journal?</label>
+        <locationX>974</locationX>
+        <locationY>647</locationY>
+        <defaultConnectorLabel>No Lead on Journal</defaultConnectorLabel>
+        <rules>
+            <name>Got_Lead_on_Related_Journal</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.journal_dk_new__r.Journal__r.Lead__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Related_Journal_s_Lead_ID_to_Variable</targetReference>
+            </connector>
+            <label>Got Lead on Related Journal</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Do_We_Have_an_Account_on_Journal_DK_s_Journal</name>
+        <label>Do We Have an Account on Journal DK&apos;s Journal?</label>
+        <locationX>776</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>Do_We_Have_a_Lead_on_Related_Journal</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Account on Related Journal</defaultConnectorLabel>
+        <rules>
+            <name>Got_Account_on_Journal_DK_s_Journal</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.journal_dk_new__r.Journal__r.Account__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Related_Journal_s_Account_ID_to_Variable</targetReference>
+            </connector>
+            <label>Got Account on Journal DK&apos;s Journal</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Do_We_Have_an_Account_on_Person</name>
+        <label>Do We Have an Account on Person?</label>
+        <locationX>297</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Do_We_Have_an_Account_on_Person_s_Journal_DK</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Account on Person</defaultConnectorLabel>
+        <rules>
+            <name>Got_Account_on_Person</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Person_s_Account_ID_to_Variable</targetReference>
+            </connector>
+            <label>Got Account on Person</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Do_We_Have_an_Account_on_Person_s_Journal_DK</name>
+        <label>Do We Have an Account on Person&apos;s Journal DK?</label>
+        <locationX>545</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Do_We_Have_an_Account_on_Journal_DK_s_Journal</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Account on Journal DK</defaultConnectorLabel>
+        <rules>
+            <name>Got_Account_on_Journal_DK</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.journal_dk_new__r.Account__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Journal_DK_s_Account_ID_to_Variable</targetReference>
+            </connector>
+            <label>Got Account on Journal DK</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>frmBirthday</name>
+        <dataType>Date</dataType>
+        <expression>DATE(
+    VALUE({!$Record.Year_of_Birth__c}),
+    VALUE({!$Record.Month_of_Birth__c}),
+    VALUE({!$Record.Day_of_Birth__c})
+)</expression>
+    </formulas>
+    <formulas>
+        <name>frmFirstName</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  ISBLANK({!$Record.person_fornavn__c}),
+  &quot;UNKNOWN FIRST NAME&quot;,
+  IF(
+    LEN({!$Record.person_fornavn__c}) &lt;= 40,
+    {!$Record.person_fornavn__c},
+    LEFT({!$Record.person_fornavn__c}, 37) &amp; &quot;...&quot;
+  )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>frmIsEmailValid</name>
+        <dataType>Boolean</dataType>
+        <expression>REGEX({!$Record.person_email__c}, &quot;^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*\\.[a-zA-Z]{2,4}$&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>frmLastName</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!$Record.person_efternavn__c}), &apos;UNKNOWN LAST NAME&apos;, {!$Record.person_efternavn__c})</expression>
+    </formulas>
+    <formulas>
+        <name>frmParent</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    {!$Record.person_hidden_barn_flles__c},
+    &quot;Child of Both Parents&quot;,
+    IF(
+        {!$Record.person_hidden_barn_p1__c},
+        &quot;Child of Person 1&quot;,
+        IF(
+            {!$Record.person_hidden_barn_p2__c},
+            &quot;Child of Person 2&quot;,
+            IF(
+                {!$Record.person_hidden_barn_single__c},
+                &quot;Child of Single Parent&quot;,
+                &quot;&quot;
+            )
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>frmPersonType</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    {!$Record.person_hidden_person_1__c},
+    &quot;Primary Person&quot;,
+    IF(
+        {!$Record.person_hidden_person_2__c},
+        &quot;Spouse / Partner&quot;,
+        IF(
+            {!$Record.person_hf_barn__c},
+            &quot;Child&quot;,
+            &quot;Unspecified&quot;
+        )
+    )
+)</expression>
+    </formulas>
+    <interviewLabel>RT - Person Journal DK 2.0: Person is Updated {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RT - Person Journal DK 2.0: Person is Updated</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Customer_Profile</name>
+        <label>Get Customer Profile</label>
+        <locationX>297</locationX>
+        <locationY>1199</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Did_We_Find_a_Customer_Profile</targetReference>
+        </connector>
+        <filterLogic>(1 AND 2) OR (3 AND 4)</filterLogic>
+        <filters>
+            <field>Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>AccountId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Account__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Lead__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>LeadId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Lead__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Customer_Profile__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>171</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Do_We_Have_an_Account_on_Person</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>journal_dk_new__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>df_160_person__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>AL_Create_Associated_Person_from_Input_Variables</name>
+        <label>AL - Create Associated Person from Input Variables</label>
+        <locationX>165</locationX>
+        <locationY>1415</locationY>
+        <flowName>AL_Create_Associated_Person_from_Input_Variables</flowName>
+        <inputAssignments>
+            <name>inputBirthday</name>
+            <value>
+                <elementReference>frmBirthday</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputCustomerProfileId</name>
+            <value>
+                <elementReference>Get_Customer_Profile.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputFirstName</name>
+            <value>
+                <elementReference>$Record.person_fornavn__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputLastName</name>
+            <value>
+                <elementReference>$Record.person_efternavn__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputParent</name>
+            <value>
+                <elementReference>frmParent</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputType</name>
+            <value>
+                <elementReference>frmPersonType</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputYearOfBirth</name>
+            <value>
+                <elementReference>$Record.Year_of_Birth__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputAssociatedPersonId</name>
+            <value>
+                <elementReference>$Record.Associated_Person__c</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <variables>
+        <name>AccountId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>CustomError</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>LeadId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

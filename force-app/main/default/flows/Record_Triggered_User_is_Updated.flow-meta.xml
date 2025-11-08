@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Assign_Manager_to_Employee_Variable</name>
+        <label>Assign Manager to Employee Variable</label>
+        <locationX>264</locationX>
+        <locationY>708</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Employee.Manager__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.ManagerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Was_Role_Updated</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Manager_Value_to_Variable</name>
+        <label>Assign Manager Value to Variable</label>
+        <locationX>264</locationX>
+        <locationY>1584</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Employee.Title__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Title</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Employee</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Did_we_Find_an_Employee_Record</name>
+        <label>Did we Find an Employee Record?</label>
+        <locationX>528</locationX>
+        <locationY>384</locationY>
+        <defaultConnectorLabel>No Employee Found</defaultConnectorLabel>
+        <rules>
+            <name>Employee_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Employee</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Was_Manager_Changed</targetReference>
+            </connector>
+            <label>Employee Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Do_Managers_Match</name>
+        <label>Do Managers Match?</label>
+        <locationX>176</locationX>
+        <locationY>600</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Manager_to_Employee_Variable</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Managers Do Not Match</defaultConnectorLabel>
+        <rules>
+            <name>Managers_Match</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ManagerId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Get_Employee.Manager__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Was_Role_Updated</targetReference>
+            </connector>
+            <label>Managers Match</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Do_Titles_Match</name>
+        <label>Do Titles Match?</label>
+        <locationX>176</locationX>
+        <locationY>1476</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Manager_Value_to_Variable</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Titles Do Not Match</defaultConnectorLabel>
+        <rules>
+            <name>Titles_Match</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Title</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Get_Employee.Title__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Employee</targetReference>
+            </connector>
+            <label>Titles Match</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Does_Roles_Match</name>
+        <label>Does Roles Match?</label>
+        <locationX>220</locationX>
+        <locationY>1092</locationY>
+        <defaultConnector>
+            <targetReference>Was_Title_Updated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Roles Do Not Match</defaultConnectorLabel>
+        <rules>
+            <name>Roles_Match</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.UserRole.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Get_Employee.Role__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Was_Title_Updated</targetReference>
+            </connector>
+            <label>Roles Match</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Was_Manager_Changed</name>
+        <label>Was Manager Changed?</label>
+        <locationX>352</locationX>
+        <locationY>492</locationY>
+        <defaultConnector>
+            <targetReference>Was_Role_Updated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Manager not Changed</defaultConnectorLabel>
+        <rules>
+            <name>Manager_was_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ManagerId</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Do_Managers_Match</targetReference>
+            </connector>
+            <label>Manager was Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Was_Role_Updated</name>
+        <label>Was Role Updated?</label>
+        <locationX>352</locationX>
+        <locationY>984</locationY>
+        <defaultConnector>
+            <targetReference>Was_Title_Updated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Role Not Updated</defaultConnectorLabel>
+        <rules>
+            <name>Role_was_Updated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.UserRoleId</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Does_Roles_Match</targetReference>
+            </connector>
+            <label>Role was Updated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Was_Title_Updated</name>
+        <label>Was Title Updated?</label>
+        <locationX>352</locationX>
+        <locationY>1368</locationY>
+        <defaultConnector>
+            <targetReference>Update_Employee</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Title Not Updated</defaultConnectorLabel>
+        <rules>
+            <name>Title_was_Updated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Title</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Do_Titles_Match</targetReference>
+            </connector>
+            <label>Title was Updated</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Record Triggered: User is Updated {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Record-Triggered: User is Updated</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Finds the user&apos;s Employee Record</description>
+        <name>Get_Employee</name>
+        <label>Get Employee</label>
+        <locationX>528</locationX>
+        <locationY>276</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Did_we_Find_an_Employee_Record</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SF_User__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>SFDC_Employee__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Employee</name>
+        <label>Update Employee</label>
+        <locationX>352</locationX>
+        <locationY>1860</locationY>
+        <inputReference>Get_Employee</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>IsActive</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>IsActive</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>User</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <scheduledPaths>
+            <connector>
+                <targetReference>Get_Employee</targetReference>
+            </connector>
+            <pathType>AsyncAfterCommit</pathType>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

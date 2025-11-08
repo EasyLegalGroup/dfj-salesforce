@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Calendly_Created_Appointments</fullName>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>Calendly_Created__c</columns>
+    <columns>Appointment_Completed__c</columns>
+    <columns>Assigned_To__c</columns>
+    <columns>Start__c</columns>
+    <columns>End__c</columns>
+    <columns>Lead__c</columns>
+    <columns>Event__c</columns>
+    <columns>Event_URL__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Calendly_Created__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>equals</operation>
+        <value>Mathias Tønder</value>
+    </filters>
+    <filters>
+        <field>NAME</field>
+        <operation>contains</operation>
+        <value>Via calendly</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>LAST_N_DAYS:14</value>
+    </filters>
+    <label>Calendly Created Appointments</label>
+</ListView>

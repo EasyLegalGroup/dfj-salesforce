@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ligedeling_mellem_brn_efter_lngs_50__c</fullName>
+    <defaultValue>false</defaultValue>
+    <externalId>false</externalId>
+    <label>Ligedeling mellem børn efter læn 73927</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

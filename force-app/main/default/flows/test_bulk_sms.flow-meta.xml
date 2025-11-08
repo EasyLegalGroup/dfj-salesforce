@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_SMS_Bulk_SFMC_Transactional_API</name>
+        <label>Send SMS - Bulk (SFMC Transactional API)</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>McSmsTransactionalBulk</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>contactKey</name>
+            <value>
+                <stringValue>00QW5000003XdVWMA0</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>definitionKey</name>
+            <value>
+                <stringValue>SMS_TRX_DK_CODE</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>messageOverride</name>
+            <value>
+                <stringValue>test message</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>to</name>
+            <value>
+                <stringValue>4542455150</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>McSmsTransactionalBulk</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>65.0</apiVersion>
+    <environments>Default</environments>
+    <interviewLabel>test bulk sms {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>test bulk sms</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Send_SMS_Bulk_SFMC_Transactional_API</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+</Flow>

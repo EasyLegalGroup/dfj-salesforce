@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ejendomstype_samejeoverenskomst__c</fullName>
+    <externalId>false</externalId>
+    <label>Ejendomstype</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>et_hus_samejeoverenskomst</fullName>
+                <default>false</default>
+                <label>Et hus</label>
+            </value>
+            <value>
+                <fullName>rækkehus_samejeoverenskomst</fullName>
+                <default>false</default>
+                <label>Et rækkehus</label>
+            </value>
+            <value>
+                <fullName>Ejerlejlighed_samejeoverenskomst</fullName>
+                <default>false</default>
+                <label>En ejerlejlighed</label>
+            </value>
+            <value>
+                <fullName>andelsbolig_samejeoverenskomst</fullName>
+                <default>false</default>
+                <label>En andelsbolig</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

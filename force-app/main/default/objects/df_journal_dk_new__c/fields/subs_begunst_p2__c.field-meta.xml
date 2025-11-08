@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>subs_begunst_p2__c</fullName>
+    <externalId>false</externalId>
+    <label>Subsidiære begunstigede</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>subs_begunst_p2_1</fullName>
+                <default>false</default>
+                <label>Indsæt én subsidiær begunstiget</label>
+            </value>
+            <value>
+                <fullName>subs_begunst_p2_prio</fullName>
+                <default>false</default>
+                <label>Flere subsidiære i prioriteret rækkefølge</label>
+            </value>
+            <value>
+                <fullName>subs_begunst_p2_lige</fullName>
+                <default>false</default>
+                <label>Flere subsidiære til ligedeling</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approved_or_In_Planning_Projects</fullName>
+    <columns>Parent_Project__c</columns>
+    <columns>NAME</columns>
+    <columns>Priority__c</columns>
+    <columns>Source_Case__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Project_Status__c</field>
+        <operation>equals</operation>
+        <value>Approved,Planning</value>
+    </filters>
+    <label>Upcoming Projects</label>
+</ListView>

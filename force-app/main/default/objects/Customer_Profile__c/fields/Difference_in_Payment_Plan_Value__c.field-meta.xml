@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Difference_in_Payment_Plan_Value__c</fullName>
+    <externalId>false</externalId>
+    <formula>Approx_Value_of_Person_1_s_Pension_Plan__c -  Approx_Value_of_Person_2_s_Pension_Plan__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Difference in Payment Plan Value</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <description>Runs Before-Save.
+When a GetAccept Document Link is created and the ObjectType = Journal__c, it updates the document link with information from it&apos;s related GetAccept Document. It finds the related Journal on GetAccept Document and the Account on that Journal, and populates the Journal and Account lookups on GetAccept Document Link</description>
+    <environments>Default</environments>
+    <interviewLabel>RT - GetAccept Document Link: Link to Journal and Account {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RT - GetAccept Document Link: Link to Journal and Account</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_GetAccept_Document_Link</name>
+        <label>Update GetAccept Document Link</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <inputAssignments>
+            <field>GetAccept__Account__c</field>
+            <value>
+                <elementReference>$Record.GetAccept__GetAccept_Document__r.Journal__r.Account__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Journal__c</field>
+            <value>
+                <elementReference>$Record.GetAccept__GetAccept_Document__r.Journal__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_GetAccept_Document_Link</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>GetAccept__ObjectType__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Journal__c</stringValue>
+            </value>
+        </filters>
+        <object>GetAccept__GetAccept_Document_Link__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

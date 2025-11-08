@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <description>Used to determine whether this was a custom generated SMS (An agent wrote it) or an automatically generated SMS (through e.g. Zapier)</description>
+    <externalId>false</externalId>
+    <label>Type</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Custom</fullName>
+                <default>false</default>
+                <label>Custom</label>
+            </value>
+            <value>
+                <fullName>Automated</fullName>
+                <default>false</default>
+                <label>Automated</label>
+            </value>
+            <value>
+                <fullName>Inbound</fullName>
+                <default>false</default>
+                <label>Inbound</label>
+            </value>
+            <value>
+                <fullName>Manually Triggered</fullName>
+                <default>false</default>
+                <label>Manually Triggered</label>
+            </value>
+            <value>
+                <fullName>AI Generated</fullName>
+                <default>false</default>
+                <label>AI Generated</label>
+            </value>
+            <value>
+                <fullName>Booking Reminder (DK)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Booking Reminder (DK)</label>
+            </value>
+            <value>
+                <fullName>Booking Reminder (SE)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Booking Reminder (SE)</label>
+            </value>
+            <value>
+                <fullName>Customer Reply</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Customer Reply</label>
+            </value>
+            <value>
+                <fullName>Manual SMS from Account</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Manual SMS from Account</label>
+            </value>
+            <value>
+                <fullName>Manual SMS from Lead</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Manual SMS from Lead</label>
+            </value>
+            <value>
+                <fullName>Thanks for confirmation (DK)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Thanks for confirmation (DK)</label>
+            </value>
+            <value>
+                <fullName>Thanks for confirmation (SE)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Thanks for confirmation (SE)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

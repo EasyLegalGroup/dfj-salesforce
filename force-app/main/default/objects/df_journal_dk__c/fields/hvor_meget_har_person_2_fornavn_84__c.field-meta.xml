@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>hvor_meget_har_person_2_fornavn_84__c</fullName>
+    <description>Indtastes som f.eks. &quot;300.000&quot;</description>
+    <externalId>false</externalId>
+    <label>Hvor meget har {person_2_first_n f9b38</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

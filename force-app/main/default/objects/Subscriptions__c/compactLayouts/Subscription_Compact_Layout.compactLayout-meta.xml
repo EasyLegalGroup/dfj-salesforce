@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Subscription_Compact_Layout</fullName>
+    <fields>Subscriptions_Status__c</fields>
+    <fields>Next_Renewal_Date__c</fields>
+    <fields>Total_Subscription_Amount__c</fields>
+    <fields>Account__c</fields>
+    <fields>Plan_Name__c</fields>
+    <fields>OwnerId</fields>
+    <label>Subscription Compact Layout</label>
+</CompactLayout>

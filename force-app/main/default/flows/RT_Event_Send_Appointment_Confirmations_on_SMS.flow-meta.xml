@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Format_1_Hour_Before_Timestamp</name>
+        <label>Format 1-Hour-Before Timestamp</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>DFJ_TimeFormatter</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Assign_1_Hour_Before_Templates_to_Variables</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_CustomError_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>formatKey</name>
+            <value>
+                <stringValue>LONG</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>marketUnitKey</name>
+            <value>
+                <elementReference>$Record.Market_Unit__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>value</name>
+            <value>
+                <elementReference>$Record.StartDateTime</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>DFJ_TimeFormatter</nameSegment>
+        <outputParameters>
+            <assignToReference>FormattedDateTime</assignToReference>
+            <name>formatted</name>
+        </outputParameters>
+        <outputParameters>
+            <assignToReference>FormattedTimeOnly</assignToReference>
+            <name>timeOnly</name>
+        </outputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Format_24_Hour_Before_Timestamp</name>
+        <label>Format 24-Hour-Before Timestamp</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>DFJ_TimeFormatter</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Assign_24_Hour_Before_Templates_to_Variables</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_CustomError_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>formatKey</name>
+            <value>
+                <stringValue>LONG</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>marketUnitKey</name>
+            <value>
+                <elementReference>$Record.Market_Unit__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>value</name>
+            <value>
+                <elementReference>$Record.StartDateTime</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>DFJ_TimeFormatter</nameSegment>
+        <outputParameters>
+            <assignToReference>FormattedDateTime</assignToReference>
+            <name>formatted</name>
+        </outputParameters>
+        <outputParameters>
+            <assignToReference>FormattedTimeOnly</assignToReference>
+            <name>timeOnly</name>
+        </outputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Format_Appointment_Confirmation_Timestamp</name>
+        <label>Format Appointment Confirmation Timestamp</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>DFJ_TimeFormatter</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Assign_Appointment_Confirmations_to_Variables</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Populate_CustomError_with_Flow_Fault_Message</targetReference>
+        </faultConnector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>formatKey</name>
+            <value>
+                <stringValue>LONG</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>marketUnitKey</name>
+            <value>
+                <elementReference>$Record.Market_Unit__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>value</name>
+            <value>
+                <elementReference>$Record.StartDateTime</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>DFJ_TimeFormatter</nameSegment>
+        <outputParameters>
+            <assignToReference>FormattedDateTime</assignToReference>
+            <name>formatted</name>
+        </outputParameters>
+        <outputParameters>
+            <assignToReference>FormattedTimeOnly</assignToReference>
+            <name>timeOnly</name>
+        </outputParameters>
+    </actionCalls>
+    <apiVersion>64.0</apiVersion>
+    <assignments>
+        <name>Assign_1_Hour_Before_Templates_to_Variables</name>
+        <label>Assign 1 Hour Before Templates to Variables</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>DanishSmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptDanish1HourBefore</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SwedishSmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptSwedish1HourBefore</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>IrishSmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptIrish1HourBefore</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Which_Market_Unit</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_24_Hour_Before_Templates_to_Variables</name>
+        <label>Assign 24 Hour Before Templates to Variables</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>DanishSmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptDanish24HoursBefore</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>IrishSmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptIrish24HourBefore</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Which_Market_Unit</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Appointment_Confirmations_to_Variables</name>
+        <label>Assign Appointment Confirmations to Variables</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>DanishSmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptDanishAppointmentConfirmation</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SwedishSmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptSwedishAppointmentConfirmation</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>IrishSmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptIrishAppointmentConfirmation</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Which_Market_Unit</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Danish_Values</name>
+        <label>Assign Danish Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>SmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DanishSmsBody</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>AL_Create_Outbound_SMS</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Irish_Values</name>
+        <label>Assign Irish Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>SmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>IrishSmsBody</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>AL_Create_Outbound_SMS</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Swedish_Values</name>
+        <label>Assign Swedish Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>SmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SwedishSmsBody</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_it_24_Hours_Before</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_CustomError_with_Flow_Fault_Message</name>
+        <label>Populate CustomError with Flow Fault Message</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CustomError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Did_SMS_Subflow_Succeed</name>
+        <label>Did SMS Subflow Succeed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>AL_Send_Error_Email_from_Input_Values</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SMS_Subflow_Succeeded</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AL_Create_Outbound_SMS.IsSuccess</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>SMS Subflow Succeeded</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_it_24_Hours_Before</name>
+        <label>Is it 24 Hours Before?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>AL_Create_Outbound_SMS</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Skip_24_Hour_Reminder_in_Sweden</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Assign_24_Hour_Before_Templates_to_Variables</leftValueReference>
+                <operator>WasVisited</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Skip 24 Hour Reminder in Sweden</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Which_Market_Unit</name>
+        <label>Which Market Unit?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Danish_Market_Unit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>DFJ_DK</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Danish_Values</targetReference>
+            </connector>
+            <label>Danish Market Unit</label>
+        </rules>
+        <rules>
+            <name>Swedish_Market_Unit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>FA_SE</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Swedish_Values</targetReference>
+            </connector>
+            <label>Swedish Market Unit</label>
+        </rules>
+        <rules>
+            <name>Irish_Market_Unit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ireland</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Irish_Values</targetReference>
+            </connector>
+            <label>Irish Market Unit</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>frmFirstName</name>
+        <dataType>String</dataType>
+        <expression>BLANKVALUE(
+  {!$Record.Account__r.FirstName},
+  {!$Record.Lead__r.FirstName}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>frmRecordId</name>
+        <dataType>String</dataType>
+        <expression>BLANKVALUE(
+  {!$Record.Account__c},
+  {!$Record.Lead__c}
+)</expression>
+    </formulas>
+    <interviewLabel>RT - Event: Send Appointment Confirmations on SMS {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RT - Event: Send Appointment Confirmations on SMS</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <filterLogic>(1 OR 2) AND 3 AND 4</filterLogic>
+        <filters>
+            <field>Calendly_Event_Type__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Subject</field>
+            <operator>StartsWith</operator>
+            <value>
+                <stringValue>Call with</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Phone_Text__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>SMS_Reminders_New__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Yes</stringValue>
+            </value>
+        </filters>
+        <object>Event</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <scheduledPaths>
+            <connector>
+                <targetReference>Format_Appointment_Confirmation_Timestamp</targetReference>
+            </connector>
+            <pathType>AsyncAfterCommit</pathType>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>X1_hour_before_start</name>
+            <connector>
+                <targetReference>Format_1_Hour_Before_Timestamp</targetReference>
+            </connector>
+            <label>1 hour before start</label>
+            <offsetNumber>-1</offsetNumber>
+            <offsetUnit>Hours</offsetUnit>
+            <recordField>StartDateTime</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>X24_hours_before_start</name>
+            <connector>
+                <targetReference>Format_24_Hour_Before_Timestamp</targetReference>
+            </connector>
+            <label>24 hours before start</label>
+            <offsetNumber>-24</offsetNumber>
+            <offsetUnit>Hours</offsetUnit>
+            <recordField>StartDateTime</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>AL_Create_Outbound_SMS</name>
+        <label>AL - Create Outbound SMS</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Did_SMS_Subflow_Succeed</targetReference>
+        </connector>
+        <flowName>AL_Create_Outbound_SMS</flowName>
+        <inputAssignments>
+            <name>MarketUnit</name>
+            <value>
+                <elementReference>$Record.Market_Unit__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Message</name>
+            <value>
+                <elementReference>SmsBody</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>RelatedRecordId</name>
+            <value>
+                <elementReference>$Record.WhoId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>SendFrom</name>
+            <value>
+                <stringValue>Short/Long Code</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>ToNumber</name>
+            <value>
+                <elementReference>$Record.Phone_Text__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Type</name>
+            <value>
+                <stringValue>Automated</stringValue>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <subflows>
+        <name>AL_Send_Error_Email_from_Input_Values</name>
+        <label>AL - Send Error Email from Input Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <flowName>AL_Send_Error_Email_from_Input_Values</flowName>
+        <inputAssignments>
+            <name>inputCustomError</name>
+            <value>
+                <elementReference>CustomError</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputFlowName</name>
+            <value>
+                <stringValue>RT - Event: Send Appointment Confirmations on SMS</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <textTemplates>
+        <name>ptDanish1HourBefore</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Kære {!frmFirstName}, 
+
+Dette er blot en påmindelse om vores aftale om en time, kl. {!FormattedTimeOnly}. 
+
+Med venlig hilsen, 
+Din Familiejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptDanish24HoursBefore</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Kære {!frmFirstName}, 
+
+Vi glæder os til det aftalte møde i morgen, {!FormattedDateTime}. 
+
+Hav gerne gjort jer nogle tanker om, hvad I ønsker og forventer. 
+
+Med venlig hilsen, 
+Din Familiejurist. 
+
+Skulle du, imod forventning, blive forhindret, bedes du venligst give besked ved at besvare denne SMS, med det samme.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptDanishAppointmentConfirmation</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Kære {!frmFirstName}, 
+
+Vi bekræfter hermed vores aftale {!FormattedDateTime}. 
+
+Med venlig hilsen, 
+Din Familiejurist.
+Skulle du, imod forventning, blive forhindret, bedes du venligst give besked ved at besvare denne SMS, senest 24 timer før aftalen.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptIrish1HourBefore</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hi {!frmFirstName},
+
+This is just a reminder of our appointment in one hour, at {!FormattedTimeOnly}.
+
+Kind regards,
+Heres Law</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptIrish24HourBefore</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hi {!frmFirstName},
+
+We look forward to our scheduled meeting tomorrow, {!FormattedDateTime}.
+
+Please take a moment to consider your wishes and expectations before the meeting.
+
+Kind regards,
+Heres Law
+
+If, unexpectedly, you are unable to attend, please reply to this SMS immediately to let us know.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptIrishAppointmentConfirmation</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hi {!frmFirstName},
+
+We hereby confirm our appointment {!FormattedDateTime}.
+
+Kind regards,
+Heres Law
+
+If, unexpectedly, you are unable to attend, please reply to this SMS no later than 24 hours before the appointment.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSwedish1HourBefore</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hej {!frmFirstName}, 
+
+Detta är bara en påminnelse om ditt möte med Din Familjejurist om en timme, kl. {!FormattedTimeOnly}. 
+
+Vänliga hälsningar, 
+Din Familjejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSwedishAppointmentConfirmation</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hej {!frmFirstName}, 
+
+Detta är en bekräftelse på din tid {!FormattedDateTime}. 
+
+Med vänliga hälsningar, 
+Din Familjejurist</text>
+    </textTemplates>
+    <variables>
+        <name>CustomError</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>DanishSmsBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FirstName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FormattedDateTime</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FormattedTimeOnly</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FromNumber</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>IrishSmsBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>IsSmsSendSuccess</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>SmsBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SwedishSmsBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

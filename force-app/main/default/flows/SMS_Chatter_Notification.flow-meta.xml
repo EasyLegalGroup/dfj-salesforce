@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Post_to_Chatter</name>
+        <label>Post to Chatter</label>
+        <locationX>176</locationX>
+        <locationY>335</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <elementReference>SMSChatterNotification_PlainText</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <stringValue>0F9AX00000000ca0AA</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>chatterPost</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>56.0</apiVersion>
+    <environments>Default</environments>
+    <interviewLabel>SMS Chatter Notification {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>SMS Chatter Notification</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Post_to_Chatter</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>TwilioSF__Direction__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>inbound</stringValue>
+            </value>
+        </filters>
+        <object>TwilioSF__Message__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>SMSChatterNotification</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;An SMS has been received!&lt;/p&gt;&lt;p&gt;Lead: {!$Record.TwilioSF__Lead__c}&lt;/p&gt;&lt;p&gt;Owner: {!$Record.Owner:User.Name}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;SMS Content:&lt;/p&gt;&lt;p&gt;{!$Record.TwilioSF__Body__c}&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>SMSChatterNotification_PlainText</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hej {!$Record.TwilioSF__Lead__r.Owner:User.FirstName}, du har modtaget en sms fra {!$Record.TwilioSF__Lead__r.FirstName} {!$Record.TwilioSF__Lead__r.LastName}. 
+{!$Record.TwilioSF__Lead__r.FirstName} skrev:
+{!$Record.TwilioSF__Body__c}</text>
+    </textTemplates>
+</Flow>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <assignments>
+        <name>Assign_Message_Body_to_Text_Variable</name>
+        <label>Assign Message Body to Text Variable</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>SmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Message__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_it_an_OTP_for_Platform_Access</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Did_We_Find_a_Communication_Ban</name>
+        <label>Did We Find a Communication Ban?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Got_Communication_Ban</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Communication_Ban</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Message_Body_to_Text_Variable</targetReference>
+            </connector>
+            <label>Got Communication Ban</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_it_an_OTP_for_Platform_Access</name>
+        <label>Is it an OTP for Platform Access?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Update_SMS</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>It_s_an_OTP</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>SmsBody</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Dit engangskodeord er</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>SmsBody</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Your one-time password is</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>SmsBody</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Ditt engångslösenord är</stringValue>
+                </rightValue>
+            </conditions>
+            <label>It&apos;s an OTP</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>RT - SMS: Check for Communication Ban Match {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RT - SMS: Check for Communication Ban Match Before Creating</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Communication_Ban</name>
+        <label>Get Communication Ban</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Did_We_Find_a_Communication_Ban</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Phone_E164__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.To_Phone__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Communication_Ban__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_SMS</name>
+        <label>Update SMS</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Message__c</field>
+            <value>
+                <elementReference>ptErrorMessageBody</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Raw_Response__c</field>
+            <value>
+                <stringValue>BLOCKED BY FLOW: RT - SMS: Check for Communication Ban Match Before Creating</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Blocked</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Communication_Ban</targetReference>
+        </connector>
+        <object>SMS__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>ptErrorMessageBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>NUMBER BLOCKED - Message not sent: 
+{!$Record.Message__c}</text>
+    </textTemplates>
+    <variables>
+        <name>SmsBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

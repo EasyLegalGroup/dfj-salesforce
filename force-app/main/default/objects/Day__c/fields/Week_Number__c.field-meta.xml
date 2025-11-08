@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Week_Number__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>ISO-8601 (First week of a year, is the first week to include a Thursday)</inlineHelpText>
+    <label>Week Number</label>
+    <precision>2</precision>
+    <required>true</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

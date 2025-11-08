@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Licenses_on_Terminated_Employees__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Counts the number of Active Licenses on Terminated Employees. Used to identify Licenses that may need to be stopped.</inlineHelpText>
+    <label>Licenses on Terminated Employees</label>
+    <summaryFilterItems>
+        <field>License__c.Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>License__c.Employment_Status__c</field>
+        <operation>equals</operation>
+        <value>Terminated</value>
+    </summaryFilterItems>
+    <summaryForeignKey>License__c.License_Type__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hours_of_Abs_Must_Be_Less_Than_WorkHours</fullName>
+    <active>true</active>
+    <description>This validation states that Hours of Absence must be less than what&apos;s noted on the employee&apos;s &quot;Default Work Hours Per Day&quot;</description>
+    <errorConditionFormula>Hours_of_Absence__c &gt; Employee__r.Default_Work_Hours_Per_Day__c</errorConditionFormula>
+    <errorDisplayField>Hours_of_Absence__c</errorDisplayField>
+    <errorMessage>Hours of Absence must be less than Work Hours Per Day (This is a field on the Employee Record)</errorMessage>
+</ValidationRule>

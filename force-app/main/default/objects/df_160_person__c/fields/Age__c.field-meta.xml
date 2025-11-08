@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Age__c</fullName>
+    <externalId>false</externalId>
+    <formula>(
+  YEAR(TODAY()) -
+  (
+    IF(
+      VALUE(RIGHT(Birthday__c, 2)) &lt;= VALUE(RIGHT(TEXT(YEAR(TODAY())), 2)),
+      2000,
+      1900
+    ) 
+    + VALUE(RIGHT(Birthday__c, 2))
+  )
+)
+-
+IF(
+  (MONTH(TODAY()) * 100 + DAY(TODAY())) &lt;
+  (VALUE(MID(Birthday__c, 3, 2)) * 100 + VALUE(LEFT(Birthday__c, 2))),
+  1,
+  0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Age</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

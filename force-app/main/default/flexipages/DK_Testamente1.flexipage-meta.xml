@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>allowChanges</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>alternativeText</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>Center</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>imgPath</name>
+                    <value>{[devName:dfjlogo]}</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginBottom</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginLeft</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginRight</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginTop</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>objectFit</name>
+                    <value>fill</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>40</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:image</componentName>
+                <identifier>contentbuilder_image</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-ea24dc88-440f-46c7-8b98-d4c96985c3ed</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columnBody</name>
+                    <value>Facet-ea24dc88-440f-46c7-8b98-d4c96985c3ed</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columnSpacer</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>padding</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlign</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>100%</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:column</componentName>
+                <identifier>contentbuilder_column</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-808373c0-6ad8-45dd-a8ef-7336f5b98ae6</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>allowChanges</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>linkedToDesignKit</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginBottom</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginLeft</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginRight</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginTop</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;K&amp;aelig;re {{{Recipient.FirstName}}},&lt;/p&gt;
+
+&lt;p&gt;Du har nu godkendt den endelige version af dit/jeres testamente, som er klar til at blive gyldiggjort.&lt;/p&gt;
+
+&lt;p&gt;For at f&amp;aelig;rdigg&amp;oslash;re processen endeligt skal du f&amp;oslash;lge nedenst&amp;aring;ende guide n&amp;oslash;je. Guiden forklarer alt, hvad du skal foretage dig i forbindelse med at f&amp;aring; dit testamente gyldiggjort.&lt;/p&gt;
+
+&lt;h3&gt;Dit testamente kan desuden indeholde f&amp;oslash;lgende:&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;B&amp;oslash;rnetestamente&lt;/li&gt;
+	&lt;li&gt;Beboelsesret til ejendom eller andel&lt;/li&gt;
+	&lt;li&gt;B&amp;aring;ndl&amp;aelig;ggelse af arv og forsikringer&lt;/li&gt;
+	&lt;li&gt;Fork&amp;oslash;bsret til fast ejendom eller virksomhed&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Underskriften p&amp;aring; et testamente skal bekr&amp;aelig;ftes, for at det er gyldigt. N&amp;aring;r du f&amp;aring;r underskriften bekr&amp;aelig;ftet af en notar, vil en kopi af testamentet blive gemt i Centralregistret for Testamenter, s&amp;aring; skifteretten automatisk f&amp;aring;r det, n&amp;aring;r du d&amp;oslash;r.&lt;/p&gt;
+
+&lt;p&gt;Er du en af de f&amp;aring;, der har valgt et vidnetestamente, kan du med fordel springe til bunden af denne e-mail.&lt;/p&gt;
+
+&lt;h3&gt;Dine opgaver:&lt;/h3&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;Book tid hos notaren.&lt;/li&gt;
+	&lt;li&gt;Udskriv dokumentet i to eksemplarer, som f&amp;oslash;rst underskrives fysisk foran notaren.&lt;/li&gt;
+	&lt;li&gt;M&amp;oslash;d op hos notaren og underskriv.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+&lt;h3&gt;Ofte stillede sp&amp;oslash;rgsm&amp;aring;l:&lt;/h3&gt;
+
+&lt;h4&gt;Hvordan booker jeg tid hos notaren?&lt;/h4&gt;
+
+&lt;p&gt;Notarerne har kontorer ved landets byretter, og det er oftest n&amp;oslash;dvendigt at bestille tid. Dette kan du g&amp;oslash;re online de fleste steder. Enkelte retskredse tilbyder telefonbooking, og f&amp;aring; retskredse har ogs&amp;aring; drop-in notarforretning uden tidsbestilling.&lt;/p&gt;
+
+&lt;p&gt;Du kan finde den retskreds, som ligger n&amp;aelig;rmest dig, her: &lt;a href=&quot;https://domstol.dk/selvbetjening/notarbooking/&quot;&gt;https://domstol.dk/selvbetjening/notarbooking/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4&gt;Hvad skal jeg medbringe hos notaren?&lt;/h4&gt;
+
+&lt;p&gt;Til m&amp;oslash;det med notaren skal du medbringe:&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;2 identiske eksemplarer af testamentet.&lt;/li&gt;
+	&lt;li&gt;Officiel billedlegitimation med CPR-nummer (f.eks. k&amp;oslash;rekort eller pas).&lt;/li&gt;
+	&lt;li&gt;300 kr. til retsafgift.&lt;br /&gt;
+	Retsafgiften betales ved rettens kasse enten kontant, med dansk Visa/Dankort eller MobilePay. Der kan ikke betales med andre korttyper.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;N&amp;aring;r testamentet og kopien er underskrevet for notaren, f&amp;aring;r du det ene eksemplar tilbage med rettens stempel, mens retten beholder det andet eksemplar.&lt;/p&gt;
+
+&lt;h4&gt;Hvad sikrer en notar?&lt;/h4&gt;
+
+&lt;p&gt;Notaren sikrer, at du:&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Er ved dine fulde fem.&lt;/li&gt;
+	&lt;li&gt;Er den, du udgiver dig for at v&amp;aelig;re.&lt;/li&gt;
+	&lt;li&gt;Er bevidst om, hvad du underskriver.&lt;/li&gt;
+	&lt;li&gt;Underskriver frivilligt.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Hvorn&amp;aring;r er mit testamente juridisk gyldigt?&lt;/h4&gt;
+
+&lt;p&gt;Dit testamente er f&amp;oslash;rst juridisk gyldigt, n&amp;aring;r du har v&amp;aelig;ret hos notaren.&lt;/p&gt;
+
+&lt;h4&gt;Hvad nu, hvis jeg har &amp;oslash;nsker til min begravelse i testamentet?&lt;/h4&gt;
+
+&lt;p&gt;En begravelse planl&amp;aelig;gges som regel umiddelbart efter d&amp;oslash;dsfaldet. Hvis bestemmelsen om gravstedsvedligeholdelse fremg&amp;aring;r af dit testamente, er det en god id&amp;eacute; at informere dine n&amp;aelig;rmeste samt opbevare testamentet et sted, hvor dine p&amp;aring;r&amp;oslash;rende let kan finde det frem ved d&amp;oslash;dsfaldet.&lt;/p&gt;
+
+&lt;h4&gt;Hvad nu, hvis jeg ikke kan komme til notaren?&lt;/h4&gt;
+
+&lt;p&gt;Hvis du ikke kan komme til notaren, f.eks. fordi du er sv&amp;aelig;kket, syg eller gangbesv&amp;aelig;ret, kan du kontakte retten og aftale, at notaren kommer hjem til dig. Hvis notaren skal komme hjem til dig, skal du betale for transporten.&lt;/p&gt;
+
+&lt;p&gt;Du kan finde din lokale byret her: &lt;a href=&quot;https://www.domstol.dk/selvbetjening/find-ret/&quot;&gt;https://www.domstol.dk/selvbetjening/find-ret/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4&gt;Hvordan &amp;aelig;ndrer jeg mit notartestamente?&lt;/h4&gt;
+
+&lt;p&gt;Hvis du &amp;oslash;nsker at lave &amp;aelig;ndringer i dit notartestamente, skal du oprette et nyt testamente og underskrive det hos notaren p&amp;aring; samme m&amp;aring;de som det tidligere testamente. Sm&amp;aring; &amp;aelig;ndringer kan laves med et till&amp;aelig;g, der kaldes en kodicil. Det er altid det seneste testamente, der er gyldigt.&lt;/p&gt;
+
+&lt;h4&gt;Hvordan annullerer/tilbagekalder jeg et notartestamente?&lt;/h4&gt;
+
+&lt;p&gt;S&amp;aring;fremt du &amp;oslash;nsker at annullere et notartestamente, skal det ogs&amp;aring; ske hos notaren. Her skal du udfylde testamenteforsiden, som hedder: &lt;strong&gt;&amp;ldquo;Genpart af en testamentarisk disposition eller tilkendegivelse om for&amp;aelig;ldremyndighed&amp;rdquo;&lt;/strong&gt; og s&amp;aelig;tte kryds ved &amp;ldquo;Annullation&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;Du kan finde testamenteforsiden her: &lt;a href=&quot;https://www.domstol.dk/media/1021/forside-til-testamente.pdf&quot;&gt;https://www.domstol.dk/media/1021/forside-til-testamente.pdf&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;Hvis du er ved at oprette et vidnetestamente:&lt;/h3&gt;
+
+&lt;p&gt;Et vidnetestamente kan enten underskrives af to uvildige vidner eller af en af domstolenes notarer. Derefter er det dit eget ansvar at s&amp;oslash;rge for enten at give det til en bekendt, du stoler p&amp;aring;, eller opbevare det et sted, hvor du ved, at det bliver fundet, efter du er g&amp;aring;et bort.&lt;/p&gt;
+
+&lt;h4&gt;Hvad nu, hvis jeg b&amp;aring;de opretter et vidnetestamente og et notartestamente?&lt;/h4&gt;
+
+&lt;p&gt;Det er det senest underskrevne testamente, der er gyldigt. Et vidnetestamente bliver dog ikke automatisk kendt ved din d&amp;oslash;d &amp;ndash; det er kun notartestamenter, som gemmes i Centralregistret for Testamenter. Et vidnetestamente skal derfor opbevares, s&amp;aring; det let bliver fundet, n&amp;aring;r du d&amp;oslash;r.&lt;/p&gt;
+
+&lt;p&gt;Du &amp;oslash;nskes en god dag.&lt;br /&gt;
+&lt;br /&gt;
+Med venlig hilsen,&lt;br /&gt;
+Din Familiejurist&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:richText</componentName>
+                <identifier>contentbuilder_richText</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-2bf900ce-ed05-4e23-8c19-f7df6f809e56</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columnBody</name>
+                    <value>Facet-2bf900ce-ed05-4e23-8c19-f7df6f809e56</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columnSpacer</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>padding</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlign</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>100%</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:column</componentName>
+                <identifier>contentbuilder_column2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-e441c765-9041-4154-914c-4082ce5de64a</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-808373c0-6ad8-45dd-a8ef-7336f5b98ae6</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlignment</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:row</componentName>
+                <identifier>contentbuilder_row</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-e441c765-9041-4154-914c-4082ce5de64a</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlignment</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:row</componentName>
+                <identifier>contentbuilder_row2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>main</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>DK_Testamente1</masterLabel>
+    <template>
+        <name>contentpage:defaultEmailTemplatePageTemplate</name>
+        <properties>
+            <name>backgroundColor</name>
+            <value>#E9EAEC</value>
+        </properties>
+        <properties>
+            <name>backgroundImageUrl</name>
+        </properties>
+        <properties>
+            <name>bodyColor</name>
+            <value>#FFFFFF</value>
+        </properties>
+        <properties>
+            <name>paddingBottom</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingLeft</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingRight</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingTop</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>preheader</name>
+            <value>Sådan skal du gøre med dit underskrevne dokument</value>
+        </properties>
+    </template>
+    <type>EmailTemplatePage</type>
+</FlexiPage>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_Children__c</fullName>
+    <externalId>false</externalId>
+    <formula>OR(
+ journal_dk_new__r.single_har_du_brn__c  = TRUE,
+OR(
+ISPICKVAL( journal_dk_new__r.har_du_i_brn__c , &quot;brn_ja_flles_brn&quot;),
+ISPICKVAL( journal_dk_new__r.har_du_i_brn__c , &quot;brn_ja_sammenbragte_brn&quot;)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Has Children</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>procurator_2_mutual_power_of_att_29__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Er det 2 gensidige fuldmagter (Person 1 og person 2)</description>
+    <externalId>false</externalId>
+    <label>Er det 2 gensidige fuldmagter (P 24491</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <externalId>false</externalId>
+    <label>Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Inquiry_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>30% regel</fullName>
+                <default>false</default>
+                <label>30% regel</label>
+            </value>
+            <value>
+                <fullName>Ægtepagt</fullName>
+                <default>false</default>
+                <label>Ægtepagt</label>
+            </value>
+            <value>
+                <fullName>Afklaring omkring emne</fullName>
+                <default>false</default>
+                <label>Afklaring omkring emne</label>
+            </value>
+            <value>
+                <fullName>Andet (Se note)</fullName>
+                <default>false</default>
+                <label>Andet (Se note)</label>
+            </value>
+            <value>
+                <fullName>Arvefordeling</fullName>
+                <default>false</default>
+                <label>Arvefordeling</label>
+            </value>
+            <value>
+                <fullName>Båndlæggelse</fullName>
+                <default>false</default>
+                <label>Båndlæggelse</label>
+            </value>
+            <value>
+                <fullName>Beboelsesret</fullName>
+                <default>false</default>
+                <label>Beboelsesret</label>
+            </value>
+            <value>
+                <fullName>Betalingsproblem</fullName>
+                <default>false</default>
+                <label>Betalingsproblem</label>
+            </value>
+            <value>
+                <fullName>Boafgift og skat</fullName>
+                <default>false</default>
+                <label>Boafgift og skat</label>
+            </value>
+            <value>
+                <fullName>Booking/afbooking af foredrag</fullName>
+                <default>false</default>
+                <label>Booking/afbooking af foredrag</label>
+            </value>
+            <value>
+                <fullName>Børnetestamente</fullName>
+                <default>false</default>
+                <label>Børnetestamente</label>
+            </value>
+            <value>
+                <fullName>Dubletemne</fullName>
+                <default>false</default>
+                <label>Dubletemne</label>
+            </value>
+            <value>
+                <fullName>Ejendomshandel</fullName>
+                <default>false</default>
+                <label>Ejendomshandel</label>
+            </value>
+            <value>
+                <fullName>Feature idea</fullName>
+                <default>false</default>
+                <label>Feature idea</label>
+            </value>
+            <value>
+                <fullName>Fejl ved emne</fullName>
+                <default>false</default>
+                <label>Fejl ved emne</label>
+            </value>
+            <value>
+                <fullName>Fremtidsfuldmagt rækkefølge</fullName>
+                <default>false</default>
+                <label>Fremtidsfuldmagt rækkefølge</label>
+            </value>
+            <value>
+                <fullName>Genstandslegat</fullName>
+                <default>false</default>
+                <label>Genstandslegat</label>
+            </value>
+            <value>
+                <fullName>Gravstedsvedligeholdelse</fullName>
+                <default>false</default>
+                <label>Gravstedsvedligeholdelse</label>
+            </value>
+            <value>
+                <fullName>IT udfordringer (Ift. proces)</fullName>
+                <default>false</default>
+                <label>IT udfordringer (Ift. proces)</label>
+            </value>
+            <value>
+                <fullName>IT vedligehold (Hardware)</fullName>
+                <default>false</default>
+                <label>IT vedligehold (Hardware)</label>
+            </value>
+            <value>
+                <fullName>IT vedligehold (Software)</fullName>
+                <default>false</default>
+                <label>IT vedligehold (Software)</label>
+            </value>
+            <value>
+                <fullName>Juridisk</fullName>
+                <default>false</default>
+                <label>Juridisk</label>
+            </value>
+            <value>
+                <fullName>Konverteringsproblem</fullName>
+                <default>false</default>
+                <label>Konverteringsproblem</label>
+            </value>
+            <value>
+                <fullName>Ledelse</fullName>
+                <default>false</default>
+                <label>Ledelse</label>
+            </value>
+            <value>
+                <fullName>Manglende forståelse</fullName>
+                <default>false</default>
+                <label>Manglende forståelse</label>
+            </value>
+            <value>
+                <fullName>Mersalg (Rådgiver)</fullName>
+                <default>false</default>
+                <label>Mersalg (Rådgiver)</label>
+            </value>
+            <value>
+                <fullName>Notar og tinglysning</fullName>
+                <default>false</default>
+                <label>Notar og tinglysning</label>
+            </value>
+            <value>
+                <fullName>Rabatkode</fullName>
+                <default>false</default>
+                <label>Rabatkode</label>
+            </value>
+            <value>
+                <fullName>Report request</fullName>
+                <default>false</default>
+                <label>Report request</label>
+            </value>
+            <value>
+                <fullName>Rettelser til dokumenter</fullName>
+                <default>false</default>
+                <label>Rettelser til dokumenter</label>
+            </value>
+            <value>
+                <fullName>Rykket/Aflyst Møde</fullName>
+                <default>false</default>
+                <label>Rykket/Aflyst Møde</label>
+            </value>
+            <value>
+                <fullName>Særeje</fullName>
+                <default>false</default>
+                <label>Særeje</label>
+            </value>
+            <value>
+                <fullName>Salesforce bug</fullName>
+                <default>false</default>
+                <label>Salesforce bug</label>
+            </value>
+            <value>
+                <fullName>Salgstræning</fullName>
+                <default>false</default>
+                <label>Salgstræning</label>
+            </value>
+            <value>
+                <fullName>Skræddersyet</fullName>
+                <default>false</default>
+                <label>Skræddersyet</label>
+            </value>
+            <value>
+                <fullName>Spørgsmål internt (Se note)</fullName>
+                <default>false</default>
+                <label>Spørgsmål internt (Se note)</label>
+            </value>
+            <value>
+                <fullName>Spørgsmål til dokumenter</fullName>
+                <default>false</default>
+                <label>Spørgsmål til dokumenter</label>
+            </value>
+            <value>
+                <fullName>Spørgsmål til faktura</fullName>
+                <default>false</default>
+                <label>Spørgsmål til faktura</label>
+            </value>
+            <value>
+                <fullName>Spørgsmål til funktionalitet</fullName>
+                <default>false</default>
+                <label>Spørgsmål til funktionalitet</label>
+            </value>
+            <value>
+                <fullName>Spørgsmål til journal</fullName>
+                <default>false</default>
+                <label>Spørgsmål til journal</label>
+            </value>
+            <value>
+                <fullName>Spørgsmål til juristen</fullName>
+                <default>false</default>
+                <label>Spørgsmål til juristen</label>
+            </value>
+            <value>
+                <fullName>Spørgsmål til proces</fullName>
+                <default>false</default>
+                <label>Spørgsmål til proces</label>
+            </value>
+            <value>
+                <fullName>Spørgsmål til tinglysning</fullName>
+                <default>false</default>
+                <label>Spørgsmål til tinglysning</label>
+            </value>
+            <value>
+                <fullName>Stamdata</fullName>
+                <default>false</default>
+                <label>Stamdata</label>
+            </value>
+            <value>
+                <fullName>Successionsrækkefølge</fullName>
+                <default>false</default>
+                <label>Successionsrækkefølge</label>
+            </value>
+            <value>
+                <fullName>Sumlegat</fullName>
+                <default>false</default>
+                <label>Sumlegat</label>
+            </value>
+            <value>
+                <fullName>Testationsret</fullName>
+                <default>false</default>
+                <label>Testationsret</label>
+            </value>
+            <value>
+                <fullName>Tilbagekald fra rådgiver</fullName>
+                <default>false</default>
+                <label>Tilbagekald fra rådgiver</label>
+            </value>
+            <value>
+                <fullName>Tilbagekald på opkald fra Mødebooker</fullName>
+                <default>false</default>
+                <label>Tilbagekald på opkald fra Mødebooker</label>
+            </value>
+            <value>
+                <fullName>Tvangsarv</fullName>
+                <default>false</default>
+                <label>Tvangsarv</label>
+            </value>
+            <value>
+                <fullName>Udenlandske forhold</fullName>
+                <default>false</default>
+                <label>Udenlandske forhold</label>
+            </value>
+            <value>
+                <fullName>Uskiftet bo</fullName>
+                <default>false</default>
+                <label>Uskiftet bo</label>
+            </value>
+            <value>
+                <fullName>Vendt tilbage med manglende oplysninger</fullName>
+                <default>false</default>
+                <label>Vendt tilbage med manglende oplysninger</label>
+            </value>
+            <value>
+                <fullName>Virksomhedsrelateret</fullName>
+                <default>false</default>
+                <label>Virksomhedsrelateret</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Legal</controllingFieldValue>
+            <valueName>30% regel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Legal</controllingFieldValue>
+            <valueName>Ægtepagt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Legal</controllingFieldValue>
+            <controllingFieldValue>Customer Service</controllingFieldValue>
+            <valueName>Andet (Se note)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Legal</controllingFieldValue>
+            <valueName>Arvefordeling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Legal</controllingFieldValue>
+            <valueName>Båndlæggelse</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Legal</controllingFieldValue>
+            <valueName>Beboelsesret</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Legal</controllingFieldValue>
+            <valueName>Boafgift og skat</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Legal</controllingFieldValue>
+            <valueName>Børnetestamente</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Legal</controllingFieldValue>
+            <valueName>Ejendomshandel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Legal</controllingFieldValue>
+            <valueName>Fremtidsfuldmagt rækkefølge</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Legal</controllingFieldValue>
+            <valueName>Genstandslegat</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Legal</controllingFieldValue>
+            <valueName>Gravstedsvedligeholdelse</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Legal</controllingFieldValue>
+            <valueName>Manglende forståelse</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Legal</controllingFieldValue>
+            <valueName>Notar og tinglysning</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Legal</controllingFieldValue>
+            <valueName>Særeje</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Legal</controllingFieldValue>
+            <valueName>Spørgsmål til dokumenter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Legal</controllingFieldValue>
+            <valueName>Stamdata</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Legal</controllingFieldValue>
+            <valueName>Successionsrækkefølge</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Legal</controllingFieldValue>
+            <valueName>Sumlegat</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Legal</controllingFieldValue>
+            <valueName>Testationsret</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Legal</controllingFieldValue>
+            <valueName>Tvangsarv</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Legal</controllingFieldValue>
+            <valueName>Udenlandske forhold</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Legal</controllingFieldValue>
+            <valueName>Uskiftet bo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Legal</controllingFieldValue>
+            <valueName>Virksomhedsrelateret</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Service</controllingFieldValue>
+            <valueName>Booking/afbooking af foredrag</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Service</controllingFieldValue>
+            <valueName>IT udfordringer (Ift. proces)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Service</controllingFieldValue>
+            <valueName>Mersalg (Rådgiver)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Service</controllingFieldValue>
+            <valueName>Rettelser til dokumenter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Service</controllingFieldValue>
+            <valueName>Rykket/Aflyst Møde</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Service</controllingFieldValue>
+            <valueName>Spørgsmål internt (Se note)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Service</controllingFieldValue>
+            <valueName>Spørgsmål til faktura</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Service</controllingFieldValue>
+            <valueName>Spørgsmål til juristen</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Service</controllingFieldValue>
+            <valueName>Spørgsmål til proces</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Service</controllingFieldValue>
+            <valueName>Spørgsmål til tinglysning</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Service</controllingFieldValue>
+            <valueName>Tilbagekald fra rådgiver</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Service</controllingFieldValue>
+            <valueName>Tilbagekald på opkald fra Mødebooker</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Service</controllingFieldValue>
+            <valueName>Vendt tilbage med manglende oplysninger</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

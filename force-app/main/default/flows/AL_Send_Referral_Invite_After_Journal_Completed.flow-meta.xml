@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <assignments>
+        <name>Assign_IsSuccess_False</name>
+        <label>Assign IsSuccess False</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>IsSuccess</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assign_IsSuccess_True</name>
+        <label>Assign IsSuccess True</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>IsSuccess</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_Invalid_Number_or_Missing_Market_Unit</name>
+        <label>Populate Custom Error with Invalid Number or Missing Market Unit</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>inputJournal.Market_Unit__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Invalid Number or Missing Market Unit &quot;{!inputJournal.Market_Unit__c}&quot;</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_IsSuccess_False</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Custom_Error_with_No_Phone_Number_Available_on_Account</name>
+        <label>Populate Custom Error with No Phone Number Available on Account</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>inputJournal.Market_Unit__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>No Phone Number Available on Account &quot;{!inputJournal.Account__r.Phone_Formatted__c}&quot;</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Populate_Danish_Values</name>
+        <label>Populate Danish Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>SmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptDanishSmsBody</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>FromNumber</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>+4581827570</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ValidKeywords</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Ja;Nej</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Do_We_Have_a_Phone_Number_on_the_Account</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Irish_Values</name>
+        <label>Populate Irish Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>SmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptIrishSmsBody</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>FromNumber</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ValidKeywords</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Yes;No</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Populate_Custom_Error_with_Invalid_Number_or_Missing_Market_Unit</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Populate_Swedish_Values</name>
+        <label>Populate Swedish Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>SmsBody</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ptSwedishSmsBody</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>FromNumber</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>+46766753111</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ValidKeywords</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Ja;Nej</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Do_We_Have_a_Phone_Number_on_the_Account</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Did_SMS_Subflow_Succeed</name>
+        <label>Did SMS Subflow Succeed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Assign_IsSuccess_False</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SMS_Subflow_Success</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsSmsSubflowSuccess</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_IsSuccess_True</targetReference>
+            </connector>
+            <label>SMS Subflow Success</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Do_We_Have_a_Phone_Number_on_the_Account</name>
+        <label>Do We Have a Phone Number on the Account?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Populate_Custom_Error_with_No_Phone_Number_Available_on_Account</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Got_Phone_Number</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>inputJournal.Account__r.Phone_Formatted__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AL_Create_SMS_Conversation_from_Input_Variables</targetReference>
+            </connector>
+            <label>Got Phone Number</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Was_SMS_Conversation_Subflow_Successful</name>
+        <label>Was SMS Conversation Subflow Successful?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Assign_IsSuccess_False</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Successful_SMS_Converstation_Subflow</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsSmsConversationSubflowSuccess</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AL_Create_Outbound_SMS</targetReference>
+            </connector>
+            <label>Successful SMS Converstation Subflow</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Which_Country_are_we_sending_to</name>
+        <label>Which Country are we sending to?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Populate_Custom_Error_with_Invalid_Number_or_Missing_Market_Unit</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Send_Danish_SMS</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>inputJournal.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>DFJ_DK</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_Danish_Values</targetReference>
+            </connector>
+            <label>Send Danish SMS</label>
+        </rules>
+        <rules>
+            <name>Send_Swedish_SMS</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>inputJournal.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>FA_SE</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_Swedish_Values</targetReference>
+            </connector>
+            <label>Send Swedish SMS</label>
+        </rules>
+        <rules>
+            <name>Send_Irish_SMS</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>inputJournal.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ireland</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_Irish_Values</targetReference>
+            </connector>
+            <label>Send Irish SMS</label>
+        </rules>
+    </decisions>
+    <description>Initially set up to be called by &quot;RT - Journal: Journal States Updated to Complete&quot; 60 days after a Journal is Completed</description>
+    <environments>Default</environments>
+    <interviewLabel>AL - Send Referral Invite {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>AL - Send Referral Invite After Journal Completed</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Which_Country_are_we_sending_to</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+    <subflows>
+        <name>AL_Create_Outbound_SMS</name>
+        <label>AL - Create Outbound SMS</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Did_SMS_Subflow_Succeed</targetReference>
+        </connector>
+        <flowName>AL_Create_Outbound_SMS</flowName>
+        <inputAssignments>
+            <name>MarketUnit</name>
+            <value>
+                <elementReference>inputJournal.Market_Unit__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Message</name>
+            <value>
+                <elementReference>SmsBody</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>RelatedRecordId</name>
+            <value>
+                <elementReference>inputJournal.Account__r.PersonContactId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>SendFrom</name>
+            <value>
+                <stringValue>Short/Long Code</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>SmsConversationId</name>
+            <value>
+                <elementReference>SmsConversationId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>ToNumber</name>
+            <value>
+                <elementReference>inputJournal.Account__r.Phone_Formatted__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Type</name>
+            <value>
+                <stringValue>Automated</stringValue>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>CustomError</assignToReference>
+            <name>CustomError</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>IsSmsSubflowSuccess</assignToReference>
+            <name>IsSuccess</name>
+        </outputAssignments>
+    </subflows>
+    <subflows>
+        <name>AL_Create_SMS_Conversation_from_Input_Variables</name>
+        <label>AL - Create SMS Conversation from Input Variables</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Was_SMS_Conversation_Subflow_Successful</targetReference>
+        </connector>
+        <flowName>AL_Create_SMS_Conversation_from_Input_Variables</flowName>
+        <inputAssignments>
+            <name>inputConversationType</name>
+            <value>
+                <stringValue>Get Reference</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputIsKeyWordReplyExpected</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputKeywordString</name>
+            <value>
+                <elementReference>ValidKeywords</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputMarketUnit</name>
+            <value>
+                <elementReference>inputJournal.Account__r.Market_Unit__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputPhoneNumber</name>
+            <value>
+                <elementReference>inputJournal.Account__r.Phone_Formatted__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputRecordId</name>
+            <value>
+                <elementReference>inputJournal.Account__r.PersonContactId</elementReference>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>CustomError</assignToReference>
+            <name>CustomError</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>IsSmsConversationSubflowSuccess</assignToReference>
+            <name>IsSuccess</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>SmsConversationId</assignToReference>
+            <name>outputSmsConversationId</name>
+        </outputAssignments>
+    </subflows>
+    <textTemplates>
+        <name>FirstName</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!inputJournal.Account__r.FirstName} {!inputJournal.Account__r.LastName}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptDanishSmsBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hej {!FirstName},
+
+Vi håber at du glad for dine dokumenter 😊
+
+Kender du én, der også kunne bruge juridisk hjælp?
+
+Giv dem et gavekort op til 750 kr. Ved køb os hos.
+
+Svar JA, hvis du ønsker at give et gavekort.
+Svar NEJ, hvis ikke.
+
+Med venlig hilsen,
+Din Familiejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptIrishSmsBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hi {!FirstName},
+
+We hope you’re happy with your documents 😊
+
+Know someone who could use legal help too?
+Give them a gift card worth up to €100 when they buy from us.
+
+Reply YES if you’d like to give a gift card.
+Reply NO if not.
+
+Kind regards,
+Heres Law</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ptSwedishSmsBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hej {!FirstName},
+
+Vi hoppas att du är nöjd med dina dokument 😊
+
+Känner du någon som också kan behöva juridisk hjälp?
+
+Ge dem ett presentkort på upp till 1.000 kr när de handlar hos oss.
+
+Svara JA om du vill ge ett presentkort.
+Svara NEJ om du inte vill.
+
+Med vänliga hälsningar,
+Din Familjejurist</text>
+    </textTemplates>
+    <variables>
+        <name>CustomError</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>FromNumber</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>inputJournal</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Journal__c</objectType>
+    </variables>
+    <variables>
+        <name>IsSmsConversationSubflowSuccess</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>IsSmsSubflowSuccess</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>IsSuccess</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>SmsBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SmsConversation</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>SMS_Conversation__c</objectType>
+    </variables>
+    <variables>
+        <name>SmsConversationId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ValidKeywords</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <assignments>
+        <name>Assign_Default_URL_to_Variable</name>
+        <label>Assign Default URL to Variable</label>
+        <locationX>446</locationX>
+        <locationY>1139</locationY>
+        <assignmentItems>
+            <assignToReference>Get_User.Calendly__CalendlyLink__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Calendly__Url__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_User_Profile_Link</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Is_Event_Called_Boka_en_tid_f_r_ett_personligt_m_te</name>
+        <label>Is Event Called &quot;Boka en tid för ett personligt möte&quot;</label>
+        <locationX>490</locationX>
+        <locationY>755</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Outcome_1_of_Decision_7</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Calendly__Name__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Boka en tid för ett personligt möte</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Default_URL_to_Variable</targetReference>
+            </connector>
+            <label>Swedish Meeting Correct</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Event_Called_Book_en_aftale_om_et_personligt_m_de</name>
+        <label>Is Event Called &quot;Book en aftale om et personligt møde&quot;</label>
+        <locationX>50</locationX>
+        <locationY>755</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Danish_Meeting_Correct</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Calendly__Name__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Book en aftale om et personligt møde</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Default_URL_to_Variable</targetReference>
+            </connector>
+            <label>Danish Meeting Correct</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_it_a_Managed_Event</name>
+        <label>Is it a Managed Event?</label>
+        <locationX>776</locationX>
+        <locationY>539</locationY>
+        <defaultConnectorLabel>Event not Managed</defaultConnectorLabel>
+        <rules>
+            <name>Event_is_Managed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Calendly__Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>ManagedEventType</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>What_is_User_s_Market_Unit</targetReference>
+            </connector>
+            <label>Event is Managed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>User_exists</name>
+        <label>User exists?</label>
+        <locationX>1073</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>No User Found</defaultConnectorLabel>
+        <rules>
+            <name>User_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_User</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_it_a_Managed_Event</targetReference>
+            </connector>
+            <label>User Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>What_is_User_s_Market_Unit</name>
+        <label>What is User&apos;s Market Unit?</label>
+        <locationX>446</locationX>
+        <locationY>647</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Danish_Market_Unit</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_User.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>DFJ_DK</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_User.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Testamente_DK</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_Event_Called_Book_en_aftale_om_et_personligt_m_de</targetReference>
+            </connector>
+            <label>Danish Market Unit</label>
+        </rules>
+        <rules>
+            <name>Swedish_Market_Unit</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_User.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>FA_SE</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_User.Market_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Testamente_SV</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_Event_Called_Boka_en_tid_f_r_ett_personligt_m_te</targetReference>
+            </connector>
+            <label>Swedish Market Unit</label>
+        </rules>
+    </decisions>
+    <description>This is the main, customized version of the MapUserCalendlyLinkTemplate.</description>
+    <environments>Default</environments>
+    <interviewLabel>MapUserCalendlyLink {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>MapUserCalendlyLink</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_User</name>
+        <label>Get User</label>
+        <locationX>1073</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>User_exists</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Email</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Calendly__Email__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>IsActive</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_User_Profile_Link</name>
+        <label>Update User Profile Link</label>
+        <locationX>446</locationX>
+        <locationY>1247</locationY>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <sourceTemplate>Calendly__MapUserCalendlyLinkTemplate</sourceTemplate>
+    <start>
+        <locationX>947</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_User</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Calendly__Url__c</field>
+            <operator>Contains</operator>
+            <value>
+                <stringValue>boka-individuell-raadgivning</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Calendly__Url__c</field>
+            <operator>Contains</operator>
+            <value>
+                <stringValue>book-aftale-om-personligt-mode</stringValue>
+            </value>
+        </filters>
+        <object>Calendly__CalendlyLink__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

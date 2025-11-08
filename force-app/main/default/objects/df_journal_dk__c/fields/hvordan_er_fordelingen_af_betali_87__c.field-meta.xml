@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>hvordan_er_fordelingen_af_betali_87__c</fullName>
+    <externalId>false</externalId>
+    <label>Hvordan er fordelingen af betali 3e1b3</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>betalt_lige_meget_samejeoverenskomst</fullName>
+                <default>false</default>
+                <label>Der er betalt lige meget</label>
+            </value>
+            <value>
+                <fullName>person_1_har_betalt_mest_samejeoverenskomst_rettet</fullName>
+                <default>false</default>
+                <label>{person_1_first_name} har betalt mest</label>
+            </value>
+            <value>
+                <fullName>person_2_har_betalt_mest_samejeoverenskomst_rettet</fullName>
+                <default>false</default>
+                <label>{person_2_first_name} har betalt mest</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

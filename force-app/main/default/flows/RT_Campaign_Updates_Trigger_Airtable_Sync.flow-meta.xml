@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <environments>Default</environments>
+    <interviewLabel>RT - Campaign: Updates Trigger Airtable Sync {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RT - Campaign: Updates Trigger Airtable Sync</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Campaign</name>
+        <label>Update Campaign</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <inputAssignments>
+            <field>Is_Sync_in_Progress__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Campaign</targetReference>
+        </connector>
+        <filterFormula>AND(
+  /* must have a Host or Account */
+  OR(
+    NOT( ISBLANK( {!$Record.Host__c} ) ),
+    NOT( ISBLANK( {!$Record.Account__c} ) )
+  ),
+  /* must be a Lecture */
+  {!$Record.Lecture__c} = TRUE,
+  /* new record or any watched field changed */
+  OR(
+    ISNEW(),
+    ISCHANGED( {!$Record.Host__c} ),
+    ISCHANGED( {!$Record.Lecture__c} ),
+    ISCHANGED( {!$Record.Start__c} ),
+    ISCHANGED( {!$Record.End__c} ),
+    ISCHANGED( {!$Record.Status} ),
+    ISCHANGED( {!$Record.Open_for_Bookings__c} ),
+    ISCHANGED( {!$Record.Account__c} ),
+    ISCHANGED( {!$Record.Host_Address__Street__s} ),
+    ISCHANGED( {!$Record.Host_Address__City__s} ),
+    ISCHANGED( {!$Record.Host_Address__PostalCode__s} ),
+    ISCHANGED( {!$Record.Capacity__c} ),
+    ISCHANGED( {!$Record.Lecturer__c} ),
+    ISCHANGED( {!$Record.Name} ),
+    ISCHANGED( {!$Record.Cancelled__c} ),
+    ISCHANGED( {!$Record.Rescheduled__c} ),
+    ISCHANGED( {!$Record.Market_Unit__c} ),
+    ISCHANGED( {!$Record.Price_Per_Cover__c} ),
+    ISCHANGED( {!$Record.Venue_Rental_Cost__c} )
+  )
+)</filterFormula>
+        <object>Campaign</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

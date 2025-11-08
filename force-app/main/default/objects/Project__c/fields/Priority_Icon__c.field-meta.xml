@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Priority_Icon__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(
+  TEXT(Priority__c),
+  &quot;Very Low&quot;,  &quot;❄️&quot;,
+  &quot;Low&quot;,       &quot;🌱&quot;,
+  &quot;Medium&quot;,    &quot;⚖️&quot;,
+  &quot;High&quot;,      &quot;🚀&quot;,
+  &quot;Very High&quot;, &quot;🔥&quot;,
+  &quot;&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Priority Icon</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

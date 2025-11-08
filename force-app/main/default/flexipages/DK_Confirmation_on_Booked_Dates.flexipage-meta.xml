@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>allowChanges</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>alternativeText</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>Center</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>imgPath</name>
+                    <value>{[devName:dfjlogo]}</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginBottom</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginLeft</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginRight</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginTop</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>objectFit</name>
+                    <value>fill</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>100</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:image</componentName>
+                <identifier>contentbuilder_image5</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-ea24dc88-440f-46c7-8b98-d4c96985c3ed</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columnBody</name>
+                    <value>Facet-ea24dc88-440f-46c7-8b98-d4c96985c3ed</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columnSpacer</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>padding</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlign</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>100%</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:column</componentName>
+                <identifier>contentbuilder_column13</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-808373c0-6ad8-45dd-a8ef-7336f5b98ae6</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>allowChanges</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>linkedToDesignKit</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginBottom</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginLeft</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginRight</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginTop</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;Hej&amp;nbsp;{{{Hosts__c.Name}}},&lt;br /&gt;
+&lt;br /&gt;
+Jeg bekr&amp;aelig;fter hermed vores aftale om arrangementer hos jer.&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Venligst returner&amp;nbsp;denne mail, med et ok&lt;/b&gt;, s&amp;aring; vi har aftalen, helt p&amp;aring; plads.&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;Vi har aftalt f&amp;oslash;lgende datoer&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;{{{Hosts__c.Campaign_Info_List__c}}}&lt;br /&gt;
+&lt;br /&gt;
+&lt;b&gt;Vi&amp;nbsp;kontakter dig pr. mail&amp;nbsp;mandagen&amp;nbsp;ugen f&amp;oslash;r foredraget&amp;nbsp;med endeligt antal, som ogs&amp;aring; er det antal g&amp;aelig;ster der afregnes for.&lt;/b&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;De aftalte priser, n&amp;aelig;vnt ovenfor,&amp;nbsp;inkluderer mad, servering og afrydning, lokale og AV-udstyr&lt;br /&gt;
+Dvs. der er ikke yderligere omkostninger.&lt;/p&gt;
+
+&lt;p&gt;Salg af drikkevarer tilfalder jer, n&amp;aring;r vi byder velkommen, fort&amp;aelig;ller vi at vi giver mad og foredrag, hvor drikkevarer st&amp;aring;r for egen regning.&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;Hvis der, mod al forventning, ikke er nok tilmeldte til arrangementet, forbeholder vi os ret til at kunne aflyse en uge f&amp;oslash;r datoen for arrangementet.&lt;br /&gt;
+&lt;br /&gt;
+&lt;i&gt;Dog kan jeg oplyse, at vi&amp;nbsp;kun i sj&amp;aelig;ldne tilf&amp;aelig;lde har&amp;nbsp;haft problemer med booking af de mindst 50 personer. Booking af g&amp;aelig;sterne foreg&amp;aring;r online via Facebook.&lt;/i&gt;&lt;br /&gt;
+&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Vores betalingsoplysninger:&lt;/b&gt;&amp;nbsp;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;Din Familiejurist &amp;oslash;nsker betaling pr. faktura sendt til mail:&amp;nbsp;&lt;a href=&quot;mailto:foredrag.faktura@dinfamiliejurist.dk&quot;&gt;foredrag.faktura@dinfamiliejurist.dk&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;Betalingsbetingelser: 14 dage netto&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;Vores CVR nr. er: 40165509&amp;nbsp;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;N&amp;aring;r vores aftale er bekr&amp;aelig;ftet er denne bindende uden fortrydelsesret, hvis aftalen aflyses fra jeres side uanset &amp;aring;rsag ser vi os n&amp;oslash;dsaget til at kr&amp;aelig;ve erstatning for marketingsomkostninger brugt samt tabt oms&amp;aelig;tning. Dette er g&amp;aelig;ldende for de aftaler som ligger indenfor en tidsramme p&amp;aring; 2 m&amp;aring;neder.&amp;nbsp;&amp;nbsp;&lt;br /&gt;
+&amp;nbsp;&lt;br /&gt;
+Undtaget&amp;nbsp;er&amp;nbsp;force majeure, hvor&amp;nbsp;begivenheden ikke kunne have v&amp;aelig;ret undg&amp;aring;et, selvom aftaleparten tog alle forsvarlige forholdsregler for at sikre opfyldes af aftalen. Typiske eksempler p&amp;aring; force majeure er:&amp;nbsp;&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;
+	&lt;p&gt;Krig&amp;nbsp;&lt;/p&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+	&lt;p&gt;Naturkatastrofer&amp;nbsp;&lt;/p&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+	&lt;p&gt;Pandemi o.l.&amp;nbsp;&lt;/p&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+	&lt;p&gt;Konkurs&amp;nbsp;&lt;/p&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Lidt praktisk om selve dagen for foredrag:&lt;/b&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;P&amp;aring; selve dagen for foredraget kommer vores foredragsholder ca. 30 minutter f&amp;oslash;r eventstart.&amp;nbsp;Han vil st&amp;aring; for at registrere&amp;nbsp;g&amp;aelig;sternes ankomst.&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+&amp;nbsp;
+
+&lt;ul&gt;
+	&lt;li&gt;Foredragsholder vil i samme anledning opfordre g&amp;aelig;ster til at k&amp;oslash;be drikkevarer til maden / aftenen. Der er det vigtig i st&amp;aring;r klar til at f&amp;aring; den ekstra oms&amp;aelig;tning.&lt;/li&gt;
+&lt;/ul&gt;
+&amp;nbsp;
+
+&lt;ul&gt;
+	&lt;li&gt;G&amp;aelig;sterne kommer ofte lidt f&amp;oslash;r tid. Der er det ligeledes oplagt at &amp;quot;m&amp;oslash;de&amp;quot; dem med &amp;oslash;nsker i noget at drikke- I ved bedst hvad som virker for jer.&amp;nbsp;&amp;nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Efter spisning og under afrydning vil foredragsholder igen opfordre til en kort pause til evt. k&amp;oslash;be drikkevare/kaffe/ kage til den sidste del hvor selve foredraget g&amp;aring;r i gang.&amp;nbsp;&amp;nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Dette er blot information og vil ligesom jer vil g&amp;oslash;re hvad vi kan for at bidrage til at aftenen bliver en succes begge veje.&amp;nbsp;&amp;nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Efter flere foresp&amp;oslash;rgsler sender vi nu link til Billetto til deling, s&amp;aring;ledes I ogs&amp;aring; har mulighed for at l&amp;aelig;gge event op p&amp;aring; jeres FB, egen hjemmeside el. lign. Derved er der ekstra mulighed for at event bliver booket i f&amp;aelig;lles interesse.&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Jeg har derfor i dag oprettet vores fremtidige aftaler til markedsf&amp;oslash;ring (bliver fremsendt efter du har godkendt denne aftale)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br /&gt;
+Vi gl&amp;aelig;der os til at holde foredrag hos jer.&amp;nbsp;&lt;br /&gt;
+&lt;br /&gt;
+{{{Sender.Signature}}}</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:richText</componentName>
+                <identifier>contentbuilder_richText7</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-2bf900ce-ed05-4e23-8c19-f7df6f809e56</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columnBody</name>
+                    <value>Facet-2bf900ce-ed05-4e23-8c19-f7df6f809e56</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columnSpacer</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>padding</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlign</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>100%</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:column</componentName>
+                <identifier>contentbuilder_column14</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-e441c765-9041-4154-914c-4082ce5de64a</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>allowChanges</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>alternativeText</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>left</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>imgPath</name>
+                    <value>{[devName:danish_logopng1]}</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginBottom</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginLeft</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginRight</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginTop</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>objectFit</name>
+                    <value>fill</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>30</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:image</componentName>
+                <identifier>contentbuilder_image6</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-277ce9d1-31b1-4513-9d28-fc79178623a3</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columnBody</name>
+                    <value>Facet-277ce9d1-31b1-4513-9d28-fc79178623a3</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columnCount</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columnIndex</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columnSpacer</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>padding</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlign</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>100%</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:column</componentName>
+                <identifier>contentbuilder_column15</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-55500dff-f114-4ae7-a9ff-1eaed3ead71d</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-808373c0-6ad8-45dd-a8ef-7336f5b98ae6</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlignment</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:row</componentName>
+                <identifier>contentbuilder_row13</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-e441c765-9041-4154-914c-4082ce5de64a</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlignment</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:row</componentName>
+                <identifier>contentbuilder_row14</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-55500dff-f114-4ae7-a9ff-1eaed3ead71d</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlignment</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:row</componentName>
+                <identifier>contentbuilder_row15</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>main</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>DK_Confirmation_on_Booked_Dates</masterLabel>
+    <template>
+        <name>contentpage:defaultEmailTemplatePageTemplate</name>
+        <properties>
+            <name>backgroundColor</name>
+            <value>#E9EAEC</value>
+        </properties>
+        <properties>
+            <name>backgroundImageUrl</name>
+        </properties>
+        <properties>
+            <name>bodyColor</name>
+            <value>#FFFFFF</value>
+        </properties>
+        <properties>
+            <name>paddingBottom</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingLeft</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingRight</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingTop</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>preheader</name>
+            <value>Hermed information om aftalte foredrag</value>
+        </properties>
+    </template>
+    <type>EmailTemplatePage</type>
+</FlexiPage>

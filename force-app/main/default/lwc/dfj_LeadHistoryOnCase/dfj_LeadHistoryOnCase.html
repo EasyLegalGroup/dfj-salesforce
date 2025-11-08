@@ -1,0 +1,200 @@
+<template>
+    <template if:true={noHistoryOnLead}>
+        <div class="slds-text-align_center">
+            <div class="main-heading slds-text-heading_medium">{headingText}</div></div>
+        No Record Found
+    </template>
+    <template if:true={ifHasconsolidatedData}>
+        <!-- Render based on showConsolidatedView property -->
+        <div class="slds-text-align_center">
+            <div class="main-heading slds-text-heading_medium">{headingText}</div>
+            <template if:true={consolidatedData.length}>
+                <template for:each={consolidatedData} for:item="conData" for:index="tabIndex">
+                    <!-- lwcComponent.html -->
+                    <!-- Display Notes History.html-->
+                    <template if:true={conData.isNoteHistory}>
+                        <div key={conData.objectData.Id} class="slds-media slds-timeline__item_expandable slds-timeline__item_email">
+                            <div class="slds-media__figure">
+                                <lightning-icon class="slds-m-left_large slds-timeline__icon" icon-name="standard:record" size="small" variant="inverse"></lightning-icon>
+                            </div>
+                            <div class="slds-media__body">
+                                <lightning-layout horizontal-align="spread" vertical-align="center">
+                                    <lightning-layout-item>Note created by <b>{conData.objectData.CreatedBy.Name}</b></lightning-layout-item>
+                                    <lightning-layout-item> 
+                                        <div class="slds-timeline__actions slds-timeline__actions_inline">
+                                            <div class="slds-timeline__date">
+                                                <span>{conData.formattedDate}</span>
+                                            </div>
+                                        </div>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                                <div class="slds-m-top_xx-small">
+                                    <article class="slds-box slds-theme_shade slds-m-top_xx-small slds-m-horizontal_xx-small">
+                                        <div class="slds-text-align_left">
+                                            <lightning-formatted-text value={conData.objectData.Body}></lightning-formatted-text>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                            <div class="slds-media__figure slds-media__figure_reverse"></div>
+                        </div>
+                    </template>
+                   <!-- Display Field History.html-->
+                    <template if:true={conData.isFieldsHistory}>
+                        <div key={conData.objectData.Id} class="slds-media slds-timeline__item_expandable slds-timeline__item_email">
+                            <div class="slds-media__figure">
+                                <lightning-icon class="slds-m-left_large slds-timeline__icon" icon-name={conData.fieldsHistoryIconName} size="small" variant="inverse"></lightning-icon>
+                            </div>
+                                <div class="slds-media__body">
+                                    <lightning-layout horizontal-align="spread" vertical-align="center">
+                                        <lightning-layout-item>
+                                            Lead status changed by <b>{conData.objectData.CreatedBy.Name}</b> from: {conData.objectData.OldValue} -> <b>{conData.objectData.NewValue}</b>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item>
+                                            <div class="slds-timeline__actions slds-timeline__actions_inline">
+                                                <div class="slds-timeline__date"><span>{conData.formattedDate}</span></div>
+                                            </div>
+                                        </lightning-layout-item>
+                                    </lightning-layout>
+                                    <div class="slds-m-top_xx-small"></div>
+                                </div>
+                                <div class="slds-media__figure slds-media__figure_reverse"></div>
+                            </div>
+                        
+                    </template>
+                     <!-- Display Appointment History.html-->
+
+                    <template if:true={conData.isEventHistory}>
+                        <div key={conData.objectData.Id} class="slds-media slds-timeline__item_expandable slds-timeline__item_email">
+                            <div class="slds-media__figure">
+                                <lightning-icon class="slds-m-left_large slds-timeline__icon" icon-name="standard:event" size="small" variant="inverse"></lightning-icon>
+                            </div>
+                            <div class="slds-media__body">
+                                <lightning-layout horizontal-align="spread" vertical-align="center">
+                                    <lightning-layout-item><b>{conData.objectData.CreatedBy.Name}</b> created appointment: {conData.objectData.Subject}</lightning-layout-item>
+                                    <lightning-layout-item>
+                                        <div class="slds-timeline__actions slds-timeline__actions_inline">
+                                            <div class="slds-timeline__date"><span>{conData.formattedDate}</span></div>
+                                        </div>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                                <div class="slds-m-top_xx-small "></div>
+                                <article class="slds-text-align_left slds-box slds-theme_shade slds-m-top_xx-small ">
+                                    <b>Start : {conData.objectData.StartDateTime} - {conData.objectData.EndDateTime}</b><br/>
+                                    <div class="slds-align_absolute-left">{conData.objectData.Description}</div>
+                                </article>
+                            </div>
+                            <div class="slds-media__figure slds-media__figure_reverse"></div>
+                        </div>
+                    </template>
+                    <!-- display telegenta__Call_Campaign_State__c -->
+                    <template if:true={conData.isCallCampaignState}>
+                        <div key={conData.objectData.Id} class="slds-media slds-timeline__item_expandable slds-timeline__item_email">
+                            <div class="slds-media__figure">
+                                <lightning-icon class="slds-m-left_large slds-timeline__icon" icon-name="standard:record" size="small" variant="inverse"></lightning-icon>
+                            </div>
+                            <div class="slds-media__body">
+                                <lightning-layout horizontal-align="spread" vertical-align="center">
+                                    <template if:true={conData.isCallCampaignNewValueEmpty}>
+                                        <lightning-layout-item>
+                                            <b>{conData.objectData.CreatedBy.Name}</b> changed outcome to <b>{conData.objectData.NewValue}{conData.objectData.OldValue}</b> {conData.callCampaignName} 
+                                        </lightning-layout-item>
+                                    </template>
+                                    <template if:false={conData.isCallCampaignNewValueEmpty}>
+                                        <lightning-layout-item>
+                                            <b>{conData.objectData.CreatedBy.Name}</b> changed outcome from <b>{conData.objectData.OldValue}</b> -> <b>{conData.objectData.NewValue}</b> ( {conData.callCampaignName} )
+                                        </lightning-layout-item>
+                                    </template>
+                                    <lightning-layout-item>
+                                        <div class="slds-timeline__actions slds-timeline__actions_inline">
+                                            <div class="slds-timeline__date"><span>{conData.formattedDate}</span></div>
+                                        </div>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                                <div class="slds-m-top_xx-small"></div>
+                            </div>
+                            <div class="slds-media__figure slds-media__figure_reverse"></div>
+                        </div>
+                    </template>
+                    
+                    
+                    <!-- Display Call History.html-->
+     <template if:true={conData.isCallHistory}>
+        <div key={conData.objectData.Id} class="slds-media slds-timeline__item_expandable slds-timeline__item_call">
+            <div class="slds-media__figure">
+                <lightning-icon class="slds-m-left_large slds-timeline__icon" icon-name="standard:log_a_call" size="small" variant="inverse"></lightning-icon>
+            </div>
+            <div class="slds-media__body">
+                <lightning-layout horizontal-align="spread" vertical-align="center">
+                    <lightning-layout-item>
+                        <template if:true={conData.isOutbound}>
+                            <b>{conData.objectData.CreatedBy.Name}</b> Called Out {conData.objectData.telegenta__Destination_number__c}
+                            <template if:false={conData.isOutbound}>
+                                <template if:true={conData.isInbound}>
+                                    <b>{conData.objectData.telegenta__Lead__r.Name}</b> Called In {conData.objectData.telegenta__Destination_number__c}
+                                </template>
+                            </template>
+                        </template>
+                    </lightning-layout-item>
+                    <lightning-layout-item>
+                        <div class="slds-timeline__actions slds-timeline__actions_inline">
+                            <div class="slds-timeline__date">
+                                 <span>{conData.formattedDate}</span>
+                            </div>
+                        </div>
+                    </lightning-layout-item>
+                </lightning-layout>
+                <div class="slds-m-top_xx-small" style="text-align: -webkit-left;">
+                            <template if:false={conData.isExpanded}>
+    <lightning-button-icon  
+        key={conData.objectData.Id} 
+        icon-name="utility:chevronright" 
+        alternative-text="right" 
+        variant="bare" 
+        onclick={handleToggleDetails} 
+        data-id={conData.objectData.Id}>
+    </lightning-button-icon>
+</template>
+<template if:true={conData.isExpanded}>
+    <lightning-button-icon  
+        key={conData.objectData.Id} 
+        icon-name="utility:chevrondown" 
+        alternative-text="down" 
+        variant="bare" 
+        onclick={handleToggleDetails} 
+        data-id={conData.objectData.Id}>
+    </lightning-button-icon>
+    <!-- Details section -->
+    <article class="slds-box slds-theme_shade slds-m-top_xx-small slds-m-horizontal_xx-small " style="text-align: -webkit-left;">
+        <div>
+            <p> Type: {conData.objectData.telegenta__Direction__c}</p>
+            <template if:true={conData.isOutbound}>
+                <p> Phone numbers: {conData.objectData.telegenta__Destination_number__c}</p>
+            </template>
+            <p> Active duration: {conData.objectData.telegenta__Active_Duration__c}</p>
+            <p> Total duration: {conData.objectData.telegenta__Total_Duration__c}</p>
+            <template if:true={conData.isOutbound}>
+                <p> Destination: {conData.objectData.telegenta__Destination_Country__c}</p>
+            </template>
+            <template if:true={conData.isInbound}>
+                <p> Incoming Number: {conData.objectData.telegenta__Incoming_Number__c}</p>
+            </template>
+            <div></div>
+        </div>
+    </article>
+</template>
+                    Disposition: <span>{conData.objectData.telegenta__Disposition__c}</span> | Duration: {conData.objectData.telegenta__Active_Duration__c}
+                </div>
+             
+            </div>
+            <div class="slds-media__figure slds-media__figure_reverse"></div>
+        </div>
+    </template>
+
+
+                    <!-- Add other conditional templates for different types of history -->
+                </template>
+            </template>
+        </div>
+    </template>
+</template>

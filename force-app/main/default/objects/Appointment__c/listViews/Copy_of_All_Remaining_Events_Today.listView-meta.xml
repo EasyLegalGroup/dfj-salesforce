@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_All_Remaining_Events_Today</fullName>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>Appointment_Completed__c</columns>
+    <columns>Assigned_To__c</columns>
+    <columns>Start__c</columns>
+    <columns>End__c</columns>
+    <columns>Lead__c</columns>
+    <columns>Type__c</columns>
+    <columns>Description__c</columns>
+    <columns>Event__c</columns>
+    <columns>CURRENCY_ISO_CODE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Start__c</field>
+        <operation>equals</operation>
+        <value>TOMORROW</value>
+    </filters>
+    <filters>
+        <field>Appointment_Completed__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Assigned_To__c</field>
+        <operation>contains</operation>
+        <value>Risk</value>
+    </filters>
+    <label>Sofus view</label>
+</ListView>

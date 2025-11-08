@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_My_Employee__c</fullName>
+    <description>This field is checked only if the user looking at it, is the one noted in either the &quot;Supervisor&quot; or the &quot;Manager&quot; field</description>
+    <externalId>false</externalId>
+    <formula>IF(OR(Supervisor__c = $User.Id, Manager__c = $User.Id), true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>This field is checked only if the user looking at it, is the one noted in either the &quot;Supervisor&quot; or the &quot;Manager&quot; field</inlineHelpText>
+    <label>Is My Employee</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

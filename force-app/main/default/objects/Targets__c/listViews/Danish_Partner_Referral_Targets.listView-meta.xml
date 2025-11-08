@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Danish_Partner_Referral_Targets</fullName>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>Target_Metric__c</columns>
+    <columns>Number_of_Active_Link_Targets__c</columns>
+    <columns>Current__c</columns>
+    <columns>Percent_Current__c</columns>
+    <columns>Percent_Target__c</columns>
+    <columns>Progress__c</columns>
+    <columns>Month_Number__c</columns>
+    <columns>User__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Target_Metric__c</field>
+        <operation>equals</operation>
+        <value>Partner Referral</value>
+    </filters>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>DFJ_DK</value>
+    </filters>
+    <label>Danish Partner Referral Targets</label>
+</ListView>

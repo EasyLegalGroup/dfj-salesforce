@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ford_arv_frstafdde__c</fullName>
+    <externalId>false</externalId>
+    <label>Fordeling af arv efter førstafdø c90f8</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>ford_arv_frstafdde_partner</fullName>
+                <default>false</default>
+                <label>Mest muligt til partner</label>
+            </value>
+            <value>
+                <fullName>procent_frstaafdde</fullName>
+                <default>false</default>
+                <label>Procentfordeling</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

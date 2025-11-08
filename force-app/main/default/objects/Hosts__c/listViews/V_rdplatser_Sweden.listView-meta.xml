@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V_rdplatser_Sweden</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Address__c</columns>
+    <columns>Capacity__c</columns>
+    <columns>County__c</columns>
+    <columns>Name_of_Contact__c</columns>
+    <columns>Phone__c</columns>
+    <columns>Email__c</columns>
+    <columns>Date_of_Most_Recent_Booking__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>FA_SE,Testamente_SV</value>
+    </filters>
+    <label>Värdplatser (Sweden)</label>
+</ListView>

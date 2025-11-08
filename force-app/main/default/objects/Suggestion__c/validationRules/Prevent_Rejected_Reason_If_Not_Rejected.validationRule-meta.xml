@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Rejected_Reason_If_Not_Rejected</fullName>
+    <active>true</active>
+    <description>Ensures that Rejected_Reason__c is only set if Status__c is &quot;Rejected&quot;.</description>
+    <errorConditionFormula>NOT(ISPICKVAL(Status__c, &quot;Rejected&quot;)) &amp;&amp; NOT(ISPICKVAL(Rejected_Reason__c, &quot;&quot;))</errorConditionFormula>
+    <errorDisplayField>Status__c</errorDisplayField>
+    <errorMessage>Rejected Reason can only be set when Status is Rejected.</errorMessage>
+</ValidationRule>

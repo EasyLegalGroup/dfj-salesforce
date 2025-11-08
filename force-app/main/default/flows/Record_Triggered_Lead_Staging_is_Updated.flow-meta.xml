@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Update_Registration_s_Account</name>
+        <label>Update Registration&apos;s Account</label>
+        <locationX>138</locationX>
+        <locationY>947</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Registration_Staging.Account__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Account__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Registration</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Registration_s_Lead</name>
+        <label>Update Registration&apos;s Lead</label>
+        <locationX>138</locationX>
+        <locationY>647</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Registration_Staging.Lead__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Lead__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Do_Account_IDs_Match</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Do_Account_IDs_Match</name>
+        <label>Do Account IDs Match?</label>
+        <locationX>50</locationX>
+        <locationY>839</locationY>
+        <defaultConnector>
+            <targetReference>Update_Registration_s_Account</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Update Registration&apos;s Account</defaultConnectorLabel>
+        <rules>
+            <name>Accounts_Match</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Get_Registration_Staging.Account__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Registration</targetReference>
+            </connector>
+            <label>Accounts Match</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Do_Lead_IDs_Match</name>
+        <label>Do Lead IDs Match?</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>Update_Registration_s_Lead</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Update Registration</defaultConnectorLabel>
+        <rules>
+            <name>Leads_Match</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Lead__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Get_Registration_Staging.Lead__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Do_Account_IDs_Match</targetReference>
+            </connector>
+            <label>Leads Match</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Do_we_have_a_Registration</name>
+        <label>Do we have a Registration?</label>
+        <locationX>226</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>No Registration</defaultConnectorLabel>
+        <rules>
+            <name>Registration_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Registration_Staging</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Do_Lead_IDs_Match</targetReference>
+            </connector>
+            <label>Registration Exists</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Record-Triggered: Lead Staging is Updated {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Record-Triggered: Lead Staging is Updated</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Registration_Staging</name>
+        <label>Get Registration Staging</label>
+        <locationX>226</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Do_we_have_a_Registration</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Lead_Staging__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Registration_Staging__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Registration</name>
+        <label>Update Registration Staging</label>
+        <locationX>50</locationX>
+        <locationY>1139</locationY>
+        <inputReference>Get_Registration_Staging</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>100</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Registration_Staging</targetReference>
+        </connector>
+        <object>Lead_Staging_Record__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

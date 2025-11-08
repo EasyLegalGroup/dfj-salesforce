@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Link_to_Flow__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&quot;https://dfj.lightning.force.com/lightning/r/&quot; &amp; Flow_ID__c &amp; &quot;/view&quot;, &quot;Link to Flow&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Link to Flow</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

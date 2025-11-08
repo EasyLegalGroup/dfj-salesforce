@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rating__c</fullName>
+    <externalId>false</externalId>
+    <label>Rating</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Ring igen</fullName>
+                <default>false</default>
+                <label>Ring igen</label>
+            </value>
+            <value>
+                <fullName>Booked at Lecture</fullName>
+                <default>false</default>
+                <label>Booked at Lecture</label>
+            </value>
+            <value>
+                <fullName>Fællesmøde</fullName>
+                <default>false</default>
+                <label>Fællesmøde</label>
+            </value>
+            <value>
+                <fullName>Ja/Nej</fullName>
+                <default>false</default>
+                <label>Ja/Nej</label>
+            </value>
+            <value>
+                <fullName>Webmøde</fullName>
+                <default>false</default>
+                <label>Webmøde</label>
+            </value>
+            <value>
+                <fullName>Singlemøde</fullName>
+                <default>false</default>
+                <label>Singlemøde</label>
+            </value>
+            <value>
+                <fullName>Udskudt møde</fullName>
+                <default>false</default>
+                <label>Udskudt møde</label>
+            </value>
+            <value>
+                <fullName>Fysisk Møde</fullName>
+                <default>false</default>
+                <label>Fysisk Møde</label>
+            </value>
+            <value>
+                <fullName>Intro givet</fullName>
+                <default>false</default>
+                <label>Intro givet</label>
+            </value>
+            <value>
+                <fullName>Internal Meeting Booking</fullName>
+                <default>false</default>
+                <label>Internal Meeting Booking</label>
+            </value>
+            <value>
+                <fullName>Tilbud sendt</fullName>
+                <default>false</default>
+                <label>Tilbud sendt</label>
+            </value>
+            <value>
+                <fullName>journal_udfyldt_afventer_betaling</fullName>
+                <default>false</default>
+                <label>journal_udfyldt_afventer_betaling</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

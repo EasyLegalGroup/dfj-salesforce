@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Time_Sheet_Correction_Company_Layout</fullName>
+    <fields>Date__c</fields>
+    <fields>Time_Sheet__c</fields>
+    <fields>Type__c</fields>
+    <fields>Deviation_in_Work_Hours__c</fields>
+    <fields>Work_Hour_Comparison__c</fields>
+    <fields>Work_Start__c</fields>
+    <fields>Work_End__c</fields>
+    <label>Time Sheet Correction Company Layout</label>
+</CompactLayout>

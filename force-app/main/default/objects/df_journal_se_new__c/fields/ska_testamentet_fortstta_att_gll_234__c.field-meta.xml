@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ska_testamentet_fortstta_att_gll_234__c</fullName>
+    <defaultValue>false</defaultValue>
+    <externalId>false</externalId>
+    <label>Ska testamentet fortsätta att gä 3a879</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,425 @@
+<template>
+    <template if:true={showToastMessage}>
+    <div class="slds-notify_container slds-is-relative">
+        <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+          <span class="slds-assistive-text">error</span>
+          <span class="slds-icon_container slds-icon-utility-error slds-m-right_x-small">
+            <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#error"></use>
+            </svg>
+          </span>
+          <div class="slds-notify__content">
+            <h2 class="slds-text-heading_small ">You cannot select “Notify Host via email, since there’s no Contact on Host or the Host's Contact's email is empty .</h2>
+          </div>
+          <div class="slds-notify__close">
+            <button class="slds-button slds-button_icon slds-button_icon-inverse" title="Close">
+              <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+              </svg>
+              <span class="slds-assistive-text">Close</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      </template>
+<template if:true={cancelConfirmationModal}>
+<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+    <div class="slds-modal__container">
+        <!-- Modal/Popup Box LWC header here -->
+        <header class="slds-modal__header">
+            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                <lightning-icon icon-name="utility:close"
+                    alternative-text="close"
+                    variant="inverse"
+                    size="small" ></lightning-icon>
+                <span class="slds-assistive-text">Close</span>
+            </button>
+            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Confirmation</h2>
+        </header>
+        <!-- Modal/Popup Box LWC body starts here -->
+        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1" style="
+        height: 350px;">
+            <!--p>Are you sure that you want to cancel this event?
+            </p-->
+            <!-- DFJ-176 Changes -->
+            <lightning-checkbox-group name="Checkbox Group"
+                        label="Are you sure that you want to cancel this event?"
+                        options={options}
+                        value={notifyUsers}
+                        onchange={handleCheckboxGroupChange}
+                        disabled={disableCheckBoxGroup}
+                        >
+            </lightning-checkbox-group>
+            <lightning-input type="checkbox" label={notifyNone} value="notifyNone" checked={isCheckedNotifyNone} onchange={handleCheckboxChange} disabled={disableNoneCheckBox}></lightning-input>
+
+            <!-- <p> notifyUsers: {notifyUsers}</p> -->
+            <!-- End -->
+        <!-- Changes DFJ-159 Starts -->
+        <template if:true={reasonForCancellationInput}>
+            <lightning-combobox
+                name="reasonForCancellationInput"
+                label="Reason For Cancellation Input"
+                placeholder="Choose Reason"
+                value={inputValue}
+                onchange={handleCancelReasonSelected}
+                options={cancellationInputOptions}
+                required>
+            </lightning-combobox>
+        </template>
+<!-- DFJ-176 Changes -->
+        <template if:true={selectFromPicklist}>
+            <lightning-combobox
+                name="reason"
+                label="Reason For Cancellation"
+                placeholder="Choose Reason"
+                value={selectedReason}
+                onchange={handleReasonSelected}
+                options={reasonForCancelletionOptions}
+                required>
+            </lightning-combobox>
+        </template>
+        <template if:true={writeTextCheckbox}>
+            <div class="slds-p-around_medium lgc-bg">
+                <lightning-input type="text" label="Enter text" placeholder="type here..." onchange={handleTextInput} required></lightning-input>
+            </div>
+        </template>
+<!-- End -->
+        </div>
+        
+        <!--End -->
+        <!-- Modal/Popup Box LWC footer starts here -->
+        <footer class="slds-modal__footer">
+            <button class="slds-button slds-button_neutral" onclick={closeModal} title="Cancel">No</button>
+            <button class="slds-button slds-button_brand" onclick={handleCancelEvent} title="OK" disabled={disableButtons}>Yes</button>
+        </footer>
+    </div>
+</section>
+<div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+
+
+
+
+<template if:true={rescheduleConfirmationModal}>
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <!-- Modal/Popup Box LWC header here -->
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                    <lightning-icon icon-name="utility:close"
+                        alternative-text="close"
+                        variant="inverse"
+                        size="small" ></lightning-icon>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+                <h2 id="modal-heading-05" class="slds-text-heading_medium slds-hyphenate">Are you sure that you want to reschedule this event?</h2>
+            </header>
+            <!-- Modal/Popup Box LWC body starts here -->
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-5">
+                <!-- <p>
+                </p> -->
+                <div>
+                    <lightning-input type="date" name="input1" label="Enter event start date" onchange={handleDate} ></lightning-input>
+                    <lightning-input type="time" name="input2" label="Enter event start time" onchange={handleTime} ></lightning-input>
+
+                </div>
+            <!-- DFJ-176 Changes -->
+            <lightning-checkbox-group name="Checkbox Group"
+                label="Are you sure that you want to cancel this event?"
+                options={options}
+                value={notifyUsers}
+                onchange={handleCheckboxGroupChange}
+                disabled={disableCheckBoxGroup}
+                >
+            </lightning-checkbox-group>
+            <lightning-input type="checkbox" label={notifyNone} value="notifyNone" checked={isCheckedNotifyNone} onchange={handleCheckboxChange} disabled={disableNoneCheckBox} ></lightning-input>
+            <template if:true={reasonForCancellationInput}>
+            <lightning-combobox
+                name="reasonForCancellationInput"
+                label="Reason For Rescheduling Input"
+                placeholder="Choose Reason"
+                value={inputValue}
+                onchange={handleCancelReasonSelected}
+                options={cancellationInputOptions}
+                required>
+            </lightning-combobox>
+            </template>
+            <template if:true={selectFromPicklist}>
+                <lightning-combobox
+                    name="reason"
+                    label="Reason For Rescheduling"
+                    placeholder="Choose Reason"
+                    value={selectedReason}
+                    onchange={handleReasonSelected}
+                    options={reasonForCancelletionOptions}
+                    required>
+                </lightning-combobox>
+            </template>
+            <template if:true={writeTextCheckbox}>
+                <div class="slds-p-around_medium lgc-bg">
+                    <lightning-input type="text" label="Enter text" placeholder="type here..." onchange={handleTextInput} required></lightning-input>
+                </div>
+            </template>
+            <!-- End -->
+
+            </div>
+            <!-- Modal/Popup Box LWC footer starts here -->
+            <footer class="slds-modal__footer">
+                <button class="slds-button slds-button_neutral" onclick={closeModal} title="Cancel">No</button>
+                <button class="slds-button slds-button_brand" onclick={handleDateTime} title="OK"  disabled={disableButtons}>Yes</button>
+            </footer>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+
+<template if:true={changeLocationModal}>
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-2"  class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <!-- modal header start -->
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                    <lightning-icon icon-name="utility:close"
+                    alternative-text="close"
+                    variant="inverse"
+                    size="small" ></lightning-icon>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+                <h2 id="modal-heading-04" class="slds-text-heading_medium slds-hyphenate">Select a new Host</h2>
+            </header>
+        
+            <!-- modal body start -->
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2" style="
+            height: 350px;">
+            <div class="slds-card slds-p-around_medium">
+                <div class="slds-form-element">
+                    <div class="slds-form-element__control">
+                        <lightning-input label="Select" type="search" required="true"
+                            onchange={search} value={selectedValue}>
+                        </lightning-input>
+                        <div if:true={searchResults} class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid"
+                            role="listbox">
+                            <lightning-button variant="bare" label="Create New Host" title="Create New Host"
+                            onclick={handleCreateNewHost} icon-name="utility:add"
+                            class="slds-p-around_xxx-small">
+                        </lightning-button>
+                            <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                                <template for:each={searchResults} for:item="searchResult">
+                                    <li key={searchResult.value} data-value={searchResult.value} role="presentation"
+                                        onclick={selectSearchResult} class="slds-listbox__item">
+                                        <div class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small "
+                                            role="option">
+                                            <span class="slds-media__body">
+                                                <span class="slds-truncate" title={searchResult.label}>
+                                                    {searchResult.label}
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </li>
+                                </template>
+                            </ul>
+                        </div>
+        
+                    </div>
+                </div>
+            </div>
+            </div>
+    
+            <!-- modal footer start-->
+            <footer class="slds-modal__footer">
+            <lightning-button variant="brand" onclick={handleIsUpdateHostModal} label="Update Location"></lightning-button>
+            <!-- <button class="slds-button slds-button_neutral" onclick={closeModal} >Cancel</button> -->
+            <lightning-button variant="neutral"  onclick={closeModal} label="Cancel " class="addSpaceInFooter"></lightning-button>
+
+            
+            </footer>
+        
+        </div>
+
+        </section>
+
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+
+
+<template if:true={isUpdateHostModal}>
+
+
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-4" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <!-- modal header start -->
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                    <lightning-icon icon-name="utility:close"
+                    alternative-text="close"
+                    variant="inverse"
+                    size="small" ></lightning-icon>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+            </header>
+        
+            <!-- modal body start -->
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-4">
+            <p> {displayMessage}</p>
+            </div>
+    
+            <!-- modal footer start-->
+            <footer class="slds-modal__footer">
+            <lightning-button variant="brand" onclick={handleUpdateLocation} label={buttonLabelOnDisplayMessage}  ></lightning-button>
+            <!-- <button class="slds-button slds-button_neutral" onclick={closeModal} >Cancel</button> -->
+            <lightning-button variant="neutral"  onclick={closeModal} label="Cancel " class="addSpaceInFooter"></lightning-button>
+
+            
+            </footer>
+        
+        </div>
+        <lightning-button label="Create New Host" onclick={handleNewHost}></lightning-button>
+
+        </section>
+
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+
+<template if:true={isNotifyHostChangeModal}>
+
+
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-4" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <!-- modal header start -->
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                    <lightning-icon icon-name="utility:close"
+                    alternative-text="close"
+                    variant="inverse"
+                    size="small" ></lightning-icon>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+            </header>
+        
+            <!-- modal body start -->
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-10">
+            <!-- <p> Notify Users</p> -->
+            <!-- DFJ-176 Changes -->
+            <lightning-checkbox-group name="Checkbox Group"
+                label="Notify Users"
+                options={options}
+                value={notifyUsers}
+                onchange={handleCheckboxGroupChange}
+                disabled={disableCheckBoxGroup}
+                >
+            </lightning-checkbox-group>
+            <lightning-input type="checkbox" label={notifyNone} value="notifyNone" checked={isCheckedNotifyNone} onchange={handleCheckboxChange} disabled={disableNoneCheckBox} ></lightning-input>
+            <template if:true={reasonForCancellationInput}>
+            <lightning-combobox
+                name="reasonForCancellationInput"
+                label="Reason For Location Change Input"
+                placeholder="Choose Reason"
+                value={inputValue}
+                onchange={handleCancelReasonSelected}
+                options={cancellationInputOptions}
+                required>
+            </lightning-combobox>
+            </template>
+            <template if:true={selectFromPicklist}>
+                <lightning-combobox
+                    name="reason"
+                    label="Reason For Location Change"
+                    placeholder="Choose Reason"
+                    value={selectedReason}
+                    onchange={handleReasonSelected}
+                    options={reasonForCancelletionOptions}
+                    required>
+                </lightning-combobox>
+            </template>
+            <template if:true={writeTextCheckbox}>
+                <div class="slds-p-around_medium lgc-bg">
+                    <lightning-input type="text" label="Enter text" placeholder="type here..." onchange={handleTextInput} required></lightning-input>
+                </div>
+            </template>
+            <!-- End -->
+            </div>
+    
+            <!-- modal footer start-->
+            <footer class="slds-modal__footer">
+            <lightning-button variant="brand" onclick={handleisNotifyHostChangeModal} label="Update Location" disabled={disableButtons}></lightning-button>
+            <!-- <button class="slds-button slds-button_neutral" onclick={closeModal} >Cancel</button> -->
+            <lightning-button variant="neutral"  onclick={closeModal} label="Cancel " class="addSpaceInFooter"></lightning-button>
+
+            
+            </footer>
+        
+        </div>
+        <lightning-button label="Create New Host" onclick={handleNewHost}></lightning-button>
+
+        </section>
+
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+
+
+
+
+
+
+
+
+<template if:true={handleNewHostModal}>
+
+<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+<div class="slds-modal__container">
+    <!-- modal header start -->
+    <header class="slds-modal__header">
+        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+            <lightning-icon icon-name="utility:close"
+            alternative-text="close"
+            variant="inverse"
+            size="small" ></lightning-icon>
+            <span class="slds-assistive-text">Close</span>
+        </button>
+        <h2 id="modal-heading-02" class="slds-text-heading_medium slds-hyphenate">Create New Host</h2>
+    </header>
+
+    <!-- modal body start -->
+    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-3">
+    <lightning-record-edit-form
+    object-api-name={objectApiName}
+    onsuccess={handleSuccess}
+    onerror={handleError}>
+    
+        <lightning-input-field required="true" field-name={nameField}></lightning-input-field>
+        <lightning-input-field field-name={emailField}></lightning-input-field>
+        <lightning-input-field field-name={phoneField}></lightning-input-field>
+        <lightning-input-field field-name={websiteField}></lightning-input-field>
+        <lightning-input-field field-name={addressField}></lightning-input-field>
+        <lightning-input-field field-name={cityField}></lightning-input-field>
+        <lightning-input-field field-name={zipCodeField}></lightning-input-field>
+        <!-- DFJ-176 Changes Make field required -->
+        <lightning-input-field required="true" field-name={countryField}></lightning-input-field>
+        <lightning-input-field field-name={capacityField}></lightning-input-field>
+        <lightning-input-field field-name={standardVenueCostField}></lightning-input-field>
+        <lightning-input-field field-name={standardPriceCoverField}></lightning-input-field>
+        <!--DFJ-176 Changes -->
+        <lightning-input-field required="true" field-name={defaultInvoicingAgreementField}></lightning-input-field>
+        
+    
+    <div class="slds-m-top_small">
+    <lightning-button variant="brand" type="submit" label="Create Record"></lightning-button>
+        <button class="slds-button slds-button_neutral" onclick={handleOpenNewHostModal}  >Cancel</button>
+    </div> 
+</lightning-record-edit-form>
+    </div>
+
+    <!-- modal footer start-->
+    <footer class="slds-modal__footer">
+    
+    </footer>
+
+</div>
+</section>
+<div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+<!-- modal end -->
+
+
+</template>

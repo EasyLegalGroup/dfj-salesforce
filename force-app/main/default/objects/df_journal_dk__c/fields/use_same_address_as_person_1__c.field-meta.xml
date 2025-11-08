@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>use_same_address_as_person_1__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Hvis begge parter dele adresse</description>
+    <externalId>false</externalId>
+    <label>Benyt samme adresse som person 1</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

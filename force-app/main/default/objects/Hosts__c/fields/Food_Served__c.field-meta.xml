@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Food_Served__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>IMPORTANT: Whatever you write in this field, appears in the Event Name by default (You can manually remove it). Only use this field, if it is explicitily agreed that it should be a part of the Event Name. Write in brackets as (Food)</inlineHelpText>
+    <label>Food Served</label>
+    <length>100</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlg_vrge_ss_brnetestamente__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Vælg værge</label>
+    <referenceTo>df_160_person__c</referenceTo>
+    <relationshipLabel>vlg_vrge_ss_brnetestamente</relationshipLabel>
+    <relationshipName>vlg_vrge_ss_brnetestamente</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

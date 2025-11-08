@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlj_arvsfrdelning_efter_frst_avl_237__c</fullName>
+    <externalId>false</externalId>
+    <label>Välj arvsfördelning efter först  ab8e8</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>procentfrdelning_lngst</fullName>
+                <default>false</default>
+                <label>Procentfördelning</label>
+            </value>
+            <value>
+                <fullName>mest_muligt_ska_tillfalla_lngst_levande_frst_avliden</fullName>
+                <default>false</default>
+                <label>Mest muligt ska tillfalla längst levande</label>
+            </value>
+            <value>
+                <fullName>mest_muligt_ska_tillfalla_barn</fullName>
+                <default>false</default>
+                <label>Mest muligt ska tillfalla barn</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

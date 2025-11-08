@@ -1,0 +1,473 @@
+<!-- IT Support Center -->
+<template>
+    <div class="it-support-center">
+        <!-- Loading Spinner -->
+        <template if:true={isLoading}>
+            <div class="slds-spinner_container">
+                <div class="slds-spinner slds-spinner_medium slds-spinner_brand" role="status">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </div>
+        </template>
+
+        <div class="slds-card">
+            <!-- Header -->
+            <div class="slds-card__header">
+                <header class="slds-media slds-media_center">
+                    <div class="slds-media__figure">
+                        <lightning-icon icon-name="standard:case" alternative-text="IT Support" title="IT Support"></lightning-icon>
+                    </div>
+                    <div class="slds-media__body">
+                        <h2 class="slds-card__header-title">
+                            <span class="slds-text-heading_medium">IT Support Center</span>
+                        </h2>
+                        <template if:true={currentUserInfo}>
+                            <div class="slds-text-body_small slds-m-top_xx-small">Welcome, {currentUserInfo.Name}!</div>
+                        </template>
+                    </div>
+                    <div class="slds-no-flex">
+                        <lightning-button-icon 
+                            icon-name="utility:refresh" 
+                            variant="border-filled" 
+                            alternative-text="Refresh" 
+                            title="Refresh"
+                            class="slds-m-left_xx-small"
+                            onclick={refreshData}>
+                        </lightning-button-icon>
+                    </div>
+                </header>
+            </div>
+
+            <!-- Navigation -->
+            <div class="slds-tabs_scoped">
+                <ul class="slds-tabs_scoped__nav" role="tablist">
+                    <li class="slds-tabs_scoped__item" role="presentation">
+                        <button class={newTicketTabClass} role="tab" onclick={handleNewTicketTabClick}>New Ticket</button>
+                    </li>
+                    <li class="slds-tabs_scoped__item" role="presentation">
+                        <button class={myTicketsTabClass} role="tab" onclick={handleMyTicketsTabClick}>{myTicketsLabel}</button>
+                    </li>
+                </ul>
+
+                <!-- Main Content Area -->
+                <div class="slds-tabs_scoped__content">
+                    <!-- New Ticket Form -->
+                    <template if:true={isNewTicketView}>
+                        <div class="slds-p-around_medium">
+                            <lightning-input 
+                                label="Subject" 
+                                value={newCase.Subject}
+                                data-field="Subject"
+                                onchange={handleInputChange}
+                                required>
+                            </lightning-input>
+                            
+                            <!-- Knowledge Search Results -->
+                            <template if:true={showKnowledgeResults}>
+                                <div class="knowledge-search-container slds-m-top_small">
+                                    <div class="slds-box slds-theme_shade slds-m-bottom_small">
+                                        <div class="slds-media slds-media_center slds-m-bottom_x-small">
+                                            <div class="slds-media__figure">
+                                                <lightning-icon icon-name="standard:knowledge" size="small" alternative-text="Knowledge" title="Knowledge Articles"></lightning-icon>
+                                            </div>
+                                            <div class="slds-media__body">
+                                                <h3 class="slds-text-heading_x-small">
+                                                    <template if:true={isKnowledgeSearching}>
+                                                        Searching knowledge base...
+                                                    </template>
+                                                    <template if:false={isKnowledgeSearching}>
+                                                        {knowledgeResultsLabel}
+                                                    </template>
+                                                </h3>
+                                            </div>
+                                            <div class="slds-no-flex">
+                                                <lightning-button-icon 
+                                                    icon-name="utility:close" 
+                                                    variant="bare" 
+                                                    alternative-text="Close" 
+                                                    title="Close search results"
+                                                    onclick={hideKnowledgeResults}>
+                                                </lightning-button-icon>
+                                            </div>
+                                        </div>
+                                        
+                                        <template if:true={isKnowledgeSearching}>
+                                            <div class="slds-text-align_center slds-p-vertical_small">
+                                                <lightning-spinner alternative-text="Searching" size="small"></lightning-spinner>
+                                            </div>
+                                        </template>
+                                        
+                                        <template if:true={hasKnowledgeResults}>
+                                            <div class="knowledge-results-list">
+                                                <template for:each={knowledgeSearchResults} for:item="article">
+                                                    <div key={article.id} class="knowledge-result-item" data-articleid={article.id} onclick={handleKnowledgeArticleClick}>
+                                                        <div class="slds-media">
+                                                            <div class="slds-media__figure">
+                                                                <lightning-icon icon-name="utility:knowledge_base" size="x-small" alternative-text="Article"></lightning-icon>
+                                                            </div>
+                                                            <div class="slds-media__body">
+                                                                <h4 class="slds-text-heading_x-small slds-truncate knowledge-article-title">{article.title}</h4>
+                                                                <p class="slds-text-body_small slds-text-color_weak knowledge-article-preview">{article.summary}</p>
+                                                                <template if:false={article.summary}>
+                                                                    <p class="slds-text-body_small slds-text-color_weak knowledge-article-preview">{article.answer}</p>
+                                                                </template>
+                                                                <div class="slds-text-body_x-small slds-text-color_weak slds-m-top_xx-small">
+                                                                    <span class="knowledge-article-type">{article.recordTypeName}</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </template>
+                                        
+                                        <template if:false={hasKnowledgeResults}>
+                                            <template if:false={isKnowledgeSearching}>
+                                                <div class="slds-text-align_center slds-text-color_weak slds-p-vertical_small">
+                                                    No knowledge articles found for your search.
+                                                </div>
+                                            </template>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                            
+                            <lightning-input-rich-text 
+                                label="Description" 
+                                value={newCase.Description}
+                                data-field="Description"
+                                onchange={handleInputChange}
+                                placeholder="Describe your issue..."
+                                formats={richTextFormats}
+                                enable-mentions="true"
+                                disable-link-preview="false"
+                                required>
+                            </lightning-input-rich-text>
+                            
+                            <!-- File Upload for Case Creation -->
+                            <div class="slds-m-top_medium">
+                                <lightning-file-upload
+                                    label="Attach Files"
+                                    name="caseFileUploader"
+                                    accept={acceptedFileFormats}
+                                    record-id={recordId}
+                                    onuploadfinished={handleCaseFileUploadFinished}
+                                    multiple="true">
+                                </lightning-file-upload>
+                                <!-- Display uploaded files before submission -->
+                                <template if:true={hasCaseUploadedFiles}>
+                                    <div class="slds-m-top_xx-small">
+                                        <template for:each={caseUploadedFileIds} for:item="cfile" for:index="cIndex">
+                                            <div key={cfile.documentId} class="slds-pill_container slds-m-bottom_xx-small">
+                                                <span class="slds-pill" title={cfile.name} style="padding:0 .5rem;">
+                                                    <lightning-icon icon-name="utility:file" size="xx-small" class="slds-m-right_xx-small"></lightning-icon>
+                                                    <span class="slds-pill__label">{cfile.name}</span>
+                                                    <lightning-button-icon icon-name="utility:close" variant="bare" alternative-text="Remove" data-index={cIndex} onclick={handleRemoveCaseUploadedFile}></lightning-button-icon>
+                                                </span>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </template>
+                                <div class="slds-text-body_small slds-text-color_weak slds-m-top_xx-small">
+                                    Supported formats: Images (JPG, PNG, GIF), Documents (PDF, DOC, DOCX, TXT, XLS, XLSX)
+                                </div>
+                            </div>
+                            
+                            <lightning-combobox
+                                label="Category"
+                                value={newCase.Category__c}
+                                data-field="Category__c"
+                                options={categoryOptions}
+                                onchange={handleInputChange}
+                                required>
+                            </lightning-combobox>
+                            
+                            <lightning-combobox
+                                label="Severity"
+                                value={newCase.Severity__c}
+                                data-field="Severity__c"
+                                options={severityOptions}
+                                onchange={handleInputChange}
+                                required>
+                            </lightning-combobox>
+
+                            <!-- Notification Preferences -->
+                            <div class="slds-form-element slds-m-top_medium">
+                                <div class="slds-form-element__label">
+                                    <span class="slds-required">*</span> Notification Preference
+                                </div>
+                                <div class="slds-form-element__control">
+                                    <lightning-radio-group
+                                        variant="standard"
+                                        name="notificationPreference"
+                                        options={notificationOptions}
+                                        value={selectedNotificationPreference}
+                                        onchange={handleNotificationChange}>
+                                    </lightning-radio-group>
+                                </div>
+                            </div>
+                            
+                            <div class="slds-m-top_medium">
+                                <lightning-button 
+                                    label="Submit" 
+                                    variant="brand"
+                                    onclick={handleSubmit}
+                                    disabled={isSubmitDisabled}>
+                                </lightning-button>
+                            </div>
+                        </div>
+                    </template>
+
+                    <!-- My Tickets View -->
+                    <template if:true={isMyTicketsView}>
+                        <div class="slds-p-around_medium">
+                            <div class="slds-button-group slds-m-bottom_medium" role="group">
+                                <lightning-button-group>
+                                    <lightning-button 
+                                        label={awaitingReplyLabel}
+                                        variant={awaitingReplyVariant}
+                                        onclick={handleAwaitingReplyClick}
+                                        icon-name="utility:clock">
+                                    </lightning-button>
+                                    <lightning-button 
+                                        label={openCasesLabel}
+                                        variant={openCasesVariant}
+                                        onclick={handleOpenCasesClick}
+                                        icon-name="utility:case">
+                                    </lightning-button>
+                                    <lightning-button 
+                                        label={closedCasesLabel}
+                                        variant={closedCasesVariant}
+                                        onclick={handleClosedCasesClick}
+                                        icon-name="utility:check">
+                                    </lightning-button>
+                                </lightning-button-group>
+                            </div>
+
+                            <!-- Unified Case List Display -->
+                            <template for:each={currentCaseListToDisplay} for:item="ticket">
+                                <div key={ticket.Id} class="case-item">
+                                    <div class="case-item-header">
+                                        <div class="case-title">{ticket.Subject}</div>
+                                        <div class={ticket.statusClass}>{ticket.Status}</div>
+                                    </div>
+                                    <div class="case-item-body">
+                                        <dl class="case-details">
+                                            <dt>Category:</dt>
+                                            <dd>{ticket.Category__c}</dd>
+                                            <dt>Severity:</dt>
+                                            <dd class="severity-text">{ticket.Severity__c}</dd>
+                                        </dl>
+                                        <div class="case-actions">
+                                            <lightning-button 
+                                                label="View Details"
+                                                variant="brand"
+                                                data-case-id={ticket.Id}
+                                                onclick={handleViewCase}>
+                                            </lightning-button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                            <template if:false={currentCaseListToDisplay.length}>
+                                <div class="slds-text-align_center slds-text-color_weak slds-p-vertical_large">
+                                    {noCasesMessage}
+                                </div>
+                            </template>
+                        </div>
+                    </template>
+
+                    <!-- Case Detail View -->
+                    <template if:true={isCaseDetailView}>
+                        <div class="slds-grid slds-gutters slds-p-around_medium">
+                            <div class="slds-col slds-size_1-of-1">
+                                <div class="slds-grid slds-gutters slds-m-bottom_medium">
+                                    <div class="slds-col">
+                                        <lightning-button 
+                                            label="Back to Cases"
+                                            onclick={handleBackToTickets}
+                                            icon-name="utility:back">
+                                        </lightning-button>
+                                    </div>
+                                    <div class="slds-col slds-no-flex">
+                                        <!-- Mark as Solved Button -->
+                                        <template if:true={showMarkAsSolvedButton}>
+                                            <lightning-button 
+                                                label="Mark as Solved"
+                                                variant="success"
+                                                onclick={handleMarkAsSolved}
+                                                disabled={isMarkAsSolvedDisabled}
+                                                icon-name="utility:check">
+                                            </lightning-button>
+                                        </template>
+                                    </div>
+                                </div>
+
+                                <template if:true={selectedCase}>
+                                    <article class="slds-card">
+                                        <div class="slds-card__header slds-p-around_large">
+                                            <div class="slds-grid slds-grid_align-spread slds-wrap">
+                                                <div class="slds-col slds-size_1-of-1 slds-m-bottom_medium">
+                                                    <h2 class="slds-text-heading_large slds-text-color_default">
+                                                        {selectedCase.Subject}
+                                                    </h2>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Enhanced Case Details Grid -->
+                                            <div class="slds-grid slds-gutters slds-wrap">
+                                                <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4">
+                                                    <div class="slds-form-element">
+                                                        <label class="slds-form-element__label slds-text-body_small slds-text-color_weak">Status</label>
+                                                        <div class="slds-form-element__control">
+                                                            <lightning-badge label={selectedCase.Status} variant="inverse"></lightning-badge>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4">
+                                                    <div class="slds-form-element">
+                                                        <label class="slds-form-element__label slds-text-body_small slds-text-color_weak">Category</label>
+                                                        <div class="slds-form-element__control">
+                                                            <span class="slds-text-body_regular slds-text-color_default">{selectedCase.Category__c}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4">
+                                                    <div class="slds-form-element">
+                                                        <label class="slds-form-element__label slds-text-body_small slds-text-color_weak">Severity</label>
+                                                        <div class="slds-form-element__control">
+                                                            <span class="slds-text-body_regular slds-text-color_default">{selectedCase.Severity__c}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4">
+                                                    <div class="slds-form-element">
+                                                        <label class="slds-form-element__label slds-text-body_small slds-text-color_weak">
+                                                            <template if:true={showClosedDate}>Date Closed</template>
+                                                            <template if:false={showClosedDate}>Date Created</template>
+                                                        </label>
+                                                        <div class="slds-form-element__control">
+                                                            <span class="slds-text-body_regular slds-text-color_default">
+                                                                <template if:true={showClosedDate}>{formattedClosedDate}</template>
+                                                                <template if:false={showClosedDate}>{formattedCreatedDate}</template>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="slds-card__body slds-card__body_inner">
+                                            <!-- Case Discussion Section -->
+                                            <template if:true={shouldShowUnifiedChatForCase}>
+                                                <article class="slds-card slds-m-top_medium chat-section-expanded">
+                                                    <div class="slds-card__header slds-p-around_medium">
+                                                        <div class="slds-media slds-media_center">
+                                                            <div class="slds-media__figure">
+                                                                <lightning-icon icon-name="utility:comments" size="small" alternative-text="Discussion"></lightning-icon>
+                                                            </div>
+                                                            <div class="slds-media__body">
+                                                                <h2 class="slds-text-heading_small slds-text-color_default">Case Discussion</h2>
+                                                                <p class="slds-text-body_small slds-text-color_weak">Add comments, updates, or ask questions about this case</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slds-card__body chat-container">
+                                                        <c-unified-chat 
+                                                            record-id={selectedCaseId}
+                                                            height={chatHeight}
+                                                            max-width="100%"
+                                                            enable-real-time="true"
+                                                            show-support-buttons="false"
+                                                            placeholder="Add a comment or question about this case..."
+                                                            empty-state-title="No comments yet"
+                                                            empty-state-message="Start the discussion by adding your first comment or question."
+                                                            onmessagesent={handleUnifiedChatMessageSent}>
+                                                        </c-unified-chat>
+                                                    </div>
+                                                </article>
+                                            </template>
+                                        </div>
+                                    </article>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Knowledge Article Detail Modal -->
+        <template if:true={showKnowledgeDetail}>
+            <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" 
+                                title="Close" onclick={handleCloseKnowledgeDetail}>
+                            <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 class="slds-text-heading_medium slds-hyphenate">
+                            <lightning-icon icon-name="standard:knowledge" class="slds-m-right_x-small"></lightning-icon>
+                            Knowledge Article
+                        </h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <template if:true={selectedKnowledgeArticle}>
+                            <article class="slds-card">
+                                <div class="slds-card__header">
+                                    <h3 class="slds-text-heading_small">{selectedKnowledgeArticle.title}</h3>
+                                    <div class="slds-text-body_small slds-text-color_weak slds-m-top_x-small">
+                                        <span class="slds-badge slds-theme_default">{selectedKnowledgeArticle.recordTypeName}</span>
+                                        <lightning-formatted-date-time 
+                                            value={selectedKnowledgeArticle.lastModified}
+                                            year="numeric"
+                                            month="short"
+                                            day="2-digit"
+                                            class="slds-m-left_small">
+                                        </lightning-formatted-date-time>
+                                    </div>
+                                </div>
+                                <div class="slds-card__body slds-card__body_inner">
+                                    <template if:true={selectedKnowledgeArticle.summary}>
+                                        <div class="slds-m-bottom_medium">
+                                            <h4 class="slds-text-heading_x-small slds-m-bottom_x-small">Summary</h4>
+                                            <div class="knowledge-summary-content">
+                                                <p>{selectedKnowledgeArticle.summary}</p>
+                                            </div>
+                                        </div>
+                                    </template>
+                                    
+                                    <template if:true={selectedKnowledgeArticle.answer}>
+                                        <div class="slds-m-bottom_medium">
+                                            <h4 class="slds-text-heading_x-small slds-m-bottom_x-small">Answer</h4>
+                                            <div class="knowledge-answer-content" lwc:dom="manual"></div>
+                                        </div>
+                                    </template>
+                                </div>
+                            </article>
+                        </template>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <lightning-button 
+                            variant="neutral" 
+                            label="Close" 
+                            title="Close dialog"
+                            onclick={handleCloseKnowledgeDetail}>
+                        </lightning-button>
+                        <lightning-button 
+                            variant="brand" 
+                            label="Open in New Tab" 
+                            title="Open this article in a new tab"
+                            onclick={handleOpenInNewTab}
+                            class="slds-m-left_x-small">
+                        </lightning-button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+    </div>
+</template>

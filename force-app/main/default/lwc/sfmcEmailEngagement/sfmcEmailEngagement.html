@@ -1,0 +1,52 @@
+<!-- SFMC Email Engagement Visualizer -->
+<template>
+    <div class="slds-card">
+        <div class="slds-card__header">
+            <h2 class="slds-card__header-title">Email Engagement Metrics</h2>
+            <div class="slds-text-body_small slds-text-color_weak">Testing with ID: {testRecordId}</div>
+        </div>
+        <div class="slds-card__body">
+            <template if:true={isLoading}>
+                <div class="slds-p-around_medium">
+                    <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                </div>
+            </template>
+            <template if:false={isLoading}>
+                <template if:true={error}>
+                    <div class="slds-p-around_medium slds-text-align_center">
+                        <div class="slds-text-color_error">{error}</div>
+                    </div>
+                </template>
+                <template if:false={error}>
+                    <template if:true={hasData}>
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col">
+                                <div class="metric-box">
+                                    <div class="metric-label">Sent</div>
+                                    <div class="metric-value">{sentCount}</div>
+                                </div>
+                            </div>
+                            <div class="slds-col">
+                                <div class="metric-box">
+                                    <div class="metric-label">Opened</div>
+                                    <div class="metric-value">{openCount}</div>
+                                </div>
+                            </div>
+                            <div class="slds-col">
+                                <div class="metric-box">
+                                    <div class="metric-label">Clicked</div>
+                                    <div class="metric-value">{clickCount}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                    <template if:false={hasData}>
+                        <div class="slds-p-around_medium slds-text-align_center">
+                            <div class="slds-text-color_weak">No Marketing Cloud activity found.</div>
+                        </div>
+                    </template>
+                </template>
+            </template>
+        </div>
+    </div>
+</template>

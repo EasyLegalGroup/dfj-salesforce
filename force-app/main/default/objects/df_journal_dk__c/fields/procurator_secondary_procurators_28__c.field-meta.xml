@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>procurator_secondary_procurators_28__c</fullName>
+    <description>Skal sekundære fuldmægtige stå i forening i eller prioriteret rækkefølge?</description>
+    <externalId>false</externalId>
+    <label>Skal sekundære fuldmægtige stå i 31099</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>procurator_in_association</fullName>
+                <default>false</default>
+                <label>Procurator In association</label>
+            </value>
+            <value>
+                <fullName>procurator_priority</fullName>
+                <default>false</default>
+                <label>Fuldmægtig prioritet</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Must_Have_Partial_Day_for_Abs_Hours</fullName>
+    <active>true</active>
+    <description>This rule states that a record cannot have Hours of Absence Registered, unless Attendance Status is set to Partial Day</description>
+    <errorConditionFormula>NOT(ISBLANK(Hours_of_Absence__c)) &amp;&amp; NOT(ISPICKVAL(Attendance_Status__c, &quot;Partial Day&quot;))</errorConditionFormula>
+    <errorDisplayField>Attendance_Status__c</errorDisplayField>
+    <errorMessage>You cannot add Hours of Absence, if Attendance Status is not set to Partial Day</errorMessage>
+</ValidationRule>

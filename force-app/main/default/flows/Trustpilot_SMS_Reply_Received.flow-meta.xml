@@ -1,0 +1,1153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Not_Understood_Response_DK</name>
+        <label>Not Understood Response (DK)</label>
+        <locationX>578</locationX>
+        <locationY>1571</locationY>
+        <actionName>TwilioSF__TwilioSendSMS</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>DK_Update_Journal_Not_Understood</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>fromNumber</name>
+            <value>
+                <stringValue>004581827570</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>message</name>
+            <value>
+                <elementReference>txtNot_Understood_Response_DK</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>toNumber</name>
+            <value>
+                <elementReference>$Record.TwilioSF__From_Number__c</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>TwilioSF__TwilioSendSMS</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Not_Understood_Response_SE</name>
+        <label>Not Understood Response (SE)</label>
+        <locationX>1370</locationX>
+        <locationY>1571</locationY>
+        <actionName>TwilioSF__TwilioSendSMS</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>SE_Update_Journal_Not_Understood</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>fromNumber</name>
+            <value>
+                <stringValue>0046766753111</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>message</name>
+            <value>
+                <elementReference>txtNot_Understood_Response_SE</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>toNumber</name>
+            <value>
+                <elementReference>$Record.TwilioSF__From_Number__c</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>TwilioSF__TwilioSendSMS</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Out_of_Flow_SMS_DK</name>
+        <label>Out of Flow SMS_DK</label>
+        <locationX>1898</locationX>
+        <locationY>863</locationY>
+        <actionName>TwilioSF__TwilioSendSMS</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>fromNumber</name>
+            <value>
+                <stringValue>004581827570</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>message</name>
+            <value>
+                <elementReference>txtOut_of_Flow_Response_DK</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>toNumber</name>
+            <value>
+                <elementReference>$Record.TwilioSF__From_Number__c</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>TwilioSF__TwilioSendSMS</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Out_of_Flow_SMS_SE</name>
+        <label>Out of Flow SMS_SE</label>
+        <locationX>2162</locationX>
+        <locationY>863</locationY>
+        <actionName>TwilioSF__TwilioSendSMS</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>fromNumber</name>
+            <value>
+                <stringValue>0046766753111</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>message</name>
+            <value>
+                <elementReference>txtOut_of_Flow_Response_SE</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>toNumber</name>
+            <value>
+                <elementReference>$Record.TwilioSF__From_Number__c</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>TwilioSF__TwilioSendSMS</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Satisfied_Response_DK</name>
+        <label>Satisfied Response (DK)</label>
+        <locationX>50</locationX>
+        <locationY>1571</locationY>
+        <actionName>TwilioSF__TwilioSendSMS</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>DK_Update_Journal_Satisfied</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>fromNumber</name>
+            <value>
+                <stringValue>004581827570</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>message</name>
+            <value>
+                <elementReference>txtSatisfied_Response_DK</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>toNumber</name>
+            <value>
+                <elementReference>$Record.TwilioSF__From_Number__c</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>TwilioSF__TwilioSendSMS</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Satisfied_Response_SE</name>
+        <label>Satisfied Response (SE)</label>
+        <locationX>842</locationX>
+        <locationY>1571</locationY>
+        <actionName>TwilioSF__TwilioSendSMS</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>SE_Update_Journal_Satisfied</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>fromNumber</name>
+            <value>
+                <stringValue>0046766753111</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>message</name>
+            <value>
+                <elementReference>txtSatisfied_Response_SE</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>toNumber</name>
+            <value>
+                <elementReference>$Record.TwilioSF__From_Number__c</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>TwilioSF__TwilioSendSMS</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Mathias_SMS_about_error</name>
+        <label>Send Mathias SMS about error</label>
+        <locationX>2690</locationX>
+        <locationY>431</locationY>
+        <actionName>TwilioSF__TwilioSendSMS</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>fromNumber</name>
+            <value>
+                <stringValue>004552511370</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>message</name>
+            <value>
+                <elementReference>txtSmsForMathias</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>toNumber</name>
+            <value>
+                <stringValue>004542455150</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>TwilioSF__TwilioSendSMS</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Unsatisfied_Response_DK</name>
+        <label>Unsatisfied Response (DK)</label>
+        <locationX>314</locationX>
+        <locationY>1571</locationY>
+        <actionName>TwilioSF__TwilioSendSMS</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>DK_Update_Journal_Unsatisfied</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>fromNumber</name>
+            <value>
+                <stringValue>004581827570</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>message</name>
+            <value>
+                <elementReference>txtUnsatisfied_Response_DK</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>toNumber</name>
+            <value>
+                <elementReference>$Record.TwilioSF__From_Number__c</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>TwilioSF__TwilioSendSMS</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Unsatisfied_Response_SE</name>
+        <label>Unsatisfied Response (SE)</label>
+        <locationX>1106</locationX>
+        <locationY>1571</locationY>
+        <actionName>TwilioSF__TwilioSendSMS</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>SE_Update_Journal_Unsatisfied</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>fromNumber</name>
+            <value>
+                <stringValue>0046766753111</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>message</name>
+            <value>
+                <elementReference>txtUnsatisfied_Response_SE</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>toNumber</name>
+            <value>
+                <elementReference>$Record.TwilioSF__From_Number__c</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>TwilioSF__TwilioSendSMS</nameSegment>
+    </actionCalls>
+    <apiVersion>58.0</apiVersion>
+    <assignments>
+        <name>Satisfied</name>
+        <label>Satisfied</label>
+        <locationX>842</locationX>
+        <locationY>863</locationY>
+        <assignmentItems>
+            <assignToReference>varSatisfied</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Does_the_message_contain_nej</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Unsatisfied</name>
+        <label>Unsatisfied</label>
+        <locationX>842</locationX>
+        <locationY>1163</locationY>
+        <assignmentItems>
+            <assignToReference>varUnsatisfied</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Which_Number_Received_the_Message</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Did_we_expect_a_Trustpilot_reply</name>
+        <label>Did we expect a Trustpilot reply?</label>
+        <locationX>1568</locationX>
+        <locationY>647</locationY>
+        <defaultConnector>
+            <targetReference>Which_Number_Received_the_Message_Out_of_Flow</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Trustpilot_Reply_was_Expected</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Journal.Trustpilot_Request_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Request sent</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Does_the_message_contain_ja</targetReference>
+            </connector>
+            <label>Yes, Trustpilot Reply was Expected</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Does_the_message_contain_ja</name>
+        <label>Does the message contain &quot;ja&quot;?</label>
+        <locationX>974</locationX>
+        <locationY>755</locationY>
+        <defaultConnector>
+            <targetReference>Does_the_message_contain_nej</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Message_contains_ja</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.TwilioSF__Body__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>ja</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.TwilioSF__Body__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>JA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.TwilioSF__Body__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Ja</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Satisfied</targetReference>
+            </connector>
+            <label>Message contains &quot;ja&quot;</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Does_the_message_contain_nej</name>
+        <label>Does the message contain &quot;nej&quot;?</label>
+        <locationX>974</locationX>
+        <locationY>1055</locationY>
+        <defaultConnector>
+            <targetReference>Which_Number_Received_the_Message</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Message_contains_nej</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.TwilioSF__Body__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>nej</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.TwilioSF__Body__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>NEJ</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.TwilioSF__Body__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Nej</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Unsatisfied</targetReference>
+            </connector>
+            <label>Message contains &quot;nej&quot;</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_there_a_Contact</name>
+        <label>Is there a Contact?</label>
+        <locationX>2129</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Send_Mathias_SMS_about_error</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_there_is_a_Contact</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.TwilioSF__Contact__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>GetContact</targetReference>
+            </connector>
+            <label>Yes, there is a Contact</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>What_was_the_result_DK</name>
+        <label>What was the result? (DK)</label>
+        <locationX>314</locationX>
+        <locationY>1463</locationY>
+        <defaultConnector>
+            <targetReference>Not_Understood_Response_DK</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Customer_satisfied_DK</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varSatisfied</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varUnsatisfied</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Satisfied_Response_DK</targetReference>
+            </connector>
+            <label>Customer satisfied (DK)</label>
+        </rules>
+        <rules>
+            <name>Customer_unsatisfied_DK</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varUnsatisfied</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varSatisfied</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Unsatisfied_Response_DK</targetReference>
+            </connector>
+            <label>Customer unsatisfied (DK)</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>What_was_the_result_SE</name>
+        <label>What was the result? (SE)</label>
+        <locationX>1106</locationX>
+        <locationY>1463</locationY>
+        <defaultConnector>
+            <targetReference>Not_Understood_Response_SE</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Customer_satisfied_SE</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varSatisfied</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varUnsatisfied</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Satisfied_Response_SE</targetReference>
+            </connector>
+            <label>Customer satisfied (SE)</label>
+        </rules>
+        <rules>
+            <name>Customer_unsatisfied_SE</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varUnsatisfied</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varSatisfied</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Unsatisfied_Response_SE</targetReference>
+            </connector>
+            <label>Customer unsatisfied (SE)</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Which_Number_Received_the_Message</name>
+        <label>Which Number Received the Message?</label>
+        <locationX>974</locationX>
+        <locationY>1355</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Denmark_45_81_82_75_70</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.TwilioSF__To_Number__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>+4581827570</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>What_was_the_result_DK</targetReference>
+            </connector>
+            <label>Denmark (+45 81 82 75 70)</label>
+        </rules>
+        <rules>
+            <name>Sweden_46_76_675_31_11</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.TwilioSF__To_Number__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>+46766753111</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>What_was_the_result_SE</targetReference>
+            </connector>
+            <label>Sweden (+46 76 675 31 11)</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Which_Number_Received_the_Message_Out_of_Flow</name>
+        <label>Which Number Received the Message? (Out of Flow)</label>
+        <locationX>2162</locationX>
+        <locationY>755</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Denmark_45_81_82_75_70_Out_of_Flow</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.TwilioSF__To_Number__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>+4581827570</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Out_of_Flow_SMS_DK</targetReference>
+            </connector>
+            <label>Denmark (+45 81 82 75 70 - Out of Flow)</label>
+        </rules>
+        <rules>
+            <name>Sweden_46_76_675_31_11_Out_of_Flow</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.TwilioSF__To_Number__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>+46766753111</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Out_of_Flow_SMS_SE</targetReference>
+            </connector>
+            <label>Sweden (+46 76 675 31 11 - Out of Flow)</label>
+        </rules>
+    </decisions>
+    <description>Changed &quot;Käre&quot; to &quot;Hej&quot; in all swedish templates.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>forBody_Max_255_char</name>
+        <dataType>String</dataType>
+        <expression>LEFT( {!$Record.TwilioSF__Body__c}, 255 )</expression>
+    </formulas>
+    <interviewLabel>Trustpilot: SMS Reply Received {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Trustpilot: SMS Reply Received</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Journal</name>
+        <label>Get Journal</label>
+        <locationX>1568</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Did_we_expect_a_Trustpilot_reply</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>GetContact.AccountId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Journal__c</object>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>GetContact</name>
+        <label>GetContact</label>
+        <locationX>1568</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Journal</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.TwilioSF__Contact__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>DK_Update_Journal_Not_Understood</name>
+        <label>DK: Update Journal (Not Understood)</label>
+        <locationX>578</locationX>
+        <locationY>1679</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Journal.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Trustpilot_Customer_Name__c</field>
+            <value>
+                <elementReference>Get_Journal.Account__r.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Trustpilot_Reply_Result__c</field>
+            <value>
+                <stringValue>Error</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Trustpilot_Response__c</field>
+            <value>
+                <elementReference>forBody_Max_255_char</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Journal__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>DK_Update_Journal_Satisfied</name>
+        <label>DK: Update Journal (Satisfied)</label>
+        <locationX>50</locationX>
+        <locationY>1679</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Journal.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Time_of_Trustpilot_Reply__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Trustpilot_Customer_Name__c</field>
+            <value>
+                <elementReference>Get_Journal.Account__r.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Trustpilot_Reply_Result__c</field>
+            <value>
+                <stringValue>Satisfied</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Trustpilot_Request_Status__c</field>
+            <value>
+                <stringValue>Reply received</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Trustpilot_Response__c</field>
+            <value>
+                <elementReference>forBody_Max_255_char</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Journal__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>DK_Update_Journal_Unsatisfied</name>
+        <label>DK: Update Journal (Unsatisfied)</label>
+        <locationX>314</locationX>
+        <locationY>1679</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Journal.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Time_of_Trustpilot_Reply__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Trustpilot_Customer_Name__c</field>
+            <value>
+                <elementReference>Get_Journal.Account__r.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Trustpilot_Reply_Result__c</field>
+            <value>
+                <stringValue>Unsatisfied</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Trustpilot_Request_Status__c</field>
+            <value>
+                <stringValue>Reply received</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Trustpilot_Response__c</field>
+            <value>
+                <elementReference>forBody_Max_255_char</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Journal__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>SE_Update_Journal_Not_Understood</name>
+        <label>SE: Update Journal (Not Understood)</label>
+        <locationX>1370</locationX>
+        <locationY>1679</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Journal.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Trustpilot_Customer_Name__c</field>
+            <value>
+                <elementReference>Get_Journal.Account__r.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Trustpilot_Reply_Result__c</field>
+            <value>
+                <stringValue>Error</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Trustpilot_Response__c</field>
+            <value>
+                <elementReference>forBody_Max_255_char</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Journal__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>SE_Update_Journal_Satisfied</name>
+        <label>SE: Update Journal (Satisfied)</label>
+        <locationX>842</locationX>
+        <locationY>1679</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Journal.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Time_of_Trustpilot_Reply__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Trustpilot_Customer_Name__c</field>
+            <value>
+                <elementReference>Get_Journal.Account__r.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Trustpilot_Reply_Result__c</field>
+            <value>
+                <stringValue>Satisfied</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Trustpilot_Request_Status__c</field>
+            <value>
+                <stringValue>Reply received</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Trustpilot_Response__c</field>
+            <value>
+                <elementReference>forBody_Max_255_char</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Journal__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>SE_Update_Journal_Unsatisfied</name>
+        <label>SE: Update Journal (Unsatisfied)</label>
+        <locationX>1106</locationX>
+        <locationY>1679</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Journal.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Time_of_Trustpilot_Reply__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Trustpilot_Customer_Name__c</field>
+            <value>
+                <elementReference>Get_Journal.Account__r.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Trustpilot_Reply_Result__c</field>
+            <value>
+                <stringValue>Unsatisfied</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Trustpilot_Request_Status__c</field>
+            <value>
+                <stringValue>Reply received</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Trustpilot_Response__c</field>
+            <value>
+                <elementReference>forBody_Max_255_char</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Journal__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>2003</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_there_a_Contact</targetReference>
+        </connector>
+        <filterLogic>1 AND (2 OR 3)</filterLogic>
+        <filters>
+            <field>TwilioSF__Direction__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>inbound</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>TwilioSF__To_Number__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>+4581827570</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>TwilioSF__To_Number__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>+46766753111</stringValue>
+            </value>
+        </filters>
+        <object>TwilioSF__Message__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+    <textTemplates>
+        <name>Trustpilot_flow_failed_email_template</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>The flow &quot;Trustpilot: SMS Reply Received&quot; just failed, because we couldn&apos;t find a contact on the incoming message, which is a requirement for the flow to run. 
+
+Twilio Message Record ID: {!$Record.Id}
+Sender Number (The customer&apos;s number): {!$Record.TwilioSF__From_Number__c}
+To Number (Our number): {!$Record.TwilioSF__To_Number__c}
+Parent Record ID: {!$Record.TwilioSF__SF_Parent_Record_Id__c}
+Take a look asap and fix whatever is causing the error.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtNot_Understood_Response_DK</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Kære {!$Record.TwilioSF__Contact__r.FirstName},
+
+Tusind tak for din besvarelse.
+
+Vi har dog ikke helt kunnet tolke dit svar - Vores system regnede med at modtage et &quot;ja&quot; eller &quot;nej&quot; på vores tilfredshedsundersøgelse og kunne ikke med sikkerhed regne ud om du var tilfreds eller utilfreds.
+Systemet forstår kun 
+
+&quot;JA&quot; 
+og 
+&quot;NEJ&quot;
+
+Vi vil stadig rigtig gerne høre fra dig - besvar meget gerne denne sms med enten &quot;JA&quot;, hvis du er tilfreds eller &quot;NEJ&quot;, hvis du ikke er tilfreds. 
+
+Med venlig hilsen,
+Din Familiejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtNot_Understood_Response_SE</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hej {!$Record.TwilioSF__Contact__r.FirstName},
+
+Tusen tack för ditt svar.
+
+Vi har dock inte riktigt kunnat tolka ditt svar - vårt system förväntade sig att få ett &quot;ja&quot; eller &quot;nej&quot; på vår kundnöjdhetsundersökning och kunde inte med säkerhet avgöra om du var nöjd eller missnöjd.
+Systemet förstår endast
+
+&quot;JA&quot;
+och
+&quot;NEJ&quot;
+
+Vi vill fortfarande väldigt gärna höra från dig - svara gärna på detta sms med antingen &quot;JA&quot;, om du är nöjd eller &quot;NEJ&quot;, om du inte är nöjd.
+
+Med vänliga hälsningar,
+Din Familjejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtOut_of_Flow_Response_DK</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Kære {!$Record.TwilioSF__Contact__r.FirstName},
+
+Vi har netop modtaget en SMS fra dig, på dette nummer.
+Dette nummer bruges dog udelukkende til tilfredshedsundersøgelser og bliver ikke monitoreret.
+
+Da der ikke er en igangværende tilfredshedsundersøgelse forbundet med dit telefonnummer hos os, kan du ikke kommunikere med os på dette nummer.
+
+Ønsker du at komme i kontakt med os? Så tag venligst fat i os enten på
+Email: kontakt@dinfamiliejurist.dk
+
+eller
+
+Telefon: 70 30 55 70
+
+Hav en fortsat god dag.
+Med venlig hilsen,
+Din Familiejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtOut_of_Flow_Response_SE</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hej {!$Record.TwilioSF__Contact__r.FirstName},
+
+Vi har just mottagit ett SMS från dig, på detta nummer. Detta nummer används dock uteslutande för kundnöjdhetundersökningar och övervakas inte.
+
+Eftersom det inte finns en pågående kundnöjdhetundersökning kopplad till ditt telefonnummer hos oss, kan du inte kommunicera med oss på detta nummer.
+
+Önskar du att komma i kontakt med oss? Vänligen kontakta oss antingen på
+E-post: kontakt@dinfamiljejurist.nu
+
+eller
+
+Telefon: +46 (0)40-6060690
+
+Ha en fortsatt trevlig dag.
+Med vänliga hälsningar,
+Din Familjejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtSatisfied_Response_DK</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Kære {!$Record.TwilioSF__Contact__r.FirstName},
+
+Det glæder os meget at du er tilfreds! 
+Hvis du har tid og lyst, ville vi blive så glade, hvis du vil give os en anmeldelse på Trustpilot. 
+
+Du modtager inden længe en mail med en invitation til Trustpilot på emailen {!$Record.TwilioSF__Contact__r.Email}.
+
+Såfremt du lægger en anmeldelse, fordobler du din chance for at vinde gavekortet på 1.000 kr.!
+
+Hav en fortsat god dag.
+Med venlig hilsen,
+Din Familiejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtSatisfied_Response_SE</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hej {!$Record.TwilioSF__Contact__r.FirstName},
+
+Vi är mycket glada över att du är nöjd!
+Om du har tid och lust, skulle vi bli så glada om du vill ge oss en recension på Trustpilot.
+
+Du kommer inom kort att få ett mail med en inbjudan till Trustpilot till e-postadressen {!$Record.TwilioSF__Contact__r.Email}.
+
+Om du lägger upp en recension, dubblar du din chans att vinna presentkortet på 1.500 kr.!
+
+Ha en fortsatt bra dag.
+Med vänliga hälsningar,
+Din Familjejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtSmsForMathias</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>SMS without Contact received.
+From: {!$Record.TwilioSF__From_Number__c}
+To: {!$Record.TwilioSF__To_Number__c}
+Body: 
+{!$Record.TwilioSF__Body__c}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtUnsatisfied_Response_DK</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Kære {!$Record.TwilioSF__Contact__r.FirstName},
+
+Vi er kede af at høre at du ikke har været tilfreds med din oplevelse. 
+Hvis du er interesseret, og ikke allerede har været i dialog med os omkring det, vil vi rigtig gerne høre nærmere omkring hvad du mener kunne have været bedre.
+
+Vi forsøger altid at forbedre os og ved godt at vi ikke rammer rigtigt hver gang - men med din feedback, håber vi at kunne forbedre os.
+
+Du er meget velkommen til at skrive til os på feedback@dinfamiliejurist.dk og fortælle om din oplevelse - og hvis der er noget du mener vi stadig kan nå at gøre, for at løse situationen.
+
+Hav en god dag.
+
+Med venlig hilsen,
+Din Familiejurist</text>
+    </textTemplates>
+    <textTemplates>
+        <name>txtUnsatisfied_Response_SE</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hej {!$Record.TwilioSF__Contact__r.FirstName},
+
+Vi är ledsna att höra att du inte har varit nöjd med din upplevelse.
+Om du är intresserad, och inte redan har varit i dialog med oss om det, skulle vi verkligen uppskatta att höra mer om vad du tycker kunde ha varit bättre.
+
+Vi försöker alltid förbättra oss och vet att vi inte alltid träffar rätt - men med din feedback hoppas vi kunna bli bättre.
+
+Du är mycket välkommen att skriva till oss på feedback@dinfamiliejurist.dk och berätta om din upplevelse - och om det är något du anser att vi fortfarande kan göra för att lösa situationen.
+
+Ha en bra dag.
+
+Med vänliga hälsningar,
+Din Familjejurist</text>
+    </textTemplates>
+    <variables>
+        <name>JournalID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>varSatisfied</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>varUnsatisfied</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

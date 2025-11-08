@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>include_sumlegat__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Hvis en specifik sum (beløb) skal videregives</description>
+    <externalId>false</externalId>
+    <label>Skal der indsættes sumlegat?</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,20 @@
+.metric-box {
+    padding: 1rem;
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+    margin: 0.5rem;
+}
+
+.metric-label {
+    font-size: 0.875rem;
+    color: #706e6b;
+    margin-bottom: 0.5rem;
+}
+
+.metric-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #032d60;
+}

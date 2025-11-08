@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>journal_se_new__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>journal_se_new</label>
+    <referenceTo>df_journal_se_new__c</referenceTo>
+    <relationshipLabel>Arvtagare (längsta)</relationshipLabel>
+    <relationshipName>df_122_arvtagare_lngsta</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

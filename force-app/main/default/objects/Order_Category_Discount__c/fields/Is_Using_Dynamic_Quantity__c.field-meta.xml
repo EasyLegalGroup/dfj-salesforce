@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Using_Dynamic_Quantity__c</fullName>
+    <defaultValue>false</defaultValue>
+    <externalId>false</externalId>
+    <inlineHelpText>If false, Quantity defaults to 1. If true, &quot;Discount Related To&quot; is required and Quantity is calculated using the Related Product&apos;s Quantity multiplied by the Quantity Factor (Example: Quantity of Related Product is 2 and Quantity Factor is 0,5, then Quantity is 1. Rounds down to nearest whole number</inlineHelpText>
+    <label>Is Using Dynamic Quantity</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>hvilken_type_gld_er_der_tale_om__c</fullName>
+    <externalId>false</externalId>
+    <label>Hvilken type gæld er der tale om c87d7</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>studiegld</fullName>
+                <default>false</default>
+                <label>Studiegæld (SU-lån)</label>
+            </value>
+            <value>
+                <fullName>gld_til_forldre</fullName>
+                <default>false</default>
+                <label>Gæld til forældre</label>
+            </value>
+            <value>
+                <fullName>spillegld</fullName>
+                <default>false</default>
+                <label>Spillegæld</label>
+            </value>
+            <value>
+                <fullName>virksomhedsgld</fullName>
+                <default>false</default>
+                <label>Virksomhedsgæld</label>
+            </value>
+            <value>
+                <fullName>forbrugsln</fullName>
+                <default>false</default>
+                <label>Forbrugslån</label>
+            </value>
+            <value>
+                <fullName>andet_type_gld</fullName>
+                <default>false</default>
+                <label>Andet (beskriv selv)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

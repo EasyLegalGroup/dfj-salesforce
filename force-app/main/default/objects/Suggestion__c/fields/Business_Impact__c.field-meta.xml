@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Impact__c</fullName>
+    <externalId>false</externalId>
+    <label>Business Impact</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Efficiency Gain</fullName>
+                <default>false</default>
+                <label>Efficiency Gain</label>
+            </value>
+            <value>
+                <fullName>Cost Saving</fullName>
+                <default>false</default>
+                <label>Cost Saving</label>
+            </value>
+            <value>
+                <fullName>Revenue Generation</fullName>
+                <default>false</default>
+                <label>Revenue Generation</label>
+            </value>
+            <value>
+                <fullName>User Convenience</fullName>
+                <default>false</default>
+                <label>User Convenience</label>
+            </value>
+            <value>
+                <fullName>Error Reduction</fullName>
+                <default>false</default>
+                <label>Error Reduction</label>
+            </value>
+            <value>
+                <fullName>Automation Potential</fullName>
+                <default>false</default>
+                <label>Automation Potential</label>
+            </value>
+            <value>
+                <fullName>Security Enhancement</fullName>
+                <default>false</default>
+                <label>Security Enhancement</label>
+            </value>
+            <value>
+                <fullName>Scalability</fullName>
+                <default>false</default>
+                <label>Scalability</label>
+            </value>
+            <value>
+                <fullName>Improved Reporting</fullName>
+                <default>false</default>
+                <label>Improved Reporting</label>
+            </value>
+            <value>
+                <fullName>Innovation</fullName>
+                <default>false</default>
+                <label>Innovation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

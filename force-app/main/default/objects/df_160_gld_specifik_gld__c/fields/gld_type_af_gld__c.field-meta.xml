@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gld_type_af_gld__c</fullName>
+    <externalId>false</externalId>
+    <label>Type af gæld</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>gld_type_gld_t_skat</fullName>
+                <default>false</default>
+                <label>Gæld til skat</label>
+            </value>
+            <value>
+                <fullName>gld_type_studiegld</fullName>
+                <default>false</default>
+                <label>Studiegæld</label>
+            </value>
+            <value>
+                <fullName>gld_type_forldre</fullName>
+                <default>false</default>
+                <label>Gæld til forældre</label>
+            </value>
+            <value>
+                <fullName>gld_type_spillegld</fullName>
+                <default>false</default>
+                <label>Spillegæld</label>
+            </value>
+            <value>
+                <fullName>gld_type_virksomhedsgld</fullName>
+                <default>false</default>
+                <label>Virksomhedsgæld</label>
+            </value>
+            <value>
+                <fullName>gld_type_forbrugsln</fullName>
+                <default>false</default>
+                <label>Forbrugslån</label>
+            </value>
+            <value>
+                <fullName>gld_type_andet</fullName>
+                <default>false</default>
+                <label>Andet</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>primr_fuldmgtig_picklist_pp2__c</fullName>
+    <externalId>false</externalId>
+    <label>Primær fuldmægtig (picklist_pp2)</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>skal_vre_primr_fuldmgtig_pp2</fullName>
+                <default>false</default>
+                <label>Skal være primær fuldmægtig</label>
+            </value>
+            <value>
+                <fullName>skal_ikke_vre_primr_fuldmgtig_pp2</fullName>
+                <default>false</default>
+                <label>Skal ikke være primær fuldmægtig</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
