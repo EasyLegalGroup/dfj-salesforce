@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Group_Name__c</fullName>
+    <label>Lead Group Name</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Kampagne 2</fullName>
+                <default>false</default>
+                <label>Kampagne 2</label>
+            </value>
+            <value>
+                <fullName>Kampagne 3</fullName>
+                <default>false</default>
+                <label>Kampagne 3</label>
+            </value>
+            <value>
+                <fullName>DFJ B2B</fullName>
+                <default>false</default>
+                <label>DFJ B2B</label>
+            </value>
+            <value>
+                <fullName>N/A</fullName>
+                <default>false</default>
+                <label>N/A</label>
+            </value>
+            <value>
+                <fullName>Kampagne 1</fullName>
+                <default>true</default>
+                <label>Kampagne 1</label>
+            </value>
+            <value>
+                <fullName>TD Kampagne 1</fullName>
+                <default>false</default>
+                <label>TD Kampagne 1</label>
+            </value>
+            <value>
+                <fullName>Genåbnet</fullName>
+                <default>false</default>
+                <label>Genåbnet</label>
+            </value>
+            <value>
+                <fullName>Dublet Kampagne</fullName>
+                <default>false</default>
+                <label>Dublet Kampagne</label>
+            </value>
+            <value>
+                <fullName>Norrina</fullName>
+                <default>false</default>
+                <label>Norrina</label>
+            </value>
+            <value>
+                <fullName>Nina</fullName>
+                <default>false</default>
+                <label>Nina</label>
+            </value>
+            <value>
+                <fullName>Denis</fullName>
+                <default>false</default>
+                <label>Denis</label>
+            </value>
+            <value>
+                <fullName>Flemming</fullName>
+                <default>false</default>
+                <label>Flemming</label>
+            </value>
+            <value>
+                <fullName>Testamente Sverige</fullName>
+                <default>false</default>
+                <label>Testamente Sverige</label>
+            </value>
+            <value>
+                <fullName>Lotte Gravers</fullName>
+                <default>false</default>
+                <label>Lotte Gravers</label>
+            </value>
+            <value>
+                <fullName>Partners</fullName>
+                <default>false</default>
+                <label>Partners</label>
+            </value>
+            <value>
+                <fullName>Andet</fullName>
+                <default>false</default>
+                <label>Andet</label>
+            </value>
+            <value>
+                <fullName>Parkeret</fullName>
+                <default>false</default>
+                <label>Parkeret</label>
+            </value>
+            <value>
+                <fullName>Dublet Kampagne DK</fullName>
+                <default>false</default>
+                <label>Dublet Kampagne DK</label>
+            </value>
+            <value>
+                <fullName>Dublet Kampagne SE</fullName>
+                <default>false</default>
+                <label>Dublet Kampagne SE</label>
+            </value>
+            <value>
+                <fullName>Mailkampagne</fullName>
+                <default>false</default>
+                <label>Mailkampagne</label>
+            </value>
+            <value>
+                <fullName>Facebook Burton</fullName>
+                <default>false</default>
+                <label>Facebook Burton</label>
+            </value>
+            <value>
+                <fullName>Kampagne DK</fullName>
+                <default>false</default>
+                <label>Kampagne DK</label>
+            </value>
+            <value>
+                <fullName>Kampagne SE</fullName>
+                <default>false</default>
+                <label>Kampagne SE</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

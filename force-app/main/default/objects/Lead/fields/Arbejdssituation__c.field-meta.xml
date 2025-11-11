@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Arbejdssituation__c</fullName>
+    <label>Arbejdssituation</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Fuldtid på arbejdsmarkedet</fullName>
+                <default>false</default>
+                <label>Fuldtid på arbejdsmarkedet</label>
+            </value>
+            <value>
+                <fullName>Selvstændig</fullName>
+                <default>false</default>
+                <label>Selvstændig</label>
+            </value>
+            <value>
+                <fullName>Pensioneret</fullName>
+                <default>false</default>
+                <label>Pensioneret</label>
+            </value>
+            <value>
+                <fullName>Ledig</fullName>
+                <default>false</default>
+                <label>Ledig</label>
+            </value>
+            <value>
+                <fullName>Sygemeldt</fullName>
+                <default>false</default>
+                <label>Sygemeldt</label>
+            </value>
+            <value>
+                <fullName>Andet</fullName>
+                <default>false</default>
+                <label>Andet</label>
+            </value>
+            <value>
+                <fullName>På barsel</fullName>
+                <default>false</default>
+                <label>På barsel</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

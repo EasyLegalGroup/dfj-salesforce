@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CC_SE_Host_Accounts_for_Nuturing</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND (4 OR 5) AND 6</booleanFilter>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>ACCOUNT.ADDRESS1_CITY</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Host_Type__c</columns>
+    <columns>PC_EMAIL</columns>
+    <columns>Date_of_Last_Event__c</columns>
+    <columns>Date_of_Next_Event__c</columns>
+    <columns>Date_of_Most_Recent_Event__c</columns>
+    <columns>Next_Call_Time__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>FA_SE,Testamente_SV</value>
+    </filters>
+    <filters>
+        <field>Host_Type__c</field>
+        <operation>equals</operation>
+        <value>Restaurant,Company,Hotel</value>
+    </filters>
+    <filters>
+        <field>Account_Status__c</field>
+        <operation>equals</operation>
+        <value>Nurturing</value>
+    </filters>
+    <filters>
+        <field>Next_Call_Time__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Next_Call_Time__c</field>
+        <operation>lessThan</operation>
+        <value>TODAY</value>
+    </filters>
+    <filters>
+        <field>Days_Until_Last_Event__c</field>
+        <operation>lessOrEqual</operation>
+        <value>30</value>
+    </filters>
+    <label>CC - SE: Host Accounts for Nuturing</label>
+</ListView>

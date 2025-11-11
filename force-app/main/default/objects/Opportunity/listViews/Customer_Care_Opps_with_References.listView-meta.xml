@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Care_Opps_with_References</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>Achieved_Outcomes__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Prospects_Converted_to_Leads__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Category__c</field>
+        <operation>equals</operation>
+        <value>Customer Care</value>
+    </filters>
+    <filters>
+        <field>Achieved_Outcomes__c</field>
+        <operation>includes</operation>
+        <value>Reference Lead Created</value>
+    </filters>
+    <label>Customer Care Opps with References</label>
+</ListView>

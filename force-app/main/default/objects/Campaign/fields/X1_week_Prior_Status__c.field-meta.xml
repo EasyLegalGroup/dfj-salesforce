@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X1_week_Prior_Status__c</fullName>
+    <label>1-week-Prior Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Sent</fullName>
+                <default>false</default>
+                <label>Not Sent</label>
+            </value>
+            <value>
+                <fullName>95% or above</fullName>
+                <default>false</default>
+                <label>95% or above</label>
+            </value>
+            <value>
+                <fullName>Less than 95%</fullName>
+                <default>false</default>
+                <label>Less than 95%</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dubletkampagne</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>telegenta__Invalid_Reason__c</columns>
+    <columns>Publisher_Campaign__c</columns>
+    <columns>Gen_bnet__c</columns>
+    <columns>telegenta__Not_Interested_Reason__c</columns>
+    <columns>Lead_Group_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New</value>
+    </filters>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>DFJ_DK,Testamente_DK</value>
+    </filters>
+    <filters>
+        <field>Is_Dublet__c</field>
+        <operation>equals</operation>
+        <value>Yes</value>
+    </filters>
+    <label>Dubletkampagne</label>
+</ListView>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllOpenLeads</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>Total_calls_out_all__c</columns>
+    <columns>UTM_Source__c</columns>
+    <columns>UTM_Medium__c</columns>
+    <columns>UTM_Content_Txt__c</columns>
+    <columns>LEAD.RATING</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>UTM_Content__c</columns>
+    <columns>Event_moedestatus_c__c</columns>
+    <columns>Foredragsdato__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>Ireland</value>
+    </filters>
+    <label>Alle åbne emner</label>
+</ListView>

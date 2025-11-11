@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CPR_Formatted__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(LEN(CPR__c)=10, LEFT(CPR__c,6)&amp;&quot;-&quot;&amp;RIGHT(CPR__c,4), CPR__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>CPR Formatted</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stop_Flows__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field is hidden and is used to stop flows - initially created because conversion process fails if a lead fills the requirements to be in a flow - e.g. &quot;reminders&quot; and will be a part of this flow for a while. However, leads that are still part of an ongoing flow cannot be converted. This field is set to true after confirming that you want to convert the lead and then used as a filter in certain flows, to prevent the lead from meeting the requirements.</description>
+    <label>Stop Flows</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

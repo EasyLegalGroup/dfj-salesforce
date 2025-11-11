@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CC_SE_Post_Sale_Reference_Initial</fullName>
+    <columns>ACCOUNT.CREATED_DATE</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>PC_EMAIL</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>Contact_Status__pc</columns>
+    <columns>Account_Status__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Number_of_Products__c</columns>
+    <columns>New_Status__pc</columns>
+    <columns>Working_Status__pc</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>FA_SE</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>PersonAccount.PersonAccount</value>
+    </filters>
+    <filters>
+        <field>Active_Call_Campaigns__pc</field>
+        <operation>includes</operation>
+        <value>Sweden: Document Review</value>
+    </filters>
+    <filters>
+        <field>Document_Review_Status__pc</field>
+        <operation>equals</operation>
+        <value>Review Required</value>
+    </filters>
+    <label>CC - SE: Document Review (Initial)</label>
+</ListView>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stig_salg</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>Sales_value__c</columns>
+    <columns>ACCOUNT.CREATED_DATE</columns>
+    <columns>IS_PERSON_ACCOUNT</columns>
+    <columns>PC_LEAD_SOURCE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CORE.USERS.FIRST_NAME</field>
+        <operation>equals</operation>
+        <value>Stig</value>
+    </filters>
+    <filters>
+        <field>Lead_Publisher_Campaign__c</field>
+        <operation>equals</operation>
+        <value>Not specified</value>
+    </filters>
+    <label>Stig_salg</label>
+</ListView>

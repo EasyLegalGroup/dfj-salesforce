@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Danish_TM_Yesterday</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>Foredragstid_og_dato__c</columns>
+    <columns>Ejendomsoverdragelse__c</columns>
+    <columns>Gavekort_1_000_kr_rabat_og_r_dgivning__c</columns>
+    <columns>Event_moedestatus_c__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.RECORDTYPE</columns>
+    <columns>Foredragskommentar__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>LEAD.RATING</columns>
+    <columns>Lecturer__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.DFJ_DK</value>
+    </filters>
+    <filters>
+        <field>Event_moedestatus_c__c</field>
+        <operation>equals</operation>
+        <value>Tilmeldingsblanket</value>
+    </filters>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>Testamente_DK,DFJ_DK</value>
+    </filters>
+    <filters>
+        <field>Foredragstid_og_dato__c</field>
+        <operation>equals</operation>
+        <value>YESTERDAY</value>
+    </filters>
+    <label>All Danish TM Yesterday</label>
+</ListView>

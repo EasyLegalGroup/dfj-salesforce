@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>what_is_important__c</fullName>
+    <label>Hvad er vigtigt</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sikre at min børns fremtid er tryg</fullName>
+                <default>false</default>
+                <label>Sikre at min børns fremtid er tryg</label>
+            </value>
+            <value>
+                <fullName>Sikre at min ægtefælle/partner kan blive boende og have en normal hverdag</fullName>
+                <default>false</default>
+                <label>Sikre at min ægtefælle/partner kan blive boende og have en normal hverdag</label>
+            </value>
+            <value>
+                <fullName>Sikre at jeg selv bestemmer hvem der skal arve mig</fullName>
+                <default>false</default>
+                <label>Sikre at jeg selv bestemmer hvem der skal arve mig</label>
+            </value>
+            <value>
+                <fullName>Sikre at en eller flere af mine arvinge får så lidt som muligt af min arv</fullName>
+                <default>false</default>
+                <label>Sikre at en eller flere af mine arvinge får så lidt som muligt af min arv</label>
+            </value>
+            <value>
+                <fullName>Sikre at min arv går til velgørenhed</fullName>
+                <default>false</default>
+                <label>Sikre at min arv går til velgørenhed</label>
+            </value>
+            <value>
+                <fullName>Ingen af disse</fullName>
+                <default>false</default>
+                <label>Ingen af disse</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>6</visibleLines>
+</CustomField>

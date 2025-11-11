@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Campaign_Details__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( ISPICKVAL( Publisher_Campaign__c , &quot;FoBruFo02122019Landingpage&quot;) ,&quot;Gratis børnetestamente - Medlemmer af Forbrugsforeningen betaler fuld pris hos DFJ men får 10% rabat af Forbrugforeningen, når de anvender deres betalingskort.&quot;,
+IF( ISPICKVAL( Publisher_Campaign__c , &quot;Forsikringshjælp11112019test1&quot;), &quot;Ingen kampagnerabat - Forsikringshjælps medarbejder har været i dialog med emnet&quot;,
+IF( ISPICKVAL( Publisher_Campaign__c , &quot;MM06122019gratisbtmkøb&quot;), &quot;Gratis børnetestamente - Kampagne igennem minmave.dk&quot;,
+IF( ISPICKVAL( Publisher_Campaign__c , &quot;Risikovurdering&quot;), &quot;Ingen kampagnerabat - Risikovurdering for alle besøgende på http://dinfamiliejurist.dk/risikovurdering/&quot;,
+IF( ISPICKVAL( Publisher_Campaign__c , &quot;DS06122019gratisFM&quot;), &quot;Gratis fremtidsfuldmagt + 10% på andre ydelser - Fra Danske seniorer https://dinfamiliejurist.dk/danskeseniorer/&quot;,
+IF( ISPICKVAL( Publisher_Campaign__c , &quot;nyhedsbreve200120gratisBT&quot;),&quot;Gratis børnetestamente - Kampagne via diverse nyhedsbreve&quot;,
+IF( ISPICKVAL( Publisher_Campaign__c , &quot;Bornibyen200120gratisBT&quot;),&quot;Gratis børnetestamente + 10% på andre ydelser - Kampagne igennem bornibyen.dk&quot;,
+IF( ISPICKVAL( Publisher_Campaign__c , &quot;reshopper200120gratisBT&quot;), &quot;Gratis børnetestamente - Kampagne igennem reshopper.dk&quot;,
+IF( ISPICKVAL( Publisher_Campaign__c , &quot;HK020220GratisBT&quot;), &quot;Gratis børnetestamente - Kampagne igennem fagforeningen HK&quot;,
+IF( ISPICKVAL( Publisher_Campaign__c , &quot;Samvirke020220GratisBT&quot;), &quot;Gratis børnetestamente - Kampagne igennem Samvirke&quot;,
+IF( ISPICKVAL( Publisher_Campaign__c , &quot;Folkeskolen020220GratisBT&quot;), &quot;Gratis børnetestamente - Kampagne igennem Folkeskolen.dk (folkeskolelærer)&quot;,
+IF( ISPICKVAL( Publisher_Campaign__c , &quot;FB120220gratisFT&quot;), &quot;Gratis fremtidsfuldmagt - Én pr. hustand - Kampagne igennem Facebook&quot;,
+IF( ISPICKVAL( Publisher_Campaign__c , &quot;Fb31102019lauravideoBt1&quot;), &quot;Gratis børnetestamente - Kampagne igennem Facebook&quot;,
+&quot;&quot;)))))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Campaign Details</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

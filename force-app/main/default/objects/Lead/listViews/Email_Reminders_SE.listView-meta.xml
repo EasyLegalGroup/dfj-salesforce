@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_Reminders_SE</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Foredragsdato__c</columns>
+    <columns>UTM_Content__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>UTM_Source__c</field>
+        <operation>equals</operation>
+        <value>Foredrag</value>
+    </filters>
+    <filters>
+        <field>Foredragsdato__c</field>
+        <operation>equals</operation>
+        <value>NEXT_WEEK</value>
+    </filters>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>FA_SE,Testamente_SV</value>
+    </filters>
+    <label>SE - Email Reminders - Next Week</label>
+</ListView>

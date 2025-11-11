@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsCallableNew__c</fullName>
+    <description>Callable leads with status New</description>
+    <formula>AND(OR(telegenta__Next_Call_Time__c &lt; NOW(), ISNULL(telegenta__Next_Call_Time__c)),ISPICKVAL(Status, &quot;New&quot;))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>IsCallableNew</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

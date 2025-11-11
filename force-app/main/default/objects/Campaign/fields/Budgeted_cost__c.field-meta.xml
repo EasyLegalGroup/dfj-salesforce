@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Budgeted_cost__c</fullName>
+    <formula>CASE(Market_Unit__c, &apos;DFJ_DK&apos;, (Capacity__c*0.45)*$CustomMetadata.Currency_Multiplier_Configuration__mdt.Din_Familie_Jurist.Cost_Multiplier_Value__c + Venue_Rental_Cost__c +  Price_Per_Cover__c*Capacity__c, 
+&apos;FA_SE&apos;, (Capacity__c*0.45)*$CustomMetadata.Currency_Multiplier_Configuration__mdt.dinfamiliejurist_nu.Cost_Multiplier_Value__c + Venue_Rental_Cost__c +  Price_Per_Cover__c*Capacity__c, 
+&apos;Testamente_DK&apos;, (Capacity__c*0.45)*$CustomMetadata.Currency_Multiplier_Configuration__mdt.Testamente_Danmark.Cost_Multiplier_Value__c + Venue_Rental_Cost__c +  Price_Per_Cover__c*Capacity__c,
+&apos;Testamente_SV&apos;, (Capacity__c*0.45)*$CustomMetadata.Currency_Multiplier_Configuration__mdt.Testamente_Sverige.Cost_Multiplier_Value__c + Venue_Rental_Cost__c +  Price_Per_Cover__c*Capacity__c ,0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>((Avg. Lead Cost * (Capacity * 0.45)) + Venue Rental Cost + (Price Per Cover * Capacity))</inlineHelpText>
+    <label>Budgeted Cost Incl. Vat</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

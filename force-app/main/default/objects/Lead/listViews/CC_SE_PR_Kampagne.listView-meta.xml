@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CC_SE_PR_Kampagne</fullName>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>Latest_Entry_Date__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>UTM_Medium__c</columns>
+    <columns>UTM_Content_Txt__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>UTM_Medium__c</field>
+        <operation>equals</operation>
+        <value>PR Leads</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New,Working</value>
+    </filters>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>FA_SE,Testamente_SV</value>
+    </filters>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.FA_SE</value>
+    </filters>
+    <label>CC - SE: PR Kampagne</label>
+    <sharedTo>
+        <group>Country_Managers_Sweden</group>
+    </sharedTo>
+</ListView>

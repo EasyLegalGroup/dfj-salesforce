@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nina_arvetest</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>telegenta__Last_Contact_State__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.RECORDTYPE</columns>
+    <columns>Lead_Group_Name__c</columns>
+    <columns>Market_Unit__c</columns>
+    <columns>telegenta__Total_calls__c</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>Publisher_Campaign__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>Gen_bnet__c</columns>
+    <columns>Publisher_source__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>DFJ_DK</value>
+    </filters>
+    <filters>
+        <field>Publisher_Campaign__c</field>
+        <operation>equals</operation>
+        <value>Arvetest over telefon ved de bliver kontaktet og fr gavekort p 1000 kroner  02122020</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New</value>
+    </filters>
+    <filters>
+        <field>telegenta__Last_Contact_State__c</field>
+        <operation>notEqual</operation>
+        <value>Got appointment</value>
+    </filters>
+    <filters>
+        <field>LEAD.CREATED_DATE</field>
+        <operation>greaterThan</operation>
+        <value>12/28/2020 12:00 AM</value>
+    </filters>
+    <label>Nina arvetest</label>
+</ListView>

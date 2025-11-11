@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Consider_testament__c</fullName>
+    <label>Har overvejet et testamente</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Ja, jeg har overvejet det</fullName>
+                <default>false</default>
+                <label>Ja, jeg har overvejet det</label>
+            </value>
+            <value>
+                <fullName>Nej, men jeg vil gerne have mere information</fullName>
+                <default>false</default>
+                <label>Nej, men jeg vil gerne have mere information</label>
+            </value>
+            <value>
+                <fullName>Ja, Jeg har allerede et testamente</fullName>
+                <default>false</default>
+                <label>Ja, Jeg har allerede et testamente</label>
+            </value>
+            <value>
+                <fullName>Nej, men måske mangler jeg viden</fullName>
+                <default>false</default>
+                <label>Nej, men måske mangler jeg viden</label>
+            </value>
+            <value>
+                <fullName>;</fullName>
+                <default>false</default>
+                <label>;</label>
+            </value>
+            <value>
+                <fullName>Ja;Nej</fullName>
+                <default>false</default>
+                <label>Ja;Nej</label>
+            </value>
+            <value>
+                <fullName>Ja</fullName>
+                <default>false</default>
+                <label>Ja</label>
+            </value>
+            <value>
+                <fullName>Nej</fullName>
+                <default>false</default>
+                <label>Nej</label>
+            </value>
+            <value>
+                <fullName>Nej, ikke før nu</fullName>
+                <default>false</default>
+                <label>Nej, ikke før nu</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

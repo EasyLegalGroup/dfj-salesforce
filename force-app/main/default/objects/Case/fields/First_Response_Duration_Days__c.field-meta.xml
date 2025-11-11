@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_Response_Duration_Days__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    ISBLANK(First_Response_Time__c), 
+    NULL, 
+    ROUND(First_Response_Time__c - CreatedDate, 2)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Calculates the difference, in days, between Date/Time Opened and First Response Time. If there is no First Response Time, this field is empty.</inlineHelpText>
+    <label>First Response Duration (Days)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

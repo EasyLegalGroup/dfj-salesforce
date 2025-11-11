@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QA_Status__c</fullName>
+    <label>QA - Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sent - Awaiting</fullName>
+                <default>false</default>
+                <label>Sent - Awaiting</label>
+            </value>
+            <value>
+                <fullName>Replied - Credit note</fullName>
+                <default>false</default>
+                <label>Replied - Credit note</label>
+            </value>
+            <value>
+                <fullName>Replied - No credit note</fullName>
+                <default>false</default>
+                <label>Replied - No credit note</label>
+            </value>
+            <value>
+                <fullName>Under negotiation</fullName>
+                <default>false</default>
+                <label>Under negotiation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

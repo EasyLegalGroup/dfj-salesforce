@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Closure_SLA__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+  OR(
+    ISBLANK(Days_to_Close_Lecture__c),
+    Days_to_Close_Lecture__c &lt;= 0
+  ),
+  &quot;&quot;,
+  IF(
+    Days_to_Close_Lecture__c &gt; 14,
+    &quot;Outside SLA&quot;,
+    IF(
+      OR(
+        ISPICKVAL(Status, &quot;New&quot;),
+        ISPICKVAL(Status, &quot;Working&quot;)
+      ),
+      &quot;Pending Within SLA&quot;,
+      IF(
+        AND(
+          Days_to_Close_Lecture__c &lt;= 14,
+          OR(
+            ISPICKVAL(Status, &quot;Converted&quot;),
+            ISPICKVAL(Status, &quot;Closed - Not Converted&quot;),
+            ISPICKVAL(Status, &quot;Unqualified&quot;)
+          )
+        ),
+        &quot;Within SLA&quot;,
+        &quot;Outside SLA&quot;
+      )
+    )
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Calculates SLA based on Days to Close (Lecture). Close within 14 days of Lecture, to stay within SLA.</inlineHelpText>
+    <label>Lead Closure SLA</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

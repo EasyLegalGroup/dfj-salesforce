@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Transfer_leads</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>Unqualified_Status__c</columns>
+    <columns>Transfer_this_lead__c</columns>
+    <columns>Total_calls_out_all__c</columns>
+    <columns>Foredragsdato__c</columns>
+    <columns>Event_moedestatus_c__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>Is_Dublet__c</columns>
+    <columns>UTM_Medium__c</columns>
+    <columns>UTM_Content__c</columns>
+    <columns>UTM_Source__c</columns>
+    <columns>UTM_Campaign__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New,Working</value>
+    </filters>
+    <filters>
+        <field>Transfer_this_lead__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.DFJ_DK</value>
+    </filters>
+    <label>Transfer leads</label>
+</ListView>

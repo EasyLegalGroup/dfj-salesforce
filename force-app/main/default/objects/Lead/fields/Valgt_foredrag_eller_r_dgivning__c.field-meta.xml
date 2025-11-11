@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Valgt_foredrag_eller_r_dgivning__c</fullName>
+    <label>Valgt foredrag eller rådgivning?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Valgt foredrag</fullName>
+                <default>false</default>
+                <label>Valgt foredrag</label>
+            </value>
+            <value>
+                <fullName>Valgt rådgivning</fullName>
+                <default>false</default>
+                <label>Valgt rådgivning</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

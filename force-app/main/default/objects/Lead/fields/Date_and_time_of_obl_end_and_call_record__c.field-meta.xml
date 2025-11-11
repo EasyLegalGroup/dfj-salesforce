@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_and_time_of_obl_end_and_call_record__c</fullName>
+    <description>This field will auto populate when the sales rep checks the &quot;Obl ending and call record permission&quot; checkbox</description>
+    <label>Date and time of obl end and call record</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

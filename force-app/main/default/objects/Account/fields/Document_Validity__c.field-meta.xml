@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Document_Validity__c</fullName>
+    <inlineHelpText>This field is reset every few minutes, to ensure document validity.</inlineHelpText>
+    <label>Document Validity</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Unvalidated</fullName>
+                <default>true</default>
+                <label>Unvalidated</label>
+            </value>
+            <value>
+                <fullName>Automatically Reset</fullName>
+                <default>false</default>
+                <label>Automatically Reset</label>
+            </value>
+            <value>
+                <fullName>Failed</fullName>
+                <default>false</default>
+                <label>Failed</label>
+            </value>
+            <value>
+                <fullName>Passed</fullName>
+                <default>false</default>
+                <label>Passed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

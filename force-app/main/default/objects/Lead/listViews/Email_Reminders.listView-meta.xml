@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_Reminders</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>Foredragstid_og_dato__c</columns>
+    <columns>Foredragsdato__c</columns>
+    <columns>UTM_Content__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>DFJ_DK,Testamente_DK</value>
+    </filters>
+    <filters>
+        <field>Foredragstid_og_dato__c</field>
+        <operation>equals</operation>
+        <value>NEXT_WEEK</value>
+    </filters>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.DFJ_DK</value>
+    </filters>
+    <label>DK - Email Reminders - Next Week</label>
+</ListView>

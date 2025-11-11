@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>USMAN_FORDELING</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>UTM_Source__c</columns>
+    <columns>Event_moedestatus_c__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>Foredragsdato__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>L_nelead__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>DFJ_DK,Testamente_DK</value>
+    </filters>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.DFJ_DK</value>
+    </filters>
+    <filters>
+        <field>UTM_Source__c</field>
+        <operation>equals</operation>
+        <value>Foredrag</value>
+    </filters>
+    <filters>
+        <field>Foredragsdato__c</field>
+        <operation>equals</operation>
+        <value>NEXT_N_MONTHS:6</value>
+    </filters>
+    <filters>
+        <field>Foredragsdato__c</field>
+        <operation>notEqual</operation>
+        <value>NEXT_N_WEEKS:8</value>
+    </filters>
+    <filters>
+        <field>LEAD.CREATED_DATE</field>
+        <operation>greaterThan</operation>
+        <value>11/8/2022 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>DFJ Leads</value>
+    </filters>
+    <filters>
+        <field>LEAD.PHONE</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>USMAN FORDELING</label>
+</ListView>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DK_Past_Events</fullName>
+    <columns>CAMPAIGN.NAME</columns>
+    <columns>CAMPAIGN.STATUS</columns>
+    <columns>Overall_Hitrate__c</columns>
+    <columns>Lecturer__c</columns>
+    <columns>Start__c</columns>
+    <columns>CAMPAIGN.NUM_LEADS</columns>
+    <columns>Booking_Percentage__c</columns>
+    <columns>Host__c</columns>
+    <columns>Webflow_URL__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>Average_Days_to_Close__c</columns>
+    <columns>Count_of_Closed_Leads__c</columns>
+    <columns>Leads_Closed_Percentage__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Start__c</field>
+        <operation>lessThan</operation>
+        <value>TODAY</value>
+    </filters>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>DFJ_DK,Testamente_DK</value>
+    </filters>
+    <filters>
+        <field>Test_Campaign__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>CAMPAIGN.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Cancelled</value>
+    </filters>
+    <label>DK - Past Events</label>
+</ListView>

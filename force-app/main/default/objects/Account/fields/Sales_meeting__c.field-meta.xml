@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_meeting__c</fullName>
+    <label>Sales meeting</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Ring igen</fullName>
+                <default>false</default>
+                <label>Ring igen</label>
+            </value>
+            <value>
+                <fullName>Intro givet</fullName>
+                <default>false</default>
+                <label>Intro givet</label>
+            </value>
+            <value>
+                <fullName>Fællesmøde</fullName>
+                <default>false</default>
+                <label>Fællesmøde</label>
+            </value>
+            <value>
+                <fullName>Singlemøde</fullName>
+                <default>false</default>
+                <label>Singlemøde</label>
+            </value>
+            <value>
+                <fullName>Fysisk møde</fullName>
+                <default>false</default>
+                <label>Fysisk møde</label>
+            </value>
+            <value>
+                <fullName>Journal udfyldt / Afventer betaling</fullName>
+                <default>false</default>
+                <label>Journal udfyldt / Afventer betaling</label>
+            </value>
+            <value>
+                <fullName>Tilbud sendt</fullName>
+                <default>false</default>
+                <label>Tilbud sendt</label>
+            </value>
+            <value>
+                <fullName>Ikke kontaktet</fullName>
+                <default>false</default>
+                <label>Ikke kontaktet</label>
+            </value>
+            <value>
+                <fullName>Webmøde</fullName>
+                <default>false</default>
+                <label>Webmøde</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

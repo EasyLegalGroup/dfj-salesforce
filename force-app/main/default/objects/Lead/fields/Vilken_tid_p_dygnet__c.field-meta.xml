@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vilken_tid_p_dygnet__c</fullName>
+    <label>Vilken tid på dygnet</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Morgon</fullName>
+                <default>false</default>
+                <label>Morgon</label>
+            </value>
+            <value>
+                <fullName>Förmiddag</fullName>
+                <default>false</default>
+                <label>Förmiddag</label>
+            </value>
+            <value>
+                <fullName>Eftermiddag</fullName>
+                <default>false</default>
+                <label>Eftermiddag</label>
+            </value>
+            <value>
+                <fullName>Kvällstid</fullName>
+                <default>false</default>
+                <label>Kvällstid</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

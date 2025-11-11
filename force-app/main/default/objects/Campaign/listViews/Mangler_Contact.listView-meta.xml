@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mangler_Contact</fullName>
+    <columns>Related_Event_ID__c</columns>
+    <columns>Start__c</columns>
+    <columns>CAMPAIGN.NAME</columns>
+    <columns>Event_ID__c</columns>
+    <columns>CAMPAIGN.CREATED_DATE</columns>
+    <columns>Cancelled__c</columns>
+    <columns>CAMPAIGN.STATUS</columns>
+    <columns>Host__c</columns>
+    <columns>Open_for_Bookings__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>DFJ_DK,Testamente_DK</value>
+    </filters>
+    <filters>
+        <field>Test_Campaign__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Contact_Creator__c</field>
+        <operation>equals</operation>
+        <value>Trigger</value>
+    </filters>
+    <label>Mangler Contact</label>
+</ListView>

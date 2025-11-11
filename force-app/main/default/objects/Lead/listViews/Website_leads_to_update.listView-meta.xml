@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Website_leads_to_update</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Publisher_Campaign__c</columns>
+    <columns>Publisher_source__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Publisher_name__c</field>
+        <operation>equals</operation>
+        <value>website</value>
+    </filters>
+    <filters>
+        <field>LEAD.CREATED_DATE</field>
+        <operation>lessThan</operation>
+        <value>3/14/2019 12:00 AM</value>
+    </filters>
+    <label>Leads to update (batch 1)</label>
+</ListView>

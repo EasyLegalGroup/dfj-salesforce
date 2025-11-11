@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Salg_ig_r</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>Sales_value__c</columns>
+    <columns>ACCOUNT.CREATED_DATE</columns>
+    <columns>IS_PERSON_ACCOUNT</columns>
+    <columns>PC_LEAD_SOURCE</columns>
+    <columns>Lead_Publisher_Name__c</columns>
+    <columns>Lead_Publisher_Campaign__c</columns>
+    <columns>Market_Unit__c</columns>
+    <columns>Lead__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>PersonAccount.PersonAccount</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>YESTERDAY</value>
+    </filters>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>DFJ_DK</value>
+    </filters>
+    <label>Sales Yesterday</label>
+</ListView>

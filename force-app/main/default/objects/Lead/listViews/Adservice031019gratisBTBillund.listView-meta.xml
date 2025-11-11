@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Adservice031019gratisBTBillund</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>telegenta__Lead_Age_In_days__c</columns>
+    <columns>telegenta__Unprocessed__c</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>telegenta__Last_Contact_State__c</columns>
+    <columns>telegenta__Total_calls__c</columns>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <columns>telegenta__Is_callable__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Publisher_Campaign__c</field>
+        <operation>equals</operation>
+        <value>Adservice031019gratisBTBillund</value>
+    </filters>
+    <label>Adservice031019gratisBTBillund</label>
+</ListView>

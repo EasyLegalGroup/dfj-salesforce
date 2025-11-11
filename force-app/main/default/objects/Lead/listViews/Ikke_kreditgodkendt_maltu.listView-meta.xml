@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ikke_kreditgodkendt_maltu</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>New_Status__c</columns>
+    <columns>Unqualified_Status__c</columns>
+    <columns>telegenta__Invalid_Reason__c</columns>
+    <columns>LEAD.RECORDTYPE</columns>
+    <columns>Lead_Group_Name__c</columns>
+    <columns>Market_Unit__c</columns>
+    <columns>telegenta__Total_calls__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>telegenta__Priority__c</columns>
+    <columns>Gen_bnet__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.FA_SE</value>
+    </filters>
+    <filters>
+        <field>telegenta__Invalid_Reason__c</field>
+        <operation>equals</operation>
+        <value>Ikke kreditgodkendt</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>maltu</value>
+    </filters>
+    <label>Ikke kreditgodkendt - maltu</label>
+</ListView>

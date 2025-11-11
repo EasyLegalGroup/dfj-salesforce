@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_GRATIS_b_rnetestamente_juli</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>telegenta__Last_Contact_State__c</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>LEAD.ZIP</columns>
+    <columns>Publisher_name__c</columns>
+    <columns>Publisher_source__c</columns>
+    <columns>telegenta__Unsuccessful_Calls__c</columns>
+    <columns>Provider_id__c</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>Publisher_Campaign__c</columns>
+    <columns>New_Address__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Publisher_name__c</field>
+        <operation>equals</operation>
+        <value>facebook</value>
+    </filters>
+    <filters>
+        <field>Publisher_Campaign__c</field>
+        <operation>equals</operation>
+        <value>Få gratis børnetestamente Juli 2019</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>Closed - Not Converted</value>
+    </filters>
+    <label>Copy of GRATIS børnetestamente juli</label>
+</ListView>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>one2one</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>UTM_Campaign__c</columns>
+    <columns>UTM_Content__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>UTM_Content__c</field>
+        <operation>equals</operation>
+        <value>Tilmeld gratis foredrag eller 1til1 moede med raadgiver,Tilmeld gratis foredrag eller 1til1 moede med raadgiver med video</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>DFJ Leads</value>
+    </filters>
+    <filters>
+        <field>Is_Dublet__c</field>
+        <operation>equals</operation>
+        <value>No</value>
+    </filters>
+    <label>one2one</label>
+</ListView>

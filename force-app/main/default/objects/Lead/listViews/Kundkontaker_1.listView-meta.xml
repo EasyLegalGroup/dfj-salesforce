@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Kundkontaker_1</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>telegenta__Last_Contact_State__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>telegenta__Total_calls__c</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>Publisher_Campaign__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>telegenta__Priority__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>Publisher_name__c</columns>
+    <columns>Lead_Group_Name__c</columns>
+    <columns>Market_Unit__c</columns>
+    <columns>LEAD.RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>FA_SE</value>
+    </filters>
+    <filters>
+        <field>Publisher_Campaign__c</field>
+        <operation>equals</operation>
+        <value>Kundkontakter26072020</value>
+    </filters>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.FA_SE</value>
+    </filters>
+    <label>Kundkontaker_1</label>
+</ListView>

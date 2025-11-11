@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bolig_Advokat_24_Unassigned</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>New_Address__c</columns>
+    <columns>telegenta__Is_owner__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Publisher_name__c</field>
+        <operation>equals</operation>
+        <value>BoligAdvokat24</value>
+    </filters>
+    <filters>
+        <field>telegenta__Is_owner__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>none</value>
+    </filters>
+    <label>Bolig Advokat 24 (Unassigned)</label>
+</ListView>

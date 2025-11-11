@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marketing_Meeting_Booked__c</fullName>
+    <label>Marketing Meeting Booked</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>cancelled1</fullName>
+                <default>false</default>
+                <label>cancelled1</label>
+            </value>
+            <value>
+                <fullName>cancel2</fullName>
+                <default>false</default>
+                <label>cancel2</label>
+            </value>
+            <value>
+                <fullName>noshow1</fullName>
+                <default>false</default>
+                <label>noshow1</label>
+            </value>
+            <value>
+                <fullName>show1</fullName>
+                <default>false</default>
+                <label>show1</label>
+            </value>
+            <value>
+                <fullName>cancel1</fullName>
+                <default>false</default>
+                <label>cancel1</label>
+            </value>
+            <value>
+                <fullName>cancel3</fullName>
+                <default>false</default>
+                <label>cancel3</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

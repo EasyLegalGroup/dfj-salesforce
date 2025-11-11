@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_CC_DK_canceled</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND (5 OR 6) AND 7 AND 8 AND 9</booleanFilter>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>Call_Priority__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>UTM_Source__c</columns>
+    <columns>UTM_Medium__c</columns>
+    <columns>telegenta__Total_calls__c</columns>
+    <columns>Event_moedestatus_c__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Last_Reopened_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.DFJ_DK</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New,Working</value>
+    </filters>
+    <filters>
+        <field>Lead_Priority__c</field>
+        <operation>equals</operation>
+        <value>3</value>
+    </filters>
+    <filters>
+        <field>Is_Owned_by_Current_User_or_a_Queue__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>telegenta__Next_Call_Time__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>telegenta__Next_Call_Time__c</field>
+        <operation>lessThan</operation>
+        <value>TODAY</value>
+    </filters>
+    <filters>
+        <field>Gen_bnet__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Last_Reopened_Date__c</field>
+        <operation>notEqual</operation>
+        <value>4/11/2025 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>Communication_Ban__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>CC - DK: Order canceled</label>
+</ListView>

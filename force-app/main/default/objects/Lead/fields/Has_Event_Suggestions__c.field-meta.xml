@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_Event_Suggestions__c</fullName>
+    <formula>OR(
+   NOT(ISBLANK(Area_Suggestion__c)),
+   NOT(ISBLANK(Venue_Suggestion__c))
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Has Event Suggestions</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

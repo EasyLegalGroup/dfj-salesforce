@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SE_Viljeyttring_Invalid</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>telegenta__Last_Contact_State__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>telegenta__Total_calls__c</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>Publisher_Campaign__c</columns>
+    <columns>Gen_bnet__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Market_Unit__c</columns>
+    <columns>telegenta__Priority__c</columns>
+    <columns>LEAD.LAST_UPDATE</columns>
+    <columns>Lead_Group_Name__c</columns>
+    <columns>telegenta__Invalid_Reason__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Publisher_Campaign__c</field>
+        <operation>equals</operation>
+        <value>FB17062020gratisViljeyttring,gratisbtsverige juli/aug2020</value>
+    </filters>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.FA_SE</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>Closed - Not Converted</value>
+    </filters>
+    <filters>
+        <field>telegenta__Invalid_Reason__c</field>
+        <operation>notEqual</operation>
+        <value>Under 18,Eksisterende kunde,Forkert person,Forstår ikke dansk,Blacklist,Number incorrect,Unavailable,TestLead,Dublet</value>
+    </filters>
+    <filters>
+        <field>telegenta__Not_Interested_Reason__c</field>
+        <operation>notEqual</operation>
+        <value>Afvist i introen,Kunden lagde på,Har ALLE dokumenter,Vil selv vende tilbage,Aldrig tilmeldt sig,Standpunkt uændret,For dyrt,Har ikke råd,Er allerede i gang,Opfølgning 3-6 måneder,Modtager kun mail</value>
+    </filters>
+    <label>SE Viljeyttring_Invalid</label>
+</ListView>

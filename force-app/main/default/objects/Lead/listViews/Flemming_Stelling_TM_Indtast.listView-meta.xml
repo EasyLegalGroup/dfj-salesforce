@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flemming_Stelling_TM_Indtast</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>Event_moedestatus_c__c</columns>
+    <columns>Undg_at_staten_bliver_min_v_rge__c</columns>
+    <columns>Undg_at_b_rns_risiko_for_50_mindre_arv__c</columns>
+    <columns>Undg_en_sk_vfordeling_af_arven__c</columns>
+    <columns>Selv_bestemme_hvem_der_skal_arve_mig__c</columns>
+    <columns>Undg_at_b_rn_f_r_arv_udbetalt_for_tidli__c</columns>
+    <columns>Sikre_min_partner_gtef_lle_mest_muligt__c</columns>
+    <columns>Undg_at_partner_skal_betale_ved_min_d_d__c</columns>
+    <columns>Undg_arveafgift_til_arvinger__c</columns>
+    <columns>Gavekort_1_000_kr_rabat_og_r_dgivning__c</columns>
+    <columns>Name2__c</columns>
+    <columns>Phone2__c</columns>
+    <columns>Foredragskommentar__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.DFJ_DK</value>
+    </filters>
+    <label>Flemming Stelling - TM Indtast</label>
+</ListView>

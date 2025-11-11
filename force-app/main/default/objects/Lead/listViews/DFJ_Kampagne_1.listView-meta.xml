@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DFJ_Kampagne_1</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>Event_moedestatus_c__c</columns>
+    <columns>telegenta__Total_calls__c</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>UTM_Campaign__c</columns>
+    <columns>UTM_Medium__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>UTM_Content__c</columns>
+    <columns>UTM_Source__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New,Working</value>
+    </filters>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.DFJ_DK</value>
+    </filters>
+    <filters>
+        <field>Is_Dublet__c</field>
+        <operation>notEqual</operation>
+        <value>Yes</value>
+    </filters>
+    <filters>
+        <field>UTM_Campaign__c</field>
+        <operation>notEqual</operation>
+        <value>Kanvas</value>
+    </filters>
+    <filters>
+        <field>UTM_Medium__c</field>
+        <operation>notEqual</operation>
+        <value>Bigsaver.dk,Dokument24,Findforsikring.dk</value>
+    </filters>
+    <filters>
+        <field>UTM_Source__c</field>
+        <operation>notEqual</operation>
+        <value>Foredrag</value>
+    </filters>
+    <filters>
+        <field>UTM_Content__c</field>
+        <operation>notEqual</operation>
+        <value>Gratis personlig online rådgivning + gavekort 1.000 kr.</value>
+    </filters>
+    <label>Kampagne DK</label>
+</ListView>

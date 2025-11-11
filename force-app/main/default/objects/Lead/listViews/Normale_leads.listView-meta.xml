@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Normale_leads</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>telegenta__Priority__c</columns>
+    <columns>telegenta__Has_Appointment__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Publisher_name__c</field>
+        <operation>equals</operation>
+        <value>eGentic</value>
+    </filters>
+    <label>Normale leads</label>
+</ListView>

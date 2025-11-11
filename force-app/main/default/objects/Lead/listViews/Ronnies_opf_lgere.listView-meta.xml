@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ronnies_opf_lgere</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>LEAD.LAST_UPDATE</columns>
+    <columns>Publisher_name__c</columns>
+    <columns>Publisher_Campaign__c</columns>
+    <columns>LEAD.RATING</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>Working</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>re</value>
+    </filters>
+    <label>Ronnies opfølgere</label>
+</ListView>

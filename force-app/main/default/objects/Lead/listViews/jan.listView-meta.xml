@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>jan</fullName>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>UTM_Source__c</columns>
+    <columns>UTM_Medium__c</columns>
+    <columns>UTM_Campaign__c</columns>
+    <columns>UTM_Content__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>Is_Dublet__c</columns>
+    <columns>New_Status__c</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>stop_calling__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>UTM_Medium__c</field>
+        <operation>equals</operation>
+        <value>Impressive Relations</value>
+    </filters>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>FA_SE,Testamente_SV</value>
+    </filters>
+    <label>jan</label>
+</ListView>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Confirmed_by_Screen_Flow__c</fullName>
+    <defaultValue>false</defaultValue>
+    <label>Is Confirmed by Screen Flow</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

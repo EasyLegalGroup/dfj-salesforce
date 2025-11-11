@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Udsendelse_af_Calendly_link</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>Event_moedestatus_c__c</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>Ekstern_r_dgiver__c</columns>
+    <columns>Kommentarer_Calendly__c</columns>
+    <columns>UTM_Content__c</columns>
+    <columns>Foredragsdato__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.DFJ_DK</value>
+    </filters>
+    <filters>
+        <field>UTM_Source__c</field>
+        <operation>equals</operation>
+        <value>Foredrag</value>
+    </filters>
+    <filters>
+        <field>Foredragsdato__c</field>
+        <operation>equals</operation>
+        <value>YESTERDAY</value>
+    </filters>
+    <filters>
+        <field>Event_moedestatus_c__c</field>
+        <operation>notEqual</operation>
+        <value>No show</value>
+    </filters>
+    <filters>
+        <field>Ekstern_r_dgiver__c</field>
+        <operation>notEqual</operation>
+        <value>Andy</value>
+    </filters>
+    <label>Udsendelse af Calendly link - Danny</label>
+</ListView>

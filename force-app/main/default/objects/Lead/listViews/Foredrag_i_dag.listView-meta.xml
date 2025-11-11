@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Foredrag_i_dag</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>Foredragstid_og_dato__c</columns>
+    <columns>No_Show_Cause__c</columns>
+    <columns>UTM_Content__c</columns>
+    <columns>Event_moedestatus_c__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>Gavekort_1_000_kr_rabat_og_r_dgivning__c</columns>
+    <columns>Foredragskommentar__c</columns>
+    <columns>Ekstern_r_dgiver__c</columns>
+    <columns>Foredragstype__c</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.DFJ_DK</value>
+    </filters>
+    <filters>
+        <field>UTM_Source__c</field>
+        <operation>equals</operation>
+        <value>Foredrag</value>
+    </filters>
+    <filters>
+        <field>Foredragsdato__c</field>
+        <operation>equals</operation>
+        <value>NEXT_WEEK</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>DFJ Leads</value>
+    </filters>
+    <label>Foredrag i dag</label>
+</ListView>

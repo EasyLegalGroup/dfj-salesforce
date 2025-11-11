@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Zapier_Trigger_Field__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field is used only to trigger Zapier updates on a lead. Zapier has a &quot;Trigger on Field Updated on Record&quot; feature, than can then be used to update a lead with certain values. That Zapier flow should always end by setting &quot;Zapier Flag&quot; to &quot;True&quot; and this field, &quot;Zapier Trigger Field&quot; to &quot;False&quot;.</description>
+    <inlineHelpText>This field is used only to trigger Zapier updates on a lead. Zapier has a &quot;Trigger on Field Updated on Record&quot; feature, than can then be used to update a lead with certain values. That Zapier flow should always end by setting &quot;Zapier Flag&quot; to &quot;True&quot; and this field, &quot;Zapier Trigger Field&quot; to &quot;False&quot;.</inlineHelpText>
+    <label>Zapier Trigger Field</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

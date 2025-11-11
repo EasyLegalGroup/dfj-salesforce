@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DK_All_Events_after_01_11_2023</fullName>
+    <columns>CAMPAIGN.NAME</columns>
+    <columns>Start__c</columns>
+    <columns>CAMPAIGN.STATUS</columns>
+    <columns>Capacity__c</columns>
+    <columns>CAMPAIGN.NUM_LEADS</columns>
+    <columns>Host__c</columns>
+    <columns>CAMPAIGN.CREATED_DATE</columns>
+    <columns>Related_Event_ID__c</columns>
+    <columns>Zapier_Trigger__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>DFJ_DK,Testamente_DK</value>
+    </filters>
+    <filters>
+        <field>Start__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>11/1/2023 12:00 AM</value>
+    </filters>
+    <label>DK - All Events after 01-11-2023</label>
+</ListView>

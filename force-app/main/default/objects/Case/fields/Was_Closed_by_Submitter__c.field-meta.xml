@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Was_Closed_by_Submitter__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates whether this case was closed by the original submitter via the IT Support Center</description>
+    <label>Was Closed by Submitter</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Date_Consistency</fullName>
+    <active>false</active>
+    <description>Ensures the Status picklist and Start__c date/time stay in sync, and that the Cancelled__c and Rescheduled__c checkboxes are checked whenever you select those statuses.</description>
+    <errorConditionFormula>OR(
+  /* Completed only if Start__c in past */
+  AND(ISPICKVAL(Status, &quot;Completed&quot;), Start__c &gt; NOW()),
+  
+  /* Scheduled only if Start__c in future */
+  AND(ISPICKVAL(Status, &quot;Scheduled&quot;), Start__c &lt;= NOW()),
+  
+  /* Pending Approval only if Start__c in future */
+  AND(ISPICKVAL(Status, &quot;Pending Approval&quot;), Start__c &lt;= NOW()),
+  
+  /* Cancelled requires Cancelled__c = TRUE */
+  AND(ISPICKVAL(Status, &quot;Cancelled&quot;), NOT(Cancelled__c)),
+  
+  /* Rescheduled requires Rescheduled__c = TRUE */
+  AND(ISPICKVAL(Status, &quot;Rescheduled&quot;), NOT(Rescheduled__c))
+)</errorConditionFormula>
+    <errorMessage>Invalid Status selection:
+• Completed → Start date must be in the past  
+• Scheduled/Pending Approval → Start date must be in the future  
+• Cancelled → “Cancelled” checkbox must be checked  
+• Rescheduled → “Rescheduled” checkbox must be checked</errorMessage>
+</ValidationRule>

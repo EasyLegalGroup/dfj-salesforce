@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Publisher_Campaign__c</fullName>
+    <label>Lead Publisher Campaign</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not specified</fullName>
+                <default>true</default>
+                <label>Not specified</label>
+            </value>
+            <value>
+                <fullName>Batch 3</fullName>
+                <default>false</default>
+                <label>Batch 3</label>
+            </value>
+            <value>
+                <fullName>Batch 2</fullName>
+                <default>false</default>
+                <label>Batch 2</label>
+            </value>
+            <value>
+                <fullName>Batch 1</fullName>
+                <default>false</default>
+                <label>Batch 1</label>
+            </value>
+            <value>
+                <fullName>BA24-TEST1</fullName>
+                <default>false</default>
+                <label>BA24-TEST1</label>
+            </value>
+            <value>
+                <fullName>BA24-Møder</fullName>
+                <default>false</default>
+                <label>BA24-Møder</label>
+            </value>
+            <value>
+                <fullName>Få gratis børnetestamente Juli 2019</fullName>
+                <default>false</default>
+                <label>Få gratis børnetestamente Juli 2019</label>
+            </value>
+            <value>
+                <fullName>Få gratis børnetestamente August 2019</fullName>
+                <default>false</default>
+                <label>Få gratis børnetestamente August 2019</label>
+            </value>
+            <value>
+                <fullName>Få gratis børnetestamente August 2019 B</fullName>
+                <default>false</default>
+                <label>Få gratis børnetestamente August 2019 B</label>
+            </value>
+            <value>
+                <fullName>Få gratis børnetestamente August 2019 C</fullName>
+                <default>false</default>
+                <label>Få gratis børnetestamente August 2019 C</label>
+            </value>
+            <value>
+                <fullName>Saseline 01</fullName>
+                <default>false</default>
+                <label>Saseline 01</label>
+            </value>
+            <value>
+                <fullName>Charlotte video 19-8-2019</fullName>
+                <default>false</default>
+                <label>Charlotte video 19-8-2019</label>
+            </value>
+            <value>
+                <fullName>Premio011019test1</fullName>
+                <default>false</default>
+                <label>Premio011019test1</label>
+            </value>
+            <value>
+                <fullName>DFJAmagerSeniorKlub27112019</fullName>
+                <default>false</default>
+                <label>DFJAmagerSeniorKlub27112019</label>
+            </value>
+            <value>
+                <fullName>Influencer10052020CamillaFramnes</fullName>
+                <default>false</default>
+                <label>Influencer10052020CamillaFramnes</label>
+            </value>
+            <value>
+                <fullName>Influencer11052020TrineStaberg</fullName>
+                <default>false</default>
+                <label>Influencer11052020TrineStaberg</label>
+            </value>
+            <value>
+                <fullName>Influencer04052020AliceStadil</fullName>
+                <default>false</default>
+                <label>Influencer04052020AliceStadil</label>
+            </value>
+            <value>
+                <fullName>Influencer08042020LisbethØstergaard</fullName>
+                <default>false</default>
+                <label>Influencer08042020LisbethØstergaard</label>
+            </value>
+            <value>
+                <fullName>Influencer13042020JosefineValentin</fullName>
+                <default>false</default>
+                <label>Influencer13042020JosefineValentin</label>
+            </value>
+            <value>
+                <fullName>FB17062020gratisViljeyttring</fullName>
+                <default>false</default>
+                <label>FB17062020gratisViljeyttring</label>
+            </value>
+            <value>
+                <fullName>Influencer10062020TrineSchmidt</fullName>
+                <default>false</default>
+                <label>Influencer10062020TrineSchmidt</label>
+            </value>
+            <value>
+                <fullName>Influencer16072020ChristinaDueholm</fullName>
+                <default>false</default>
+                <label>Influencer16072020ChristinaDueholm</label>
+            </value>
+            <value>
+                <fullName>TestamenteDK_Oprettestamente1</fullName>
+                <default>false</default>
+                <label>TestamenteDK_Oprettestamente1</label>
+            </value>
+            <value>
+                <fullName>Retargeting</fullName>
+                <default>false</default>
+                <label>Retargeting</label>
+            </value>
+            <value>
+                <fullName>03082020TestamenteDK_001</fullName>
+                <default>false</default>
+                <label>03082020TestamenteDK_001</label>
+            </value>
+            <value>
+                <fullName>gratisbtsverige juli/aug2020</fullName>
+                <default>false</default>
+                <label>gratisbtsverige juli/aug2020</label>
+            </value>
+            <value>
+                <fullName>Influencer23072020JulieElgaard</fullName>
+                <default>false</default>
+                <label>Influencer23072020JulieElgaard</label>
+            </value>
+            <value>
+                <fullName>Influencer23072020CecilieSchmeichel</fullName>
+                <default>false</default>
+                <label>Influencer23072020CecilieSchmeichel</label>
+            </value>
+            <value>
+                <fullName>fb11082020KristineInfluencer</fullName>
+                <default>false</default>
+                <label>fb11082020KristineInfluencer</label>
+            </value>
+            <value>
+                <fullName>Influencer23072020ChristinaAmbrus</fullName>
+                <default>false</default>
+                <label>Influencer23072020ChristinaAmbrus</label>
+            </value>
+            <value>
+                <fullName>Kundkontakter26072020</fullName>
+                <default>false</default>
+                <label>Kundkontakter26072020</label>
+            </value>
+            <value>
+                <fullName>Bisnode18062020</fullName>
+                <default>false</default>
+                <label>Bisnode18062020</label>
+            </value>
+            <value>
+                <fullName>influencer05072020TinaLund</fullName>
+                <default>false</default>
+                <label>influencer05072020TinaLund</label>
+            </value>
+            <value>
+                <fullName>Influencer12072020MetteMarieLange</fullName>
+                <default>false</default>
+                <label>Influencer12072020MetteMarieLange</label>
+            </value>
+            <value>
+                <fullName>Influencer10062020JosephineRahbekWilson</fullName>
+                <default>false</default>
+                <label>Influencer10062020JosephineRahbekWilson</label>
+            </value>
+            <value>
+                <fullName>Influencer10062020LineBisgaardAndersen</fullName>
+                <default>false</default>
+                <label>Influencer10062020LineBisgaardAndersen</label>
+            </value>
+            <value>
+                <fullName>Influencer10062020MetteNicolaisen</fullName>
+                <default>false</default>
+                <label>Influencer10062020MetteNicolaisen</label>
+            </value>
+            <value>
+                <fullName>Influencer10062020KristineDalsgaard</fullName>
+                <default>false</default>
+                <label>Influencer10062020KristineDalsgaard</label>
+            </value>
+            <value>
+                <fullName>Influencer17062020SarahLouiseChristiansen</fullName>
+                <default>false</default>
+                <label>Influencer17062020SarahLouiseChristiansen</label>
+            </value>
+            <value>
+                <fullName>Influencer10062020MarleneLentz</fullName>
+                <default>false</default>
+                <label>Influencer10062020MarleneLentz</label>
+            </value>
+            <value>
+                <fullName>Influencer11062020JackieNavarro</fullName>
+                <default>false</default>
+                <label>Influencer11062020JackieNavarro</label>
+            </value>
+            <value>
+                <fullName>Influencer10062020ChristineGrothPedersen</fullName>
+                <default>false</default>
+                <label>Influencer10062020ChristineGrothPedersen</label>
+            </value>
+            <value>
+                <fullName>Influencer10062020ChristinaSander</fullName>
+                <default>false</default>
+                <label>Influencer10062020ChristinaSander</label>
+            </value>
+            <value>
+                <fullName>Influencer05062020DittejulieJensen</fullName>
+                <default>false</default>
+                <label>Influencer05062020DittejulieJensen</label>
+            </value>
+            <value>
+                <fullName>Influencer24052020SofieHammer</fullName>
+                <default>false</default>
+                <label>Influencer24052020SofieHammer</label>
+            </value>
+            <value>
+                <fullName>Influencer24052020JosefineValentin</fullName>
+                <default>false</default>
+                <label>Influencer24052020JosefineValentin</label>
+            </value>
+            <value>
+                <fullName>Start opret testamente outgrow Leads</fullName>
+                <default>false</default>
+                <label>Start opret testamente outgrow Leads</label>
+            </value>
+            <value>
+                <fullName>Honestus</fullName>
+                <default>false</default>
+                <label>Honestus</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

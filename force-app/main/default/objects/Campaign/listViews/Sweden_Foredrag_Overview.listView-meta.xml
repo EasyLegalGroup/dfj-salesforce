@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sweden_Foredrag_Overview</fullName>
+    <columns>CAMPAIGN.CREATED_DATE</columns>
+    <columns>CAMPAIGN.NAME</columns>
+    <columns>Host__c</columns>
+    <columns>CAMPAIGN.START_DATE</columns>
+    <columns>CAMPAIGN.NUM_LEADS</columns>
+    <columns>Event_ID__c</columns>
+    <columns>Lecturer__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>FA_SE,Testamente_SV</value>
+    </filters>
+    <filters>
+        <field>CAMPAIGN.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Campaign.Lecture</value>
+    </filters>
+    <label>SE - All Events</label>
+</ListView>

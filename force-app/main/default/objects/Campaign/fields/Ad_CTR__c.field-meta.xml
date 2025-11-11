@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ad_CTR__c</fullName>
+    <description>Click-Through-Rating - Indicates how often an ad is clicked vs. how often it is showed. If half the customers who see the add click it, it will have a CTR of 0.5.</description>
+    <externalId>false</externalId>
+    <label>Ad CTR</label>
+    <precision>16</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

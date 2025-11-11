@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Original_date_time__c</fullName>
+    <inlineHelpText>This field is set when event is created and shows the original time of the event. In case the event is rescheduled, we can track here, when it was originally meant to be held.</inlineHelpText>
+    <label>Original date/time</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

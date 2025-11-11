@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>F_lles_Forsikring_og_Laura_Unprocessed</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>Publisher_Campaign__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>IsCallableWorking__c</columns>
+    <columns>IsCallableNew__c</columns>
+    <columns>telegenta__Last_Contact_State__c</columns>
+    <columns>LEAD.RATING</columns>
+    <columns>telegenta__Priority__c</columns>
+    <columns>UPDATEDBY_USER.ALIAS</columns>
+    <columns>Kommentarer__c</columns>
+    <columns>telegenta__Total_calls__c</columns>
+    <columns>LEAD.LAST_ACTIVITY</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Publisher_Campaign__c</field>
+        <operation>equals</operation>
+        <value>Danske seniorer,Risikovurdering,Fb31102019lauravideoBt1,Fb041119gavekortlauravideo,Forsikringshjælp11112019test1</value>
+    </filters>
+    <filters>
+        <field>telegenta__Unprocessed__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New</value>
+    </filters>
+    <filters>
+        <field>IsCallableNew__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Fælles - Fail</label>
+</ListView>

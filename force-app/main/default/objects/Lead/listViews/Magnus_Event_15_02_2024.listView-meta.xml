@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Magnus_Event_15_02_2024</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>Event_moedestatus_c__c</columns>
+    <columns>Ekstern_r_dgiver__c</columns>
+    <columns>telegenta__Total_calls__c</columns>
+    <columns>Remaining_Tickets__c</columns>
+    <columns>Tickets_in_order__c</columns>
+    <columns>Cancelled_tickets__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.FA_SE</value>
+    </filters>
+    <filters>
+        <field>Related_Event_ID__c</field>
+        <operation>equals</operation>
+        <value>H-0004014-001</value>
+    </filters>
+    <label>Magnus Event 15-02-2024</label>
+</ListView>

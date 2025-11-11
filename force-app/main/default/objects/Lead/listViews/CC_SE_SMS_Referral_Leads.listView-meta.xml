@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CC_SE_SMS_Referral_Leads</fullName>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>Lead_Priority__c</columns>
+    <columns>Call_Priority__c</columns>
+    <columns>telegenta__Lock_Time__c</columns>
+    <columns>Locked__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>UTM_Source__c</columns>
+    <columns>UTM_Medium__c</columns>
+    <columns>telegenta__Total_calls__c</columns>
+    <columns>Event_moedestatus_c__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>Working,New</value>
+    </filters>
+    <label>CC - SE: SMS Referral Leads</label>
+    <queue>Sweden_Leads</queue>
+</ListView>

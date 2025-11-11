@@ -1,0 +1,2009 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Publisher_Campaign__c</fullName>
+    <label>Publisher Campaign</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not specified</fullName>
+                <default>true</default>
+                <label>Not specified</label>
+            </value>
+            <value>
+                <fullName>BA24-TEST1</fullName>
+                <default>false</default>
+                <label>BA24-TEST1</label>
+            </value>
+            <value>
+                <fullName>BA24_Test_Berigtigelse_2017</fullName>
+                <default>false</default>
+                <label>BA24_Test_Berigtigelse_2017</label>
+            </value>
+            <value>
+                <fullName>sager mgl. 1.7-31.12</fullName>
+                <default>false</default>
+                <label>sager mgl. 1.7-31.12</label>
+            </value>
+            <value>
+                <fullName>Danske seniorer</fullName>
+                <default>false</default>
+                <label>Danske seniorer</label>
+            </value>
+            <value>
+                <fullName>Risikovurdering</fullName>
+                <default>false</default>
+                <label>Risikovurdering</label>
+            </value>
+            <value>
+                <fullName>DFJIndgåendeGratisBT</fullName>
+                <default>false</default>
+                <label>DFJIndgåendeGratisBT</label>
+            </value>
+            <value>
+                <fullName>DFJlandingdisplaygratisBT</fullName>
+                <default>false</default>
+                <label>DFJlandingdisplaygratisBT</label>
+            </value>
+            <value>
+                <fullName>LassoX021019ElTømrerVVSFys0-9KBH</fullName>
+                <default>false</default>
+                <label>LassoX021019ElTømrerVVSFys0-9KBH</label>
+            </value>
+            <value>
+                <fullName>CM03112019Batch1</fullName>
+                <default>false</default>
+                <label>CM03112019Batch1</label>
+            </value>
+            <value>
+                <fullName>CrowdioChat</fullName>
+                <default>false</default>
+                <label>CrowdioChat</label>
+            </value>
+            <value>
+                <fullName>DFJKontaktHjemmeside</fullName>
+                <default>false</default>
+                <label>DFJKontaktHjemmeside</label>
+            </value>
+            <value>
+                <fullName>MB03012020blandet</fullName>
+                <default>false</default>
+                <label>MB03012020blandet</label>
+            </value>
+            <value>
+                <fullName>Bisnode18062020</fullName>
+                <default>false</default>
+                <label>Bisnode18062020</label>
+            </value>
+            <value>
+                <fullName>Kundkontakter26072020</fullName>
+                <default>false</default>
+                <label>Kundkontakter26072020</label>
+            </value>
+            <value>
+                <fullName>Retargeting</fullName>
+                <default>false</default>
+                <label>Retargeting</label>
+            </value>
+            <value>
+                <fullName>MM06122019gratisbtmkb</fullName>
+                <default>false</default>
+                <label>MM06122019gratisbtmkb</label>
+            </value>
+            <value>
+                <fullName>FAKontaktHjemmeside</fullName>
+                <default>false</default>
+                <label>FAKontaktHjemmeside</label>
+            </value>
+            <value>
+                <fullName>GRATIS VARDNADSTESTAMENTE</fullName>
+                <default>false</default>
+                <label>GRATIS VARDNADSTESTAMENTE</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122020</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122020</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon ved de bliver kontaktet og fr gavekort p 1000 kroner  02122020</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon ved de bliver kontaktet og fr gavekort p 1000 kroner  02122020</label>
+            </value>
+            <value>
+                <fullName>Arvetest-bliv-kontaktet</fullName>
+                <default>false</default>
+                <label>Arvetest-bliv-kontaktet</label>
+            </value>
+            <value>
+                <fullName>Arvetest almindelig</fullName>
+                <default>false</default>
+                <label>Arvetest almindelig</label>
+            </value>
+            <value>
+                <fullName>Arvetest - Telefon10122020</fullName>
+                <default>false</default>
+                <label>Arvetest - Telefon10122020</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon ved de bliver kontaktet og fr gavekort p 1000 kroner  02122090</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon ved de bliver kontaktet og fr gavekort p 1000 kroner  02122090</label>
+            </value>
+            <value>
+                <fullName>Popermo</fullName>
+                <default>false</default>
+                <label>Popermo</label>
+            </value>
+            <value>
+                <fullName>Honestus</fullName>
+                <default>false</default>
+                <label>Honestus</label>
+            </value>
+            <value>
+                <fullName>Vem rver mig nr jag dr</fullName>
+                <default>false</default>
+                <label>Vem rver mig nr jag dr</label>
+            </value>
+            <value>
+                <fullName>1 timmars gratis raadgivning</fullName>
+                <default>false</default>
+                <label>1 timmars gratis raadgivning</label>
+            </value>
+            <value>
+                <fullName>TJ</fullName>
+                <default>false</default>
+                <label>TJ</label>
+            </value>
+            <value>
+                <fullName>Paul Burton Leads</fullName>
+                <default>false</default>
+                <label>Paul Burton Leads</label>
+            </value>
+            <value>
+                <fullName>Facebook Burton</fullName>
+                <default>false</default>
+                <label>Facebook Burton</label>
+            </value>
+            <value>
+                <fullName>Foredrag_Moems</fullName>
+                <default>false</default>
+                <label>Foredrag_Moems</label>
+            </value>
+            <value>
+                <fullName>Gratis testamente</fullName>
+                <default>false</default>
+                <label>Gratis testamente</label>
+            </value>
+            <value>
+                <fullName>Opret testamente og Medlemskab</fullName>
+                <default>false</default>
+                <label>Opret testamente og Medlemskab</label>
+            </value>
+            <value>
+                <fullName>1000 kr. Rabat og rådgivning</fullName>
+                <default>false</default>
+                <label>1000 kr. Rabat og rådgivning</label>
+            </value>
+            <value>
+                <fullName>Samlevende som ikke er gift arver ikke hinanden  Video Line  30092021a</fullName>
+                <default>false</default>
+                <label>Samlevende som ikke er gift arver ikke hinanden  Video Line  30092021a</label>
+            </value>
+            <value>
+                <fullName>Hvem nsker du skal trffe beslutninger hvis du bliver alvorlig syg</fullName>
+                <default>false</default>
+                <label>Hvem nsker du skal trffe beslutninger hvis du bliver alvorlig syg</label>
+            </value>
+            <value>
+                <fullName>1000 kr. Rabat og rðdgivning</fullName>
+                <default>false</default>
+                <label>1000 kr. Rabat og rðdgivning</label>
+            </value>
+            <value>
+                <fullName>impressive relations din familjejurist partner outgrow</fullName>
+                <default>false</default>
+                <label>impressive relations din familjejurist partner outgrow</label>
+            </value>
+            <value>
+                <fullName>Batch 2</fullName>
+                <default>false</default>
+                <label>Batch 2</label>
+            </value>
+            <value>
+                <fullName>Batch 1</fullName>
+                <default>false</default>
+                <label>Batch 1</label>
+            </value>
+            <value>
+                <fullName>EG010319Batch4</fullName>
+                <default>false</default>
+                <label>EG010319Batch4</label>
+            </value>
+            <value>
+                <fullName>Premio011019test1</fullName>
+                <default>false</default>
+                <label>Premio011019test1</label>
+            </value>
+            <value>
+                <fullName>Adservice031019gratisBTBillund</fullName>
+                <default>false</default>
+                <label>Adservice031019gratisBTBillund</label>
+            </value>
+            <value>
+                <fullName>FB161019Vindtestamente</fullName>
+                <default>false</default>
+                <label>FB161019Vindtestamente</label>
+            </value>
+            <value>
+                <fullName>Premio25102019Mødebook1</fullName>
+                <default>false</default>
+                <label>Premio25102019Mødebook1</label>
+            </value>
+            <value>
+                <fullName>Saseline 01</fullName>
+                <default>false</default>
+                <label>Saseline 01</label>
+            </value>
+            <value>
+                <fullName>Vind hjemmebesøg Juli 2019</fullName>
+                <default>false</default>
+                <label>Vind hjemmebesøg Juli 2019</label>
+            </value>
+            <value>
+                <fullName>Få gratis børnetestamente Juli 2019</fullName>
+                <default>false</default>
+                <label>Få gratis børnetestamente Juli 2019</label>
+            </value>
+            <value>
+                <fullName>Facebook VIND testa og FM</fullName>
+                <default>false</default>
+                <label>Facebook VIND testa og FM</label>
+            </value>
+            <value>
+                <fullName>RPA Lead (Konkurrence)-copy1</fullName>
+                <default>false</default>
+                <label>RPA Lead (Konkurrence)-copy1</label>
+            </value>
+            <value>
+                <fullName>Få gratis børnetestamente August 2019</fullName>
+                <default>false</default>
+                <label>Få gratis børnetestamente August 2019</label>
+            </value>
+            <value>
+                <fullName>Få gratis børnetestamente August 2019 B</fullName>
+                <default>false</default>
+                <label>Få gratis børnetestamente August 2019 B</label>
+            </value>
+            <value>
+                <fullName>Charlotte video 19-8-2019</fullName>
+                <default>false</default>
+                <label>Charlotte video 19-8-2019</label>
+            </value>
+            <value>
+                <fullName>Få gratis børnetestamente August 2019 C</fullName>
+                <default>false</default>
+                <label>Få gratis børnetestamente August 2019 C</label>
+            </value>
+            <value>
+                <fullName>Få gratis børnetestamente August 2019 E</fullName>
+                <default>false</default>
+                <label>Få gratis børnetestamente August 2019 E</label>
+            </value>
+            <value>
+                <fullName>EG030919gratisBT1</fullName>
+                <default>false</default>
+                <label>EG030919gratisBT1</label>
+            </value>
+            <value>
+                <fullName>FBobsidian040919gratisbt1</fullName>
+                <default>false</default>
+                <label>FBobsidian040919gratisbt1</label>
+            </value>
+            <value>
+                <fullName>FB050919ronnieFM1</fullName>
+                <default>false</default>
+                <label>FB050919ronnieFM1</label>
+            </value>
+            <value>
+                <fullName>Få gratis børnetestamente August 2019 D</fullName>
+                <default>false</default>
+                <label>Få gratis børnetestamente August 2019 D</label>
+            </value>
+            <value>
+                <fullName>Fb31102019lauravideoBt1</fullName>
+                <default>false</default>
+                <label>Fb31102019lauravideoBt1</label>
+            </value>
+            <value>
+                <fullName>Fb041119gavekortlauravideo</fullName>
+                <default>false</default>
+                <label>Fb041119gavekortlauravideo</label>
+            </value>
+            <value>
+                <fullName>Forsikringshjælp11112019test1</fullName>
+                <default>false</default>
+                <label>Forsikringshjælp11112019test1</label>
+            </value>
+            <value>
+                <fullName>Jyllandsposten171119LIneBaun</fullName>
+                <default>false</default>
+                <label>Jyllandsposten171119LIneBaun</label>
+            </value>
+            <value>
+                <fullName>DFJAmagerSeniorKlub27112019</fullName>
+                <default>false</default>
+                <label>DFJAmagerSeniorKlub27112019</label>
+            </value>
+            <value>
+                <fullName>Adservice091019gratisBTVindtesta</fullName>
+                <default>false</default>
+                <label>Adservice091019gratisBTVindtesta</label>
+            </value>
+            <value>
+                <fullName>FoBruFo02122019Landingpage</fullName>
+                <default>false</default>
+                <label>FoBruFo02122019Landingpage</label>
+            </value>
+            <value>
+                <fullName>DS06122019gratisFM</fullName>
+                <default>false</default>
+                <label>DS06122019gratisFM</label>
+            </value>
+            <value>
+                <fullName>MM06122019gratisbtmkøb</fullName>
+                <default>false</default>
+                <label>MM06122019gratisbtmkøb</label>
+            </value>
+            <value>
+                <fullName>nyhedsbreve200120gratisBT</fullName>
+                <default>false</default>
+                <label>nyhedsbreve200120gratisBT</label>
+            </value>
+            <value>
+                <fullName>Bornibyen200120gratisBT</fullName>
+                <default>false</default>
+                <label>Bornibyen200120gratisBT</label>
+            </value>
+            <value>
+                <fullName>reshopper200120gratisBT</fullName>
+                <default>false</default>
+                <label>reshopper200120gratisBT</label>
+            </value>
+            <value>
+                <fullName>Advomatch30012020</fullName>
+                <default>false</default>
+                <label>Advomatch30012020</label>
+            </value>
+            <value>
+                <fullName>HK020220GratisBT</fullName>
+                <default>false</default>
+                <label>HK020220GratisBT</label>
+            </value>
+            <value>
+                <fullName>Samvirke020220GratisBT</fullName>
+                <default>false</default>
+                <label>Samvirke020220GratisBT</label>
+            </value>
+            <value>
+                <fullName>Folkeskolen020220GratisBT</fullName>
+                <default>false</default>
+                <label>Folkeskolen020220GratisBT</label>
+            </value>
+            <value>
+                <fullName>TilAtTeste</fullName>
+                <default>false</default>
+                <label>TilAtTeste</label>
+            </value>
+            <value>
+                <fullName>FB120220gratisFT</fullName>
+                <default>false</default>
+                <label>FB120220gratisFT</label>
+            </value>
+            <value>
+                <fullName>Fb10032020messenger</fullName>
+                <default>false</default>
+                <label>Fb10032020messenger</label>
+            </value>
+            <value>
+                <fullName>FB120320testamenteleads</fullName>
+                <default>false</default>
+                <label>FB120320testamenteleads</label>
+            </value>
+            <value>
+                <fullName>FB120320fremtidsfuldmagt</fullName>
+                <default>false</default>
+                <label>FB120320fremtidsfuldmagt</label>
+            </value>
+            <value>
+                <fullName>FB130220gratisBT</fullName>
+                <default>false</default>
+                <label>FB130220gratisBT</label>
+            </value>
+            <value>
+                <fullName>Fb120320gratisrådgivning</fullName>
+                <default>false</default>
+                <label>Fb120320gratisrådgivning</label>
+            </value>
+            <value>
+                <fullName>gratisbtgoogle</fullName>
+                <default>false</default>
+                <label>gratisbtgoogle</label>
+            </value>
+            <value>
+                <fullName>Prisforslag pC3A5 testamente video af gennemgang  Emir</fullName>
+                <default>false</default>
+                <label>Prisforslag pC3A5 testamente video af gennemgang  Emir</label>
+            </value>
+            <value>
+                <fullName>Prisforslag pC3A5 testamente video af gennemgang  Nada</fullName>
+                <default>false</default>
+                <label>Prisforslag pC3A5 testamente video af gennemgang  Nada</label>
+            </value>
+            <value>
+                <fullName>Prisforslagtestamente01032021</fullName>
+                <default>false</default>
+                <label>Prisforslagtestamente01032021</label>
+            </value>
+            <value>
+                <fullName>03032021opretboernetestamenteikkegratis</fullName>
+                <default>false</default>
+                <label>03032021opretboernetestamenteikkegratis</label>
+            </value>
+            <value>
+                <fullName>Hvadkosterettestamentevideoflowsiv</fullName>
+                <default>false</default>
+                <label>Hvadkosterettestamentevideoflowsiv</label>
+            </value>
+            <value>
+                <fullName>28 alleisverigePrisforslagtestamente01032021</fullName>
+                <default>false</default>
+                <label>28 alleisverigePrisforslagtestamente01032021</label>
+            </value>
+            <value>
+                <fullName>Beregnpristestamentevideoflow</fullName>
+                <default>false</default>
+                <label>Beregnpristestamentevideoflow</label>
+            </value>
+            <value>
+                <fullName>Beregnpristestamentevideosiv</fullName>
+                <default>false</default>
+                <label>Beregnpristestamentevideosiv</label>
+            </value>
+            <value>
+                <fullName>Gratis Brnetestamente  leadads</fullName>
+                <default>false</default>
+                <label>Gratis Brnetestamente  leadads</label>
+            </value>
+            <value>
+                <fullName>Opretnemttestamenteonlinevideoflow</fullName>
+                <default>false</default>
+                <label>Opretnemttestamenteonlinevideoflow</label>
+            </value>
+            <value>
+                <fullName>Hvadkosterettestamentevideoflow</fullName>
+                <default>false</default>
+                <label>Hvadkosterettestamentevideoflow</label>
+            </value>
+            <value>
+                <fullName>28 alle i sverige10032021</fullName>
+                <default>false</default>
+                <label>28 alle i sverige10032021</label>
+            </value>
+            <value>
+                <fullName>alle 28 til 65 C3A5r</fullName>
+                <default>false</default>
+                <label>alle 28 til 65 C3A5r</label>
+            </value>
+            <value>
+                <fullName>13procentlookalike</fullName>
+                <default>false</default>
+                <label>13procentlookalike</label>
+            </value>
+            <value>
+                <fullName>29012021prisoprettestamentevideoboubles2</fullName>
+                <default>false</default>
+                <label>29012021prisoprettestamentevideoboubles2</label>
+            </value>
+            <value>
+                <fullName>02032021oprettestamentetilfamilien</fullName>
+                <default>false</default>
+                <label>02032021oprettestamentetilfamilien</label>
+            </value>
+            <value>
+                <fullName>28+alle i sverige18032021</fullName>
+                <default>false</default>
+                <label>28+alle i sverige18032021</label>
+            </value>
+            <value>
+                <fullName>alle 28 til 65 %C3%A5r</fullName>
+                <default>false</default>
+                <label>alle 28 til 65 %C3%A5r</label>
+            </value>
+            <value>
+                <fullName>RilloSchwartz</fullName>
+                <default>false</default>
+                <label>RilloSchwartz</label>
+            </value>
+            <value>
+                <fullName>april2021Gratisbt</fullName>
+                <default>false</default>
+                <label>april2021Gratisbt</label>
+            </value>
+            <value>
+                <fullName>Arvetest -110421-v1</fullName>
+                <default>false</default>
+                <label>Arvetest -110421-v1</label>
+            </value>
+            <value>
+                <fullName>28 alle i sverige09042021</fullName>
+                <default>false</default>
+                <label>28 alle i sverige09042021</label>
+            </value>
+            <value>
+                <fullName>alle28til65aar</fullName>
+                <default>false</default>
+                <label>alle28til65aar</label>
+            </value>
+            <value>
+                <fullName>fb18052020gratisbtline</fullName>
+                <default>false</default>
+                <label>fb18052020gratisbtline</label>
+            </value>
+            <value>
+                <fullName>Influencer24052020SofieHammer</fullName>
+                <default>false</default>
+                <label>Influencer24052020SofieHammer</label>
+            </value>
+            <value>
+                <fullName>Influencer05062020DittejulieJensen</fullName>
+                <default>false</default>
+                <label>Influencer05062020DittejulieJensen</label>
+            </value>
+            <value>
+                <fullName>Influencer10062020MarleneLentz</fullName>
+                <default>false</default>
+                <label>Influencer10062020MarleneLentz</label>
+            </value>
+            <value>
+                <fullName>Influencer10062020ChristineGrothPedersen</fullName>
+                <default>false</default>
+                <label>Influencer10062020ChristineGrothPedersen</label>
+            </value>
+            <value>
+                <fullName>Influencer10062020MetteNicolaisen</fullName>
+                <default>false</default>
+                <label>Influencer10062020MetteNicolaisen</label>
+            </value>
+            <value>
+                <fullName>Influencer11062020JackieNavarro</fullName>
+                <default>false</default>
+                <label>Influencer11062020JackieNavarro</label>
+            </value>
+            <value>
+                <fullName>Influencer10062020ChristinaSander</fullName>
+                <default>false</default>
+                <label>Influencer10062020ChristinaSander</label>
+            </value>
+            <value>
+                <fullName>Influencer17062020SarahLouiseChristiansen</fullName>
+                <default>false</default>
+                <label>Influencer17062020SarahLouiseChristiansen</label>
+            </value>
+            <value>
+                <fullName>Influencer10062020LineBisgaardAndersen</fullName>
+                <default>false</default>
+                <label>Influencer10062020LineBisgaardAndersen</label>
+            </value>
+            <value>
+                <fullName>Influencer10062020KristineDalsgaard</fullName>
+                <default>false</default>
+                <label>Influencer10062020KristineDalsgaard</label>
+            </value>
+            <value>
+                <fullName>Influencer10062020JosephineRahbekWilson</fullName>
+                <default>false</default>
+                <label>Influencer10062020JosephineRahbekWilson</label>
+            </value>
+            <value>
+                <fullName>FB17062020gratisViljeyttring</fullName>
+                <default>false</default>
+                <label>FB17062020gratisViljeyttring</label>
+            </value>
+            <value>
+                <fullName>Influencer10062020LiselotteAsmussen</fullName>
+                <default>false</default>
+                <label>Influencer10062020LiselotteAsmussen</label>
+            </value>
+            <value>
+                <fullName>influencer05072020TinaLund</fullName>
+                <default>false</default>
+                <label>influencer05072020TinaLund</label>
+            </value>
+            <value>
+                <fullName>Influencer12072020MetteMarieLange</fullName>
+                <default>false</default>
+                <label>Influencer12072020MetteMarieLange</label>
+            </value>
+            <value>
+                <fullName>Influencer10062020TrineSchmidt</fullName>
+                <default>false</default>
+                <label>Influencer10062020TrineSchmidt</label>
+            </value>
+            <value>
+                <fullName>Influencer16072020ChristinaDueholm</fullName>
+                <default>false</default>
+                <label>Influencer16072020ChristinaDueholm</label>
+            </value>
+            <value>
+                <fullName>Influencer_AA_agency</fullName>
+                <default>false</default>
+                <label>Influencer_AA_agency</label>
+            </value>
+            <value>
+                <fullName>Influencer23072020MathildeEngelund</fullName>
+                <default>false</default>
+                <label>Influencer23072020MathildeEngelund</label>
+            </value>
+            <value>
+                <fullName>Influencer23072020MichellaHansen</fullName>
+                <default>false</default>
+                <label>Influencer23072020MichellaHansen</label>
+            </value>
+            <value>
+                <fullName>Influencer23072020ChristinaAmbrus</fullName>
+                <default>false</default>
+                <label>Influencer23072020ChristinaAmbrus</label>
+            </value>
+            <value>
+                <fullName>Influencer23072020JulieElgaard</fullName>
+                <default>false</default>
+                <label>Influencer23072020JulieElgaard</label>
+            </value>
+            <value>
+                <fullName>Influencer23072020CecilieSchmeichel</fullName>
+                <default>false</default>
+                <label>Influencer23072020CecilieSchmeichel</label>
+            </value>
+            <value>
+                <fullName>gratisbtsverige juli/aug2020</fullName>
+                <default>false</default>
+                <label>gratisbtsverige juli/aug2020</label>
+            </value>
+            <value>
+                <fullName>03082020TestamenteDK_001</fullName>
+                <default>false</default>
+                <label>03082020TestamenteDK_001</label>
+            </value>
+            <value>
+                <fullName>Influencer23072020LineHansen</fullName>
+                <default>false</default>
+                <label>Influencer23072020LineHansen</label>
+            </value>
+            <value>
+                <fullName>Influencer23072020JulianeHarkjaer</fullName>
+                <default>false</default>
+                <label>Influencer23072020JulianeHarkjaer</label>
+            </value>
+            <value>
+                <fullName>Influencer23072020NikolajBoffy</fullName>
+                <default>false</default>
+                <label>Influencer23072020NikolajBoffy</label>
+            </value>
+            <value>
+                <fullName>Influencer23072020JulieBoraso</fullName>
+                <default>false</default>
+                <label>Influencer23072020JulieBoraso</label>
+            </value>
+            <value>
+                <fullName>Influencer23072020AmalKhattab</fullName>
+                <default>false</default>
+                <label>Influencer23072020AmalKhattab</label>
+            </value>
+            <value>
+                <fullName>Influencer23072020CarinaVergmann</fullName>
+                <default>false</default>
+                <label>Influencer23072020CarinaVergmann</label>
+            </value>
+            <value>
+                <fullName>fb11082020KristineInfluencer</fullName>
+                <default>false</default>
+                <label>fb11082020KristineInfluencer</label>
+            </value>
+            <value>
+                <fullName>Iinfluencer&quot;,</fullName>
+                <default>false</default>
+                <label>Iinfluencer&quot;,</label>
+            </value>
+            <value>
+                <fullName>Indhent tilbud på testamente 21082020</fullName>
+                <default>false</default>
+                <label>Indhent tilbud på testamente 21082020</label>
+            </value>
+            <value>
+                <fullName>TestamenteDK_Oprettestamente1</fullName>
+                <default>false</default>
+                <label>TestamenteDK_Oprettestamente1</label>
+            </value>
+            <value>
+                <fullName>Influencer23072020EmilieJacqueline</fullName>
+                <default>false</default>
+                <label>Influencer23072020EmilieJacqueline</label>
+            </value>
+            <value>
+                <fullName>Gratis Børnetestamente Facebook Lead ads</fullName>
+                <default>false</default>
+                <label>Gratis Børnetestamente Facebook Lead ads</label>
+            </value>
+            <value>
+                <fullName>Indhent Tilbud Facebook Lead ads</fullName>
+                <default>false</default>
+                <label>Indhent Tilbud Facebook Lead ads</label>
+            </value>
+            <value>
+                <fullName>Start opret testamente outgrow Leads</fullName>
+                <default>false</default>
+                <label>Start opret testamente outgrow Leads</label>
+            </value>
+            <value>
+                <fullName>Influencer23072020SimoneTajmer</fullName>
+                <default>false</default>
+                <label>Influencer23072020SimoneTajmer</label>
+            </value>
+            <value>
+                <fullName>Reference</fullName>
+                <default>false</default>
+                <label>Reference</label>
+            </value>
+            <value>
+                <fullName>Influencer23072020lisawinthernielsen</fullName>
+                <default>false</default>
+                <label>Influencer23072020lisawinthernielsen</label>
+            </value>
+            <value>
+                <fullName>sofusinfluencergud</fullName>
+                <default>false</default>
+                <label>sofusinfluencergud</label>
+            </value>
+            <value>
+                <fullName>facebook sverige retargeting interaktion</fullName>
+                <default>false</default>
+                <label>facebook sverige retargeting interaktion</label>
+            </value>
+            <value>
+                <fullName>FB100920Gratisfremtidsfuldmagt</fullName>
+                <default>false</default>
+                <label>FB100920Gratisfremtidsfuldmagt</label>
+            </value>
+            <value>
+                <fullName>susannajungblom</fullName>
+                <default>false</default>
+                <label>susannajungblom</label>
+            </value>
+            <value>
+                <fullName>test ren tekst</fullName>
+                <default>false</default>
+                <label>test ren tekst</label>
+            </value>
+            <value>
+                <fullName>test svensk ren tekst</fullName>
+                <default>false</default>
+                <label>test svensk ren tekst</label>
+            </value>
+            <value>
+                <fullName>jessicalagergren</fullName>
+                <default>false</default>
+                <label>jessicalagergren</label>
+            </value>
+            <value>
+                <fullName>christinaambrus</fullName>
+                <default>false</default>
+                <label>christinaambrus</label>
+            </value>
+            <value>
+                <fullName>cecilieschmeichel</fullName>
+                <default>false</default>
+                <label>cecilieschmeichel</label>
+            </value>
+            <value>
+                <fullName>9 timmars gratis raadgivning</fullName>
+                <default>false</default>
+                <label>9 timmars gratis raadgivning</label>
+            </value>
+            <value>
+                <fullName>12 timmars gratis raadgivning</fullName>
+                <default>false</default>
+                <label>12 timmars gratis raadgivning</label>
+            </value>
+            <value>
+                <fullName>11 timmars gratis raadgivning</fullName>
+                <default>false</default>
+                <label>11 timmars gratis raadgivning</label>
+            </value>
+            <value>
+                <fullName>13 timmars gratis raadgivning</fullName>
+                <default>false</default>
+                <label>13 timmars gratis raadgivning</label>
+            </value>
+            <value>
+                <fullName>14 timmars gratis raadgivning</fullName>
+                <default>false</default>
+                <label>14 timmars gratis raadgivning</label>
+            </value>
+            <value>
+                <fullName>15 timmars gratis raadgivning</fullName>
+                <default>false</default>
+                <label>15 timmars gratis raadgivning</label>
+            </value>
+            <value>
+                <fullName>16 timmars gratis raadgivning</fullName>
+                <default>false</default>
+                <label>16 timmars gratis raadgivning</label>
+            </value>
+            <value>
+                <fullName>17 timmars gratis raadgivning</fullName>
+                <default>false</default>
+                <label>17 timmars gratis raadgivning</label>
+            </value>
+            <value>
+                <fullName>18 timmars gratis raadgivning</fullName>
+                <default>false</default>
+                <label>18 timmars gratis raadgivning</label>
+            </value>
+            <value>
+                <fullName>19 timmars gratis raadgivning</fullName>
+                <default>false</default>
+                <label>19 timmars gratis raadgivning</label>
+            </value>
+            <value>
+                <fullName>Gratis familietjek og gavekort p 1000 kroner</fullName>
+                <default>false</default>
+                <label>Gratis familietjek og gavekort p 1000 kroner</label>
+            </value>
+            <value>
+                <fullName>Beregnpristestamentevideosivoggratisboernetestamente21052021a</fullName>
+                <default>false</default>
+                <label>Beregnpristestamentevideosivoggratisboernetestamente21052021a</label>
+            </value>
+            <value>
+                <fullName>Gratis Brnetestamente  leadads  juni 2021</fullName>
+                <default>false</default>
+                <label>Gratis Brnetestamente  leadads  juni 2021</label>
+            </value>
+            <value>
+                <fullName>Opretnemttestamenteonlinevideosiv</fullName>
+                <default>false</default>
+                <label>Opretnemttestamenteonlinevideosiv</label>
+            </value>
+            <value>
+                <fullName>Outgrow</fullName>
+                <default>false</default>
+                <label>Outgrow</label>
+            </value>
+            <value>
+                <fullName>Oprettestamenteligeher14062021b</fullName>
+                <default>false</default>
+                <label>Oprettestamenteligeher14062021b</label>
+            </value>
+            <value>
+                <fullName>Beregnpristestamentevideosiv14062021a</fullName>
+                <default>false</default>
+                <label>Beregnpristestamentevideosiv14062021a</label>
+            </value>
+            <value>
+                <fullName>Beregnpristestamentevideosiv15062021b</fullName>
+                <default>false</default>
+                <label>Beregnpristestamentevideosiv15062021b</label>
+            </value>
+            <value>
+                <fullName>Beregnpristestamentevideosiv15062021c</fullName>
+                <default>false</default>
+                <label>Beregnpristestamentevideosiv15062021c</label>
+            </value>
+            <value>
+                <fullName>Beregnpristestamentevideosiv15062021a</fullName>
+                <default>false</default>
+                <label>Beregnpristestamentevideosiv15062021a</label>
+            </value>
+            <value>
+                <fullName>Oprettestamenteonlinegratisraadgivning2806620211</fullName>
+                <default>false</default>
+                <label>Oprettestamenteonlinegratisraadgivning2806620211</label>
+            </value>
+            <value>
+                <fullName>KristineKava</fullName>
+                <default>false</default>
+                <label>KristineKava</label>
+            </value>
+            <value>
+                <fullName>Indhenttilbudleadads</fullName>
+                <default>false</default>
+                <label>Indhenttilbudleadads</label>
+            </value>
+            <value>
+                <fullName>Beregnprisgavekort1000testamentevideosiv020720211</fullName>
+                <default>false</default>
+                <label>Beregnprisgavekort1000testamentevideosiv020720211</label>
+            </value>
+            <value>
+                <fullName>Kristine Kava</fullName>
+                <default>false</default>
+                <label>Kristine Kava</label>
+            </value>
+            <value>
+                <fullName>Oprettestamenteonlinegratisraadgivning02082021b</fullName>
+                <default>false</default>
+                <label>Oprettestamenteonlinegratisraadgivning02082021b</label>
+            </value>
+            <value>
+                <fullName>Gratis testamente til brnefamilier</fullName>
+                <default>false</default>
+                <label>Gratis testamente til brnefamilier</label>
+            </value>
+            <value>
+                <fullName>Oprettestamentevideosiv02082021a</fullName>
+                <default>false</default>
+                <label>Oprettestamentevideosiv02082021a</label>
+            </value>
+            <value>
+                <fullName>Oprettestamenteonlinegratisraadgivning2806620212</fullName>
+                <default>false</default>
+                <label>Oprettestamenteonlinegratisraadgivning2806620212</label>
+            </value>
+            <value>
+                <fullName>linewintherhansen</fullName>
+                <default>false</default>
+                <label>linewintherhansen</label>
+            </value>
+            <value>
+                <fullName>julieelgaard</fullName>
+                <default>false</default>
+                <label>julieelgaard</label>
+            </value>
+            <value>
+                <fullName>carinavergmann</fullName>
+                <default>false</default>
+                <label>carinavergmann</label>
+            </value>
+            <value>
+                <fullName>emiliejacqueline</fullName>
+                <default>false</default>
+                <label>emiliejacqueline</label>
+            </value>
+            <value>
+                <fullName>simonetajmer</fullName>
+                <default>false</default>
+                <label>simonetajmer</label>
+            </value>
+            <value>
+                <fullName>nikolajboffy</fullName>
+                <default>false</default>
+                <label>nikolajboffy</label>
+            </value>
+            <value>
+                <fullName>karinaahrensbach</fullName>
+                <default>false</default>
+                <label>karinaahrensbach</label>
+            </value>
+            <value>
+                <fullName>lisawinthernielsen</fullName>
+                <default>false</default>
+                <label>lisawinthernielsen</label>
+            </value>
+            <value>
+                <fullName>cellinamartinna</fullName>
+                <default>false</default>
+                <label>cellinamartinna</label>
+            </value>
+            <value>
+                <fullName>stephaniefisker</fullName>
+                <default>false</default>
+                <label>stephaniefisker</label>
+            </value>
+            <value>
+                <fullName>svensk influencer 2</fullName>
+                <default>false</default>
+                <label>svensk influencer 2</label>
+            </value>
+            <value>
+                <fullName>amalkhattab</fullName>
+                <default>false</default>
+                <label>amalkhattab</label>
+            </value>
+            <value>
+                <fullName>gratisbtsverige juliaug2020</fullName>
+                <default>false</default>
+                <label>gratisbtsverige juliaug2020</label>
+            </value>
+            <value>
+                <fullName>LeadgenereringFTsepokt</fullName>
+                <default>false</default>
+                <label>LeadgenereringFTsepokt</label>
+            </value>
+            <value>
+                <fullName>Gratis BT Outgrow</fullName>
+                <default>false</default>
+                <label>Gratis BT Outgrow</label>
+            </value>
+            <value>
+                <fullName>Leadgenerering FT SepOkt</fullName>
+                <default>false</default>
+                <label>Leadgenerering FT SepOkt</label>
+            </value>
+            <value>
+                <fullName>TD Opret Testamente</fullName>
+                <default>false</default>
+                <label>TD Opret Testamente</label>
+            </value>
+            <value>
+                <fullName>BC3B8rnetestamente  Outgrow</fullName>
+                <default>false</default>
+                <label>BC3B8rnetestamente  Outgrow</label>
+            </value>
+            <value>
+                <fullName>NannaRagnhild</fullName>
+                <default>false</default>
+                <label>NannaRagnhild</label>
+            </value>
+            <value>
+                <fullName>BC3B8rnetestamente++Outgrow</fullName>
+                <default>false</default>
+                <label>BC3B8rnetestamente++Outgrow</label>
+            </value>
+            <value>
+                <fullName>Arvetest08112020</fullName>
+                <default>false</default>
+                <label>Arvetest08112020</label>
+            </value>
+            <value>
+                <fullName>AnnemetteVoss</fullName>
+                <default>false</default>
+                <label>AnnemetteVoss</label>
+            </value>
+            <value>
+                <fullName>TestamenteSverige_November2020test</fullName>
+                <default>false</default>
+                <label>TestamenteSverige_November2020test</label>
+            </value>
+            <value>
+                <fullName>Gratisboerneterstamente</fullName>
+                <default>false</default>
+                <label>Gratisboerneterstamente</label>
+            </value>
+            <value>
+                <fullName>SEArvetest15112020</fullName>
+                <default>false</default>
+                <label>SEArvetest15112020</label>
+            </value>
+            <value>
+                <fullName>Boernetestamentegratis16112020video1</fullName>
+                <default>false</default>
+                <label>Boernetestamentegratis16112020video1</label>
+            </value>
+            <value>
+                <fullName>Boerrnetestamentefiona16112020video1</fullName>
+                <default>false</default>
+                <label>Boerrnetestamentefiona16112020video1</label>
+            </value>
+            <value>
+                <fullName>Babyfoedder16112020remarketing</fullName>
+                <default>false</default>
+                <label>Babyfoedder16112020remarketing</label>
+            </value>
+            <value>
+                <fullName>UffeHolm</fullName>
+                <default>false</default>
+                <label>UffeHolm</label>
+            </value>
+            <value>
+                <fullName>DefaultnameTrafik16112020remarketing</fullName>
+                <default>false</default>
+                <label>DefaultnameTrafik16112020remarketing</label>
+            </value>
+            <value>
+                <fullName>Familiemad16112020remarketing</fullName>
+                <default>false</default>
+                <label>Familiemad16112020remarketing</label>
+            </value>
+            <value>
+                <fullName>Kortlilledrengremarketing16112020</fullName>
+                <default>false</default>
+                <label>Kortlilledrengremarketing16112020</label>
+            </value>
+            <value>
+                <fullName>NalinaNoorOgMor</fullName>
+                <default>false</default>
+                <label>NalinaNoorOgMor</label>
+            </value>
+            <value>
+                <fullName>Hvemtagerditbarnihaanden16112020remarketing</fullName>
+                <default>false</default>
+                <label>Hvemtagerditbarnihaanden16112020remarketing</label>
+            </value>
+            <value>
+                <fullName>DIN FAMILIE JURIST KAMPAGE  RUNDE 3</fullName>
+                <default>false</default>
+                <label>DIN FAMILIE JURIST KAMPAGE  RUNDE 3</label>
+            </value>
+            <value>
+                <fullName>BoernetestamentegratisBlackfridaygratis</fullName>
+                <default>false</default>
+                <label>BoernetestamentegratisBlackfridaygratis</label>
+            </value>
+            <value>
+                <fullName>Boernetestamentegratis011220202</fullName>
+                <default>false</default>
+                <label>Boernetestamentegratis011220202</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon 02122020</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon 02122020</label>
+            </value>
+            <value>
+                <fullName>Boernetestamentegratis011220201</fullName>
+                <default>false</default>
+                <label>Boernetestamentegratis011220201</label>
+            </value>
+            <value>
+                <fullName>dagensinfo</fullName>
+                <default>false</default>
+                <label>dagensinfo</label>
+            </value>
+            <value>
+                <fullName>Pigeogmor</fullName>
+                <default>false</default>
+                <label>Pigeogmor</label>
+            </value>
+            <value>
+                <fullName>testamentepris</fullName>
+                <default>false</default>
+                <label>testamentepris</label>
+            </value>
+            <value>
+                <fullName>Gratisboernetestamentemessenger04122020</fullName>
+                <default>false</default>
+                <label>Gratisboernetestamentemessenger04122020</label>
+            </value>
+            <value>
+                <fullName>outgrow1videoopretnovember131120201</fullName>
+                <default>false</default>
+                <label>outgrow1videoopretnovember131120201</label>
+            </value>
+            <value>
+                <fullName>SigneWenneberg</fullName>
+                <default>false</default>
+                <label>SigneWenneberg</label>
+            </value>
+            <value>
+                <fullName>oprettestamente</fullName>
+                <default>false</default>
+                <label>oprettestamente</label>
+            </value>
+            <value>
+                <fullName>outgrow1videoopret213112020julvideo2</fullName>
+                <default>false</default>
+                <label>outgrow1videoopret213112020julvideo2</label>
+            </value>
+            <value>
+                <fullName>testamente</fullName>
+                <default>false</default>
+                <label>testamente</label>
+            </value>
+            <value>
+                <fullName>Gensidigttestamente</fullName>
+                <default>false</default>
+                <label>Gensidigttestamente</label>
+            </value>
+            <value>
+                <fullName>Gavekort-1000-kroner-gratis-familjetjek</fullName>
+                <default>false</default>
+                <label>Gavekort-1000-kroner-gratis-familjetjek</label>
+            </value>
+            <value>
+                <fullName>outgrowopret011220201</fullName>
+                <default>false</default>
+                <label>outgrowopret011220201</label>
+            </value>
+            <value>
+                <fullName>OutgrowDynamiskvideo07122020</fullName>
+                <default>false</default>
+                <label>OutgrowDynamiskvideo07122020</label>
+            </value>
+            <value>
+                <fullName>Gratisboernetestamenteleadads081220201</fullName>
+                <default>false</default>
+                <label>Gratisboernetestamenteleadads081220201</label>
+            </value>
+            <value>
+                <fullName>frederikkeisabella1</fullName>
+                <default>false</default>
+                <label>frederikkeisabella1</label>
+            </value>
+            <value>
+                <fullName>lunamunk1</fullName>
+                <default>false</default>
+                <label>lunamunk1</label>
+            </value>
+            <value>
+                <fullName>camillavendelbo1</fullName>
+                <default>false</default>
+                <label>camillavendelbo1</label>
+            </value>
+            <value>
+                <fullName>malenesteen1</fullName>
+                <default>false</default>
+                <label>malenesteen1</label>
+            </value>
+            <value>
+                <fullName>kristinekava1</fullName>
+                <default>false</default>
+                <label>kristinekava1</label>
+            </value>
+            <value>
+                <fullName>christinasander1</fullName>
+                <default>false</default>
+                <label>christinasander1</label>
+            </value>
+            <value>
+                <fullName>marlenelentz1</fullName>
+                <default>false</default>
+                <label>marlenelentz1</label>
+            </value>
+            <value>
+                <fullName>maya1</fullName>
+                <default>false</default>
+                <label>maya1</label>
+            </value>
+            <value>
+                <fullName>onlinetestamente</fullName>
+                <default>false</default>
+                <label>onlinetestamente</label>
+            </value>
+            <value>
+                <fullName>samlevertestamente</fullName>
+                <default>false</default>
+                <label>samlevertestamente</label>
+            </value>
+            <value>
+                <fullName>SusanMilo</fullName>
+                <default>false</default>
+                <label>SusanMilo</label>
+            </value>
+            <value>
+                <fullName>Gavekort pC3A5 1000 til testamente</fullName>
+                <default>false</default>
+                <label>Gavekort pC3A5 1000 til testamente</label>
+            </value>
+            <value>
+                <fullName>OutgrowDynamisknytaar2021</fullName>
+                <default>false</default>
+                <label>OutgrowDynamisknytaar2021</label>
+            </value>
+            <value>
+                <fullName>OutgrowDynamisk2021</fullName>
+                <default>false</default>
+                <label>OutgrowDynamisk2021</label>
+            </value>
+            <value>
+                <fullName>kristinekava-1</fullName>
+                <default>false</default>
+                <label>kristinekava-1</label>
+            </value>
+            <value>
+                <fullName>malenesteen-1</fullName>
+                <default>false</default>
+                <label>malenesteen-1</label>
+            </value>
+            <value>
+                <fullName>marlenelentz-1</fullName>
+                <default>false</default>
+                <label>marlenelentz-1</label>
+            </value>
+            <value>
+                <fullName>frederikkeisabella-1</fullName>
+                <default>false</default>
+                <label>frederikkeisabella-1</label>
+            </value>
+            <value>
+                <fullName>christinasander-1</fullName>
+                <default>false</default>
+                <label>christinasander-1</label>
+            </value>
+            <value>
+                <fullName>-</fullName>
+                <default>false</default>
+                <label>-</label>
+            </value>
+            <value>
+                <fullName>Gratis-boernetestamente-leadads-08122020-1</fullName>
+                <default>false</default>
+                <label>Gratis-boernetestamente-leadads-08122020-1</label>
+            </value>
+            <value>
+                <fullName>lunamunk-1</fullName>
+                <default>false</default>
+                <label>lunamunk-1</label>
+            </value>
+            <value>
+                <fullName>outgrow05012021fed</fullName>
+                <default>false</default>
+                <label>outgrow05012021fed</label>
+            </value>
+            <value>
+                <fullName>outgrow105012021xs</fullName>
+                <default>false</default>
+                <label>outgrow105012021xs</label>
+            </value>
+            <value>
+                <fullName>outgrow1videogennemgang</fullName>
+                <default>false</default>
+                <label>outgrow1videogennemgang</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon ved de bliver kontaktet 02122020</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon ved de bliver kontaktet 02122020</label>
+            </value>
+            <value>
+                <fullName>outgrow105012021dfsed</fullName>
+                <default>false</default>
+                <label>outgrow105012021dfsed</label>
+            </value>
+            <value>
+                <fullName>SigneWenneberg1000krGavekort</fullName>
+                <default>false</default>
+                <label>SigneWenneberg1000krGavekort</label>
+            </value>
+            <value>
+                <fullName>OutgrowBoernetestamenteGratis2021fdsd</fullName>
+                <default>false</default>
+                <label>OutgrowBoernetestamenteGratis2021fdsd</label>
+            </value>
+            <value>
+                <fullName>outgrow-05012021-dsffss</fullName>
+                <default>false</default>
+                <label>outgrow-05012021-dsffss</label>
+            </value>
+            <value>
+                <fullName>outgrow-1-05012021-xs</fullName>
+                <default>false</default>
+                <label>outgrow-1-05012021-xs</label>
+            </value>
+            <value>
+                <fullName>outgrow-05012021-fed</fullName>
+                <default>false</default>
+                <label>outgrow-05012021-fed</label>
+            </value>
+            <value>
+                <fullName>outgrow-1-video-gennemgang</fullName>
+                <default>false</default>
+                <label>outgrow-1-video-gennemgang</label>
+            </value>
+            <value>
+                <fullName>outgrow-1-05012021-dfsed</fullName>
+                <default>false</default>
+                <label>outgrow-1-05012021-dfsed</label>
+            </value>
+            <value>
+                <fullName>outgrowgennemgang18012021</fullName>
+                <default>false</default>
+                <label>outgrowgennemgang18012021</label>
+            </value>
+            <value>
+                <fullName>outgrowpersonligttestamente18012021</fullName>
+                <default>false</default>
+                <label>outgrowpersonligttestamente18012021</label>
+            </value>
+            <value>
+                <fullName>outgrowopret18012021</fullName>
+                <default>false</default>
+                <label>outgrowopret18012021</label>
+            </value>
+            <value>
+                <fullName>25012021dynamiskoprettestamente</fullName>
+                <default>false</default>
+                <label>25012021dynamiskoprettestamente</label>
+            </value>
+            <value>
+                <fullName>Arvetest leadads</fullName>
+                <default>false</default>
+                <label>Arvetest leadads</label>
+            </value>
+            <value>
+                <fullName>Gratis Børnetestamente TD</fullName>
+                <default>false</default>
+                <label>Gratis Børnetestamente TD</label>
+            </value>
+            <value>
+                <fullName>29012021prisoprettestamentevideofun</fullName>
+                <default>false</default>
+                <label>29012021prisoprettestamentevideofun</label>
+            </value>
+            <value>
+                <fullName>outgrow1videoPrisnovemberkopi</fullName>
+                <default>false</default>
+                <label>outgrow1videoPrisnovemberkopi</label>
+            </value>
+            <value>
+                <fullName>28012021prisoprettestamente</fullName>
+                <default>false</default>
+                <label>28012021prisoprettestamente</label>
+            </value>
+            <value>
+                <fullName>outgrow1videoPris28012021</fullName>
+                <default>false</default>
+                <label>outgrow1videoPris28012021</label>
+            </value>
+            <value>
+                <fullName>29012021prisoprettestamentevideoboubles1</fullName>
+                <default>false</default>
+                <label>29012021prisoprettestamentevideoboubles1</label>
+            </value>
+            <value>
+                <fullName>28012021beregnpristestamente</fullName>
+                <default>false</default>
+                <label>28012021beregnpristestamente</label>
+            </value>
+            <value>
+                <fullName>25012021-dynamisk-opret-testamente</fullName>
+                <default>false</default>
+                <label>25012021-dynamisk-opret-testamente</label>
+            </value>
+            <value>
+                <fullName>outgrow-gennemgang-18012021</fullName>
+                <default>false</default>
+                <label>outgrow-gennemgang-18012021</label>
+            </value>
+            <value>
+                <fullName>outgrow-1-video-Pris-november-kopi</fullName>
+                <default>false</default>
+                <label>outgrow-1-video-Pris-november-kopi</label>
+            </value>
+            <value>
+                <fullName>28012021-pris-opret-testamente</fullName>
+                <default>false</default>
+                <label>28012021-pris-opret-testamente</label>
+            </value>
+            <value>
+                <fullName>outgrow-1-video-Pris-28012021</fullName>
+                <default>false</default>
+                <label>outgrow-1-video-Pris-28012021</label>
+            </value>
+            <value>
+                <fullName>29012021-pris-opret-testamente-video-boubles1</fullName>
+                <default>false</default>
+                <label>29012021-pris-opret-testamente-video-boubles1</label>
+            </value>
+            <value>
+                <fullName>28012021-beregn-pris-testamente</fullName>
+                <default>false</default>
+                <label>28012021-beregn-pris-testamente</label>
+            </value>
+            <value>
+                <fullName>29012021-pris-opret-testamente-video-fun</fullName>
+                <default>false</default>
+                <label>29012021-pris-opret-testamente-video-fun</label>
+            </value>
+            <value>
+                <fullName>29012021prisoprettestamentevideoleg1</fullName>
+                <default>false</default>
+                <label>29012021prisoprettestamentevideoleg1</label>
+            </value>
+            <value>
+                <fullName>Gratis B¿rnetestamente TD</fullName>
+                <default>false</default>
+                <label>Gratis B¿rnetestamente TD</label>
+            </value>
+            <value>
+                <fullName>LineFisker</fullName>
+                <default>false</default>
+                <label>LineFisker</label>
+            </value>
+            <value>
+                <fullName>AnnikaHayn</fullName>
+                <default>false</default>
+                <label>AnnikaHayn</label>
+            </value>
+            <value>
+                <fullName>SandraSommer</fullName>
+                <default>false</default>
+                <label>SandraSommer</label>
+            </value>
+            <value>
+                <fullName>mettemercedes</fullName>
+                <default>false</default>
+                <label>mettemercedes</label>
+            </value>
+            <value>
+                <fullName>heidiboll</fullName>
+                <default>false</default>
+                <label>heidiboll</label>
+            </value>
+            <value>
+                <fullName>lunamunk</fullName>
+                <default>false</default>
+                <label>lunamunk</label>
+            </value>
+            <value>
+                <fullName>Har du brn under 18 r og er dig og din partner ikke gift s arver i ikke hinanden uden et testamente</fullName>
+                <default>false</default>
+                <label>Har du brn under 18 r og er dig og din partner ikke gift s arver i ikke hinanden uden et testamente</label>
+            </value>
+            <value>
+                <fullName>Pia Thorsteinsson - Restauratører</fullName>
+                <default>false</default>
+                <label>Pia Thorsteinsson - Restauratører</label>
+            </value>
+            <value>
+                <fullName>SandraGlahder</fullName>
+                <default>false</default>
+                <label>SandraGlahder</label>
+            </value>
+            <value>
+                <fullName>Opret et Gratis Testamente som sikrer dine brn</fullName>
+                <default>false</default>
+                <label>Opret et Gratis Testamente som sikrer dine brn</label>
+            </value>
+            <value>
+                <fullName>nsker gratis juridisk rdgivning</fullName>
+                <default>false</default>
+                <label>nsker gratis juridisk rdgivning</label>
+            </value>
+            <value>
+                <fullName>Gratis Brnetestamente</fullName>
+                <default>false</default>
+                <label>Gratis Brnetestamente</label>
+            </value>
+            <value>
+                <fullName>Tilbud pC3A5 oprettelse af testamente</fullName>
+                <default>false</default>
+                <label>Tilbud pC3A5 oprettelse af testamente</label>
+            </value>
+            <value>
+                <fullName>Tilbud paa oprettelse af testamente 14102021f</fullName>
+                <default>false</default>
+                <label>Tilbud paa oprettelse af testamente 14102021f</label>
+            </value>
+            <value>
+                <fullName>Tilbud paa oprettelse af testamente 14102021h</fullName>
+                <default>false</default>
+                <label>Tilbud paa oprettelse af testamente 14102021h</label>
+            </value>
+            <value>
+                <fullName>Tilbud paa oprettelse af testamente 14102021b</fullName>
+                <default>false</default>
+                <label>Tilbud paa oprettelse af testamente 14102021b</label>
+            </value>
+            <value>
+                <fullName>Tilbud paa oprettelse af testamente 14102021c</fullName>
+                <default>false</default>
+                <label>Tilbud paa oprettelse af testamente 14102021c</label>
+            </value>
+            <value>
+                <fullName>Tilbud paa oprettelse af testamente 14102021a</fullName>
+                <default>false</default>
+                <label>Tilbud paa oprettelse af testamente 14102021a</label>
+            </value>
+            <value>
+                <fullName>Tilbud paa oprettelse af testamente 14102021e</fullName>
+                <default>false</default>
+                <label>Tilbud paa oprettelse af testamente 14102021e</label>
+            </value>
+            <value>
+                <fullName>Indhent tilbud</fullName>
+                <default>false</default>
+                <label>Indhent tilbud</label>
+            </value>
+            <value>
+                <fullName>Tilbud paa oprettelse af testamente 14102021g</fullName>
+                <default>false</default>
+                <label>Tilbud paa oprettelse af testamente 14102021g</label>
+            </value>
+            <value>
+                <fullName>Tilbud pC3A5 oprettelse af testamente samlevende</fullName>
+                <default>false</default>
+                <label>Tilbud pC3A5 oprettelse af testamente samlevende</label>
+            </value>
+            <value>
+                <fullName>prisforslag p ditt testament 15102021a</fullName>
+                <default>false</default>
+                <label>prisforslag p ditt testament 15102021a</label>
+            </value>
+            <value>
+                <fullName>Tilbud paa oprettelse af testamente 15102021a</fullName>
+                <default>false</default>
+                <label>Tilbud paa oprettelse af testamente 15102021a</label>
+            </value>
+            <value>
+                <fullName>prisforslag p ditt testament 15102021b</fullName>
+                <default>false</default>
+                <label>prisforslag p ditt testament 15102021b</label>
+            </value>
+            <value>
+                <fullName>Tilbud paa oprettelse af testamente 14102021k</fullName>
+                <default>false</default>
+                <label>Tilbud paa oprettelse af testamente 14102021k</label>
+            </value>
+            <value>
+                <fullName>Tilbud paa oprettelse af testamente 15102021b</fullName>
+                <default>false</default>
+                <label>Tilbud paa oprettelse af testamente 15102021b</label>
+            </value>
+            <value>
+                <fullName>Tilbud paa oprettelse af testamente 14102021d</fullName>
+                <default>false</default>
+                <label>Tilbud paa oprettelse af testamente 14102021d</label>
+            </value>
+            <value>
+                <fullName>Indhent tilbud 16102021c</fullName>
+                <default>false</default>
+                <label>Indhent tilbud 16102021c</label>
+            </value>
+            <value>
+                <fullName>Indhent tilbud 16102021b</fullName>
+                <default>false</default>
+                <label>Indhent tilbud 16102021b</label>
+            </value>
+            <value>
+                <fullName>Tilbud paa oprettelse af testamente 15102021d</fullName>
+                <default>false</default>
+                <label>Tilbud paa oprettelse af testamente 15102021d</label>
+            </value>
+            <value>
+                <fullName>Indhent tilbud p testamente leadads 16102021a</fullName>
+                <default>false</default>
+                <label>Indhent tilbud p testamente leadads 16102021a</label>
+            </value>
+            <value>
+                <fullName>Indhent tilbud testamente saereje 17102021a</fullName>
+                <default>false</default>
+                <label>Indhent tilbud testamente saereje 17102021a</label>
+            </value>
+            <value>
+                <fullName>Indhent tilbud p testamente leadads 16102021b</fullName>
+                <default>false</default>
+                <label>Indhent tilbud p testamente leadads 16102021b</label>
+            </value>
+            <value>
+                <fullName>Tilbud paa oprettelse af testamente 14102021i</fullName>
+                <default>false</default>
+                <label>Tilbud paa oprettelse af testamente 14102021i</label>
+            </value>
+            <value>
+                <fullName>Gratis Barntestamente 15102021c</fullName>
+                <default>false</default>
+                <label>Gratis Barntestamente 15102021c</label>
+            </value>
+            <value>
+                <fullName>Gratisboernetestamenteleadads13102021b</fullName>
+                <default>false</default>
+                <label>Gratisboernetestamenteleadads13102021b</label>
+            </value>
+            <value>
+                <fullName>Gratisboernetestamenteleadads13102021d</fullName>
+                <default>false</default>
+                <label>Gratisboernetestamenteleadads13102021d</label>
+            </value>
+            <value>
+                <fullName>Gratisboernetestamenteleadads13102021a</fullName>
+                <default>false</default>
+                <label>Gratisboernetestamenteleadads13102021a</label>
+            </value>
+            <value>
+                <fullName>Gratisboernetestamenteleadads02042021b</fullName>
+                <default>false</default>
+                <label>Gratisboernetestamenteleadads02042021b</label>
+            </value>
+            <value>
+                <fullName>Gratisboernetestamenteleadads13102021f</fullName>
+                <default>false</default>
+                <label>Gratisboernetestamenteleadads13102021f</label>
+            </value>
+            <value>
+                <fullName>Batch 3</fullName>
+                <default>false</default>
+                <label>Batch 3</label>
+            </value>
+            <value>
+                <fullName>prisforslag p ditt testament 20102021b</fullName>
+                <default>false</default>
+                <label>prisforslag p ditt testament 20102021b</label>
+            </value>
+            <value>
+                <fullName>Bryggeriet Skovlyst</fullName>
+                <default>false</default>
+                <label>Bryggeriet Skovlyst</label>
+            </value>
+            <value>
+                <fullName>Cafe Moems</fullName>
+                <default>false</default>
+                <label>Cafe Moems</label>
+            </value>
+            <value>
+                <fullName>Fasaneriet</fullName>
+                <default>false</default>
+                <label>Fasaneriet</label>
+            </value>
+            <value>
+                <fullName>Indhent tilbud p testamente leadads 20102021c</fullName>
+                <default>false</default>
+                <label>Indhent tilbud p testamente leadads 20102021c</label>
+            </value>
+            <value>
+                <fullName>Gratisboernetestamenteleadads20102021b</fullName>
+                <default>false</default>
+                <label>Gratisboernetestamenteleadads20102021b</label>
+            </value>
+            <value>
+                <fullName>prisforslag p ditt testament 20102021c</fullName>
+                <default>false</default>
+                <label>prisforslag p ditt testament 20102021c</label>
+            </value>
+            <value>
+                <fullName>Indhent tilbud testamente saereje 20102021a</fullName>
+                <default>false</default>
+                <label>Indhent tilbud testamente saereje 20102021a</label>
+            </value>
+            <value>
+                <fullName>Gratisboernetestamenteleadads20102021a</fullName>
+                <default>false</default>
+                <label>Gratisboernetestamenteleadads20102021a</label>
+            </value>
+            <value>
+                <fullName>Gratisboernetestamenteleadads20102021c</fullName>
+                <default>false</default>
+                <label>Gratisboernetestamenteleadads20102021c</label>
+            </value>
+            <value>
+                <fullName>Indhent tilbud p testamente leadads 20102021b</fullName>
+                <default>false</default>
+                <label>Indhent tilbud p testamente leadads 20102021b</label>
+            </value>
+            <value>
+                <fullName>Gratisboernetestamenteleadads13102021e</fullName>
+                <default>false</default>
+                <label>Gratisboernetestamenteleadads13102021e</label>
+            </value>
+            <value>
+                <fullName>Indhent tilbud testamente saereje 20102021b</fullName>
+                <default>false</default>
+                <label>Indhent tilbud testamente saereje 20102021b</label>
+            </value>
+            <value>
+                <fullName>prisforslag p ditt testament 20102021a</fullName>
+                <default>false</default>
+                <label>prisforslag p ditt testament 20102021a</label>
+            </value>
+            <value>
+                <fullName>Susets Kkken</fullName>
+                <default>false</default>
+                <label>Susets Kkken</label>
+            </value>
+            <value>
+                <fullName>Caf Cer</fullName>
+                <default>false</default>
+                <label>Caf Cer</label>
+            </value>
+            <value>
+                <fullName>Det Argentinske Vinhus</fullName>
+                <default>false</default>
+                <label>Det Argentinske Vinhus</label>
+            </value>
+            <value>
+                <fullName>Indhent tilbud p testamente leadads 20102021a</fullName>
+                <default>false</default>
+                <label>Indhent tilbud p testamente leadads 20102021a</label>
+            </value>
+            <value>
+                <fullName>Brasseriet Baum</fullName>
+                <default>false</default>
+                <label>Brasseriet Baum</label>
+            </value>
+            <value>
+                <fullName>Indhent tilbud p testamente leadads 26102021a</fullName>
+                <default>false</default>
+                <label>Indhent tilbud p testamente leadads 26102021a</label>
+            </value>
+            <value>
+                <fullName>Opret testamente leadads 29102021d</fullName>
+                <default>false</default>
+                <label>Opret testamente leadads 29102021d</label>
+            </value>
+            <value>
+                <fullName>Opret testamente leadads 29102021a</fullName>
+                <default>false</default>
+                <label>Opret testamente leadads 29102021a</label>
+            </value>
+            <value>
+                <fullName>Gratisboernetestamenteleadads29102021a</fullName>
+                <default>false</default>
+                <label>Gratisboernetestamenteleadads29102021a</label>
+            </value>
+            <value>
+                <fullName>Samlevende som ikke er gift arver ikke hinanden  Video Line  29102021a</fullName>
+                <default>false</default>
+                <label>Samlevende som ikke er gift arver ikke hinanden  Video Line  29102021a</label>
+            </value>
+            <value>
+                <fullName>Gratisboernetestamenteleadads29102021b</fullName>
+                <default>false</default>
+                <label>Gratisboernetestamenteleadads29102021b</label>
+            </value>
+            <value>
+                <fullName>Tilbud paa oprettelse af testamente 15102021c</fullName>
+                <default>false</default>
+                <label>Tilbud paa oprettelse af testamente 15102021c</label>
+            </value>
+            <value>
+                <fullName>Gratis rdgivning</fullName>
+                <default>false</default>
+                <label>Gratis rdgivning</label>
+            </value>
+            <value>
+                <fullName>Impressive Relations Dinfamiljejurist partner outgrow</fullName>
+                <default>false</default>
+                <label>Impressive Relations Dinfamiljejurist partner outgrow</label>
+            </value>
+            <value>
+                <fullName>Gratis Barntestamente 20102021b</fullName>
+                <default>false</default>
+                <label>Gratis Barntestamente 20102021b</label>
+            </value>
+            <value>
+                <fullName>Gratis Barntestamente 29102021a</fullName>
+                <default>false</default>
+                <label>Gratis Barntestamente 29102021a</label>
+            </value>
+            <value>
+                <fullName>Gratis raadgivning</fullName>
+                <default>false</default>
+                <label>Gratis raadgivning</label>
+            </value>
+            <value>
+                <fullName>Gratis Barntestamente 15102021a</fullName>
+                <default>false</default>
+                <label>Gratis Barntestamente 15102021a</label>
+            </value>
+            <value>
+                <fullName>Gratis Barntestamente 29102021c</fullName>
+                <default>false</default>
+                <label>Gratis Barntestamente 29102021c</label>
+            </value>
+            <value>
+                <fullName>Gratisboernetestamenteleadads05112021b</fullName>
+                <default>false</default>
+                <label>Gratisboernetestamenteleadads05112021b</label>
+            </value>
+            <value>
+                <fullName>Tilbud paa oprettelse af testamente 15102021e</fullName>
+                <default>false</default>
+                <label>Tilbud paa oprettelse af testamente 15102021e</label>
+            </value>
+            <value>
+                <fullName>Tilbud paa oprettelse af testamente 14102021m</fullName>
+                <default>false</default>
+                <label>Tilbud paa oprettelse af testamente 14102021m</label>
+            </value>
+            <value>
+                <fullName>Influencer</fullName>
+                <default>false</default>
+                <label>Influencer</label>
+            </value>
+            <value>
+                <fullName>Influencer13042020JosefineValentin</fullName>
+                <default>false</default>
+                <label>Influencer13042020JosefineValentin</label>
+            </value>
+            <value>
+                <fullName>Influencer08042020LisbethØstergaard</fullName>
+                <default>false</default>
+                <label>Influencer08042020LisbethØstergaard</label>
+            </value>
+            <value>
+                <fullName>Influencer04052020AliceStadil</fullName>
+                <default>false</default>
+                <label>Influencer04052020AliceStadil</label>
+            </value>
+            <value>
+                <fullName>Influencer10052020CamillaFramnes</fullName>
+                <default>false</default>
+                <label>Influencer10052020CamillaFramnes</label>
+            </value>
+            <value>
+                <fullName>Influencer11052020TrineStaberg</fullName>
+                <default>false</default>
+                <label>Influencer11052020TrineStaberg</label>
+            </value>
+            <value>
+                <fullName>fb13052020LinegratisBT</fullName>
+                <default>false</default>
+                <label>fb13052020LinegratisBT</label>
+            </value>
+            <value>
+                <fullName>Hvadkosterettestamentevideoflowsiv22042021</fullName>
+                <default>false</default>
+                <label>Hvadkosterettestamentevideoflowsiv22042021</label>
+            </value>
+            <value>
+                <fullName>Gratis familietjek og gavekort på 1.000 kroner</fullName>
+                <default>false</default>
+                <label>Gratis familietjek og gavekort på 1.000 kroner</label>
+            </value>
+            <value>
+                <fullName>Beregnpristestamentevideoflow02052021b</fullName>
+                <default>false</default>
+                <label>Beregnpristestamentevideoflow02052021b</label>
+            </value>
+            <value>
+                <fullName>Beregnpristestamentevideoflow02042021a</fullName>
+                <default>false</default>
+                <label>Beregnpristestamentevideoflow02042021a</label>
+            </value>
+            <value>
+                <fullName>Beregnpristestamentevideosiv02052021a</fullName>
+                <default>false</default>
+                <label>Beregnpristestamentevideosiv02052021a</label>
+            </value>
+            <value>
+                <fullName>28alleisverige09042021</fullName>
+                <default>false</default>
+                <label>28alleisverige09042021</label>
+            </value>
+            <value>
+                <fullName>Beregnpristestamentevideosiv02042021a</fullName>
+                <default>false</default>
+                <label>Beregnpristestamentevideosiv02042021a</label>
+            </value>
+            <value>
+                <fullName>Beregnpristestamentevideosivoggratisboernetestamente030520211</fullName>
+                <default>false</default>
+                <label>Beregnpristestamentevideosivoggratisboernetestamente030520211</label>
+            </value>
+            <value>
+                <fullName>2 timmars gratis raadgivning</fullName>
+                <default>false</default>
+                <label>2 timmars gratis raadgivning</label>
+            </value>
+            <value>
+                <fullName>3 timmars gratis raadgivning</fullName>
+                <default>false</default>
+                <label>3 timmars gratis raadgivning</label>
+            </value>
+            <value>
+                <fullName>10 timmars gratis raadgivning</fullName>
+                <default>false</default>
+                <label>10 timmars gratis raadgivning</label>
+            </value>
+            <value>
+                <fullName>4 timmars gratis raadgivning</fullName>
+                <default>false</default>
+                <label>4 timmars gratis raadgivning</label>
+            </value>
+            <value>
+                <fullName>5 timmars gratis raadgivning</fullName>
+                <default>false</default>
+                <label>5 timmars gratis raadgivning</label>
+            </value>
+            <value>
+                <fullName>6 timmars gratis raadgivning</fullName>
+                <default>false</default>
+                <label>6 timmars gratis raadgivning</label>
+            </value>
+            <value>
+                <fullName>7 timmars gratis raadgivning</fullName>
+                <default>false</default>
+                <label>7 timmars gratis raadgivning</label>
+            </value>
+            <value>
+                <fullName>8 timmars gratis raadgivning</fullName>
+                <default>false</default>
+                <label>8 timmars gratis raadgivning</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

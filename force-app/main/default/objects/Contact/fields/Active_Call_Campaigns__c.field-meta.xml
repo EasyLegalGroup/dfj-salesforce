@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Call_Campaigns__c</fullName>
+    <label>Active Call Campaigns</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Denmark: My Leads</fullName>
+                <default>false</default>
+                <label>Denmark: My Leads</label>
+            </value>
+            <value>
+                <fullName>My Leads (Danny Taube Henriksen)</fullName>
+                <default>false</default>
+                <label>My Leads (Danny Taube Henriksen)</label>
+            </value>
+            <value>
+                <fullName>My Leads (Denis Malovic)</fullName>
+                <default>false</default>
+                <label>My Leads (Denis Malovic)</label>
+            </value>
+            <value>
+                <fullName>Sweden: My Leads</fullName>
+                <default>false</default>
+                <label>Sweden: My Leads</label>
+            </value>
+            <value>
+                <fullName>My Leads (Sami El Harake)</fullName>
+                <default>false</default>
+                <label>My Leads (Sami El Harake)</label>
+            </value>
+            <value>
+                <fullName>Denmark: Subscriber Follow-Up</fullName>
+                <default>false</default>
+                <label>Denmark: Subscriber Follow-Up</label>
+            </value>
+            <value>
+                <fullName>Denmark: Campaign A</fullName>
+                <default>false</default>
+                <label>Denmark: Campaign A</label>
+            </value>
+            <value>
+                <fullName>Denmark: Campaign B</fullName>
+                <default>false</default>
+                <label>Denmark: Campaign B</label>
+            </value>
+            <value>
+                <fullName>Sweden: Campaign A</fullName>
+                <default>false</default>
+                <label>Sweden: Campaign A</label>
+            </value>
+            <value>
+                <fullName>Sweden: Campaign B</fullName>
+                <default>false</default>
+                <label>Sweden: Campaign B</label>
+            </value>
+            <value>
+                <fullName>Denmark: Association Call Campaign</fullName>
+                <default>false</default>
+                <label>Denmark: Association Call Campaign</label>
+            </value>
+            <value>
+                <fullName>Denmark: No show</fullName>
+                <default>false</default>
+                <label>Denmark: No show</label>
+            </value>
+            <value>
+                <fullName>Denmark: Show</fullName>
+                <default>false</default>
+                <label>Denmark: Show</label>
+            </value>
+            <value>
+                <fullName>Denmark: PR leads</fullName>
+                <default>false</default>
+                <label>Denmark: PR leads</label>
+            </value>
+            <value>
+                <fullName>Denmark: Order canceled</fullName>
+                <default>false</default>
+                <label>Denmark: Order canceled</label>
+            </value>
+            <value>
+                <fullName>Denmark: Findforsikring</fullName>
+                <default>false</default>
+                <label>Denmark: Findforsikring</label>
+            </value>
+            <value>
+                <fullName>Denmark: Opt-in</fullName>
+                <default>false</default>
+                <label>Denmark: Opt-in</label>
+            </value>
+            <value>
+                <fullName>Denmark: Ejendomsoverdragelse</fullName>
+                <default>false</default>
+                <label>Denmark: Ejendomsoverdragelse</label>
+            </value>
+            <value>
+                <fullName>Denmark: Customer Care</fullName>
+                <default>false</default>
+                <label>Denmark: Customer Care</label>
+            </value>
+            <value>
+                <fullName>Sweden: Customer Care</fullName>
+                <default>false</default>
+                <label>Sweden: Customer Care</label>
+            </value>
+            <value>
+                <fullName>Sweden - Order canceled</fullName>
+                <default>false</default>
+                <label>Sweden - Order canceled</label>
+            </value>
+            <value>
+                <fullName>Sweden - PR leads</fullName>
+                <default>false</default>
+                <label>Sweden - PR leads</label>
+            </value>
+            <value>
+                <fullName>Sweden - No show</fullName>
+                <default>false</default>
+                <label>Sweden - No show</label>
+            </value>
+            <value>
+                <fullName>Sweden - Show</fullName>
+                <default>false</default>
+                <label>Sweden - Show</label>
+            </value>
+            <value>
+                <fullName>Denmark: Singles Signed up for Lectures</fullName>
+                <default>false</default>
+                <label>Denmark: Singles Signed up for Lectures</label>
+            </value>
+            <value>
+                <fullName>Ireland: Campaign A</fullName>
+                <default>false</default>
+                <label>Ireland: Campaign A</label>
+            </value>
+            <value>
+                <fullName>Denmark: Winback on Opfølgning 3-6 måneder</fullName>
+                <default>false</default>
+                <label>Denmark: Winback on Opfølgning 3-6 måneder</label>
+            </value>
+            <value>
+                <fullName>Sweden: Winback on Opfølgning 3-6 måneder</fullName>
+                <default>false</default>
+                <label>Sweden: Winback on Opfølgning 3-6 måneder</label>
+            </value>
+            <value>
+                <fullName>Sweden: Winback on Annullerede møde</fullName>
+                <default>false</default>
+                <label>Sweden: Winback on Annullerede møde</label>
+            </value>
+            <value>
+                <fullName>Denmark: Winback on Vil selv vende tilbage</fullName>
+                <default>false</default>
+                <label>Denmark: Winback on Vil selv vende tilbage</label>
+            </value>
+            <value>
+                <fullName>Denmark: Winback on Besvarer ikke længere</fullName>
+                <default>false</default>
+                <label>Denmark: Winback on Besvarer ikke længere</label>
+            </value>
+            <value>
+                <fullName>Sweden: Winback on Besvarer ikke længere</fullName>
+                <default>false</default>
+                <label>Sweden: Winback on Besvarer ikke længere</label>
+            </value>
+            <value>
+                <fullName>Denmark: Winback on Annullerede møde</fullName>
+                <default>false</default>
+                <label>Denmark: Winback on Annullerede møde</label>
+            </value>
+            <value>
+                <fullName>Denmark: Winback on Call after hours</fullName>
+                <default>false</default>
+                <label>Denmark: Winback on Call after hours</label>
+            </value>
+            <value>
+                <fullName>Sweden: Winback on Vil selv vende tilbage</fullName>
+                <default>false</default>
+                <label>Sweden: Winback on Vil selv vende tilbage</label>
+            </value>
+            <value>
+                <fullName>Denmark: Family Check</fullName>
+                <default>false</default>
+                <label>Denmark: Family Check</label>
+            </value>
+            <value>
+                <fullName>Sweden: Customer Care (Account)</fullName>
+                <default>false</default>
+                <label>Sweden: Customer Care (Account)</label>
+            </value>
+            <value>
+                <fullName>Denmark: Customer Care (Account)</fullName>
+                <default>false</default>
+                <label>Denmark: Customer Care (Account)</label>
+            </value>
+            <value>
+                <fullName>Denmark: Event Booking on Host Lead</fullName>
+                <default>false</default>
+                <label>Denmark: Event Booking on Host Lead</label>
+            </value>
+            <value>
+                <fullName>Sweden: Event Booking on Host Lead</fullName>
+                <default>false</default>
+                <label>Sweden: Event Booking on Host Lead</label>
+            </value>
+            <value>
+                <fullName>Host Leads Created by Me</fullName>
+                <default>false</default>
+                <label>Host Leads Created by Me</label>
+            </value>
+            <value>
+                <fullName>Denmark: Inactive Host Accounts</fullName>
+                <default>false</default>
+                <label>Denmark: Inactive Host Accounts</label>
+            </value>
+            <value>
+                <fullName>Denmark: My Inactive Host Accounts</fullName>
+                <default>false</default>
+                <label>Denmark: My Inactive Host Accounts</label>
+            </value>
+            <value>
+                <fullName>Sweden: My Inactive Host Accounts</fullName>
+                <default>false</default>
+                <label>Sweden: My Inactive Host Accounts</label>
+            </value>
+            <value>
+                <fullName>Sweden: Inactive Host Accounts</fullName>
+                <default>false</default>
+                <label>Sweden: Inactive Host Accounts</label>
+            </value>
+            <value>
+                <fullName>Denmark: My Host Accounts for Nurturing</fullName>
+                <default>false</default>
+                <label>Denmark: My Host Accounts for Nurturing</label>
+            </value>
+            <value>
+                <fullName>Sweden: My Host Accounts for Nurturing</fullName>
+                <default>false</default>
+                <label>Sweden: My Host Accounts for Nurturing</label>
+            </value>
+            <value>
+                <fullName>Sweden: Host Accounts for Nurturing</fullName>
+                <default>false</default>
+                <label>Sweden: Host Accounts for Nurturing</label>
+            </value>
+            <value>
+                <fullName>Denmark: Host Accounts for Nurturing</fullName>
+                <default>false</default>
+                <label>Denmark: Host Accounts for Nurturing</label>
+            </value>
+            <value>
+                <fullName>CC: My Host Leads</fullName>
+                <default>false</default>
+                <label>CC: My Host Leads</label>
+            </value>
+            <value>
+                <fullName>Sweden: Document Review</fullName>
+                <default>false</default>
+                <label>Sweden: Document Review</label>
+            </value>
+            <value>
+                <fullName>Ireland: Document Review</fullName>
+                <default>false</default>
+                <label>Ireland: Document Review</label>
+            </value>
+            <value>
+                <fullName>Ireland: Customer Care (Account)</fullName>
+                <default>false</default>
+                <label>Ireland: Customer Care (Account)</label>
+            </value>
+            <value>
+                <fullName>Denmark: Document Review</fullName>
+                <default>false</default>
+                <label>Denmark: Document Review</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Michael_Alle_bne_emner</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>Name2__c</columns>
+    <columns>Foredragskommentar__c</columns>
+    <columns>Gavekort_1_000_kr_rabat_og_r_dgivning__c</columns>
+    <columns>Event_moedestatus_c__c</columns>
+    <columns>Booking_Status_Formula__c</columns>
+    <columns>Lecturer__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>UTM_Content__c</columns>
+    <columns>Kampagne_budskab__c</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>Foredragstid_og_dato__c</columns>
+    <columns>Cancelled_tickets__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.DFJ_DK</value>
+    </filters>
+    <filters>
+        <field>UTM_Medium__c</field>
+        <operation>equals</operation>
+        <value>Leadad,Billetto,Totalliv</value>
+    </filters>
+    <filters>
+        <field>UTM_Source__c</field>
+        <operation>equals</operation>
+        <value>Facebook,Foredrag</value>
+    </filters>
+    <filters>
+        <field>Foredragsdato__c</field>
+        <operation>equals</operation>
+        <value>YESTERDAY</value>
+    </filters>
+    <label>DK - Alle åbne emner</label>
+</ListView>

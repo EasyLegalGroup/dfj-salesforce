@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Targets_Sweden</fullName>
+    <columns>CAMPAIGN.NAME</columns>
+    <columns>CAMPAIGN.START_DATE</columns>
+    <columns>Realistic_Capacity_Booked__c</columns>
+    <columns>Capacity_Target__c</columns>
+    <columns>Capacity_Index__c</columns>
+    <columns>Booking_Target__c</columns>
+    <columns>Current_Bookings__c</columns>
+    <columns>Booking_Index__c</columns>
+    <columns>Attendee_Target__c</columns>
+    <columns>Attendee_Index__c</columns>
+    <columns>Registration_Form_Target__c</columns>
+    <columns>Registration_Form_Index__c</columns>
+    <columns>Registration_Form_Target_Value__c</columns>
+    <columns>Registration_Form_Value_Index__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CAMPAIGN.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Campaign.Target</value>
+    </filters>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>FA_SE,Testamente_SV</value>
+    </filters>
+    <filters>
+        <field>CAMPAIGN.START_DATE</field>
+        <operation>equals</operation>
+        <value>THIS_YEAR</value>
+    </filters>
+    <label>Targets (Sweden)</label>
+</ListView>

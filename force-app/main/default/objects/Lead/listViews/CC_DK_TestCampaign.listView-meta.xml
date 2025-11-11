@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CC_DK_TestCampaign</fullName>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>Lead_Priority__c</columns>
+    <columns>Call_Priority__c</columns>
+    <columns>telegenta__Lock_Time__c</columns>
+    <columns>Locked__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>UTM_Source__c</columns>
+    <columns>UTM_Medium__c</columns>
+    <columns>telegenta__Total_calls__c</columns>
+    <columns>Event_moedestatus_c__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.DFJ_DK</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New,Working</value>
+    </filters>
+    <filters>
+        <field>Lead_Priority__c</field>
+        <operation>lessOrEqual</operation>
+        <value>3</value>
+    </filters>
+    <filters>
+        <field>Call_Priority__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Communication_Ban__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>CC - DK: TestCampaign</label>
+</ListView>

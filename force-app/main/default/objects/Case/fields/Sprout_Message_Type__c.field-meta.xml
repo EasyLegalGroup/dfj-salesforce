@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sprout_Message_Type__c</fullName>
+    <label>Sprout Message Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Facebook Ad Comment</fullName>
+                <default>false</default>
+                <label>Facebook Ad Comment</label>
+            </value>
+            <value>
+                <fullName>Facebook Private Message</fullName>
+                <default>false</default>
+                <label>Facebook Private Message</label>
+            </value>
+            <value>
+                <fullName>Facebook Post</fullName>
+                <default>false</default>
+                <label>Facebook Post</label>
+            </value>
+            <value>
+                <fullName>Facebook Rating</fullName>
+                <default>false</default>
+                <label>Facebook Rating</label>
+            </value>
+            <value>
+                <fullName>Google Review</fullName>
+                <default>false</default>
+                <label>Google Review</label>
+            </value>
+            <value>
+                <fullName>Trustpilot Review</fullName>
+                <default>false</default>
+                <label>Trustpilot Review</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

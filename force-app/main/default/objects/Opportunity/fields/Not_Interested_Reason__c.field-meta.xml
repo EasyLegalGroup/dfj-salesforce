@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Not_Interested_Reason__c</fullName>
+    <label>Not Interested Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Rejected during the introduction</fullName>
+                <default>false</default>
+                <label>Rejected during the introduction</label>
+            </value>
+            <value>
+                <fullName>The customer hung up</fullName>
+                <default>false</default>
+                <label>The customer hung up</label>
+            </value>
+            <value>
+                <fullName>Will get back on their own</fullName>
+                <default>false</default>
+                <label>Will get back on their own</label>
+            </value>
+            <value>
+                <fullName>Too expensive</fullName>
+                <default>false</default>
+                <label>Too expensive</label>
+            </value>
+            <value>
+                <fullName>Cannot afford it</fullName>
+                <default>false</default>
+                <label>Cannot afford it</label>
+            </value>
+            <value>
+                <fullName>Follow-up in 3-6 months</fullName>
+                <default>false</default>
+                <label>Follow-up in 3-6 months</label>
+            </value>
+            <value>
+                <fullName>No longer responds</fullName>
+                <default>false</default>
+                <label>No longer responds</label>
+            </value>
+            <value>
+                <fullName>Does not want furthercontact</fullName>
+                <default>false</default>
+                <label>Does not want furthercontact</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

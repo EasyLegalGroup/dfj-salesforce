@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Weekday__c</fullName>
+    <description>Returns Lead Created Day as Text</description>
+    <externalId>false</externalId>
+    <formula>CASE(
+  WEEKDAY(M_debooking_Close__c),
+  1, &quot;Sunday&quot;,
+  2, &quot;Monday&quot;,
+  3, &quot;Tuesday&quot;,
+  4, &quot;Wednesday&quot;,
+  5, &quot;Thursday&quot;,
+  6, &quot;Friday&quot;,
+  7, &quot;Saturday&quot;,
+  &quot;Unknown&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Weekday</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

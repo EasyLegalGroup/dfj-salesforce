@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Start_Time__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    OR(
+        AND(Start__c &gt;= DATETIMEVALUE(&apos;2025-03-30 00:00:00&apos;), Start__c &lt; DATETIMEVALUE(&apos;2025-10-26 00:00:00&apos;)),
+        AND(Start__c &gt;= DATETIMEVALUE(&apos;2026-03-29 00:00:00&apos;), Start__c &lt; DATETIMEVALUE(&apos;2026-10-25 00:00:00&apos;)),
+        AND(Start__c &gt;= DATETIMEVALUE(&apos;2027-03-28 00:00:00&apos;), Start__c &lt; DATETIMEVALUE(&apos;2027-10-25 00:00:00&apos;)),
+        AND(Start__c &gt;= DATETIMEVALUE(&apos;2028-03-26 00:00:00&apos;), Start__c &lt; DATETIMEVALUE(&apos;2028-10-29 00:00:00&apos;)),
+        AND(Start__c &gt;= DATETIMEVALUE(&apos;2029-03-31 00:00:00&apos;), Start__c &lt; DATETIMEVALUE(&apos;2029-10-29 00:00:00&apos;))
+    ),
+    IF(
+        ISBLANK(Start__c),
+        &quot;&quot;,
+        LPAD(TEXT(VALUE(MID(TEXT(Start__c + (2/24)), 12, 2))), 2, &apos;0&apos;) &amp; &quot;:&quot; &amp;
+        LPAD(TEXT(VALUE(MID(TEXT(Start__c + (2/24)), 15, 2))), 2, &apos;0&apos;)
+    ),
+    IF(
+        ISBLANK(Start__c),
+        &quot;&quot;,
+        LPAD(TEXT(VALUE(MID(TEXT(Start__c + (1/24)), 12, 2))), 2, &apos;0&apos;) &amp; &quot;:&quot; &amp;
+        LPAD(TEXT(VALUE(MID(TEXT(Start__c + (1/24)), 15, 2))), 2, &apos;0&apos;)
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Start Time</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>F_lles_Uden_forsikringshj_lp</fullName>
+    <booleanFilter>(1 OR 4) AND 2 AND 3</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>LEAD.LAST_UPDATE</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>Publisher_Campaign__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>IsCallableWorking__c</columns>
+    <columns>IsCallableNew__c</columns>
+    <columns>telegenta__Last_Contact_State__c</columns>
+    <columns>telegenta__Unprocessed__c</columns>
+    <columns>telegenta__Priority__c</columns>
+    <columns>UPDATEDBY_USER.ALIAS</columns>
+    <columns>Kommentarer__c</columns>
+    <columns>telegenta__Total_calls__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Publisher_Campaign__c</field>
+        <operation>equals</operation>
+        <value>Danske seniorer,Risikovurdering,Fb31102019lauravideoBt1,DFJAmagerSeniorKlub27112019,FoBruFo02122019Landingpage,DS06122019gratisFM,MM06122019gratisbtmkøb,DFJKontaktHjemmeside,nyhedsbreve200120gratisBT,Bornibyen200120gratisBT</value>
+    </filters>
+    <filters>
+        <field>Gen_bnet__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New,Working</value>
+    </filters>
+    <filters>
+        <field>Publisher_Campaign__c</field>
+        <operation>equals</operation>
+        <value>reshopper200120gratisBT</value>
+    </filters>
+    <label>Fælles (Uden forsikringshjælp)</label>
+</ListView>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dining_End_Time__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    VALUE(RIGHT(TEXT(Dining_Start_Time__c), 2)) + VALUE(LEFT(TEXT(Dining_Duration__c), FIND(&quot; &quot;, TEXT(Dining_Duration__c)) - 1)) &lt; 60,
+    TEXT(VALUE(LEFT(TEXT(Dining_Start_Time__c), 2))) &amp; &apos;:&apos; &amp;
+    LPAD(TEXT(VALUE(RIGHT(TEXT(Dining_Start_Time__c), 2)) + VALUE(LEFT(TEXT(Dining_Duration__c), FIND(&quot; &quot;, TEXT(Dining_Duration__c)) - 1))), 2, &apos;0&apos;),
+    TEXT(VALUE(LEFT(TEXT(Dining_Start_Time__c), 2)) + 
+    FLOOR((VALUE(RIGHT(TEXT(Dining_Start_Time__c), 2)) + VALUE(LEFT(TEXT(Dining_Duration__c), FIND(&quot; &quot;, TEXT(Dining_Duration__c)) - 1))) / 60)) &amp; &apos;:&apos; &amp;
+    LPAD(TEXT(MOD(VALUE(RIGHT(TEXT(Dining_Start_Time__c), 2)) + VALUE(LEFT(TEXT(Dining_Duration__c), FIND(&quot; &quot;, TEXT(Dining_Duration__c)) - 1)), 60)), 2, &apos;0&apos;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Dining End Time</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

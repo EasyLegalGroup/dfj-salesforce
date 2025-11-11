@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Calculated_Registration_Form_Value__c</fullName>
+    <inlineHelpText>This field uses numbers not otherwise present on this Campaign Target. It is populated by a flow, that sums up all Campaign Members that were closed in a given period and calculates their values, regardless of when they attended a lecture.</inlineHelpText>
+    <label>Calculated Registration Form Value</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pipelinefordeling_emner</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>Total_calls_out_all__c</columns>
+    <columns>UTM_Source__c</columns>
+    <columns>UTM_Medium__c</columns>
+    <columns>UTM_Content_Txt__c</columns>
+    <columns>LEAD.RATING</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>UTM_Content__c</columns>
+    <columns>Event_moedestatus_c__c</columns>
+    <columns>Foredragsdato__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New,Working</value>
+    </filters>
+    <filters>
+        <field>LEAD.LAST_NAME</field>
+        <operation>equals</operation>
+        <value>Mobarez</value>
+    </filters>
+    <filters>
+        <field>Event_moedestatus_c__c</field>
+        <operation>equals</operation>
+        <value>Tilmeldingsblanket</value>
+    </filters>
+    <label>Pipelinefordeling</label>
+</ListView>

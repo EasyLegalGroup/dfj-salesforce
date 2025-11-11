@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>telegenta__Invalid_Reason__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Reason for lead being invalid</description>
+    <inlineHelpText>Reason for lead being invalid</inlineHelpText>
+    <label>Invalid Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Partnerdublet</fullName>
+                <default>false</default>
+                <label>Partnerdublet</label>
+            </value>
+            <value>
+                <fullName>Forkert person</fullName>
+                <default>false</default>
+                <label>Forkert person</label>
+            </value>
+            <value>
+                <fullName>Under 18</fullName>
+                <default>false</default>
+                <label>Under 18</label>
+            </value>
+            <value>
+                <fullName>Eksisterende kunde</fullName>
+                <default>false</default>
+                <label>Eksisterende kunde</label>
+            </value>
+            <value>
+                <fullName>Blacklist</fullName>
+                <default>false</default>
+                <label>Blacklist</label>
+            </value>
+            <value>
+                <fullName>Forstår ikke dansk</fullName>
+                <default>false</default>
+                <label>Forstår ikke dansk</label>
+            </value>
+            <value>
+                <fullName>Ikke kreditgodkendt</fullName>
+                <default>false</default>
+                <label>Ikke kreditgodkendt</label>
+            </value>
+            <value>
+                <fullName>Number incorrect</fullName>
+                <default>false</default>
+                <label>Nummer eksisterer ikke</label>
+            </value>
+            <value>
+                <fullName>TestLead</fullName>
+                <default>false</default>
+                <label>TestLead</label>
+            </value>
+            <value>
+                <fullName>Dublet</fullName>
+                <default>false</default>
+                <label>Dublet</label>
+            </value>
+            <value>
+                <fullName>Nummer blokeret</fullName>
+                <default>false</default>
+                <label>Nummer blokeret</label>
+            </value>
+            <value>
+                <fullName>MAXCALL</fullName>
+                <default>false</default>
+                <label>MAXCALL</label>
+            </value>
+            <value>
+                <fullName>Oprydning</fullName>
+                <default>false</default>
+                <label>Oprydning</label>
+            </value>
+            <value>
+                <fullName>-</fullName>
+                <default>false</default>
+                <label>-</label>
+            </value>
+            <value>
+                <fullName>Unverified Prospect</fullName>
+                <default>false</default>
+                <label>Unverified Prospect</label>
+            </value>
+            <value>
+                <fullName>Not enough seats available</fullName>
+                <default>false</default>
+                <label>Not enough seats available</label>
+            </value>
+            <value>
+                <fullName>Not accessible (e.g. no parking, bad location)</fullName>
+                <default>false</default>
+                <label>Not accessible (e.g. no parking, bad location)</label>
+            </value>
+            <value>
+                <fullName>Poor acoustics or layout for presentations</fullName>
+                <default>false</default>
+                <label>Poor acoustics or layout for presentations</label>
+            </value>
+            <value>
+                <fullName>Kitchen closed during our event hours</fullName>
+                <default>false</default>
+                <label>Kitchen closed during our event hours</label>
+            </value>
+            <value>
+                <fullName>Doesn’t allow external guests</fullName>
+                <default>false</default>
+                <label>Doesn’t allow external guests</label>
+            </value>
+            <value>
+                <fullName>Lacks necessary licenses (e.g. alcohol)</fullName>
+                <default>false</default>
+                <label>Lacks necessary licenses (e.g. alcohol)</label>
+            </value>
+            <value>
+                <fullName>Under renovation or temporarily closed</fullName>
+                <default>false</default>
+                <label>Under renovation or temporarily closed</label>
+            </value>
+            <value>
+                <fullName>Fjernet</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Fjernet</label>
+            </value>
+            <value>
+                <fullName>Lukket af admin</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Lukket af admin</label>
+            </value>
+            <value>
+                <fullName>Unavailable</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Unavailable</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

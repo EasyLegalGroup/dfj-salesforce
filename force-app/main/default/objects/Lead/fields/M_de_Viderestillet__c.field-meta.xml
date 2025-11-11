@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>M_de_Viderestillet__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Emnet er viderestillet til en medarbejder hos DFJ</description>
+    <inlineHelpText>Emnet er viderestillet til en medarbejder hos DFJ</inlineHelpText>
+    <label>Møde - Viderestillet</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

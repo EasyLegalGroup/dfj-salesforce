@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Calendly_Booking_Note_Question__c</fullName>
+    <label>Calendly Booking Note Question</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Notér her, hvis kunde har nævnt noget specifikt, de gerne vil tale om.</fullName>
+                <default>false</default>
+                <label>Notér her, hvis kunde har nævnt noget specifikt, de gerne vil tale om.</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

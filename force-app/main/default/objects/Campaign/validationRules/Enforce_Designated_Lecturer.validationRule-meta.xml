@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enforce_Designated_Lecturer</fullName>
+    <active>true</active>
+    <description>If Dedicated Lecturer is set on the related Host, then Campaign must use the same Lecturer.</description>
+    <errorConditionFormula>AND(
+    NOT(ISBLANK(Host__r.Designated_Lecturer__c)), 
+    NOT(ISBLANK(Lecturer__c)),
+    Host__r.Designated_Lecturer__c &lt;&gt; Lecturer__c
+)</errorConditionFormula>
+    <errorDisplayField>Lecturer__c</errorDisplayField>
+    <errorMessage>A Designated Lecturer is set on the Host. You cannot select a different Lecturer for the Campaign.</errorMessage>
+</ValidationRule>

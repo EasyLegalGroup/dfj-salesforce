@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Overdue_working</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>telegenta__Last_Contact_State__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.RECORDTYPE</columns>
+    <columns>Lead_Group_Name__c</columns>
+    <columns>Market_Unit__c</columns>
+    <columns>telegenta__Total_calls__c</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>UTM_Campaign__c</columns>
+    <columns>Has_Appointment__c</columns>
+    <columns>Update_CCS__c</columns>
+    <columns>Call_Campaign__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>Working</value>
+    </filters>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.DFJ_DK,Lead.FA_SE</value>
+    </filters>
+    <filters>
+        <field>UTM_Campaign__c</field>
+        <operation>notEqual</operation>
+        <value>Kanvas</value>
+    </filters>
+    <filters>
+        <field>telegenta__Next_Call_Time__c</field>
+        <operation>lessThan</operation>
+        <value>YESTERDAY</value>
+    </filters>
+    <label>Overdue working</label>
+</ListView>

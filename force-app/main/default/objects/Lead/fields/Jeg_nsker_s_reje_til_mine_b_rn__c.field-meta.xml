@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Jeg_nsker_s_reje_til_mine_b_rn__c</fullName>
+    <defaultValue>false</defaultValue>
+    <label>Jeg ønsker særeje til mine børn</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

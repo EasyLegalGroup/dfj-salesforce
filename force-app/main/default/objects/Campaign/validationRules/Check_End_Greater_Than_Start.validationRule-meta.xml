@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_End_Greater_Than_Start</fullName>
+    <active>true</active>
+    <description>Ensure that when both Start__c and End__c are filled in, End__c cannot be before Start__c.</description>
+    <errorConditionFormula>AND(
+  NOT(ISBLANK(Start__c)),
+  NOT(ISBLANK(End__c)),
+  End__c &lt; Start__c
+)</errorConditionFormula>
+    <errorDisplayField>End__c</errorDisplayField>
+    <errorMessage>End cannot be before Start</errorMessage>
+</ValidationRule>

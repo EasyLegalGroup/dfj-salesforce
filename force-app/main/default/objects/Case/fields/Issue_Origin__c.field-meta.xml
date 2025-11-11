@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Issue_Origin__c</fullName>
+    <label>Issue Origin</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>User Error</fullName>
+                <default>false</default>
+                <label>User Error</label>
+            </value>
+            <value>
+                <fullName>Feature Misuse</fullName>
+                <default>false</default>
+                <label>Feature Misuse</label>
+            </value>
+            <value>
+                <fullName>System Bug/Defect</fullName>
+                <default>false</default>
+                <label>System Bug/Defect</label>
+            </value>
+            <value>
+                <fullName>External Factors (Force Majeure)</fullName>
+                <default>false</default>
+                <label>External Factors (Force Majeure)</label>
+            </value>
+            <value>
+                <fullName>Integration or Third-Party System Failure</fullName>
+                <default>false</default>
+                <label>Integration or Third-Party System Failure</label>
+            </value>
+            <value>
+                <fullName>Misrouted (Not IT-Related)</fullName>
+                <default>false</default>
+                <label>Misrouted (Not IT-Related)</label>
+            </value>
+            <value>
+                <fullName>General Inquiry</fullName>
+                <default>false</default>
+                <label>General Inquiry</label>
+            </value>
+            <value>
+                <fullName>Feature Request</fullName>
+                <default>false</default>
+                <label>Feature Request</label>
+            </value>
+            <value>
+                <fullName>Triggered by Testing</fullName>
+                <default>false</default>
+                <label>Triggered by Testing</label>
+            </value>
+            <value>
+                <fullName>System Message</fullName>
+                <default>false</default>
+                <label>System Message</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Update Request</fullName>
+                <default>false</default>
+                <label>Update Request</label>
+            </value>
+            <value>
+                <fullName>Forgotten Password</fullName>
+                <default>false</default>
+                <label>Forgotten Password</label>
+            </value>
+            <value>
+                <fullName>Standard Process</fullName>
+                <default>false</default>
+                <label>Standard Process</label>
+            </value>
+            <value>
+                <fullName>Customer Error</fullName>
+                <default>false</default>
+                <label>Customer Error</label>
+            </value>
+            <value>
+                <fullName>User Stopped Responding</fullName>
+                <default>false</default>
+                <label>User Stopped Responding</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

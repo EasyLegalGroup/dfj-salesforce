@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CC_SE_PR_Denis_Malovic</fullName>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>Latest_Entry_Date__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>UTM_Source__c</columns>
+    <columns>UTM_Medium__c</columns>
+    <columns>UTM_Content_Txt__c</columns>
+    <columns>LEAD.RATING</columns>
+    <columns>telegenta__Lead_Age_In_days__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>UTM_Medium__c</field>
+        <operation>equals</operation>
+        <value>PR Leads</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New,Working</value>
+    </filters>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>FA_SE,Testamente_SV</value>
+    </filters>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.FA_SE</value>
+    </filters>
+    <filters>
+        <field>UTM_Content_Txt__c</field>
+        <operation>contains</operation>
+        <value>#0055J000001kE96</value>
+    </filters>
+    <label>CC - SE: PR (Denis Malovic)</label>
+</ListView>

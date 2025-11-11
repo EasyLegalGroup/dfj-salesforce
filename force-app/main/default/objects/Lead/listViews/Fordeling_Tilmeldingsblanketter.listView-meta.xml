@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fordeling_Tilmeldingsblanketter</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>Foredragsdato__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>Event_moedestatus_c__c</columns>
+    <columns>Foredragskommentar__c</columns>
+    <columns>LEAD.RECORDTYPE</columns>
+    <columns>Lecturer__c</columns>
+    <columns>UTM_Source__c</columns>
+    <columns>UTM_Medium__c</columns>
+    <columns>UTM_Campaign__c</columns>
+    <columns>UTM_Content__c</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>UTM_Source__c</field>
+        <operation>equals</operation>
+        <value>Foredrag</value>
+    </filters>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.DFJ_DK</value>
+    </filters>
+    <filters>
+        <field>Event_moedestatus_c__c</field>
+        <operation>equals</operation>
+        <value>Tilmeldingsblanket</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>DFJ Leads</value>
+    </filters>
+    <filters>
+        <field>New_Status__c</field>
+        <operation>equals</operation>
+        <value>Unprocessed,Reopened</value>
+    </filters>
+    <label>Fordeling Tilmeldingsblanketter DK</label>
+</ListView>

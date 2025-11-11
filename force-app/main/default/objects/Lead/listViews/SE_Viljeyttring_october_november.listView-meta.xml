@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SE_Viljeyttring_october_november</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>telegenta__Last_Contact_State__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>telegenta__Total_calls__c</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>Publisher_Campaign__c</columns>
+    <columns>Gen_bnet__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Market_Unit__c</columns>
+    <columns>telegenta__Priority__c</columns>
+    <columns>LEAD.LAST_UPDATE</columns>
+    <columns>UPDATEDBY_USER.ALIAS</columns>
+    <columns>Lead_Group_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.FA_SE</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New,Working</value>
+    </filters>
+    <filters>
+        <field>Lead_Group_Name__c</field>
+        <operation>equals</operation>
+        <value>Kampagne 1</value>
+    </filters>
+    <filters>
+        <field>LEAD.CREATED_DATE</field>
+        <operation>greaterThan</operation>
+        <value>9/30/2020 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>telegenta__Next_Call_Time__c</field>
+        <operation>lessThan</operation>
+        <value>TOMORROW</value>
+    </filters>
+    <label>SE Viljeyttring october november</label>
+</ListView>

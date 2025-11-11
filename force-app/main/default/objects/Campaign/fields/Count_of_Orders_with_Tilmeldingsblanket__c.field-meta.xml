@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Count_of_Orders_with_Tilmeldingsblanket__c</fullName>
+    <label>Count of Orders with Tilmeldingsblanket</label>
+    <summaryFilterItems>
+        <field>CampaignMember.Event_m_destatus__c</field>
+        <operation>equals</operation>
+        <value>Tilmeldingsblanket</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>CampaignMember.Order_Total__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </summaryFilterItems>
+    <summaryForeignKey>CampaignMember.CampaignId</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

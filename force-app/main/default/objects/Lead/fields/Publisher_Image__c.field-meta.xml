@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Publisher_Image__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL( Publisher_name__c , &quot;Min mave&quot;),IMAGE(&quot;/resource/PublisherLogos/Minmave.png&quot;, &quot;Min mave&quot;,85, 200),
+IF(ISPICKVAL( Publisher_name__c , &quot;Forbrugsforeningen&quot;),IMAGE(&quot;/resource/PublisherLogos/Forbrugsforeningen.png&quot;, &quot;Forbrugesforeningen&quot;,85, 100),
+IF( OR(ISPICKVAL( Publisher_name__c , &quot;website&quot;),ISPICKVAL( Publisher_name__c , &quot;egentic&quot;),ISPICKVAL( Publisher_name__c , &quot;facebook&quot;)),IMAGE(&quot;/resource/PublisherLogos/DinFamilieJurist.png&quot; , &quot;other&quot;,85, 200), 
+IF(ISPICKVAL( Publisher_name__c , &quot;Danske Seniorer&quot;),IMAGE(&quot;/resource/PublisherLogos/DanskeSeniorer.png&quot;, &quot;Danske Seniorer&quot;,85, 100),
+IF(ISPICKVAL( Publisher_name__c , &quot;Forsikringshjælp.nu&quot;),IMAGE(&quot;/resource/PublisherLogos/forsikringshjaelp.png&quot;, &quot;Forsikringshjælp&quot;,100, 300),
+IF(ISPICKVAL( Publisher_name__c , &quot;Børn i byen&quot;),IMAGE(&quot;/resource/PublisherLogos/bornibyen.png&quot;, &quot;Børn i byen&quot;,85, 200),
+IF(ISPICKVAL( Publisher_name__c , &quot;Nyhedsbreve&quot;),IMAGE(&quot;/resource/PublisherLogos/nyhedsbrev.png&quot;, &quot;Nyhedsbrev&quot;,85, 200),
+IF(ISPICKVAL( Publisher_name__c , &quot;Reshopper&quot;),IMAGE(&quot;/resource/PublisherLogos/reshopper.PNG&quot;, &quot;reshopper&quot;,85, 100),
+IF(ISPICKVAL( Publisher_name__c , &quot;HK&quot;),IMAGE(&quot;/resource/PublisherLogos/HK.PNG&quot;, &quot;HK&quot;,85, 100),
+IF(ISPICKVAL( Publisher_name__c , &quot;Folkeskolen&quot;),IMAGE(&quot;/resource/PublisherLogos/Folkeskolen.PNG&quot;, &quot;Folkeskolen&quot;,85, 100),
+IF(ISPICKVAL( Publisher_name__c , &quot;Samvirke&quot;),IMAGE(&quot;/resource/PublisherLogos/Samvirke.PNG&quot;, &quot;Samvirke&quot;,85, 100),
+&quot;&quot;)))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Publisher Image</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

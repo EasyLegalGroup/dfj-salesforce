@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Frit_pensionsvalg__c</fullName>
+    <label>Frit pensionsvalg</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Ja</fullName>
+                <default>false</default>
+                <label>Ja</label>
+            </value>
+            <value>
+                <fullName>Nej</fullName>
+                <default>false</default>
+                <label>Nej</label>
+            </value>
+            <value>
+                <fullName>Ved ikke</fullName>
+                <default>false</default>
+                <label>Ved ikke</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

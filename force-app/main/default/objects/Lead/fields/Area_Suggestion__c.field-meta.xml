@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Area_Suggestion__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <inlineHelpText>Automatically generated suggestion for a lecture in the same area (based on Zip Code), as where the Lead originally booked.</inlineHelpText>
+    <label>Area Suggestion</label>
+    <referenceTo>Campaign</referenceTo>
+    <relationshipLabel>Leads (Area Suggestion)</relationshipLabel>
+    <relationshipName>Leads2</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_Michael_Alle_bne_emner2</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>Name2__c</columns>
+    <columns>Phone2__c</columns>
+    <columns>Foredragskommentar__c</columns>
+    <columns>Gavekort_1_000_kr_rabat_og_r_dgivning__c</columns>
+    <columns>Jeg_vil__c</columns>
+    <columns>Event_moedestatus_c__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Ekstern_r_dgiver__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>UTM_Content__c</columns>
+    <columns>Is_Dublet__c</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New,Working</value>
+    </filters>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.DFJ_DK</value>
+    </filters>
+    <filters>
+        <field>UTM_Medium__c</field>
+        <operation>equals</operation>
+        <value>Leadad,Billetto</value>
+    </filters>
+    <filters>
+        <field>UTM_Source__c</field>
+        <operation>equals</operation>
+        <value>Foredrag</value>
+    </filters>
+    <filters>
+        <field>Event_moedestatus_c__c</field>
+        <operation>equals</operation>
+        <value>N/A,Show,No show,Tilmeldingsblanket,Ukendt,Aflyst</value>
+    </filters>
+    <filters>
+        <field>Foredragsdato__c</field>
+        <operation>equals</operation>
+        <value>5/2/2023</value>
+    </filters>
+    <label>Copy of Michael Alle åbne emner</label>
+</ListView>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Priority__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+  OR(
+    ISBLANK(Foredragstid_og_dato__c),
+    Foredragstid_og_dato__c &lt; DATETIMEVALUE(TEXT(YEAR(TODAY() - 1)) + &quot;-&quot; + TEXT(MONTH(TODAY() - 1)) + &quot;-&quot; + TEXT(DAY(TODAY() - 1)) + &quot; 00:00:00&quot;),
+    Booking_Status_Formula__c = &quot;Cancelled&quot;
+  ),
+  IF(
+    ISPICKVAL(Event_moedestatus_c__c, &quot;Tilmeldingsblanket&quot;), 1,
+    IF(
+      ISPICKVAL(UTM_Medium__c, &quot;PR Leads&quot;), 2,
+      IF(
+        Booking_Status_Formula__c = &quot;Cancelled&quot;, 3,
+        IF(
+          ISPICKVAL(Event_moedestatus_c__c, &quot;No Show&quot;), 4,
+          IF(
+            ISPICKVAL(Event_moedestatus_c__c, &quot;Show&quot;), 5,
+            IF(
+              ISPICKVAL(UTM_Medium__c, &quot;Findforsikring.dk&quot;), 6,
+              IF(
+                ISPICKVAL(UTM_Term__c, &quot;Pre-booking&quot;), 7,
+                99
+              )
+            )
+          )
+        )
+      )
+    )
+  ),
+  NULL
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Lead Priority</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

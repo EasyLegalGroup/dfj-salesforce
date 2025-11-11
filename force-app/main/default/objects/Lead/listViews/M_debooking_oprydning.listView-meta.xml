@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>M_debooking_oprydning</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>MB_Internal__c</columns>
+    <columns>LEAD.UNREAD</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Publisher_Campaign__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Publisher_Campaign__c</field>
+        <operation>equals</operation>
+        <value>Batch 3,Batch 2,Batch 1,EG010319Batch4,LassoX021019ElTømrerVVSFys0-9KBH,Adservice091019gratisBTVindtesta,MB03012020blandet</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New</value>
+    </filters>
+    <filters>
+        <field>MB_Internal__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Mødebooking oprydning</label>
+</ListView>

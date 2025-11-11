@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Revenue_on_No_Show_Incl_VAT__c</fullName>
+    <description>Roll-up of Order Total on campaign members with Event Mødestatus = No show</description>
+    <label>Revenue on No Show Incl. VAT</label>
+    <summarizedField>CampaignMember.Order_Total__c</summarizedField>
+    <summaryFilterItems>
+        <field>CampaignMember.Event_m_destatus__c</field>
+        <operation>equals</operation>
+        <value>No Show</value>
+    </summaryFilterItems>
+    <summaryForeignKey>CampaignMember.CampaignId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

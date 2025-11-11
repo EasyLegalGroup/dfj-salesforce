@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MaxCall_Gen_bning</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>telegenta__Invalid_Reason__c</columns>
+    <columns>Publisher_Campaign__c</columns>
+    <columns>Gen_bnet__c</columns>
+    <columns>stop_calling__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>telegenta__Invalid_Reason__c</field>
+        <operation>equals</operation>
+        <value>MAXCALL</value>
+    </filters>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.FA_SE</value>
+    </filters>
+    <filters>
+        <field>LEAD.CREATED_DATE</field>
+        <operation>greaterThan</operation>
+        <value>7/1/2021 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>Gen_bnet__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>Unqualified</value>
+    </filters>
+    <label>MaxCall Genåbning</label>
+</ListView>

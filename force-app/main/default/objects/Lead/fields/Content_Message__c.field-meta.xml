@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Content_Message__c</fullName>
+    <label>Content Message</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>-</fullName>
+                <default>false</default>
+                <label>-</label>
+            </value>
+            <value>
+                <fullName>1-3-lookalike-af-alle-leads</fullName>
+                <default>false</default>
+                <label>1-3-lookalike-af-alle-leads</label>
+            </value>
+            <value>
+                <fullName>4-6-lookalike-af-alle-leads</fullName>
+                <default>false</default>
+                <label>4-6-lookalike-af-alle-leads</label>
+            </value>
+            <value>
+                <fullName>Alle-med-boern-18-til-26</fullName>
+                <default>false</default>
+                <label>Alle-med-boern-18-til-26</label>
+            </value>
+            <value>
+                <fullName>Alle-med-boern-som-er-i-forhold</fullName>
+                <default>false</default>
+                <label>Alle-med-boern-som-er-i-forhold</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon 02122020</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon 02122020</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122020</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122020</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122023</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122023</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122024</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122024</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122025</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122025</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122026</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122026</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122027</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122027</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122028</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122028</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122029</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122029</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122030</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122030</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122031</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122031</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122032</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122032</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122033</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122033</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122034</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122034</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122035</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122035</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122036</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122036</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122037</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122037</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122038</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122038</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122039</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122039</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122040</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122040</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122041</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122041</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122042</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122042</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122043</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122043</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122044</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122044</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122046</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122046</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122047</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122047</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122048</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122048</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122049</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122049</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122050</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122050</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122051</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122051</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122052</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122052</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122053</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122053</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122054</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122054</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122055</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122055</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122056</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122056</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122057</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122057</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122058</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122058</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122059</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122059</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122060</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122060</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122062</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122062</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122063</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122063</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122064</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122064</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122065</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122065</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122066</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122066</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122067</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122067</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122068</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122068</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122069</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122069</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122070</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122070</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122071</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122071</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122072</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122072</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122073</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122073</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122074</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122074</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122075</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122075</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122076</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122076</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122077</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122077</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122078</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122078</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122079</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122079</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122080</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122080</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122081</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122081</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122082</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122082</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122083</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122083</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122084</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122084</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122085</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122085</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122086</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122086</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122087</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122087</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122088</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122088</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122089</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122089</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122090</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122090</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122091</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122091</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122092</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122092</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122093</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122093</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122094</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122094</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122095</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122095</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122096</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122096</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122097</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122097</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122098</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122098</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122099</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122099</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122100</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122100</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122101</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122101</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122102</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122102</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122103</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122103</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122104</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122104</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122105</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122105</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122106</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122106</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122107</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122107</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122108</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122108</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122109</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122109</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122110</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122110</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122111</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122111</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122112</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122112</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet 02122113</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet 02122113</label>
+            </value>
+            <value>
+                <fullName>Arvetest over telefon, ved de bliver kontaktet og får gavekort på 1.000 kroner - 02122020</fullName>
+                <default>false</default>
+                <label>Arvetest over telefon, ved de bliver kontaktet og får gavekort på 1.000 kroner - 02122020</label>
+            </value>
+            <value>
+                <fullName>B%C3%B8rnetestamente - %C3%B8nsker pris</fullName>
+                <default>false</default>
+                <label>B%C3%B8rnetestamente - %C3%B8nsker pris</label>
+            </value>
+            <value>
+                <fullName>B%C3%B8rnetestamente - ikke gratis</fullName>
+                <default>false</default>
+                <label>B%C3%B8rnetestamente - ikke gratis</label>
+            </value>
+            <value>
+                <fullName>F%C3%A5 et gratis b%C3%B8rnetestamente og familietjek</fullName>
+                <default>false</default>
+                <label>F%C3%A5 et gratis b%C3%B8rnetestamente og familietjek</label>
+            </value>
+            <value>
+                <fullName>F%C3%A5 et gratis b%C3%B8rnetestamente oprettet - besvar disse sp%C3%B8rgsm%C3%A5l og bliv kontaktet</fullName>
+                <default>false</default>
+                <label>F%C3%A5 et gratis b%C3%B8rnetestamente oprettet - besvar disse sp%C3%B8rgsm%C3%A5l og bliv kontaktet</label>
+            </value>
+            <value>
+                <fullName>GRATIS VARDNADSTESTAMENTE</fullName>
+                <default>false</default>
+                <label>GRATIS VARDNADSTESTAMENTE</label>
+            </value>
+            <value>
+                <fullName>Gavekort p%C3%A5 1.000 til testamente</fullName>
+                <default>false</default>
+                <label>Gavekort p%C3%A5 1.000 til testamente</label>
+            </value>
+            <value>
+                <fullName>Gratis familietjek og gavekort p%C3%A5 1.000 kr.</fullName>
+                <default>false</default>
+                <label>Gratis familietjek og gavekort p%C3%A5 1.000 kr.</label>
+            </value>
+            <value>
+                <fullName>Gratis-boerneterstamente</fullName>
+                <default>false</default>
+                <label>Gratis-boerneterstamente</label>
+            </value>
+            <value>
+                <fullName>Gratis-boernetestamente-leadads-08122020-1</fullName>
+                <default>false</default>
+                <label>Gratis-boernetestamente-leadads-08122020-1</label>
+            </value>
+            <value>
+                <fullName>Gratis-boernetestamente-messenger-04122020</fullName>
+                <default>false</default>
+                <label>Gratis-boernetestamente-messenger-04122020</label>
+            </value>
+            <value>
+                <fullName>Kampagne link/gavekort</fullName>
+                <default>false</default>
+                <label>Kampagne link/gavekort</label>
+            </value>
+            <value>
+                <fullName>Ny annonce</fullName>
+                <default>false</default>
+                <label>Ny annonce</label>
+            </value>
+            <value>
+                <fullName>Opret et gratis b%C3%B8rnetestamente og f%C3%A5 et familietjek</fullName>
+                <default>false</default>
+                <label>Opret et gratis b%C3%B8rnetestamente og f%C3%A5 et familietjek</label>
+            </value>
+            <value>
+                <fullName>Opret et gratis b%C3%B8rnetestamente. Nanna Ragnhild har mulighed for at give sine f%C3%B8lgere et familietjek og b%C3%B8rnetestamente gratis.</fullName>
+                <default>false</default>
+                <label>Opret et gratis b%C3%B8rnetestamente. Nanna Ragnhild har mulighed for at give sine f%C3%B8lgere et familietjek og b%C3%B8rnetestamente gratis.</label>
+            </value>
+            <value>
+                <fullName>Opret gratis b%C3%B8rnetestamente</fullName>
+                <default>false</default>
+                <label>Opret gratis b%C3%B8rnetestamente</label>
+            </value>
+            <value>
+                <fullName>Opret testamente online</fullName>
+                <default>false</default>
+                <label>Opret testamente online</label>
+            </value>
+            <value>
+                <fullName>Prisforslag p%C3%A5 testamente video af gennemgang - Emir</fullName>
+                <default>false</default>
+                <label>Prisforslag p%C3%A5 testamente video af gennemgang - Emir</label>
+            </value>
+            <value>
+                <fullName>Prisforslag p%C3%A5 testamente video af gennemgang - Nada</fullName>
+                <default>false</default>
+                <label>Prisforslag p%C3%A5 testamente video af gennemgang - Nada</label>
+            </value>
+            <value>
+                <fullName>Prisforslag+p%C3%A5+testamente+video+af+gennemgang+-+Emir</fullName>
+                <default>false</default>
+                <label>Prisforslag+p%C3%A5+testamente+video+af+gennemgang+-+Emir</label>
+            </value>
+            <value>
+                <fullName>Start dit testamente online</fullName>
+                <default>false</default>
+                <label>Start dit testamente online</label>
+            </value>
+            <value>
+                <fullName>jantestadset</fullName>
+                <default>false</default>
+                <label>jantestadset</label>
+            </value>
+            <value>
+                <fullName>testadset</fullName>
+                <default>false</default>
+                <label>testadset</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

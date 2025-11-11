@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>StartDate_Mismatch</fullName>
+    <active>true</active>
+    <description>Ensures that if the custom field Start__c (Date/Time) is populated, its date part must match the StartDate (Date only) field on the Campaign.</description>
+    <errorConditionFormula>NOT(ISBLANK(Start__c)) &amp;&amp;
+DATEVALUE(Start__c) &lt;&gt; StartDate</errorConditionFormula>
+    <errorDisplayField>Start__c</errorDisplayField>
+    <errorMessage>Start Date (Date) must match the date part of Start (Date/Time) if Start is filled in.</errorMessage>
+</ValidationRule>

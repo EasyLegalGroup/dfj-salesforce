@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_Foredrag_fordeling_TM</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>Foredragsdato__c</columns>
+    <columns>Event_moedestatus_c__c</columns>
+    <columns>Gavekort_1_000_kr_rabat_og_r_dgivning__c</columns>
+    <columns>Foredragskommentar__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>New_Status__c</columns>
+    <columns>Ekstern_r_dgiver__c</columns>
+    <columns>Foredragstype__c</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>UTM_Content__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.DFJ_DK</value>
+    </filters>
+    <filters>
+        <field>UTM_Source__c</field>
+        <operation>equals</operation>
+        <value>Facebook,Foredrag</value>
+    </filters>
+    <filters>
+        <field>Event_moedestatus_c__c</field>
+        <operation>equals</operation>
+        <value>N/A,Show,No show,Tilmeldingsblanket,Ukendt,Aflyst,Order cancelled</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New,Working</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>DFJ Leads</value>
+    </filters>
+    <filters>
+        <field>Foredragsdato__c</field>
+        <operation>equals</operation>
+        <value>9/23/2024</value>
+    </filters>
+    <filters>
+        <field>Lecturer__c</field>
+        <operation>equals</operation>
+        <value>Flemming Abildtrup</value>
+    </filters>
+    <label>Copy of Foredrag fordeling - TM</label>
+</ListView>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Phone2_Formatted__c</fullName>
+    <description>This field takes the value of &quot;Phone2&quot; and formats it with country code, based on market unit</description>
+    <externalId>false</externalId>
+    <formula>IF( BEGINS(Phone2__c , &apos;+45&apos; ) , Phone2__c ,
+IF( BEGINS(Phone2__c , &apos;45&apos; ) , &apos;+&apos; + Phone2__c ,
+IF( AND( NOT(BEGINS(Phone2__c , &apos;+45&apos; )) , OR( ISPICKVAL( Market_Unit__c , &apos;DFJ_DK&apos;) , ISPICKVAL( Market_Unit__c , &apos;Testamente_DK&apos;))) , &apos;+45&apos; + Phone2__c ,
+IF( AND( NOT(BEGINS(Phone2__c , &apos;+&apos; )) , OR( ISPICKVAL( Market_Unit__c , &apos;DFJ_DK&apos;) , ISPICKVAL( Market_Unit__c , &apos;Testamente_DK&apos;))) , &apos;+&apos; + Phone2__c ,
+IF( BEGINS(Phone2__c , &apos;+46&apos; ) , Phone2__c ,
+IF( BEGINS(Phone2__c , &apos;46&apos; ) , &apos;+&apos; + Phone2__c ,
+IF( AND( NOT(BEGINS(Phone2__c , &apos;+46&apos; )) , ISPICKVAL( Market_Unit__c , &apos;FA_SE&apos;)) , &apos;+46&apos; + Phone2__c ,
+IF( AND( NOT(BEGINS(Phone2__c , &apos;+&apos; )) , ISPICKVAL( Market_Unit__c , &apos;FA_SE&apos;)) , &apos;+46&apos; + Phone2__c , Phone2__c ))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Phone2 Formatted</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

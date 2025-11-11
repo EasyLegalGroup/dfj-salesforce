@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invalid_Reason__c</fullName>
+    <label>Invalid Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Wrong Company</fullName>
+                <default>false</default>
+                <label>Wrong Company</label>
+            </value>
+            <value>
+                <fullName>Wrong Contact</fullName>
+                <default>false</default>
+                <label>Wrong Contact</label>
+            </value>
+            <value>
+                <fullName>Invalid Phone Number</fullName>
+                <default>false</default>
+                <label>Invalid Phone Number</label>
+            </value>
+            <value>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+                <label>Duplicate</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

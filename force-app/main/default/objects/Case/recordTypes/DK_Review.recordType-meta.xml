@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DK_Review</fullName>
+    <active>true</active>
+    <businessProcess>Default Support Process</businessProcess>
+    <description>Handles all incoming reviews (Google, Trustpilot, Facebook, etc)</description>
+    <label>DK - Review</label>
+    <picklistValues>
+        <picklist>Case_Estimation__c</picklist>
+        <values>
+            <fullName>1 - 2 hours</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16 - 30 minutes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 - 4 hours</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>31 - 60 minutes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 - 15 minutes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 - 8 hours</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Category__c</picklist>
+        <values>
+            <fullName>Customer Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refund Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technical Issue</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Issue_Category__c</picklist>
+        <values>
+            <fullName>API Connections</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Automation Rules%2FFlows</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Calendly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Case Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dashboard%2FReporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Quality%2FValidation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Syncing%2FIntegration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GetAccept</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lead Conversion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lead Ownership Assignment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payment Gateway</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SMS Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User Access%2FPermissions</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Issue_Origin__c</picklist>
+        <values>
+            <fullName>External Factors %28Force Majeure%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Feature Misuse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration or Third-Party System Failure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>System Bug%2FDefect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User Error</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Market_Unit__c</picklist>
+        <values>
+            <fullName>DFJ_DK</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>FA_SE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ireland</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Notification_Preferences__c</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Slack</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Origin</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facebook</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason</picklist>
+        <values>
+            <fullName>Existing problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instructions not clear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Requesting Update on Status</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Review_Platform__c</picklist>
+        <values>
+            <fullName>Facebook</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Google</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trustpilot</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sentiment__c</picklist>
+        <values>
+            <fullName>Negative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neutral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Positive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unclassified</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Severity__c</picklist>
+        <values>
+            <fullName>Severity 1%3A Critical production issue - business completely stopped or revenue impacted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Severity 2%3A Major functionality impacted and time-sensitive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Severity 3%3A Minor functionality impacted and time-sensitive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Severity 4%3A General inquiry%2C how-to%2C or routine technical issue</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sprout_Message_Type__c</picklist>
+        <values>
+            <fullName>Facebook Ad Comment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facebook Post</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facebook Private Message</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facebook Rating</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Google Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trustpilot Review</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Question</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

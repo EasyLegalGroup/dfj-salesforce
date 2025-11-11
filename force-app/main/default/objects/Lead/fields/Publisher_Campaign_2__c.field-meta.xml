@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Publisher_Campaign_2__c</fullName>
+    <label>Publisher Campaign 2</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Gratis Børnetestamente outgrow leads</fullName>
+                <default>false</default>
+                <label>Gratis Børnetestamente outgrow leads</label>
+            </value>
+            <value>
+                <fullName>Mailkampagne_26042021</fullName>
+                <default>false</default>
+                <label>Mailkampagne_26042021</label>
+            </value>
+            <value>
+                <fullName>SE Start opret testamente outgrow Leads</fullName>
+                <default>false</default>
+                <label>SE Start opret testamente outgrow Leads</label>
+            </value>
+            <value>
+                <fullName>reference</fullName>
+                <default>false</default>
+                <label>reference</label>
+            </value>
+            <value>
+                <fullName>Mailkampagne_05052021</fullName>
+                <default>false</default>
+                <label>Mailkampagne_05052021</label>
+            </value>
+            <value>
+                <fullName>Mailkampagne_1805_2021</fullName>
+                <default>false</default>
+                <label>Mailkampagne_1805_2021</label>
+            </value>
+            <value>
+                <fullName>Mail Kampagne 05-07-2021</fullName>
+                <default>false</default>
+                <label>Mail Kampagne 05-07-2021</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

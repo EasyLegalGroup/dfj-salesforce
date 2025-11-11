@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Foredrag_indl_sning_SE</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>Name2__c</columns>
+    <columns>Phone2__c</columns>
+    <columns>Event_moedestatus_c__c</columns>
+    <columns>Foredragskommentar__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>Ekstern_r_dgiver__c</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>LEAD.RECORDTYPE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>UTM_Content__c</columns>
+    <columns>Is_Dublet__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.FA_SE</value>
+    </filters>
+    <filters>
+        <field>UTM_Source__c</field>
+        <operation>equals</operation>
+        <value>Foredrag</value>
+    </filters>
+    <filters>
+        <field>LEAD.CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>Foredrag indlæsning SE</label>
+</ListView>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CC_SE_My_Inactive_Host_Accounts</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND (4 OR 5)</booleanFilter>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>ACCOUNT.ADDRESS1_CITY</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Host_Type__c</columns>
+    <columns>PC_EMAIL</columns>
+    <columns>Date_of_Last_Event__c</columns>
+    <columns>Date_of_Next_Event__c</columns>
+    <columns>Date_of_Most_Recent_Event__c</columns>
+    <columns>Next_Call_Time__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>FA_SE,Testamente_SV</value>
+    </filters>
+    <filters>
+        <field>Host_Type__c</field>
+        <operation>equals</operation>
+        <value>Restaurant,Company,Hotel</value>
+    </filters>
+    <filters>
+        <field>Account_Status__c</field>
+        <operation>equals</operation>
+        <value>Inactive</value>
+    </filters>
+    <filters>
+        <field>Next_Call_Time__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Next_Call_Time__c</field>
+        <operation>lessThan</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>CC - SE: My Inactive Host Accounts</label>
+</ListView>

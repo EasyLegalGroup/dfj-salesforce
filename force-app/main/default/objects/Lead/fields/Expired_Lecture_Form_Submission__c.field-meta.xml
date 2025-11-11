@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expired_Lecture_Form_Submission__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>This field is set by an administrator, if the customer has previously submitted a &quot;Tilmeldingsblanket&quot;, but has since booked tickets for a new lecture</inlineHelpText>
+    <label>Expired Lecture Form Submission</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

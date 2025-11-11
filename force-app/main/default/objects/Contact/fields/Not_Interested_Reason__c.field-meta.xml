@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Not_Interested_Reason__c</fullName>
+    <label>Not Interested Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Already Using Competitor</fullName>
+                <default>false</default>
+                <label>Already Using Competitor</label>
+            </value>
+            <value>
+                <fullName>Budget Constraints</fullName>
+                <default>false</default>
+                <label>Budget Constraints</label>
+            </value>
+            <value>
+                <fullName>Concerns About Costs</fullName>
+                <default>false</default>
+                <label>Concerns About Costs</label>
+            </value>
+            <value>
+                <fullName>Customer Hung Up</fullName>
+                <default>false</default>
+                <label>Customer Hung Up</label>
+            </value>
+            <value>
+                <fullName>Lack of Decision-Maker Support</fullName>
+                <default>false</default>
+                <label>Lack of Decision-Maker Support</label>
+            </value>
+            <value>
+                <fullName>Negative Past Experience</fullName>
+                <default>false</default>
+                <label>Negative Past Experience</label>
+            </value>
+            <value>
+                <fullName>No Current Need</fullName>
+                <default>false</default>
+                <label>No Current Need</label>
+            </value>
+            <value>
+                <fullName>Prefers Existing Vendor</fullName>
+                <default>false</default>
+                <label>Prefers Existing Vendor</label>
+            </value>
+            <value>
+                <fullName>Product/Service Mismatch</fullName>
+                <default>false</default>
+                <label>Product/Service Mismatch</label>
+            </value>
+            <value>
+                <fullName>Rejected During Introduction</fullName>
+                <default>false</default>
+                <label>Rejected During Introduction</label>
+            </value>
+            <value>
+                <fullName>Timing Not Right</fullName>
+                <default>false</default>
+                <label>Timing Not Right</label>
+            </value>
+            <value>
+                <fullName>Unresponsive After Initial Contact</fullName>
+                <default>false</default>
+                <label>Unresponsive After Initial Contact</label>
+            </value>
+            <value>
+                <fullName>Will Reach Out Themselves</fullName>
+                <default>false</default>
+                <label>Will Reach Out Themselves</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

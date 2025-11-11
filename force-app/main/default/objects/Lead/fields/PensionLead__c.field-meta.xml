@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PensionLead__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Emnet er sendt til Honestus med henblik på pension</description>
+    <inlineHelpText>Emnet er sendt til Honestus med henblik på pension</inlineHelpText>
+    <label>Pension</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

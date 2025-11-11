@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reminder_Sent__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checks if a reminder was sent after Invoice Approved</description>
+    <inlineHelpText>This field checks if an invoice reminder was sent to Finance</inlineHelpText>
+    <label>Reminder Sent</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

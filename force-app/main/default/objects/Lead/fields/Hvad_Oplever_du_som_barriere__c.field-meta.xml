@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hvad_Oplever_du_som_barriere__c</fullName>
+    <label>Hvad Oplever du som barriere</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Dårlig kemi med rådgiver</fullName>
+                <default>false</default>
+                <label>Dårlig kemi med rådgiver</label>
+            </value>
+            <value>
+                <fullName>Forvirring om tilbud/kampagne</fullName>
+                <default>false</default>
+                <label>Forvirring om tilbud/kampagne</label>
+            </value>
+            <value>
+                <fullName>Pris</fullName>
+                <default>false</default>
+                <label>Pris</label>
+            </value>
+            <value>
+                <fullName>Andet</fullName>
+                <default>false</default>
+                <label>Andet</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

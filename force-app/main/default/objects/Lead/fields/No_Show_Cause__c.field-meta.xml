@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Show_Cause__c</fullName>
+    <description>For showing no show cause</description>
+    <label>No Show Cause</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Kunde reminded</fullName>
+                <default>false</default>
+                <label>Kunde reminded</label>
+            </value>
+            <value>
+                <fullName>Sygdom</fullName>
+                <default>false</default>
+                <label>Sygdom</label>
+            </value>
+            <value>
+                <fullName>Arbejde kom i vejen</fullName>
+                <default>false</default>
+                <label>Arbejde kom i vejen</label>
+            </value>
+            <value>
+                <fullName>Tilmeldt andet foredrag</fullName>
+                <default>false</default>
+                <label>Tilmeldt andet foredrag</label>
+            </value>
+            <value>
+                <fullName>har booket møde / Personlig rådgivning</fullName>
+                <default>false</default>
+                <label>har booket møde / Personlig rådgivning</label>
+            </value>
+            <value>
+                <fullName>Havde glemt det</fullName>
+                <default>false</default>
+                <label>Havde glemt det</label>
+            </value>
+            <value>
+                <fullName>Jeg er bare ikke interesseret længere</fullName>
+                <default>false</default>
+                <label>Jeg er bare ikke interesseret længere</label>
+            </value>
+            <value>
+                <fullName>Uklarhed om tidspunkt</fullName>
+                <default>false</default>
+                <label>Uklarhed om tidspunkt</label>
+            </value>
+            <value>
+                <fullName>Uklarhed om dato</fullName>
+                <default>false</default>
+                <label>Uklarhed om dato</label>
+            </value>
+            <value>
+                <fullName>Uklarhed om sted</fullName>
+                <default>false</default>
+                <label>Uklarhed om sted</label>
+            </value>
+            <value>
+                <fullName>Ingen årsag angivet (fx lagt på, samtale afbrudt, mm.)</fullName>
+                <default>false</default>
+                <label>Ingen årsag angivet (fx lagt på, samtale afbrudt, mm.)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Owner_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+  BEGINS(OwnerId, &quot;005&quot;),
+  Owner:User.FirstName &amp; &quot; &quot; &amp; Owner:User.LastName,
+  IF(
+    BEGINS(OwnerId, &quot;00G&quot;),
+    Owner:Queue.Name,
+    &quot;&quot;
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Owner Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

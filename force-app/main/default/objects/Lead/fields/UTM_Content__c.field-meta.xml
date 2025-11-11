@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UTM_Content__c</fullName>
+    <label>UTM Content (Deprecated)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>N/A</fullName>
+                <default>false</default>
+                <label>N/A</label>
+            </value>
+            <value>
+                <fullName>Vil gerne oprette et testamente</fullName>
+                <default>false</default>
+                <label>Vil gerne oprette et testamente</label>
+            </value>
+            <value>
+                <fullName>Tilbud på en bobestyrer</fullName>
+                <default>false</default>
+                <label>Tilbud på en bobestyrer</label>
+            </value>
+            <value>
+                <fullName>Bestilt Fremtidsfuldmagt for 145,- inkl. juridisk rådgivning</fullName>
+                <default>false</default>
+                <label>Bestilt Fremtidsfuldmagt for 145,- inkl. juridisk rådgivning</label>
+            </value>
+            <value>
+                <fullName>Bobehandling</fullName>
+                <default>false</default>
+                <label>Bobehandling</label>
+            </value>
+            <value>
+                <fullName>Gratis fremtidsfuldmagt</fullName>
+                <default>false</default>
+                <label>Gratis fremtidsfuldmagt</label>
+            </value>
+            <value>
+                <fullName>Bestilt Børnetestamente for 295,- inkl. juridisk rådgivning</fullName>
+                <default>false</default>
+                <label>Bestilt Børnetestamente for 295,- inkl. juridisk rådgivning</label>
+            </value>
+            <value>
+                <fullName>Upprätta en framtidsfullmakt för endast 145:-  inkl. gratis juridisk rådgivning.</fullName>
+                <default>false</default>
+                <label>Upprätta en framtidsfullmakt för endast 145:-  inkl. gratis juridisk rådgivning.</label>
+            </value>
+            <value>
+                <fullName>Online foredrag med Michael Jepsen</fullName>
+                <default>false</default>
+                <label>Online foredrag med Michael Jepsen</label>
+            </value>
+            <value>
+                <fullName>Gratis online foredrag - Sådan sikrer du dig selv og din familie ved sygdom og død</fullName>
+                <default>false</default>
+                <label>Gratis online foredrag - Sådan sikrer du dig selv og din familie ved sygdom og død</label>
+            </value>
+            <value>
+                <fullName>Gratis Testamente foredrag med lækker tapas i Hellerup Sejlklub</fullName>
+                <default>false</default>
+                <label>Gratis Testamente foredrag med lækker tapas i Hellerup Sejlklub</label>
+            </value>
+            <value>
+                <fullName>Gratis Testamente foredrag med lækker Tapas på Susets Køkken i Hvidovre - ( Afholdt den 29.03.2022 16:00 )</fullName>
+                <default>false</default>
+                <label>Gratis Testamente foredrag med lækker Tapas på Susets Køkken i Hvidovre - ( Afholdt den 29.03.2022 16:00 )</label>
+            </value>
+            <value>
+                <fullName>Gratis Testamente foredrag med lækker Stjerneskud på Gerlev Kro i Jægerspris - ( Afholdt den 30.03.2022 16:00 )</fullName>
+                <default>false</default>
+                <label>Gratis Testamente foredrag med lækker Stjerneskud på Gerlev Kro i Jægerspris - ( Afholdt den 30.03.2022 16:00 )</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om Arv &amp; Testamente med lækker anretning på Haarby kro - ( Afholdt den 30.03.2022 16:00 )</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om Arv &amp; Testamente med lækker anretning på Haarby kro - ( Afholdt den 30.03.2022 16:00 )</label>
+            </value>
+            <value>
+                <fullName>Tilmeld gratis foredrag eller 1til1 moede med raadgiver</fullName>
+                <default>false</default>
+                <label>Tilmeld gratis foredrag eller 1til1 moede med raadgiver</label>
+            </value>
+            <value>
+                <fullName>Tilmeld gratis foredrag eller 1til1 moede med raadgiver med video</fullName>
+                <default>false</default>
+                <label>Tilmeld gratis foredrag eller 1til1 moede med raadgiver med video</label>
+            </value>
+            <value>
+                <fullName>Anmäl dig till en kostnadsfri föreläsning eller 1-till-1-möte med en rådgivare</fullName>
+                <default>false</default>
+                <label>Anmäl dig till en kostnadsfri föreläsning eller 1-till-1-möte med en rådgivare</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente - Kalundborg Senior Forening - 29-10-2022</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente - Kalundborg Senior Forening - 29-10-2022</label>
+            </value>
+            <value>
+                <fullName>Gratis föreläsning om arv &amp; testamente. Få svar på hur du säkrar dig och din familj vid sjukdom och dödsfall. - ( Afholdt den 2022-11-14 )</fullName>
+                <default>false</default>
+                <label>Gratis föreläsning om arv &amp; testamente. Få svar på hur du säkrar dig och din familj vid sjukdom och dödsfall. - ( Afholdt den 2022-11-14 )</label>
+            </value>
+            <value>
+                <fullName>Gratis föreläsning om arv &amp; testamente. Få svar på hur du säkrar dig och din familj vid sjukdom och dödsfall. - ( Afholdt den 2022-10-10 )</fullName>
+                <default>false</default>
+                <label>Gratis föreläsning om arv &amp; testamente. Få svar på hur du säkrar dig och din familj vid sjukdom och dödsfall. - ( Afholdt den 2022-10-10 )</label>
+            </value>
+            <value>
+                <fullName>Gratis föreläsning om arv &amp; testamente. Få svar på hur du säkrar dig och din familj vid sjukdom och dödsfall. - ( Afholdt den 2022-11-07 )</fullName>
+                <default>false</default>
+                <label>Gratis föreläsning om arv &amp; testamente. Få svar på hur du säkrar dig och din familj vid sjukdom och dödsfall. - ( Afholdt den 2022-11-07 )</label>
+            </value>
+            <value>
+                <fullName>Gratis föreläsning om arv och testamente inkl. Mat på vartereterikstorp (Afholdt den 2022-04-07 16:00)</fullName>
+                <default>false</default>
+                <label>Gratis föreläsning om arv och testamente inkl. Mat på vartereterikstorp (Afholdt den 2022-04-07 16:00)</label>
+            </value>
+            <value>
+                <fullName>Lomma</fullName>
+                <default>false</default>
+                <label>Lomma</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. middag på Restaurant Fregatten i Greve - ( afholdt d. 10-01-2023 )</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. middag på Restaurant Fregatten i Greve - ( afholdt d. 10-01-2023 )</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. middag på Stubbæk Forsamlingshus i Aabenraa - ( afholdt d. 16-01-2023 )</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. middag på Stubbæk Forsamlingshus i Aabenraa - ( afholdt d. 16-01-2023 )</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv &amp; testamente med lækker Tapas på Rold Skov Golfklub  i Skørping  - ( Afholdt den 2023-01-17 )</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv &amp; testamente med lækker Tapas på Rold Skov Golfklub  i Skørping  - ( Afholdt den 2023-01-17 )</label>
+            </value>
+            <value>
+                <fullName>Gratis Testamente foredrag med Stegt Flæsk på Nillers Kro i  Sabro - ( Afholdt den 2023-01-09 )</fullName>
+                <default>false</default>
+                <label>Gratis Testamente foredrag med Stegt Flæsk på Nillers Kro i  Sabro - ( Afholdt den 2023-01-09 )</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv &amp; testamente med lækkert luksus smørrebrød på Stubbæk Forsamlingshus i Aabenraa - ( Afholdt den 2023-01-16 )</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv &amp; testamente med lækkert luksus smørrebrød på Stubbæk Forsamlingshus i Aabenraa - ( Afholdt den 2023-01-16 )</label>
+            </value>
+            <value>
+                <fullName>Gratis Testamente foredrag med lækker Dagens ret  på Herning Golf Cafe - ( Afholdt den 2023-01-17 )</fullName>
+                <default>false</default>
+                <label>Gratis Testamente foredrag med lækker Dagens ret  på Herning Golf Cafe - ( Afholdt den 2023-01-17 )</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. middag på Restaurant Kareten i København S - ( Afholdt d. 07-02-2023 )</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. middag på Restaurant Kareten i København S - ( Afholdt d. 07-02-2023 )</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. middag på ALFA BRYGHUS og Brasserie i Vejen - ( Afholdt d. 2023-03-08 )</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. middag på ALFA BRYGHUS og Brasserie i Vejen - ( Afholdt d. 2023-03-08 )</label>
+            </value>
+            <value>
+                <fullName>Gratis Testamente foredrag med lækker Middag på Davinci Restorante i Hadsund - ( Afholdt d. 20-02-2023 )</fullName>
+                <default>false</default>
+                <label>Gratis Testamente foredrag med lækker Middag på Davinci Restorante i Hadsund - ( Afholdt d. 20-02-2023 )</label>
+            </value>
+            <value>
+                <fullName>Gratis Testamente foredrag med lækker Middag på Davinci Restorante i Hadsund - ( Afholdt d. 20-03-2023 )</fullName>
+                <default>false</default>
+                <label>Gratis Testamente foredrag med lækker Middag på Davinci Restorante i Hadsund - ( Afholdt d. 20-03-2023 )</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. middag på Restaurant Mamamos I Nørresundby - ( Afholdt d. 12-04-2023 )</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. middag på Restaurant Mamamos I Nørresundby - ( Afholdt d. 12-04-2023 )</label>
+            </value>
+            <value>
+                <fullName>Gratis personlig online rådgivning + gavekort 1.000 kr.</fullName>
+                <default>false</default>
+                <label>Gratis personlig online rådgivning + gavekort 1.000 kr.</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. middag i Herlev Medborgerhus - ( Afholdt d. 16-05-2023 )</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. middag i Herlev Medborgerhus - ( Afholdt d. 16-05-2023 )</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. Middag på Vilcon Hotel &amp; konferencegaard - ( Afholdt d. 26-06-2023 )</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. Middag på Vilcon Hotel &amp; konferencegaard - ( Afholdt d. 26-06-2023 )</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. middag på Rindsholm Kro &amp; Hotel i Viborg - (Afholdt d. 27-06-2023)</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. middag på Rindsholm Kro &amp; Hotel i Viborg - (Afholdt d. 27-06-2023)</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. middag på Hotel Glejbjerg - ( Afholdt d. 27-09-2023 )</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. middag på Hotel Glejbjerg - ( Afholdt d. 27-09-2023 )</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. middag på Bollinis - (Afholdt d. 29-06-2023)</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. middag på Bollinis - (Afholdt d. 29-06-2023)</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. middag på Hotel Årslev Kro i Brabrand - ( Afholdt d. 26-07-2023 )</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. middag på Hotel Årslev Kro i Brabrand - ( Afholdt d. 26-07-2023 )</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. middag på Lynge Kro Og Hotel - ( Afholdt d. 07-08-2023 )</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. middag på Lynge Kro Og Hotel - ( Afholdt d. 07-08-2023 )</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. middag på Cafe Sesa i Ishøj - ( Afholdt d. 12-09-2023 )</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. middag på Cafe Sesa i Ishøj - ( Afholdt d. 12-09-2023 )</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. middag på Pejsegaarden i Husum - ( Afholdt d. 28-09-2023 )</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. middag på Pejsegaarden i Husum - ( Afholdt d. 28-09-2023 )</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente, inkl. middag på Haderslev Golfrestaurant - ( Afholdt d. 17-10-2023 )</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente, inkl. middag på Haderslev Golfrestaurant - ( Afholdt d. 17-10-2023 )</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. middag på Hundested Bed &amp; Breakfast - ( Afholdt d. 19-10-2023 )</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. middag på Hundested Bed &amp; Breakfast - ( Afholdt d. 19-10-2023 )</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. middag på Lynæs Fisk &amp; Steakhouse - ( Afholdt d. 19-10-2023 )</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. middag på Lynæs Fisk &amp; Steakhouse - ( Afholdt d. 19-10-2023 )</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. middag på Frederiksdal Fribad - ( Afholdt d. 24-10-2023 )</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. middag på Frederiksdal Fribad - ( Afholdt d. 24-10-2023 )</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. middag på Bjerringbro Idræts-&amp; Kulturcenter - ( Afholdt d. 16-11-2023 )</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. middag på Bjerringbro Idræts-&amp; Kulturcenter - ( Afholdt d. 16-11-2023 )</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag med Jan Linnebjerg: En personlige rejse gennem komplekse familieforhold. - ( Afholdt d. 07-12-2023 ) - ( Afholdt d. 12-07-2023 )</fullName>
+                <default>false</default>
+                <label>Gratis foredrag med Jan Linnebjerg: En personlige rejse gennem komplekse familieforhold. - ( Afholdt d. 07-12-2023 ) - ( Afholdt d. 12-07-2023 )</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag med Jan Linnebjerg: En personlige rejse gennem komplekse familieforhold. - ( Afholdt d. 07-12-2023 )</fullName>
+                <default>false</default>
+                <label>Gratis foredrag med Jan Linnebjerg: En personlige rejse gennem komplekse familieforhold. - ( Afholdt d. 07-12-2023 )</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

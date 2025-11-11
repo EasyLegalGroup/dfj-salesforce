@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Genindl_st__c</fullName>
+    <description>Feltet benyttes til at indskrive hvis gamle emner sættes ind igen. Her skrives dato, publisher name og  emnetype i navnet</description>
+    <label>Genindlæst</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>FBgratisBTmix1609</fullName>
+                <default>false</default>
+                <label>FBgratisBTmix1609</label>
+            </value>
+            <value>
+                <fullName>FBgratisBTmix28102019</fullName>
+                <default>false</default>
+                <label>FBgratisBTmix28102019</label>
+            </value>
+            <value>
+                <fullName>100120Genindlæstpostmaxcall</fullName>
+                <default>false</default>
+                <label>100120Genindlæstpostmaxcall</label>
+            </value>
+            <value>
+                <fullName>14022020Mix</fullName>
+                <default>false</default>
+                <label>14022020Mix</label>
+            </value>
+            <value>
+                <fullName>Emailkampagne_08-10-2021_2000 kr. gavekort til testamente</fullName>
+                <default>false</default>
+                <label>Emailkampagne_08-10-2021_2000 kr. gavekort til testamente</label>
+            </value>
+            <value>
+                <fullName>TilmeldtIgenInteresseDublet_21102021</fullName>
+                <default>false</default>
+                <label>TilmeldtIgenInteresseDublet_21102021</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

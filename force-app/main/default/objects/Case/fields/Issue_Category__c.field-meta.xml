@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Issue_Category__c</fullName>
+    <label>Issue Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Anti Virus</fullName>
+                <default>false</default>
+                <label>Anti Virus</label>
+            </value>
+            <value>
+                <fullName>API Connections</fullName>
+                <default>false</default>
+                <label>API Connections</label>
+            </value>
+            <value>
+                <fullName>Appointment</fullName>
+                <default>false</default>
+                <label>Appointment</label>
+            </value>
+            <value>
+                <fullName>Automation Rules/Flows</fullName>
+                <default>false</default>
+                <label>Automation Rules/Flows</label>
+            </value>
+            <value>
+                <fullName>Booking Platform</fullName>
+                <default>false</default>
+                <label>Booking Platform</label>
+            </value>
+            <value>
+                <fullName>Calendly</fullName>
+                <default>false</default>
+                <label>Calendly</label>
+            </value>
+            <value>
+                <fullName>Call Campaign</fullName>
+                <default>false</default>
+                <label>Call Campaign</label>
+            </value>
+            <value>
+                <fullName>Case Management</fullName>
+                <default>false</default>
+                <label>Case Management</label>
+            </value>
+            <value>
+                <fullName>Customer Document Portal</fullName>
+                <default>false</default>
+                <label>Customer Document Portal</label>
+            </value>
+            <value>
+                <fullName>Dashboard/Reporting</fullName>
+                <default>false</default>
+                <label>Dashboard/Reporting</label>
+            </value>
+            <value>
+                <fullName>Data Quality/Validation</fullName>
+                <default>false</default>
+                <label>Data Quality/Validation</label>
+            </value>
+            <value>
+                <fullName>Data Syncing/Integration</fullName>
+                <default>false</default>
+                <label>Data Syncing/Integration</label>
+            </value>
+            <value>
+                <fullName>DocFabricator</fullName>
+                <default>false</default>
+                <label>DocFabricator</label>
+            </value>
+            <value>
+                <fullName>Einstein Activity Capture</fullName>
+                <default>false</default>
+                <label>Einstein Activity Capture</label>
+            </value>
+            <value>
+                <fullName>Email System</fullName>
+                <default>false</default>
+                <label>Email System</label>
+            </value>
+            <value>
+                <fullName>Employee Manager</fullName>
+                <default>false</default>
+                <label>Employee Manager</label>
+            </value>
+            <value>
+                <fullName>Forgot Password</fullName>
+                <default>false</default>
+                <label>Forgot Password</label>
+            </value>
+            <value>
+                <fullName>GetAccept</fullName>
+                <default>false</default>
+                <label>GetAccept</label>
+            </value>
+            <value>
+                <fullName>Google Workspace</fullName>
+                <default>false</default>
+                <label>Google Workspace</label>
+            </value>
+            <value>
+                <fullName>Intranet</fullName>
+                <default>false</default>
+                <label>Intranet</label>
+            </value>
+            <value>
+                <fullName>Lead Conversion</fullName>
+                <default>false</default>
+                <label>Lead Conversion</label>
+            </value>
+            <value>
+                <fullName>Lead Creation</fullName>
+                <default>false</default>
+                <label>Lead Creation</label>
+            </value>
+            <value>
+                <fullName>Lead Ownership Assignment</fullName>
+                <default>false</default>
+                <label>Lead Ownership Assignment</label>
+            </value>
+            <value>
+                <fullName>Membership Platform</fullName>
+                <default>false</default>
+                <label>Membership Platform</label>
+            </value>
+            <value>
+                <fullName>N/A</fullName>
+                <default>false</default>
+                <label>N/A</label>
+            </value>
+            <value>
+                <fullName>New Field</fullName>
+                <default>false</default>
+                <label>New Field</label>
+            </value>
+            <value>
+                <fullName>New User Setup</fullName>
+                <default>false</default>
+                <label>New User Setup</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Page Layout</fullName>
+                <default>false</default>
+                <label>Page Layout</label>
+            </value>
+            <value>
+                <fullName>Payment Gateway</fullName>
+                <default>false</default>
+                <label>Payment Gateway</label>
+            </value>
+            <value>
+                <fullName>Phone System</fullName>
+                <default>false</default>
+                <label>Phone System</label>
+            </value>
+            <value>
+                <fullName>Plecto</fullName>
+                <default>false</default>
+                <label>Plecto</label>
+            </value>
+            <value>
+                <fullName>Products</fullName>
+                <default>false</default>
+                <label>Products</label>
+            </value>
+            <value>
+                <fullName>Public Document Registration</fullName>
+                <default>false</default>
+                <label>Public Document Registration</label>
+            </value>
+            <value>
+                <fullName>SMS Service</fullName>
+                <default>false</default>
+                <label>SMS Service</label>
+            </value>
+            <value>
+                <fullName>Sprout</fullName>
+                <default>false</default>
+                <label>Sprout</label>
+            </value>
+            <value>
+                <fullName>Suspicious Emails</fullName>
+                <default>false</default>
+                <label>Suspicious Emails</label>
+            </value>
+            <value>
+                <fullName>Targets</fullName>
+                <default>false</default>
+                <label>Targets</label>
+            </value>
+            <value>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+                <label>Unknown</label>
+            </value>
+            <value>
+                <fullName>User Access/Permissions</fullName>
+                <default>false</default>
+                <label>User Access/Permissions</label>
+            </value>
+            <value>
+                <fullName>User Creation</fullName>
+                <default>false</default>
+                <label>User Creation</label>
+            </value>
+            <value>
+                <fullName>User Termination</fullName>
+                <default>false</default>
+                <label>User Termination</label>
+            </value>
+            <value>
+                <fullName>Website</fullName>
+                <default>false</default>
+                <label>Website</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

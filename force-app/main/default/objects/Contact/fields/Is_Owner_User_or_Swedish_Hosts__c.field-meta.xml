@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Owner_User_or_Swedish_Hosts__c</fullName>
+    <formula>OR(
+    Host_Owner_ID__c = &quot;00GW5000002IyML&quot;,  
+    Host_Owner_ID__c = $User.Id            
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>This field is checked if the owner of the related Host is the current user or if the Host is owned by the queue &quot;Danish Hosts&quot;</inlineHelpText>
+    <label>Is Owner User or Swedish Hosts?</label>
+    <type>Checkbox</type>
+</CustomField>

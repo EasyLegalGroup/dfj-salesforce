@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CC_IE_Customer_Care</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND (7 OR 8)</booleanFilter>
+    <columns>ACCOUNT.CREATED_DATE</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>PC_EMAIL</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>Contact_Status__pc</columns>
+    <columns>Account_Status__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Number_of_Products__c</columns>
+    <columns>New_Status__pc</columns>
+    <columns>Working_Status__pc</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>FA_SE</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>PersonAccount.PersonAccount</value>
+    </filters>
+    <filters>
+        <field>Contact_Status__pc</field>
+        <operation>notEqual</operation>
+        <value>Unqualified,Closed</value>
+    </filters>
+    <filters>
+        <field>Account_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Unqualified,Closed,Inactive</value>
+    </filters>
+    <filters>
+        <field>Last_Contact_State__c</field>
+        <operation>notEqual</operation>
+        <value>Converted</value>
+    </filters>
+    <filters>
+        <field>Last_Contact_State__pc</field>
+        <operation>notEqual</operation>
+        <value>Converted</value>
+    </filters>
+    <filters>
+        <field>Call_Campaign__pc</field>
+        <operation>equals</operation>
+        <value>Ireland: Customer Care (Account)</value>
+    </filters>
+    <filters>
+        <field>Active_Call_Campaigns__pc</field>
+        <operation>includes</operation>
+        <value>Ireland: Customer Care (Account)</value>
+    </filters>
+    <label>CC - IE: Customer Care</label>
+</ListView>

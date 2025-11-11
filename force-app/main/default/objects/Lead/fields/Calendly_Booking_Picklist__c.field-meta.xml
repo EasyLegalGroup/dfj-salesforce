@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Calendly_Booking_Picklist__c</fullName>
+    <inlineHelpText>This field will show whatever was picked in the picklist, during the booking of a Calendly Meeting. The field &quot;Calendly Booking Picklist Question&quot; will be dynamically populated with whatever the question was, for the given booking.</inlineHelpText>
+    <label>Calendly Booking Picklist Selection</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Testamente</fullName>
+                <default>false</default>
+                <label>Testamente</label>
+            </value>
+            <value>
+                <fullName>Fremtidsfuldmagt</fullName>
+                <default>false</default>
+                <label>Fremtidsfuldmagt</label>
+            </value>
+            <value>
+                <fullName>Begge dele</fullName>
+                <default>false</default>
+                <label>Begge dele</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

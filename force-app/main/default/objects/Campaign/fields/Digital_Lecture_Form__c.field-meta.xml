@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Digital_Lecture_Form__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>This field is the deciding factor on whether we send out the Digital Lecture Form, at the end of a lecture. If checked, the SMS will be sent out and the related Campaign Members, should use the Digital Lecture Form (they receive a link) instead of the physical form (Tilmeldingsblanket).</inlineHelpText>
+    <label>Digital Lecture Form</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

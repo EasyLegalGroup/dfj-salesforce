@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Campaign_Flow_Trigger__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If a Lead is created with this field being &quot;true&quot; or is updated to this field being &quot;true&quot;, it will trigger the campaign flow and create a matching campaign member, based on Related Event ID</description>
+    <inlineHelpText>If a Lead is created with this field being &quot;true&quot; or is updated to this field being &quot;true&quot;, it will trigger the campaign flow and create a matching campaign member, based on Related Event ID</inlineHelpText>
+    <label>Campaign Flow Trigger</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

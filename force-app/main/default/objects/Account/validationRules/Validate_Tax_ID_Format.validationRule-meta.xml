@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Tax_ID_Format</fullName>
+    <active>true</active>
+    <description>Ensures the Tax ID field matches the required format for the selected Billing Country (Denmark, Sweden, Spain, Ireland, United Kingdom, Canada).</description>
+    <errorConditionFormula>/* Error Condition Formula */
+AND(
+  NOT(IsPersonAccount),
+  NOT(ISBLANK(Tax_ID__c)),
+  OR(
+    /* Denmark CVR: 8 digits */
+    AND(
+      BillingCountry = &quot;Denmark&quot;,
+      NOT(REGEX(Tax_ID__c, &quot;^[0-9]{8}$&quot;))
+    ),
+    /* Sweden Org No: 10 digits */
+    AND(
+      BillingCountry = &quot;Sweden&quot;,
+      NOT(REGEX(Tax_ID__c, &quot;^[0-9]{10}$&quot;))
+    ),
+    /* Spain NIF/CIF: 9 alphanumeric */
+    AND(
+      BillingCountry = &quot;Spain&quot;,
+      NOT(REGEX(Tax_ID__c, &quot;^[A-Za-z0-9]{9}$&quot;))
+    ),
+    /* Ireland VAT: 7 digits + 1 letter */
+    AND(
+      BillingCountry = &quot;Ireland&quot;,
+      NOT(REGEX(Tax_ID__c, &quot;^[0-9]{7}[A-Z]$&quot;))
+    ),
+    /* UK Company No: 9 digits */
+    AND(
+      BillingCountry = &quot;United Kingdom&quot;,
+      NOT(REGEX(Tax_ID__c, &quot;^[0-9]{9}$&quot;))
+    ),
+    /* Canada BN: 9 digits */
+    AND(
+      BillingCountry = &quot;Canada&quot;,
+      NOT(REGEX(Tax_ID__c, &quot;^[0-9]{9}$&quot;))
+    )
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Tax_ID__c</errorDisplayField>
+    <errorMessage>Invalid Tax ID:
+-DK: 8 digits (e.g. 12345678)
+-SE: 10 digits (e.g. 1234567890)
+-ES: 9 letters/numbers (e.g. A12345678)
+-IE: 7 digits + 1 letter (e.g. 1234567A)
+-UK: 9 digits (e.g. 123456789)
+-CA: 9 digits (e.g. 123456789)</errorMessage>
+</ValidationRule>

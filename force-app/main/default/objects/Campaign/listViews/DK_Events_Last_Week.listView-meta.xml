@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DK_Events_Last_Week</fullName>
+    <columns>Start__c</columns>
+    <columns>CAMPAIGN.NAME</columns>
+    <columns>Lecturer__c</columns>
+    <columns>Digital_Lecture_Form__c</columns>
+    <columns>Digital_Lecture_Form_Instant_SMS_Trigger__c</columns>
+    <columns>Phone__c</columns>
+    <columns>CAMPAIGN.STATUS</columns>
+    <columns>CAMPAIGN.NUM_LEADS</columns>
+    <columns>Event_URL__c</columns>
+    <columns>Booked_Seats__c</columns>
+    <columns>Count_of_Tilmeldingsblanket__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>DFJ_DK,Testamente_DK</value>
+    </filters>
+    <filters>
+        <field>Start__c</field>
+        <operation>equals</operation>
+        <value>LAST_WEEK</value>
+    </filters>
+    <filters>
+        <field>Test_Campaign__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>DK - Events Last Week</label>
+</ListView>

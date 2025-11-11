@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Achieved_Outcomes__c</fullName>
+    <label>Achieved Outcomes</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Partner Referral Created</fullName>
+                <default>false</default>
+                <label>Partner Referral Created</label>
+            </value>
+            <value>
+                <fullName>Reference Lead Created</fullName>
+                <default>false</default>
+                <label>Reference Lead Created</label>
+            </value>
+            <value>
+                <fullName>Additional Services Sold</fullName>
+                <default>false</default>
+                <label>Additional Services Sold</label>
+            </value>
+            <value>
+                <fullName>Positive Review Generated</fullName>
+                <default>false</default>
+                <label>Positive Review Generated</label>
+            </value>
+            <value>
+                <fullName>Customer Satisfaction Survey</fullName>
+                <default>false</default>
+                <label>Customer Satisfaction Survey</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

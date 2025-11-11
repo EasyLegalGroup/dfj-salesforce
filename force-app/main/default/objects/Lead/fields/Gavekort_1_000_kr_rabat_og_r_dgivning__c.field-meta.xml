@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gavekort_1_000_kr_rabat_og_r_dgivning__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Kunden har sat kryds i at de ønsker at give en bekendt et gavekort med 1.000 kr. rabat og gratis rådgivning</description>
+    <label>Gavekort - 1.000 kr. rabat og rådgivning</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

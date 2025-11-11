@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_leads_TM</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>Market_Unit__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>New_Status__c</columns>
+    <columns>Working_Status__c</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>UTM_Source__c</columns>
+    <columns>UTM_Medium__c</columns>
+    <columns>UTM_Content__c</columns>
+    <columns>telegenta__Total_calls__c</columns>
+    <columns>Event_moedestatus_c__c</columns>
+    <columns>Kommentarer__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>notEqual</operation>
+        <value>DFJ Leads,Testamente_DK,Sweden Leads</value>
+    </filters>
+    <filters>
+        <field>Event_moedestatus_c__c</field>
+        <operation>equals</operation>
+        <value>Tilmeldingsblanket</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New,Working</value>
+    </filters>
+    <filters>
+        <field>Working_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Appointment</value>
+    </filters>
+    <label>My leads - TM</label>
+</ListView>

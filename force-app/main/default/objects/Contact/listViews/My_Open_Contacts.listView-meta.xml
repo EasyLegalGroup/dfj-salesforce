@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Open_Contacts</fullName>
+    <booleanFilter>(1 AND 2 AND 5) OR (3 AND 4 AND 5)</booleanFilter>
+    <columns>Host__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.PHONE3</columns>
+    <columns>Host_Status__c</columns>
+    <columns>Host_Owner__c</columns>
+    <columns>Date_of_Last_Event__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Host__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Host_Status__c</field>
+        <operation>equals</operation>
+        <value>New,Working</value>
+    </filters>
+    <filters>
+        <field>Date_of_Last_Event__c</field>
+        <operation>lessOrEqual</operation>
+        <value>NEXT_N_DAYS:45</value>
+    </filters>
+    <filters>
+        <field>Host_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Closed - Lost</value>
+    </filters>
+    <filters>
+        <field>Is_Owner_User_or_Any_Queue__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>My Open Host Contacts</label>
+</ListView>

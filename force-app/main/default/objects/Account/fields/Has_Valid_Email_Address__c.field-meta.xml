@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_Valid_Email_Address__c</fullName>
+    <formula>IF(
+  AND(
+    NOT(ISBLANK( PersonEmail )),
+    CONTAINS(PersonEmail, &quot;@&quot;),
+    LEN(SUBSTITUTE(PersonEmail, &quot;@&quot;, &quot;&quot;)) = LEN(PersonEmail) - 1,
+    CONTAINS(RIGHT(PersonEmail, LEN(PersonEmail) - FIND(&quot;@&quot;, PersonEmail)), &quot;.&quot;),
+    LEN(RIGHT(PersonEmail, LEN(PersonEmail) - FIND(&quot;.&quot;, PersonEmail))) &gt; 1
+  ),
+  TRUE,
+  FALSE
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Has Valid Email Address</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

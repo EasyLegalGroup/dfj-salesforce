@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_Alle_gratis_BT_uden_eGentic</fullName>
+    <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>LEAD.LAST_UPDATE</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>telegenta__Last_Contact_State__c</columns>
+    <columns>telegenta__Unsuccessful_Calls__c</columns>
+    <columns>telegenta__Total_calls__c</columns>
+    <columns>Publisher_Campaign__c</columns>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>LEAD.STATUS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Publisher_Campaign__c</field>
+        <operation>contains</operation>
+        <value>Få gratis børnetestamente Juli 2019,Få gratis børnetestamente August 2019,Få gratis børnetestamente August 2019 B,Charlotte video 19-8-2019,Få gratis børnetestamente August 2019 C,Få gratis børnetestamente August 2019 E</value>
+    </filters>
+    <filters>
+        <field>Publisher_Campaign__c</field>
+        <operation>equals</operation>
+        <value>FBobsidian040919gratisbt1</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New</value>
+    </filters>
+    <label>Copy of Alle gratis BT - uden eGentic</label>
+</ListView>

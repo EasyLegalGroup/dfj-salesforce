@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lecturer_Picklist__c</fullName>
+    <label>Lecturer (Picklist)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Tina Lundquist (tlu@dinfamiliejurist.dk)</fullName>
+                <default>false</default>
+                <label>Tina Lundquist (tlu@dinfamiliejurist.dk)</label>
+            </value>
+            <value>
+                <fullName>Kristian Holdt (kho@dinfamiliejurist.dk)</fullName>
+                <default>false</default>
+                <label>Kristian Holdt (kho@dinfamiliejurist.dk)</label>
+            </value>
+            <value>
+                <fullName>Michael Jepsen (mj@dinfamiliejurist.dk)</fullName>
+                <default>false</default>
+                <label>Michael Jepsen (mj@dinfamiliejurist.dk)</label>
+            </value>
+            <value>
+                <fullName>Andy Villadsen (avi@dinfamiliejurist.dk)</fullName>
+                <default>false</default>
+                <label>Andy Villadsen (avi@dinfamiliejurist.dk)</label>
+            </value>
+            <value>
+                <fullName>Danny Taube Henriksen (dhe@dinfamiliejurist.dk)</fullName>
+                <default>false</default>
+                <label>Danny Taube Henriksen (dhe@dinfamiliejurist.dk)</label>
+            </value>
+            <value>
+                <fullName>Sofus Stenstrup Jensen (ssj@dinfamiliejurist.dk)</fullName>
+                <default>false</default>
+                <label>Sofus Stenstrup Jensen (ssj@dinfamiliejurist.dk)</label>
+            </value>
+            <value>
+                <fullName>Rasmus Wedell (rwe@dinfamiliejurist.dk)</fullName>
+                <default>false</default>
+                <label>Rasmus Wedell (rwe@dinfamiliejurist.dk)</label>
+            </value>
+            <value>
+                <fullName>Line Barfoed (lb@dinfamiliejurist.dk)</fullName>
+                <default>false</default>
+                <label>Line Barfoed (lb@dinfamiliejurist.dk)</label>
+            </value>
+            <value>
+                <fullName>Flemming Abildtrup (fab@dinfamiliejurist.dk)</fullName>
+                <default>false</default>
+                <label>Flemming Abildtrup (fab@dinfamiliejurist.dk)</label>
+            </value>
+            <value>
+                <fullName>Fatih Tamer (fta@dinfamiliejurist.dk)</fullName>
+                <default>false</default>
+                <label>Fatih Tamer (fta@dinfamiliejurist.dk)</label>
+            </value>
+            <value>
+                <fullName>Bo Rathsach (bra@dinfamiliejurist.dk)</fullName>
+                <default>false</default>
+                <label>Bo Rathsach (bra@dinfamiliejurist.dk)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lee_appointments</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>LEAD.RECORDTYPE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>Event_moedestatus_c__c</columns>
+    <columns>Is_Dublet__c</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>Kommentarer__c</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>UTM_Medium__c</columns>
+    <columns>UTM_Content__c</columns>
+    <columns>Call_Campaign__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>Gen_bnet__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.FA_SE</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.FIRST_NAME</field>
+        <operation>equals</operation>
+        <value>Lee</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New,Working</value>
+    </filters>
+    <label>Lee appointments</label>
+</ListView>

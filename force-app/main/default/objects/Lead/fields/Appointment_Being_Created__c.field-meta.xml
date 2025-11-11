@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Appointment_Being_Created__c</fullName>
+    <label>Appointment Being Created</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Being created</fullName>
+                <default>false</default>
+                <label>Being created</label>
+            </value>
+            <value>
+                <fullName>Has been created</fullName>
+                <default>false</default>
+                <label>Has been created</label>
+            </value>
+            <value>
+                <fullName>Awaiting reminder time</fullName>
+                <default>false</default>
+                <label>Awaiting reminder time</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

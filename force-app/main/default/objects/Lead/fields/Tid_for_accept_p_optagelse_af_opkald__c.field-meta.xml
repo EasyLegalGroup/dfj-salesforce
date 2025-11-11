@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tid_for_accept_p_optagelse_af_opkald__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Note when you informed the customer that the call will be recorded from hereon out. Use format mm:ss (e.g. 37:18)</inlineHelpText>
+    <label>Tid for accept på optagelse af opkald</label>
+    <length>5</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Adjusted_Expected_revenue_Excl_Vat__c</fullName>
+    <formula>CASE(Market_Unit__c, &apos;DFJ_DK&apos;,(NumberOfLeads *$CustomMetadata.Currency_Multiplier_Configuration__mdt.Din_Familie_Jurist.Revenue_Multiplier_Value__c*0.8),
+&apos;FA_SE&apos;, (NumberOfLeads*$CustomMetadata.Currency_Multiplier_Configuration__mdt.dinfamiliejurist_nu.Revenue_Multiplier_Value__c*0.8),
+&apos;Testamente_DK&apos;, (NumberOfLeads*$CustomMetadata.Currency_Multiplier_Configuration__mdt.Testamente_Danmark.Revenue_Multiplier_Value__c*0.8),
+&apos;Testamente_SV&apos;, (NumberOfLeads*$CustomMetadata.Currency_Multiplier_Configuration__mdt.Testamente_Sverige.Revenue_Multiplier_Value__c*0.8) ,0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>(Leads in Campaign * Avg. Lead Value) * 0.8</inlineHelpText>
+    <label>Adjusted Expected Revenue Excl. Vat</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

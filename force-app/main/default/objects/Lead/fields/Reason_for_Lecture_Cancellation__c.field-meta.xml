@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Lecture_Cancellation__c</fullName>
+    <label>Reason for Lecture Cancellation</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Too few bookings</fullName>
+                <default>false</default>
+                <label>Too few bookings</label>
+            </value>
+            <value>
+                <fullName>Issue with Lecturer</fullName>
+                <default>false</default>
+                <label>Issue with Lecturer</label>
+            </value>
+            <value>
+                <fullName>Host cancelled event</fullName>
+                <default>false</default>
+                <label>Host cancelled event</label>
+            </value>
+            <value>
+                <fullName>Host no longer in business</fullName>
+                <default>false</default>
+                <label>Host no longer in business</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

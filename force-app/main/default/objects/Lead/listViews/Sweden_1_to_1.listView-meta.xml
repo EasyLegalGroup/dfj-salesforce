@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sweden_1_to_1</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Dedicated_owner__c</columns>
+    <columns>telegenta__Is_callable__c</columns>
+    <columns>Lead_Group_Name__c</columns>
+    <columns>LEAD.RECORDTYPE</columns>
+    <columns>Market_Unit__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>FA_SE,Testamente_SV</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New,Working</value>
+    </filters>
+    <filters>
+        <field>UTM_Content__c</field>
+        <operation>equals</operation>
+        <value>Tilmeld gratis foredrag eller 1til1 moede med raadgiver,Tilmeld gratis foredrag eller 1til1 moede med raadgiver med video</value>
+    </filters>
+    <label>Sweden 1-to-1</label>
+</ListView>

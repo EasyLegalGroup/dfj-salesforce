@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Zapier_Flag__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If this box is checked, the lead will be updated/reopened by Zapier. Leads created by Zapier automatically has this flag set (TRUE)</description>
+    <inlineHelpText>If this box is checked, the lead will be updated/reopened by Zapier. Leads created by Zapier automatically has this flag set (TRUE)</inlineHelpText>
+    <label>Zapier Flag</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

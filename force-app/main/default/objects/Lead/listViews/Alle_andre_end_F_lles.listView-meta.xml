@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alle_andre_end_F_lles</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>LEAD.LAST_UPDATE</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>Publisher_Campaign__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>IsCallableWorking__c</columns>
+    <columns>IsCallableNew__c</columns>
+    <columns>telegenta__Last_Contact_State__c</columns>
+    <columns>telegenta__Priority__c</columns>
+    <columns>UPDATEDBY_USER.ALIAS</columns>
+    <columns>Kommentarer__c</columns>
+    <columns>telegenta__Total_calls__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Publisher_Campaign__c</field>
+        <operation>notEqual</operation>
+        <value>Danske seniorer,Risikovurdering,Fb31102019lauravideoBt1,Forsikringshjælp11112019test1,FoBruFo02122019Landingpage,DS06122019gratisFM,MM06122019gratisbtmkøb,DFJKontaktHjemmeside</value>
+    </filters>
+    <filters>
+        <field>Publisher_Campaign__c</field>
+        <operation>notEqual</operation>
+        <value>LassoX021019ElTømrerVVSFys0-9KBH,CM03112019Batch1</value>
+    </filters>
+    <filters>
+        <field>telegenta__Unprocessed__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New</value>
+    </filters>
+    <label>Alle andre end &quot;Fælles&quot; dialer pulje</label>
+</ListView>

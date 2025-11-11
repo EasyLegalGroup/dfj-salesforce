@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Current_User_the_Lecturer__c</fullName>
+    <formula>IF(  Lecturer__c  = $User.Id , true , false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>This field only appears true, if the user looking at it, is the Lecturer.</inlineHelpText>
+    <label>Is Current User the Lecturer?</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cancel_Reschedule_Date__c</fullName>
+    <formula>IF(
+  NOT(ISBLANK(Date_of_rescheduling__c)),
+  Date_of_rescheduling__c,
+  IF(
+    NOT(ISBLANK(Date_Of_Cancellation__c)),
+    Date_Of_Cancellation__c,
+    NULL
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Cancel/Reschedule Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

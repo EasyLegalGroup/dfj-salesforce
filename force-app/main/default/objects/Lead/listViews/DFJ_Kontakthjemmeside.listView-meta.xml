@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DFJ_Kontakthjemmeside</fullName>
+    <booleanFilter>1 AND 2 AND (3 OR 4) AND 5</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>New_Status__c</columns>
+    <columns>Unqualified_Status__c</columns>
+    <columns>telegenta__Invalid_Reason__c</columns>
+    <columns>LEAD.RECORDTYPE</columns>
+    <columns>Lead_Group_Name__c</columns>
+    <columns>Market_Unit__c</columns>
+    <columns>telegenta__Total_calls__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>telegenta__Priority__c</columns>
+    <columns>Gen_bnet__c</columns>
+    <columns>Publisher_Campaign__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.CREATED_DATE</field>
+        <operation>greaterThan</operation>
+        <value>6/1/2021 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New,Working</value>
+    </filters>
+    <filters>
+        <field>telegenta__Next_Call_Time__c</field>
+        <operation>lessThan</operation>
+        <value>TOMORROW</value>
+    </filters>
+    <filters>
+        <field>telegenta__Next_Call_Time__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Publisher_Campaign__c</field>
+        <operation>equals</operation>
+        <value>DFJKontaktHjemmeside</value>
+    </filters>
+    <label>DFJ Kontakthjemmeside</label>
+</ListView>

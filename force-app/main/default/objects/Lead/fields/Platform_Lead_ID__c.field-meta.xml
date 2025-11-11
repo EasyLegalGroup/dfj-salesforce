@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Platform_Lead_ID__c</fullName>
+    <description>This field holds the value that each of our various lead providers sends for each lead. Initially created to host Billetto ID, but Lead Ad, Google Ads, etc. will also have a unique ID for each Lead, that is put into this field.</description>
+    <externalId>false</externalId>
+    <label>Platform Lead ID</label>
+    <length>100</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

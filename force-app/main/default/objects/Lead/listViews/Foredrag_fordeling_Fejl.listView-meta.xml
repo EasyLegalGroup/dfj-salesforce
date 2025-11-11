@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Foredrag_fordeling_Fejl</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>New_Status__c</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>Foredragsdato__c</columns>
+    <columns>Event_moedestatus_c__c</columns>
+    <columns>Gavekort_1_000_kr_rabat_og_r_dgivning__c</columns>
+    <columns>Foredragskommentar__c</columns>
+    <columns>Foredragstype__c</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>UTM_Content__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.DFJ_DK</value>
+    </filters>
+    <filters>
+        <field>UTM_Source__c</field>
+        <operation>equals</operation>
+        <value>Foredrag</value>
+    </filters>
+    <filters>
+        <field>Event_moedestatus_c__c</field>
+        <operation>equals</operation>
+        <value>Show,No show,Tilmeldingsblanket</value>
+    </filters>
+    <filters>
+        <field>New_Status__c</field>
+        <operation>equals</operation>
+        <value>Unprocessed</value>
+    </filters>
+    <filters>
+        <field>UPDATEDBY_USER.ALIAS</field>
+        <operation>equals</operation>
+        <value>UJ</value>
+    </filters>
+    <label>Foredrag fordeling - Fejl</label>
+</ListView>

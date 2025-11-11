@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Scheduled_Lectures</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND (5 OR 6)</booleanFilter>
+    <columns>Market_Unit__c</columns>
+    <columns>CAMPAIGN.STATUS</columns>
+    <columns>Lecturer__c</columns>
+    <columns>CAMPAIGN.NAME</columns>
+    <columns>Host__c</columns>
+    <columns>Start__c</columns>
+    <columns>Booked_Seats__c</columns>
+    <columns>Booking_Percentage__c</columns>
+    <columns>Zip_Code__c</columns>
+    <columns>Contact__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CAMPAIGN.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Cancelled</value>
+    </filters>
+    <filters>
+        <field>CAMPAIGN.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Campaign.Lecture</value>
+    </filters>
+    <filters>
+        <field>CAMPAIGN.STATUS</field>
+        <operation>equals</operation>
+        <value>Scheduled</value>
+    </filters>
+    <filters>
+        <field>Lecturer__c</field>
+        <operation>equals</operation>
+        <value>Allan Kjær</value>
+    </filters>
+    <filters>
+        <field>Open_for_Bookings__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Host_Type__c</field>
+        <operation>equals</operation>
+        <value>Association,Company</value>
+    </filters>
+    <label>My Scheduled Lectures</label>
+</ListView>

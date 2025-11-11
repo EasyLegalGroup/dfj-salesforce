@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Notification_Trigger__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>This field should only be used to trigger notification sending to this specific lecture. When set, triggers a flow that sends a notification to the email on the Campaign. If there&apos;s no email, tries phone number. If there&apos;s no phone number, flow fails. Flow sets field back to &quot;false&quot;, after running.</inlineHelpText>
+    <label>Notification Trigger</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

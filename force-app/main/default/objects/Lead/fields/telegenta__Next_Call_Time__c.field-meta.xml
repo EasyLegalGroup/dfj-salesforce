@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>telegenta__Next_Call_Time__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Minimum time before lead can be called again</description>
+    <inlineHelpText>Minimum time before lead can be called again</inlineHelpText>
+    <label>Next Call Time</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>DateTime</type>
+</CustomField>

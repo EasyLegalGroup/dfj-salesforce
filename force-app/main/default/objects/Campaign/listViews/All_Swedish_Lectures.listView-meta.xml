@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Swedish_Lectures</fullName>
+    <booleanFilter>1 AND (2 OR 3) AND 4 AND 5</booleanFilter>
+    <columns>CAMPAIGN.NAME</columns>
+    <columns>Start__c</columns>
+    <columns>Booked_Seats__c</columns>
+    <columns>Capacity__c</columns>
+    <columns>Projector__c</columns>
+    <columns>Projector_Screen__c</columns>
+    <columns>Host_Address__Street__s</columns>
+    <columns>Host_Address__PostalCode__s</columns>
+    <columns>Host_Address__City__s</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CAMPAIGN.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Campaign.Lecture,Campaign.Association_Lecture</value>
+    </filters>
+    <filters>
+        <field>Host_Type__c</field>
+        <operation>equals</operation>
+        <value>Company,Association</value>
+    </filters>
+    <filters>
+        <field>Open_for_Bookings__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>CAMPAIGN.STATUS</field>
+        <operation>equals</operation>
+        <value>Scheduled,Completed</value>
+    </filters>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>FA_SE,Testamente_SV</value>
+    </filters>
+    <label>All Swedish Lectures</label>
+</ListView>

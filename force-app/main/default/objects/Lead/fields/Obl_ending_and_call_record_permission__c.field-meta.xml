@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Obl_ending_and_call_record_permission__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field will be checked when the sales rep notifies the customer that the call is being recorded and makes the Obligatory Ending</description>
+    <inlineHelpText>Check field when you start your Obligatory Ending and announce to the customer that the call will be recorded from now</inlineHelpText>
+    <label>Obl ending and call record permission</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

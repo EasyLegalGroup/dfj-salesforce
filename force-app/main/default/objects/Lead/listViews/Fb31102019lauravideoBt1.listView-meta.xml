@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fb31102019lauravideoBt1</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>telegenta__Last_Contact_State__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>telegenta__Total_calls__c</columns>
+    <columns>Gen_bnet__c</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>Publisher_Campaign__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>telegenta__Priority__c</columns>
+    <columns>telegenta__Unprocessed__c</columns>
+    <columns>Publisher_name__c</columns>
+    <columns>Kommentarer__c</columns>
+    <columns>IsCallable__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Publisher_Campaign__c</field>
+        <operation>equals</operation>
+        <value>Fb31102019lauravideoBt1</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New</value>
+    </filters>
+    <filters>
+        <field>Gen_bnet__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Fb31102019lauravideoBt1</label>
+</ListView>

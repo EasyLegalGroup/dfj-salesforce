@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Revenue_Incl_VAT__c</fullName>
+    <inlineHelpText>Roll-up Summary field of &quot;Order Total&quot; on related Campaign Members</inlineHelpText>
+    <label>Revenue Incl. VAT</label>
+    <summarizedField>CampaignMember.Order_Total__c</summarizedField>
+    <summaryForeignKey>CampaignMember.CampaignId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

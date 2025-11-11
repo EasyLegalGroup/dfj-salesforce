@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UTM_Term__c</fullName>
+    <label>UTM Term</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>3 procent lookalike af alle leads, gift og samlevende</fullName>
+                <default>false</default>
+                <label>3 procent lookalike af alle leads, gift og samlevende</label>
+            </value>
+            <value>
+                <fullName>Pre-booking</fullName>
+                <default>false</default>
+                <label>Pre-booking</label>
+            </value>
+            <value>
+                <fullName>PR leads - Gifte m. dine og mine børn</fullName>
+                <default>false</default>
+                <label>PR leads - Gifte m. dine og mine børn</label>
+            </value>
+            <value>
+                <fullName>DK - Website Form</fullName>
+                <default>false</default>
+                <label>DK - Website Form</label>
+            </value>
+            <value>
+                <fullName>dk_gifte_forældre</fullName>
+                <default>false</default>
+                <label>dk_gifte_forældre</label>
+            </value>
+            <value>
+                <fullName>Gifte m. dine og mine børn</fullName>
+                <default>false</default>
+                <label>Gifte m. dine og mine børn</label>
+            </value>
+            <value>
+                <fullName>Sambo m. børn</fullName>
+                <default>false</default>
+                <label>Sambo m. børn</label>
+            </value>
+            <value>
+                <fullName>PR Lead Internal Meeting Booking</fullName>
+                <default>false</default>
+                <label>PR Lead Internal Meeting Booking</label>
+            </value>
+            <value>
+                <fullName>A1 København + århus + vejle</fullName>
+                <default>false</default>
+                <label>A1 København + århus + vejle</label>
+            </value>
+            <value>
+                <fullName>Juridisk rådgivning - vi ringer til dig med link til kalender</fullName>
+                <default>false</default>
+                <label>Juridisk rådgivning - vi ringer til dig med link til kalender</label>
+            </value>
+            <value>
+                <fullName>all</fullName>
+                <default>false</default>
+                <label>all</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

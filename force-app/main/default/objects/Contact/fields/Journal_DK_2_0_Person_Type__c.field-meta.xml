@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Journal_DK_2_0_Person_Type__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    Journal_DK_2_0_Person__r.person_hidden_person_1__c,
+    &quot;Person 1&quot;,
+    IF(
+        Journal_DK_2_0_Person__r.person_hidden_person_2__c,
+        &quot;Person 2&quot;,
+        IF(
+            Journal_DK_2_0_Person__r.person_hf_barn__c,
+            &quot;Child&quot;,
+            IF(
+                Journal_DK_2_0_Person__r.person_hidden_anden_type_person__c,
+                &quot;Other&quot;,
+                &quot;&quot;
+            )
+        )
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Journal DK 2.0 Person Type</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

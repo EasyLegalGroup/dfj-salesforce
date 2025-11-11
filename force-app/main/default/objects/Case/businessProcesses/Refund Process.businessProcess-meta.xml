@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Refund Process</fullName>
+    <isActive>true</isActive>
+    <values>
+        <fullName>Awaiting Approved Refund</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Awaiting Assessment</fullName>
+        <default>true</default>
+    </values>
+    <values>
+        <fullName>Awaiting Payment Information</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Pending Follow-up</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Refund Completed</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Refund Declined</fullName>
+        <default>false</default>
+    </values>
+</BusinessProcess>

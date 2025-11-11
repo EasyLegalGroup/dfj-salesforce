@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Org_Campaign_Hierarchy</fullName>
+    <columns>CAMPAIGN.NAME</columns>
+    <columns>CAMPAIGN.STATUS</columns>
+    <columns>Is_Campaign_Open_for_Bookings__c</columns>
+    <columns>Start__c</columns>
+    <columns>Realistic_Capacity__c</columns>
+    <columns>Capacity__c</columns>
+    <columns>Lecturer_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Org_Campaign_Hierarchy</label>
+</ListView>

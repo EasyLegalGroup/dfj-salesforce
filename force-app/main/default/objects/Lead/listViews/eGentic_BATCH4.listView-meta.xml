@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>eGentic_BATCH4</fullName>
+    <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>telegenta__Last_Contact_State__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>telegenta__Unsuccessful_Calls__c</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>Publisher_Campaign__c</columns>
+    <columns>New_Address__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD.LAST_UPDATE</columns>
+    <columns>LEAD.RATING</columns>
+    <columns>telegenta__Priority__c</columns>
+    <columns>telegenta__Unprocessed__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Publisher_Campaign__c</field>
+        <operation>equals</operation>
+        <value>EG010319Batch4</value>
+    </filters>
+    <filters>
+        <field>Publisher_Campaign__c</field>
+        <operation>equals</operation>
+        <value>EG030919gratisBT1</value>
+    </filters>
+    <filters>
+        <field>LEAD.CREATED_DATE</field>
+        <operation>greaterThan</operation>
+        <value>9/22/2019 12:00 AM</value>
+    </filters>
+    <label>eGentic - BATCH4</label>
+</ListView>

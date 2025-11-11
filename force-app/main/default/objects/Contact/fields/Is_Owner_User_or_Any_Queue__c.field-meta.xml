@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Owner_User_or_Any_Queue__c</fullName>
+    <formula>OR(
+    Host_Owner_ID__c = $User.Id,                 
+    BEGINS(Host_Owner_ID__c, &quot;00G&quot;)              
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Owner User or Any Queue?</label>
+    <type>Checkbox</type>
+</CustomField>

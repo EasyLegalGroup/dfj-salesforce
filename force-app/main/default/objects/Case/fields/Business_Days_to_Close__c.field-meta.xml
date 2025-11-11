@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Days_to_Close__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    NOT(ISBLANK(CreatedDate)),
+    (
+        5 * FLOOR(
+            (
+                IF(
+                    NOT(ISBLANK(ClosedDate)),
+                    DATEVALUE(ClosedDate),
+                    TODAY()
+                ) - DATEVALUE(CreatedDate)
+            ) / 7
+        ) + 
+        MIN(5, MOD(
+            IF(
+                NOT(ISBLANK(ClosedDate)),
+                DATEVALUE(ClosedDate),
+                TODAY()
+            ) - DATEVALUE(CreatedDate),
+            7
+        ))
+    ) + 
+    (
+        CASE(
+            MOD(DATEVALUE(CreatedDate) - DATE(1900, 1, 1), 7),
+            0, 1,
+            1, 1,
+            2, 1,
+            3, 1,
+            4, 1,
+            5, 1,
+            6, 0,
+            0
+        ) * 
+        (
+            24 - VALUE(MID(TEXT(CreatedDate), 12, 2)) - (VALUE(MID(TEXT(CreatedDate), 15, 2)) / 60.0)
+        ) / 24.0
+    ) +
+    (
+        CASE(
+            MOD(
+                IF(
+                    NOT(ISBLANK(ClosedDate)),
+                    DATEVALUE(ClosedDate),
+                    TODAY()
+                ) - DATE(1900, 1, 1),
+                7
+            ),
+            0, 1,
+            1, 1,
+            2, 1,
+            3, 1,
+            4, 1,
+            5, 1,
+            6, 0,
+            0
+        ) * 
+        (
+            VALUE(MID(
+                TEXT(
+                    IF(
+                        NOT(ISBLANK(ClosedDate)),
+                        ClosedDate,
+                        NOW()
+                    )
+                ), 
+                12, 2
+            )) + (VALUE(MID(
+                TEXT(
+                    IF(
+                        NOT(ISBLANK(ClosedDate)),
+                        ClosedDate,
+                        NOW()
+                    )
+                ), 
+                15, 2
+            )) / 60.0)
+        ) / 24.0
+    ) - 1,
+    NULL
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Business Days to Close</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

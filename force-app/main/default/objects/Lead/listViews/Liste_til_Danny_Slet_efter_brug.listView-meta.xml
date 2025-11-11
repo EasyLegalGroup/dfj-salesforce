@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Liste_til_Danny_Slet_efter_brug</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>Total_calls_out_all__c</columns>
+    <columns>telegenta__Total_calls__c</columns>
+    <columns>Foredragsdato__c</columns>
+    <columns>Event_moedestatus_c__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>UTM_Medium__c</columns>
+    <columns>UTM_Content__c</columns>
+    <columns>UTM_Source__c</columns>
+    <columns>UPDATEDBY_USER.ALIAS</columns>
+    <columns>Is_Dublet__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CORE.USERS.FIRST_NAME</field>
+        <operation>equals</operation>
+        <value>Danny Taube</value>
+    </filters>
+    <filters>
+        <field>Foredragsdato__c</field>
+        <operation>equals</operation>
+        <value>7/11/2023</value>
+    </filters>
+    <label>Liste til Danny - Slet efter brug</label>
+</ListView>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Forsikring_Sendt_til_Honestus__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Emnet er sendt til Honestus med henblik på forsikring</description>
+    <inlineHelpText>Emnet er sendt til Honestus med henblik på forsikring</inlineHelpText>
+    <label>Forsikring - Sendt til Honestus</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

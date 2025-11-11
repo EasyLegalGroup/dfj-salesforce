@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TDK_Kampagne_1_fremtidige</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>telegenta__Last_Contact_State__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.RECORDTYPE</columns>
+    <columns>Lead_Group_Name__c</columns>
+    <columns>Market_Unit__c</columns>
+    <columns>telegenta__Total_calls__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>New_Status__c</columns>
+    <columns>Publisher_Campaign__c</columns>
+    <columns>telegenta__Priority__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Lead_Group_Name__c</field>
+        <operation>equals</operation>
+        <value>TD Kampagne 1</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>Working</value>
+    </filters>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>Testamente_DK</value>
+    </filters>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.DFJ_DK</value>
+    </filters>
+    <filters>
+        <field>Publisher_Campaign_2__c</field>
+        <operation>notEqual</operation>
+        <value>Mailkampagne_26042021,Mailkampagne_05052021</value>
+    </filters>
+    <filters>
+        <field>telegenta__Next_Call_Time__c</field>
+        <operation>greaterThan</operation>
+        <value>TOMORROW</value>
+    </filters>
+    <label>TDK - Kampagne 1 fremtidige</label>
+</ListView>

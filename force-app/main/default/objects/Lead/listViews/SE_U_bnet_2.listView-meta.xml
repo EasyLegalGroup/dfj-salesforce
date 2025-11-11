@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SE_U_bnet_2</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND 5</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>Event_moedestatus_c__c</columns>
+    <columns>Foredragsdato__c</columns>
+    <columns>UTM_Content__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Ekstern_r_dgiver__c</columns>
+    <columns>UTM_Source__c</columns>
+    <columns>UTM_Medium__c</columns>
+    <columns>UTM_Campaign__c</columns>
+    <columns>Lead_Group_Name__c</columns>
+    <columns>telegenta__Total_calls__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New</value>
+    </filters>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.FA_SE</value>
+    </filters>
+    <filters>
+        <field>New_Status__c</field>
+        <operation>equals</operation>
+        <value>Unprocessed</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>Sweden Leads</value>
+    </filters>
+    <filters>
+        <field>UTM_Content__c</field>
+        <operation>equals</operation>
+        <value>Anmäl dig till en kostnadsfri föreläsning eller 1-till-1-möte med en rådgivare</value>
+    </filters>
+    <label>SE Uåbnet 2</label>
+</ListView>

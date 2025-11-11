@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hit_Rate_Lead__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( ISPICKVAL( Status , &quot;Converted&quot;),&quot;Converted&quot;, IF( ISPICKVAL( Status , &quot;NEW&quot;),&quot;Open&quot;,IF( ISPICKVAL( Status , &quot;Working&quot;),&quot;Open&quot;,&quot;Not converted&quot;)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Hit Rate Lead</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Publisher_Name__c</fullName>
+    <label>Lead Publisher Name</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>eGentic</fullName>
+                <default>false</default>
+                <label>eGentic</label>
+            </value>
+            <value>
+                <fullName>facebook</fullName>
+                <default>false</default>
+                <label>facebook</label>
+            </value>
+            <value>
+                <fullName>website</fullName>
+                <default>false</default>
+                <label>website</label>
+            </value>
+            <value>
+                <fullName>BoligAdvokat24</fullName>
+                <default>false</default>
+                <label>BoligAdvokat24</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

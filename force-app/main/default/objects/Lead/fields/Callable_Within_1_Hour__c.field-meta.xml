@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Callable_Within_1_Hour__c</fullName>
+    <formula>ISBLANK(telegenta__Lock_Time__c) || 
+(telegenta__Lock_Time__c &lt;= NOW()) || 
+(telegenta__Lock_Time__c - NOW() &lt;= (1/24))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Callable Within 1 Hour</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>M_debooking_Lead_owner__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( OR( M_de_Viderestillet__c = TRUE, M_de_Booket_Internal__c = TRUE),   M_de_booket_af__r.FirstName&amp;&quot; &quot;&amp; M_de_booket_af__r.LastName   ,  Owner:User.FirstName&amp;&quot; &quot;&amp;Owner:User.LastName     )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Mødebooking - Lead owner</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

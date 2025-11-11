@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Using_Screen_Flow__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field is checked automatically if the booking is made, using the Calendly Screenflow.</description>
+    <label>Is Using Screen Flow</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

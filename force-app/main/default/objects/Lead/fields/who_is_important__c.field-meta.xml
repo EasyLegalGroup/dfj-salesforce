@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>who_is_important__c</fullName>
+    <label>Hvem er vigtig</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Din ægtefælle/partner</fullName>
+                <default>false</default>
+                <label>Din ægtefælle/partner</label>
+            </value>
+            <value>
+                <fullName>Dine børn</fullName>
+                <default>false</default>
+                <label>Dine børn</label>
+            </value>
+            <value>
+                <fullName>Venner</fullName>
+                <default>false</default>
+                <label>Venner</label>
+            </value>
+            <value>
+                <fullName>Anden familie</fullName>
+                <default>false</default>
+                <label>Anden familie</label>
+            </value>
+            <value>
+                <fullName>Andre</fullName>
+                <default>false</default>
+                <label>Andre</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CC_DK_My_Leads</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND (5 OR (6 AND 7)) AND 8</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>New_Status__c</columns>
+    <columns>Working_Status__c</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>UTM_Source__c</columns>
+    <columns>UTM_Medium__c</columns>
+    <columns>Event_moedestatus_c__c</columns>
+    <columns>Latest_Entry_Date__c</columns>
+    <columns>Interaction__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.DFJ_DK</value>
+    </filters>
+    <filters>
+        <field>Is_Owner__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>telegenta__Next_Call_Time__c</field>
+        <operation>lessThan</operation>
+        <value>TODAY</value>
+    </filters>
+    <filters>
+        <field>Reopen_Lead__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New,Working</value>
+    </filters>
+    <filters>
+        <field>telegenta__Invalid_Reason__c</field>
+        <operation>equals</operation>
+        <value>Unverified Prospect</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>Unqualified</value>
+    </filters>
+    <filters>
+        <field>Communication_Ban__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>CC - DK: My Leads</label>
+</ListView>

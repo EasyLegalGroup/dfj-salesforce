@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Foredrag_nye</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND (5 OR 6) AND 7 AND 8</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>Event_moedestatus_c__c</columns>
+    <columns>LEAD.RECORDTYPE</columns>
+    <columns>telegenta__Last_Contact_State__c</columns>
+    <columns>UTM_Source__c</columns>
+    <columns>UTM_Medium__c</columns>
+    <columns>UTM_Campaign__c</columns>
+    <columns>UTM_Content__c</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Foredragsdato__c</columns>
+    <columns>Foredragskommentar__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>UTM_Source__c</field>
+        <operation>equals</operation>
+        <value>Foredrag</value>
+    </filters>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.DFJ_DK</value>
+    </filters>
+    <filters>
+        <field>Event_moedestatus_c__c</field>
+        <operation>notEqual</operation>
+        <value>N/A,Show,No show</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New,Working</value>
+    </filters>
+    <filters>
+        <field>Foredragsdato__c</field>
+        <operation>lessThan</operation>
+        <value>YESTERDAY</value>
+    </filters>
+    <filters>
+        <field>Foredragsdato__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>DFJ Leads</value>
+    </filters>
+    <filters>
+        <field>Event_moedestatus_c__c</field>
+        <operation>equals</operation>
+        <value>Tilmeldingsblanket</value>
+    </filters>
+    <label>Foredrag nye</label>
+</ListView>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Aktiver_i_form_af_v_rdipapirer_el_andet__c</fullName>
+    <defaultValue>false</defaultValue>
+    <label>Aktiver i form af værdipapirer el. andet</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

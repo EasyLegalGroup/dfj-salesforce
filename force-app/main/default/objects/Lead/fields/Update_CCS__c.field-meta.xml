@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Update_CCS__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If it&apos;s set to true corresponding CCS will be updated.</description>
+    <label>Update CCS</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

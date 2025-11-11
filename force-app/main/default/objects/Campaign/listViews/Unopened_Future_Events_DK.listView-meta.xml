@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unopened_Future_Events_DK</fullName>
+    <booleanFilter>1 AND (2 OR 3) AND 4 AND 5</booleanFilter>
+    <columns>CAMPAIGN.NAME</columns>
+    <columns>Name_of_Contact__c</columns>
+    <columns>Phone__c</columns>
+    <columns>CAMPAIGN.STATUS</columns>
+    <columns>CAMPAIGN.NUM_LEADS</columns>
+    <columns>Event_URL__c</columns>
+    <columns>Booked_Seats__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CAMPAIGN.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Campaign.Lecture,Campaign.Association_Lecture</value>
+    </filters>
+    <filters>
+        <field>Host_Type__c</field>
+        <operation>equals</operation>
+        <value>Company,Association</value>
+    </filters>
+    <filters>
+        <field>Open_for_Bookings__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>CAMPAIGN.STATUS</field>
+        <operation>equals</operation>
+        <value>Scheduled,Completed</value>
+    </filters>
+    <filters>
+        <field>Lecturer__c</field>
+        <operation>equals</operation>
+        <value>Bo Rathsach</value>
+    </filters>
+    <label>Lecturer: Bo Rathsach</label>
+</ListView>

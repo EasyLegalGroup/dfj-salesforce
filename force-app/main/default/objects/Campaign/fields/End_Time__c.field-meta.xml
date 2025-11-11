@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>End_Time__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    OR(
+        AND(
+            End__c &gt;= DATETIMEVALUE(&apos;2024-03-31 00:00:00&apos;),
+            End__c &lt; DATETIMEVALUE(&apos;2024-10-27 00:00:00&apos;)
+        ),
+        AND(
+            End__c &gt;= DATETIMEVALUE(&apos;2025-03-30 00:00:00&apos;),
+            End__c &lt; DATETIMEVALUE(&apos;2025-10-26 00:00:00&apos;)
+        )
+    ),
+   
+    IF(
+        ISBLANK(End__c),
+        &quot;&quot;,
+        LPAD(
+            TEXT(
+                VALUE(
+                    MID(
+                        TEXT(End__c + (2/24)), 
+                        12,
+                        2
+                    )
+                )
+            ),
+            2,
+            &apos;0&apos;
+        ) &amp; &quot;:&quot; &amp;
+        LPAD(
+            TEXT(
+                VALUE(
+                    MID(
+                        TEXT(End__c + (2/24)), 
+                        15,
+                        2
+                    )
+                )
+            ),
+            2,
+            &apos;0&apos;
+        )
+    ),
+ 
+    IF(
+        ISBLANK(End__c),
+        &quot;&quot;,
+        LPAD(
+            TEXT(
+                VALUE(
+                    MID(
+                        TEXT(End__c + (1/24)), 
+                        12,
+                        2
+                    )
+                )
+            ),
+            2,
+            &apos;0&apos;
+        ) &amp; &quot;:&quot; &amp;
+        LPAD(
+            TEXT(
+                VALUE(
+                    MID(
+                        TEXT(End__c + (1/24)), 
+                        15,
+                        2
+                    )
+                )
+            ),
+            2,
+            &apos;0&apos;
+        )
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>End Time</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

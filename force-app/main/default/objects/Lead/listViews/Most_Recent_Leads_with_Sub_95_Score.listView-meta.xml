@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Most_Recent_Leads_with_Sub_95_Score</fullName>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>Latest_Entry_Date__c</columns>
+    <columns>Lead_Priority__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>UTM_Medium__c</columns>
+    <columns>Event_moedestatus_c__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Marital_Status__c</columns>
+    <columns>Has_Children_Under_18__c</columns>
+    <columns>LEAD_SCORE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD_SCORE</field>
+        <operation>lessThan</operation>
+        <value>95</value>
+    </filters>
+    <label>Most Recent Leads with Sub-95 Score</label>
+</ListView>

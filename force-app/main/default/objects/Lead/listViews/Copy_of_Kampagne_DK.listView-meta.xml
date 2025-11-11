@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_Kampagne_DK</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8 AND 9</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>telegenta__Last_Contact_State__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>Lead_Group_Name__c</columns>
+    <columns>Market_Unit__c</columns>
+    <columns>Event_moedestatus_c__c</columns>
+    <columns>telegenta__Total_calls__c</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>UTM_Campaign__c</columns>
+    <columns>UTM_Medium__c</columns>
+    <columns>Has_Appointment__c</columns>
+    <columns>stop_calling__c</columns>
+    <columns>Update_CCS__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New,Working</value>
+    </filters>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.DFJ_DK</value>
+    </filters>
+    <filters>
+        <field>Is_Dublet__c</field>
+        <operation>notEqual</operation>
+        <value>Yes</value>
+    </filters>
+    <filters>
+        <field>UTM_Campaign__c</field>
+        <operation>notEqual</operation>
+        <value>Kanvas</value>
+    </filters>
+    <filters>
+        <field>UTM_Medium__c</field>
+        <operation>notEqual</operation>
+        <value>Bigsaver.dk,Dokument24</value>
+    </filters>
+    <filters>
+        <field>telegenta__Last_Contact_State__c</field>
+        <operation>notEqual</operation>
+        <value>Unqualified,Not Interested,Invalid,Converted</value>
+    </filters>
+    <filters>
+        <field>UTM_Source__c</field>
+        <operation>notEqual</operation>
+        <value>Foredrag</value>
+    </filters>
+    <filters>
+        <field>Working_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Appointment</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.FIRST_NAME</field>
+        <operation>notEqual</operation>
+        <value>DFJ Leads</value>
+    </filters>
+    <label>Copy of Kampagne DK</label>
+</ListView>

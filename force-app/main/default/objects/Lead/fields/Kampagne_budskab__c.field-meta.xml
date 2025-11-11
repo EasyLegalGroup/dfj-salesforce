@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Kampagne_budskab__c</fullName>
+    <label>Kampagne budskab</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>TEST</fullName>
+                <default>false</default>
+                <label>TEST</label>
+            </value>
+            <value>
+                <fullName>Gratis Testamente foredrag med lækker Kage &amp; Kaffe på Løgstør Parkhotel i Løgstør</fullName>
+                <default>false</default>
+                <label>Gratis Testamente foredrag med lækker Kage &amp; Kaffe på Løgstør Parkhotel i Løgstør</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. middag på Restaurant Kareten i København S</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. middag på Restaurant Kareten i København S</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. middag på ALFA BRYGHUS og Brasserie i Vejen</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. middag på ALFA BRYGHUS og Brasserie i Vejen</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. middag på Restaurant Mamamos i Nørresundby</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. middag på Restaurant Mamamos i Nørresundby</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. Middag på Vilcon Hotel &amp; Konferencegaard</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. Middag på Vilcon Hotel &amp; Konferencegaard</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. middag på Rindsholm Kro &amp; Hotel i Viborg</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. middag på Rindsholm Kro &amp; Hotel i Viborg</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. middag på Hotel Årslev Kro i Brabrand</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. middag på Hotel Årslev Kro i Brabrand</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. middag på Cafe Sesa i Ishøj</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. middag på Cafe Sesa i Ishøj</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. middag på Pejsegaarden i Husum</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. middag på Pejsegaarden i Husum</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente, inkl. middag på Haderslev Golfrestaurant</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente, inkl. middag på Haderslev Golfrestaurant</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. middag på Hundested Bed &amp; Breakfast</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. middag på Hundested Bed &amp; Breakfast</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. middag på Lynæs Fisk &amp; Steakhouse</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. middag på Lynæs Fisk &amp; Steakhouse</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. middag på Frederiksdal Fribad - ( Afholdt d. 24-10-2023 )</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. middag på Frederiksdal Fribad - ( Afholdt d. 24-10-2023 )</label>
+            </value>
+            <value>
+                <fullName>Gratis foredrag om arv og testamente inkl. middag på Bjerringbro Idræts-&amp; Kulturcenter - ( Afholdt d. 16-11-2023 )</fullName>
+                <default>false</default>
+                <label>Gratis foredrag om arv og testamente inkl. middag på Bjerringbro Idræts-&amp; Kulturcenter - ( Afholdt d. 16-11-2023 )</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

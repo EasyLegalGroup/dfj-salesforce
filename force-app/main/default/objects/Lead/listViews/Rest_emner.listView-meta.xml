@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rest_emner</fullName>
+    <booleanFilter>(1 OR 2) AND 3 AND 4</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>LEAD.LAST_UPDATE</columns>
+    <columns>telegenta__Next_Call_Time__c</columns>
+    <columns>Publisher_Campaign__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>IsCallableWorking__c</columns>
+    <columns>IsCallableNew__c</columns>
+    <columns>telegenta__Last_Contact_State__c</columns>
+    <columns>telegenta__Unprocessed__c</columns>
+    <columns>telegenta__Priority__c</columns>
+    <columns>UPDATEDBY_USER.ALIAS</columns>
+    <columns>Kommentarer__c</columns>
+    <columns>telegenta__Total_calls__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Publisher_Campaign__c</field>
+        <operation>notEqual</operation>
+        <value>Danske seniorer,Risikovurdering,Premio011019test1,Premio25102019Mødebook1,Fb31102019lauravideoBt1,Forsikringshjælp11112019test1,FoBruFo02122019Landingpage,MM06122019gratisbtmkøb,DFJKontaktHjemmeside</value>
+    </filters>
+    <filters>
+        <field>Publisher_Campaign__c</field>
+        <operation>notEqual</operation>
+        <value>Folkeskolen020220GratisBT,Samvirke020220GratisBT,HK020220GratisBT,FB120220gratisFT,Fb10032020messenger,FB130220gratisBT,Fb120320gratisrådgivning,gratisbtgoogle,Influencer</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New</value>
+    </filters>
+    <filters>
+        <field>Publisher_Campaign__c</field>
+        <operation>notEqual</operation>
+        <value>BA24-TEST1,BA24_Test_Berigtigelse_2017,sager mgl. 1.7-31.12,LassoX021019ElTømrerVVSFys0-9KBH,CM03112019Batch1,MB03012020blandet</value>
+    </filters>
+    <label>Rest emner</label>
+</ListView>

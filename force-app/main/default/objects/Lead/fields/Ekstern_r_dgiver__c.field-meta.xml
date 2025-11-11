@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ekstern_r_dgiver__c</fullName>
+    <label>Ekstern rådgiver</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Jonatan Bolin</fullName>
+                <default>false</default>
+                <label>Jonatan Bolin</label>
+            </value>
+            <value>
+                <fullName>Andy</fullName>
+                <default>false</default>
+                <label>Andy</label>
+            </value>
+            <value>
+                <fullName>Danny</fullName>
+                <default>false</default>
+                <label>Danny</label>
+            </value>
+            <value>
+                <fullName>Emilia</fullName>
+                <default>false</default>
+                <label>Emilia</label>
+            </value>
+            <value>
+                <fullName>Anton J</fullName>
+                <default>false</default>
+                <label>Anton J</label>
+            </value>
+            <value>
+                <fullName>Denis</fullName>
+                <default>false</default>
+                <label>Denis</label>
+            </value>
+            <value>
+                <fullName>Sofus</fullName>
+                <default>false</default>
+                <label>Sofus</label>
+            </value>
+            <value>
+                <fullName>Flemming Abildtrup</fullName>
+                <default>false</default>
+                <label>Flemming Abildtrup</label>
+            </value>
+            <value>
+                <fullName>Michael Jepsen</fullName>
+                <default>false</default>
+                <label>Michael Jepsen</label>
+            </value>
+            <value>
+                <fullName>Tina Lundquist</fullName>
+                <default>false</default>
+                <label>Tina Lundquist</label>
+            </value>
+            <value>
+                <fullName>Rasmus Wedell</fullName>
+                <default>false</default>
+                <label>Rasmus Wedell</label>
+            </value>
+            <value>
+                <fullName>Kristian Holdt</fullName>
+                <default>false</default>
+                <label>Kristian Holdt</label>
+            </value>
+            <value>
+                <fullName>Line Barfoed</fullName>
+                <default>false</default>
+                <label>Line Barfoed</label>
+            </value>
+            <value>
+                <fullName>Flemming Stelling</fullName>
+                <default>false</default>
+                <label>Flemming Stelling</label>
+            </value>
+            <value>
+                <fullName>Bo Rathsach</fullName>
+                <default>false</default>
+                <label>Bo Rathsach</label>
+            </value>
+            <value>
+                <fullName>Fatih Tamer</fullName>
+                <default>false</default>
+                <label>Fatih Tamer</label>
+            </value>
+            <value>
+                <fullName>Timm</fullName>
+                <default>false</default>
+                <label>Timm</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
