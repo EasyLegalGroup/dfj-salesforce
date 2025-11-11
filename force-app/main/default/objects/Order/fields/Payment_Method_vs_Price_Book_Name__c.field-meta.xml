@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment_Method_vs_Price_Book_Name__c</fullName>
+    <description>Payment method match pricebook</description>
+    <formula>TEXT(Payment_method__c) = Pricebook2.Name</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Payment Method vs. Price Book Name</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

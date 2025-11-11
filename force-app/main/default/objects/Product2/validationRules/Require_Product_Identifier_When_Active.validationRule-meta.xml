@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Product_Identifier_When_Active</fullName>
+    <active>true</active>
+    <description>This validation rule ensures that when a product is marked as active, the Product Identifier field must be populated. This helps maintain data integrity for active products.</description>
+    <errorConditionFormula>AND(
+    IsActive, 
+    ISBLANK(Product_Identifier__c)
+)</errorConditionFormula>
+    <errorDisplayField>Product_Identifier__c</errorDisplayField>
+    <errorMessage>Product Identifier is required for active products. Please fill in the Product Identifier field.</errorMessage>
+</ValidationRule>

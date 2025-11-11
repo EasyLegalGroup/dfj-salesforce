@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Digital_Lecture_Form_through_QR_Code__c</fullName>
+    <defaultValue>false</defaultValue>
+    <label>Digital Lecture Form through QR-Code</label>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Market_Unit_by_Currency</fullName>
+    <active>true</active>
+    <description>Ensures that the Market Unit picklist value matches the record currency.
+- DKK → DFJ_DK
+- SEK → FA_SE
+- EUR → Ireland</description>
+    <errorConditionFormula>AND(
+  ISPICKVAL(CurrencyIsoCode, &quot;DKK&quot;),
+  NOT(ISPICKVAL(Market_Unit__c, &quot;DFJ_DK&quot;))
+)
+||
+AND(
+  ISPICKVAL(CurrencyIsoCode, &quot;SEK&quot;),
+  NOT(ISPICKVAL(Market_Unit__c, &quot;FA_SE&quot;))
+)
+||
+AND(
+  ISPICKVAL(CurrencyIsoCode, &quot;EUR&quot;),
+  NOT(ISPICKVAL(Market_Unit__c, &quot;Ireland&quot;))
+)</errorConditionFormula>
+    <errorDisplayField>Market_Unit__c</errorDisplayField>
+    <errorMessage>Market Unit must match Currency:
+- DKK → Din Familie Jurist
+- SEK → dinfamiljejurist.nu
+- EUR → Ireland</errorMessage>
+</ValidationRule>

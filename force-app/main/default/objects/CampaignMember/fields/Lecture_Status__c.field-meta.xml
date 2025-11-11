@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lecture_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(Campaign.Status,
+    &quot;Scheduled&quot;, &quot;Scheduled&quot;,
+    &quot;Cancelled&quot;, &quot;Cancelled&quot;,
+    &quot;Completed&quot;, &quot;Completed&quot;,
+    &quot;In Progress&quot;, &quot;In Progress&quot;,
+    &quot;Unknown&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Lecture Status</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

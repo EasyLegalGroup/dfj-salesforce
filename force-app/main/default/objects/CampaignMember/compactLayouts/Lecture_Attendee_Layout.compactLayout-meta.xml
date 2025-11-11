@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lecture_Attendee_Layout</fullName>
+    <fields>Booking_Status_Formula__c</fields>
+    <fields>Remaining_Tickets__c</fields>
+    <fields>Event_m_destatus__c</fields>
+    <fields>Time_of_booking__c</fields>
+    <fields>Tickets_in_order__c</fields>
+    <fields>Cancelled_tickets__c</fields>
+    <label>Lecture Attendee Layout</label>
+</CompactLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Walk_In_Attendee__c</fullName>
+    <defaultValue>false</defaultValue>
+    <label>Walk-In Attendee</label>
+    <type>Checkbox</type>
+</CustomField>

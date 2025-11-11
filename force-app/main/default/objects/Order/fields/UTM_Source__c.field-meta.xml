@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UTM_Source__c</fullName>
+    <label>UTM Source</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Foredrag</fullName>
+                <default>false</default>
+                <label>Foredrag</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

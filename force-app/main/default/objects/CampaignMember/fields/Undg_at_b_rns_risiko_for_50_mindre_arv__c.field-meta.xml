@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Undg_at_b_rns_risiko_for_50_mindre_arv__c</fullName>
+    <defaultValue>false</defaultValue>
+    <label>Undgå at børns risiko for 50% mindre arv</label>
+    <type>Checkbox</type>
+</CustomField>

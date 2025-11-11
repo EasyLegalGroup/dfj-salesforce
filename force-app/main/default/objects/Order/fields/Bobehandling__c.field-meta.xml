@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bobehandling__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Needs to be checked if the sale is Bobehandling</description>
+    <inlineHelpText>Check this field if the order is bobehandling</inlineHelpText>
+    <label>Bobehandling</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

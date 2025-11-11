@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UTM_Medium__c</fullName>
+    <label>UTM Medium</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>-</fullName>
+                <default>false</default>
+                <label>-</label>
+            </value>
+            <value>
+                <fullName>Totalliv</fullName>
+                <default>false</default>
+                <label>Totalliv</label>
+            </value>
+            <value>
+                <fullName>PR Leads</fullName>
+                <default>false</default>
+                <label>PR Leads</label>
+            </value>
+            <value>
+                <fullName>Website Form</fullName>
+                <default>false</default>
+                <label>Website Form</label>
+            </value>
+            <value>
+                <fullName>Seren</fullName>
+                <default>false</default>
+                <label>Seren</label>
+            </value>
+            <value>
+                <fullName>Salesforce Screen Flow</fullName>
+                <default>false</default>
+                <label>Salesforce Screen Flow</label>
+            </value>
+            <value>
+                <fullName>Findforsikring.dk</fullName>
+                <default>false</default>
+                <label>Findforsikring.dk</label>
+            </value>
+            <value>
+                <fullName>Marketing Email</fullName>
+                <default>false</default>
+                <label>Marketing Email</label>
+            </value>
+            <value>
+                <fullName>Calendly</fullName>
+                <default>false</default>
+                <label>Calendly</label>
+            </value>
+            <value>
+                <fullName>Contact Form</fullName>
+                <default>false</default>
+                <label>Contact Form</label>
+            </value>
+            <value>
+                <fullName>SMS</fullName>
+                <default>false</default>
+                <label>SMS</label>
+            </value>
+            <value>
+                <fullName>Email</fullName>
+                <default>false</default>
+                <label>Email</label>
+            </value>
+            <value>
+                <fullName>Google-ads</fullName>
+                <default>false</default>
+                <label>Google-ads</label>
+            </value>
+            <value>
+                <fullName>Popermo</fullName>
+                <default>false</default>
+                <label>Popermo</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

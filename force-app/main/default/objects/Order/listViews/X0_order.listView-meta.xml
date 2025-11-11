@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X0_order</fullName>
+    <columns>ORDERS.ORDER_NUMBER</columns>
+    <columns>SALES.ACCOUNT.NAME</columns>
+    <columns>ORDERS.EFFECTIVE_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Payment_order_number__c</columns>
+    <columns>Payment_method__c</columns>
+    <columns>Payment_type__c</columns>
+    <columns>Promotional_Order__c</columns>
+    <columns>ORDERS.STATUS</columns>
+    <columns>Sales_match_order__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Order_Price__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>0 order</label>
+</ListView>

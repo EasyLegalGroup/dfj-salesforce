@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sikre_min_partner_gtef_lle_mest_muligt__c</fullName>
+    <defaultValue>false</defaultValue>
+    <label>Sikre min partner/ægtefælle mest muligt</label>
+    <type>Checkbox</type>
+</CustomField>

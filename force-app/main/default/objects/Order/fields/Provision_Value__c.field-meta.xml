@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Provision_Value__c</fullName>
+    <description>Accumulated Provision after deducting Order-wide discounts (e.g. Fixed Discount Amount) and refunds</description>
+    <formula>MAX(Provision_Amount__c - Fixed_discount_Type__c - Refund_Value__c, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Accumulated Provision after deducting Order-wide discounts (e.g. Fixed Discount Amount) and refunds</inlineHelpText>
+    <label>Provision Value</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

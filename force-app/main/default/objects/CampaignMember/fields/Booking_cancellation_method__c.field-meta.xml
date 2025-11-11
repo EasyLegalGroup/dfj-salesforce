@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Booking_cancellation_method__c</fullName>
+    <label>Booking cancellation method</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>https://dinfamiliejurist.dk/afmelding-email/</fullName>
+                <default>false</default>
+                <label>https://dinfamiliejurist.dk/afmelding-email/</label>
+            </value>
+            <value>
+                <fullName>https://dinfamiliejurist.dk/afmelding-sms/</fullName>
+                <default>false</default>
+                <label>https://dinfamiliejurist.dk/afmelding-sms/</label>
+            </value>
+            <value>
+                <fullName>Cancelled by us in Billetto</fullName>
+                <default>false</default>
+                <label>Cancelled by us in Billetto</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_Created_Date_Time__c</fullName>
+    <formula>IF(
+Order__r.Campaign__c  =  CampaignId ,
+Order__r.CreatedDate,
+NULL
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Order Created Date/Time</label>
+    <required>false</required>
+    <type>DateTime</type>
+</CustomField>

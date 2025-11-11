@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_s_Ejendomsoverdragelse_Lookup__c</fullName>
+    <formula>Lead__r.Ejendomsoverdragelse__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Lead&apos;s Ejendomsoverdragelse Lookup</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

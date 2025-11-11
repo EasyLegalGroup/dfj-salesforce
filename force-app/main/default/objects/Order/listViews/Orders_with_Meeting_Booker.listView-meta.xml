@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Orders_with_Meeting_Booker</fullName>
+    <columns>ORDERS.ORDER_NUMBER</columns>
+    <columns>Lead__c</columns>
+    <columns>SALES.ACCOUNT.NAME</columns>
+    <columns>ORDERS.EFFECTIVE_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Market_Unit__c</columns>
+    <columns>Meeting_Booker_User_ID__c</columns>
+    <columns>Is_from_Internal_Meeting_Booker__c</columns>
+    <columns>Meeting_Booker__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Meeting_Booker_User_ID__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Orders with Meeting Booker</label>
+</ListView>

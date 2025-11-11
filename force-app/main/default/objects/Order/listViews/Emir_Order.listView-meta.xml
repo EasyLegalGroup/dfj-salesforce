@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Emir_Order</fullName>
+    <columns>ORDERS.ORDER_NUMBER</columns>
+    <columns>SALES.ACCOUNT.NAME</columns>
+    <columns>ORDERS.EFFECTIVE_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Payment_order_number__c</columns>
+    <columns>Lead__c</columns>
+    <columns>Payment_method__c</columns>
+    <columns>Payment_type__c</columns>
+    <columns>Promotional_Order__c</columns>
+    <columns>ORDERS.STATUS</columns>
+    <columns>Sales_match_order__c</columns>
+    <columns>Afstemt__c</columns>
+    <columns>SALES.ACCOUNT.OWNERALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>FA_SE,Testamente_SV</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>enu</value>
+    </filters>
+    <filters>
+        <field>Payment_method__c</field>
+        <operation>equals</operation>
+        <value>Klarna</value>
+    </filters>
+    <label>Emir Order</label>
+</ListView>

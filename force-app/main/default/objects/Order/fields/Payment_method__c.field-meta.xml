@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment_method__c</fullName>
+    <label>Payment method</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Kortbetaling</fullName>
+                <default>false</default>
+                <label>Kortbetaling</label>
+            </value>
+            <value>
+                <fullName>Mobilepay</fullName>
+                <default>false</default>
+                <label>Mobilepay</label>
+            </value>
+            <value>
+                <fullName>Klarna</fullName>
+                <default>false</default>
+                <label>Klarna</label>
+            </value>
+            <value>
+                <fullName>Direkte Bankoverførsel</fullName>
+                <default>false</default>
+                <label>Direkte Bankoverførsel</label>
+            </value>
+            <value>
+                <fullName>Resursbank</fullName>
+                <default>false</default>
+                <label>Resursbank</label>
+            </value>
+            <value>
+                <fullName>Seren Pensionsfakturering</fullName>
+                <default>false</default>
+                <label>Seren Pensionsfakturering</label>
+            </value>
+            <value>
+                <fullName>Delbetaling</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Afterpay</label>
+            </value>
+            <value>
+                <fullName>Betalt selv på WWW</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Betalt selv på WWW</label>
+            </value>
+            <value>
+                <fullName>Dankort App</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Dankort App</label>
+            </value>
+            <value>
+                <fullName>Faktura</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Faktura</label>
+            </value>
+            <value>
+                <fullName>Forbrugsforeningen</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Forbrugsforeningen</label>
+            </value>
+            <value>
+                <fullName>Likvido - 2 måneder</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Likvido - 2 måneder</label>
+            </value>
+            <value>
+                <fullName>Likvido - 4 måneder</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Likvido - 4 måneder</label>
+            </value>
+            <value>
+                <fullName>Likvido - 6 måneder</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Likvido - 6 måneder</label>
+            </value>
+            <value>
+                <fullName>Team Faktura (SE)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Team Faktura (SE)</label>
+            </value>
+            <value>
+                <fullName>Viabill</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Viabill</label>
+            </value>
+            <value>
+                <fullName>stripe</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>stripe</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

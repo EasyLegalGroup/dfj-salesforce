@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Start_Date_Time_Pretty__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(
+    TEXT(Market_Unit__c),
+
+    /* Denmark */
+    &quot;DFJ_DK&quot;,
+        &quot;d. &quot; &amp; TEXT(DAY(DATEVALUE(Campaign.Start__c))) &amp; &quot;. &quot; &amp;
+        CASE(MONTH(DATEVALUE(Campaign.Start__c)),
+            1,&quot;januar&quot;,2,&quot;februar&quot;,3,&quot;marts&quot;,4,&quot;april&quot;,5,&quot;maj&quot;,6,&quot;juni&quot;,
+            7,&quot;juli&quot;,8,&quot;august&quot;,9,&quot;september&quot;,10,&quot;oktober&quot;,11,&quot;november&quot;,12,&quot;december&quot;,&quot;&quot;
+        ) &amp; &quot; &quot; &amp; TEXT(YEAR(DATEVALUE(Campaign.Start__c))) &amp;
+        IF(
+            ISBLANK(TIMEVALUE(Campaign.Start__c)),
+            &quot;&quot;,
+            &quot;, kl. &quot; &amp;
+            LPAD(TEXT(HOUR(TIMEVALUE(Campaign.Start__c))),2,&quot;0&quot;) &amp; &quot;:&quot; &amp;
+            LPAD(TEXT(MINUTE(TIMEVALUE(Campaign.Start__c))),2,&quot;0&quot;)
+        ),
+
+    /* Sweden */
+    &quot;FA_SE&quot;,
+        TEXT(DAY(DATEVALUE(Campaign.Start__c))) &amp; &quot; &quot; &amp;
+        CASE(MONTH(DATEVALUE(Campaign.Start__c)),
+            1,&quot;januari&quot;,2,&quot;februari&quot;,3,&quot;mars&quot;,4,&quot;april&quot;,5,&quot;maj&quot;,6,&quot;juni&quot;,
+            7,&quot;juli&quot;,8,&quot;augusti&quot;,9,&quot;september&quot;,10,&quot;oktober&quot;,11,&quot;november&quot;,12,&quot;december&quot;,&quot;&quot;
+        ) &amp; &quot; &quot; &amp; TEXT(YEAR(DATEVALUE(Campaign.Start__c))) &amp;
+        IF(
+            ISBLANK(TIMEVALUE(Campaign.Start__c)),
+            &quot;&quot;,
+            &quot; kl. &quot; &amp;
+            LPAD(TEXT(HOUR(TIMEVALUE(Campaign.Start__c))),2,&quot;0&quot;) &amp; &quot;:&quot; &amp;
+            LPAD(TEXT(MINUTE(TIMEVALUE(Campaign.Start__c))),2,&quot;0&quot;)
+        ),
+
+    /* Ireland */
+    &quot;Ireland&quot;,
+        CASE(MONTH(DATEVALUE(Campaign.Start__c)),
+            1,&quot;January&quot;,2,&quot;February&quot;,3,&quot;March&quot;,4,&quot;April&quot;,5,&quot;May&quot;,6,&quot;June&quot;,
+            7,&quot;July&quot;,8,&quot;August&quot;,9,&quot;September&quot;,10,&quot;October&quot;,11,&quot;November&quot;,12,&quot;December&quot;,&quot;&quot;
+        ) &amp; &quot; &quot; &amp; TEXT(DAY(DATEVALUE(Campaign.Start__c))) &amp; &quot;, &quot; &amp;
+        TEXT(YEAR(DATEVALUE(Campaign.Start__c))) &amp;
+        IF(
+            ISBLANK(TIMEVALUE(Campaign.Start__c)),
+            &quot;&quot;,
+            &quot; at &quot; &amp;
+            LPAD(TEXT(HOUR(TIMEVALUE(Campaign.Start__c))),2,&quot;0&quot;) &amp; &quot;:&quot; &amp;
+            LPAD(TEXT(MINUTE(TIMEVALUE(Campaign.Start__c))),2,&quot;0&quot;)
+        ),
+
+    &quot;&quot;  /* default if no Market Unit match */
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Start Date/Time Pretty</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

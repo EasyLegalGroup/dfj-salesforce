@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Jeg_vil_sikre_min_gtef_lle_via_gtepagt__c</fullName>
+    <defaultValue>false</defaultValue>
+    <label>Jeg vil sikre min ægtefælle via ægtepagt</label>
+    <type>Checkbox</type>
+</CustomField>

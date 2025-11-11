@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_match_order</fullName>
+    <columns>ORDERS.ORDER_NUMBER</columns>
+    <columns>SALES.ACCOUNT.NAME</columns>
+    <columns>ORDERS.EFFECTIVE_DATE</columns>
+    <columns>Account_Sales_Value__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>SALES.ACCOUNT.OWNERALIAS</columns>
+    <columns>ORDERS.STATUS</columns>
+    <columns>Promotional_Order__c</columns>
+    <columns>Sales_match_order__c</columns>
+    <columns>Payment_order_number__c</columns>
+    <columns>Payment_method__c</columns>
+    <columns>Payment_type__c</columns>
+    <columns>PRICEBOOK2.NAME</columns>
+    <columns>SALES.ACCOUNT.ACCOUNT_NUMBER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Sales_match_order__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>ORDERS.CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>THIS_MONTH</value>
+    </filters>
+    <label>Sales match order</label>
+</ListView>

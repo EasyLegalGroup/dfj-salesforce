@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IkkeAfstemtOrdreThisMonth</fullName>
+    <columns>Payment_order_number__c</columns>
+    <columns>PRICEBOOK2.NAME</columns>
+    <columns>Payment_method__c</columns>
+    <columns>Afstemt__c</columns>
+    <columns>Afstemt_Kommentar__c</columns>
+    <columns>SALES.ACCOUNT.NAME</columns>
+    <columns>ORDERS.EFFECTIVE_DATE</columns>
+    <columns>ORDERS.STATUS</columns>
+    <columns>Payment_Method_vs_Price_Book_Name__c</columns>
+    <columns>Payment_type__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>PCN_Account__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Promotional_Order__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>ORDERS.EFFECTIVE_DATE</field>
+        <operation>greaterThan</operation>
+        <value>1/1/2020</value>
+    </filters>
+    <filters>
+        <field>Afstemt__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Payment_method__c</field>
+        <operation>notEqual</operation>
+        <value>Direkte Bankoverførsel,Delbetaling</value>
+    </filters>
+    <label>IkkeAfstemtOrdre</label>
+</ListView>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event_m_destatus__c</fullName>
+    <label>Event mødestatus</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>N/A</fullName>
+                <default>false</default>
+                <label>N/A</label>
+            </value>
+            <value>
+                <fullName>Show</fullName>
+                <default>false</default>
+                <label>Show</label>
+            </value>
+            <value>
+                <fullName>No show</fullName>
+                <default>false</default>
+                <label>No show</label>
+            </value>
+            <value>
+                <fullName>Tilmeldingsblanket</fullName>
+                <default>false</default>
+                <label>Tilmeldingsblanket</label>
+            </value>
+            <value>
+                <fullName>Ukendt</fullName>
+                <default>false</default>
+                <label>Ukendt</label>
+            </value>
+            <value>
+                <fullName>Aflyst</fullName>
+                <default>false</default>
+                <label>Aflyst</label>
+            </value>
+            <value>
+                <fullName>Order cancelled</fullName>
+                <default>false</default>
+                <label>Order cancelled</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
