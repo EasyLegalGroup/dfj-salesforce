@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Set_Counties_when_User_is_Lecturer</fullName>
+    <active>false</active>
+    <description>Requires the multi-select picklist field Counties to be populated, if Is Lecturer is true. If not, you cannot populate Counties.</description>
+    <errorConditionFormula>AND(
+  IsLecturer__c = TRUE,
+  ISBLANK(Counties__c)
+)</errorConditionFormula>
+    <errorDisplayField>Counties__c</errorDisplayField>
+    <errorMessage>If user is &quot;Lecturer&quot;, you must set the Counties in which the user can host lectures.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Users_with_Calendly_Links</fullName>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>CORE.USER_ROLE.NAME</columns>
+    <columns>CORE.PROFILE.NAME</columns>
+    <columns>CORE.USERS.EMAIL</columns>
+    <columns>Calendly__CalendlyLink__c</columns>
+    <columns>Personal_Calendly_Slug__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CORE.USERS.ACTIVE</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Calendly__CalendlyLink__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Active Users with Calendly Links</label>
+    <language>en_US</language>
+</ListView>

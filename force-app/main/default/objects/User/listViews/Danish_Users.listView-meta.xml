@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Danish_Users</fullName>
+    <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+    <columns>Team__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>CORE.USERS.PHONE</columns>
+    <columns>CORE.USERS.EMAIL</columns>
+    <columns>Calendly__CalendlyLink__c</columns>
+    <columns>CORE.USERS.LAST_LOGIN</columns>
+    <columns>CORE.PROFILE.NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CORE.USERS.ACTIVE</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Team__c</field>
+        <operation>equals</operation>
+        <value>DK</value>
+    </filters>
+    <filters>
+        <field>Team__c</field>
+        <operation>equals</operation>
+        <value>ES - DK</value>
+    </filters>
+    <label>Danish Users</label>
+    <language>en_US</language>
+</ListView>

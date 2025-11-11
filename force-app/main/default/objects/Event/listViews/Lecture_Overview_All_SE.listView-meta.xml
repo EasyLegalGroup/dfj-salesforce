@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lecture_Overview_All_SE</fullName>
+    <columns>Host_ID__c</columns>
+    <columns>Event_URL__c</columns>
+    <columns>Campaign__c</columns>
+    <columns>SUBJECT</columns>
+    <columns>Market_Unit__c</columns>
+    <columns>START_DATE_TIME</columns>
+    <columns>WHAT_NAME</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Event_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Lecture__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Market_Unit__c</field>
+        <operation>equals</operation>
+        <value>FA_SE,Testamente_SV</value>
+    </filters>
+    <filters>
+        <field>Cancelled__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Lecture Overview (All SE)</label>
+</ListView>

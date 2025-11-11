@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Personal_Calendly_Slug__c</fullName>
+    <externalId>false</externalId>
+    <formula>MID(Calendly__CalendlyLink__c, FIND(&quot;calendly.com/&quot;, Calendly__CalendlyLink__c) + LEN(&quot;calendly.com/&quot;), FIND(&quot;/&quot;, Calendly__CalendlyLink__c, FIND(&quot;calendly.com/&quot;, Calendly__CalendlyLink__c) + LEN(&quot;calendly.com/&quot;)) - FIND(&quot;calendly.com/&quot;, Calendly__CalendlyLink__c) - LEN(&quot;calendly.com/&quot;))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Personal Calendly Slug</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

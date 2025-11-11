@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Calendly_Lecture_Reservation__c</fullName>
+    <inlineHelpText>This link is used when resvering a time slot in the lecturers calendar. Actual bookings use a different link.</inlineHelpText>
+    <label>Calendly Lecture Reservation</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Url</type>
+</CustomField>
