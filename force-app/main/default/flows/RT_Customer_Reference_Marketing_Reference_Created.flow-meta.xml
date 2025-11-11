@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Populate_Custom_Error_with_Did_Not_Find_Referral_Campaign</name>
         <label>Populate Custom Error with Did Not Find Referral Campaign</label>

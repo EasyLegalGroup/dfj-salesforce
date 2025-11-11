@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Existing_Primary_Person_to_Variable</name>
         <label>Assign Existing Primary Person to Variable</label>
@@ -298,6 +299,7 @@
         <label>Create Associcated Person</label>
         <locationX>666</locationX>
         <locationY>1574</locationY>
+        <doesUpsert>true</doesUpsert>
         <faultConnector>
             <isGoTo>true</isGoTo>
             <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>

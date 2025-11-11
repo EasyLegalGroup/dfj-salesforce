@@ -3,7 +3,6 @@
     <fullName>produkter_servicepakke_mini__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Original pris: 695 kr.</description>
-    <externalId>false</externalId>
     <label>Servicepakke Mini</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

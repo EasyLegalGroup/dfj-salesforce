@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Campaign_to_Variable</name>
         <label>Assign Campaign to Variable</label>
@@ -379,6 +380,7 @@ TEXT(
         <isCollection>true</isCollection>
         <objectType>CampaignMember</objectType>
         <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
             <transformValueActions>
                 <outputFieldApiName>Account__c</outputFieldApiName>

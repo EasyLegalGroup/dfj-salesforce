@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Ask_questions_and_controls_conversation__c</fullName>
-    <externalId>false</externalId>
     <inlineHelpText>Does the employee stay in control of the conversation with the customer, by asking questions?</inlineHelpText>
     <label>Ask questions and controls conversation?</label>
     <required>false</required>

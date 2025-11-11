@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Populate_Custom_Error_with_Cannot_Run_This_Flow_for_PersonAccounts</name>
         <label>Populate Custom Error with Cannot Run This Flow for PersonAccounts</label>
@@ -95,6 +96,7 @@
         <connector>
             <targetReference>Update_Host</targetReference>
         </connector>
+        <doesUpsert>true</doesUpsert>
         <inputReference>Transform_Host</inputReference>
     </recordCreates>
     <recordLookups>
@@ -235,6 +237,7 @@
         <isCollection>false</isCollection>
         <objectType>Account</objectType>
         <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
             <transformValueActions>
                 <outputFieldApiName>Name</outputFieldApiName>

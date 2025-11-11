@@ -27,8 +27,10 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <environments>Default</environments>
     <interviewLabel>AL - Test Email Template {!$Flow.CurrentDateTime}</interviewLabel>
     <label>AL - Test Email Template</label>

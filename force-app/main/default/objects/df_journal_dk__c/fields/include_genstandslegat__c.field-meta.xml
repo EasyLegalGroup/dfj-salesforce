@@ -3,7 +3,6 @@
     <fullName>include_genstandslegat__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Hvis der er genstande, ting eller objekter som skal testamenteres</description>
-    <externalId>false</externalId>
     <label>Skal der indsættes genstandslega fdd43</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

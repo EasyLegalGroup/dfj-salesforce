@@ -3,7 +3,6 @@
     <fullName>produkter_gldsbrev__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Original pris: 1.495 kr.</description>
-    <externalId>false</externalId>
     <label>Gældsbrev</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

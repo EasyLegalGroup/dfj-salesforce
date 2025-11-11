@@ -3,7 +3,6 @@
     <fullName>testament_fall_on_divorce__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Er testamentet stadig gældende hvis i bliver skilt?</description>
-    <externalId>false</externalId>
     <label>Skal testamentet bortfalde ved æ 42a00</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

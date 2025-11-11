@@ -3,7 +3,6 @@
     <fullName>testament_valid_on_marriage__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Skal testamentet fortsat gælde hvis I bliver gift?</description>
-    <externalId>false</externalId>
     <label>Skal testamentet fortsat gælde h ce131</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

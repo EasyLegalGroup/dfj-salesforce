@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>omfatt_pens_forsik__c</fullName>
-    <externalId>false</externalId>
     <label>Omfattede pensions- og forsikrin 44e19</label>
     <required>false</required>
     <trackTrending>false</trackTrending>

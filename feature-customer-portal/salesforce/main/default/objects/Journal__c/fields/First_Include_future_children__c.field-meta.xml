@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>First_Include_future_children__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>First_Include future children</label>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

@@ -3,7 +3,6 @@
     <fullName>testament_valid_on_surviving_rem_11__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Skal testamentet fortsat gælde hvis længstlevende blivet gift?</description>
-    <externalId>false</externalId>
     <label>Skal testamentet fortsat gælde h 6a7e7</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

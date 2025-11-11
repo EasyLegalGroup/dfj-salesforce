@@ -3,7 +3,6 @@
     <fullName>produkter_arveafkald__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Original pris: 895 kr.</description>
-    <externalId>false</externalId>
     <label>Arveafkald</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

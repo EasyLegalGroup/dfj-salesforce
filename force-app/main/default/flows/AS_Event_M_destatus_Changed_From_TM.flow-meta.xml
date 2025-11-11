@@ -51,8 +51,10 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
         <name>Was_Lead_Previously_Closed_Lost</name>
         <label>Was Lead Previously Closed Lost?</label>

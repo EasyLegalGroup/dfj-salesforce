@@ -70,8 +70,11 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
     </actionCalls>
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Creating_User_s_Market_Unit_to_Variable</name>
         <label>Assign Creating User&apos;s Market Unit to Variable</label>

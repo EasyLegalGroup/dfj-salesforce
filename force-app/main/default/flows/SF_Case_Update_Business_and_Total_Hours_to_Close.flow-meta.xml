@@ -24,6 +24,7 @@
             </value>
         </inputParameters>
         <nameSegment>BusinessHoursFlowAction</nameSegment>
+        <offset>0</offset>
         <outputParameters>
             <assignToReference>$Record.Business_Hours_to_Close__c</assignToReference>
             <name>businessHours</name>
@@ -34,6 +35,7 @@
         </outputParameters>
     </actionCalls>
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <environments>Default</environments>
     <interviewLabel>SF - Case: Update Business- and Total Hours to Close {!$Flow.CurrentDateTime}</interviewLabel>
     <label>SF - Case: Update Business- and Total Hours to Close</label>

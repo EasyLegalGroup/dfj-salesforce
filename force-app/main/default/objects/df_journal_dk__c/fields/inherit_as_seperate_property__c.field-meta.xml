@@ -3,7 +3,6 @@
     <fullName>inherit_as_seperate_property__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Arven videregives efter særejeregler</description>
-    <externalId>false</externalId>
     <label>Skal arven gives videre som sære a3441</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

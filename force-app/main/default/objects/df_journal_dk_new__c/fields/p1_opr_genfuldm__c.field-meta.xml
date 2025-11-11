@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>p1_opr_genfuldm__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Opretter Person 1 en generalfuld 7d23e</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

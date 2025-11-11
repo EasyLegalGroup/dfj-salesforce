@@ -3,7 +3,6 @@
     <fullName>produkter_samtykke_til_uskiftet_40__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Original pris: 495 kr.</description>
-    <externalId>false</externalId>
     <label>Samtykke til uskiftet bo f99fd</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

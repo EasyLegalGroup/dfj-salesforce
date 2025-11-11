@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>subs_arvngr_p1__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
-    <externalId>false</externalId>
     <label>Subsidiære arvinger for Person 1</label>
     <referenceTo>df_160_person__c</referenceTo>
     <relationshipLabel>subs_arvngr_p1</relationshipLabel>

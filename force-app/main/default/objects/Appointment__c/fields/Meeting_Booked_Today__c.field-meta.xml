@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Meeting_Booked_Today__c</fullName>
     <description>To calculate Diff, btw Appointments Booked today and those scheduled for today from another date</description>
-    <externalId>false</externalId>
     <formula>DATEVALUE( CreatedDate ) = TODAY()</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Meeting Booked Today</label>

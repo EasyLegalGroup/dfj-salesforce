@@ -24,6 +24,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>56.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <environments>Default</environments>
     <interviewLabel>SMS Chatter Notification {!$Flow.CurrentDateTime}</interviewLabel>
     <label>SMS Chatter Notification</label>

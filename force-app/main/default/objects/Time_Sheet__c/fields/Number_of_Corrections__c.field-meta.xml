@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Number_of_Corrections__c</fullName>
-    <externalId>false</externalId>
     <inlineHelpText>This field counts the number of related Time Sheet Corrections.</inlineHelpText>
     <label>Number of Corrections</label>
     <summaryForeignKey>Time_Sheet_Correction__c.Time_Sheet__c</summaryForeignKey>

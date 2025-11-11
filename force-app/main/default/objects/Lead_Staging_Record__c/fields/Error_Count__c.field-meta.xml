@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Error_Count__c</fullName>
-    <externalId>false</externalId>
     <label>Error Count</label>
     <summaryForeignKey>Lead_Staging_Error_Log__c.Lead_Staging_Record__c</summaryForeignKey>
     <summaryOperation>count</summaryOperation>

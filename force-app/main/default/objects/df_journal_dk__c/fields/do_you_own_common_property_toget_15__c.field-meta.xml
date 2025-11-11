@@ -3,7 +3,6 @@
     <fullName>do_you_own_common_property_toget_15__c</fullName>
     <defaultValue>false</defaultValue>
     <description>F.eks. lejlighed, hus, sommerhus osv.</description>
-    <externalId>false</externalId>
     <label>Ejer i fast ejendom eller andet  30ddf</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>New version utilizing the new junction setup with Target Link</description>
     <environments>Default</environments>
     <interviewLabel>RT - Campaign: Match to Target on Created/Updated StartDate {!$Flow.CurrentDateTime}</interviewLabel>

@@ -59,6 +59,7 @@
         <nameSegment>et4ae5__JBintFireBulkEvent</nameSegment>
     </actionCalls>
     <apiVersion>49.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
         <name>JB_Decision_Null_Check_SalesforceObjc738d3c526819e9d82255440a7a13b0b</name>
         <label>JB_Decision_Null_Check_SalesforceObjc738d3c526819e9d82255440a7a13b0b</label>

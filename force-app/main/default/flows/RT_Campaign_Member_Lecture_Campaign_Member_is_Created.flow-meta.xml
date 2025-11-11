@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>If a Campaign Member with Tickets in Order is created or Tickets in Order is updated, then this flow runs and calls the AL - Create Target Links from Input Campaign subflow</description>
     <environments>Default</environments>
     <interviewLabel>RT - Campaign Member: When Created, {!$Flow.CurrentDateTime}</interviewLabel>

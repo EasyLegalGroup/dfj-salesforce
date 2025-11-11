@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>When a Journal is created with or updated to &quot;Is Journal Form Complete&quot; = TRUE, then this flow sets current date/time in the field &quot;Journal Form Completed Date&quot;</description>
     <environments>Default</environments>
     <interviewLabel>RT - Journal: Created/Updated with Is Journal Form Complete {!$Flow.CurrentDateTime}</interviewLabel>

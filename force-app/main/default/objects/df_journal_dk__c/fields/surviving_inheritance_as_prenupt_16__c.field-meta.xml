@@ -3,7 +3,6 @@
     <fullName>surviving_inheritance_as_prenupt_16__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Skal længstlevende modtage arven som særeje?</description>
-    <externalId>false</externalId>
     <label>Skal længstlevende modtage arven c4df2</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

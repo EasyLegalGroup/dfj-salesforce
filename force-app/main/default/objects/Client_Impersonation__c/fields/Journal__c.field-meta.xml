@@ -3,7 +3,6 @@
     <fullName>Journal__c</fullName>
     <deleteConstraint>Restrict</deleteConstraint>
     <description>The journal being impersonated</description>
-    <externalId>false</externalId>
     <label>Journal</label>
     <referenceTo>Journal__c</referenceTo>
     <relationshipLabel>Client Impersonations</relationshipLabel>

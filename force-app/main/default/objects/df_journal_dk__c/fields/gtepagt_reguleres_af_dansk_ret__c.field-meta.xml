@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>gtepagt_reguleres_af_dansk_ret__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Ønsker I at ægtepagten reguleres 48c67</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

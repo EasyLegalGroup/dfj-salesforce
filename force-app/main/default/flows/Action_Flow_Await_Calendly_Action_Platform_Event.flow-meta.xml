@@ -47,6 +47,7 @@
         <nameSegment>emailSimple</nameSegment>
     </actionCalls>
     <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <environments>Default</environments>
     <interviewLabel>Action Flow: Await Calendly Action Platform Event {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Action Flow: Await Calendly Action Platform Event</label>

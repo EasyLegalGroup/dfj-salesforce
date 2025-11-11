@@ -27,6 +27,7 @@
             </value>
         </inputParameters>
         <nameSegment>DFJ_CPRServiceFlowInvoker</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <actionCalls>
@@ -66,9 +67,11 @@
             </value>
         </inputParameters>
         <nameSegment>slackPostMessage</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Errored_CPR_Checker_Slack_message_to_Variable</name>
         <label>Assign Errored CPR Checker Slack message to Variable</label>

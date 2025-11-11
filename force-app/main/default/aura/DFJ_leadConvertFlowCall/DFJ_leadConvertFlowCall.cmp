@@ -1,0 +1,193 @@
+<!--
+ - Created by shubh on 18-07-2019.
+ -->
+
+<aura:component description="DFJ_leadConvertFlowCall" controller="DFJ_ProductSelectorController_Apex" implements="flexipage:availableForRecordHome,force:lightningQuickActionWithoutHeader,force:hasRecordId,force:hasSObjectName">
+    <ltng:require styles="{!$Resource.DFj_JournalCSS}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:attribute name="LeadProducts" type="LeadProducts__c[]" default="[]" description="Will contain the all the products available in the org"/>
+    <aura:attribute name="total" type="Decimal" default="0.00" access="global" />
+    <aura:attribute name="defaultCurrencyIsoCode" type="String"  access="global" />
+    <aura:attribute name="paymentMethod" type="String" default=""  access="global" />
+    <aura:attribute name="paymentType" type="String"  default="" access="global" />
+    <aura:attribute name="PaymentOrderNumber" type="String" default="" access="global" />
+    <aura:attribute name="allPicklistValue" type="Object" default="[]" access="global" />
+    <aura:attribute name="isConversionWindowOpen" type="Boolean" default="false" access="global" />
+    <!-- <aura:attribute name="isMember" type="Boolean" default="false" access="global" /> -->
+    <!-- Discount changes -->
+    <aura:attribute name="leadFixedDiscount" type="Decimal" default="0.00" access="global" />
+    <aura:attribute name="subTotalAmount" type="Decimal" default="0.00" access="global" />
+    <!-- End -->
+<div>
+    <div class="slds-p-around_medium">
+        <table class="slds-table slds-table_bordered slds-table_striped slds-scrollable_x" style="table-layout: fixed;">
+            <thead>
+            <tr class="slds-line-height_reset">
+                <th class="slds-text-title_caps slds-cell-wrap " scope="col" title="PRODUCT NAME">
+                    <div class="slds-truncate slds-text-align_center">PRODUCT NAME</div>
+                </th>
+                <th class="slds-text-title_caps slds-cell-wrap " scope="col" title="PROVISION BASE">
+                    <div class="slds-truncate slds-text-align_center">PROVISION BASE</div>
+                </th>
+                <th class="slds-text-title_caps slds-cell-wrap " scope="col" title="AMOUNT">
+                    <div class="slds-truncate slds-text-align_center">AMOUNT</div>
+                </th>
+                <th class="slds-text-title_caps slds-cell-wrap " scope="col" title="ITEM PRICE">
+                    <div class="slds-truncate slds-text-align_center">ITEM PRICE</div>
+                </th>
+                <th class="slds-text-title_caps slds-cell-wrap " scope="col" title="DISCOUNT (%)">
+                    <div class="slds-truncate slds-text-align_center">DISCOUNT (%)</div>
+                </th>
+                <th class="slds-text-title_caps slds-cell-wrap " scope="col" title="SUB TOTAL">
+                    <div class="slds-truncate slds-text-align_center">SUB TOTAL</div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <aura:if isTrue="{!v.LeadProducts.length == 0}">
+                <tr class="slds-hint-parent">
+                    <th scope="row" colspan="6" class="slds-cell-wrap ">
+                        <div class="slds-truncate slds-text-align_center slds-text-heading_medium">There are no active product selected</div>
+                    </th>
+                </tr>
+
+                <aura:set attribute="else">
+                    <aura:iteration var="pro" items="{!v.LeadProducts}" indexVar="tabIndex" >
+                        <tr class="slds-hint-parent">
+                            <th scope="row" class="slds-cell-wrap ">
+                                <div class="slds-truncate slds-text-align_center"><b><ui:outputText value="{!pro.Name}"/> </b></div>
+                            </th>
+                            <th scope="row" class="slds-cell-wrap ">
+                                <div class="slds-truncate slds-text-align_center">{!pro.CurrencyIsoCode}&nbsp;&nbsp;{!pro.Provision_Base__c}</div>
+                            </th>
+                            <td class="slds-cell-wrap ">
+                                <aura:if isTrue="{!pro.isEditable}">
+                                    <lightning:input label="" variant="label-hidden" type="number" value="{!pro.Quantity__c}" name="quantity" onchange="{!c.changeQuantity}"/>
+                                    <aura:set attribute="else">
+                                        <div align="right" class="slds-truncate slds-text-align_center">
+                                                {!pro.Quantity__c}
+                                        </div>
+                                    </aura:set>
+                                </aura:if>
+                            </td>
+                            <th scope="row" class="slds-cell-wrap ">
+                                <div class="slds-truncate slds-text-align_center">{!pro.CurrencyIsoCode}&nbsp;&nbsp;{!pro.Item_Price__c}</div>
+                            </th>
+                            <td class="slds-cell-wrap slds-text-align_center">
+                                <aura:if isTrue="{!pro.isEditable}">
+                                    <lightning:input label="" variant="label-hidden" type="number" value="{!pro.Discount__c}" name="discount" onchange="{!c.changeQuantity}"/>
+                                    <aura:set attribute="else">
+                                        <div align="right" class="slds-truncate slds-text-align_center">
+                                                {!pro.Discount__c}
+                                        </div>
+                                    </aura:set>
+                                </aura:if>
+                            </td>
+                            <td class="slds-cell-wrap ">
+                                <div class="slds-truncate slds-text-align_center">{!pro.CurrencyIsoCode}&nbsp;&nbsp;{!pro.totalPrice}</div>
+                            </td>
+                        </tr>
+                    </aura:iteration>
+                    <!-- Dicount changes -->
+                    <!-- Start -->
+                    <tr class="slds-hint-parent">
+                        <td colspan="4"></td>
+                        <td class="slds-cell-wrap ">
+                            <div class="slds-truncate slds-text-align_center">Sub Total</div>
+                        </td>
+                        <td class="slds-cell-wrap ">
+                            <div class="slds-truncate slds-text-align_center">
+                                <lightning:formattedNumber value="{!v.subTotalAmount}" style="currency" currencyCode="{!v.defaultCurrencyIsoCode}" currencyDisplayAs="code"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="slds-hint-parent">
+                        <td colspan="4"></td>
+                        <td class="slds-cell-wrap ">
+                            <div class="slds-truncate slds-text-align_center">Fixed Discount Amount</div>
+                        </td>
+                        <td class="slds-cell-wrap ">
+                            <div class="slds-truncate slds-text-align_center">
+                                <lightning:formattedNumber value="{!v.leadFixedDiscount}" style="currency" currencyCode="{!v.defaultCurrencyIsoCode}" currencyDisplayAs="code"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- End -->
+                    <tr class="slds-hint-parent">
+                        <td colspan="4"></td>
+                        <td class="slds-cell-wrap ">
+                            <div class="slds-truncate slds-text-align_center">Total Price</div>
+                        </td>
+                        <td class="slds-cell-wrap ">
+                            <div class="slds-truncate slds-text-align_center">
+                                <lightning:formattedNumber value="{!v.total}" style="currency" currencyCode="{!v.defaultCurrencyIsoCode}" currencyDisplayAs="code"/>
+                            </div>
+                        </td>
+                    </tr>
+                </aura:set>
+            </aura:if>
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <aura:if isTrue="{!!v.isConversionWindowOpen}">
+        <lightning:layout multipleRows="true" >
+            <lightning:layoutItem size="4" class="slds-p-around_small" >
+                <lightning:input label="Payment order number" value="{!v.PaymentOrderNumber}" type="text" />
+            </lightning:layoutItem>
+            <lightning:layoutItem size="4" class="slds-p-around_small" >
+                <lightning:select label="Payment type" value="{!v.paymentType}" >
+                    <option value="">None</option>
+                    <aura:iteration items="{!v.allPicklistValue.paymentTypePicklistArray}" var="marFi">
+                        <option value="{!marFi.value}">{!marFi.label}</option>
+                    </aura:iteration>
+                </lightning:select>
+            </lightning:layoutItem>
+            <lightning:layoutItem size="4" class="slds-p-around_small" >
+                <lightning:select label="Payment method" value="{!v.paymentMethod}" >
+                    <option value="">None</option>
+                    <aura:iteration items="{!v.allPicklistValue.paymentMethodPicklistArray}" var="marFi">
+                        <option value="{!marFi.value}">{!marFi.label}</option>
+                    </aura:iteration>
+                </lightning:select>
+            </lightning:layoutItem>
+            <!-- Changes for ticket : DIN-167 Subscription feature
+                Start -->
+                <!--Changes for ticket DIN-377 Remove the Create Membership chcekbox-->
+            <!-- <lightning:layoutItem size="4" class="slds-p-around_small" >
+                <div class="slds-text-align_left">
+                    <lightning:input type="checkbox" label="Create Membership" name="createMemberShip" checked="{!v.isMember}"/>
+                </div>
+            </lightning:layoutItem> -->
+            <!-- End -->
+        </lightning:layout>
+        </aura:if>
+    </div>
+
+    <div class="slds-text-align_right">
+    <lightning:button type="button" label="{!v.isConversionWindowOpen ? 'Edit Payment Data' : 'Open lead conversion' }" variant="brand" onclick="{!c.openConversion}" />
+    </div>
+</div>
+
+    <aura:if isTrue="{!v.isConversionWindowOpen}">
+        <lightning:layout multipleRows="true" >
+            <lightning:layoutItem size="4" class="slds-p-around_small" >
+                Payment order number : {!v.PaymentOrderNumber}
+            </lightning:layoutItem>
+            <lightning:layoutItem size="4" class="slds-p-around_small" >
+                Payment type : {!v.paymentType}
+            </lightning:layoutItem>
+            <lightning:layoutItem size="4" class="slds-p-around_small" >
+                Payment method : {!v.paymentMethod}
+            </lightning:layoutItem>
+             <!-- Changes for ticket : DIN-167 Subscription feature
+                Start -->
+            <!-- <lightning:layoutItem size="4" class="slds-p-around_small" >
+                Create Membership : {!v.isMember}
+            </lightning:layoutItem> -->
+            <!-- End -->
+        </lightning:layout>
+        <lightning:flow aura:id="flowData" />
+    </aura:if>
+</aura:component>

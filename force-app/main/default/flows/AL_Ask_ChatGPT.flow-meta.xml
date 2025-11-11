@@ -21,12 +21,14 @@
             </value>
         </inputParameters>
         <nameSegment>OpenAiGpt40.GPT 4o Chat Completion</nameSegment>
+        <offset>0</offset>
         <outputParameters>
             <assignToReference>Output</assignToReference>
             <name>2XX</name>
         </outputParameters>
     </actionCalls>
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Message_Content_to_Text_Variable</name>
         <label>Assign Message Content to Text Variable</label>

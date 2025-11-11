@@ -28,9 +28,11 @@
             </value>
         </inputParameters>
         <nameSegment>skillsBasedRouting</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Matched_Skills</name>
         <label>Assign Matched Skills</label>

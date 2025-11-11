@@ -1,0 +1,25 @@
+/**
+ * Created by Shubham Sharma on 13-07-2019.
+ */
+
+.THIS {}
+
+.THIS input[type=number]::-webkit-inner-spin-button,
+.THIS input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.THIS .public_fixedDataTableCell_main:hover {
+    background-color: yellow !important;
+}
+
+.THIS .anotherhover tbody tr:hover td {
+    background: rgba(33, 110, 206, 0.25) !important;
+}
+
+.THIS .displayinline {
+    display: inline;
+}

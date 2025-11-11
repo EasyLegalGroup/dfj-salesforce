@@ -11,6 +11,7 @@
         <nameSegment>createConsent</nameSegment>
     </actionCalls>
     <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <environments>Default</environments>
     <interviewLabel>Mathias Test Host - 12-07-2024 Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Mathias Test Host - 12-07-2024 Flow</label>

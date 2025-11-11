@@ -29,6 +29,7 @@
                 <elementReference>txtS3_Key</elementReference>
             </value>
         </inputParameters>
+        <offset>0</offset>
         <outputParameters>
             <assignToReference>AccessToken</assignToReference>
             <name>AccessToken</name>
@@ -54,6 +55,7 @@
         </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <nameSegment>generateVerificationCode</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <actionCalls>
@@ -119,8 +121,11 @@
             <name>recipientId</name>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
     </actionCalls>
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_OTP_Values_to_Shared_Document</name>
         <label>Assign OTP Values to Shared Document</label>
@@ -144,6 +149,12 @@
             <targetReference>Update_Shared_Document</targetReference>
         </connector>
     </assignments>
+    <customProperties>
+        <name>ScreenProgressIndicator</name>
+        <value>
+            <stringValue>{&quot;location&quot;:&quot;top&quot;,&quot;type&quot;:&quot;simple&quot;}</stringValue>
+        </value>
+    </customProperties>
     <environments>Default</environments>
     <formulas>
         <name>frmNowPlus7</name>
@@ -229,6 +240,14 @@
             <helpText>&lt;p&gt;Exact S3 key, e.g. &lt;code&gt;folder/file.pdf&lt;/code&gt;&lt;/p&gt;</helpText>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>dateTimeExpiration</name>
@@ -240,6 +259,14 @@
             <fieldType>InputField</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
@@ -256,6 +283,14 @@
             <name>displaySuccessHeader</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(22, 150, 0); font-size: 20px;&quot;&gt;Success&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;em&gt;Run this in powershell to start local server&lt;/em&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;cd C:\dfj-review&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;python -m http.server 8080&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(0, 0, 0); font-size: 16px;&quot;&gt;Links&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Local Host Link&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;a href=&quot;http://localhost:8080/?e={!ExternalId}&amp;amp;t={!AccessToken}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: rgb(1, 68, 134);&quot;&gt;http://localhost:8080/?e={!ExternalId}&amp;amp;amp;t={!AccessToken}&lt;/a&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;Shared Document Record&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;a href=&quot;https://dfj.lightning.force.com/lightning/r/{!SharedDocumentId}/view&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;https://dfj.lightning.force.com/lightning/r/{!SharedDocumentId}/view&lt;/a&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;OTP&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;{!Generate_verification_code.verificationCode}&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;Additional information:&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Access Token (part of url above)&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;{!AccessToken}&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Document ID (used in Shared Document Record Link)&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;{!SharedDocumentId}&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;External ID&lt;/strong&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255);&quot;&gt; (part of url above)&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;{!ExternalId}&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;OTP (used on the linked page)&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;{!Generate_verification_code.verificationCode}&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;OTP Expiry&lt;/strong&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255);&quot;&gt; (Not used at the moment)&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;{!frmOtpExpiry}&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;OTP Authentication Key (Not used at the moment)&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;{!Generate_verification_code.authenticationKey}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{&lt;/p&gt;&lt;p&gt;&amp;nbsp;&quot;externalId&quot;: &quot;{!ExternalId}&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp;&quot;accessToken&quot;: &quot;{!AccessToken}&quot;&lt;/p&gt;&lt;p&gt;}&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <nextOrFinishButtonLabel>Re-run</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>Triggers when, Status, Open for Bookings, Start, Lecturer or Venue is changed and sync with Airtable</description>
     <environments>Default</environments>
     <interviewLabel>RT - Campaign: When Certain Fields are Updated, Trigger sync {!$Flow.CurrentDateTime}</interviewLabel>

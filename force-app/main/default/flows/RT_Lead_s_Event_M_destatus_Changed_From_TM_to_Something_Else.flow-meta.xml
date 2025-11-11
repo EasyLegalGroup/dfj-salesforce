@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>When Event Mødestatus on Lead is changed to no longer be TM, this flow triggers to send an error email</description>
     <environments>Default</environments>
     <interviewLabel>RT - Lead&apos;s Event Mødestatus Changed From TM to Something Else {!$Flow.CurrentDateTime}</interviewLabel>

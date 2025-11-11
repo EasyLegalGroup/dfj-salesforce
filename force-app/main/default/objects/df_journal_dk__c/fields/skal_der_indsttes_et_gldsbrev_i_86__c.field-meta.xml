@@ -3,7 +3,6 @@
     <fullName>skal_der_indsttes_et_gldsbrev_i_86__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Såfremt der er tab ved salg af boligen, vil personen der har indskudt færrest penge, skylde halvdelen af forskellen til den part der har indskudt flest penge</description>
-    <externalId>false</externalId>
     <label>Skal der indsættes et gældsbrev  b2530</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

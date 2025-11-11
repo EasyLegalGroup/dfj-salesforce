@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Next_Follow_up__c</fullName>
-    <externalId>false</externalId>
     <inlineHelpText>This field is automatically set whenever you create an event, related to the host. It is set to be one day after the event you create.</inlineHelpText>
     <label>Next Follow-up</label>
     <required>false</required>

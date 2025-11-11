@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>med_ndring_af_sreje_til_kombinat_91__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Med ændring af særeje til kombin 00416</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

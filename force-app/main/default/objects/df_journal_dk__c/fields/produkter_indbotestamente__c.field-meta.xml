@@ -3,7 +3,6 @@
     <fullName>produkter_indbotestamente__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Original pris: 995 kr.</description>
-    <externalId>false</externalId>
     <label>Indbotestamente</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

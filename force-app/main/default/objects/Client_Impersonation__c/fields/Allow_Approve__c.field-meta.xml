@@ -3,7 +3,6 @@
     <fullName>Allow_Approve__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Whether the lawyer can approve documents in this impersonation session</description>
-    <externalId>false</externalId>
     <label>Allow Approve</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

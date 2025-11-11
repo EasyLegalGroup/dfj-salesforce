@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Does_employee_sum_up_the_benefits__c</fullName>
-    <externalId>false</externalId>
     <inlineHelpText>Does the employee sum up the key points of the conversation, to make sure both parties agree about what&apos;s important?</inlineHelpText>
     <label>Does employee sum up key points?</label>
     <required>false</required>

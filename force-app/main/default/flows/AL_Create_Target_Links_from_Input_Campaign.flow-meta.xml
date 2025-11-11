@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Populate_Custom_Error_with_Flow_Fault_Message</name>
         <label>Populate Custom Error with Flow Fault Message</label>
@@ -532,6 +533,7 @@
         <dataType>Number</dataType>
         <isCollection>false</isCollection>
         <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
             <transformValueActions>
                 <inputParameters>
@@ -542,7 +544,10 @@
                 </inputParameters>
                 <inputParameters>
                     <name>aggregationFieldReference</name>
-                    <value/>
+                    <value>
+                        <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;CampaignMember&quot;,&quot;fieldReferences&quot;:[&quot;Remaining_Tickets__c&quot;],&quot;elementReference&quot;:&quot;Get_Campaign_Members&quot;}</complexValue>
+                        <complexValueType>FieldReference</complexValueType>
+                    </value>
                 </inputParameters>
                 <transformType>Sum</transformType>
             </transformValueActions>

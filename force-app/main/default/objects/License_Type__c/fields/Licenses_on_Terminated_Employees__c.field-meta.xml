@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Licenses_on_Terminated_Employees__c</fullName>
-    <externalId>false</externalId>
     <inlineHelpText>Counts the number of Active Licenses on Terminated Employees. Used to identify Licenses that may need to be stopped.</inlineHelpText>
     <label>Licenses on Terminated Employees</label>
     <summaryFilterItems>

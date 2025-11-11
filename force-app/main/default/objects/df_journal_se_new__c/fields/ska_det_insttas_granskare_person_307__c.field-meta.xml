@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ska_det_insttas_granskare_person_307__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Ska det insättas granskare? (Per a7808</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

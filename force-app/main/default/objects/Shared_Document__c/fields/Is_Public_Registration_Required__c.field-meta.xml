@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Is_Public_Registration_Required__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Is Public Registration Required</label>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

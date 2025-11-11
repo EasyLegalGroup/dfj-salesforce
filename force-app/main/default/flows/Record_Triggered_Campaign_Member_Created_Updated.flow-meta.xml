@@ -50,6 +50,7 @@
         <nameSegment>emailSimple</nameSegment>
     </actionCalls>
     <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Populate_Account_Variable</name>
         <label>Populate Account Variable</label>

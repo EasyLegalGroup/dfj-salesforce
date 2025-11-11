@@ -67,6 +67,8 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
     </actionCalls>
     <actionCalls>
         <name>Send_1_Day_Reminder_Email</name>
@@ -135,6 +137,8 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
     </actionCalls>
     <actionCalls>
         <name>Send_3_Days_Overdue_Email</name>
@@ -203,6 +207,8 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
     </actionCalls>
     <actionCalls>
         <name>Send_3_Days_Reminder_Email</name>
@@ -270,6 +276,8 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
     </actionCalls>
     <actionCalls>
         <name>Send_Notification_About_Closed_Opportunity</name>
@@ -338,8 +346,11 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
     </actionCalls>
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Add_Calendly_Action_to_Collection</name>
         <label>Add Calendly Action to Collection</label>

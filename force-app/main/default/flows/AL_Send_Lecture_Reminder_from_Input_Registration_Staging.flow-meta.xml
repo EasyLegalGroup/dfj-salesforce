@@ -54,8 +54,10 @@
             <name>logEmailOnSend</name>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Account_s_Values_to_Variables</name>
         <label>Assign Account&apos;s Values to Variables</label>

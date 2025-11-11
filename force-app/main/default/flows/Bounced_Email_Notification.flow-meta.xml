@@ -33,8 +33,10 @@
             </value>
         </inputParameters>
         <nameSegment>GLSendEmail__SendEmail</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Campaign_Owner_s_Email_as_ToEmail</name>
         <label>Assign Campaign Owner&apos;s Email as ToEmail</label>

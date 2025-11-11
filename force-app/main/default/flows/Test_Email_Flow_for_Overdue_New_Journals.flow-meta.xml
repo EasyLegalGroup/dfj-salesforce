@@ -77,6 +77,7 @@
         <nameSegment>Journal__c.Journal_91_days_since_conversion_lightning</nameSegment>
     </actionCalls>
     <apiVersion>56.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
         <name>X28_days_after_Lead_Converted</name>
         <label>28 days after Lead Converted?</label>

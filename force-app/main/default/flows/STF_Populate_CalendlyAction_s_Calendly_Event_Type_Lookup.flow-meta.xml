@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <environments>Default</environments>
     <interviewLabel>STF - {!$Flow.CurrentDateTime}</interviewLabel>
     <label>STF - Populate CalendlyAction&apos;s Calendly Event Type Lookup</label>

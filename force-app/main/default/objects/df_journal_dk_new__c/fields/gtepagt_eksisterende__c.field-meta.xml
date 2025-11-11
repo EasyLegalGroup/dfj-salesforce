@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>gtepagt_eksisterende__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Eksisterer der allerede en ægtep c4deb</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

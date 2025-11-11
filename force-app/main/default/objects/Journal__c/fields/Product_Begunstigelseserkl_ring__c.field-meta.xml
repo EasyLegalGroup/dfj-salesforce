@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Product_Begunstigelseserkl_ring__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Product - Begunstigelseserklæring</label>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

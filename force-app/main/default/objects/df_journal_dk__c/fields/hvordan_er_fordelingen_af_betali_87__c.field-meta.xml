@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>hvordan_er_fordelingen_af_betali_87__c</fullName>
-    <externalId>false</externalId>
     <label>Hvordan er fordelingen af betali 3e1b3</label>
     <required>false</required>
     <trackTrending>false</trackTrending>

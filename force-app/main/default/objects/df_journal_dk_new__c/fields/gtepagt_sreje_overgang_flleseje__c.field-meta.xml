@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>gtepagt_sreje_overgang_flleseje__c</fullName>
-    <externalId>false</externalId>
     <label>Dato for hvornår særejet skal ov d81b0</label>
     <required>false</required>
     <trackTrending>false</trackTrending>

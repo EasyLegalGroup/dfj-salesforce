@@ -3,7 +3,6 @@
     <fullName>er_fdenavn_forskelligt_fra_nuvre_103__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Hvis ja, sæt hak</description>
-    <externalId>false</externalId>
     <label>Er fødenavn forskelligt fra nuvæ 6e07f</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

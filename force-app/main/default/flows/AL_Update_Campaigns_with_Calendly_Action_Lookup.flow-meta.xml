@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Add_Current_Campaign_to_Collection</name>
         <label>Add Current Campaign to Collection</label>
@@ -154,6 +155,9 @@
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
+        <limit>
+            <numberValue>90.0</numberValue>
+        </limit>
         <object>Campaign</object>
         <sortField>Start__c</sortField>
         <sortOrder>Desc</sortOrder>

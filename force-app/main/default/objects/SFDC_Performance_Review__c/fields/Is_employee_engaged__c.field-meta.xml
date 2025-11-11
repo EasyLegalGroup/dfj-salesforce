@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Is_employee_engaged__c</fullName>
-    <externalId>false</externalId>
     <inlineHelpText>Is the employee properly engaged in the conversation and seems genuinely interested?</inlineHelpText>
     <label>Is employee engaged?</label>
     <required>false</required>

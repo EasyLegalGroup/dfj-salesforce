@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Required_to_Approve_Time_Sheets__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Required to Approve Time Sheets</label>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

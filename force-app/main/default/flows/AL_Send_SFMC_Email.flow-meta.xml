@@ -42,6 +42,7 @@
             </value>
         </inputParameters>
         <nameSegment>GenerateMarketingCloudToken</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <actionCalls>
@@ -137,9 +138,11 @@
             </value>
         </inputParameters>
         <nameSegment>SendEmailViaMC</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Values_for_Generating_Token</name>
         <label>Assign Values for Generating Token</label>

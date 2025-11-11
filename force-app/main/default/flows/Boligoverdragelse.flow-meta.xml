@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
         <name>Is_Account_Already_in_Campaign</name>
         <label>Is Account Already in Campaign</label>
@@ -156,6 +157,9 @@
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
+        <limit>
+            <numberValue>5.0</numberValue>
+        </limit>
         <object>Account</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>

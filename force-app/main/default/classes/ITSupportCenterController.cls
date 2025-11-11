@@ -428,7 +428,7 @@ insert comment;
     }
     
     private static String getSlackBotToken() {
-        // Retrieve token from Custom Metadata
+        // Retrieve token from custom metadata (secure storage)
         try {
             List<Slack_Integration__mdt> slackConfig = [
                 SELECT Bot_Token__c 

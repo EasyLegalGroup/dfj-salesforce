@@ -30,6 +30,7 @@
             </value>
         </inputParameters>
         <nameSegment>DFJ_TimeFormatter</nameSegment>
+        <offset>0</offset>
         <outputParameters>
             <assignToReference>TextTimeStamp</assignToReference>
             <name>formatted</name>
@@ -94,8 +95,11 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
     </actionCalls>
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
         <name>Use_Lead_s_Next_Call_Time</name>
         <label>Use Lead&apos;s Next Call Time?</label>

@@ -53,8 +53,11 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>2.0.1</versionString>
     </actionCalls>
     <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
         <name>Did_We_Find_any_Emails_to_Banned_Addresses</name>
         <label>Did We Find any Emails to Banned Addresses?</label>
@@ -194,7 +197,7 @@
         </schedule>
         <triggerType>Scheduled</triggerType>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
     <textTemplates>
         <name>rtBannedEmailInfo</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>

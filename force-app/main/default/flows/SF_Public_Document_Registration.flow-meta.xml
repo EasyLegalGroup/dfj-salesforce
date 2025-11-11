@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_IsSuccess_False</name>
         <label>Assign IsSuccess False</label>
@@ -209,6 +210,12 @@
             <stringValue>9</stringValue>
         </value>
     </choices>
+    <customProperties>
+        <name>ScreenProgressIndicator</name>
+        <value>
+            <stringValue>{&quot;location&quot;:&quot;top&quot;,&quot;type&quot;:&quot;simple&quot;}</stringValue>
+        </value>
+    </customProperties>
     <decisions>
         <name>Is_All_Complete</name>
         <label>Is All Complete?</label>
@@ -575,6 +582,14 @@
             <name>displayError</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 0, 0); font-size: 20px;&quot;&gt;Something went wrong&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;Error message:&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;{!CustomError}&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -610,11 +625,27 @@
             <name>displayHeaderScreen1</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 20px; color: rgb(0, 0, 0);&quot;&gt;Public Registration&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>displayExpectedRegistrationCount</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);&quot;&gt;Status: &lt;/strong&gt;&lt;em style=&quot;font-size: 14px; color: rgb(0, 0, 0);&quot;&gt;{!frmRegistrationCountStatus}&lt;/em&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;Current: &lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;{!numPublicRegistrations} registrations&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;Expected Registration Count: &lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;{!Count_Expected_Registrations} &lt;/span&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);&quot;&gt;registrations&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>Screen_1_Public_Registration_Section1</name>
@@ -662,7 +693,10 @@
                     </inputParameters>
                     <inputParameters>
                         <name>keyField</name>
-                        <value/>
+                        <value>
+                            <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;OrderItem&quot;,&quot;fieldReferences&quot;:[&quot;Id&quot;],&quot;elementReference&quot;:&quot;Get_Order_Products&quot;}</complexValue>
+                            <complexValueType>ComplexObjectFieldDetails</complexValueType>
+                        </value>
                     </inputParameters>
                     <inputParameters>
                         <name>maxRowSelection</name>
@@ -678,11 +712,22 @@
                     </inputParameters>
                     <inputParameters>
                         <name>columnReferences</name>
-                        <value/>
+                        <value>
+                            <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;OrderItem&quot;,&quot;fieldReferences&quot;:[&quot;Product_Name__c&quot;,&quot;Quantity&quot;],&quot;elementReference&quot;:&quot;Get_Order_Products&quot;}</complexValue>
+                            <complexValueType>ComplexObjectFieldDetails</complexValueType>
+                        </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <name>actionCreateContact</name>
@@ -715,6 +760,14 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -748,6 +801,14 @@
                         <elementReference>frmDisableSharedDocumentsSelector</elementReference>
                     </isDisabled>
                     <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <name>clSelectContact</name>
@@ -770,6 +831,14 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -791,6 +860,14 @@
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>secCompletedRegistrations</name>
@@ -833,7 +910,10 @@
                     </inputParameters>
                     <inputParameters>
                         <name>keyField</name>
-                        <value/>
+                        <value>
+                            <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Public_Document_Registration__c&quot;,&quot;fieldReferences&quot;:[&quot;Id&quot;],&quot;elementReference&quot;:&quot;Get_Public_Document_Registrations&quot;}</complexValue>
+                            <complexValueType>ComplexObjectFieldDetails</complexValueType>
+                        </value>
                     </inputParameters>
                     <inputParameters>
                         <name>shouldDisplayLabel</name>
@@ -855,11 +935,22 @@
                     </inputParameters>
                     <inputParameters>
                         <name>columnReferences</name>
-                        <value/>
+                        <value>
+                            <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Public_Document_Registration__c&quot;,&quot;fieldReferences&quot;:[&quot;Contact_Name__c&quot;,&quot;Document_Type__c&quot;,&quot;Completed_By_Name__c&quot;,&quot;Completed_Time__c&quot;],&quot;elementReference&quot;:&quot;Get_Public_Document_Registrations&quot;}</complexValue>
+                            <complexValueType>ComplexObjectFieldDetails</complexValueType>
+                        </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -871,6 +962,14 @@
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <nextOrFinishButtonLabel>Log Registration</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
@@ -902,6 +1001,7 @@
         <dataType>Number</dataType>
         <isCollection>false</isCollection>
         <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
             <transformValueActions>
                 <inputParameters>
@@ -912,7 +1012,10 @@
                 </inputParameters>
                 <inputParameters>
                     <name>aggregationFieldReference</name>
-                    <value/>
+                    <value>
+                        <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;OrderItem&quot;,&quot;fieldReferences&quot;:[&quot;Quantity&quot;],&quot;elementReference&quot;:&quot;Get_Order_Products&quot;}</complexValue>
+                        <complexValueType>FieldReference</complexValueType>
+                    </value>
                 </inputParameters>
                 <transformType>Sum</transformType>
             </transformValueActions>

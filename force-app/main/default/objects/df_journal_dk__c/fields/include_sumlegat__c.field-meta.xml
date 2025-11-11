@@ -3,7 +3,6 @@
     <fullName>include_sumlegat__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Hvis en specifik sum (beløb) skal videregives</description>
-    <externalId>false</externalId>
     <label>Skal der indsættes sumlegat?</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

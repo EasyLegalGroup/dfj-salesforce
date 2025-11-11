@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>med_alt_hvad_der_p_nuvrende_og_f_89__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Med alt hvad der på nuværende og e1795</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

@@ -18,8 +18,10 @@
             </value>
         </inputParameters>
         <nameSegment>Order.Order_Confirmations</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <environments>Default</environments>
     <interviewLabel>Sends Email to Faktura {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Sends Email to Faktura</label>

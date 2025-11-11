@@ -13,6 +13,7 @@
         </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <nameSegment>computeConsumption</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <actionCalls>
@@ -70,9 +71,11 @@
             </value>
         </inputParameters>
         <nameSegment>createConsumptionAlert</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <description>Declare threshold values to compare to the card&apos;s consumption.</description>
         <name>Assign_Thresholds</name>
@@ -471,6 +474,9 @@
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
+        <limit>
+            <numberValue>1000.0</numberValue>
+        </limit>
         <object>User</object>
         <queriedFields>Id</queriedFields>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -502,6 +508,7 @@
         <dataType>String</dataType>
         <isCollection>true</isCollection>
         <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
             <transformValueActions>
                 <transformType>Map</transformType>

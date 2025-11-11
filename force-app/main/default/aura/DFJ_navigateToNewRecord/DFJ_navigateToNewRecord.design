@@ -1,0 +1,8 @@
+<!--
+ - Created by shubh on 17-07-2019.
+ -->
+
+<design:component>
+    <design:attribute name="accountId" label="Id of the New Record" />
+
+</design:component>

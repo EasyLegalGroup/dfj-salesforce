@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Triggered_Status_Change__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Triggered Status Change</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>

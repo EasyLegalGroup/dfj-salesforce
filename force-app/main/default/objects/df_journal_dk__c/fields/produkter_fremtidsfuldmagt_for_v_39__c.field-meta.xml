@@ -3,7 +3,6 @@
     <fullName>produkter_fremtidsfuldmagt_for_v_39__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Original pris: 1.795 kr.</description>
-    <externalId>false</externalId>
     <label>Fremtidsfuldmagt for virksomheds 8b540</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

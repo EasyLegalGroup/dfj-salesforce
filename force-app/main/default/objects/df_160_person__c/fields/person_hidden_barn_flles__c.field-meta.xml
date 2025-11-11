@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>person_hidden_barn_flles__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Hidden Field - Barn af begge</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

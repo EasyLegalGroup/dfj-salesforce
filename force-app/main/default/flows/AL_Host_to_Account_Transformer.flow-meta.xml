@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <description>This is a temp hard coded id to not have too many DML operations during bulk import.
 Should be updated to &quot;Get Role (Country Manager)&quot; -&gt; &quot;Get User&quot; -&gt; Country Manager is Owner</description>
@@ -258,6 +259,7 @@ Should be updated to &quot;Get Role (Country Manager)&quot; -&gt; &quot;Get User
         <isCollection>false</isCollection>
         <objectType>Account</objectType>
         <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
             <transformValueActions>
                 <outputFieldApiName>Name</outputFieldApiName>

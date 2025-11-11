@@ -31,9 +31,11 @@
             </value>
         </inputParameters>
         <nameSegment>dupcheck__dc3SearchByValuesFlowAction</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Duplicate_Values_to_Output_Variables</name>
         <label>Assign Duplicate Values to Output Variables</label>

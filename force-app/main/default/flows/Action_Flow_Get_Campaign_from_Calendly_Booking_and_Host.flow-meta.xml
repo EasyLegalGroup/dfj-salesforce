@@ -53,6 +53,7 @@
         <nameSegment>emailSimple</nameSegment>
     </actionCalls>
     <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Contact_from_Host_to_Variable</name>
         <label>Assign Contact from Host to Variable</label>

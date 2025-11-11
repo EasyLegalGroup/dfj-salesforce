@@ -45,8 +45,10 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Custom_Error_Country_Missing</name>
         <label>Assign Custom Error &quot;Country Missing&quot;</label>

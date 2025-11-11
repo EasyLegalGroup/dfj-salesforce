@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Sum_of_Work_Hour_Deviations__c</fullName>
-    <externalId>false</externalId>
     <inlineHelpText>Calculates the sum of all &quot;Deviations in Work Hours&quot; noted on Time Sheet Corrections.</inlineHelpText>
     <label>Sum of Work Hour Deviations</label>
     <summarizedField>Time_Sheet_Correction__c.Deviation_in_Work_Hours__c</summarizedField>

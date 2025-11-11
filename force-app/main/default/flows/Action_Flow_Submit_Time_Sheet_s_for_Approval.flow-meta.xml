@@ -110,6 +110,7 @@
         </outputParameters>
     </actionCalls>
     <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Error_Message</name>
         <label>Assign Error Message</label>

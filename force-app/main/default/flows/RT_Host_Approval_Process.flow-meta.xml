@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>Approval Process for Event Booker Account where the budget/Cover Price exceeds €165</description>
     <environments>Default</environments>
     <interviewLabel>RT - Host: Approval Process {!$Flow.CurrentDateTime}</interviewLabel>
@@ -15,6 +16,8 @@
             <name>Fetch_Record_Owner_Manager</name>
             <actionName>Get_User_Manager_Username</actionName>
             <actionType>stepBackground</actionType>
+            <canAssigneeEdit>false</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
             <entryConditionLogic>and</entryConditionLogic>
             <exitConditionLogic>and</exitConditionLogic>
             <inputParameters>
@@ -26,6 +29,7 @@
             <label>Fetch Record Owner Manager</label>
             <requiresAsyncProcessing>false</requiresAsyncProcessing>
             <runAsUser>false</runAsUser>
+            <shouldLock>false</shouldLock>
             <stepSubtype>BackgroundStep</stepSubtype>
         </stageSteps>
         <stageSteps>
@@ -38,6 +42,8 @@
                 </assignee>
                 <assigneeType>User</assigneeType>
             </assignees>
+            <canAssigneeEdit>true</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
             <entryConditionLogic>and</entryConditionLogic>
             <exitConditionLogic>and</exitConditionLogic>
             <inputParameters>
@@ -61,12 +67,15 @@
             <label>Budget Approval Request</label>
             <requiresAsyncProcessing>false</requiresAsyncProcessing>
             <runAsUser>false</runAsUser>
+            <shouldLock>true</shouldLock>
             <stepSubtype>ApprovalStep</stepSubtype>
         </stageSteps>
         <stageSteps>
             <name>Update_Budget_Approval_Status_on_Record</name>
             <actionName>AL_Account_Update_Budget_Approval_Status_After_Approval</actionName>
             <actionType>stepBackground</actionType>
+            <canAssigneeEdit>false</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
             <entryConditionLogic>and</entryConditionLogic>
             <exitConditionLogic>and</exitConditionLogic>
             <inputParameters>
@@ -90,6 +99,7 @@
             <label>Update Budget Approval Status on Record</label>
             <requiresAsyncProcessing>false</requiresAsyncProcessing>
             <runAsUser>false</runAsUser>
+            <shouldLock>false</shouldLock>
             <stepSubtype>BackgroundStep</stepSubtype>
         </stageSteps>
     </orchestratedStages>

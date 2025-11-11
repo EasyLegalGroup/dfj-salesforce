@@ -15,8 +15,10 @@
             </value>
         </inputParameters>
         <nameSegment>DFJ_EmailMessageBatchClass</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <environments>Default</environments>
     <interviewLabel>AL - Big Object Archive &amp; Delete Email Message Records {!$Flow.CurrentDateTime}</interviewLabel>
     <label>AL - Big Object Archive &amp; Delete Email Message Records</label>

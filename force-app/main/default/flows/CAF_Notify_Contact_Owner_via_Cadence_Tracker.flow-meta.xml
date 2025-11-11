@@ -33,6 +33,7 @@
             </value>
         </inputParameters>
         <nameSegment>slackPostMessage</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <actionCalls>
@@ -78,6 +79,7 @@
             </value>
         </inputParameters>
         <nameSegment>slackPostMessage</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <actionCalls>
@@ -126,8 +128,10 @@
             </value>
         </inputParameters>
         <nameSegment>customNotificationAction</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Notification_Recipient_ID</name>
         <label>Assign Notification Recipient ID</label>

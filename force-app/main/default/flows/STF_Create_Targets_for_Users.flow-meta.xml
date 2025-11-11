@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <environments>Default</environments>
     <formulas>
         <name>frmMonth</name>
@@ -40,6 +41,14 @@
         <label>Create Target</label>
         <locationX>176</locationX>
         <locationY>360</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Target.Id</elementReference>
+            </value>
+        </filters>
         <inputAssignments>
             <field>Month_Number__c</field>
             <value>
@@ -71,6 +80,9 @@
             </value>
         </inputAssignments>
         <object>Targets__c</object>
+        <operationMultMatchingRecords>UpdateLatestRecord</operationMultMatchingRecords>
+        <operationOneMatchingRecord>UpdateAllRecords</operationOneMatchingRecord>
+        <operationZeroMatchingRecords>AddRecord</operationZeroMatchingRecords>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>

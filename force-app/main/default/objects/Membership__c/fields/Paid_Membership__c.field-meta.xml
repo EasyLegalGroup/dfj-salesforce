@@ -3,7 +3,6 @@
     <fullName>Paid_Membership__c</fullName>
     <defaultValue>false</defaultValue>
     <description>If this field is checked, it means that the customer is on a paid membership plan through Reepay (Set manually)</description>
-    <externalId>false</externalId>
     <label>Paid Membership</label>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

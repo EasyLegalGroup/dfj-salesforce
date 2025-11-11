@@ -45,6 +45,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>Send_Email_About_Unidentified_Event_Type</name>
@@ -94,8 +95,10 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Account_from_Contact_s_Values_to_ID_Variables</name>
         <label>Assign Account from Contact&apos;s Values to ID Variables</label>

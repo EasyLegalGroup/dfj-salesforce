@@ -55,6 +55,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>Send_SMS_from_SenderId_Action</name>
@@ -83,8 +84,10 @@
             </value>
         </inputParameters>
         <nameSegment>DFJ_SendSMS_From_SenderId</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Danish_Email_SMS_Body</name>
         <label>Assign Danish Email &amp; SMS Body</label>

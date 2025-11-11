@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Failed_Contact_Match__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Failed Contact Match</label>
     <trackHistory>true</trackHistory>
     <trackTrending>false</trackTrending>

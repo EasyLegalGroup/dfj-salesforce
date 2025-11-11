@@ -3,7 +3,6 @@
     <fullName>produkter_min_sidste_vilje__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Original pris: 299 kr.</description>
-    <externalId>false</externalId>
     <label>Min Sidste Vilje</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

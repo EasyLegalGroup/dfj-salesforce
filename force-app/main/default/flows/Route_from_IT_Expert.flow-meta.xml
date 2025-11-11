@@ -54,6 +54,7 @@
         <nameSegment>routeWork</nameSegment>
     </actionCalls>
     <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>Routes each message from your enhanced bot to a queue. You can customize the flow with business and routing rules, including routing to an agent, bot, or skill.</description>
     <interviewLabel>Route from IT Expert {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Route from IT Expert</label>

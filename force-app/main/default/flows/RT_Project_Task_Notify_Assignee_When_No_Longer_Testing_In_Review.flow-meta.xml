@@ -33,6 +33,7 @@
             </value>
         </inputParameters>
         <nameSegment>slackCheckUsersAreConnectedToSlack</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <actionCalls>
@@ -78,9 +79,11 @@
             </value>
         </inputParameters>
         <nameSegment>slackPostMessage</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Add_Assignees_User_ID_to_Text_Collection</name>
         <label>Add Assignees User ID to Text Collection</label>

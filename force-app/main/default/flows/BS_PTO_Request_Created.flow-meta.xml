@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>When PTO Request is created, before it is saved, update the name to &quot;Type Request by Name&quot;. Example: Vacation Request by John Doe</description>
     <environments>Default</environments>
     <interviewLabel>BS - PTO Request: Created {!$Flow.CurrentDateTime}</interviewLabel>

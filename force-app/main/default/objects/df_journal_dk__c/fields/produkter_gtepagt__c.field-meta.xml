@@ -3,7 +3,6 @@
     <fullName>produkter_gtepagt__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Original pris: 4.495 kr.</description>
-    <externalId>false</externalId>
     <label>Ægtepagt</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

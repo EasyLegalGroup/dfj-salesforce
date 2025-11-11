@@ -33,9 +33,11 @@
             </value>
         </inputParameters>
         <nameSegment>submit</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>This flow triggers on Project stage Proposed. An approval email is sent to the Project Owner&apos;s manager when a project is set to proposed for the manager to approve</description>
     <environments>Default</environments>
     <interviewLabel>RT - {!$Flow.CurrentDateTime}</interviewLabel>

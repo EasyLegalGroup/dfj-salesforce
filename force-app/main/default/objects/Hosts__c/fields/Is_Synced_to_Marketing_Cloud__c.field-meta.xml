@@ -3,7 +3,6 @@
     <fullName>Is_Synced_to_Marketing_Cloud__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Indicates whether the record has already been synchronized with Marketing Cloud. This field is updated during sync processes to track the synchronization status and ensure only the correct records are processed.</description>
-    <externalId>false</externalId>
     <inlineHelpText>Indicates whether the record has already been synchronized with Marketing Cloud. This field is updated during sync processes to track the synchronization status and ensure only the correct records are processed.</inlineHelpText>
     <label>Is Synced to Marketing Cloud</label>
     <trackFeedHistory>false</trackFeedHistory>

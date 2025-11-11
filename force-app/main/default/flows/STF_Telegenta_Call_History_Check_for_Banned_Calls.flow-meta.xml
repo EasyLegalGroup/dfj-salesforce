@@ -53,8 +53,11 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>2.0.1</versionString>
     </actionCalls>
     <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
         <name>Did_We_Find_any_Calls_to_Banned_Numbers</name>
         <label>Did We Find any Calls to Banned Numbers?</label>

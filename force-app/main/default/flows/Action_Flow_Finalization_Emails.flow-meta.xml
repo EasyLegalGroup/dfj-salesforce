@@ -58,6 +58,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>DK_Samejeoverenskomst</name>
@@ -117,6 +118,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>DK_Send_30_Testamente_Email</name>
@@ -176,6 +178,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>DK_Send_Arveafkald_Email</name>
@@ -235,6 +238,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>DK_Send_Arveforskudskontrakt_Email</name>
@@ -294,6 +298,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>DK_Send_B_rnetestamente_Email</name>
@@ -353,6 +358,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>DK_Send_Begunstigelseserkl_ring_Email</name>
@@ -412,6 +418,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>DK_Send_Forh_ndssamtykke_Email</name>
@@ -471,6 +478,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>DK_Send_Fremtidsfuldmagt_Email</name>
@@ -530,6 +538,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>DK_Send_Fremtidsfuldmagt_Post_Tinglysning_Email</name>
@@ -588,6 +597,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>DK_Send_G_ldsbrev_Email</name>
@@ -647,6 +657,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>DK_Send_Generalfuldmagt_Email</name>
@@ -706,6 +717,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>DK_Send_gtepagt_Incl_PDF_Guide_Email</name>
@@ -765,6 +777,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>DK_Send_Kodicil_Email</name>
@@ -824,6 +837,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>DK_Send_Testamente_Email</name>
@@ -883,8 +897,10 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Add_Contact_ID_Missing_to_Invalid_Values_Variables</name>
         <label>Add Contact ID Missing to Invalid Values Variables</label>

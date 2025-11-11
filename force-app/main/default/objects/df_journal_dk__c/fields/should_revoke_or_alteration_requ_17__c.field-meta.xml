@@ -3,7 +3,6 @@
     <fullName>should_revoke_or_alteration_requ_17__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Kræver at begge parter er enige om evt. ændringer</description>
-    <externalId>false</externalId>
     <label>Skal tilbagekaldelse eller ændri fa98e</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

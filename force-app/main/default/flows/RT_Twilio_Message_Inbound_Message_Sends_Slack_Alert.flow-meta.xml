@@ -34,6 +34,7 @@
             </value>
         </inputParameters>
         <nameSegment>slackCheckUsersAreConnectedToSlack</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <actionCalls>
@@ -91,6 +92,8 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
     </actionCalls>
     <actionCalls>
         <name>Send_Slack_Message_to_Channel</name>
@@ -135,6 +138,7 @@
             </value>
         </inputParameters>
         <nameSegment>slackPostMessage</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <actionCalls>
@@ -180,9 +184,11 @@
             </value>
         </inputParameters>
         <nameSegment>slackPostMessage</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Add_OwnerId_to_Collection</name>
         <label>Add OwnerId to Collection</label>

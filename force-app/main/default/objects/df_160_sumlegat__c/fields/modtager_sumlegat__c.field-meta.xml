@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>modtager_sumlegat__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
-    <externalId>false</externalId>
     <label>Modtager af sumlegat</label>
     <referenceTo>df_160_person__c</referenceTo>
     <relationshipLabel>modtager_sumlegat</relationshipLabel>

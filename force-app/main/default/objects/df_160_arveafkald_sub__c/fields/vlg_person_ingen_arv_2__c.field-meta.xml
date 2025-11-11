@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>vlg_person_ingen_arv_2__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
-    <externalId>false</externalId>
     <label>Vælg den anden person, der ikke  3fda4</label>
     <referenceTo>df_160_person__c</referenceTo>
     <relationshipLabel>vlg_person_ingen_arv_2</relationshipLabel>

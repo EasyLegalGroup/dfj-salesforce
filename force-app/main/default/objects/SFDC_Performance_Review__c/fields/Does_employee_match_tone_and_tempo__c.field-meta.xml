@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Does_employee_match_tone_and_tempo__c</fullName>
-    <externalId>false</externalId>
     <inlineHelpText>Does the employee match the tone and tempo of the customer?</inlineHelpText>
     <label>Does employee match tone and tempo?</label>
     <required>false</required>

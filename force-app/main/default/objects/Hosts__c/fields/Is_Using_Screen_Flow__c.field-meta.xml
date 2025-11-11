@@ -3,7 +3,6 @@
     <fullName>Is_Using_Screen_Flow__c</fullName>
     <defaultValue>false</defaultValue>
     <description>This field is checked automatically, the first time a booking is made on this host, using the Calendly Screenflow.</description>
-    <externalId>false</externalId>
     <label>Is Using Screen Flow</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>

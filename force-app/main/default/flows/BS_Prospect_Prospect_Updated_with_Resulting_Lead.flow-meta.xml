@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>When the &quot;Resulting Lead&quot; field on Prospect is populated, this flow runs and updates the status of the Prospect to &quot;Converted to Lead&quot;</description>
     <environments>Default</environments>
     <interviewLabel>BS - Prospect: Prospect Updated with Resulting Lead {!$Flow.CurrentDateTime}</interviewLabel>

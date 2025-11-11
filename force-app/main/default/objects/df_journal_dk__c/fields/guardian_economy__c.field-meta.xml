@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>guardian_economy__c</fullName>
     <description>Værgens økonomi</description>
-    <externalId>false</externalId>
     <label>Skal værgen have adgang til et b e9b53</label>
     <required>false</required>
     <trackTrending>false</trackTrending>

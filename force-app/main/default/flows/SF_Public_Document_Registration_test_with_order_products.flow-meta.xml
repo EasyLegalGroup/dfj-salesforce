@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Other_Contact_ID_to_Public_Document_Registration</name>
         <label>Assign Other Contact ID to Public Document Registration</label>
@@ -377,6 +378,12 @@
             <targetReference>Filter_for_Others</targetReference>
         </connector>
     </collectionProcessors>
+    <customProperties>
+        <name>ScreenProgressIndicator</name>
+        <value>
+            <stringValue>{&quot;location&quot;:&quot;top&quot;,&quot;type&quot;:&quot;simple&quot;}</stringValue>
+        </value>
+    </customProperties>
     <decisions>
         <name>Are_We_Using_Data_Table</name>
         <label>Are We Using Data Table?</label>
@@ -721,6 +728,14 @@
             <name>displayError</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 0, 0); font-size: 20px;&quot;&gt;Something went wrong...&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;Error message:&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;{!CustomError}&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -740,11 +755,27 @@
             <name>displayScreen1HeaderDataTable</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 20px;&quot;&gt;Public Document Registration&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>displaySuccessMessageDataTable</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(0, 144, 17);&quot;&gt;You&apos;ve successfully registered &lt;/span&gt;&lt;strong style=&quot;color: rgb(0, 144, 17);&quot;&gt;{!SuccessDocumentType}&lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 144, 17);&quot;&gt; for &lt;/span&gt;&lt;strong style=&quot;color: rgb(0, 144, 17);&quot;&gt;{!SuccessContactName}&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
@@ -793,6 +824,14 @@
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>Screen_1_Data_Tables_Section1</name>
@@ -852,15 +891,29 @@
                     </inputParameters>
                     <inputParameters>
                         <name>keyField</name>
-                        <value/>
+                        <value>
+                            <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Contact&quot;,&quot;fieldReferences&quot;:[&quot;Id&quot;],&quot;elementReference&quot;:&quot;Filter_for_Person_1_and_Person_2&quot;}</complexValue>
+                            <complexValueType>ComplexObjectFieldDetails</complexValueType>
+                        </value>
                     </inputParameters>
                     <inputParameters>
                         <name>columnReferences</name>
-                        <value/>
+                        <value>
+                            <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Contact&quot;,&quot;fieldReferences&quot;:[&quot;Name&quot;,&quot;Journal_DK_2_0_Person_Type__c&quot;],&quot;elementReference&quot;:&quot;Filter_for_Person_1_and_Person_2&quot;}</complexValue>
+                            <complexValueType>ComplexObjectFieldDetails</complexValueType>
+                        </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -912,7 +965,10 @@
                     </inputParameters>
                     <inputParameters>
                         <name>keyField</name>
-                        <value/>
+                        <value>
+                            <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Contact&quot;,&quot;fieldReferences&quot;:[&quot;Id&quot;],&quot;elementReference&quot;:&quot;Filter_for_Others&quot;}</complexValue>
+                            <complexValueType>ComplexObjectFieldDetails</complexValueType>
+                        </value>
                     </inputParameters>
                     <inputParameters>
                         <name>maxRowSelection</name>
@@ -928,11 +984,22 @@
                     </inputParameters>
                     <inputParameters>
                         <name>columnReferences</name>
-                        <value/>
+                        <value>
+                            <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Contact&quot;,&quot;fieldReferences&quot;:[&quot;Name&quot;,&quot;Journal_DK_2_0_Person_Type__c&quot;],&quot;elementReference&quot;:&quot;Filter_for_Others&quot;}</complexValue>
+                            <complexValueType>ComplexObjectFieldDetails</complexValueType>
+                        </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -989,7 +1056,10 @@
                     </inputParameters>
                     <inputParameters>
                         <name>keyField</name>
-                        <value/>
+                        <value>
+                            <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Shared_Document__c&quot;,&quot;fieldReferences&quot;:[&quot;Id&quot;],&quot;elementReference&quot;:&quot;Get_Shared_Documents&quot;}</complexValue>
+                            <complexValueType>ComplexObjectFieldDetails</complexValueType>
+                        </value>
                     </inputParameters>
                     <inputParameters>
                         <name>shouldDisplayLabel</name>
@@ -1005,7 +1075,10 @@
                     </inputParameters>
                     <inputParameters>
                         <name>columnReferences</name>
-                        <value/>
+                        <value>
+                            <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Shared_Document__c&quot;,&quot;fieldReferences&quot;:[&quot;Document_Type__c&quot;],&quot;elementReference&quot;:&quot;Get_Shared_Documents&quot;}</complexValue>
+                            <complexValueType>ComplexObjectFieldDetails</complexValueType>
+                        </value>
                     </inputParameters>
                     <inputParameters>
                         <name>maxRowSelection</name>
@@ -1016,6 +1089,14 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -1068,7 +1149,10 @@
                     </inputParameters>
                     <inputParameters>
                         <name>keyField</name>
-                        <value/>
+                        <value>
+                            <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;OrderItem&quot;,&quot;fieldReferences&quot;:[&quot;Id&quot;],&quot;elementReference&quot;:&quot;Get_Order_Products&quot;}</complexValue>
+                            <complexValueType>ComplexObjectFieldDetails</complexValueType>
+                        </value>
                     </inputParameters>
                     <inputParameters>
                         <name>maxRowSelection</name>
@@ -1084,11 +1168,22 @@
                     </inputParameters>
                     <inputParameters>
                         <name>columnReferences</name>
-                        <value/>
+                        <value>
+                            <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;OrderItem&quot;,&quot;fieldReferences&quot;:[&quot;Product_Name__c&quot;,&quot;Quantity&quot;],&quot;elementReference&quot;:&quot;Get_Order_Products&quot;}</complexValue>
+                            <complexValueType>ComplexObjectFieldDetails</complexValueType>
+                        </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -1100,11 +1195,27 @@
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>displayExistingPublicRegistrationsHeaderDataTable</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 20px; color: rgb(0, 0, 0);&quot;&gt;Existing Public Registrations&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
@@ -1156,7 +1267,10 @@
             </inputParameters>
             <inputParameters>
                 <name>keyField</name>
-                <value/>
+                <value>
+                    <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Public_Document_Registration__c&quot;,&quot;fieldReferences&quot;:[&quot;Id&quot;],&quot;elementReference&quot;:&quot;Get_Public_Document_Registrations&quot;}</complexValue>
+                    <complexValueType>ComplexObjectFieldDetails</complexValueType>
+                </value>
             </inputParameters>
             <inputParameters>
                 <name>columns</name>
@@ -1166,7 +1280,10 @@
             </inputParameters>
             <inputParameters>
                 <name>columnReferences</name>
-                <value/>
+                <value>
+                    <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Public_Document_Registration__c&quot;,&quot;fieldReferences&quot;:[&quot;Contact_Name__c&quot;,&quot;Document_Type__c&quot;,&quot;Completed_By_Name__c&quot;,&quot;Completed_Time__c&quot;],&quot;elementReference&quot;:&quot;Get_Public_Document_Registrations&quot;}</complexValue>
+                    <complexValueType>ComplexObjectFieldDetails</complexValueType>
+                </value>
             </inputParameters>
             <inputParameters>
                 <name>maxRowSelection</name>
@@ -1177,6 +1294,14 @@
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
@@ -1206,11 +1331,27 @@
             <name>displayScreen1Header</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 20px;&quot;&gt;Public Document Registration&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>displaySuccessMessage</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(0, 144, 17);&quot;&gt;You&apos;ve successfully registered &lt;/span&gt;&lt;strong style=&quot;color: rgb(0, 144, 17);&quot;&gt;{!SuccessDocumentType}&lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 144, 17);&quot;&gt; for &lt;/span&gt;&lt;strong style=&quot;color: rgb(0, 144, 17);&quot;&gt;{!SuccessContactName}&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
@@ -1249,6 +1390,14 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -1272,6 +1421,14 @@
                         <booleanValue>false</booleanValue>
                     </isDisabled>
                     <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -1295,6 +1452,14 @@
                         <booleanValue>false</booleanValue>
                     </isDisabled>
                     <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -1306,11 +1471,27 @@
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>displayExistingPublicRegistrationsHeader</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 20px; color: rgb(0, 0, 0);&quot;&gt;Existing Public Registrations&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
@@ -1362,7 +1543,10 @@
             </inputParameters>
             <inputParameters>
                 <name>keyField</name>
-                <value/>
+                <value>
+                    <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Public_Document_Registration__c&quot;,&quot;fieldReferences&quot;:[&quot;Id&quot;],&quot;elementReference&quot;:&quot;Get_Public_Document_Registrations&quot;}</complexValue>
+                    <complexValueType>ComplexObjectFieldDetails</complexValueType>
+                </value>
             </inputParameters>
             <inputParameters>
                 <name>columns</name>
@@ -1372,7 +1556,10 @@
             </inputParameters>
             <inputParameters>
                 <name>columnReferences</name>
-                <value/>
+                <value>
+                    <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Public_Document_Registration__c&quot;,&quot;fieldReferences&quot;:[&quot;Contact_Name__c&quot;,&quot;Document_Type__c&quot;,&quot;Completed_By_Name__c&quot;,&quot;Completed_Time__c&quot;],&quot;elementReference&quot;:&quot;Get_Public_Document_Registrations&quot;}</complexValue>
+                    <complexValueType>ComplexObjectFieldDetails</complexValueType>
+                </value>
             </inputParameters>
             <inputParameters>
                 <name>maxRowSelection</name>
@@ -1383,6 +1570,14 @@
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>

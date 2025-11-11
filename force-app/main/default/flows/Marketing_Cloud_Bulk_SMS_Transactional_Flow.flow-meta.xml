@@ -39,6 +39,7 @@
             </value>
         </inputParameters>
         <nameSegment>MarketingCloudSMSService</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <actionCalls>
@@ -74,9 +75,11 @@
             </value>
         </inputParameters>
         <nameSegment>McSmsTransactionalBulk</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Danish_Values</name>
         <label>Assign Danish Values</label>

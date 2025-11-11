@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Approx_Value_of_Person_1_s_Pension_Plan__c</fullName>
     <defaultValue>0</defaultValue>
-    <externalId>false</externalId>
     <label>Approx. Value of Person 1&apos;s Pension Plan</label>
     <precision>18</precision>
     <required>false</required>

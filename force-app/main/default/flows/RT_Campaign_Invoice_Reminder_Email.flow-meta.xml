@@ -42,8 +42,11 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
     </actionCalls>
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <choices>
         <name>Cancel</name>
         <choiceText>Cancel</choiceText>
@@ -54,12 +57,21 @@
     </choices>
     <choices>
         <name>Send</name>
+        <choiceIcon>
+            <iconName>utility:send</iconName>
+        </choiceIcon>
         <choiceText>Send</choiceText>
         <dataType>String</dataType>
         <value>
             <stringValue>Send</stringValue>
         </value>
     </choices>
+    <customProperties>
+        <name>ScreenProgressIndicator</name>
+        <value>
+            <stringValue>{&quot;location&quot;:&quot;top&quot;,&quot;type&quot;:&quot;simple&quot;}</stringValue>
+        </value>
+    </customProperties>
     <decisions>
         <name>Send_Reminder</name>
         <label>Send Reminder?</label>
@@ -293,6 +305,14 @@
             <name>InvoiceDetails</name>
             <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;You are about to send an invoice reminder to faktura@dinfamiliejurist.dk&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;﻿Campaign:&lt;/strong&gt; {!Get_Campaign.Name}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Amount&lt;/strong&gt;: {!Get_Campaign.Expected_Invoice_Amount__c}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Customer&lt;/strong&gt;: {!Get_Campaign.Account__c}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>User_Choice</name>
@@ -304,6 +324,14 @@
             <fieldType>RadioButtons</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
@@ -320,6 +348,14 @@
             <name>reminderSentRecently</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(238, 90, 122);&quot;&gt;You sent a reminder less than 14 days ago. Please wait before sending another.&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>

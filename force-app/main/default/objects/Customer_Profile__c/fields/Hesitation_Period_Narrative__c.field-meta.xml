@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Hesitation_Period_Narrative__c</fullName>
-    <externalId>false</externalId>
     <inlineHelpText>This field is a description of how long the customer has waited and why. It is populated by the agent, during the initial consultation.</inlineHelpText>
     <label>Hesitation Period Narrative</label>
     <length>32768</length>

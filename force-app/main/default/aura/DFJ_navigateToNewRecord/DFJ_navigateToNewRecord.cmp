@@ -1,0 +1,10 @@
+<!--
+ - Created by shubh on 17-07-2019.
+ -->
+
+<aura:component description="DFJ_navigateToNewRecord" controller="DFJ_ProductSelectorController_Apex" implements="lightning:availableForFlowActions" access="global">
+
+    <aura:dependency resource="markup://force:navigateToSObject" type="EVENT"/>
+    <aura:attribute name="accountId" type="String" access="global"/>
+
+</aura:component>

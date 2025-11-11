@@ -3,7 +3,6 @@
     <fullName>produkter_singletestamente__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Original pris: 3.995 kr.</description>
-    <externalId>false</externalId>
     <label>Singletestamente</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

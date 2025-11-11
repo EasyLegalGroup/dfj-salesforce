@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Approval_Date__c</fullName>
-    <externalId>false</externalId>
     <inlineHelpText>This field is automatically set when Journal States is set to &quot;Færdig&quot; or &quot;Færdig ny proces&quot;</inlineHelpText>
     <label>Approval Date</label>
     <required>false</required>

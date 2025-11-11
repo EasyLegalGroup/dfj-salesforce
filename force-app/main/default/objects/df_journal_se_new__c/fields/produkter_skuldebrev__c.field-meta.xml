@@ -3,7 +3,6 @@
     <fullName>produkter_skuldebrev__c</fullName>
     <defaultValue>false</defaultValue>
     <description>995 kr.</description>
-    <externalId>false</externalId>
     <label>Skuldebrev</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

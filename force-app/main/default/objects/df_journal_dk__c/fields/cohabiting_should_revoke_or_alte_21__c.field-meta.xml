@@ -3,7 +3,6 @@
     <fullName>cohabiting_should_revoke_or_alte_21__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Kræver enighed fra begge parter for evt. ændring</description>
-    <externalId>false</externalId>
     <label>Skal tilbagekaldelse eller ændri fa98e</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

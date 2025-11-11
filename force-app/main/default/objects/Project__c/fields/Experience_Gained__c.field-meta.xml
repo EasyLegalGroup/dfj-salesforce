@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Experience_Gained__c</fullName>
-    <externalId>false</externalId>
     <inlineHelpText>When the project is completed, make note of any experience gained from the project. This can be used for future reference, to increase the likelihood of success of future projects.</inlineHelpText>
     <label>Experience Gained</label>
     <length>32768</length>

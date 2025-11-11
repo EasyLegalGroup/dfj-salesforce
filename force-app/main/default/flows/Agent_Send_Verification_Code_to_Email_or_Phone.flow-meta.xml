@@ -16,6 +16,7 @@
         </faultConnector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <nameSegment>generateVerificationCode</nameSegment>
+        <offset>0</offset>
         <outputParameters>
             <assignToReference>VerificationCode</assignToReference>
             <name>verificationCode</name>
@@ -89,8 +90,11 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
     </actionCalls>
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Danish_Error_Values</name>
         <label>Assign Danish Error Values</label>

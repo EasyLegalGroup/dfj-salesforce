@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
         <name>Did_Employee_Approve</name>
         <label>Did Employee Approve?</label>
@@ -119,6 +120,8 @@
             <name>Run_Final_Approval_by_Manager_Path</name>
             <actionName>AL_Time_Sheet_Approval_Background_Step</actionName>
             <actionType>stepBackground</actionType>
+            <canAssigneeEdit>false</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
             <entryConditionLogic>and</entryConditionLogic>
             <exitConditionLogic>and</exitConditionLogic>
             <inputParameters>
@@ -142,6 +145,7 @@
             <label>Run Final Approval by Manager Path</label>
             <requiresAsyncProcessing>false</requiresAsyncProcessing>
             <runAsUser>false</runAsUser>
+            <shouldLock>false</shouldLock>
             <stepSubtype>BackgroundStep</stepSubtype>
         </stageSteps>
     </orchestratedStages>
@@ -155,6 +159,8 @@
             <name>Run_Final_Approval_by_Employee_Path</name>
             <actionName>AL_Time_Sheet_Approval_Background_Step</actionName>
             <actionType>stepBackground</actionType>
+            <canAssigneeEdit>false</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
             <entryConditionLogic>and</entryConditionLogic>
             <exitConditionLogic>and</exitConditionLogic>
             <inputParameters>
@@ -178,6 +184,7 @@
             <label>Run Final Approval by Employee Path</label>
             <requiresAsyncProcessing>false</requiresAsyncProcessing>
             <runAsUser>false</runAsUser>
+            <shouldLock>false</shouldLock>
             <stepSubtype>BackgroundStep</stepSubtype>
         </stageSteps>
     </orchestratedStages>
@@ -191,6 +198,8 @@
             <name>Run_Employee_Rejected_Path</name>
             <actionName>AL_Time_Sheet_Approval_Background_Step</actionName>
             <actionType>stepBackground</actionType>
+            <canAssigneeEdit>false</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
             <entryConditionLogic>and</entryConditionLogic>
             <exitConditionLogic>and</exitConditionLogic>
             <inputParameters>
@@ -214,6 +223,7 @@
             <label>Run Employee Rejected Path</label>
             <requiresAsyncProcessing>false</requiresAsyncProcessing>
             <runAsUser>false</runAsUser>
+            <shouldLock>false</shouldLock>
             <stepSubtype>BackgroundStep</stepSubtype>
         </stageSteps>
     </orchestratedStages>
@@ -227,6 +237,8 @@
             <name>Run_Manager_Rejected_Path</name>
             <actionName>AL_Time_Sheet_Approval_Background_Step</actionName>
             <actionType>stepBackground</actionType>
+            <canAssigneeEdit>false</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
             <entryConditionLogic>and</entryConditionLogic>
             <exitConditionLogic>and</exitConditionLogic>
             <inputParameters>
@@ -250,6 +262,7 @@
             <label>Run Manager Rejected Path</label>
             <requiresAsyncProcessing>false</requiresAsyncProcessing>
             <runAsUser>false</runAsUser>
+            <shouldLock>false</shouldLock>
             <stepSubtype>BackgroundStep</stepSubtype>
         </stageSteps>
     </orchestratedStages>
@@ -263,6 +276,8 @@
             <name>Run_Invalid_Employee_Path</name>
             <actionName>AL_Time_Sheet_Approval_Background_Step</actionName>
             <actionType>stepBackground</actionType>
+            <canAssigneeEdit>false</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
             <entryConditionLogic>and</entryConditionLogic>
             <exitConditionLogic>and</exitConditionLogic>
             <inputParameters>
@@ -286,6 +301,7 @@
             <label>Run Invalid Employee Path</label>
             <requiresAsyncProcessing>false</requiresAsyncProcessing>
             <runAsUser>false</runAsUser>
+            <shouldLock>false</shouldLock>
             <stepSubtype>BackgroundStep</stepSubtype>
         </stageSteps>
     </orchestratedStages>
@@ -299,6 +315,8 @@
             <name>Run_Invalid_Manager_Path</name>
             <actionName>AL_Time_Sheet_Approval_Background_Step</actionName>
             <actionType>stepBackground</actionType>
+            <canAssigneeEdit>false</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
             <entryConditionLogic>and</entryConditionLogic>
             <exitConditionLogic>and</exitConditionLogic>
             <inputParameters>
@@ -322,6 +340,7 @@
             <label>Run Invalid Manager Path</label>
             <requiresAsyncProcessing>false</requiresAsyncProcessing>
             <runAsUser>false</runAsUser>
+            <shouldLock>false</shouldLock>
             <stepSubtype>BackgroundStep</stepSubtype>
         </stageSteps>
     </orchestratedStages>
@@ -344,6 +363,8 @@
                 </assignee>
                 <assigneeType>User</assigneeType>
             </assignees>
+            <canAssigneeEdit>true</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
             <entryConditionLogic>and</entryConditionLogic>
             <exitConditionLogic>and</exitConditionLogic>
             <inputParameters>
@@ -379,6 +400,7 @@
             <label>Employee Approval</label>
             <requiresAsyncProcessing>false</requiresAsyncProcessing>
             <runAsUser>false</runAsUser>
+            <shouldLock>true</shouldLock>
             <stepSubtype>ApprovalStep</stepSubtype>
         </stageSteps>
     </orchestratedStages>
@@ -395,6 +417,8 @@
             <name>Run_Initial_Approval_by_Employee_Path</name>
             <actionName>AL_Time_Sheet_Approval_Background_Step</actionName>
             <actionType>stepBackground</actionType>
+            <canAssigneeEdit>false</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
             <entryConditionLogic>and</entryConditionLogic>
             <entryConditions>
                 <conditionType>EntryCondition</conditionType>
@@ -434,6 +458,7 @@
             <label>Run Initial Approval by Employee Path</label>
             <requiresAsyncProcessing>false</requiresAsyncProcessing>
             <runAsUser>false</runAsUser>
+            <shouldLock>false</shouldLock>
             <stepSubtype>BackgroundStep</stepSubtype>
         </stageSteps>
         <stageSteps>
@@ -446,6 +471,8 @@
                 </assignee>
                 <assigneeType>User</assigneeType>
             </assignees>
+            <canAssigneeEdit>true</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
             <entryConditionLogic>and</entryConditionLogic>
             <exitConditionLogic>and</exitConditionLogic>
             <inputParameters>
@@ -481,6 +508,7 @@
             <label>Manager Approval</label>
             <requiresAsyncProcessing>false</requiresAsyncProcessing>
             <runAsUser>false</runAsUser>
+            <shouldLock>true</shouldLock>
             <stepSubtype>ApprovalStep</stepSubtype>
         </stageSteps>
     </orchestratedStages>

@@ -26,6 +26,7 @@
         <nameSegment>TwilioSF__TwilioSendSMS</nameSegment>
     </actionCalls>
     <apiVersion>57.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <environments>Default</environments>
     <interviewLabel>Send SMS to &quot;Intern - ny ekstern&quot; {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Send SMS to &quot;Intern - ny ekstern&quot;</label>

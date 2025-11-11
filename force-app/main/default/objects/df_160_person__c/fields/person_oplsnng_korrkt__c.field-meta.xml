@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>person_oplsnng_korrkt__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Oplysninger korrekte</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

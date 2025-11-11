@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Is_Public_Holiday__c</fullName>
-    <externalId>false</externalId>
     <formula>IF( TEXT(Country__c)=&quot;Denmark&quot;, INCLUDES(Day__r.Public_Holiday__c,&quot;Denmark&quot;), IF( TEXT(Country__c)=&quot;Sweden&quot;, INCLUDES(Day__r.Public_Holiday__c,&quot;Ireland&quot;), IF( TEXT(Country__c)=&quot;United Kingdom&quot;, INCLUDES(Day__r.Public_Holiday__c,&quot;Canada&quot;), FALSE)))</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Is Public Holiday</label>

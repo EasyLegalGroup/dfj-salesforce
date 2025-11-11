@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>sameje_opr_laaneaftale__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Ønskes oprettelse af låneaftale, 368e8</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

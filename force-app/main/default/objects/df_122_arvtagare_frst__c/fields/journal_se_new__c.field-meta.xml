@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>journal_se_new__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
-    <externalId>false</externalId>
     <label>journal_se_new</label>
     <referenceTo>df_journal_se_new__c</referenceTo>
     <relationshipLabel>Arvtagare (först)</relationshipLabel>

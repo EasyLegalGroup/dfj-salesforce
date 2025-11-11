@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Is_Original_Registration__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Is Original Registration</label>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

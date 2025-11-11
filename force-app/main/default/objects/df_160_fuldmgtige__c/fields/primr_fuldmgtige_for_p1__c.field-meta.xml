@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>primr_fuldmgtige_for_p1__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Primær fuldmægtig for person 1</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

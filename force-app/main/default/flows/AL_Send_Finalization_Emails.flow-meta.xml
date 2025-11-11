@@ -58,6 +58,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>DK_Samejeoverenskomst</name>
@@ -117,6 +118,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>DK_Send_30_Testamente_Email</name>
@@ -176,6 +178,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>DK_Send_Arveafkald_Email</name>
@@ -235,6 +238,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>DK_Send_Arveforskudskontrakt_Email</name>
@@ -294,6 +298,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>DK_Send_B_rnetestamente_Email</name>
@@ -353,6 +358,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>DK_Send_Begunstigelseserkl_ring_Email</name>
@@ -412,6 +418,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>DK_Send_Forh_ndssamtykke_Email</name>
@@ -471,6 +478,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <description>This is the version when everything is done, including Tinglysning
@@ -531,6 +539,7 @@ This version includes a guide as a file attachment</description>
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <description>This is the version after the customer approves the documents, before Tinglysning</description>
@@ -591,6 +600,7 @@ This version includes a guide as a file attachment</description>
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>DK_Send_G_ldsbrev_Email</name>
@@ -650,6 +660,7 @@ This version includes a guide as a file attachment</description>
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>DK_Send_Generalfuldmagt_Email</name>
@@ -709,6 +720,7 @@ This version includes a guide as a file attachment</description>
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <description>This is the version sent after the customer approves their documents, before Tinglysning</description>
@@ -769,6 +781,7 @@ This version includes a guide as a file attachment</description>
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <description>This is the version when everything is done, including Tinglysning.
@@ -830,6 +843,7 @@ This version includes a guide as a file attachment</description>
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>DK_Send_Kodicil_Email</name>
@@ -889,6 +903,7 @@ This version includes a guide as a file attachment</description>
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>DK_Send_Testamente_Email</name>
@@ -948,8 +963,10 @@ This version includes a guide as a file attachment</description>
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Add_Contact_ID_Missing_to_Invalid_Values_Variables</name>
         <label>Add Contact ID Missing to Invalid Values Variables</label>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Are_objections_handled_reasonably__c</fullName>
-    <externalId>false</externalId>
     <inlineHelpText>Does the employee handle objections reasonably and with an understanding tone?</inlineHelpText>
     <label>Are objections handled reasonably?</label>
     <required>false</required>

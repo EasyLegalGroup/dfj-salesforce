@@ -1,0 +1,17 @@
+/**
+ * Created by Shubham Sharma on 01-03-2019.
+ */
+.THIS {
+}
+
+.THIS .backGroundWhite{
+    background-color: white;
+}
+
+.THIS .spinnerInBox .slds-spinner_container{
+    position: relative !important;
+    top: 20px !important;
+}
+.THIS .ApplyButton {
+    padding-top: 35px;
+}

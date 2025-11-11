@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Problems_covered_before_trying_to_close__c</fullName>
-    <externalId>false</externalId>
     <inlineHelpText>Does the employee go over problems in detail before presenting the customer with a solution?</inlineHelpText>
     <label>Problems covered before trying to close?</label>
     <required>false</required>

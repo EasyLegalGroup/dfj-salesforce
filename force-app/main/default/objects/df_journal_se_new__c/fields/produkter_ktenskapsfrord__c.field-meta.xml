@@ -3,7 +3,6 @@
     <fullName>produkter_ktenskapsfrord__c</fullName>
     <defaultValue>false</defaultValue>
     <description>3.890 kr.</description>
-    <externalId>false</externalId>
     <label>Äktenskapsförord</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

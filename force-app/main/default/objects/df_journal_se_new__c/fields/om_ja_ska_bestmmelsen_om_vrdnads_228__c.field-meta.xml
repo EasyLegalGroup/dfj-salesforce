@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>om_ja_ska_bestmmelsen_om_vrdnads_228__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Om ja, ska bestämmelsen om vårdn d3eb0</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

@@ -39,8 +39,10 @@
             </value>
         </inputParameters>
         <nameSegment>customNotificationAction</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Add_User_s_ID_to_RecipientIdCollection</name>
         <label>Add User&apos;s ID to RecipientIdCollection</label>

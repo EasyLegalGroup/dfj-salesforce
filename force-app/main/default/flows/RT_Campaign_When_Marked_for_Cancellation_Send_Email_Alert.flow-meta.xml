@@ -69,8 +69,11 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
     </actionCalls>
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <environments>Default</environments>
     <interviewLabel>RT - Campaign: When Marked for Cancellation, Send Email Alert {!$Flow.CurrentDateTime}</interviewLabel>
     <label>RT - Campaign: When Marked for Cancellation, Send Email Alert</label>

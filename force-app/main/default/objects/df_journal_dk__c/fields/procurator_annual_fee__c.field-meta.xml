@@ -3,7 +3,6 @@
     <fullName>procurator_annual_fee__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Skal fuldmægtige have adgang til et årligthonorar?</description>
-    <externalId>false</externalId>
     <label>Skal fuldmægtige have adgang til 29f79</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Disable_Document_Review_Notifications__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Disable Document Review Notifications</label>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

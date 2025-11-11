@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_April_Commission_to_Variable</name>
         <label>Assign April Commission to Variable</label>
@@ -1000,6 +1001,7 @@
         <dataType>Currency</dataType>
         <isCollection>false</isCollection>
         <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
             <transformValueActions>
                 <inputParameters>
@@ -1010,7 +1012,10 @@
                 </inputParameters>
                 <inputParameters>
                     <name>aggregationFieldReference</name>
-                    <value/>
+                    <value>
+                        <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Order&quot;,&quot;fieldReferences&quot;:[&quot;Provision_Value__c&quot;],&quot;elementReference&quot;:&quot;Filter_for_April&quot;}</complexValue>
+                        <complexValueType>FieldReference</complexValueType>
+                    </value>
                 </inputParameters>
                 <transformType>Sum</transformType>
             </transformValueActions>
@@ -1027,6 +1032,7 @@
         <dataType>Currency</dataType>
         <isCollection>false</isCollection>
         <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
             <transformValueActions>
                 <inputParameters>
@@ -1037,7 +1043,10 @@
                 </inputParameters>
                 <inputParameters>
                     <name>aggregationFieldReference</name>
-                    <value/>
+                    <value>
+                        <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Order&quot;,&quot;fieldReferences&quot;:[&quot;Provision_Value__c&quot;],&quot;elementReference&quot;:&quot;Filter_for_August&quot;}</complexValue>
+                        <complexValueType>FieldReference</complexValueType>
+                    </value>
                 </inputParameters>
                 <transformType>Sum</transformType>
             </transformValueActions>
@@ -1054,6 +1063,7 @@
         <dataType>Currency</dataType>
         <isCollection>false</isCollection>
         <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
             <transformValueActions>
                 <inputParameters>
@@ -1064,7 +1074,10 @@
                 </inputParameters>
                 <inputParameters>
                     <name>aggregationFieldReference</name>
-                    <value/>
+                    <value>
+                        <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Order&quot;,&quot;fieldReferences&quot;:[&quot;Provision_Value__c&quot;],&quot;elementReference&quot;:&quot;Filter_for_December&quot;}</complexValue>
+                        <complexValueType>FieldReference</complexValueType>
+                    </value>
                 </inputParameters>
                 <transformType>Sum</transformType>
             </transformValueActions>
@@ -1081,6 +1094,7 @@
         <dataType>Currency</dataType>
         <isCollection>false</isCollection>
         <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
             <transformValueActions>
                 <inputParameters>
@@ -1091,7 +1105,10 @@
                 </inputParameters>
                 <inputParameters>
                     <name>aggregationFieldReference</name>
-                    <value/>
+                    <value>
+                        <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Order&quot;,&quot;fieldReferences&quot;:[&quot;Provision_Value__c&quot;],&quot;elementReference&quot;:&quot;Filter_for_February&quot;}</complexValue>
+                        <complexValueType>FieldReference</complexValueType>
+                    </value>
                 </inputParameters>
                 <transformType>Sum</transformType>
             </transformValueActions>
@@ -1108,6 +1125,7 @@
         <dataType>Currency</dataType>
         <isCollection>false</isCollection>
         <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
             <transformValueActions>
                 <inputParameters>
@@ -1118,7 +1136,10 @@
                 </inputParameters>
                 <inputParameters>
                     <name>aggregationFieldReference</name>
-                    <value/>
+                    <value>
+                        <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Order&quot;,&quot;fieldReferences&quot;:[&quot;Provision_Value__c&quot;],&quot;elementReference&quot;:&quot;Filter_for_January&quot;}</complexValue>
+                        <complexValueType>FieldReference</complexValueType>
+                    </value>
                 </inputParameters>
                 <transformType>Sum</transformType>
             </transformValueActions>
@@ -1135,6 +1156,7 @@
         <dataType>Currency</dataType>
         <isCollection>false</isCollection>
         <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
             <transformValueActions>
                 <inputParameters>
@@ -1145,7 +1167,10 @@
                 </inputParameters>
                 <inputParameters>
                     <name>aggregationFieldReference</name>
-                    <value/>
+                    <value>
+                        <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Order&quot;,&quot;fieldReferences&quot;:[&quot;Provision_Value__c&quot;],&quot;elementReference&quot;:&quot;Filter_for_July&quot;}</complexValue>
+                        <complexValueType>FieldReference</complexValueType>
+                    </value>
                 </inputParameters>
                 <transformType>Sum</transformType>
             </transformValueActions>
@@ -1162,6 +1187,7 @@
         <dataType>Currency</dataType>
         <isCollection>false</isCollection>
         <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
             <transformValueActions>
                 <inputParameters>
@@ -1172,7 +1198,10 @@
                 </inputParameters>
                 <inputParameters>
                     <name>aggregationFieldReference</name>
-                    <value/>
+                    <value>
+                        <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Order&quot;,&quot;fieldReferences&quot;:[&quot;Provision_Value__c&quot;],&quot;elementReference&quot;:&quot;Filter_for_June&quot;}</complexValue>
+                        <complexValueType>FieldReference</complexValueType>
+                    </value>
                 </inputParameters>
                 <transformType>Sum</transformType>
             </transformValueActions>
@@ -1189,6 +1218,7 @@
         <dataType>Currency</dataType>
         <isCollection>false</isCollection>
         <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
             <transformValueActions>
                 <inputParameters>
@@ -1199,7 +1229,10 @@
                 </inputParameters>
                 <inputParameters>
                     <name>aggregationFieldReference</name>
-                    <value/>
+                    <value>
+                        <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Order&quot;,&quot;fieldReferences&quot;:[&quot;Provision_Value__c&quot;],&quot;elementReference&quot;:&quot;Filter_for_March&quot;}</complexValue>
+                        <complexValueType>FieldReference</complexValueType>
+                    </value>
                 </inputParameters>
                 <transformType>Sum</transformType>
             </transformValueActions>
@@ -1216,6 +1249,7 @@
         <dataType>Currency</dataType>
         <isCollection>false</isCollection>
         <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
             <transformValueActions>
                 <inputParameters>
@@ -1226,7 +1260,10 @@
                 </inputParameters>
                 <inputParameters>
                     <name>aggregationFieldReference</name>
-                    <value/>
+                    <value>
+                        <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Order&quot;,&quot;fieldReferences&quot;:[&quot;Provision_Value__c&quot;],&quot;elementReference&quot;:&quot;Filter_for_May&quot;}</complexValue>
+                        <complexValueType>FieldReference</complexValueType>
+                    </value>
                 </inputParameters>
                 <transformType>Sum</transformType>
             </transformValueActions>
@@ -1243,6 +1280,7 @@
         <dataType>Currency</dataType>
         <isCollection>false</isCollection>
         <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
             <transformValueActions>
                 <inputParameters>
@@ -1253,7 +1291,10 @@
                 </inputParameters>
                 <inputParameters>
                     <name>aggregationFieldReference</name>
-                    <value/>
+                    <value>
+                        <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Order&quot;,&quot;fieldReferences&quot;:[&quot;Provision_Value__c&quot;],&quot;elementReference&quot;:&quot;Filter_for_November&quot;}</complexValue>
+                        <complexValueType>FieldReference</complexValueType>
+                    </value>
                 </inputParameters>
                 <transformType>Sum</transformType>
             </transformValueActions>
@@ -1270,6 +1311,7 @@
         <dataType>Currency</dataType>
         <isCollection>false</isCollection>
         <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
             <transformValueActions>
                 <inputParameters>
@@ -1280,7 +1322,10 @@
                 </inputParameters>
                 <inputParameters>
                     <name>aggregationFieldReference</name>
-                    <value/>
+                    <value>
+                        <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Order&quot;,&quot;fieldReferences&quot;:[&quot;Provision_Value__c&quot;],&quot;elementReference&quot;:&quot;Filter_for_October&quot;}</complexValue>
+                        <complexValueType>FieldReference</complexValueType>
+                    </value>
                 </inputParameters>
                 <transformType>Sum</transformType>
             </transformValueActions>
@@ -1297,6 +1342,7 @@
         <dataType>Currency</dataType>
         <isCollection>false</isCollection>
         <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
             <transformValueActions>
                 <inputParameters>
@@ -1307,7 +1353,10 @@
                 </inputParameters>
                 <inputParameters>
                     <name>aggregationFieldReference</name>
-                    <value/>
+                    <value>
+                        <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Order&quot;,&quot;fieldReferences&quot;:[&quot;Provision_Value__c&quot;],&quot;elementReference&quot;:&quot;Filter_for_September&quot;}</complexValue>
+                        <complexValueType>FieldReference</complexValueType>
+                    </value>
                 </inputParameters>
                 <transformType>Sum</transformType>
             </transformValueActions>

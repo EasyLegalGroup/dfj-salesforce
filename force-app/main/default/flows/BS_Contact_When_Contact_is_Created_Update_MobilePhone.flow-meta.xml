@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>When a Contact is created and MobilePhone is empty and Account is not empty, take the Account&apos;s Phone and update the MobilePhone field on Contact</description>
     <environments>Default</environments>
     <interviewLabel>BS - Contact: When Contact is Created, Update MobilePhone {!$Flow.CurrentDateTime}</interviewLabel>

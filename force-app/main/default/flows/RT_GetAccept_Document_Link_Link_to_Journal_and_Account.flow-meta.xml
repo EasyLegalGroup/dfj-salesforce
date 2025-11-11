@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>Runs Before-Save.
 When a GetAccept Document Link is created and the ObjectType = Journal__c, it updates the document link with information from it&apos;s related GetAccept Document. It finds the related Journal on GetAccept Document and the Account on that Journal, and populates the Journal and Account lookups on GetAccept Document Link</description>
     <environments>Default</environments>

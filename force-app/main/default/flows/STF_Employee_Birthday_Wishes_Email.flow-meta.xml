@@ -51,8 +51,11 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
     </actionCalls>
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <environments>Default</environments>
     <interviewLabel>STF - Employee: Birthday Wishes Email {!$Flow.CurrentDateTime}</interviewLabel>
     <label>STF - Employee: Birthday Wishes Email</label>

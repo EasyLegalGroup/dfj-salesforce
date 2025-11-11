@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Advices_customer_on_relevant_services__c</fullName>
-    <externalId>false</externalId>
     <inlineHelpText>Does the employee advice the customer about all relevant services?</inlineHelpText>
     <label>Advices customer on relevant services?</label>
     <required>false</required>

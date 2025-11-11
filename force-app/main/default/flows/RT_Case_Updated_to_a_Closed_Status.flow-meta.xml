@@ -24,6 +24,7 @@
             </value>
         </inputParameters>
         <nameSegment>BusinessHoursFlowAction</nameSegment>
+        <offset>0</offset>
         <outputParameters>
             <assignToReference>$Record.Business_Hours_to_Close__c</assignToReference>
             <name>businessHours</name>
@@ -75,9 +76,11 @@
             </value>
         </inputParameters>
         <nameSegment>slackPostMessage</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Default_Values</name>
         <label>Assign Default Values</label>

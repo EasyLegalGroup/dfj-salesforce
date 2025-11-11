@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Total_Monthly_License_Cost_in_DKK__c</fullName>
     <defaultValue>0</defaultValue>
-    <externalId>false</externalId>
     <label>Total Monthly License Cost in DKK</label>
     <precision>18</precision>
     <required>false</required>

@@ -18,12 +18,14 @@
             </value>
         </inputParameters>
         <nameSegment>OpenAiGpt40.GPT 4o Chat Completion</nameSegment>
+        <offset>0</offset>
         <outputParameters>
             <assignToReference>chatGptResponse</assignToReference>
             <name>2XX</name>
         </outputParameters>
     </actionCalls>
     <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Choices_to_Text_Variable</name>
         <label>Assign Choices to Text Variable</label>

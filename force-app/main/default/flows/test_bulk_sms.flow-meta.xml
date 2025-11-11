@@ -33,9 +33,11 @@
             </value>
         </inputParameters>
         <nameSegment>McSmsTransactionalBulk</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <environments>Default</environments>
     <interviewLabel>test bulk sms {!$Flow.CurrentDateTime}</interviewLabel>
     <label>test bulk sms</label>

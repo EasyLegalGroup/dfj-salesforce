@@ -3,7 +3,6 @@
     <fullName>procurator_economic_conditions__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Økonomiske forhold</description>
-    <externalId>false</externalId>
     <label>Økonomiske forhold</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

@@ -39,9 +39,11 @@
             </value>
         </inputParameters>
         <nameSegment>slackPostMessage</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <environments>Default</environments>
     <interviewLabel>RT - Registration Staging: Slack Notification for Rebooked Meetings {!$Flow.CurrentDateTime}</interviewLabel>
     <label>RT - Registration Staging: Slack Notification for Rebooked Meetings</label>

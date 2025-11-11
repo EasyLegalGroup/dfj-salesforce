@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ska_granskare_kunna_terkalla_ful_277__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Ska granskare kunna återkalla fu 620e6</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

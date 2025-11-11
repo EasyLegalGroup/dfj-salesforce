@@ -28,6 +28,7 @@
             </value>
         </inputParameters>
         <nameSegment>DFJ_TimeFormatter</nameSegment>
+        <offset>0</offset>
         <outputParameters>
             <assignToReference>endTime</assignToReference>
             <name>timeOnly</name>
@@ -61,12 +62,14 @@
             </value>
         </inputParameters>
         <nameSegment>DFJ_TimeFormatter</nameSegment>
+        <offset>0</offset>
         <outputParameters>
             <assignToReference>startTime</assignToReference>
             <name>timeOnly</name>
         </outputParameters>
     </actionCalls>
     <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Add_Danish_Host_Locked_In_Info</name>
         <label>Add Danish Host Locked-In Info</label>

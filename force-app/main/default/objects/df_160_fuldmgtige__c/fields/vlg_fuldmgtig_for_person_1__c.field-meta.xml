@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>vlg_fuldmgtig_for_person_1__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
-    <externalId>false</externalId>
     <label>Vælg fuldmægtig for Person 1</label>
     <referenceTo>df_160_person__c</referenceTo>
     <relationshipLabel>vlg_fuldmgtig_for_person_1</relationshipLabel>

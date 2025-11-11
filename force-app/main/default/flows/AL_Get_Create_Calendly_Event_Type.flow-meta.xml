@@ -49,8 +49,10 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Existing_Event_Type_to_Variable</name>
         <label>Assign Existing Event Type to Variable</label>
@@ -223,11 +225,13 @@
         <connector>
             <targetReference>Send_Email</targetReference>
         </connector>
+        <doesUpsert>true</doesUpsert>
         <faultConnector>
             <isGoTo>true</isGoTo>
             <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
         </faultConnector>
         <inputReference>outputCalendlyEventType</inputReference>
+        <upsertExternalIdField>Event_Slug__c</upsertExternalIdField>
     </recordCreates>
     <recordLookups>
         <name>Get_Calendly_Event_Type</name>

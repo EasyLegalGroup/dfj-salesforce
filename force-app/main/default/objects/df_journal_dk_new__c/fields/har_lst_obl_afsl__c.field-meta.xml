@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>har_lst_obl_afsl__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Jeg har læst obligatorisk afslut a5709</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

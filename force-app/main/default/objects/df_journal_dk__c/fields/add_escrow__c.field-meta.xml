@@ -3,7 +3,6 @@
     <fullName>add_escrow__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Arven båndlægges indtil arvingen når en specifik alder</description>
-    <externalId>false</externalId>
     <label>Skal arven båndlægges?</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

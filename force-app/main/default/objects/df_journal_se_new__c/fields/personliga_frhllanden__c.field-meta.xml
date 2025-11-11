@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>personliga_frhllanden__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Personliga förhållanden</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

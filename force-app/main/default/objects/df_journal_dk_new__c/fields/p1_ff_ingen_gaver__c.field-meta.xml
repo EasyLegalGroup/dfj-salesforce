@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>p1_ff_ingen_gaver__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Fuldmægtigen skal ikke kunne giv f9213</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

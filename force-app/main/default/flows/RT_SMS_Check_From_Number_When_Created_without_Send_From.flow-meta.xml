@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>If we have a From Number starting with a &quot;+&quot; and Send From is empty, then we set it to Short/Long Code.</description>
     <environments>Default</environments>
     <interviewLabel>RT . SMS: Check From Number When Created without Send From {!$Flow.CurrentDateTime}</interviewLabel>

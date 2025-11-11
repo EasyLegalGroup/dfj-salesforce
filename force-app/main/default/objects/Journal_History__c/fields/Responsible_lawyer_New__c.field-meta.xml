@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Responsible_lawyer_New__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
-    <externalId>false</externalId>
     <label>Responsible lawyer (New)</label>
     <referenceTo>User</referenceTo>
     <relationshipName>Journal_Histories1</relationshipName>

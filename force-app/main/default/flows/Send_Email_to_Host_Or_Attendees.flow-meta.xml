@@ -757,6 +757,7 @@
         <nameSegment>emailSimple</nameSegment>
     </actionCalls>
     <apiVersion>59.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Copy_1_of_noEmailLeadsList</name>
         <label>Copy 1 of noEmailLeadsList</label>

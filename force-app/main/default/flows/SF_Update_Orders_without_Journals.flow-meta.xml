@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Add_Order_to_Collection</name>
         <label>Add Order to Collection</label>
@@ -65,6 +66,12 @@
             <targetReference>Assign_Journal_to_Order</targetReference>
         </connector>
     </assignments>
+    <customProperties>
+        <name>ScreenProgressIndicator</name>
+        <value>
+            <stringValue>{&quot;location&quot;:&quot;top&quot;,&quot;type&quot;:&quot;simple&quot;}</stringValue>
+        </value>
+    </customProperties>
     <decisions>
         <name>Did_We_find_a_Journal</name>
         <label>Did We find a Journal?</label>
@@ -172,6 +179,9 @@
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
+        <limit>
+            <numberValue>95.0</numberValue>
+        </limit>
         <object>Order</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
@@ -197,6 +207,14 @@
             <name>displayGotOrNot</name>
             <fieldText>&lt;p&gt;&lt;strong&gt;Got:&lt;/strong&gt; {!GotCounter}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Not:&lt;/strong&gt; {!NotCounter}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>dtOrderColl</name>
@@ -245,6 +263,14 @@
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <nextOrFinishButtonLabel>Update Selected</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>

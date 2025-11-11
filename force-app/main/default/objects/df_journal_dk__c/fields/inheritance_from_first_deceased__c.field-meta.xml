@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>inheritance_from_first_deceased__c</fullName>
     <description>Vælg arvefordeling efter førsteafdøde</description>
-    <externalId>false</externalId>
     <label>Vælg arvefordeling efter førstea c9922</label>
     <required>false</required>
     <trackTrending>false</trackTrending>

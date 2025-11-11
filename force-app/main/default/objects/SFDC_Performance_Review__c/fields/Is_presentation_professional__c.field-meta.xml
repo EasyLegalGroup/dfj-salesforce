@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Is_presentation_professional__c</fullName>
-    <externalId>false</externalId>
     <inlineHelpText>Does the employee present him/herself professionally to the customer?</inlineHelpText>
     <label>Is presentation professional?</label>
     <required>false</required>

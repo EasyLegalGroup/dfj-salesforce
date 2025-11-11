@@ -3,7 +3,6 @@
     <fullName>produkter_samganderttsavtal__c</fullName>
     <defaultValue>false</defaultValue>
     <description>4.890 kr.</description>
-    <externalId>false</externalId>
     <label>Samäganderättsavtal</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

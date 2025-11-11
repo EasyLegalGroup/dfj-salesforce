@@ -1,0 +1,272 @@
+<!--
+ - Created by Shubham Sharma on 12-07-2019.
+ -->
+
+<aura:component description="DFJ_ProductSelector" controller="DFJ_ProductSelectorController_Apex" implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="priceBooks" type="Pricebook2[]" default="[]" access="global" />
+    <aura:attribute name="LeadProducts" type="LeadProducts__c[]" default="[]" description="Will contain the all the products available in the org" />
+    <aura:attribute name="fullProductData" type="Object[]" access="global" default="[]" />
+    <aura:attribute name="currentProductList" type="Object[]" default="[]" />
+    <aura:attribute name="isAddProductModalOpen" type="Boolean" default="false" access="global" />
+    <aura:attribute name="isDeleteConfirmationModalOpen" type="Boolean" default="false" access="global" />
+    <aura:attribute name="CurrentPricebook" type="String" default="" access="global" />
+    <aura:attribute name="deleteTabIndex" type="Integer" default="" access="global" />
+    <aura:attribute name="SelectedPriceBookName" type="String" default="" access="global" />
+    <aura:attribute name="total" type="Decimal" default="0.00" access="global" />
+    <aura:attribute name="isoCode" type="String" access="global" />
+    <aura:attribute name="totalValues" type="Object" access="global" />
+
+
+    <div>
+        <div class="slds-p-around_medium">
+            <table class="slds-table slds-table_bordered slds-table_striped slds-scrollable_x anotherhover" style="table-layout: fixed;">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th class="slds-text-title_caps slds-cell-wrap " scope="col" title="PRODUCT NAME">
+                            <div class="slds-truncate slds-text-align_center slds-p-around_x-small">PRODUCT NAME</div>
+                        </th>
+                        <th class="slds-text-title_caps slds-cell-wrap " scope="col" title="PROVISION BASE">
+                            <div class="slds-truncate slds-text-align_center slds-p-around_x-small">PROVISION</div>
+                        </th>
+                        <th class="slds-text-title_caps slds-cell-wrap " scope="col" title="AMOUNT">
+                            <div class="slds-truncate slds-text-align_center slds-p-around_x-small">AMOUNT</div>
+                        </th>
+                        <th class="slds-text-title_caps slds-cell-wrap " scope="col" title="ITEM PRICE">
+                            <div class="slds-truncate slds-text-align_center slds-p-around_x-small">ITEM PRICE</div>
+                        </th>
+                        <th class="slds-text-title_caps slds-cell-wrap " scope="col" title="DISCOUNT (%)">
+                            <div class="slds-truncate slds-text-align_center slds-p-around_x-small">DISCOUNT (%)</div>
+                        </th>
+                        <!-- DIN-317 changes Added subscription checkbox -->
+                        <th class="slds-text-title_caps slds-cell-wrap " scope="col" title="SUBSCRIPTION">
+                            <div class="slds-truncate slds-text-align_center slds-p-around_x-small">SUBSCRIPTION</div>
+                        </th>
+                        <th class="slds-text-title_caps slds-cell-wrap " scope="col" title="SUB TOTAL">
+                            <div class="slds-truncate slds-text-align_center slds-p-around_x-small">SUB TOTAL</div>
+                        </th>
+                        <th class="slds-text-title_caps slds-cell-wrap " scope="col" title="ACTION">
+                            <div class="slds-truncate slds-text-align_center slds-p-around_x-small">ACTION</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="">
+                    <aura:if isTrue="{!v.LeadProducts.length == 0}">
+                        <tr class="slds-hint-parent public_fixedDataTableCell_main">
+                            <th scope="row" colspan="7" class="slds-cell-wrap ">
+                                <div class="slds-truncate slds-text-align_center slds-text-heading_medium">There are no active product selected</div>
+                            </th>
+                        </tr>
+
+                        <aura:set attribute="else">
+                            <aura:iteration var="pro" items="{!v.LeadProducts}" indexVar="tabIndex">
+                                <tr class="slds-hint-parent ">
+                                    <td scope="row" class="slds-cell-wrap ">
+                                        <div class="slds-truncate  slds-text-align_left"><b><ui:outputText value="{!pro.Name}" title="{!pro.Name}" /> </b></div>
+                                    </td>
+                                    <td scope="row" class="slds-cell-wrap ">
+                                        <div class="slds-truncate slds-text-align_center">
+                                            <lightning:formattedNumber value="{!pro.Provision_Base__c}" style="currency" currencyCode="{!pro.CurrencyIsoCode}" currencyDisplayAs="symbol" />
+                                            <!--{!pro.CurrencyIsoCode}&nbsp;&nbsp;{!pro.Provision_base__c}-->
+                                        </div>
+                                    </td>
+                                    <td class="slds-cell-wrap ">
+                                        <aura:if isTrue="{!pro.isEditable}">
+                                            <lightning:input label="" variant="label-hidden" type="number" value="{!pro.Quantity__c}" name="quantity" onchange="{!c.changeQuantity}" />
+                                            <aura:set attribute="else">
+                                                <div align="right" class="slds-truncate slds-text-align_center">
+                                                    {!pro.Quantity__c}
+                                                </div>
+                                            </aura:set>
+                                        </aura:if>
+                                    </td>
+                                    <td scope="row" class="slds-cell-wrap ">
+                                        <div class="slds-truncate slds-text-align_center">
+                                            <lightning:formattedNumber value="{!pro.Item_Price__c}" style="currency" currencyCode="{!pro.CurrencyIsoCode}" currencyDisplayAs="symbol" />
+                                            <!--{!pro.CurrencyIsoCode}&nbsp;&nbsp;{!pro.Item_Price__c}-->
+                                        </div>
+                                    </td>
+                                    <td class="slds-cell-wrap slds-text-align_center">
+                                        <aura:if isTrue="{!pro.isEditable}">
+                                            <lightning:input label="" variant="label-hidden" type="number" step="any" value="{!pro.Discount__c}" name="discount" onchange="{!c.changeQuantity}" />
+                                            <aura:set attribute="else">
+                                                <div align="right" class="slds-truncate slds-text-align_center">
+                                                    <lightning:formattedNumber value="{!pro.Discount__c}" minimumFractionDigits="2" maximumFractionDigits="4" />
+                                                </div>
+                                            </aura:set>
+                                        </aura:if>
+                                    </td>
+                                    <!--DIN-317 changes  Added subscription checkbox -->
+                                    <td class="slds-cell-wrap ">
+                                        <div class="slds-truncate slds-text-align_center">
+                                            <lightning:input type="checkbox" checked="{!pro.Is_subscription__c}" disabled="true"/>
+                                            <!-- <lightning:formattedNumber value="{!pro.}" style="currency" currencyCode="{!pro.CurrencyIsoCode}" currencyDisplayAs="symbol" /> -->
+                                            <!--<div class="slds-truncate slds-text-align_center">{!pro.CurrencyIsoCode}&nbsp;&nbsp;{!pro.totalPrice}</div>-->
+                                        </div>
+                                    </td>
+                                    <td class="slds-cell-wrap ">
+                                        <div class="slds-truncate slds-text-align_center">
+                                            <lightning:formattedNumber value="{!pro.totalPrice}" style="currency" currencyCode="{!pro.CurrencyIsoCode}" currencyDisplayAs="symbol" />
+                                            <!--<div class="slds-truncate slds-text-align_center">{!pro.CurrencyIsoCode}&nbsp;&nbsp;{!pro.totalPrice}</div>-->
+                                        </div>
+                                    </td>
+                                    <td class="slds-truncate slds-text-align_center">
+                                        <lightning:buttonIcon alternativeText="{!pro.isEditable == true ? 'check' : 'edit'}" iconName="{!pro.isEditable == true ? 'utility:check' : 'utility:edit'}" variant="border" onclick="{! c.editButtonClicked }" title="{!pro.isEditable == true ? 'Save' : 'Edit'}"
+                                            tabindex="{!tabIndex}" />
+                                        <lightning:buttonIcon iconName="utility:delete" variant="border" onclick="{! c.deleteRecord }" alternativeText="Delete" tabindex="{!tabIndex}" />
+                                    </td>
+                                </tr>
+                            </aura:iteration>
+                            <tr class="slds-hint-parent ">
+                                <td colspan="4"></td>
+                                <td class="slds-cell-wrap ">
+                                    <div class="slds-truncate slds-text-align_center slds-p-around_x-small"><strong>Total Price</strong></div>
+                                </td>
+                                <td class="slds-cell-wrap ">
+                                    <div class="slds-truncate slds-text-align_center slds-p-around_x-small">
+                                        <lightning:formattedNumber value="{!v.total}" style="currency" currencyCode="{!v.isoCode}" currencyDisplayAs="symbol" />
+                                        <!--{!v.isoCode}&nbsp;&nbsp;{!v.total}-->
+                                    </div>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </aura:set>
+                    </aura:if>
+                </tbody>
+            </table>
+
+            <!-- slds-float_right -->
+            <div align="right" class="slds-p-top_large button-padding slds-m-right_small">
+                <div class="displayinline slds-p-right_medium">
+                    <c:PS_CreatePayment disableButton="{!v.LeadProducts.length == 0}" recordId="{!v.recordId}" />
+                    <!-- <c:PS_SalesDocument_CMP disableButton="{!v.LeadProducts.length == 0}" recordId="{!v.recordId}" /> -->
+                </div>
+                <lightning:button type="button" variant="brand" label="Add product" iconName="utility:add" iconPosition="left" onclick="{!c.addProductModal}" />
+
+            </div>
+
+            <!-- <div class="slds-text-align_right slds-p-top_medium">
+
+                <lightning:button type="button" variant="brand" label="Add product" iconName="utility:add" iconPosition="left" onclick="{!c.addProductModal}" />
+            </div> -->
+
+        </div>
+
+
+        <aura:if isTrue="{!v.isAddProductModalOpen}">
+
+            <div>
+                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container" style="width:95%">
+                        <header class="slds-modal__header">
+
+                            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Add products</h2>
+                        </header>
+                        <div class="slds-modal__content slds-p-around_small" id="modal-content-id-1">
+
+                            <div>
+                                <aura:if isTrue="{!empty(v.LeadProducts)}">
+                                    <lightning:select label="Select pricebook" value="{!v.CurrentPricebook}" onchange="{!c.addProductToList}">
+                                        <option value="">None</option>
+                                        <aura:iteration var="pro" items="{!v.priceBooks}" indexVar="tabIndex">
+                                            <option value="{!pro.Id}">{!pro.Name}</option>
+                                        </aura:iteration>
+                                    </lightning:select>
+                                    <aura:set attribute="else">
+                                        <div class="slds-text-heading_medium slds-text-align_center slds-border_bottom">Selected pricebook : {!v.SelectedPriceBookName}</div>
+                                    </aura:set>
+                                </aura:if>
+                            </div>
+
+                            <div>
+                                <lightning:layout multipleRows="true" verticalAlign="center" horizontalAlign="center">
+                                    <lightning:layoutItem size="6" padding="around-small">
+                                        <div class="slds-truncate slds-text-align_center "><strong>PRODUCT NAME</strong></div>
+                                    </lightning:layoutItem>
+                                    <lightning:layoutItem size="2" padding="around-small">
+                                        <div class="slds-truncate slds-text-align_center "><strong>ITEM PRICE</strong></div>
+                                    </lightning:layoutItem>
+                                    <lightning:layoutItem size="3" padding="around-small">
+                                        <div class="slds-truncate slds-text-align_center"><strong>AMOUNT</strong></div>
+                                    </lightning:layoutItem>
+                                </lightning:layout>
+
+                                <lightning:layout multipleRows="true" verticalAlign="center" horizontalAlign="center">
+                                    <aura:iteration items="{!v.currentProductList}" indexVar="tabindex" var="proL">
+                                        <lightning:layoutItem size="6" class="slds-p-around_xxx-small">
+                                            <div class="slds-truncate slds-text-align_left">{!proL.Name}</div>
+                                        </lightning:layoutItem>
+                                        <lightning:layoutItem size="2" class="slds-p-around_xxx-small">
+                                            <div class="slds-truncate slds-text-align_center">
+                                                <lightning:formattedNumber value="{!proL.UnitPrice}" style="currency" currencyCode="{!proL.Product2.CurrencyIsoCode}" currencyDisplayAs="symbol" />
+                                                <!--{!proL.Product2.CurrencyIsoCode}&nbsp;&nbsp;{!proL.UnitPrice}-->
+                                            </div>
+                                        </lightning:layoutItem>
+                                        <lightning:layoutItem size="3" class="slds-p-around_xxx-small">
+                                            <div class="slds-truncate slds-text-align_center">
+                                                <lightning:layout multipleRows="false">
+                                                    <lightning:layoutItem size="3">
+                                                        <lightning:buttonIcon iconName="utility:dash" alternativeText="subtract" name="subtract" size="medium" tabindex="{!tabindex}" onclick="{!c.increaseDecreaseButton}" />
+                                                    </lightning:layoutItem>
+
+                                                    <lightning:layoutItem size="6" class="slds-p-left_xx-small">
+                                                        <lightning:input label="" variant="label-hidden" type="number" name="{!tabindex}" onchange="{!c.changeIntValue}" value="{!proL.quantity}" />
+                                                    </lightning:layoutItem>
+
+                                                    <lightning:layoutItem size="3" class="slds-p-left_xx-small">
+                                                        <lightning:buttonIcon iconName="utility:add" alternativeText="subtract" name="add" size="medium" onclick="{!c.increaseDecreaseButton}" tabindex="{!tabindex}" />
+                                                    </lightning:layoutItem>
+                                                </lightning:layout>
+                                            </div>
+                                        </lightning:layoutItem>
+                                    </aura:iteration>
+                                </lightning:layout>
+                            </div>
+
+                        </div>
+                        <footer class="slds-modal__footer">
+                            <lightning:button type="button" label="Add" iconName="utility:add" iconPosition="left" onclick="{!c.addProductsToLeadProducts}" variant="brand" />
+                            <lightning:button type="button" label="Cancel" iconName="utility:close" iconPosition="left" onclick="{!c.addProductModal}" variant="brand" />
+                        </footer>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </div>
+
+        </aura:if>
+
+        <aura:if isTrue="{!v.isDeleteConfirmationModalOpen}">
+            <!--###### MODAL BOX Start######-->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- ###### MODAL BOX HEADER Start ######-->
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close" onclick="{! c.closeDeleteModal }" alternativeText="close" variant="bare-inverse" class="slds-modal__close" />
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Delete Record</h2>
+                    </header>
+                    <!--###### MODAL BOX BODY Part Start######-->
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <lightning:layout multipleRows="true" verticalAlign="center">
+                            <lightning:layoutItem size="12" largeDeviceSize="12" mediumDeviceSize="12" smallDeviceSize="12">
+                                <div class="slds-var-m-around_large">
+                                    Are you sure you want to delete this product?
+                                </div>
+                            </lightning:layoutItem>
+                        </lightning:layout>
+                    </div>
+                    <!--###### MODAL BOX FOOTER Part Start ######-->
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="brand" label="Yes" name="deleteButton" onclick="{! c.deleteRecordWhenButtonClicked }" />
+                        <lightning:button variant="neutral" label="No" onclick="{! c.closeDeleteModal }" />
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+            <!--###### MODAL BOX Part END Here ######-->
+        </aura:if>
+
+
+    </div>
+
+</aura:component>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Add_Partner_Referral_Opp_to_Collection</name>
         <label>Add Partner Referral Opp to Collection</label>
@@ -323,6 +324,14 @@
             <name>headerScreen1</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 20px;&quot;&gt;Select Opportunities to Create&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>plType</name>
@@ -332,6 +341,14 @@
             <fieldType>MultiSelectCheckboxes</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -351,6 +368,14 @@
             <name>headerPartnerReferral</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 20px;&quot;&gt;Partner Referral&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>repPartnerReferrals</name>
@@ -364,8 +389,24 @@
                 <fieldType>DropdownBox</fieldType>
                 <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                 <isRequired>true</isRequired>
+                <styleProperties>
+                    <verticalAlignment>
+                        <stringValue>top</stringValue>
+                    </verticalAlignment>
+                    <width>
+                        <stringValue>12</stringValue>
+                    </width>
+                </styleProperties>
             </fields>
             <isRequired>false</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -385,6 +426,14 @@
             <name>headerReferenceLead</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 20px;&quot;&gt;Reference Lead&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>repProspects</name>
@@ -396,6 +445,14 @@
                 <fieldType>InputField</fieldType>
                 <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                 <isRequired>true</isRequired>
+                <styleProperties>
+                    <verticalAlignment>
+                        <stringValue>top</stringValue>
+                    </verticalAlignment>
+                    <width>
+                        <stringValue>12</stringValue>
+                    </width>
+                </styleProperties>
             </fields>
             <fields>
                 <name>txtProspectLastName</name>
@@ -404,6 +461,14 @@
                 <fieldType>InputField</fieldType>
                 <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                 <isRequired>true</isRequired>
+                <styleProperties>
+                    <verticalAlignment>
+                        <stringValue>top</stringValue>
+                    </verticalAlignment>
+                    <width>
+                        <stringValue>12</stringValue>
+                    </width>
+                </styleProperties>
             </fields>
             <fields>
                 <name>txtProspectEmail</name>
@@ -412,6 +477,14 @@
                 <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                 <isRequired>true</isRequired>
                 <storeOutputAutomatically>true</storeOutputAutomatically>
+                <styleProperties>
+                    <verticalAlignment>
+                        <stringValue>top</stringValue>
+                    </verticalAlignment>
+                    <width>
+                        <stringValue>12</stringValue>
+                    </width>
+                </styleProperties>
             </fields>
             <fields>
                 <name>txtProspectPhone</name>
@@ -420,8 +493,24 @@
                 <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                 <isRequired>true</isRequired>
                 <storeOutputAutomatically>true</storeOutputAutomatically>
+                <styleProperties>
+                    <verticalAlignment>
+                        <stringValue>top</stringValue>
+                    </verticalAlignment>
+                    <width>
+                        <stringValue>12</stringValue>
+                    </width>
+                </styleProperties>
             </fields>
             <isRequired>false</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -441,6 +530,14 @@
             <name>headerPositiveReview</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 20px;&quot;&gt;Positive Review&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>

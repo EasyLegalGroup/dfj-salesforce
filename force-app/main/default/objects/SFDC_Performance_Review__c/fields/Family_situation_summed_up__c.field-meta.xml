@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Family_situation_summed_up__c</fullName>
-    <externalId>false</externalId>
     <inlineHelpText>Does the employee make sure to sum up the family situation of the customer?</inlineHelpText>
     <label>Family situation summed up?</label>
     <required>false</required>

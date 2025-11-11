@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>If a Campaign with Lecture = True and Status = Scheduled is Updated, it calls the &quot;AL - Transform Campaign to Event&quot; flow, which updates an existing Event or creates a new one, if one doesn&apos;t already exist.</description>
     <environments>Default</environments>
     <interviewLabel>RT - Campaign: Lecture Campaign Updates Sync to Event {!$Flow.CurrentDateTime}</interviewLabel>

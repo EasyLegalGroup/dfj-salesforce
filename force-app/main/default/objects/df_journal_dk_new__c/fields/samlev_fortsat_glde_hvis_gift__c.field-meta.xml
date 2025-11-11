@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>samlev_fortsat_glde_hvis_gift__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Skal testamentet fortsat gælde h ce131</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

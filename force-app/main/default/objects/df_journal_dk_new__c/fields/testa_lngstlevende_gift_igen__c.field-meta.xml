@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>testa_lngstlevende_gift_igen__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Skal testamentet fortsat gælde h 4023f</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

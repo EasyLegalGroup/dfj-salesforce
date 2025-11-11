@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>fl_ff_omf_sdv_gaver__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Sædvanlige gaver</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

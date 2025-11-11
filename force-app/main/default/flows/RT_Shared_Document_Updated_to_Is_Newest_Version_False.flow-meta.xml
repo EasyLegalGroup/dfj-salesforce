@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>When &quot;Is Newest Version&quot; is updated to false (meaning it is no longer the newest version, Status will be updated to Superseded</description>
     <environments>Default</environments>
     <interviewLabel>RT - Shared Document: Updated to &quot;Is Newest Version&quot; = False {!$Flow.CurrentDateTime}</interviewLabel>

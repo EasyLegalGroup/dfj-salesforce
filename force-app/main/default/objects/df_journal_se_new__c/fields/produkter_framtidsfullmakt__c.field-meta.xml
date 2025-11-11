@@ -3,7 +3,6 @@
     <fullName>produkter_framtidsfullmakt__c</fullName>
     <defaultValue>false</defaultValue>
     <description>1.990 kr.</description>
-    <externalId>false</externalId>
     <label>Framtidsfullmakt</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

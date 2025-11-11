@@ -96,8 +96,10 @@
             </value>
         </inputParameters>
         <nameSegment>routeWork</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <environments>Default</environments>
     <interviewLabel>Omni-Channel Router {!$Flow.CurrentDateTime}</interviewLabel>
     <label>OmniChannel Router</label>

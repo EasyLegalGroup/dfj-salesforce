@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Fault_Message_to_Custom_Error</name>
         <label>Assign Fault Message to Custom Error</label>
@@ -491,6 +492,7 @@
         <connector>
             <targetReference>Update_Lead</targetReference>
         </connector>
+        <doesUpsert>true</doesUpsert>
         <faultConnector>
             <isGoTo>true</isGoTo>
             <targetReference>Assign_Fault_Message_to_Custom_Error</targetReference>

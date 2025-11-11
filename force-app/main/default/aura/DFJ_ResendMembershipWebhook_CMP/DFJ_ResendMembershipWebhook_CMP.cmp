@@ -1,0 +1,34 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader" controller="DFJ_MembershipController">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="isUserAdmin" type="Boolean" default="false" />
+    <aura:attribute name="runProcessscriptLable" type="String" default="Ok" />
+    <aura:attribute name="disableButton" type="Boolean" default="false" />
+
+    <lightning:layout multipleRows="true">
+        <lightning:layoutItem size="12" largeDeviceSize="12" mediumDeviceSize="12" smallDeviceSize="12">
+            <div class="slds-align_absolute-center slds-text-heading_medium slds-p-around_medium">
+                <aura:if isTrue="{!v.isUserAdmin}">
+                    <p>Click Ok to proceed.</p>
+                    <aura:set attribute="else">
+                        <p>You do not have permission to proceed.</p>
+
+                    </aura:set>
+                </aura:if>
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+    <lightning:layout horizontalAlign="center">
+        <aura:if isTrue="{!v.isUserAdmin}">
+            <div align="right" class="slds-p-right_x-small">
+                <lightning:button variant="brand" label="{!v.runProcessscriptLable}" title="{!v.runProcessscriptLable}" onclick="{! c.resendWebhook }" iconName="utility:check" iconPosition="left" disabled="{!v.disableButton}" />
+            </div>
+        </aura:if>
+        <div align="left">
+            <lightning:button variant="brand" label="Cancel" title="Cancel" onclick="{! c.closeModal }" iconName="utility:close" iconPosition="left" />
+        </div>
+    </lightning:layout>
+    <aura:html tag="style">
+        .slds-modal__footer{ display:none !important; } .slds-modal__content{ height:initial !important;} .slds-modal__header{ display:none !important; } .slds-modal__container{ width: 31% !important; min-width: 30% !important;}
+    </aura:html>
+
+</aura:component>

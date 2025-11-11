@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ska_testamentet_upphra_att_glla_235__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Ska testamentet upphöra att gäll d9e98</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

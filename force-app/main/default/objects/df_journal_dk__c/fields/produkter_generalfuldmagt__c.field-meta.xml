@@ -3,7 +3,6 @@
     <fullName>produkter_generalfuldmagt__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Original pris: 1.195 kr.</description>
-    <externalId>false</externalId>
     <label>Generalfuldmagt</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

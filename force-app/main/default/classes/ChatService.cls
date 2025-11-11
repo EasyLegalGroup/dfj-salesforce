@@ -806,6 +806,7 @@ public virtual with sharing class ChatService {
      */
     private static String getSlackBotToken() {
         try {
+            // Retrieve token from custom metadata (secure storage)
             List<Slack_Integration__mdt> slackConfig = [
                 SELECT Bot_Token__c, App_ID__c, Client_ID__c 
                 FROM Slack_Integration__mdt 

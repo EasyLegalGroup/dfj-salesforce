@@ -11,7 +11,13 @@
         <inputParameters>
             <name>ContactKey</name>
             <value>
-                <stringValue>{&quot;relationshipIdName&quot;:&quot;Lead__c&quot;,&quot;relationshipName&quot;:&quot;Lead__r&quot;,&quot;isPolymorphic&quot;:false,&quot;referenceObjectName&quot;:&quot;Lead&quot;,&quot;fieldName&quot;:&quot;Id&quot;}</stringValue>
+                <stringValue>{
+  &quot;relationshipIdName&quot;: &quot;Lead__c&quot;,
+  &quot;relationshipName&quot;: &quot;Lead__r&quot;,
+  &quot;isPolymorphic&quot;: false,
+  &quot;referenceObjectName&quot;: &quot;Lead&quot;,
+  &quot;fieldName&quot;: &quot;Id&quot;
+}</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
@@ -123,6 +129,7 @@
         <nameSegment>et4ae5__JBintFireBulkEvent</nameSegment>
     </actionCalls>
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
         <name>JB_Decision_Null_Check_SalesforceObj42d9a85263cb2eac1f236782011d4196</name>
         <label>JB_Decision_Null_Check_SalesforceObj42d9a85263cb2eac1f236782011d4196</label>

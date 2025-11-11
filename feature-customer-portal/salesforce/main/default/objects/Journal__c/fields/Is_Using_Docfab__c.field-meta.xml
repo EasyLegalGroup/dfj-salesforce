@@ -3,7 +3,6 @@
     <fullName>Is_Using_Docfab__c</fullName>
     <defaultValue>true</defaultValue>
     <description>Contains the value checked so docfab form could be open for all market units.</description>
-    <externalId>false</externalId>
     <label>Is Using Docfab</label>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

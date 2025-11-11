@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>vlg_arving_lngstlev__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
-    <externalId>false</externalId>
     <label>Vælg arving efter længstlevende</label>
     <referenceTo>df_160_person__c</referenceTo>
     <relationshipLabel>vlg_arving_lngstlev</relationshipLabel>

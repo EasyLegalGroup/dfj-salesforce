@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Is_data_only_shared_with_data_owner__c</fullName>
-    <externalId>false</externalId>
     <inlineHelpText>Does the employee only share data with the actual owner of the data and no third parties?</inlineHelpText>
     <label>Is data only shared with data owner?</label>
     <required>false</required>

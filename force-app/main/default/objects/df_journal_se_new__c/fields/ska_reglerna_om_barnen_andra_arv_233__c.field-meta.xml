@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ska_reglerna_om_barnen_andra_arv_233__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Ska reglerna om barnen / andra a 920a8</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

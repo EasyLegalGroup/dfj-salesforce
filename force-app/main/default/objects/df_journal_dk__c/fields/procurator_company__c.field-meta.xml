@@ -3,7 +3,6 @@
     <fullName>procurator_company__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Virksomhed?</description>
-    <externalId>false</externalId>
     <label>Virksomhed?</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

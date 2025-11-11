@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>stamdata_Har_du_b_rn__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Har du børn?</label>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

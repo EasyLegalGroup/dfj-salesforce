@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Preferred_contact_method__c</fullName>
-    <externalId>false</externalId>
     <inlineHelpText>The Customer&apos;s preferred mode for communication</inlineHelpText>
     <label>Preferred contact method</label>
     <required>false</required>

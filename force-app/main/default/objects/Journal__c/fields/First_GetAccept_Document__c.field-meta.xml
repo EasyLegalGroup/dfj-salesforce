@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>First_GetAccept_Document__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
-    <externalId>false</externalId>
     <label>First GetAccept Document</label>
     <referenceTo>GetAccept__GetAccept_Document__c</referenceTo>
     <relationshipLabel>Journals</relationshipLabel>

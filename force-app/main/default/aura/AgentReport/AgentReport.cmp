@@ -1,0 +1,150 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="AgentReport_Controller" >
+	
+    <aura:attribute name="reportData" type="Object[]" />
+    <aura:attribute name="DurationRange" type="String" default="Today" />
+    <aura:attribute name="isSpinnerOpen" type="Boolean" default="false" />
+    <aura:attribute name="customRange" type="Boolean" default="false" />
+    <aura:attribute name="StartDate" type="Date" />
+    <aura:attribute name="EndDate" type="Date" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <div>
+        <aura:if isTrue="{!v.isSpinnerOpen}">
+            <div>
+                <lightning:spinner variant="brand" size="large" alternativeText="Loading"/>
+            </div>
+        </aura:if>
+
+        <div class="slds-box backGroundWhite" style="width: 100% !important;">
+            <lightning:layout multipleRows="false" class="slds-p-around_small"  verticalAlign="center">
+                <lightning:layoutItem size="3" >
+                    <div class="slds-text-heading_large">
+                        Agent Reports
+                    </div>
+                </lightning:layoutItem>
+                <lightning:layoutItem size="6">
+                    <aura:if isTrue="{!v.customRange}">
+                        <lightning:layout multipleRows="false" class="slds-p-around_small"  verticalAlign="center">
+                            <lightning:layoutItem size="4" class="slds-p-around_small">
+                                <lightning:input type="Date" name="Start Date" label="Start Date" value="{!v.StartDate}" aura:id="StartDate"/>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="4" class="slds-p-around_small">
+                                <lightning:input type="Date" name="End Date" label="End Date" value="{!v.EndDate}" aura:id="EndDate"/>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="4" class="slds-p-around_small ApplyButton">
+                                <lightning:button name="Apply" variant="brand" label="Apply" onclick="{!c.ApplyCustomRange}"/>
+                            </lightning:layoutItem>
+                        </lightning:layout>
+                    </aura:if>
+                </lightning:layoutItem>
+                <lightning:layoutItem size="3" >
+                    <lightning:select label="Select Duration" value="{!v.DurationRange}" onchange="{!c.doInit}" >
+                        <option value="Today">Today</option>
+                        <option value="Yesterday">Yesterday</option>
+                        <option value="Last 7 Days">Last 7 days</option>
+                        <option value="THIS WEEK">This week</option>
+                        <option value="LAST WEEK">Last week</option>
+                        <option value="THIS MONTH">This month</option>
+                        <option value="LAST MONTH">Last month</option>
+                        <option value="Last 30 Days">Last 30 days</option>
+                        <option value="Custom Range">Apply Custom Filter</option>
+                    </lightning:select>
+            </lightning:layoutItem>
+            </lightning:layout>
+
+        <table class="slds-table slds-table_bordered slds-table_striped slds-scrollable_x" style="table-layout: fixed;">
+            <thead>
+            <tr class="slds-line-height_reset">
+                <th class="slds-text-title_caps slds-cell-wrap " scope="col" title="AGENT">
+                    <div class="slds-truncate slds-text-align_center">Agent</div>
+                </th>
+                <th class="slds-text-title_caps slds-cell-wrap " scope="col" title="TOTAL CALL">
+                    <div class="slds-truncate slds-text-align_center">Total Call</div>
+                </th>
+                <th class="slds-text-title_caps slds-cell-wrap " scope="col" title="TOTAL TALKTIME">
+                    <div class="slds-truncate slds-text-align_center">Total TalkTime</div>
+                </th>
+                <th class="slds-text-title_caps slds-cell-wrap " scope="col" title="EFFECTIVE CALL">
+                    <div class="slds-truncate slds-text-align_center">Effective Call</div>
+                </th>
+                <th class="slds-text-title_caps slds-cell-wrap " scope="col" title="EFFECTIVE TALKTIME">
+                    <div class="slds-truncate slds-text-align_center">Effective TalkTime</div>
+                </th>
+                <th class="slds-text-title_caps slds-cell-wrap " scope="col" title="APPOINTMENT">
+                    <div class="slds-truncate slds-text-align_center">Appointment</div>
+                </th>
+                <th class="slds-text-title_caps slds-cell-wrap " scope="col" title="REJECT">
+                    <div class="slds-truncate slds-text-align_center">Reject</div>
+                </th>
+                <th class="slds-text-title_caps slds-cell-wrap " scope="col" title="INVALID">
+                    <div class="slds-truncate slds-text-align_center">Invalid</div>
+                </th>
+                <th class="slds-text-title_caps slds-cell-wrap " scope="col" title="CONVERTED">
+                    <div class="slds-truncate slds-text-align_center">Converted</div>
+                </th>
+                <th class="slds-text-title_caps slds-cell-wrap " scope="col" title="SALES VALUE">
+                    <div class="slds-truncate slds-text-align_center">Sales Value</div>
+                </th>
+                <th class="slds-text-title_caps slds-cell-wrap " scope="col" title="HITRATE">
+                    <div class="slds-truncate slds-text-align_center">Hitrate</div>
+                </th>
+                <th class="slds-text-title_caps slds-cell-wrap " scope="col" title="AVG. SALES">
+                    <div class="slds-truncate slds-text-align_center">Avg. Sales</div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <aura:if isTrue="{!v.reportData.length == 0}">
+
+                <div class="no-user"> There are no active users </div>
+
+                <aura:set attribute="else">
+                    <aura:iteration var="usrVar" items="{!v.reportData}" indexVar="tabIndex" >
+                        <tr class="slds-hint-parent">
+                            <th scope="row" class="slds-cell-wrap ">
+                                <div class="slds-truncate slds-text-align_center"><b><ui:outputText value="{!usrVar.UserName}" title="{!usrVar.UserName}" /> </b></div>
+                            </th>
+                            <th scope="row" class="slds-cell-wrap ">
+                                <div class="slds-truncate slds-text-align_center">{!usrVar.Calls}</div>
+                            </th>
+                            <td class="slds-cell-wrap ">
+                                <div class="slds-truncate slds-text-align_center">{!usrVar.TalkTime}</div>
+                            </td>
+                            <th scope="row" class="slds-cell-wrap ">
+                                <div class="slds-truncate slds-text-align_center">{!usrVar.EffectiveCalls}</div>
+                            </th>
+                            <td class="slds-cell-wrap ">
+                                <div class="slds-truncate slds-text-align_center">{!usrVar.EffectiveTalkTime}</div>
+                            </td>
+                            <td class="slds-cell-wrap ">
+                                <div class="slds-truncate slds-text-align_center">{!usrVar.Appointment}</div>
+                            </td>
+                            <td class="slds-cell-wrap ">
+                                <div class="slds-truncate slds-text-align_center">{!usrVar.Reject}</div>
+                            </td>
+                            <td class="slds-cell-wrap ">
+                                <div class="slds-truncate slds-text-align_center">{!usrVar.Invalid}</div>
+                            </td>
+                            <td class="slds-cell-wrap ">
+                                <div class="slds-truncate slds-text-align_center">{!usrVar.Converted}</div>
+                            </td>
+                            <td class="slds-cell-wrap ">
+                                <div class="slds-truncate slds-text-align_center">{!usrVar.salesValue}</div>
+                            </td>
+                            <td class="slds-cell-wrap ">
+                                <div class="slds-truncate slds-text-align_center">{!usrVar.Hitrate}&nbsp;%</div>
+                            </td>
+                            <td class="slds-cell-wrap ">
+                                <div class="slds-truncate slds-text-align_center">{!usrVar.AVGSales}</div>
+                            </td>
+                        </tr>
+                    </aura:iteration>
+                </aura:set>
+            </aura:if>
+            </tbody>
+        </table>
+        </div>
+    </div>
+    
+</aura:component>

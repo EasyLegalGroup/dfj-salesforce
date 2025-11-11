@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Add_1st_MapAnalytic_to_Collection</name>
         <label>Add 1st MapAnalytic to Collection</label>
@@ -1481,6 +1482,14 @@ IF(LEN(TEXT(DAY({!dateDateToCheck}))) = 1, &quot;0&quot; &amp; TEXT(DAY({!dateDa
             <name>Error_Message</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 20px; color: rgb(255, 0, 0);&quot;&gt;Something went wrong...&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Error message:&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;{!CustomError}&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -1537,6 +1546,14 @@ IF(LEN(TEXT(DAY({!dateDateToCheck}))) = 1, &quot;0&quot; &amp; TEXT(DAY({!dateDa
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <name>findAvailableAccountsAction</name>
@@ -1569,11 +1586,27 @@ IF(LEN(TEXT(DAY({!dateDateToCheck}))) = 1, &quot;0&quot; &amp; TEXT(DAY({!dateDa
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <name>displayClickButtonMissingAlert</name>
                     <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(160, 0, 0);&quot;&gt;Please check for Available Accounts before proceeding&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -1610,6 +1643,14 @@ IF(LEN(TEXT(DAY({!dateDateToCheck}))) = 1, &quot;0&quot; &amp; TEXT(DAY({!dateDa
                     </isDisabled>
                     <isRequired>true</isRequired>
                     <scale>0</scale>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <name>boolUseDefaultProximity</name>
@@ -1622,6 +1663,14 @@ IF(LEN(TEXT(DAY({!dateDateToCheck}))) = 1, &quot;0&quot; &amp; TEXT(DAY({!dateDa
                     <helpText>&lt;p&gt;&lt;strong&gt;Description:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;By default, we search for Hosts with no events within {!numProximityFilter} days of the day you enter (both before and after).&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;By unchecking this box, you can manually set the filter.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Result Quality&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;em&gt;Reducing the number&lt;/em&gt;&lt;ul&gt;&lt;li&gt;Returns more Hosts&lt;/li&gt;&lt;li&gt;Increases risk of having to cancel the event later on&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;Increasing the number&lt;ul&gt;&lt;li&gt;Returns fewer hosts&lt;/li&gt;&lt;li&gt;Decreases the risk of having to cancel the event later on&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</helpText>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -1633,11 +1682,27 @@ IF(LEN(TEXT(DAY({!dateDateToCheck}))) = 1, &quot;0&quot; &amp; TEXT(DAY({!dateDa
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>displayDecideHostsToPlot</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 18px;&quot;&gt;Available Hosts&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Here is a list of all available Hosts on the selected date.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;Mark the ones you want to plot on the map.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
@@ -1714,6 +1779,14 @@ IF(LEN(TEXT(DAY({!dateDateToCheck}))) = 1, &quot;0&quot; &amp; TEXT(DAY({!dateDa
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
@@ -1747,6 +1820,14 @@ IF(LEN(TEXT(DAY({!dateDateToCheck}))) = 1, &quot;0&quot; &amp; TEXT(DAY({!dateDa
             <name>headerScreen2</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 24px; color: rgb(57, 137, 0);&quot;&gt;Success&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;Available hosts added for &lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;{!dateDateToCheck}&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;If you&apos;re unsure how to display them on the map, follow the guide below.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -1896,6 +1977,7 @@ IF(LEN(TEXT(DAY({!dateDateToCheck}))) = 1, &quot;0&quot; &amp; TEXT(DAY({!dateDa
         <isCollection>true</isCollection>
         <objectType>Account</objectType>
         <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
             <transformValueActions>
                 <outputFieldApiName>Id</outputFieldApiName>

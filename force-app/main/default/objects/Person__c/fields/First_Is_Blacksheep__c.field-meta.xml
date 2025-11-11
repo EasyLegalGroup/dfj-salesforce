@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>First_Is_Blacksheep__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>First_Is Blacksheep</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

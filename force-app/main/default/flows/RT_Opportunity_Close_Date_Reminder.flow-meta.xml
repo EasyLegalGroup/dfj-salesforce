@@ -68,6 +68,8 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
     </actionCalls>
     <actionCalls>
         <description>Sends Reminder Email 1 Day Before Set Closed Date</description>
@@ -137,6 +139,8 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
     </actionCalls>
     <actionCalls>
         <name>Send_3_Days_Overdue_Email</name>
@@ -205,6 +209,8 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
     </actionCalls>
     <actionCalls>
         <name>Send_3_Days_Reminder_Email</name>
@@ -272,6 +278,8 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
     </actionCalls>
     <actionCalls>
         <name>Send_Notification_About_Closed_Opportunity</name>
@@ -340,8 +348,11 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
     </actionCalls>
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Populate_Custom_Error_with_Flow_Fault_Message</name>
         <label>Populate Custom Error with Flow Fault Message</label>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>When an Account is created and it&apos;s Lead lookup is empty, tries to find a Lead that has ConvertedAccountId set to the Account&apos;s own ID and, if it finds anything, populates it&apos;s own Lead Lookup</description>
     <environments>Default</environments>
     <interviewLabel>RT - Account: When Created without Lead, Check for Matching Lead and Upate {!$Flow.CurrentDateTime}</interviewLabel>

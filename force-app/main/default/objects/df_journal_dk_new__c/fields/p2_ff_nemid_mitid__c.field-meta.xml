@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>p2_ff_nemid_mitid__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>NemID / MitID</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

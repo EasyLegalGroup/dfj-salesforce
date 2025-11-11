@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>person_hidden_p1_ff_subs_fuldm__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Hidden Field - P1 - FF - Subsidi f6a7e</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

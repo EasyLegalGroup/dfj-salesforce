@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>59.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
         <name>Check_If_Record_Has_Order</name>
         <label>Check If Record Has Order</label>
@@ -281,11 +282,27 @@
             <name>Copy_1_of_Copy_1_of_displayHeading</name>
             <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;Order And OrderItems&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>Copy_1_of_Copy_1_of_displayOrderInfo</name>
             <fieldText>&lt;p&gt;&lt;b&gt;No Order Found&lt;/b&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>false</showFooter>
         <showHeader>false</showHeader>
@@ -302,11 +319,27 @@
             <name>Copy_1_of_displayHeading</name>
             <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;Order And OrderItems&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>Copy_1_of_displayOrderInfo</name>
             <fieldText>&lt;p&gt;&lt;strong&gt;Order Number: &lt;/strong&gt;&lt;a href=&quot;{!orderLinkOnAccount}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;{!Copy_1_of_getOrderRecord.OrderNumber}&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Order Start Date: &lt;/strong&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;{!Copy_1_of_getOrderRecord.EffectiveDate}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Order Price: &lt;/strong&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;{!Copy_1_of_getOrderRecord.CurrencyIsoCode} &lt;/span&gt;{!Copy_1_of_getOrderRecord.Order_Price__c}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Owner Name: &lt;/strong&gt;&lt;a href=&quot;{!userIdOnAccount}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;{!Copy_1_of_getOwnerRecord.Name}&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>Copy_1_of_displayOrderItemInfo</name>
@@ -355,6 +388,14 @@
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>false</showFooter>
         <showHeader>false</showHeader>
@@ -371,11 +412,27 @@
             <name>Copy_1_of_Copy_1_of_Copy_1_of_displayHeading</name>
             <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;Order And OrderItems&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>Copy_2_of_displayOrderInfo</name>
             <fieldText>&lt;p&gt;&lt;b&gt;No Order Found&lt;/b&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>false</showFooter>
         <showHeader>false</showHeader>
@@ -392,11 +449,27 @@
             <name>displayHeading</name>
             <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;Order And OrderItems&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>displayOrderInfo</name>
             <fieldText>&lt;p&gt;&lt;strong&gt;Order Number: &lt;/strong&gt;&lt;a href=&quot;{!orderLinkOnJournal}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;{!getOrderRecord.OrderNumber}&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Order Start Date: &lt;/strong&gt;{!getOrderRecord.EffectiveDate}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Order Price: &lt;/strong&gt;{!getOrderRecord.CurrencyIsoCode} {!getOrderRecord.Order_Price__c}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Owner Name: &lt;/strong&gt;&lt;a href=&quot;{!userIdOnJournal}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;{!getOwnerRecord.Name}&lt;/a&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>displayOrderItemInfo</name>
@@ -445,6 +518,14 @@
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>false</showFooter>
         <showHeader>false</showHeader>

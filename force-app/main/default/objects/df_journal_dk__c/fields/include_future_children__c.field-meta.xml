@@ -3,7 +3,6 @@
     <fullName>include_future_children__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Inkludér fremtidige børn i testamentet?</description>
-    <externalId>false</externalId>
     <label>Skal der tages højde for fremtid 02720</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

@@ -63,6 +63,7 @@
         <nameSegment>TwilioSF__TwilioSendSMS</nameSegment>
     </actionCalls>
     <apiVersion>58.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Account_s_Phone_to_Variable</name>
         <label>Assign Account&apos;s Phone to Variable</label>

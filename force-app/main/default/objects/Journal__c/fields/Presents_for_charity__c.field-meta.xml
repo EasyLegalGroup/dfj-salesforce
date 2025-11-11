@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Presents_for_charity__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Presents for charity</label>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

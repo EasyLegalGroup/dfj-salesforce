@@ -3,7 +3,6 @@
     <fullName>skal_dansk_ret_skal_glde_for_gte_94__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Der skal tilføjes en bestemmelse i ægtepagten, hvis mindst én af jer har haft fast bopæl i udlandet ved ægteskabets indgåelse (turistvisum eller lignende tæller ikke).</description>
-    <externalId>false</externalId>
     <label>Skal dansk ret skal gælde for æg 25d99</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

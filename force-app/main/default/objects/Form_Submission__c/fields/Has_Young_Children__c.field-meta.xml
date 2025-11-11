@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Has_Young_Children__c</fullName>
     <description>Young Children is early teenagers or younger</description>
-    <externalId>false</externalId>
     <inlineHelpText>Young Children is early teenagers or younger</inlineHelpText>
     <label>Has Young Children</label>
     <required>false</required>

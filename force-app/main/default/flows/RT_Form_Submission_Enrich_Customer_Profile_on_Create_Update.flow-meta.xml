@@ -16,8 +16,10 @@
             </value>
         </inputParameters>
         <nameSegment>EnrichCustomerProfile</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Account_ID_as_Record_ID</name>
         <label>Assign Account ID as Record ID</label>

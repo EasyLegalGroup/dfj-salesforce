@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Most_Recent_Call_by__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
-    <externalId>false</externalId>
     <label>Most Recent Call by</label>
     <referenceTo>User</referenceTo>
     <relationshipName>Hosts</relationshipName>

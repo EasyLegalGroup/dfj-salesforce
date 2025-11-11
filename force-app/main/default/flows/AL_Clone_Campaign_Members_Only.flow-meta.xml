@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>This is a simplified version of the existing Clone Campaign Members flow. This only clones the campaign members and does not update the campaign. Allows you to optionally set &quot;IsRescheduled&quot; and &quot;WasRescheduled&quot; on existing and new members respectively.</description>
     <environments>Default</environments>
     <interviewLabel>AL - Clone Campaign Members {!$Flow.CurrentDateTime}</interviewLabel>
@@ -110,6 +111,7 @@
         <isCollection>true</isCollection>
         <objectType>CampaignMember</objectType>
         <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
             <transformValueActions>
                 <outputFieldApiName>Account__c</outputFieldApiName>

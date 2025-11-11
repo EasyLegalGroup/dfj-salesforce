@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>When a Job Application is created, this flow sets the name of the record to &quot;Candidate Name ([Name of Job Opening])</description>
     <environments>Default</environments>
     <interviewLabel>BS - Job Application: Created {!$Flow.CurrentDateTime}</interviewLabel>

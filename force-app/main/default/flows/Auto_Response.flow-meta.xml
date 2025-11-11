@@ -16,6 +16,7 @@
             </value>
         </inputParameters>
         <nameSegment>Lead.Auto_Response_to_Leads</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>Send_Lead_Auto_Response_Email_SE_Market</name>
@@ -32,8 +33,10 @@
             </value>
         </inputParameters>
         <nameSegment>Lead.Auto_Response_to_Leads_SE</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Set_Danish_Country_Manager_Search</name>
         <label>Set Danish Country Manager Search</label>

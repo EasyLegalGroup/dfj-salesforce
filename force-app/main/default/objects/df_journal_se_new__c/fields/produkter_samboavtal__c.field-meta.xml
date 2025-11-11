@@ -3,7 +3,6 @@
     <fullName>produkter_samboavtal__c</fullName>
     <defaultValue>false</defaultValue>
     <description>2.090 kr.</description>
-    <externalId>false</externalId>
     <label>Samboavtal</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Acceptance_Criteria__c</fullName>
-    <externalId>false</externalId>
     <inlineHelpText>Input clearly defined criteria for when the project&apos;s output is accepted.</inlineHelpText>
     <label>Acceptance Criteria</label>
     <length>32768</length>

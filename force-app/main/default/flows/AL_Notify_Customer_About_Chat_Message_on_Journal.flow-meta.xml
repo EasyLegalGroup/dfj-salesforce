@@ -45,8 +45,11 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
     </actionCalls>
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>When a Chat Message is Created by an Agent, the flow &quot;RT - Chat Message: When Journal Related Chat Message is Created&quot; triggers this flow and sends a notification to the customer, containing the message and a link to the documents.</description>
     <environments>Default</environments>
     <interviewLabel>AL - Notify Customer About Chat Message on Journal {!$Flow.CurrentDateTime}</interviewLabel>

@@ -3,7 +3,6 @@
     <fullName>service_tinglysning_af_gtepagt__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Originalpris: 0 kr.</description>
-    <externalId>false</externalId>
     <label>Service: Tinglysning af ægtepagt</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

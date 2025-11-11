@@ -41,6 +41,7 @@
         <nameSegment>submit</nameSegment>
     </actionCalls>
     <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Next_Approver_ID</name>
         <label>Assign Next Approver ID</label>

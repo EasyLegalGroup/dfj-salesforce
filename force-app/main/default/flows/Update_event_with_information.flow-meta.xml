@@ -27,6 +27,7 @@
             </value>
         </inputParameters>
         <nameSegment>TwilioSF__TwilioSendSMS</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>DK_Send_Immediate_SMS_Account</name>
@@ -55,6 +56,7 @@
             </value>
         </inputParameters>
         <nameSegment>TwilioSF__TwilioSendSMS</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>DKSMSReminder_Account_1_hour_before</name>
@@ -83,6 +85,7 @@
             </value>
         </inputParameters>
         <nameSegment>TwilioSF__TwilioSendSMS</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>DKSMSReminder_Lead_1_hour_before</name>
@@ -111,6 +114,7 @@
             </value>
         </inputParameters>
         <nameSegment>TwilioSF__TwilioSendSMS</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>Reminder_24_Hours_Before_DK</name>
@@ -139,6 +143,7 @@
             </value>
         </inputParameters>
         <nameSegment>TwilioSF__TwilioSendSMS</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>Reminder_24_Hours_Before_DK_Account</name>
@@ -167,6 +172,7 @@
             </value>
         </inputParameters>
         <nameSegment>TwilioSF__TwilioSendSMS</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>SE_Send_Immediate_SMS_Account</name>
@@ -195,6 +201,7 @@
             </value>
         </inputParameters>
         <nameSegment>TwilioSF__TwilioSendSMS</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>SE_Send_Immediate_SMSv2</name>
@@ -223,6 +230,7 @@
             </value>
         </inputParameters>
         <nameSegment>TwilioSF__TwilioSendSMS</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>SESMSReminder_Account_1_hour_before</name>
@@ -251,6 +259,7 @@
             </value>
         </inputParameters>
         <nameSegment>TwilioSF__TwilioSendSMS</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>SESMSReminder_Lead_1_hour_before</name>
@@ -279,8 +288,10 @@
             </value>
         </inputParameters>
         <nameSegment>TwilioSF__TwilioSendSMS</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>49.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
         <name>Booking_for_Account_or_Lead_24_hours_before</name>
         <label>Booking for Account or Lead? (24 hours before)</label>

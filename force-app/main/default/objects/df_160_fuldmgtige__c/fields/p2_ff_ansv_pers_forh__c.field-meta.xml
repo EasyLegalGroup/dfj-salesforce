@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>p2_ff_ansv_pers_forh__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Personlige forhold2</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

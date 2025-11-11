@@ -3,7 +3,6 @@
     <fullName>procurator_presents_for_charity__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Gaver til velgørenhed?</description>
-    <externalId>false</externalId>
     <label>Gaver til velgørenhed?</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>bndlggelse_su_tillg__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>SU-tillæg</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

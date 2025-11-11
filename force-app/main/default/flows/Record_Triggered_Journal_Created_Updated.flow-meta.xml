@@ -30,8 +30,10 @@
             </value>
         </inputParameters>
         <nameSegment>TwilioSF__TwilioSendSMS</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>59.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Add_Work_Log_GA_Reply_Status_Changed_to_Collection</name>
         <label>Add Work Log (GA Reply Status Changed) to Collection</label>

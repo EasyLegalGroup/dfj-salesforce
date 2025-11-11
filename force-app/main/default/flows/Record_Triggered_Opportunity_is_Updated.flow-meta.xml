@@ -30,6 +30,7 @@
             </value>
         </inputParameters>
         <nameSegment>LeadConverterClass</nameSegment>
+        <offset>0</offset>
         <outputParameters>
             <assignToReference>accountId</assignToReference>
             <name>accountId</name>
@@ -103,8 +104,10 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Add_Order_Product_to_Collection</name>
         <label>Add Order Product to Collection</label>

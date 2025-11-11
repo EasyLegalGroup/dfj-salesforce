@@ -34,6 +34,7 @@
             </value>
         </inputParameters>
         <nameSegment>DFJ_TimeFormatter</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <actionCalls>
@@ -97,8 +98,10 @@
             <name>recipientId</name>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Campaign_s_Values_to_Variables</name>
         <label>Assign Campaign&apos;s Values to Variables</label>

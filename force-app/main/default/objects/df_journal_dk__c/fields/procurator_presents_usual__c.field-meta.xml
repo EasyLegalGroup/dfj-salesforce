@@ -3,7 +3,6 @@
     <fullName>procurator_presents_usual__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Skal der kunne gives sædvanlige gaver?</description>
-    <externalId>false</externalId>
     <label>Skal der kunne gives sædvanlige  f5728</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

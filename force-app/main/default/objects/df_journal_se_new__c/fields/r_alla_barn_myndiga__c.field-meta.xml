@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>r_alla_barn_myndiga__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Är alla barn myndiga?</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

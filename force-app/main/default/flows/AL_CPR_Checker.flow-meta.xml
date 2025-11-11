@@ -24,6 +24,7 @@
             </value>
         </inputParameters>
         <nameSegment>DFJ_CPRServiceFlowInvoker</nameSegment>
+        <offset>0</offset>
         <outputParameters>
             <assignToReference>outputAddress</assignToReference>
             <name>address</name>
@@ -54,6 +55,7 @@
         </outputParameters>
     </actionCalls>
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Populate_Custom_Error_with_Flow_Fault_Message</name>
         <label>Populate Custom Error with Flow Fault Message</label>

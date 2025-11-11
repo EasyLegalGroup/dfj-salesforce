@@ -59,6 +59,7 @@
         <nameSegment>emailSimple</nameSegment>
     </actionCalls>
     <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
         <name>Do_we_have_an_Order</name>
         <label>Do we have an Order?</label>

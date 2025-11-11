@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>inheritance_from_the_longest_liv_22__c</fullName>
     <description>Vælg arvefordeling efter længstlevende</description>
-    <externalId>false</externalId>
     <label>Vælg arvefordeling efter længstl 99831</label>
     <required>false</required>
     <trackTrending>false</trackTrending>

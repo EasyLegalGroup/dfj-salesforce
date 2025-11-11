@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>type_of_marriage__c</fullName>
     <description>Hvilken type ægteskab er der indgået?</description>
-    <externalId>false</externalId>
     <label>Ægteskabstype</label>
     <required>false</required>
     <trackTrending>false</trackTrending>

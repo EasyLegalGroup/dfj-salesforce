@@ -3,7 +3,6 @@
     <fullName>produkter_brnetestamente__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Original pris: 995 kr.</description>
-    <externalId>false</externalId>
     <label>Børnetestamente</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

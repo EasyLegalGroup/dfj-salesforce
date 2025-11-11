@@ -3,7 +3,6 @@
     <fullName>has_children__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Gælder også voksne børn</description>
-    <externalId>false</externalId>
     <label>Har børn?</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

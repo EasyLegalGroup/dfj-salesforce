@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
         <name>Is_Cancelled_Tickets_Greater_than_Tickets_in_Order</name>
         <label>Is Cancelled Tickets Greater than Tickets in Order?</label>

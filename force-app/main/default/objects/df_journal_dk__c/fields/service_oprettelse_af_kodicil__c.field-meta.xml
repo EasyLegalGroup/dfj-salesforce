@@ -3,7 +3,6 @@
     <fullName>service_oprettelse_af_kodicil__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Originalpris: 0 kr.</description>
-    <externalId>false</externalId>
     <label>Service: Oprettelse af kodicil</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

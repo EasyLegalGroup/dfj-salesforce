@@ -47,6 +47,7 @@
         <nameSegment>emailSimple</nameSegment>
     </actionCalls>
     <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_to_Output_Variable</name>
         <label>Assign to Output Variable</label>

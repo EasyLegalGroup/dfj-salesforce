@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>vlg_arveafkald_giver__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
-    <externalId>false</externalId>
     <label>Vælg personen der giver arveafka 0ed1e</label>
     <referenceTo>df_160_person__c</referenceTo>
     <relationshipLabel>vlg_arveafkald_giver</relationshipLabel>

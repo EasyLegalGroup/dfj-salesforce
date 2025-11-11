@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Project_Goals__c</fullName>
-    <externalId>false</externalId>
     <inlineHelpText>Enter information about the goals of this project, e.g. the effect of the desired outcome.</inlineHelpText>
     <label>Project Goals</label>
     <length>32768</length>

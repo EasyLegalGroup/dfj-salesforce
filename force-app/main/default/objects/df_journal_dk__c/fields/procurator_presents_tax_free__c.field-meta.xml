@@ -3,7 +3,6 @@
     <fullName>procurator_presents_tax_free__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Afgiftsfrie gaver?</description>
-    <externalId>false</externalId>
     <label>Afgiftsfrie gaver?</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

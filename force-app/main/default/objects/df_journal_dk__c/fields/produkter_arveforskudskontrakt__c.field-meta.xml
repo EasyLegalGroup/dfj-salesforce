@@ -3,7 +3,6 @@
     <fullName>produkter_arveforskudskontrakt__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Original pris: 895 kr.</description>
-    <externalId>false</externalId>
     <label>Arveforskudskontrakt</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

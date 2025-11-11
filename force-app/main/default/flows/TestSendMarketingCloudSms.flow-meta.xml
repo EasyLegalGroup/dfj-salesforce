@@ -39,6 +39,7 @@
             </value>
         </inputParameters>
         <nameSegment>MarketingCloudSMSService</nameSegment>
+        <offset>0</offset>
         <outputParameters>
             <assignToReference>Body</assignToReference>
             <name>responseBody</name>
@@ -49,6 +50,7 @@
         </outputParameters>
     </actionCalls>
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <environments>Default</environments>
     <interviewLabel>TestSendMarketingCloudSms {!$Flow.CurrentDateTime}</interviewLabel>
     <label>TestSendMarketingCloudSms</label>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Wants_Upgraded_Cabin__c</fullName>
-    <externalId>false</externalId>
     <label>Wants Upgraded Cabin</label>
     <required>false</required>
     <trackHistory>false</trackHistory>

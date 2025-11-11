@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ska_det_vara_mjligt_att_ge_vanli_288__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Ska det vara möjligt att ge vanl 99686</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

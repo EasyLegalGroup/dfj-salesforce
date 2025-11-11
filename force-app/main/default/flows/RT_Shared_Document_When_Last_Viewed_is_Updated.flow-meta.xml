@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>When Last Viewed is Updated, checks if we have a value in First Viewed, if not we set it</description>
     <environments>Default</environments>
     <interviewLabel>RT - Shared Document: When Last Viewed is Updated {!$Flow.CurrentDateTime}</interviewLabel>

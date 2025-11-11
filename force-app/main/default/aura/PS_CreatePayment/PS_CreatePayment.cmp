@@ -1,0 +1,46 @@
+<aura:component controller="PS_PaymentController" implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:hasSObjectName" access="global">
+  <aura:attribute name="recordId" type="String" access="global"/>
+  <aura:attribute name="sObjectName" type="String" access="global" />
+  <aura:attribute name="openConfirmationModel" type="Boolean" default="false" access="global" />
+  <aura:attribute name="buttonLabel" type="String" default="Ok" access="global" />
+  <aura:attribute name="modelContent" type="String" default="Click ok to create the payment and invoice record." access="global" />
+  <aura:attribute name="disableButton" type="Boolean" default="false" access="global" />
+  <aura:attribute name="disableOkButton" type="Boolean" default="false" access="global" />
+  <aura:attribute name="makeCallout" type="Boolean" default="false" access="global" />
+  <aura:attribute name="paymentOrderLines" type="Payment_order_line__c" default="[]" access="global" />
+  <aura:attribute name="subscriptionLeadProducts" type="LeadProducts__c" default="[]" access="global" />
+  <aura:attribute name="subscriptionOrderItemProducts" type="orderItem" default="[]" access="global" />
+  <aura:attribute name="payment" type="Payments__c" default="{}" access="global" />
+  <aura:attribute name="showCreatePaymentButton" type="Boolean" default="true" access="global"/>
+
+  <aura:handler name="change" value="{!v.makeCallout}" action="{!c.calloutChangesHandler}"/>
+
+  <lightning:button variant="brand" label="Create payment" title="Create payment" disabled="{!v.disableButton}" onclick="{! c.openModel }" />
+
+  <aura:if isTrue="{!v.openConfirmationModel}">
+      <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_small">
+          <div class="slds-modal__container">
+              <lightning:buttonIcon iconName="utility:close" onclick="{!c.closeModal}" alternativeText="close" variant="bare-inverse" class="slds-modal__close" />
+              <div class="slds-modal__content slds-p-around_small" id="modal-content-id-1">
+                  <lightning:layout multipleRows="true">
+                      <lightning:layoutItem size="12" largeDeviceSize="12" mediumDeviceSize="12" smallDeviceSize="12">
+                          <div class="slds-align_absolute-center slds-text-heading_medium slds-p-around_medium">
+                              <p>{!v.modelContent}</p>
+                          </div>
+                      </lightning:layoutItem>
+                      <div align="right" class="slds-p-around_medium slds-align_absolute-center">
+                          <lightning:button variant="brand" label="{!v.buttonLabel}" title="{!v.buttonLabel}" disabled="{!v.disableOkButton}" onclick="{!c.handlePaymentRecordCreation}" iconName="utility:check" iconPosition="left" />
+                      </div>
+
+                  </lightning:layout>
+              </div>
+
+          </div>
+      </section>
+      <div class="slds-backdrop slds-backdrop_open"></div>
+  </aura:if>
+  <aura:html tag="style">
+      .slds-modal__header { display:none !important; }
+      .slds-modal_small .slds-modal__container {max-width: 38% !important; min-width: 30% !important; }
+  </aura:html>
+</aura:component>

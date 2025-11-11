@@ -4,7 +4,6 @@
     <businessStatus>Active</businessStatus>
     <defaultValue>false</defaultValue>
     <description>If this field is ticked and the Journal State is set to &quot;Arkiveret (Intet svar)&quot;, the customer will receive an email regarding us stopping trying to reach them.</description>
-    <externalId>false</externalId>
     <label>Archived SMS Sent</label>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

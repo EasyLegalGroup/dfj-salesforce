@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>date_of_marriage__c</fullName>
     <description>Bryllupsdagens dato</description>
-    <externalId>false</externalId>
     <label>Dato for ægteskabsindgåelse</label>
     <required>false</required>
     <trackTrending>false</trackTrending>

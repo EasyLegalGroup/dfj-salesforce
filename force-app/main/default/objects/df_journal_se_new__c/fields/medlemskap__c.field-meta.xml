@@ -3,7 +3,6 @@
     <fullName>medlemskap__c</fullName>
     <defaultValue>false</defaultValue>
     <description>0 kr.</description>
-    <externalId>false</externalId>
     <label>Medlemskap</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

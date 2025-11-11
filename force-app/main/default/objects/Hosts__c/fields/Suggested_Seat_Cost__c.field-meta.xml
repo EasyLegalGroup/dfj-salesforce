@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Suggested_Seat_Cost__c</fullName>
-    <externalId>false</externalId>
     <label>Suggested Price Per Cover</label>
     <precision>18</precision>
     <required>false</required>

@@ -30,6 +30,7 @@
             </value>
         </inputParameters>
         <nameSegment>CPRIngestInvocable</nameSegment>
+        <offset>0</offset>
         <outputParameters>
             <assignToReference>numEventsCreated</assignToReference>
             <name>eventsCreated</name>
@@ -40,6 +41,13 @@
         </outputParameters>
     </actionCalls>
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <customProperties>
+        <name>ScreenProgressIndicator</name>
+        <value>
+            <stringValue>{&quot;location&quot;:&quot;top&quot;,&quot;type&quot;:&quot;simple&quot;}</stringValue>
+        </value>
+    </customProperties>
     <environments>Default</environments>
     <interviewLabel>SF {!$Flow.CurrentDateTime}</interviewLabel>
     <label>CPR: Manual Ingest</label>
@@ -155,6 +163,14 @@
                 <assignToReference>colContentDocumentIds</assignToReference>
                 <name>contentDocIds</name>
             </outputParameters>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -171,6 +187,14 @@
             <name>displaySuccess</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 20px;&quot;&gt;File parsed&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Events created:&lt;/strong&gt; {!numEventsCreated}. &lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Status:&lt;/strong&gt; {!varMessage}. &lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Run Id:&lt;/strong&gt; {!varRunId}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>

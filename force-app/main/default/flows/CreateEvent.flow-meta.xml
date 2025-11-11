@@ -91,6 +91,7 @@
         <nameSegment>UpdateLeadForCalendlyActionResponse</nameSegment>
     </actionCalls>
     <apiVersion>54.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign</name>
         <label>Assign Gratis rådgivning</label>

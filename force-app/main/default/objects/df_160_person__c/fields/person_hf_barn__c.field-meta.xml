@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>person_hf_barn__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>HF - Barn</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

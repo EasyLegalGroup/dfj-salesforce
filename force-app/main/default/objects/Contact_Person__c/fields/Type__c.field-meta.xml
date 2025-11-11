@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Type__c</fullName>
-    <externalId>false</externalId>
     <inlineHelpText>Vælg om den Contact Person du opretter er vores nye medlem, eller en af dennes pårørende</inlineHelpText>
     <label>Type</label>
     <required>true</required>

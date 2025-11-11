@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>bndlggelse_inds_gngs_vilk__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Indsæt blot 6 mest gængse båndlæ a2fcb</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

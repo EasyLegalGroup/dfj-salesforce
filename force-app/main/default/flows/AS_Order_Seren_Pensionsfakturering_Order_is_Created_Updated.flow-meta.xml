@@ -18,8 +18,10 @@
             </value>
         </inputParameters>
         <nameSegment>Order.Order_Confirmations</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <environments>Default</environments>
     <interviewLabel>AS - Order: Seren Pensionsfakturering Order is Created/Updated {!$Flow.CurrentDateTime}</interviewLabel>
     <label>AS - Order: Seren Pensionsfakturering Order is Created/Updated</label>

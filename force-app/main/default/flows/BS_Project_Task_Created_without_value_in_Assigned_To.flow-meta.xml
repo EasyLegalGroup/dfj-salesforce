@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>When a Project Task is created without a value in &quot;Assigned To&quot;, the user who created the record, is assigned</description>
     <environments>Default</environments>
     <interviewLabel>BS - Project Task: Created without value in &quot;Assigned To&quot; {!$Flow.CurrentDateTime}</interviewLabel>

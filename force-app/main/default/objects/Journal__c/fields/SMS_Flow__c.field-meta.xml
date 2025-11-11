@@ -3,7 +3,6 @@
     <fullName>SMS_Flow__c</fullName>
     <defaultValue>false</defaultValue>
     <description>If this field is ticked, the person will receive SMS reminders via our SMS 360 setup</description>
-    <externalId>false</externalId>
     <inlineHelpText>If this field is ticked, the person will receive SMS reminders via our SMS 360 setup</inlineHelpText>
     <label>SMS Flow</label>
     <trackHistory>false</trackHistory>

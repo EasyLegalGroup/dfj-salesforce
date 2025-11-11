@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>skrddersyning_af_p2_ff__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Skræddersyning af Person 2&apos;s fre 6a21b</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

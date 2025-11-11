@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>gare_av_fastigheter_eller_ngot_a_230__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Ägare av fastigheter eller något c8f4e</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

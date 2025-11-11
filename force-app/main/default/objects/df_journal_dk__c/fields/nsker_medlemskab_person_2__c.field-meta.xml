@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>nsker_medlemskab_person_2__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Ønsker medlemskab</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

@@ -3,7 +3,6 @@
     <fullName>include_childs_will__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Gælder kun ved mindreårige børn</description>
-    <externalId>false</externalId>
     <label>Skal der indsættes børnetestamen 46e02</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

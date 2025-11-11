@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>procurator_secondary_procurators_28__c</fullName>
     <description>Skal sekundære fuldmægtige stå i forening i eller prioriteret rækkefølge?</description>
-    <externalId>false</externalId>
     <label>Skal sekundære fuldmægtige stå i 31099</label>
     <required>false</required>
     <trackTrending>false</trackTrending>

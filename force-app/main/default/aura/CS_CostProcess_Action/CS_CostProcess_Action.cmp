@@ -1,0 +1,26 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId" controller="CS_CostSystem_Controller">
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="runProcessscriptLable" type="String" default="Yes" />
+    <aura:attribute name="disableButton" type="Boolean" default="false" />
+    <lightning:layout multipleRows="true">
+        <lightning:layoutItem size="12" largeDeviceSize="12" mediumDeviceSize="12" smallDeviceSize="12">
+            <div class="slds-align_absolute-center slds-text-heading_medium slds-p-around_medium">
+                <p>Do you want to run the cost process script?</p>
+            </div>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="6" largeDeviceSize="6" mediumDeviceSize="6" smallDeviceSize="6">
+            <div align="right" class="slds-p-around_medium">
+                <lightning:button variant="brand" label="{!v.runProcessscriptLable}" title="{!v.runProcessscriptLable}" onclick="{! c.runProcessScript }" iconName="utility:check" iconPosition="left" disabled="{!v.disableButton}" />
+            </div>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="6" largeDeviceSize="6" mediumDeviceSize="6" smallDeviceSize="6">
+            <div align="left" class="slds-p-around_medium">
+                <lightning:button variant="brand" label="Cancel" title="Cancel" onclick="{! c.closeDeleteModal }" iconName="utility:close" iconPosition="left" disabled="{!v.disableButton}" />
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+    <aura:html tag="style">
+        .slds-modal__footer{ display:none !important; } .slds-modal__content{ height:initial !important;} .slds-modal__header{ display:none !important; }
+    </aura:html>
+
+</aura:component>

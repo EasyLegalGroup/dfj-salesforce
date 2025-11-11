@@ -3,7 +3,6 @@
     <fullName>All_Shared_Documents_Approved__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Controlled by a flow that checks Shared Documents with &quot;Is Newest Version&quot;. If all of them are Approved, this field is set.</description>
-    <externalId>false</externalId>
     <label>All Shared Documents Approved</label>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

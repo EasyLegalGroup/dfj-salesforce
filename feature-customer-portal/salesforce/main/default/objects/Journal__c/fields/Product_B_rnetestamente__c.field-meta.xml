@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Product_B_rnetestamente__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Product - Børnetestamente</label>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Falls_on_a_Work_Day__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Falls on a Work Day</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

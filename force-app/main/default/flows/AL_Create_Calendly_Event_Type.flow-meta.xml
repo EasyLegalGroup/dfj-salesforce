@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Existing_Event_Type_to_Variable</name>
         <label>Assign Existing Event Type to Variable</label>
@@ -171,11 +172,13 @@
         <label>Create Calendly Event Type</label>
         <locationX>314</locationX>
         <locationY>566</locationY>
+        <doesUpsert>true</doesUpsert>
         <faultConnector>
             <isGoTo>true</isGoTo>
             <targetReference>Populate_Custom_Error_with_Flow_Fault_Message</targetReference>
         </faultConnector>
         <inputReference>outputCalendlyEventType</inputReference>
+        <upsertExternalIdField>Event_Slug__c</upsertExternalIdField>
     </recordCreates>
     <recordLookups>
         <name>Get_Calendly_Event_Type</name>

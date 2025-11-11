@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>arveford_beting_p1__c</fullName>
-    <externalId>false</externalId>
     <label>Arvefordeling hvis Person 1 går  1ad0e</label>
     <required>false</required>
     <trackTrending>false</trackTrending>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Populate_Custom_Error_with_Flow_Fault_Message</name>
         <label>Populate Custom Error with Flow Fault Message</label>
@@ -171,6 +172,12 @@
             <targetReference>Filter_for_Completed_Registrations</targetReference>
         </connector>
     </collectionProcessors>
+    <customProperties>
+        <name>ScreenProgressIndicator</name>
+        <value>
+            <stringValue>{&quot;location&quot;:&quot;top&quot;,&quot;type&quot;:&quot;simple&quot;}</stringValue>
+        </value>
+    </customProperties>
     <decisions>
         <name>Did_Journal_Updater_Succeed</name>
         <label>Did Journal Updater Succeed?</label>
@@ -382,6 +389,14 @@
             <name>displayError</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 0, 0); font-size: 20px;&quot;&gt;Something went wrong...&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;Error message:&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;{!CustomError}&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -401,6 +416,14 @@
             <name>displayScreen1Header</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 20px; background-color: rgb(255, 255, 255);&quot;&gt;Public Document Registration&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>toggShowOtherContacts</name>
@@ -439,6 +462,14 @@
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>Screen_1_Section1</name>
@@ -486,7 +517,10 @@
                     </inputParameters>
                     <inputParameters>
                         <name>keyField</name>
-                        <value/>
+                        <value>
+                            <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Contact&quot;,&quot;fieldReferences&quot;:[&quot;Id&quot;],&quot;elementReference&quot;:&quot;Filter_for_Person_1_and_Person_2&quot;}</complexValue>
+                            <complexValueType>ComplexObjectFieldDetails</complexValueType>
+                        </value>
                     </inputParameters>
                     <inputParameters>
                         <name>maxRowSelection</name>
@@ -502,11 +536,22 @@
                     </inputParameters>
                     <inputParameters>
                         <name>columnReferences</name>
-                        <value/>
+                        <value>
+                            <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Contact&quot;,&quot;fieldReferences&quot;:[&quot;Name&quot;,&quot;Journal_DK_2_0_Person_Type__c&quot;],&quot;elementReference&quot;:&quot;Filter_for_Person_1_and_Person_2&quot;}</complexValue>
+                            <complexValueType>ComplexObjectFieldDetails</complexValueType>
+                        </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -552,7 +597,10 @@
                     </inputParameters>
                     <inputParameters>
                         <name>keyField</name>
-                        <value/>
+                        <value>
+                            <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Contact&quot;,&quot;fieldReferences&quot;:[&quot;Id&quot;],&quot;elementReference&quot;:&quot;Filter_for_Others&quot;}</complexValue>
+                            <complexValueType>ComplexObjectFieldDetails</complexValueType>
+                        </value>
                     </inputParameters>
                     <inputParameters>
                         <name>maxRowSelection</name>
@@ -568,7 +616,10 @@
                     </inputParameters>
                     <inputParameters>
                         <name>columnReferences</name>
-                        <value/>
+                        <value>
+                            <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Contact&quot;,&quot;fieldReferences&quot;:[&quot;Name&quot;,&quot;Journal_DK_2_0_Person_Type__c&quot;],&quot;elementReference&quot;:&quot;Filter_for_Others&quot;}</complexValue>
+                            <complexValueType>ComplexObjectFieldDetails</complexValueType>
+                        </value>
                     </inputParameters>
                     <inputParameters>
                         <name>shouldDisplayLabel</name>
@@ -579,6 +630,14 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
@@ -641,7 +700,10 @@
                     </inputParameters>
                     <inputParameters>
                         <name>keyField</name>
-                        <value/>
+                        <value>
+                            <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Public_Document_Registration__c&quot;,&quot;fieldReferences&quot;:[&quot;Id&quot;],&quot;elementReference&quot;:&quot;Filter_for_Uncompleted_Registrations&quot;}</complexValue>
+                            <complexValueType>ComplexObjectFieldDetails</complexValueType>
+                        </value>
                     </inputParameters>
                     <inputParameters>
                         <name>maxRowSelection</name>
@@ -657,11 +719,22 @@
                     </inputParameters>
                     <inputParameters>
                         <name>columnReferences</name>
-                        <value/>
+                        <value>
+                            <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Public_Document_Registration__c&quot;,&quot;fieldReferences&quot;:[&quot;Product_Name__c&quot;,&quot;Document_Type__c&quot;,&quot;Status__c&quot;],&quot;elementReference&quot;:&quot;Filter_for_Uncompleted_Registrations&quot;}</complexValue>
+                            <complexValueType>ComplexObjectFieldDetails</complexValueType>
+                        </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -673,11 +746,27 @@
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>displayCompletedRegistrationsHeader</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(0, 0, 0); font-size: 20px;&quot;&gt;Completed &amp;amp; Out of Flow Registrations&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>Screen_1_Section2</name>
@@ -719,7 +808,10 @@
                     </inputParameters>
                     <inputParameters>
                         <name>keyField</name>
-                        <value/>
+                        <value>
+                            <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Public_Document_Registration__c&quot;,&quot;fieldReferences&quot;:[&quot;Id&quot;],&quot;elementReference&quot;:&quot;Filter_for_Completed_Registrations&quot;}</complexValue>
+                            <complexValueType>ComplexObjectFieldDetails</complexValueType>
+                        </value>
                     </inputParameters>
                     <inputParameters>
                         <name>maxRowSelection</name>
@@ -735,7 +827,10 @@
                     </inputParameters>
                     <inputParameters>
                         <name>columnReferences</name>
-                        <value/>
+                        <value>
+                            <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Public_Document_Registration__c&quot;,&quot;fieldReferences&quot;:[&quot;Product_Name__c&quot;,&quot;Document_Type__c&quot;,&quot;Status__c&quot;],&quot;elementReference&quot;:&quot;Filter_for_Completed_Registrations&quot;}</complexValue>
+                            <complexValueType>ComplexObjectFieldDetails</complexValueType>
+                        </value>
                     </inputParameters>
                     <inputParameters>
                         <name>shouldDisplayLabel</name>
@@ -746,6 +841,14 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -798,7 +901,10 @@
                     </inputParameters>
                     <inputParameters>
                         <name>keyField</name>
-                        <value/>
+                        <value>
+                            <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Public_Document_Registration__c&quot;,&quot;fieldReferences&quot;:[&quot;Id&quot;],&quot;elementReference&quot;:&quot;Filter_for_Other_Registrations&quot;}</complexValue>
+                            <complexValueType>ComplexObjectFieldDetails</complexValueType>
+                        </value>
                     </inputParameters>
                     <inputParameters>
                         <name>maxRowSelection</name>
@@ -814,11 +920,22 @@
                     </inputParameters>
                     <inputParameters>
                         <name>columnReferences</name>
-                        <value/>
+                        <value>
+                            <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Public_Document_Registration__c&quot;,&quot;fieldReferences&quot;:[&quot;Product_Name__c&quot;,&quot;Document_Type__c&quot;,&quot;Status__c&quot;],&quot;elementReference&quot;:&quot;Filter_for_Other_Registrations&quot;}</complexValue>
+                            <complexValueType>ComplexObjectFieldDetails</complexValueType>
+                        </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -830,6 +947,14 @@
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>

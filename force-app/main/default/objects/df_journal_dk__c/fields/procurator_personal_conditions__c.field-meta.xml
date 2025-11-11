@@ -3,7 +3,6 @@
     <fullName>procurator_personal_conditions__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Personlige forhold</description>
-    <externalId>false</externalId>
     <label>Personlige forhold</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

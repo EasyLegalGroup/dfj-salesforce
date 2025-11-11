@@ -39,9 +39,11 @@
             </value>
         </inputParameters>
         <nameSegment>McSmsTransactionalBulk</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_SendFrom_Variables</name>
         <label>Assign SendFrom Variables</label>

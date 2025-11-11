@@ -28,6 +28,7 @@
             </value>
         </inputParameters>
         <nameSegment>DFJ_TimeFormatter</nameSegment>
+        <offset>0</offset>
         <outputParameters>
             <assignToReference>txtStartDateTime</assignToReference>
             <name>formatted</name>
@@ -121,8 +122,11 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
     </actionCalls>
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_0_Day_Send_Out_Media</name>
         <label>Assign 0 Day Send-Out Media</label>

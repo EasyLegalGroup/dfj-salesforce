@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>fullmakt_fr_person2_sekundr_vrge__c</fullName>
-    <externalId>false</externalId>
     <label>Fullmakt för (Person 2)</label>
     <required>false</required>
     <trackTrending>false</trackTrending>

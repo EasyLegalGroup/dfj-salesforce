@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>vrger_brnetestamente_DE64R1MW55__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Værger</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

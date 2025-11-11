@@ -3,7 +3,6 @@
     <fullName>produkter_vrdnadstestamente__c</fullName>
     <defaultValue>false</defaultValue>
     <description>1.490 kr.</description>
-    <externalId>false</externalId>
     <label>Vårdnadstestamente</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

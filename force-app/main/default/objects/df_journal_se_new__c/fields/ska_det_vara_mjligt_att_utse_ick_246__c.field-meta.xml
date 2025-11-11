@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ska_det_vara_mjligt_att_utse_ick_246__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Ska det vara möjligt att utse ic 0f6bd</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

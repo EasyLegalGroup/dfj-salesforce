@@ -15,9 +15,11 @@
             </value>
         </inputParameters>
         <nameSegment>c:DFJ_navigateToNewRecord</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Add_Calendly_Action_to_Collection</name>
         <label>Add Calendly Action to Collection</label>
@@ -206,6 +208,12 @@
             <targetReference>Does_it_have_a_CalendlyAction</targetReference>
         </connector>
     </collectionProcessors>
+    <customProperties>
+        <name>ScreenProgressIndicator</name>
+        <value>
+            <stringValue>{&quot;location&quot;:&quot;top&quot;,&quot;type&quot;:&quot;simple&quot;}</stringValue>
+        </value>
+    </customProperties>
     <decisions>
         <name>Does_Any_Pending_Campaigns_Remain</name>
         <label>Does Any Pending Campaigns Remain?</label>
@@ -641,6 +649,14 @@
             <name>displayError</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 20px; color: rgb(255, 0, 0);&quot;&gt;Something went wrong...&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;Error message:&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;{!CustomError}&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -660,11 +676,27 @@
             <name>displayHeaderScreen1</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 20px;&quot;&gt;🚀&lt;/strong&gt;&lt;strong&gt; &lt;/strong&gt;&lt;strong style=&quot;font-size: 20px;&quot;&gt;Mark as Won &amp;amp; Activate Campaigns&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;Select which Campaigns to Activate / Mark as Scheduled&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>displayWillBeOpenForBookingsInfo</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;em&gt;The Campaigns will also be marked Open for Bookings&lt;/em&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
@@ -680,6 +712,14 @@
             <name>displayWillNotBeOpenForBookingsInfo</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;em style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Because the Host Type is {!Get_Account.Host_Type__c}, the Campaigns will &lt;/em&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;&lt;em&gt;&lt;u&gt;not&lt;/u&gt;&lt;/em&gt;&lt;/strong&gt;&lt;em style=&quot;background-color: rgb(255, 255, 255);&quot;&gt; be marked Open for Bookings&lt;/em&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
@@ -750,6 +790,14 @@
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -769,6 +817,14 @@
             <name>displaySuccess</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 20px; color: rgb(0, 0, 0);&quot;&gt;🎉Success&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;The &lt;/span&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;Opportunity &lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;has been marked &lt;/span&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;Closed Won&lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt; and you&apos;ve activated &lt;/span&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;{!ActivatedCampaignCount}&lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt; out of &lt;/span&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;{!PendingCampaignCount}&lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt; Campaigns!&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -788,6 +844,14 @@
             <name>displayCancelTheRestAlert</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 20px; color: rgb(255, 0, 0);&quot;&gt;Beware&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;The remaining &lt;strong&gt;{!frmCountOfRemainingfCampaigns} Campaign(s)&lt;/strong&gt; will be marked as Cancelled&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>

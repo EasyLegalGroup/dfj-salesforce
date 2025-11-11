@@ -3,7 +3,6 @@
     <fullName>User__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <description>For choosing person who made the request</description>
-    <externalId>false</externalId>
     <label>User</label>
     <referenceTo>User</referenceTo>
     <relationshipName>Loggings</relationshipName>

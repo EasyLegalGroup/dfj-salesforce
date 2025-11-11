@@ -24,9 +24,11 @@
             </value>
         </inputParameters>
         <nameSegment>DFJ_CPRServiceFlowInvoker</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Contact_Checked_True</name>
         <label>Assign Contact Checked True</label>

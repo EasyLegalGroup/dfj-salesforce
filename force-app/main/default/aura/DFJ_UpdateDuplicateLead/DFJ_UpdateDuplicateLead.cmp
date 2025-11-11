@@ -1,0 +1,62 @@
+<aura:component controller="DFJ_UpdateDuplicateLeadController_Apex" access="global" description="DFJ_UpdateDuplicateLead" implements="flexipage:availableForAllPageTypes,force:appHostable">
+    <aura:attribute name="DurationRange" type="String" default="" />
+    <aura:attribute name="isSpinnerOpen" type="Boolean" default="false" />
+    <aura:attribute name="customRange" type="Boolean" default="false" />
+    <aura:attribute name="IsApplyDisabled" type="Boolean" default="true" />
+    <aura:attribute name="StartDate" type="Date" />
+    <aura:attribute name="EndDate" type="Date" />
+
+    <div>
+        <aura:if isTrue="{!v.isSpinnerOpen}">
+            <div>
+                <lightning:spinner variant="brand" size="large" alternativeText="Loading"/>
+            </div>
+        </aura:if>
+
+        <div class="slds-box backGroundWhite" style="width: 100% !important;">
+            <lightning:layout multipleRows="false" class="slds-p-around_small padding_topBottom"  verticalAlign="center">
+                <lightning:layoutItem size="3" >
+                    <div class="slds-text-heading_large">
+                        Duplicate checking
+                    </div>
+                </lightning:layoutItem>
+                <lightning:layoutItem size="5">
+                    <aura:if isTrue="{!v.customRange}">
+                        <lightning:layout multipleRows="false" class="slds-p-around_small padding_topBottom"  verticalAlign="center">
+                            <lightning:layoutItem size="6" class="slds-p-around_small">
+                                <lightning:input type="Date" name="Start Date" label="Start Date" value="{!v.StartDate}" aura:id="StartDate"/>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="6" class="slds-p-around_small">
+                                <lightning:input type="Date" name="End Date" label="End Date" value="{!v.EndDate}" aura:id="EndDate"/>
+                            </lightning:layoutItem>
+                            <!--<lightning:layoutItem size="4" class="slds-p-around_small ApplyButton">
+                                <lightning:button name="Apply" variant="brand" label="Apply" onclick="{!c.ApplyCustomRange}"/>
+                            </lightning:layoutItem>-->
+                        </lightning:layout>
+                    </aura:if>
+                </lightning:layoutItem>
+                <lightning:layoutItem size="3" >
+                    <lightning:select label="Select Duration" value="{!v.DurationRange}" onchange="{!c.onChange}">
+                        <option value="none">none</option>
+                        <option value="Today">Today</option>
+                        <!--<option value="Yesterday">Yesterday</option>-->
+                        <option value="Last 7 Days">Last 7 days</option>
+                       <!-- <option value="THIS WEEK">This week</option>
+                        <option value="LAST WEEK">Last week</option>
+                        <option value="THIS MONTH">This month</option>
+                        <option value="LAST MONTH">Last month</option>-->
+                        <option value="Last 30 Days">Last 30 days</option>
+                        <option value="Last 3 Months">Last 3 Months</option>
+                        <option value="Custom Range">Apply Custom Filter</option>
+                    </lightning:select>
+                </lightning:layoutItem>
+                <lightning:layoutItem size="2" class="slds-p-around_small ApplyButton">
+                <lightning:button name="Apply" variant="brand" label="Apply" onclick="{!c.doInit}" disabled="{!v.IsApplyDisabled}"/>
+                    <!--<aura:if isTrue="{!v.customRange == false}">
+                        <lightning:button name="Apply" variant="brand" label="Apply" onclick="{!c.doInit}"/>
+                    </aura:if>-->
+                </lightning:layoutItem>
+            </lightning:layout>
+        </div>
+    </div>
+</aura:component>

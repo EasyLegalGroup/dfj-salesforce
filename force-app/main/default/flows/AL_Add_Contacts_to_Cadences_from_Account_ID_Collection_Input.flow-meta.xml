@@ -34,9 +34,11 @@
             </value>
         </inputParameters>
         <nameSegment>assignTargetToSalesCadence</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Add_Cadence_Target_to_Collection</name>
         <label>Add Cadence Target to Collection</label>

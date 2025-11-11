@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>nsker_kunden_at_give_gavekort__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Ønsker kunden at give et gavekor b8722</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

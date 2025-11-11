@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>stamdata_fremt_brn__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Skal der tages højde for fremtid 02720</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

@@ -69,8 +69,10 @@
             </value>
         </inputParameters>
         <nameSegment>TelegentaOutcomeHelper</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Account_Variables_Assignment</name>
         <label>Account Variables Assignment</label>

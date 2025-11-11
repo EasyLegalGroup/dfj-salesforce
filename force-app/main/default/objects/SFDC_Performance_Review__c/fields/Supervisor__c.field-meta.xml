@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Supervisor__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
-    <externalId>false</externalId>
     <inlineHelpText>Enter the name of the supervisor who&apos;s doing monitoring</inlineHelpText>
     <label>Supervisor</label>
     <referenceTo>SFDC_Employee__c</referenceTo>

@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>svart_fr__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Svart får</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

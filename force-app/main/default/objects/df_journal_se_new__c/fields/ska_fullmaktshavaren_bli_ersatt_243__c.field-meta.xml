@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ska_fullmaktshavaren_bli_ersatt_243__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Ska fullmaktshavaren bli ersatt  ef7d4</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

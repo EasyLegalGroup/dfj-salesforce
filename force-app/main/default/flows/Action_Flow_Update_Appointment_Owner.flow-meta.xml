@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <environments>Default</environments>
     <interviewLabel>Action Flow: Update Appointment Owner {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Action Flow: Update Appointment Owner</label>
@@ -71,6 +72,7 @@
         <isCollection>true</isCollection>
         <objectType>Appointment__c</objectType>
         <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
             <transformValueActions>
                 <outputFieldApiName>Assigned_To__c</outputFieldApiName>

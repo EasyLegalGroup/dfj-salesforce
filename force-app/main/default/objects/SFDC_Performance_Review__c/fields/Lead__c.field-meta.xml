@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Lead__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
-    <externalId>false</externalId>
     <inlineHelpText>This field is used for the performance review and searches are made within leads</inlineHelpText>
     <label>Lead</label>
     <referenceTo>Lead</referenceTo>

@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>doks_krver_spec_skrddersyning__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Kræver et eller flere dokumenter 1b26a</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

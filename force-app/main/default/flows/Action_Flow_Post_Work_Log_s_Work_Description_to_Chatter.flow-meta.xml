@@ -18,6 +18,7 @@
             </value>
         </inputParameters>
         <nameSegment>ConvertToPlainText</nameSegment>
+        <offset>0</offset>
         <outputParameters>
             <assignToReference>PlainWorkDescription</assignToReference>
             <name>output</name>
@@ -47,6 +48,7 @@
             </value>
         </inputParameters>
         <nameSegment>chatterPost</nameSegment>
+        <offset>0</offset>
         <outputParameters>
             <assignToReference>FeedItemId</assignToReference>
             <name>feedItemId</name>
@@ -76,12 +78,14 @@
             </value>
         </inputParameters>
         <nameSegment>chatterPost</nameSegment>
+        <offset>0</offset>
         <outputParameters>
             <assignToReference>FeedItemId</assignToReference>
             <name>feedItemId</name>
         </outputParameters>
     </actionCalls>
     <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Add_Work_Log_to_Collection</name>
         <label>Add Work Log to Collection</label>

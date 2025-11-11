@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>har_du_gjort_ett_testamente_tidi_221__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Har du gjort ett testamente tidi b9507</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

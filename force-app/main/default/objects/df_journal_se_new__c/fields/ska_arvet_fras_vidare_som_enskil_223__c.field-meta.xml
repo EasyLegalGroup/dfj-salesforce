@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ska_arvet_fras_vidare_som_enskil_223__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Ska arvet föras vidare som enski ad188</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

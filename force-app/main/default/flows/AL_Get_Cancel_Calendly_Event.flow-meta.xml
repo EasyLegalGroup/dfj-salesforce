@@ -33,6 +33,7 @@
             </value>
         </inputParameters>
         <nameSegment>DFJ_CalendlyAPIService</nameSegment>
+        <offset>0</offset>
         <outputParameters>
             <assignToReference>booking_method</assignToReference>
             <name>booking_method</name>
@@ -103,6 +104,7 @@
         </outputParameters>
     </actionCalls>
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_CustomError</name>
         <label>Assign CustomError</label>

@@ -3,7 +3,6 @@
     <fullName>are_all_children_grown_ups__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Er alle børn over 18 år?</description>
-    <externalId>false</externalId>
     <label>Er alle børn myndige?</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

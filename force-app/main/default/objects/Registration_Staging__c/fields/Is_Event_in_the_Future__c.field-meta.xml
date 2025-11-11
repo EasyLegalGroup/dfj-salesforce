@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Is_Event_in_the_Future__c</fullName>
-    <externalId>false</externalId>
     <formula>Event_Start__c &gt;= NOW()</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <inlineHelpText>Is TRUE if Event Start is greater than current date/time</inlineHelpText>

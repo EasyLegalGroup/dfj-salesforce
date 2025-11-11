@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Suggestions_for_Improvement__c</fullName>
-    <externalId>false</externalId>
     <inlineHelpText>Share anything you think we could improve on in the future.</inlineHelpText>
     <label>Suggestions for Improvement</label>
     <length>32768</length>

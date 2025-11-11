@@ -3,7 +3,6 @@
     <fullName>procurator_presents_occasionally__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Skal der kunne gives gaver lejlighedsvis?</description>
-    <externalId>false</externalId>
     <label>Skal der kunne gives lejlighedsg b5e7c</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

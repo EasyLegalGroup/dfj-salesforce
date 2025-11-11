@@ -27,12 +27,14 @@
             </value>
         </inputParameters>
         <nameSegment>KeywordMatchAction</nameSegment>
+        <offset>0</offset>
         <outputParameters>
             <assignToReference>MatchedKeywords</assignToReference>
             <name>matchedKeywords</name>
         </outputParameters>
     </actionCalls>
     <apiVersion>58.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <description>0046766753111</description>
         <name>Assign_Danish_Out_of_Flow_Values</name>

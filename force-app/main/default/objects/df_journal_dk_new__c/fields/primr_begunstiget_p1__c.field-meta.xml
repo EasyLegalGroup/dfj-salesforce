@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>primr_begunstiget_p1__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
-    <externalId>false</externalId>
     <label>Primær begunstiget</label>
     <referenceTo>df_160_person__c</referenceTo>
     <relationshipLabel>primr_begunstiget_p1</relationshipLabel>

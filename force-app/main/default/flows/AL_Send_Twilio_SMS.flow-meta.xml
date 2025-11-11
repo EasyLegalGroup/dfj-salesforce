@@ -34,6 +34,7 @@
             </value>
         </inputParameters>
         <nameSegment>DFJ_SendSMS</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>Send_SMS_from_Number</name>
@@ -69,6 +70,7 @@
             </value>
         </inputParameters>
         <nameSegment>DFJ_SendSMS</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>Send_SMS_from_Sender_ID</name>
@@ -104,8 +106,10 @@
             </value>
         </inputParameters>
         <nameSegment>DFJ_SendSMS</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Danish_Values</name>
         <label>Assign Danish Values</label>

@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>gtepagt_pension_inds_p1__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Indsæt pensions- og/eller forsik d9c3c</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

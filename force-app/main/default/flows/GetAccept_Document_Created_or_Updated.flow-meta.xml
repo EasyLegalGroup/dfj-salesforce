@@ -45,6 +45,7 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>Email_Teknik_about_Missing_Info_for_Finalization</name>
@@ -91,8 +92,10 @@
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Awaiting_Tinglysning_to_Tinglysning_Status</name>
         <label>Assign &quot;Awaiting Tinglysning&quot; to Tinglysning Status</label>

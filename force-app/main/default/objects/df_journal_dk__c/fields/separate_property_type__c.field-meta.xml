@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>separate_property_type__c</fullName>
     <description>Særeje type</description>
-    <externalId>false</externalId>
     <label>Særejeform</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
