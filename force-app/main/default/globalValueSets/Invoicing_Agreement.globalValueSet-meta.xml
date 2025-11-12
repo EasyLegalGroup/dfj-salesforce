@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Per Booked Seat</fullName>
+        <default>false</default>
+        <label>Per Booked Seat</label>
+    </customValue>
+    <customValue>
+        <fullName>Per Scanned Attendee</fullName>
+        <default>false</default>
+        <label>Per Scanned Attendee</label>
+    </customValue>
+    <customValue>
+        <fullName>Locked-In Booking Count</fullName>
+        <default>false</default>
+        <label>Locked-In Booking Count</label>
+    </customValue>
+    <customValue>
+        <fullName>Venue Rental Cost</fullName>
+        <default>false</default>
+        <label>Venue Rental Cost</label>
+    </customValue>
+    <customValue>
+        <fullName>No Invoicing</fullName>
+        <default>false</default>
+        <label>No Invoicing</label>
+    </customValue>
+    <masterLabel>Invoicing Agreement</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

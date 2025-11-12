@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Danish_Lecture_Campaigns</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Danish Lecture Campaigns are shared (Read/Write) with Danish Lecturers</description>
+        <label>Danish Lecture Campaigns</label>
+        <sharedTo>
+            <role>Danish_Meeting_Booker</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Lecture</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Market_Unit__c</field>
+            <operation>equals</operation>
+            <value>Din Familie Jurist,Testamente Danmark</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Swedish_Lecture_Campaigns</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Swedish Lecture Campaigns are shared (Read/Write) with Swedish Lecturers</description>
+        <label>Swedish Lecture Campaigns</label>
+        <sharedTo>
+            <role>Swedish_Lecturer</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Lecture</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Market_Unit__c</field>
+            <operation>equals</operation>
+            <value>Testamente Sverige,dinfamiliejurist.nu</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

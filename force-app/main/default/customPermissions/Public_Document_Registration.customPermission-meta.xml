@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Is used for various flows and page layout elements, related to Public Document Registration (Tinglysning)</description>
+    <isLicensed>false</isLicensed>
+    <label>Public Document Registration</label>
+</CustomPermission>

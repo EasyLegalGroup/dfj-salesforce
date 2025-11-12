@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldOverrides>
+        <field>Address__City__s</field>
+        <formula>Hosts__c.City__c</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Address__PostalCode__s</field>
+        <formula>Hosts__c.Zip_Code__c</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Address__Street__s</field>
+        <formula>Hosts__c.Address__c</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Company_Lecture__c</field>
+        <formula>Hosts__c.Company_Lecture__c</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>County__c</field>
+        <formula>Hosts__c.County__c</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Create_Matching_Campaign__c</field>
+        <formula>true</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>EndDateTime</field>
+        <formula>DATETIMEVALUE(
+TEXT(YEAR(TODAY())) &amp; &quot;-&quot; &amp;
+TEXT(MONTH(TODAY())) &amp; &quot;-&quot; &amp;
+TEXT(DAY(TODAY())) &amp; &quot; &quot; &amp;
+CASE(Hosts__c.Market_Unit__c,
+&quot;DFJ_DK&quot;, &quot;20:00:00&quot;,
+&quot;FA_SE&quot;, &quot;19:00:00&quot;,
+&quot;20:00:00&quot;
+)
+)</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Event_Status__c</field>
+        <literalValue>Scheduled</literalValue>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Host_ID__c</field>
+        <formula>Hosts__c.Host_ID__c</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Invoicing_Agreement__c</field>
+        <formula>CASE( Hosts__c.Default_Invoicing_Agreement__c,
+&quot;Per Booked Seat&quot;, &quot;Per Booked Seat&quot;,
+&quot;Per Scanned Attendee&quot;, &quot;Per Scanned Attendee&quot;,
+&quot;Locked-In Booking Count&quot;, &quot;Locked-In Booking Count&quot;,
+&quot;Venue Rental Cost&quot;, &quot;Venue Rental Cost&quot;,
+&quot;No Invoicing&quot;, &quot;No Invoicing&quot;,
+&quot;Other Value&quot;
+)</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Lecture__c</field>
+        <formula>true</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Location</field>
+        <formula>Hosts__c.Name</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Market_Unit__c</field>
+        <formula>CASE( Hosts__c.Market_Unit__c ,
+&quot;DFJ_DK&quot;, &quot;DJF_DK&quot;,
+&quot;FA_SE&quot;, &quot;FA_SE&quot;,
+&quot;Other Value&quot; /* Default Value */
+)</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Notes_for_lecturer__c</field>
+        <formula>Hosts__c.Notes__c</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Projector__c</field>
+        <formula>Hosts__c.Projector__c</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Projector_Screen__c</field>
+        <formula>Hosts__c.Projector_Screen__c</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>StartDateTime</field>
+        <formula>DATETIMEVALUE(TEXT(YEAR(TODAY())) &amp; &quot;-&quot; &amp; TEXT(MONTH(TODAY())) &amp; &quot;-&quot; &amp; TEXT(DAY(TODAY())) &amp; &quot; 17:00:00&quot;)</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Subject</field>
+        <formula>Hosts__c.Name&amp;&quot; - DD-MM-YYYY&quot;</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Test_Event__c</field>
+        <formula>Hosts__c.Test_Record__c</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Tickets_for_Sale__c</field>
+        <formula>Hosts__c.Capacity__c</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>UTM_Campaign__c</field>
+        <formula>&quot;Gratis raadgivning&quot;</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>UTM_Medium__c</field>
+        <formula>&quot;Totalliv&quot;</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>UTM_Source__c</field>
+        <formula>&quot;Foredrag&quot;</formula>
+    </fieldOverrides>
+    <label>Create Company Event</label>
+    <optionsCreateFeedItem>true</optionsCreateFeedItem>
+    <quickActionLayout>
+        <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
+        <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Open_for_Bookings__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>StartDateTime</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Tickets_for_Sale__c</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Projector__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+        </quickActionLayoutColumns>
+        <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>OwnerId</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>EndDateTime</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Max_Tickets_Per_Person__c</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Projector_Screen__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+        </quickActionLayoutColumns>
+    </quickActionLayout>
+    <successMessage>Company Event Created!</successMessage>
+    <targetObject>Event</targetObject>
+    <targetParentField>Host__c</targetParentField>
+    <targetRecordType>Event.Lecture</targetRecordType>
+    <type>Create</type>
+</QuickAction>

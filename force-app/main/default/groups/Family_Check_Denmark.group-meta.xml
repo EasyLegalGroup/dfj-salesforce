@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Group xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Used for Sharing Rule, granting edit access to Accounts with Upcoming Renewals</description>
+    <doesIncludeBosses>true</doesIncludeBosses>
+    <name>Family Check (Denmark)</name>
+</Group>

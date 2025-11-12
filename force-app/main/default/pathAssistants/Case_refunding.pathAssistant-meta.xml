@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Case</entityName>
+    <fieldName>Status</fieldName>
+    <masterLabel>Case Refunding</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>AccountId</fieldNames>
+        <fieldNames>Refund_Request_Date__c</fieldNames>
+        <fieldNames>Refund_Request_Amount__c</fieldNames>
+        <fieldNames>Description</fieldNames>
+        <info>&lt;p&gt;Client is waiting for a refund&lt;/p&gt;</info>
+        <picklistValueName>Awaiting Approved Refund</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>AccountId</fieldNames>
+        <fieldNames>Order_Amount__c</fieldNames>
+        <fieldNames>Order_Discount__c</fieldNames>
+        <fieldNames>Refund_Request_Amount__c</fieldNames>
+        <fieldNames>Refund_Request_Date__c</fieldNames>
+        <info>&lt;p&gt;Assess whether or not the client should be refunded&lt;/p&gt;</info>
+        <picklistValueName>Awaiting Assessment</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>AccountId</fieldNames>
+        <fieldNames>Refund_Request_Date__c</fieldNames>
+        <fieldNames>Refund_Request_Amount__c</fieldNames>
+        <fieldNames>Description</fieldNames>
+        <info>&lt;p&gt;We are waiting for payment information from customer&lt;/p&gt;</info>
+        <picklistValueName>Awaiting Payment Information</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>AccountId</fieldNames>
+        <fieldNames>Refund_Request_Date__c</fieldNames>
+        <fieldNames>Refund_Request_Amount__c</fieldNames>
+        <fieldNames>Description</fieldNames>
+        <info>&lt;p&gt;This client need to be contacted&lt;/p&gt;</info>
+        <picklistValueName>Pending Follow-up</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>AccountId</fieldNames>
+        <fieldNames>Refund_Request_Date__c</fieldNames>
+        <fieldNames>Refund_Request_Amount__c</fieldNames>
+        <fieldNames>Description</fieldNames>
+        <info>&lt;p&gt;Client has been refunded&lt;/p&gt;</info>
+        <picklistValueName>Refund Completed</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>AccountId</fieldNames>
+        <fieldNames>Refund_Request_Date__c</fieldNames>
+        <fieldNames>Refund_Request_Amount__c</fieldNames>
+        <fieldNames>Description</fieldNames>
+        <info>&lt;p&gt;Client has been denied a refund&lt;/p&gt;</info>
+        <picklistValueName>Refund Declined</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>DK_Refunds</recordTypeName>
+</PathAssistant>

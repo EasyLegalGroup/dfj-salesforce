@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Google Auth Key</label>
+    <protected>false</protected>
+    <values>
+        <field>Auth_URL__c</field>
+        <value xsi:type="xsd:string">https://accounts.google.com/o/oauth2/auth</value>
+    </values>
+    <values>
+        <field>Client_Id__c</field>
+        <value xsi:type="xsd:string"><!-- REDACTED_GOOGLE_OAUTH_CLIENT_ID --></value>
+    </values>
+    <values>
+        <field>Client_Secret__c</field>
+        <value xsi:type="xsd:string"><!-- REDACTED_GOOGLE_OAUTH_CLIENT_SECRET --></value>
+    </values>
+    <values>
+        <field>Redirect_URI__c</field>
+        <value xsi:type="xsd:string">https://dfj.lightning.force.com/apex/GoogleCallbackPage</value>
+    </values>
+    <values>
+        <field>Scopes__c</field>
+        <value xsi:type="xsd:string">https://www.googleapis.com/auth/drive email profile</value>
+    </values>
+</CustomMetadata>

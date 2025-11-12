@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Alphanumeric_SenderId_Used_For_SMS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Alphanumeric SenderId Used For SMS</shortDescription>
+        <value>FamJurist</value>
+    </labels>
+    <labels>
+        <fullName>DFJ_MembershipListviewNavigator</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>navigator to membership listview</shortDescription>
+        <value>/a1i</value>
+    </labels>
+    <labels>
+        <fullName>DocShare_ApiBase</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DocShare ApiBase</shortDescription>
+        <value>https://ysu7eo2haj.execute-api.eu-north-1.amazonaws.com/prod</value>
+    </labels>
+    <labels>
+        <fullName>Folder_Name_For_SMS_Email_Template</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Folder Name For SMS Email Template</shortDescription>
+        <value>SMS Templates</value>
+    </labels>
+    <labels>
+        <fullName>Initial_Test_Custom_Label</fullName>
+        <categories>cat</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Initial Test – Custom Label</shortDescription>
+        <value>ok</value>
+    </labels>
+    <labels>
+        <fullName>Org_Base_Url</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Org Base Url</shortDescription>
+        <value>https://dfj.lightning.force.com/</value>
+    </labels>
+    <labels>
+        <fullName>Webhook_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Webhook URL</shortDescription>
+        <value>https://dfj.my.salesforce-sites.com/GoogleDrive/services/apexrest/webhook</value>
+    </labels>
+</CustomLabels>

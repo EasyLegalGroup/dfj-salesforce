@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Book uforpligtende rådgivning og 1.000 k</label>
+    <protected>false</protected>
+    <values>
+        <field>Event_Name__c</field>
+        <value xsi:type="xsd:string">Book uforpligtende rådgivning og 1.000 kr. i rabat</value>
+    </values>
+    <values>
+        <field>Multiselect_Lead_Mapping__c</field>
+        <value xsi:type="xsd:string">{
+&quot;Jeg vil undgå at staten bliver min værge, i tilfælde af alvorlig sygdom&quot; : &quot;Undg_at_staten_bliver_min_v_rge__c&quot;,
+&quot;Særeje til børn, så de ikke mister halvdelen af arven&quot; : &quot;Undg_at_b_rns_risiko_for_50_mindre_arv__c&quot;,
+&quot;Undgå skævfordeling af arven&quot; : &quot;Undg_en_sk_vfordeling_af_arven__c&quot;,
+&quot;Selv styre arvefordeling, penge, genstande og værdier&quot; : &quot;Selv_bestemme_hvem_der_skal_arve_mig__c&quot;,
+&quot;Børn skal ikke \&quot;misbruge\&quot; arven som 18 årig (Båndlæggelse af arv)&quot; : &quot;Undg_at_b_rn_f_r_arv_udbetalt_for_tidli__c&quot;,
+&quot;Sikre min partner/ægtefælle mest muligt, ved min bortgang&quot; : &quot;Sikre_min_partner_gtef_lle_mest_muligt__c&quot;,
+&quot;Undgå at min partner/ægtefælle skal betale en stor sum penge, ved min død&quot; : &quot;Undg_at_partner_skal_betale_ved_min_d_d__c&quot;, 
+&quot;Jeg vil gerne undgå arveafgift til mine arvinger, mest muligt&quot; : &quot;Undg_arveafgift_til_arvinger__c&quot;
+}</value>
+    </values>
+    <values>
+        <field>Question_Response_Mapping__c</field>
+        <value xsi:type="xsd:string">{
+            &quot;Calendly__CustomQuestion1__c&quot; : {
+                &quot;type&quot; : &quot;PHONE&quot;,
+                &quot;responseField&quot; : &quot;Calendly__CustomResponse1__c&quot;,
+                &quot;leadTargetField&quot; : &quot;Phone&quot;
+            },
+            &quot;Calendly__CustomQuestion2__c&quot; : {
+                &quot;type&quot; : &quot;MULTISELECT&quot;,
+                &quot;responseField&quot; : &quot;Calendly__CustomResponse2__c&quot;,
+                &quot;leadTargetField&quot; : &quot;&quot;
+            },
+            &quot;Calendly__CustomQuestion3__c&quot; : {
+                &quot;type&quot; : &quot;LONGTEXTAREA&quot;,
+                &quot;responseField&quot; : &quot;Calendly__CustomResponse3__c&quot;,
+                &quot;leadTargetField&quot; : &quot;Kommentarer_Calendly__c&quot;
+            }
+        }</value>
+    </values>
+    <values>
+        <field>Slug__c</field>
+        <value xsi:type="xsd:string">e48f4f25-b3f8-4114-9308-0edc57665593</value>
+    </values>
+</CustomMetadata>

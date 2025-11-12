@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Case</entityName>
+    <fieldName>Status</fieldName>
+    <masterLabel>DK - Customer Service</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>Mark_as_My_Case__c</fieldNames>
+        <info>&lt;p&gt;This case has been solved, and will remain so, until it gets opened.&lt;/p&gt;</info>
+        <picklistValueName>Closed</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Mark_as_My_Case__c</fieldNames>
+        <info>&lt;p&gt;This case is of high priority - needs solving as fast as possible.&lt;/p&gt;</info>
+        <picklistValueName>Escalated</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Mark_as_My_Case__c</fieldNames>
+        <info>&lt;p&gt;You are taking care of this case.&lt;/p&gt;</info>
+        <picklistValueName>In Progress</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Mark_as_My_Case__c</fieldNames>
+        <info>&lt;p&gt;Noone has taken care of this case yet.&lt;/p&gt;</info>
+        <picklistValueName>New</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Mark_as_My_Case__c</fieldNames>
+        <info>&lt;p&gt;This case is on hold - look in the note field and check whether or not you&amp;#39;ve got the answer you needed to solve the case.&lt;/p&gt;</info>
+        <picklistValueName>On Hold</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Mark_as_My_Case__c</fieldNames>
+        <info>&lt;p&gt;Customer Responded.&lt;/p&gt;</info>
+        <picklistValueName>Response Received</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Mark_as_My_Case__c</fieldNames>
+        <info>&lt;p&gt;Waiting for the customer.&lt;/p&gt;</info>
+        <picklistValueName>Waiting for Customer</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>DK_Customer_Service</recordTypeName>
+</PathAssistant>

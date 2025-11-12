@@ -1762,9 +1762,9 @@
     </relatedLists>
     <relatedLists>
         <fields>CAMPAIGN.NAME</fields>
-        <fields>View__c</fields>
-        <fields>Remaining_Tickets__c</fields>
-        <fields>Event_m_destatus__c</fields>
+        <fields>CampaignMember.View__c</fields>
+        <fields>CampaignMember.Remaining_Tickets__c</fields>
+        <fields>CampaignMember.Event_m_destatus__c</fields>
         <relatedList>RelatedCampaignList</relatedList>
     </relatedLists>
     <relatedLists>

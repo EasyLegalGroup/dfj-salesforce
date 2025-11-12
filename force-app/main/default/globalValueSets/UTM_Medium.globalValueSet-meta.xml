@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Andet</fullName>
+        <default>false</default>
+        <label>Andet</label>
+    </customValue>
+    <customValue>
+        <fullName>Totalliv</fullName>
+        <default>false</default>
+        <label>Totalliv</label>
+    </customValue>
+    <customValue>
+        <fullName>Calendly</fullName>
+        <default>false</default>
+        <label>Calendly</label>
+    </customValue>
+    <customValue>
+        <fullName>Findforsikring.dk</fullName>
+        <default>false</default>
+        <label>Findforsikring.dk</label>
+    </customValue>
+    <customValue>
+        <fullName>Leadad</fullName>
+        <default>false</default>
+        <label>Leadad</label>
+    </customValue>
+    <customValue>
+        <fullName>Impressive Relations</fullName>
+        <default>false</default>
+        <label>Impressive Relations</label>
+    </customValue>
+    <customValue>
+        <fullName>Tilmeldingsblanket</fullName>
+        <default>false</default>
+        <label>Tilmeldingsblanket</label>
+    </customValue>
+    <customValue>
+        <fullName>Kundkontakter</fullName>
+        <default>false</default>
+        <label>Kundkontakter</label>
+    </customValue>
+    <customValue>
+        <fullName>Seren</fullName>
+        <default>false</default>
+        <label>Seren</label>
+    </customValue>
+    <customValue>
+        <fullName>PR Leads</fullName>
+        <default>false</default>
+        <label>PR Leads</label>
+    </customValue>
+    <customValue>
+        <fullName>Gratis dokument</fullName>
+        <default>false</default>
+        <label>Gratis dokument</label>
+    </customValue>
+    <customValue>
+        <fullName>Indhent tilbud</fullName>
+        <default>false</default>
+        <label>Indhent tilbud</label>
+    </customValue>
+    <customValue>
+        <fullName>Bobehandling</fullName>
+        <default>false</default>
+        <label>Bobehandling</label>
+    </customValue>
+    <customValue>
+        <fullName>Gratis raadgivning</fullName>
+        <default>false</default>
+        <label>Gratis raadgivning</label>
+    </customValue>
+    <customValue>
+        <fullName>Söderberg &amp; Partners</fullName>
+        <default>false</default>
+        <label>Söderberg &amp; Partners</label>
+    </customValue>
+    <customValue>
+        <fullName>Dokument24</fullName>
+        <default>false</default>
+        <label>Dokument24</label>
+    </customValue>
+    <customValue>
+        <fullName>Folkeskolen</fullName>
+        <default>false</default>
+        <label>Folkeskolen</label>
+    </customValue>
+    <customValue>
+        <fullName>Andre influencers</fullName>
+        <default>false</default>
+        <label>Andre influencers</label>
+    </customValue>
+    <customValue>
+        <fullName>Adservice</fullName>
+        <default>false</default>
+        <label>Adservice</label>
+    </customValue>
+    <customValue>
+        <fullName>HK</fullName>
+        <default>false</default>
+        <label>HK</label>
+    </customValue>
+    <customValue>
+        <fullName>Bigsaver.dk</fullName>
+        <default>false</default>
+        <label>Bigsaver.dk</label>
+    </customValue>
+    <customValue>
+        <fullName>BoligAdvokat24</fullName>
+        <default>false</default>
+        <label>BoligAdvokat24</label>
+    </customValue>
+    <customValue>
+        <fullName>Dinfamiljejurist.nu</fullName>
+        <default>false</default>
+        <label>Dinfamiljejurist.nu</label>
+    </customValue>
+    <customValue>
+        <fullName>Forsikringshj�lp</fullName>
+        <default>false</default>
+        <label>Forsikringshj�lp</label>
+    </customValue>
+    <customValue>
+        <fullName>Jyllandsposten</fullName>
+        <default>false</default>
+        <label>Jyllandsposten</label>
+    </customValue>
+    <customValue>
+        <fullName>Nyhedsbreve</fullName>
+        <default>false</default>
+        <label>Nyhedsbreve</label>
+    </customValue>
+    <customValue>
+        <fullName>S�derberg &amp; Partners</fullName>
+        <default>false</default>
+        <label>S�derberg &amp; Partners</label>
+    </customValue>
+    <customValue>
+        <fullName>-</fullName>
+        <default>false</default>
+        <label>-</label>
+    </customValue>
+    <customValue>
+        <fullName>Trafik</fullName>
+        <default>false</default>
+        <label>Trafik</label>
+    </customValue>
+    <customValue>
+        <fullName>Leadads</fullName>
+        <default>false</default>
+        <label>Leadads</label>
+    </customValue>
+    <customValue>
+        <fullName>1 timmars gratis raadgivning</fullName>
+        <default>false</default>
+        <label>1 timmars gratis raadgivning</label>
+    </customValue>
+    <customValue>
+        <fullName>GRATIS VARDNADSTESTAMENTE</fullName>
+        <default>false</default>
+        <label>GRATIS VARDNADSTESTAMENTE</label>
+    </customValue>
+    <customValue>
+        <fullName>affiliate</fullName>
+        <default>false</default>
+        <label>affiliate</label>
+    </customValue>
+    <customValue>
+        <fullName>Indhent-tilbud-leadads</fullName>
+        <default>false</default>
+        <label>Indhent-tilbud-leadads</label>
+    </customValue>
+    <customValue>
+        <fullName>Advopris-foredrag</fullName>
+        <default>false</default>
+        <label>Advopris-foredrag</label>
+    </customValue>
+    <customValue>
+        <fullName>Website Form</fullName>
+        <default>false</default>
+        <label>Website Form</label>
+    </customValue>
+    <customValue>
+        <fullName>Meet the Team</fullName>
+        <default>false</default>
+        <label>Meet the Team</label>
+    </customValue>
+    <customValue>
+        <fullName>Forsikringsagenturet Dannerfjord</fullName>
+        <default>false</default>
+        <label>Forsikringsagenturet Dannerfjord</label>
+    </customValue>
+    <customValue>
+        <fullName>Facebook</fullName>
+        <default>false</default>
+        <label>Facebook</label>
+    </customValue>
+    <customValue>
+        <fullName>Gratis rðdgivning</fullName>
+        <default>false</default>
+        <label>Gratis rðdgivning</label>
+    </customValue>
+    <customValue>
+        <fullName>Sofus</fullName>
+        <default>false</default>
+        <label>Sofus</label>
+    </customValue>
+    <customValue>
+        <fullName>Outgrow</fullName>
+        <default>false</default>
+        <label>Outgrow</label>
+    </customValue>
+    <customValue>
+        <fullName>Popermo</fullName>
+        <default>false</default>
+        <label>Popermo</label>
+    </customValue>
+    <customValue>
+        <fullName>Dinfamiliejurist.dk</fullName>
+        <default>false</default>
+        <label>Dinfamiliejurist.dk</label>
+    </customValue>
+    <customValue>
+        <fullName>Salesforce</fullName>
+        <default>false</default>
+        <label>Salesforce</label>
+    </customValue>
+    <customValue>
+        <fullName>Cube</fullName>
+        <default>false</default>
+        <label>Cube</label>
+    </customValue>
+    <customValue>
+        <fullName>Testamentedanmark.dk</fullName>
+        <default>false</default>
+        <label>Testamentedanmark.dk</label>
+    </customValue>
+    <customValue>
+        <fullName>Billetto</fullName>
+        <default>false</default>
+        <label>Billetto</label>
+    </customValue>
+    <customValue>
+        <fullName>MakeInfluence</fullName>
+        <default>false</default>
+        <label>MakeInfluence</label>
+    </customValue>
+    <customValue>
+        <fullName>Inmix</fullName>
+        <default>false</default>
+        <label>Inmix</label>
+    </customValue>
+    <customValue>
+        <fullName>Bisnode</fullName>
+        <default>false</default>
+        <label>Bisnode</label>
+    </customValue>
+    <customValue>
+        <fullName>Retargeting</fullName>
+        <default>false</default>
+        <label>Retargeting</label>
+    </customValue>
+    <customValue>
+        <fullName>Ukendt</fullName>
+        <default>false</default>
+        <label>Ukendt</label>
+    </customValue>
+    <customValue>
+        <fullName>Danske seniorer</fullName>
+        <default>false</default>
+        <label>Danske seniorer</label>
+    </customValue>
+    <customValue>
+        <fullName>Crowdio</fullName>
+        <default>false</default>
+        <label>Crowdio</label>
+    </customValue>
+    <customValue>
+        <fullName>Samvirke</fullName>
+        <default>false</default>
+        <label>Samvirke</label>
+    </customValue>
+    <customValue>
+        <fullName>Forbrugsforeningen</fullName>
+        <default>false</default>
+        <label>Forbrugsforeningen</label>
+    </customValue>
+    <customValue>
+        <fullName>Honestus</fullName>
+        <default>false</default>
+        <label>Honestus</label>
+    </customValue>
+    <customValue>
+        <fullName>LassoX</fullName>
+        <default>false</default>
+        <label>LassoX</label>
+    </customValue>
+    <customValue>
+        <fullName>Forsikringshjælp</fullName>
+        <default>false</default>
+        <label>Forsikringshjælp</label>
+    </customValue>
+    <customValue>
+        <fullName>eGentic</fullName>
+        <default>false</default>
+        <label>eGentic</label>
+    </customValue>
+    <customValue>
+        <fullName>eGentic/Premio</fullName>
+        <default>false</default>
+        <label>eGentic/Premio</label>
+    </customValue>
+    <customValue>
+        <fullName>dagensinfo</fullName>
+        <default>false</default>
+        <label>dagensinfo</label>
+    </customValue>
+    <customValue>
+        <fullName>Advomatch</fullName>
+        <default>false</default>
+        <label>Advomatch</label>
+    </customValue>
+    <customValue>
+        <fullName>Egne influencers</fullName>
+        <default>false</default>
+        <label>Egne influencers</label>
+    </customValue>
+    <customValue>
+        <fullName>Min Mave</fullName>
+        <default>false</default>
+        <label>Min Mave</label>
+    </customValue>
+    <customValue>
+        <fullName>Reshopper</fullName>
+        <default>false</default>
+        <label>Reshopper</label>
+    </customValue>
+    <customValue>
+        <fullName>Bornibyen</fullName>
+        <default>false</default>
+        <label>Bornibyen</label>
+    </customValue>
+    <customValue>
+        <fullName>Babyfoedder</fullName>
+        <default>false</default>
+        <label>Babyfoedder</label>
+    </customValue>
+    <customValue>
+        <fullName>Ad</fullName>
+        <default>false</default>
+        <label>Ad</label>
+    </customValue>
+    <customValue>
+        <fullName>Unknown</fullName>
+        <default>false</default>
+        <label>Unknown</label>
+    </customValue>
+    <customValue>
+        <fullName>BA24</fullName>
+        <default>false</default>
+        <label>BA24</label>
+    </customValue>
+    <customValue>
+        <fullName>BA25</fullName>
+        <default>false</default>
+        <label>BA25</label>
+    </customValue>
+    <customValue>
+        <fullName>BA26</fullName>
+        <default>false</default>
+        <label>BA26</label>
+    </customValue>
+    <customValue>
+        <fullName>BA27</fullName>
+        <default>false</default>
+        <label>BA27</label>
+    </customValue>
+    <customValue>
+        <fullName>BA28</fullName>
+        <default>false</default>
+        <label>BA28</label>
+    </customValue>
+    <customValue>
+        <fullName>Clovermetrics</fullName>
+        <default>false</default>
+        <label>Clovermetrics</label>
+    </customValue>
+    <customValue>
+        <fullName>Risikovurdering</fullName>
+        <default>false</default>
+        <label>Risikovurdering</label>
+    </customValue>
+    <customValue>
+        <fullName>Email</fullName>
+        <default>false</default>
+        <label>Email</label>
+    </customValue>
+    <customValue>
+        <fullName>Salesforce Screen Flow</fullName>
+        <default>false</default>
+        <label>Salesforce Screen Flow</label>
+    </customValue>
+    <customValue>
+        <fullName>Personal Link</fullName>
+        <default>false</default>
+        <label>Personal Link</label>
+    </customValue>
+    <customValue>
+        <fullName>Marketing Email</fullName>
+        <default>false</default>
+        <label>Marketing Email</label>
+    </customValue>
+    <customValue>
+        <fullName>Registration Form Invite</fullName>
+        <default>false</default>
+        <label>Registration Form Invite</label>
+    </customValue>
+    <customValue>
+        <fullName>Internal Meeting Booking</fullName>
+        <default>false</default>
+        <label>Internal Meeting Booking</label>
+    </customValue>
+    <customValue>
+        <fullName>Contact Form</fullName>
+        <default>false</default>
+        <label>Contact Form</label>
+    </customValue>
+    <customValue>
+        <fullName>Website</fullName>
+        <default>false</default>
+        <label>Website</label>
+    </customValue>
+    <customValue>
+        <fullName>Organic</fullName>
+        <default>false</default>
+        <label>Organic</label>
+    </customValue>
+    <customValue>
+        <fullName>Google-ads</fullName>
+        <default>false</default>
+        <label>Google-ads</label>
+    </customValue>
+    <customValue>
+        <fullName>AI SMS</fullName>
+        <default>false</default>
+        <label>AI SMS</label>
+    </customValue>
+    <customValue>
+        <fullName>SMS</fullName>
+        <default>false</default>
+        <label>SMS</label>
+    </customValue>
+    <customValue>
+        <fullName>Web-to-Lead</fullName>
+        <default>false</default>
+        <label>Web-to-Lead</label>
+    </customValue>
+    <customValue>
+        <fullName>Webinar</fullName>
+        <default>false</default>
+        <label>Webinar</label>
+    </customValue>
+    <masterLabel>UTM Medium</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

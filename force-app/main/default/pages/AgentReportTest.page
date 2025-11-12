@@ -1,0 +1,18 @@
+<apex:page showHeader="false">
+
+    <apex:includeLightning />
+
+    <div id="lightning"></div>
+
+    <script>
+        $Lightning.use("telegenta:Telegenta_App", function () {
+            $Lightning.createComponent("c:AgentReport", //Telegenta_PhoneUserTable
+                    {},
+                    "lightning",
+                    function (cmp) {
+                        // do some stuff
+                    });
+        });
+    </script>
+
+</apex:page>

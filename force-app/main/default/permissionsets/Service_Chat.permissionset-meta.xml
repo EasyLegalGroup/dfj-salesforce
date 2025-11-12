@@ -3,4 +3,16 @@
     <description>Vis og administrer alle distribuerede chatsessioner.</description>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Servicedistribution: Chat</label>
+    <servicePresenceStatusAccesses>
+        <enabled>true</enabled>
+        <servicePresenceStatus>Busy</servicePresenceStatus>
+    </servicePresenceStatusAccesses>
+    <servicePresenceStatusAccesses>
+        <enabled>true</enabled>
+        <servicePresenceStatus>Chat_Available</servicePresenceStatus>
+    </servicePresenceStatusAccesses>
+    <servicePresenceStatusAccesses>
+        <enabled>true</enabled>
+        <servicePresenceStatus>On_Break</servicePresenceStatus>
+    </servicePresenceStatusAccesses>
 </PermissionSet>

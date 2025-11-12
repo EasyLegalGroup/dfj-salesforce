@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Case</entityName>
+    <fieldName>Status</fieldName>
+    <masterLabel>IT Department</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>Issue_Origin__c</fieldNames>
+        <fieldNames>Issue_Category__c</fieldNames>
+        <picklistValueName>Closed</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Issue_Origin__c</fieldNames>
+        <fieldNames>Issue_Category__c</fieldNames>
+        <picklistValueName>Escalated</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Issue_Origin__c</fieldNames>
+        <fieldNames>Issue_Category__c</fieldNames>
+        <picklistValueName>In Progress</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Issue_Origin__c</fieldNames>
+        <fieldNames>Issue_Category__c</fieldNames>
+        <picklistValueName>New</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Issue_Origin__c</fieldNames>
+        <fieldNames>Issue_Category__c</fieldNames>
+        <picklistValueName>On Hold</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Issue_Origin__c</fieldNames>
+        <fieldNames>Issue_Category__c</fieldNames>
+        <picklistValueName>Response Received</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Issue_Origin__c</fieldNames>
+        <fieldNames>Issue_Category__c</fieldNames>
+        <picklistValueName>Waiting for Reply</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>IT_Department</recordTypeName>
+</PathAssistant>

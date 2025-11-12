@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Booked Meeting</fullName>
+        <default>false</default>
+        <label>Booked Meeting</label>
+    </customValue>
+    <customValue>
+        <fullName>Contact Form</fullName>
+        <default>false</default>
+        <label>Contact Form</label>
+    </customValue>
+    <customValue>
+        <fullName>Event Registration</fullName>
+        <default>false</default>
+        <label>Event Registration</label>
+    </customValue>
+    <customValue>
+        <fullName>Created by User</fullName>
+        <default>false</default>
+        <label>Created by User</label>
+    </customValue>
+    <customValue>
+        <fullName>Clicked Ad</fullName>
+        <default>false</default>
+        <label>Clicked Ad</label>
+    </customValue>
+    <masterLabel>Customer Interaction</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Upon initiation, the flow retrieves the input Knowledge Article record. It then checks the article&apos;s publication status. If the article is published, it looks for existing drafts. If a draft exists and is newer, it displays the draft&apos;s content for summari</description>
+    <flowDefinition>SF_Summarize_Article</flowDefinition>
+    <label>Summarize Article</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

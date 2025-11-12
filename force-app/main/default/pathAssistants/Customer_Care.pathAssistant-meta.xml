@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Opportunity</entityName>
+    <fieldName>StageName</fieldName>
+    <masterLabel>Customer Care</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>Loss_Reason__c</fieldNames>
+        <info>&lt;ul&gt;&lt;li&gt;Respectfully end the process if the customer is uninterested or unresponsive.&lt;/li&gt;&lt;li&gt;Record the reason for closure to improve future engagement efforts.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Closed Lost</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ul&gt;&lt;li&gt;Celebrate the successful outcome and thank the customer for their engagement.&lt;/li&gt;&lt;li&gt;Record all details to ensure proper follow-up on referrals, upsells, or reviews.&lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>Closed Won</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>NextStep</fieldNames>
+        <fieldNames>Potential_Outcomes__c</fieldNames>
+        <info>&lt;ul&gt;&lt;li&gt;Clearly outline the next steps for referrals, upsells, or partner discussions.&lt;/li&gt;&lt;li&gt;Address any customer questions or hesitations promptly.&lt;/li&gt;&lt;li&gt;Ensure all necessary information (e.g., referral names, upsell preferences) is captured.&lt;/li&gt;&lt;li&gt;Keep the customer engaged with regular updates as needed.&lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>Confirmed Interest</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>NextStep</fieldNames>
+        <fieldNames>Potential_Outcomes__c</fieldNames>
+        <info>&lt;ul&gt;&lt;li&gt;Follow up with the customer to finalize any pending actions (e.g., receiving referral contact details).&lt;/li&gt;&lt;li&gt;Offer help to make the process easy and quick for the customer.&lt;/li&gt;&lt;li&gt;Confirm when all actions are complete and thank the customer for the time and support.&lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>Finalizing</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>NextStep</fieldNames>
+        <fieldNames>Potential_Outcomes__c</fieldNames>
+        <info>&lt;ul&gt;&lt;li&gt;Build rapport by referencing their positive experience with your service.&lt;/li&gt;&lt;li&gt;Listen carefully to their needs or objections.&lt;/li&gt;&lt;li&gt;Keep detailed notes on call and customer responses for future reference.&lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>Progressing</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>NextStep</fieldNames>
+        <fieldNames>Potential_Outcomes__c</fieldNames>
+        <info>&lt;ul&gt;&lt;li&gt;Confirm the customer has completed their legal service and is satisfied.&lt;/li&gt;&lt;li&gt;Check if the customer is open to a follow-up call for feedback, referrals, or additional services.&lt;/li&gt;&lt;li&gt;Log any relevant notes to prepare for the next steps.&lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>Qualification</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>Customer_Care</recordTypeName>
+</PathAssistant>

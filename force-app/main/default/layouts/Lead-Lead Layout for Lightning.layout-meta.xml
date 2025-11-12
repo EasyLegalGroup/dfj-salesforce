@@ -403,7 +403,7 @@
     </relatedLists>
     <relatedLists>
         <fields>CAMPAIGN.NAME</fields>
-        <fields>View__c</fields>
+        <fields>CampaignMember.View__c</fields>
         <fields>Start__c</fields>
         <fields>Venue__c</fields>
         <relatedList>RelatedCampaignList</relatedList>

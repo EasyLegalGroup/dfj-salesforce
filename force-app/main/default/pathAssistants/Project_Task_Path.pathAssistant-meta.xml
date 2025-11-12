@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Project_Task__c</entityName>
+    <fieldName>Status__c</fieldName>
+    <masterLabel>Project Task Path</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;The task has been cancelled entirely and is not expected to be reopened.&lt;/p&gt;</info>
+        <picklistValueName>Cancelled</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;This task is completed.&lt;/p&gt;</info>
+        <picklistValueName>Completed</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;The task has been postponed until later and is expected to reopen eventually.&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Deferred</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Start_Date__c</fieldNames>
+        <info>&lt;p&gt;We&amp;#39;re actively working on this task.&lt;/p&gt;</info>
+        <picklistValueName>In Progress</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Start_Date__c</fieldNames>
+        <info>&lt;p&gt;This task is in scope, but work on it has not yet started.&lt;/p&gt;</info>
+        <picklistValueName>Not Started</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>On_Hold_Reason__c</fieldNames>
+        <info>&lt;p&gt;This task is still in scope, but is being blocked by something else, like external feedback, a bug fix or that a more urgent task gets completed.&lt;/p&gt;</info>
+        <picklistValueName>On Hold</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;This task is considered &lt;em&gt;mostly&lt;/em&gt; done and is being tested for bugs, issues with configuration or other problems.&lt;/p&gt;</info>
+        <picklistValueName>Review/Testing</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

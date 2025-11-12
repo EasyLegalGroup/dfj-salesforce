@@ -1,0 +1,4104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>Lead</baseObject>
+    <category>leads</category>
+    <deployed>true</deployed>
+    <description>Leads with Campaign Members</description>
+    <join>
+        <join>
+            <outerJoin>false</outerJoin>
+            <relationship>CampaignMembers</relationship>
+        </join>
+        <outerJoin>false</outerJoin>
+        <relationship>CampaignMembers</relationship>
+    </join>
+    <label>Leads with Campaign Members</label>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lead ID</displayNameOverride>
+            <field>Id</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Full Name</displayNameOverride>
+            <field>Name</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Salutation</displayNameOverride>
+            <field>Salutation</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>First Name</displayNameOverride>
+            <field>FirstName</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Name</displayNameOverride>
+            <field>LastName</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Middle Name</displayNameOverride>
+            <field>MiddleName</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Suffix</displayNameOverride>
+            <field>Suffix</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lead Record Type</displayNameOverride>
+            <field>RecordType</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Title</displayNameOverride>
+            <field>Title</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Company</displayNameOverride>
+            <field>Company</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Address</displayNameOverride>
+            <field>Address</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Street</displayNameOverride>
+            <field>Street</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>City</displayNameOverride>
+            <field>City</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>State/Province</displayNameOverride>
+            <field>State</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Zip/Postal Code</displayNameOverride>
+            <field>PostalCode</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Country</displayNameOverride>
+            <field>Country</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Latitude</displayNameOverride>
+            <field>Latitude</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Longitude</displayNameOverride>
+            <field>Longitude</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Geocode Accuracy</displayNameOverride>
+            <field>GeocodeAccuracy</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Phone</displayNameOverride>
+            <field>Phone</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mobile</displayNameOverride>
+            <field>MobilePhone</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Fax</displayNameOverride>
+            <field>Fax</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Email</displayNameOverride>
+            <field>Email</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Website</displayNameOverride>
+            <field>Website</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Description</displayNameOverride>
+            <field>Description</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lead Source</displayNameOverride>
+            <field>LeadSource</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lead Status</displayNameOverride>
+            <field>Status</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Industry</displayNameOverride>
+            <field>Industry</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Rating</displayNameOverride>
+            <field>Rating</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lead Currency</displayNameOverride>
+            <field>CurrencyIsoCode</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Annual Revenue</displayNameOverride>
+            <field>AnnualRevenue</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>No. of Employees</displayNameOverride>
+            <field>NumberOfEmployees</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lead Owner</displayNameOverride>
+            <field>Owner</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Email Opt Out</displayNameOverride>
+            <field>HasOptedOutOfEmail</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Converted</displayNameOverride>
+            <field>IsConverted</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Converted Date</displayNameOverride>
+            <field>ConvertedDate</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Converted Account</displayNameOverride>
+            <field>ConvertedAccount</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Converted Contact</displayNameOverride>
+            <field>ConvertedContact</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Converted Opportunity</displayNameOverride>
+            <field>ConvertedOpportunity</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Unread By Owner</displayNameOverride>
+            <field>IsUnreadByOwner</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created Date</displayNameOverride>
+            <field>CreatedDate</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created By</displayNameOverride>
+            <field>CreatedBy</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified Date</displayNameOverride>
+            <field>LastModifiedDate</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified By</displayNameOverride>
+            <field>LastModifiedBy</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Activity</displayNameOverride>
+            <field>LastActivityDate</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Do Not Call</displayNameOverride>
+            <field>DoNotCall</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Fax Opt Out</displayNameOverride>
+            <field>HasOptedOutOfFax</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Transfer Date</displayNameOverride>
+            <field>LastTransferDate</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Data.com Key</displayNameOverride>
+            <field>Jigsaw</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Email Bounced Reason</displayNameOverride>
+            <field>EmailBouncedReason</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Email Bounced Date</displayNameOverride>
+            <field>EmailBouncedDate</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Individual</displayNameOverride>
+            <field>Individual</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Pronouns</displayNameOverride>
+            <field>Pronouns</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Gender Identity</displayNameOverride>
+            <field>GenderIdentity</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Fødselsdag</displayNameOverride>
+            <field>Birthdate__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Er alle børn over 18</displayNameOverride>
+            <field>Children_over_18__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Type børn</displayNameOverride>
+            <field>Children_type__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Civilstatus</displayNameOverride>
+            <field>Civil_status__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Har overvejet et testamente</displayNameOverride>
+            <field>Consider_testament__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Køn</displayNameOverride>
+            <field>Gender__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Har du få taget en risikovurdering</displayNameOverride>
+            <field>Got_risk_assessment__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Har bil</displayNameOverride>
+            <field>Has_car__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Har du børn</displayNameOverride>
+            <field>Has_children__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Har testamente</displayNameOverride>
+            <field>Have_testament__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Taget stilling til hvem der skal arve</displayNameOverride>
+            <field>Heir_position__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Boligforhold</displayNameOverride>
+            <field>Housing_type__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Har du forsikringer og pension</displayNameOverride>
+            <field>Insurance_pension_type__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Hvor mange børn</displayNameOverride>
+            <field>Number_of_children__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Taget stilling til fremtidsfuldmagt?</displayNameOverride>
+            <field>Poa_position__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Forecast</displayNameOverride>
+            <field>telegenta__Forecast__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Provider ID</displayNameOverride>
+            <field>Provider_id__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Publisher Campaign</displayNameOverride>
+            <field>Publisher_Campaign__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Publisher source</displayNameOverride>
+            <field>Publisher_source__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Hvad er vigtigt</displayNameOverride>
+            <field>what_is_important__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Hvem er vigtig</displayNameOverride>
+            <field>who_is_important__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Has Appointment</displayNameOverride>
+            <field>telegenta__Has_Appointment__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Invalid Reason</displayNameOverride>
+            <field>telegenta__Invalid_Reason__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Contact State</displayNameOverride>
+            <field>telegenta__Last_Contact_State__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Next Call Time</displayNameOverride>
+            <field>telegenta__Next_Call_Time__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Not Interested Reason</displayNameOverride>
+            <field>telegenta__Not_Interested_Reason__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Priority</displayNameOverride>
+            <field>telegenta__Priority__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Probability</displayNameOverride>
+            <field>telegenta__Probability__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Product Interest</displayNameOverride>
+            <field>telegenta__ProductInterest__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Unsuccessful Calls</displayNameOverride>
+            <field>telegenta__Unsuccessful_Calls__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Phone2</displayNameOverride>
+            <field>Phone2__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Phone3</displayNameOverride>
+            <field>Phone3__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Selvstændig</displayNameOverride>
+            <field>Selvst_ndig__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is callable</displayNameOverride>
+            <field>telegenta__Is_callable__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is owner</displayNameOverride>
+            <field>telegenta__Is_owner__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Publisher name</displayNameOverride>
+            <field>Publisher_name__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Case closed</displayNameOverride>
+            <field>Case_closed__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>New Address</displayNameOverride>
+            <field>New_Address__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Old Address</displayNameOverride>
+            <field>Old_Address__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Publisher Image</displayNameOverride>
+            <field>Publisher_Image__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Caller Id</displayNameOverride>
+            <field>telegenta__Caller_Id__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Har ægtepagt</displayNameOverride>
+            <field>Has_Prenup__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Har Fremtidsfuldmagt</displayNameOverride>
+            <field>Has_Poa__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Har Samejeoverenskomst</displayNameOverride>
+            <field>Has_Samejeoverenskomst__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>F&amp;M Lead</displayNameOverride>
+            <field>FM_Lead__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Handel gået igennem</displayNameOverride>
+            <field>Has_Orderwentthrough__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Møde booket</displayNameOverride>
+            <field>M_de_booket__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mødebooker</displayNameOverride>
+            <field>Meeting_booker__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Phone Number</displayNameOverride>
+            <field>telegenta__Phone_Number__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Email2</displayNameOverride>
+            <field>Email2__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Duplicate of</displayNameOverride>
+            <field>Duplicate_of__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Husdyr</displayNameOverride>
+            <field>Husdyr__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Arbejdssituation</displayNameOverride>
+            <field>Arbejdssituation__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Virksomhedsejer</displayNameOverride>
+            <field>Virksomhedsejer__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lead Age(In days)</displayNameOverride>
+            <field>telegenta__Lead_Age_In_days__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Total calls</displayNameOverride>
+            <field>telegenta__Total_calls__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Unprocessed</displayNameOverride>
+            <field>telegenta__Unprocessed__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created Date Time</displayNameOverride>
+            <field>Created_Date_Time__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Hit Rate Lead</displayNameOverride>
+            <field>Hit_Rate_Lead__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Genindlæst</displayNameOverride>
+            <field>Genindl_st__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Kommentarer</displayNameOverride>
+            <field>Kommentarer__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Vilken tid på dygnet</displayNameOverride>
+            <field>Vilken_tid_p_dygnet__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Publisher Campaign 2</displayNameOverride>
+            <field>Publisher_Campaign_2__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CVR</displayNameOverride>
+            <field>CVR__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Stiftelsesdato</displayNameOverride>
+            <field>Virksomhed_stiftelsesdato__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Hjemmeside</displayNameOverride>
+            <field>Virksomhed_Website__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Fødselsdag_txt</displayNameOverride>
+            <field>Birthday_txt__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Kontaktperson</displayNameOverride>
+            <field>Virksomhed_kontaktperson__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Kontaktperson rolle</displayNameOverride>
+            <field>Virksomhed_Kontaktperson_rolle__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Reele ejere</displayNameOverride>
+            <field>Virksomhed_reele_ejere__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Leadtype</displayNameOverride>
+            <field>Leadtype__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Sikre børns fremtid</displayNameOverride>
+            <field>Sikre_b_rns_fremtid__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Sikre partner</displayNameOverride>
+            <field>Sikre_partner__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Closed Date</displayNameOverride>
+            <field>Closed_Date__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>IsCallableNewWorking</displayNameOverride>
+            <field>IsCallable__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>IsCallableNew</displayNameOverride>
+            <field>IsCallableNew__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>IsCallableWorking</displayNameOverride>
+            <field>IsCallableWorking__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Booker navn</displayNameOverride>
+            <field>Booker_navn__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Virksomhedstype</displayNameOverride>
+            <field>Virksomhedstype__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Frit pensionsvalg</displayNameOverride>
+            <field>Frit_pensionsvalg__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Next Call Date</displayNameOverride>
+            <field>Next_Call_Date__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Originalt mødetidspunkt</displayNameOverride>
+            <field>Original_Meeting_Time__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Virksomhed_industri</displayNameOverride>
+            <field>Virksomhed_industri__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Reopened</displayNameOverride>
+            <field>Gen_bnet__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Virksomhed navn</displayNameOverride>
+            <field>Virksomhed_navn__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>TimeToNextCall</displayNameOverride>
+            <field>TimeTO__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>TimeToNextCallMinut</displayNameOverride>
+            <field>TimeToNextCall__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Dedicated owner</displayNameOverride>
+            <field>Dedicated_owner__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign Details</displayNameOverride>
+            <field>Campaign_Details__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>QA - Approved</displayNameOverride>
+            <field>QA__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>QA - Comments</displayNameOverride>
+            <field>QA_Comments__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>QA - Status</displayNameOverride>
+            <field>QA_Status__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>QA - Reply</displayNameOverride>
+            <field>QA_Reply__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Comments</displayNameOverride>
+            <field>Comments__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Booker navn alias</displayNameOverride>
+            <field>Booker_navn_alias__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Pension</displayNameOverride>
+            <field>PensionLead__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Forsikring - Sendt til Honestus</displayNameOverride>
+            <field>Forsikring_Sendt_til_Honestus__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Market Unit</displayNameOverride>
+            <field>Market_Unit__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Pension - Status</displayNameOverride>
+            <field>Pension_Status_Honestus__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Forsikring - Status</displayNameOverride>
+            <field>Forsikring_Status_Honestus__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Forsikring - StatusRed</displayNameOverride>
+            <field>Forsikring_StatusRed__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Pension - StatusRed</displayNameOverride>
+            <field>Pension__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Møde - Viderestillet</displayNameOverride>
+            <field>M_de_Viderestillet__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Møde Booket (i)</displayNameOverride>
+            <field>M_de_Booket_Internal__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Møde booket af</displayNameOverride>
+            <field>M_de_booket_af__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Dato for videregivelse</displayNameOverride>
+            <field>Dato_for_booking__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Møde booket d.</displayNameOverride>
+            <field>M_de_booket_d__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mødebooking feedback</displayNameOverride>
+            <field>M_debooking_feedback__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>MB Internal</displayNameOverride>
+            <field>MB_Internal__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mødebooking - Lead staus</displayNameOverride>
+            <field>M_debooking_Lead_staus__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mødebooking - Lead owner</displayNameOverride>
+            <field>M_debooking_Lead_owner__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mødebooking - Closed date</displayNameOverride>
+            <field>M_debooking_Close__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lead Group Name</displayNameOverride>
+            <field>Lead_Group_Name__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Boligtype</displayNameOverride>
+            <field>Bolig_type__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Age</displayNameOverride>
+            <field>Age__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Area Income</displayNameOverride>
+            <field>Area_Income__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>House size</displayNameOverride>
+            <field>House_size__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Movein date</displayNameOverride>
+            <field>Movein_date__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Property value</displayNameOverride>
+            <field>Property_value__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Personnummer</displayNameOverride>
+            <field>Personnummer__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>New Status</displayNameOverride>
+            <field>New_Status__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Fejlsøgning (Calendly)</displayNameOverride>
+            <field>Fejls_gning_Calendly__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Testamente type</displayNameOverride>
+            <field>Testamente_type__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Sidder du eller en af jer i uskiftet bo?</displayNameOverride>
+            <field>Sidder_du_i_uskiftet_bo__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Har du/I (eller en af jer) særeje?</displayNameOverride>
+            <field>Har_du_I_eller_en_af_jer_s_reje__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Vil du/I donere arv til velgørenhed?</displayNameOverride>
+            <field>Vil_du_I_donere_arv_til_velg_renhed__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Har du/I nogle arvinger?</displayNameOverride>
+            <field>Har_du_I_nogle_arvinger__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Længstlevende kunne ændre i testamentet?</displayNameOverride>
+            <field>L_ngstlevende_kunne_ndre_i_testamentet__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Sticky Sender</displayNameOverride>
+            <field>Sticky_Sender__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Hvor mange børn har du/I?</displayNameOverride>
+            <field>Hvor_mange_b_rn_har_du_I__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Vil du/I tilføje en værge?</displayNameOverride>
+            <field>Vil_du_I_tilf_je_en_v_rge__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Call Campaign State</displayNameOverride>
+            <field>Call_Campaign_State__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Phone Formatted</displayNameOverride>
+            <field>Phone_Formatted__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Working Status</displayNameOverride>
+            <field>Working_Status__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Conversion Time (In Seconds)</displayNameOverride>
+            <field>Conversion_Time__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Converted Hour Formatted</displayNameOverride>
+            <field>Converted_Hour_Formatted__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Converted Hour</displayNameOverride>
+            <field>Converted_Hour__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Number Of Days</displayNameOverride>
+            <field>Number_Of_Days__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Phone number Id</displayNameOverride>
+            <field>telegenta__Phone_number_Id__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Content Message</displayNameOverride>
+            <field>Content_Message__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Undgå at staten bliver min værge</displayNameOverride>
+            <field>Undg_at_staten_bliver_min_v_rge__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Closed Not Converted Status</displayNameOverride>
+            <field>Closed_Not_Converted_Status__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Unqualified Status</displayNameOverride>
+            <field>Unqualified_Status__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Converted Status</displayNameOverride>
+            <field>Converted_Status__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ejer du/I fast ejendom?</displayNameOverride>
+            <field>Ejer_du_fast_ejendom__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Duplicate</displayNameOverride>
+            <field>Duplicate__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Har Livsforsikring</displayNameOverride>
+            <field>Har_Livsforsikring__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Har pension?</displayNameOverride>
+            <field>Har_pension__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>UTM Medium</displayNameOverride>
+            <field>UTM_Medium__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>UTM Term (Deprecated)</displayNameOverride>
+            <field>UTM_Term__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>UTM Keyword</displayNameOverride>
+            <field>UTM_Keyword__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is Dublet</displayNameOverride>
+            <field>Is_Dublet__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lead Value</displayNameOverride>
+            <field>Lead_Value__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Platform Lead ID</displayNameOverride>
+            <field>Platform_Lead_ID__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Message Status Date</displayNameOverride>
+            <field>TwilioSF__Last_Message_Status_Date__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Message Status</displayNameOverride>
+            <field>TwilioSF__Last_Message_Status__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>DEPRECATED Unformatted Mobile</displayNameOverride>
+            <field>TwilioSF__Unformatted_Mobile__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>DEPRECATED Unformatted Phone</displayNameOverride>
+            <field>TwilioSF__Unformatted_Phone__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last SMS Reminder Sent Date</displayNameOverride>
+            <field>Last_SMS_Reminder_Sent_Date__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>TwilioDK</displayNameOverride>
+            <field>TwilioDK__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Appointment Being Created</displayNameOverride>
+            <field>Appointment_Being_Created__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>TwilioSE</displayNameOverride>
+            <field>TwilioSE__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Foredragstid og dato</displayNameOverride>
+            <field>Foredragstid_og_dato__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Scanned at entry</displayNameOverride>
+            <field>Scanned_at_entry__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Jeg vil...</displayNameOverride>
+            <field>Jeg_vil__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Stop Flows</displayNameOverride>
+            <field>Stop_Flows__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Valgt foredrag eller rådgivning?</displayNameOverride>
+            <field>Valgt_foredrag_eller_r_dgivning__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Foredrag Færdigt</displayNameOverride>
+            <field>Foredrag_F_rdigt__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lånelead</displayNameOverride>
+            <field>L_nelead__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Foredragsevent created</displayNameOverride>
+            <field>Foredragsevent_created__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Other Meeting</displayNameOverride>
+            <field>Other_Meeting__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Tickets in order</displayNameOverride>
+            <field>Tickets_in_order__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Scanned at entry</displayNameOverride>
+            <field>Scanned_at_entry_boolean__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Seat Label</displayNameOverride>
+            <field>Seat_Label__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Zapier Trigger Field</displayNameOverride>
+            <field>Zapier_Trigger_Field__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Reminder Flow Complete</displayNameOverride>
+            <field>Reminder_Flow_Complete__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Undgå at børns risiko for 50% mindre arv</displayNameOverride>
+            <field>Undg_at_b_rns_risiko_for_50_mindre_arv__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Kampagnebudskab Formula</displayNameOverride>
+            <field>Kampagnebudskab_Formula__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Undgå en skævfordeling af arven</displayNameOverride>
+            <field>Undg_en_sk_vfordeling_af_arven__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Booking date/time</displayNameOverride>
+            <field>Booking_date_time__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>FlowTrigger: Create Ticket</displayNameOverride>
+            <field>FlowTrigger_Create_Ticket__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Price Per Ticket</displayNameOverride>
+            <field>Price_Per_Ticket__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Number of tickets in order</displayNameOverride>
+            <field>Number_of_tickets_in_order__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Selv bestemme, hvem der skal arve mig</displayNameOverride>
+            <field>Selv_bestemme_hvem_der_skal_arve_mig__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Undgå at børn får deres arv for tidligt</displayNameOverride>
+            <field>Undg_at_b_rn_f_r_arv_udbetalt_for_tidli__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Sikre min partner/ægtefælle mest muligt</displayNameOverride>
+            <field>Sikre_min_partner_gtef_lle_mest_muligt__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Undgå at partner skal betale ved min død</displayNameOverride>
+            <field>Undg_at_partner_skal_betale_ved_min_d_d__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Undgå arveafgift til arvinger</displayNameOverride>
+            <field>Undg_arveafgift_til_arvinger__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Online event</displayNameOverride>
+            <field>Online_event__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Reference givet</displayNameOverride>
+            <field>Reference_givet__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Reference Lead</displayNameOverride>
+            <field>Reference_Lead__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Reference from Lead</displayNameOverride>
+            <field>Reference_from_Lead__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>UTM Content Formula</displayNameOverride>
+            <field>UTM_Content_Formula__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Calendly Event ID</displayNameOverride>
+            <field>Calendly_Event_ID__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mødestatus</displayNameOverride>
+            <field>M_destatus__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Møde booket til</displayNameOverride>
+            <field>M_de_booket_til__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Person2 First Name</displayNameOverride>
+            <field>Person2_First_Name__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Person2 Last Name</displayNameOverride>
+            <field>Person2_Last_Name__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Phone2 Formatted</displayNameOverride>
+            <field>Phone2_Formatted__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account</displayNameOverride>
+            <field>Account__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CalendlyCreated</displayNameOverride>
+            <field>Calendly__CalendlyCreated__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mailcampagin member rating</displayNameOverride>
+            <field>Mailcampagin_member_rating__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Related Event ID</displayNameOverride>
+            <field>Related_Event_ID__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign Flow Trigger</displayNameOverride>
+            <field>Campaign_Flow_Trigger__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Booking Action</displayNameOverride>
+            <field>Booking_Action__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Venue</displayNameOverride>
+            <field>Venue__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Cancelled tickets</displayNameOverride>
+            <field>Cancelled_tickets__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Remaining Tickets</displayNameOverride>
+            <field>Remaining_Tickets__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Booking Status</displayNameOverride>
+            <field>Booking_Status_Formula__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Date of Reference</displayNameOverride>
+            <field>Date_of_Reference__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ejendomsoverdragelse</displayNameOverride>
+            <field>Ejendomsoverdragelse__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Reason for Cancellation</displayNameOverride>
+            <field>Reason_for_Cancellation__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Tickets Scanned at Entry</displayNameOverride>
+            <field>Tickets_Scanned_at_Entry__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Phone Formatted (No Spaces)</displayNameOverride>
+            <field>Phone_Formatted_No_Spaces__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Obl ending and call record permission</displayNameOverride>
+            <field>Obl_ending_and_call_record_permission__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Har du barn?</displayNameOverride>
+            <field>Har_du_barn__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Date and time of obl end and call record</displayNameOverride>
+            <field>Date_and_time_of_obl_end_and_call_record__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Önskar du en timmes gratis rådgivning gä</displayNameOverride>
+            <field>nskar_du_en_timmes_gratis_r_dgivning_g__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Gemensamma eller särkullbarn?</displayNameOverride>
+            <field>Gemensamma_eller_s_rkullbarn__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is member</displayNameOverride>
+            <field>Is_member__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Wants membership</displayNameOverride>
+            <field>Wants_membership__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>SMS Reminder</displayNameOverride>
+            <field>SMS_Reminder__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Has Appointment</displayNameOverride>
+            <field>Has_Appointment__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Campaign</displayNameOverride>
+            <field>last_campaign__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Stop Calling</displayNameOverride>
+            <field>stop_calling__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Brand</displayNameOverride>
+            <field>Brand__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Tid for accept på Ingen Fortrydelsesret</displayNameOverride>
+            <field>tid_for_accept_p_ingen_fortrydelsesret__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Tid for accept på optagelse af opkald</displayNameOverride>
+            <field>Tid_for_accept_p_optagelse_af_opkald__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lock Time</displayNameOverride>
+            <field>telegenta__Lock_Time__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Kampagne budskab</displayNameOverride>
+            <field>Kampagne_budskab__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Har accepteret medlemsbetingelser</displayNameOverride>
+            <field>Har_accepteret_medlemsbetingelser__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Har du børn?</displayNameOverride>
+            <field>Har_du_b_rn__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Har du/I fælles eller sammenbragte børn?</displayNameOverride>
+            <field>Har_du_I_f_lles_eller_sammenbragte_b_rn__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Besked til rådgiver</displayNameOverride>
+            <field>Besked_til_r_dgiver__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Er der fælles ellers sammenbragte børn?</displayNameOverride>
+            <field>Er_der_f_lles_ellers_sammenbragte_b_rn__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Valgfri gratis gave</displayNameOverride>
+            <field>Valgfri_gratis_gave__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Landingpage</displayNameOverride>
+            <field>Landingpage__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Hvem tilbydes gratis fremtidsfuldmagt?</displayNameOverride>
+            <field>Hvem_tilbydes_gratis_fremtidsfuldmagt__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Hvor mange ansatte er der i virksomheden</displayNameOverride>
+            <field>Hvor_mange_ansatte_er_der_i_virksomheden__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Vil du tilføje en 2. prioritet af værge?</displayNameOverride>
+            <field>Vil_du_tilf_je_en_2_prioritet_af_v_rge__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Vil du/I begrunde valget af værge?</displayNameOverride>
+            <field>Vil_du_I_begrunde_valget_af_v_rge__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Segment</displayNameOverride>
+            <field>Segment__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>UTM Source</displayNameOverride>
+            <field>UTM_Source__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>UTM Campaign</displayNameOverride>
+            <field>UTM_Campaign__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>FBCLID</displayNameOverride>
+            <field>FBCLID__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>GSID</displayNameOverride>
+            <field>GSID__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>UTM Content (Deprecated)</displayNameOverride>
+            <field>UTM_Content__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Bor du til leje eller ejer du?</displayNameOverride>
+            <field>Bor_du_til_leje_eller_ejer_du__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ekstern rådgiver</displayNameOverride>
+            <field>Ekstern_r_dgiver__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Call Campaign</displayNameOverride>
+            <field>Call_Campaign__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Reopen Lead</displayNameOverride>
+            <field>Reopen_Lead__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Update CCS</displayNameOverride>
+            <field>Update_CCS__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Event mødestatus</displayNameOverride>
+            <field>Event_moedestatus_c__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is Closed</displayNameOverride>
+            <field>Is_Closed__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Marketing Campaign</displayNameOverride>
+            <field>Marketing_Campaign__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Membership</displayNameOverride>
+            <field>Membership__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Foredragstype</displayNameOverride>
+            <field>Foredragstype__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Call Time</displayNameOverride>
+            <field>Last_Call_Time__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Total calls out all</displayNameOverride>
+            <field>Total_calls_out_all__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Har du børn? (Calendly)</displayNameOverride>
+            <field>Har_du_b_rn_Calendly__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Kommentarer (Calendly)</displayNameOverride>
+            <field>Kommentarer_Calendly__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Tidl. overvejet testamente? (Calendly)</displayNameOverride>
+            <field>Tidl_overvejet_testamente_Calendly__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ejer eller lejer? (Calendly)</displayNameOverride>
+            <field>Ejer_eller_lejer_Calendly__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Beslutninger ved sygdom? (Calendly)</displayNameOverride>
+            <field>Beslutninger_ved_sygdom_Calendly__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Motivation for deltagelse (Calendly)</displayNameOverride>
+            <field>Motivation_for_deltagelse_Calendly__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Medbringes ledsager? (Calendly)</displayNameOverride>
+            <field>Medbringes_ledsager_Calendly__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ledsagers navn (Calendly)</displayNameOverride>
+            <field>Ledsagers_navn_Calendly__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ledsagers telefonnummer (Calendly)</displayNameOverride>
+            <field>Ledsagers_telefonnummer_Calendly__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Telefonnummer (Calendly)</displayNameOverride>
+            <field>Telefonnummer_Calendly__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Kommentarer - Personligt (Calendly)</displayNameOverride>
+            <field>Kommentarer_Personligt_Calendly__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Name2</displayNameOverride>
+            <field>Name2__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Foredragsdato</displayNameOverride>
+            <field>Foredragsdato__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Foredragskommentar</displayNameOverride>
+            <field>Foredragskommentar__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Gavekort - 1.000 kr. rabat og rådgivning</displayNameOverride>
+            <field>Gavekort_1_000_kr_rabat_og_r_dgivning__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Booking Cancellation Method</displayNameOverride>
+            <field>booking_cancellation_method__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Modtager af gavekort (Calendly)</displayNameOverride>
+            <field>Modtager_af_gavekort_Calendly__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Modtager af gavekort - Tlf (Calendly)</displayNameOverride>
+            <field>Modtager_af_gavekort_Tlf_Calendly__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Next call time overdue</displayNameOverride>
+            <field>Next_call_time_overdue__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Next call time overdue days</displayNameOverride>
+            <field>Next_call_time_overdue_days__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Transfer this lead</displayNameOverride>
+            <field>Transfer_this_lead__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Createdvscloseddate</displayNameOverride>
+            <field>Createdvscloseddate__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Zapier Updated</displayNameOverride>
+            <field>Zapier_Updated__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Zapier Created</displayNameOverride>
+            <field>Zapier_Created__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Zapier Reopened</displayNameOverride>
+            <field>Zapier_Reopened__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Zapier Flag</displayNameOverride>
+            <field>Zapier_Flag__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Payments</displayNameOverride>
+            <field>Payments__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Payment Link</displayNameOverride>
+            <field>Payment_Link__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Subscription Link</displayNameOverride>
+            <field>Subscription_Link__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Fixed Discount Amount</displayNameOverride>
+            <field>Fixed_discount_Type__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Case</displayNameOverride>
+            <field>Case__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Zapier - Upgraded from 1-to-1</displayNameOverride>
+            <field>Zapier_Upgraded_from_1_to_1__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Zapier - Upgraded from 1-to-1 Date</displayNameOverride>
+            <field>Zapier_Upgraded_from_1_to_1_date__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>SMS Reminders (New)</displayNameOverride>
+            <field>SMS_Reminders_New__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Booking cancelled?</displayNameOverride>
+            <field>Booking_cancelled__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>SMS Confirmation requested?</displayNameOverride>
+            <field>SMS_Confirmation_requested__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Donationlead</displayNameOverride>
+            <field>Donationlead__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Date Received from Findforsikring.dk</displayNameOverride>
+            <field>Date_Received_from_Findforsikring_dk__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opt-in Date/Time</displayNameOverride>
+            <field>Opt_in_Date_Time__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Moved from Billetto</displayNameOverride>
+            <field>Moved_from_Billetto__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Submitted Digital Lecture Form</displayNameOverride>
+            <field>Submitted_Digital_Lecture_Form__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Walk-In Attendee</displayNameOverride>
+            <field>Walk_In_Attendee__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time of Lecture Form Invite</displayNameOverride>
+            <field>Time_of_Lecture_Form_Invite__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lecture Form Invite Status</displayNameOverride>
+            <field>Lecture_Form_Invite_Status__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time of Lecture Form Reply</displayNameOverride>
+            <field>Time_of_Lecture_Form_Reply__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Har du/I børn?</displayNameOverride>
+            <field>Har_du_I_b_rn__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Friværdi i bolig</displayNameOverride>
+            <field>Friv_rdi_i_bolig__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Aktiver i form af værdipapirer el. andet</displayNameOverride>
+            <field>Aktiver_i_form_af_v_rdipapirer_el_andet__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Estimeret samlet værdi for boet</displayNameOverride>
+            <field>Estimeret_samlet_v_rdi_for_boet__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Har du/I fremtidsfuldmagt?</displayNameOverride>
+            <field>Har_du_I_fremtidsfuldmagt__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Har du/I ægtepagt?</displayNameOverride>
+            <field>Har_du_I_gtepagt__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Har du/I nogen andre dokumenter?</displayNameOverride>
+            <field>Har_du_I_nogen_andre_dokumenter__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ønsket mødetype</displayNameOverride>
+            <field>nsket_m_detype__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Har du/I testamente?</displayNameOverride>
+            <field>Har_du_I_testamente__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Er du selvstændig?</displayNameOverride>
+            <field>Er_du_selvst_ndig__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Digital Lecture Form through QR-Code</displayNameOverride>
+            <field>Digital_Lecture_Form_through_QR_Code__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Deltager I begge til mødet?</displayNameOverride>
+            <field>Deltager_I_begge_til_m_det__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Foredragsdatovscloseddate</displayNameOverride>
+            <field>Foredragsdatovscloseddate__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Reason for Lecture Cancellation</displayNameOverride>
+            <field>Reason_for_Lecture_Cancellation__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Event Status</displayNameOverride>
+            <field>Event_Status__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lecture Start Time</displayNameOverride>
+            <field>Lecture_Start_Time__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Email Invite Status</displayNameOverride>
+            <field>Email_Invite_Status__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time of Email Form Reply</displayNameOverride>
+            <field>Time_of_Email_Form_Reply__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time of Email Form Invite</displayNameOverride>
+            <field>Time_of_Email_Form_Invite__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Hubhus Trigger Flag</displayNameOverride>
+            <field>Hubhus_Trigger_Flag__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Hubhus Trigger Time</displayNameOverride>
+            <field>Hubhus_Trigger_Time__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Booked Meeting via Hubhus</displayNameOverride>
+            <field>Booked_Meeting_via_Hubhus__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time of Meeting Booked via Hubhus</displayNameOverride>
+            <field>Time_of_Meeting_Booked_via_Hubhus__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Hubhus ID</displayNameOverride>
+            <field>Hubhus_ID__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>No Show Cause</displayNameOverride>
+            <field>No_Show_Cause__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lecture Date Check</displayNameOverride>
+            <field>Lecture_Date_Check__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mødebooker unikt kampagne ID</displayNameOverride>
+            <field>M_debooker_unikt_kampagne_ID__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Internal Calendly Booking</displayNameOverride>
+            <field>Internal_Calendly_Booking__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Seren Meeting Booked</displayNameOverride>
+            <field>Seren_Meeting_Booked__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time of Seren Meeting Booking</displayNameOverride>
+            <field>Time_of_Seren_Meeting_Booking__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lecturer</displayNameOverride>
+            <field>Lecturer__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Seren Booking URL</displayNameOverride>
+            <field>Seren_Booking_URL__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Cancellation Date/Time</displayNameOverride>
+            <field>Cancellation_Date_Time__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>UTM Content</displayNameOverride>
+            <field>UTM_Content_Txt__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Most Recent Marketing Flow Start</displayNameOverride>
+            <field>Most_Recent_Marketing_Flow_Start__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Currently in Marketing Flow</displayNameOverride>
+            <field>Currently_in_Marketing_Flow__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Most Recent Marketing Flow End</displayNameOverride>
+            <field>Most_Recent_Marketing_Flow_End__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Marketing Email Flow</displayNameOverride>
+            <field>Marketing_Email_Flow__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Marketing Meeting Booked</displayNameOverride>
+            <field>Marketing_Meeting_Booked__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Company Lecture</displayNameOverride>
+            <field>Company_Lecture__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Reason for Marketing Flow End</displayNameOverride>
+            <field>Reason_for_Marketing_Flow_End__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Calendly Booking Picklist Selection</displayNameOverride>
+            <field>Calendly_Booking_Picklist__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Calendly Booking Picklist Question</displayNameOverride>
+            <field>Calendly_Booking_Picklist_Question__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Calendly Booking Note Question</displayNameOverride>
+            <field>Calendly_Booking_Note_Question__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Calendly Booking Note Answer</displayNameOverride>
+            <field>Calendly_Booking_Note_Answer__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Text Owner ID</displayNameOverride>
+            <field>Text_Owner_ID__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Calendly Question #1</displayNameOverride>
+            <field>Calendly_Question_1__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Calendly Question #2</displayNameOverride>
+            <field>Calendly_Question_2__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Calendly Question #3</displayNameOverride>
+            <field>Calendly_Question_3__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Calendly Question #4</displayNameOverride>
+            <field>Calendly_Question_4__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Calendly Question #5</displayNameOverride>
+            <field>Calendly_Question_5__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Calendly Answer #1</displayNameOverride>
+            <field>Calendly_Answer_1__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Calendly Answer #2</displayNameOverride>
+            <field>Calendly_Answer_2__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Calendly Answer #3</displayNameOverride>
+            <field>Calendly_Answer_3__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Calendly Answer #4</displayNameOverride>
+            <field>Calendly_Answer_4__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Calendly Answer #5</displayNameOverride>
+            <field>Calendly_Answer_5__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Marketing Flow ID</displayNameOverride>
+            <field>Marketing_Flow_ID__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Venue Suggestion</displayNameOverride>
+            <field>Venue_Suggestion__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Area Suggestion</displayNameOverride>
+            <field>Area_Suggestion__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Venue Suggestion (Date)</displayNameOverride>
+            <field>Venue_Suggestion_Date__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Area Suggestion (Date)</displayNameOverride>
+            <field>Area_Suggestion_Date__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Venue Suggestion Booking URL</displayNameOverride>
+            <field>Venue_Suggestion_Booking_URL__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Area Suggestion Booking URL</displayNameOverride>
+            <field>Area_Suggestion_Booking_URL__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Area Suggestion Booking Percentage</displayNameOverride>
+            <field>Area_Suggestion_Booking_Percentage__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Venue Suggestion Booking Percentage</displayNameOverride>
+            <field>Venue_Suggestion_Booking_Percentage__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Venue Suggestion Status</displayNameOverride>
+            <field>Suiggested_Event_Status__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Area Suggestion Status</displayNameOverride>
+            <field>Area_Suggestion_Status__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Has Event Suggestions</displayNameOverride>
+            <field>Has_Event_Suggestions__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is Re-booked</displayNameOverride>
+            <field>Is_Re_booked__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Re-booking Date/Time</displayNameOverride>
+            <field>Re_booking_Date_Time__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Re-booked by</displayNameOverride>
+            <field>Re_booked_by__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Days to Close (Lecture)</displayNameOverride>
+            <field>Days_to_Close_Lecture__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lead Closure SLA</displayNameOverride>
+            <field>Lead_Closure_SLA__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Aros Lead Generation Time</displayNameOverride>
+            <field>Aros_Lead_Generation_Time__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Aros Lead Generated</displayNameOverride>
+            <field>Aros_Lead_Generated__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Aros Lead Generation Type</displayNameOverride>
+            <field>Aros_Lead_Generation_Type__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time Since Lecture</displayNameOverride>
+            <field>Time_Since_Lecture__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time of Digital Lecture Form Meeting</displayNameOverride>
+            <field>Time_of_Digital_Lecture_Form_Meeting__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Calendly Lecture Meeting Time</displayNameOverride>
+            <field>Calendly_Lecture_Meeting_Time__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Calendly Lecture Meeting Booked</displayNameOverride>
+            <field>Calendly_Lecture_Meeting_Booked__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Calendly Lecture Booking Time</displayNameOverride>
+            <field>Calendly_Lecture_Booking_Time__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Appointment Status</displayNameOverride>
+            <field>Appointment_Status__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Trigger Appointment Status Flow</displayNameOverride>
+            <field>Trigger_Appointment_Status_Flow__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Expired Lecture Form Submission</displayNameOverride>
+            <field>Expired_Lecture_Form_Submission__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is Lost</displayNameOverride>
+            <field>Is_Lost__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Trigger Lecture Journey</displayNameOverride>
+            <field>Trigger_Lecture_Journey__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CalendlyAction</displayNameOverride>
+            <field>CalendlyAction__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Calendly Meeting Start</displayNameOverride>
+            <field>Calendly_Meeting_Start__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Note from Meeting Booker</displayNameOverride>
+            <field>Note_from_Meeting_Booker__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is Open</displayNameOverride>
+            <field>Is_Open__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Closed By</displayNameOverride>
+            <field>Closed_By__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Featured Advisor</displayNameOverride>
+            <field>Featured_Advisor__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Latest Entry Date</displayNameOverride>
+            <field>Latest_Entry_Date__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Latest Marketing Campaign</displayNameOverride>
+            <field>Latest_Marketing_Campaign__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>UTM Term</displayNameOverride>
+            <field>UTM_Term_txt__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is Owner</displayNameOverride>
+            <field>Is_Owner__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contact Info History</displayNameOverride>
+            <field>All__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lead Priority</displayNameOverride>
+            <field>Lead_Priority__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Callable Within 2 Hours</displayNameOverride>
+            <field>Callable_Within_2_Hours__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is Owned by Queue or Meeting Booker</displayNameOverride>
+            <field>Is_Owned_by_Queue_or_Meeting_Booker__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Locked</displayNameOverride>
+            <field>Locked__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Callable Within 1 Hour</displayNameOverride>
+            <field>Callable_Within_1_Hour__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Can be Called</displayNameOverride>
+            <field>Can_be_Called__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Unlock Time</displayNameOverride>
+            <field>Unlock_Time__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Call Priority</displayNameOverride>
+            <field>Call_Priority__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is Owned by Current User or a Queue</displayNameOverride>
+            <field>Is_Owned_by_Current_User_or_a_Queue__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Meeting Booker Closed Date</displayNameOverride>
+            <field>Meeting_Booker_Closed_Date__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Latest Marketing Email</displayNameOverride>
+            <field>Latest_Marketing_Email__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Latest Action on Marketing Email</displayNameOverride>
+            <field>Latest_Action_on_Marketing_Email__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Latest Marketing Link Clicked</displayNameOverride>
+            <field>Latest_Marketing_Link_Clicked__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>18 Digit SFID</displayNameOverride>
+            <field>X18_Digit_SFID__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is Lecture Today</displayNameOverride>
+            <field>Is_Lecture_Today__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is Owner Active</displayNameOverride>
+            <field>Is_Owner_Active__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>User Created Type</displayNameOverride>
+            <field>User_Created_Type__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Interaction</displayNameOverride>
+            <field>Interaction__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>External ID</displayNameOverride>
+            <field>External_ID__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Call After Business Hours</displayNameOverride>
+            <field>Call_After_Business_Hours__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is Owner Queue or User?</displayNameOverride>
+            <field>Is_Owner_Queue_or_User__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Reference from Account</displayNameOverride>
+            <field>Reference_from_Account__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Change Log</displayNameOverride>
+            <field>Change_Log__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Marital Status</displayNameOverride>
+            <field>Marital_Status__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Has Children Under 18</displayNameOverride>
+            <field>Has_Children_Under_18__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Lead_Segment__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Sync_to_Marketing_Cloud__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Last_Reopened_Date__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Calls_Since_Last_Reopen__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Winback_Reason__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Default_Price_Book__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Last_Email_Opened__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Last_Email_Clicked__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Last_SMS_Reply__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Latest_Campaign__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Last_Inbound_Call_Time__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Owner_s_Calendly_Link__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Preferred_contact_method__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Hvad_Oplever_du_som_barriere__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Host_Type__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Company_Type__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Industry_Code__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Is_Created_by_Current_User__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Number_of_Campaign_Members__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Was_TM__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Numeric_Weekdays__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Weekday__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Is_Interested_in_Pension__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Communication_Ban__c</field>
+            <table>Lead</table>
+        </columns>
+        <masterLabel>Leads</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign ID</displayNameOverride>
+            <field>Id</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Status</displayNameOverride>
+            <field>Status</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Responded</displayNameOverride>
+            <field>HasResponded</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is Primary</displayNameOverride>
+            <field>IsPrimary</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created Date</displayNameOverride>
+            <field>CreatedDate</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created By</displayNameOverride>
+            <field>CreatedBy</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified Date</displayNameOverride>
+            <field>LastModifiedDate</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified By</displayNameOverride>
+            <field>LastModifiedBy</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>First Responded Date</displayNameOverride>
+            <field>FirstRespondedDate</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign Currency</displayNameOverride>
+            <field>CurrencyIsoCode</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Has Mobile Number</displayNameOverride>
+            <field>TwilioSF__Has_Mobile_Number__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>DEPRECATED Unformatted Mobile</displayNameOverride>
+            <field>TwilioSF__Unformatted_Mobile__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Message Status Date</displayNameOverride>
+            <field>TwilioSF__Last_Message_Status_Date__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Message Status</displayNameOverride>
+            <field>TwilioSF__Last_Message_Status__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account</displayNameOverride>
+            <field>Account__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Booking cancellation method</displayNameOverride>
+            <field>Booking_cancellation_method__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time of booking</displayNameOverride>
+            <field>Time_of_booking__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Event mødestatus</displayNameOverride>
+            <field>Event_m_destatus__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Platform Lead ID</displayNameOverride>
+            <field>Platform_Lead_ID__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Price per ticket</displayNameOverride>
+            <field>Price_per_ticket__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Scanned at entry</displayNameOverride>
+            <field>Scanned_at_entry__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ticket ID</displayNameOverride>
+            <field>Ticket_ID__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>EventID</displayNameOverride>
+            <field>EventID__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Tickets in order</displayNameOverride>
+            <field>Tickets_in_order__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Seat label</displayNameOverride>
+            <field>Seat_label__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Order</displayNameOverride>
+            <field>Order__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Online event</displayNameOverride>
+            <field>Online_event__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Market Unit</displayNameOverride>
+            <field>Market_Unit__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Order Price</displayNameOverride>
+            <field>Order_Price__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Order Discount</displayNameOverride>
+            <field>Order_Discount__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Refunded amount</displayNameOverride>
+            <field>Refunded_amount__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>UTM Campaign</displayNameOverride>
+            <field>UTM_Campaign__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>UTM Source</displayNameOverride>
+            <field>UTM_Source__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>UTM Medium</displayNameOverride>
+            <field>UTM_Medium__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>UTM Content (Deprecated)</displayNameOverride>
+            <field>UTM_Content__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>UTM Keyword</displayNameOverride>
+            <field>UTM_Keyword__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>UTM Term</displayNameOverride>
+            <field>UTM_Term__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Payments</displayNameOverride>
+            <field>Payments__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Journal</displayNameOverride>
+            <field>Journal__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lead Status</displayNameOverride>
+            <field>Lead_Status__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Booking Status (Deprecated)</displayNameOverride>
+            <field>Booking_status__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Date of cancellation</displayNameOverride>
+            <field>Date_of_cancellation__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time of ticket scan</displayNameOverride>
+            <field>Time_of_ticket_scan__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Related Event ID</displayNameOverride>
+            <field>Related_Event_ID__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Undgå at staten bliver min værge</displayNameOverride>
+            <field>Undg_at_staten_bliver_min_v_rge__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Undgå at børns risiko for 50% mindre arv</displayNameOverride>
+            <field>Undg_at_b_rns_risiko_for_50_mindre_arv__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Undgå en skævfordeling af arven</displayNameOverride>
+            <field>Undg_en_sk_vfordeling_af_arven__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Selv bestemme, hvem der skal arve mig</displayNameOverride>
+            <field>Selv_bestemme_hvem_der_skal_arve_mig__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Undgå at børn får deres arv for tidligt</displayNameOverride>
+            <field>Undg_at_b_rn_f_r_deres_arv_for_tidligt__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Sikre min partner/ægtefælle mest muligt</displayNameOverride>
+            <field>Sikre_min_partner_gtef_lle_mest_muligt__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Undgå at partner skal betale ved min død</displayNameOverride>
+            <field>Undg_at_partner_skal_betale_ved_min_d_d__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Undgå arveafgift til arvinger</displayNameOverride>
+            <field>Undg_arveafgift_til_arvinger__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Cancelled tickets</displayNameOverride>
+            <field>Cancelled_tickets__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Remaining Tickets</displayNameOverride>
+            <field>Remaining_Tickets__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Booking Status</displayNameOverride>
+            <field>Booking_Status_Formula__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ejendomsoverdragelse</displayNameOverride>
+            <field>Ejendomsoverdragelse__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Reason for Cancellation</displayNameOverride>
+            <field>Reason_for_Cancellation__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Tickets Scanned at Entry</displayNameOverride>
+            <field>Tickets_Scanned_at_Entry__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Campaign Name</displayNameOverride>
+            <field>Name</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Parent Campaign</displayNameOverride>
+            <field>Parent</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Type</displayNameOverride>
+            <field>Type</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Start Date</displayNameOverride>
+            <field>StartDate</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>End Date</displayNameOverride>
+            <field>EndDate</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Expected Revenue in Campaign</displayNameOverride>
+            <field>ExpectedRevenue</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Budgeted Cost in Campaign</displayNameOverride>
+            <field>BudgetedCost</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Actual Cost in Campaign</displayNameOverride>
+            <field>ActualCost</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Expected Response (%)</displayNameOverride>
+            <field>ExpectedResponse</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Num Sent in Campaign</displayNameOverride>
+            <field>NumberSent</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Active</displayNameOverride>
+            <field>IsActive</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Description</displayNameOverride>
+            <field>Description</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Leads in Campaign</displayNameOverride>
+            <field>NumberOfLeads</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Converted Leads in Campaign</displayNameOverride>
+            <field>NumberOfConvertedLeads</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contacts in Campaign</displayNameOverride>
+            <field>NumberOfContacts</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Responses in Campaign</displayNameOverride>
+            <field>NumberOfResponses</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunities in Campaign</displayNameOverride>
+            <field>NumberOfOpportunities</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Won Opportunities in Campaign</displayNameOverride>
+            <field>NumberOfWonOpportunities</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Value Opportunities in Campaign</displayNameOverride>
+            <field>AmountAllOpportunities</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Value Won Opportunities in Campaign</displayNameOverride>
+            <field>AmountWonOpportunities</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Leads in Hierarchy</displayNameOverride>
+            <field>HierarchyNumberOfLeads</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Converted Leads in Hierarchy</displayNameOverride>
+            <field>HierarchyNumberOfConvertedLeads</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contacts in Hierarchy</displayNameOverride>
+            <field>HierarchyNumberOfContacts</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Responses in Hierarchy</displayNameOverride>
+            <field>HierarchyNumberOfResponses</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunities in Hierarchy</displayNameOverride>
+            <field>HierarchyNumberOfOpportunities</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Won Opportunities in Hierarchy</displayNameOverride>
+            <field>HierarchyNumberOfWonOpportunities</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Value Opportunities in Hierarchy</displayNameOverride>
+            <field>HierarchyAmountAllOpportunities</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Value Won Opportunities in Hierarchy</displayNameOverride>
+            <field>HierarchyAmountWonOpportunities</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Num Sent in Hierarchy</displayNameOverride>
+            <field>HierarchyNumberSent</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Expected Revenue in Hierarchy</displayNameOverride>
+            <field>HierarchyExpectedRevenue</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Budgeted Cost in Hierarchy</displayNameOverride>
+            <field>HierarchyBudgetedCost</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Actual Cost in Hierarchy</displayNameOverride>
+            <field>HierarchyActualCost</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign Owner</displayNameOverride>
+            <field>Owner</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Activity</displayNameOverride>
+            <field>LastActivityDate</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign Member Type</displayNameOverride>
+            <field>CampaignMemberRecordType</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Blocked</displayNameOverride>
+            <field>TwilioSF__Blocked__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Deliverability Status</displayNameOverride>
+            <field>TwilioSF__Deliverability_Status__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Deliverable</displayNameOverride>
+            <field>TwilioSF__Deliverable__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Failed</displayNameOverride>
+            <field>TwilioSF__Failed__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>No Mobile</displayNameOverride>
+            <field>TwilioSF__No_Mobile__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Not Opted In</displayNameOverride>
+            <field>TwilioSF__Not_Opted_In__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opt-In Keyword</displayNameOverride>
+            <field>TwilioSF__Opt_In_Keyword__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Total Deliverability Count</displayNameOverride>
+            <field>TwilioSF__Total_Deliverability_Count__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Undelivered</displayNameOverride>
+            <field>TwilioSF__Undelivered__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Unknown</displayNameOverride>
+            <field>TwilioSF__Unknown__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Event ID</displayNameOverride>
+            <field>Event_ID__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>DK SMS Day Before</displayNameOverride>
+            <field>DK_SMS_Day_Before__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>SE SMS Day Before</displayNameOverride>
+            <field>SE_SMS_Day_Before__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>DK SMS Week Before</displayNameOverride>
+            <field>DK_SMS_Week_Before__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>SE SMS Week Before</displayNameOverride>
+            <field>SE_SMS_Week_Before__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Kampagne budskab</displayNameOverride>
+            <field>Kampagne_budskab__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Foredragstid og dato</displayNameOverride>
+            <field>Foredragstid_og_dato__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>UTM Content</displayNameOverride>
+            <field>UTM_Content__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Billetto Event Page</displayNameOverride>
+            <field>Billetto_Event_Page__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Cancelled</displayNameOverride>
+            <field>Cancelled__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Event Poster</displayNameOverride>
+            <field>Event_Poster__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Min. tickets per order</displayNameOverride>
+            <field>Min_tickets_per_order__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Max tickets per order</displayNameOverride>
+            <field>Max_tickets_per_order__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Tags</displayNameOverride>
+            <field>Tags__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Address</displayNameOverride>
+            <field>Address__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Zip Code</displayNameOverride>
+            <field>Zip_Code__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>City</displayNameOverride>
+            <field>City__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Capacity</displayNameOverride>
+            <field>Capacity__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ad Status</displayNameOverride>
+            <field>Ad_Status__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Event Ended</displayNameOverride>
+            <field>Event_Ended__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Order</displayNameOverride>
+            <field>Order__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign Revenue</displayNameOverride>
+            <field>Campaign_Revenue__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Total Discount Given</displayNameOverride>
+            <field>Total_Discount_Given__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Booked Seats</displayNameOverride>
+            <field>Booked_Seats__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Venue</displayNameOverride>
+            <field>Venue__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Refunds in Campaign</displayNameOverride>
+            <field>Refunds_in_Campaign__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Online event</displayNameOverride>
+            <field>Online_event__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Venue UUID</displayNameOverride>
+            <field>Venue_UUID__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Event</displayNameOverride>
+            <field>Event__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Host</displayNameOverride>
+            <field>Host__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>County</displayNameOverride>
+            <field>County__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Phone</displayNameOverride>
+            <field>Phone__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Email</displayNameOverride>
+            <field>Email__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Host ID</displayNameOverride>
+            <field>Host_ID__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Related Event ID</displayNameOverride>
+            <field>Related_Event_ID__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Projector Screen</displayNameOverride>
+            <field>Projector_Screen__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Projector</displayNameOverride>
+            <field>Projector__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Notes</displayNameOverride>
+            <field>Notes__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Menu</displayNameOverride>
+            <field>Menu__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Venue Rental Cost</displayNameOverride>
+            <field>Venue_Rental_Cost__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Price Per Cover Incl. Vat</displayNameOverride>
+            <field>Price_Per_Cover__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lecturer (Picklist)</displayNameOverride>
+            <field>Lecturer_Picklist__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lecturer</displayNameOverride>
+            <field>Lecturer__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Name of Contact</displayNameOverride>
+            <field>Name_of_Contact__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Market Unit</displayNameOverride>
+            <field>Market_Unit__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lecture</displayNameOverride>
+            <field>Lecture__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Start</displayNameOverride>
+            <field>Start__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>End</displayNameOverride>
+            <field>End__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Location</displayNameOverride>
+            <field>Location__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Original date/time</displayNameOverride>
+            <field>Original_date_time__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Rescheduled</displayNameOverride>
+            <field>Rescheduled__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Date of rescheduling</displayNameOverride>
+            <field>Date_of_rescheduling__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Marketing Spend</displayNameOverride>
+            <field>Marketing_Spend__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Marketing Cost Per Booking</displayNameOverride>
+            <field>Marketing_Cost_Per_Booking__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Booking Percentage</displayNameOverride>
+            <field>Booking_Percentage__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ads CPM</displayNameOverride>
+            <field>Ads_CPM__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ad CTR</displayNameOverride>
+            <field>Ad_CTR__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ad Frequency</displayNameOverride>
+            <field>Ad_Frequency__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Date Of Cancellation</displayNameOverride>
+            <field>Date_Of_Cancellation__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ad Created</displayNameOverride>
+            <field>Ad_Created__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ad Start Date</displayNameOverride>
+            <field>Ad_Start_Date__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ad End Date</displayNameOverride>
+            <field>Ad_End_Date__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Webflow URL</displayNameOverride>
+            <field>Webflow_URL__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Webflow ID</displayNameOverride>
+            <field>Webflow_ID__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ad Set ID</displayNameOverride>
+            <field>Ad_Set_ID__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Creative ID</displayNameOverride>
+            <field>Creative_ID__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ad Image URL</displayNameOverride>
+            <field>Ad_Image_URL__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Price Per Cover Excl. Vat</displayNameOverride>
+            <field>Price_Per_Cover_Excl_Vat__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Invoice Approved</displayNameOverride>
+            <field>Invoice_Approved__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Open for Bookings</displayNameOverride>
+            <field>Open_for_Bookings__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Being Updated</displayNameOverride>
+            <field>Being_Updated__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Event URL (Deprecated)</displayNameOverride>
+            <field>Event_URL__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Food Served</displayNameOverride>
+            <field>Food_Served__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Attendance Format</displayNameOverride>
+            <field>Attendance_Format__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Venue Rental Cost Excl. Vat</displayNameOverride>
+            <field>Venue_Rental_Cost_Excl_Vat__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Minimum Seats Invoiced</displayNameOverride>
+            <field>Minimum_Seats_Invoiced__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <masterLabel>Campaign History</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Order_Value__c</field>
+            <table>Lead.CampaignMembers</table>
+        </columns>
+        <masterLabel>Campaign Member</masterLabel>
+    </sections>
+</ReportType>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Advisor</fullName>
+        <default>false</default>
+        <label>Advisor</label>
+    </customValue>
+    <customValue>
+        <fullName>Legal</fullName>
+        <default>false</default>
+        <label>Legal</label>
+    </customValue>
+    <customValue>
+        <fullName>Meeting Booker</fullName>
+        <default>false</default>
+        <label>Meeting Booker</label>
+    </customValue>
+    <customValue>
+        <fullName>Event Booker</fullName>
+        <default>false</default>
+        <label>Event Booker</label>
+    </customValue>
+    <customValue>
+        <fullName>Country Manager</fullName>
+        <default>false</default>
+        <label>Country Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Customer Service</fullName>
+        <default>false</default>
+        <label>Customer Service</label>
+    </customValue>
+    <customValue>
+        <fullName>IT</fullName>
+        <default>false</default>
+        <label>IT</label>
+    </customValue>
+    <customValue>
+        <fullName>Lecturer</fullName>
+        <default>false</default>
+        <label>Lecturer</label>
+    </customValue>
+    <customValue>
+        <fullName>Office Assistant</fullName>
+        <default>false</default>
+        <label>Office Assistant</label>
+    </customValue>
+    <customValue>
+        <fullName>External</fullName>
+        <default>false</default>
+        <label>External</label>
+    </customValue>
+    <customValue>
+        <fullName>Management</fullName>
+        <default>false</default>
+        <label>Management</label>
+    </customValue>
+    <customValue>
+        <fullName>Not Applicable</fullName>
+        <default>false</default>
+        <label>Not Applicable</label>
+    </customValue>
+    <customValue>
+        <fullName>Upper Management</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Upper Management</label>
+    </customValue>
+    <description>Is used for selecting which role an employee has in a company.</description>
+    <masterLabel>User Roles</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

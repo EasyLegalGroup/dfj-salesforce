@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Journal Dk</label>
+    <protected>false</protected>
+    <values>
+        <field>Field_Configuration__c</field>
+        <value xsi:type="xsd:string">{&quot;Journal&quot;:&quot;Journal__c&quot;,
+&quot;JournalUUID&quot;:&quot;uuid__c&quot;,
+&quot;person1Cpr&quot;:&quot;person_1_cpr__c&quot;,
+&quot;person2Cpr&quot;:&quot;person_2_cpr__c&quot;,
+&quot;person1FirstName&quot;:&quot;person_1_first_name__c&quot;,
+&quot;person1LastName&quot;:&quot;person_1_last_name__c&quot;,
+&quot;person2FirstName&quot;:&quot;person_2_first_name__c&quot;,
+&quot;person2LastName&quot;:&quot;person_2_last_name__c&quot;,
+&quot;person1Email&quot;:&quot;person_1_email__c&quot;,
+&quot;person1Phone&quot;:&quot;person_1_phone__c&quot;,
+&quot;person2Email&quot;:&quot;person_2_email__c&quot;,
+&quot;person2Phone&quot;:&quot;person_2_phone__c&quot;,
+&quot;toCreateMembershipForPerson1&quot;:&quot;nsker_medlemskab_person_1__c&quot;,
+&quot;toCreateMembershipForPerson2&quot;:&quot;nsker_medlemskab_person_2__c&quot; }</value>
+    </values>
+    <values>
+        <field>MembershipObject_name__c</field>
+        <value xsi:type="xsd:string">df_journal_dk__c</value>
+    </values>
+    <values>
+        <field>Person1_Membership_Condition_logic__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Person1_Membership_Contition__c</field>
+        <value xsi:type="xsd:string">[
+  {
+    &quot;field&quot;: &quot;nsker_medlemskab_person_1__c&quot;,
+    &quot;value&quot;: &quot;true&quot;,
+    &quot;type&quot;: &quot;Boolean&quot;
+  }
+]</value>
+    </values>
+    <values>
+        <field>Person2_Membership_Contition__c</field>
+        <value xsi:type="xsd:string">[
+  {
+    &quot;field&quot;: &quot;nsker_medlemskab_person_2__c&quot;,
+    &quot;value&quot;: &quot;true&quot;,
+    &quot;type&quot;: &quot;Boolean&quot;
+  }
+]</value>
+    </values>
+    <values>
+        <field>Record_Model_Id__c</field>
+        <value xsi:type="xsd:string">54</value>
+    </values>
+</CustomMetadata>

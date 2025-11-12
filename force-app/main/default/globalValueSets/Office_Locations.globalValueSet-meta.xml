@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Copenhagen (Headquarters)</fullName>
+        <default>false</default>
+        <label>Copenhagen (Headquarters)</label>
+    </customValue>
+    <customValue>
+        <fullName>Remote</fullName>
+        <default>false</default>
+        <label>Remote</label>
+    </customValue>
+    <customValue>
+        <fullName>Malmö</fullName>
+        <default>false</default>
+        <label>Malmö</label>
+    </customValue>
+    <customValue>
+        <fullName>Malaga</fullName>
+        <default>false</default>
+        <label>Malaga</label>
+    </customValue>
+    <customValue>
+        <fullName>Dublin</fullName>
+        <default>false</default>
+        <label>Dublin</label>
+    </customValue>
+    <masterLabel>Office Locations</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

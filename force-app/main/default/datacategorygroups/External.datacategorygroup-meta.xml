@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCategoryGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>Danish Document Information</label>
+                <name>Danish_Document_Information</name>
+            </dataCategory>
+            <label>Document Information</label>
+            <name>Document_Information</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Legal Documents</label>
+            <name>Legal_Documents</name>
+        </dataCategory>
+        <label>All</label>
+        <name>All</name>
+    </dataCategory>
+    <label>External</label>
+    <objectUsage>
+        <object>SvcCatalogItemDef</object>
+        <object>KnowledgeArticleVersion</object>
+    </objectUsage>
+</DataCategoryGroup>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldOverrides>
+        <field>Employment_Status__c</field>
+        <literalValue>Terminated</literalValue>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Termination_Date__c</field>
+        <formula>TODAY()</formula>
+    </fieldOverrides>
+    <label>Terminate Employment</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <quickActionLayout>
+        <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
+        <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Termination_Date__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+        </quickActionLayoutColumns>
+        <quickActionLayoutColumns/>
+    </quickActionLayout>
+    <successMessage>Employment Marked for Termination</successMessage>
+    <type>Update</type>
+</QuickAction>

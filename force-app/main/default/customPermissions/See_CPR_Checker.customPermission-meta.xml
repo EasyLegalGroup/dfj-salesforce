@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This is used on a few page layouts as a filter for who can see the CPR-Checker LWC (Lead and Account as of writing this)</description>
+    <isLicensed>false</isLicensed>
+    <label>See CPR-Checker</label>
+</CustomPermission>

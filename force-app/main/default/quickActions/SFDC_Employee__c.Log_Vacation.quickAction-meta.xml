@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldOverrides>
+        <field>Compensation__c</field>
+        <literalValue>Paid Leave</literalValue>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>End_Date__c</field>
+        <formula>TODAY()</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Market_Unit__c</field>
+        <formula>CASE(   SFDC_Employee__c.Market_Tnit__c ,
+&quot;DFJ_DK&quot;, &quot;DJF_DK&quot;,
+&quot;FA_SE&quot;, &quot;FA_SE&quot;,
+&quot;Other Value&quot; /* Default Value */
+)</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Start_Date__c</field>
+        <formula>TODAY()</formula>
+    </fieldOverrides>
+    <label>Log Vacation</label>
+    <optionsCreateFeedItem>true</optionsCreateFeedItem>
+    <quickActionLayout>
+        <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
+        <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Start_Date__c</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+        </quickActionLayoutColumns>
+        <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>true</emptySpace>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>End_Date__c</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+        </quickActionLayoutColumns>
+    </quickActionLayout>
+    <successMessage>Vacation Logged!</successMessage>
+    <targetObject>Work_Schedule_Override__c</targetObject>
+    <targetParentField>Employee__c</targetParentField>
+    <type>Create</type>
+</QuickAction>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Default Slack Integration</label>
+    <protected>false</protected>
+    <values>
+        <field>App_ID__c</field>
+        <value xsi:type="xsd:string">A0905NW7ZH6</value>
+    </values>
+    <values>
+        <field>Bot_Token__c</field>
+        <value xsi:type="xsd:string"><!-- REDACTED_SLACK_BOT_TOKEN --></value>
+    </values>
+    <values>
+        <field>Client_ID__c</field>
+        <value xsi:type="xsd:string">996610465799.9005778271584</value>
+    </values>
+    <values>
+        <field>Workspace_URL__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

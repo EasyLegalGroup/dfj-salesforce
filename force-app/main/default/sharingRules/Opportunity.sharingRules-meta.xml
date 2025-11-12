@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Share_Qual_PR_Opps_with_Meeting_Bookers_DK</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Shares all Opportunities with UTM Medium in Stage &quot;Qualification&quot; with Meeting Bookers</description>
+        <label>Share Qual. PR Opps with Meeting Bookers (DK)</label>
+        <sharedTo>
+            <group>Meeting_Bookers_Denmark</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>UTM_Medium__c</field>
+            <operation>equals</operation>
+            <value>PR Leads</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageName</field>
+            <operation>equals</operation>
+            <value>Qualification</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Market_Unit__c</field>
+            <operation>equals</operation>
+            <value>Din Familie Jurist,Testamente Danmark</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_Qual_PR_Opps_with_Meeting_Bookers_SE</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Shares all Opportunities with UTM Medium in Stage &quot;Qualification&quot; with Meeting Bookers</description>
+        <label>Share Qual. PR Opps with Meeting Bookers (SE)</label>
+        <sharedTo>
+            <group>Meeting_Bookers_Sweden</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>UTM_Medium__c</field>
+            <operation>equals</operation>
+            <value>PR Leads</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageName</field>
+            <operation>equals</operation>
+            <value>Qualification</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Market_Unit__c</field>
+            <operation>equals</operation>
+            <value>Testamente Sverige,dinfamiliejurist.nu</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

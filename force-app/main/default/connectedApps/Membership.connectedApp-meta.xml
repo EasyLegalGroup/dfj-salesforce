@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>ak@telegenta.com</contactEmail>
+    <label>Membership</label>
+    <oauthConfig>
+        <callbackUrl>https://localhost:3000</callbackUrl>
+        <certificate>MIIEjTCCA3WgAwIBAgIOAXxRb2wOAAAAAGk+KUEwDQYJKoZIhvcNAQELBQAwgYYxHjAcBgNVBAMMFU1lbWJlcnNoaXBDZXJ0aWZpY2F0ZTEYMBYGA1UECwwPMDBEMXQwMDAwMDB3OWYyMRcwFQYDVQQKDA5TYWxlc2ZvcmNlLmNvbTEWMBQGA1UEBwwNU2FuIEZyYW5jaXNjbzELMAkGA1UECAwCQ0ExDDAKBgNVBAYTA1VTQTAeFw0yMTEwMDUxNzEwMjlaFw0yMjEwMDUxMjAwMDBaMIGGMR4wHAYDVQQDDBVNZW1iZXJzaGlwQ2VydGlmaWNhdGUxGDAWBgNVBAsMDzAwRDF0MDAwMDAwdzlmMjEXMBUGA1UECgwOU2FsZXNmb3JjZS5jb20xFjAUBgNVBAcMDVNhbiBGcmFuY2lzY28xCzAJBgNVBAgMAkNBMQwwCgYDVQQGEwNVU0EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCgsw2N2u87sGDU0AcJuUnzhb3JumpAv2g7jqbs6d5B0ajeX/Db4vIyEqLSMYiXtQZ8KrW5jQJMrNmAi5EfWlOZZYZhD+e6is2gwYU4tHXzYVN4zCKM7x67X1tCXV0eB2zPNOJpyOKjqj0D+auU1xaWJnXH4ZFfVUusAMUZDHMUY8x+heexfewTqMF5yuKE6X/ar6BVnNZtK4GajltZyYoNtjPX4zbVvUXo/edezeS+5qxG/7G9oJjX1put8pbCRYuridcohS+ROJAbD2L0HjcW+gjzdW740zkrCO4wR/6JlemdAy6O3rehDTi9GD/5ipuTbK5gIqG2HatuHWTT4eSXAgMBAAGjgfYwgfMwHQYDVR0OBBYEFPXd7D3BOwYXUuuoy3Ac5FoijrE6MA8GA1UdEwEB/wQFMAMBAf8wgcAGA1UdIwSBuDCBtYAU9d3sPcE7BhdS66jLcBzkWiKOsTqhgYykgYkwgYYxHjAcBgNVBAMMFU1lbWJlcnNoaXBDZXJ0aWZpY2F0ZTEYMBYGA1UECwwPMDBEMXQwMDAwMDB3OWYyMRcwFQYDVQQKDA5TYWxlc2ZvcmNlLmNvbTEWMBQGA1UEBwwNU2FuIEZyYW5jaXNjbzELMAkGA1UECAwCQ0ExDDAKBgNVBAYTA1VTQYIOAXxRb2wOAAAAAGk+KUEwDQYJKoZIhvcNAQELBQADggEBAHPwKMIzzphhsIVL1LwAfTjkxRtzYhQ1jrBn91B/YwWoVLVf7JJyOR6wDDLqO90x/IGkssWgUhQQ5NMFsULoy14KqiLt+2yp6FpW+ozSZXj9/YwVsLoT5mW1G88i+/5LW908IV8JuBzhFMC9oIJJN/bvve+MuQceA5hN8GeROVH3Kq+Mmu+KuGn24do6F+j1Ew4LkvaNs0+YKzR2UmMPyVpfxM6bQ7usjbxkLt14xVEMS9NbkwvrtlRazJ1tbzHm3KnbShY92zakVS9UC8D3aOqeap4kqs7orDJFPvySMdz2XNAZJGBEMAMIFjI7w/I1guQVPKJPFO+724Mq2hTjiN0=</certificate>
+        <consumerKey>3MVG9fTLmJ60pJ5JV7gw2RzwHg1cYM_LE8y2klkWnu8spkDxGydsaOz0_UE7rbAURizvOHICBBj4lOCggU.pC</consumerKey>
+        <isAdminApproved>false</isAdminApproved>
+        <isClientCredentialEnabled>false</isClientCredentialEnabled>
+        <isCodeCredentialEnabled>false</isCodeCredentialEnabled>
+        <isCodeCredentialPostOnly>false</isCodeCredentialPostOnly>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isNamedUserJwtEnabled>false</isNamedUserJwtEnabled>
+        <isPkceRequired>false</isPkceRequired>
+        <isRefreshTokenRotationEnabled>false</isRefreshTokenRotationEnabled>
+        <isSecretRequiredForRefreshToken>true</isSecretRequiredForRefreshToken>
+        <isSecretRequiredForTokenExchange>false</isSecretRequiredForTokenExchange>
+        <isTokenExchangeEnabled>false</isTokenExchangeEnabled>
+        <scopes>Api</scopes>
+        <scopes>Web</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>BYPASS</ipRelaxation>
+        <isTokenExchangeFlowEnabled>false</isTokenExchangeFlowEnabled>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+</ConnectedApp>

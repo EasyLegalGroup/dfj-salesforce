@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Blekinge län</fullName>
+        <default>false</default>
+        <label>Blekinge län</label>
+    </customValue>
+    <customValue>
+        <fullName>Dalarnas län</fullName>
+        <default>false</default>
+        <label>Dalarnas län</label>
+    </customValue>
+    <customValue>
+        <fullName>Fyn</fullName>
+        <default>false</default>
+        <label>Fyn</label>
+    </customValue>
+    <customValue>
+        <fullName>Gotlands län</fullName>
+        <default>false</default>
+        <label>Gotlands län</label>
+    </customValue>
+    <customValue>
+        <fullName>Gävleborgs län</fullName>
+        <default>false</default>
+        <label>Gävleborgs län</label>
+    </customValue>
+    <customValue>
+        <fullName>Hallands län</fullName>
+        <default>false</default>
+        <label>Hallands län</label>
+    </customValue>
+    <customValue>
+        <fullName>Jylland</fullName>
+        <default>false</default>
+        <label>Jylland</label>
+    </customValue>
+    <customValue>
+        <fullName>Jämtlands län</fullName>
+        <default>false</default>
+        <label>Jämtlands län</label>
+    </customValue>
+    <customValue>
+        <fullName>Jönköpings län</fullName>
+        <default>false</default>
+        <label>Jönköpings län</label>
+    </customValue>
+    <customValue>
+        <fullName>Kalmar län</fullName>
+        <default>false</default>
+        <label>Kalmar län</label>
+    </customValue>
+    <customValue>
+        <fullName>Kronobergs län</fullName>
+        <default>false</default>
+        <label>Kronobergs län</label>
+    </customValue>
+    <customValue>
+        <fullName>Norrbottens län</fullName>
+        <default>false</default>
+        <label>Norrbottens län</label>
+    </customValue>
+    <customValue>
+        <fullName>Sjælland</fullName>
+        <default>false</default>
+        <label>Sjælland</label>
+    </customValue>
+    <customValue>
+        <fullName>Skåne län</fullName>
+        <default>false</default>
+        <label>Skåne län</label>
+    </customValue>
+    <customValue>
+        <fullName>Stockholms län</fullName>
+        <default>false</default>
+        <label>Stockholms län</label>
+    </customValue>
+    <customValue>
+        <fullName>Södermanlands län</fullName>
+        <default>false</default>
+        <label>Södermanlands län</label>
+    </customValue>
+    <customValue>
+        <fullName>Uppsala län</fullName>
+        <default>false</default>
+        <label>Uppsala län</label>
+    </customValue>
+    <customValue>
+        <fullName>Värmlands län</fullName>
+        <default>false</default>
+        <label>Värmlands län</label>
+    </customValue>
+    <customValue>
+        <fullName>Västerbottens län</fullName>
+        <default>false</default>
+        <label>Västerbottens län</label>
+    </customValue>
+    <customValue>
+        <fullName>Västernorrlands län</fullName>
+        <default>false</default>
+        <label>Västernorrlands län</label>
+    </customValue>
+    <customValue>
+        <fullName>Västmanlands län</fullName>
+        <default>false</default>
+        <label>Västmanlands län</label>
+    </customValue>
+    <customValue>
+        <fullName>Västra Götalands län</fullName>
+        <default>false</default>
+        <label>Västra Götalands län</label>
+    </customValue>
+    <customValue>
+        <fullName>Örebro län</fullName>
+        <default>false</default>
+        <label>Örebro län</label>
+    </customValue>
+    <customValue>
+        <fullName>Östergötlands län</fullName>
+        <default>false</default>
+        <label>Östergötlands län</label>
+    </customValue>
+    <customValue>
+        <fullName>Bornholm</fullName>
+        <default>false</default>
+        <label>Bornholm</label>
+    </customValue>
+    <customValue>
+        <fullName>Antrim</fullName>
+        <default>false</default>
+        <label>Antrim</label>
+    </customValue>
+    <customValue>
+        <fullName>Armagh</fullName>
+        <default>false</default>
+        <label>Armagh</label>
+    </customValue>
+    <customValue>
+        <fullName>Carlow</fullName>
+        <default>false</default>
+        <label>Carlow</label>
+    </customValue>
+    <customValue>
+        <fullName>Cavan</fullName>
+        <default>false</default>
+        <label>Cavan</label>
+    </customValue>
+    <customValue>
+        <fullName>Clare</fullName>
+        <default>false</default>
+        <label>Clare</label>
+    </customValue>
+    <customValue>
+        <fullName>Cork</fullName>
+        <default>false</default>
+        <label>Cork</label>
+    </customValue>
+    <customValue>
+        <fullName>Derry</fullName>
+        <default>false</default>
+        <label>Derry</label>
+    </customValue>
+    <customValue>
+        <fullName>Donegal</fullName>
+        <default>false</default>
+        <label>Donegal</label>
+    </customValue>
+    <customValue>
+        <fullName>Down</fullName>
+        <default>false</default>
+        <label>Down</label>
+    </customValue>
+    <customValue>
+        <fullName>Dublin</fullName>
+        <default>false</default>
+        <label>Dublin</label>
+    </customValue>
+    <customValue>
+        <fullName>Fermanagh</fullName>
+        <default>false</default>
+        <label>Fermanagh</label>
+    </customValue>
+    <customValue>
+        <fullName>Galway</fullName>
+        <default>false</default>
+        <label>Galway</label>
+    </customValue>
+    <customValue>
+        <fullName>Kerry</fullName>
+        <default>false</default>
+        <label>Kerry</label>
+    </customValue>
+    <customValue>
+        <fullName>Kildare</fullName>
+        <default>false</default>
+        <label>Kildare</label>
+    </customValue>
+    <customValue>
+        <fullName>Kilkenny</fullName>
+        <default>false</default>
+        <label>Kilkenny</label>
+    </customValue>
+    <customValue>
+        <fullName>Laois</fullName>
+        <default>false</default>
+        <label>Laois</label>
+    </customValue>
+    <customValue>
+        <fullName>Leitrim</fullName>
+        <default>false</default>
+        <label>Leitrim</label>
+    </customValue>
+    <customValue>
+        <fullName>Limerick</fullName>
+        <default>false</default>
+        <label>Limerick</label>
+    </customValue>
+    <customValue>
+        <fullName>Longford</fullName>
+        <default>false</default>
+        <label>Longford</label>
+    </customValue>
+    <customValue>
+        <fullName>Louth</fullName>
+        <default>false</default>
+        <label>Louth</label>
+    </customValue>
+    <customValue>
+        <fullName>Mayo</fullName>
+        <default>false</default>
+        <label>Mayo</label>
+    </customValue>
+    <customValue>
+        <fullName>Meath</fullName>
+        <default>false</default>
+        <label>Meath</label>
+    </customValue>
+    <customValue>
+        <fullName>Monaghan</fullName>
+        <default>false</default>
+        <label>Monaghan</label>
+    </customValue>
+    <customValue>
+        <fullName>Offaly</fullName>
+        <default>false</default>
+        <label>Offaly</label>
+    </customValue>
+    <customValue>
+        <fullName>Roscommon</fullName>
+        <default>false</default>
+        <label>Roscommon</label>
+    </customValue>
+    <customValue>
+        <fullName>Sligo</fullName>
+        <default>false</default>
+        <label>Sligo</label>
+    </customValue>
+    <customValue>
+        <fullName>Tipperary</fullName>
+        <default>false</default>
+        <label>Tipperary</label>
+    </customValue>
+    <customValue>
+        <fullName>Tyrone</fullName>
+        <default>false</default>
+        <label>Tyrone</label>
+    </customValue>
+    <customValue>
+        <fullName>Waterford</fullName>
+        <default>false</default>
+        <label>Waterford</label>
+    </customValue>
+    <customValue>
+        <fullName>Westmeath</fullName>
+        <default>false</default>
+        <label>Westmeath</label>
+    </customValue>
+    <customValue>
+        <fullName>Wexford</fullName>
+        <default>false</default>
+        <label>Wexford</label>
+    </customValue>
+    <customValue>
+        <fullName>Wicklow</fullName>
+        <default>false</default>
+        <label>Wicklow</label>
+    </customValue>
+    <description>A picklist containing counties for multiple countries</description>
+    <masterLabel>County</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

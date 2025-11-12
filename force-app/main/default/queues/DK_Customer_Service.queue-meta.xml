@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>DK - Customer Service</name>
+    <queueMembers>
+        <publicGroups>
+            <publicGroup>Customer_Service_Denmark</publicGroup>
+        </publicGroups>
+        <roles>
+            <role>Danish_Customer_Service</role>
+        </roles>
+        <users>
+            <user>anje@dinfamiliejurist.dk</user>
+            <user>mt@dinfamiliejurist.com</user>
+            <user>guh@dinfamiliejurist.dk</user>
+            <user>iha@dinfamiliejurist.dk</user>
+            <user>lje@dinfamiliejurist.dk</user>
+            <user>mt@dinfamiliejurist.dk</user>
+            <user>mpl@dinfamiliejurist.dk</user>
+            <user>mto@dinfamiliejurist.dk</user>
+            <user>rkr@dinfamiliejurist.dk</user>
+            <user>she@dinfamiliejurist.dk</user>
+            <user>zbr@dinfamiliejurist.dk</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>MessagingSession</sobjectType>
+    </queueSobject>
+</Queue>

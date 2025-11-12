@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldOverrides>
+        <field>Awaiting_agent_since__c</field>
+        <formula>NOW()</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Clear_Awaiting_X_Since_Value__c</field>
+        <literalValue>Clear Awaiting Customer Since</literalValue>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>GA_Reply_Status__c</field>
+        <literalValue>Awaiting agent</literalValue>
+    </fieldOverrides>
+    <label>Set Awaiting Agent</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <quickActionLayout>
+        <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
+        <quickActionLayoutColumns/>
+        <quickActionLayoutColumns/>
+    </quickActionLayout>
+    <successMessage>Reply Status successfully set to Awaiting Agent</successMessage>
+    <type>Update</type>
+</QuickAction>

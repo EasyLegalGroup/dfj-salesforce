@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCategoryGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>Role Description Lecture Coordinator</label>
+                <name>Role_Description_Lecture_Coordinator</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Find venues and contact the event venue</label>
+                <name>Find_venues_and_contact_the_event_venue</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Send a framework agreement to the event</label>
+                <name>Send_a_framework_agreement_to_the_event</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Opdate CRM with venue information</label>
+                <name>Opdate_CRM_with_venue_information</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Book lecture and speaker in CRM</label>
+                <name>Book_lecture_and_speaker_in_CRM</name>
+            </dataCategory>
+            <label>Lecture Coordinator</label>
+            <name>Lecture_Coordinator</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>Role Description Lecture speaker</label>
+                <name>Role_Description_Lecture_speaker</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Check Booking and Information in the CRM</label>
+                <name>Check_Booking_and_Information_in_the_CRM</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Prepare for the Lecture</label>
+                <name>Prepare_for_the_Lecture</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Arrive and Set Up at the Venue</label>
+                <name>Arrive_and_Set_Up_at_the_Venue</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Hold lecture and follow the plan</label>
+                <name>Hold_lecture_and_follow_the_plan</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Update CRM with interest forms</label>
+                <name>Update_CRM_with_interest_forms</name>
+            </dataCategory>
+            <label>Lecture speaker</label>
+            <name>Lecture_speaker</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>Role Description Meeting Booker</label>
+                <name>Role_Description_Meeting_Booker</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Find campaign in CRM system</label>
+                <name>Find_campaign_in_CRM_system</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Call the customer and book meeting</label>
+                <name>Call_the_customer_and_book_meeting</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Reschedule a meeting</label>
+                <name>Reschedule_a_meeting</name>
+            </dataCategory>
+            <dataCategory>
+                <label>I love you call</label>
+                <name>I_love_you_call</name>
+            </dataCategory>
+            <label>Meeting Booker</label>
+            <name>Meeting_Booker</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>Role Description Advicor</label>
+                <name>Role_Description_Advicor</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Contact assigned leads via the CRM syste</label>
+                <name>Contact_assigned_leads_via_the_CRM_syste</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Schedule and reschedule advisory meeting</label>
+                <name>Schedule_and_reschedule_advisory_meeting</name>
+            </dataCategory>
+            <dataCategory>
+                <label>The advisory meetings</label>
+                <name>The_advisory_meetings</name>
+            </dataCategory>
+            <dataCategory>
+                <label>complete the internal journal</label>
+                <name>complete_the_internal_journal</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Mandatory closing &amp; collect references</label>
+                <name>Mandatory_closing_collect_references</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Receive payment</label>
+                <name>Receive_payment</name>
+            </dataCategory>
+            <dataCategory>
+                <label>In case of lost sale</label>
+                <name>In_case_of_lost_sale</name>
+            </dataCategory>
+            <label>Advicor</label>
+            <name>Advicor</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>Role Description Lawyer</label>
+                <name>Role_Description_Lawyer</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Find journal in CRM system</label>
+                <name>Find_journal_in_CRM_system</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Ensure information and client needs</label>
+                <name>Ensure_information_and_client_needs</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Generate and send first draft to custome</label>
+                <name>Send_first_draft_to_customer</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Responding to general inquiries</label>
+                <name>Responding_to_general_inquiries</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Reviewing documents with clients</label>
+                <name>Reviewing_documents_with_clients</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Customer approves documents</label>
+                <name>Customer_approves_documents</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Missing information</label>
+                <name>Missing_information</name>
+            </dataCategory>
+            <label>Lawyer</label>
+            <name>Lawyer</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>Role Description Customer Service</label>
+                <name>Role_Description_Customer_Service</name>
+            </dataCategory>
+            <label>Customer Service</label>
+            <name>Customer_Service</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>Customer Analysis DK &amp; SE</label>
+                <name>Customer_Analysis_DK_SE</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Market Position DK &amp; SE</label>
+                <name>Market_Position_DK_SE</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Marketing Process and Systems</label>
+                <name>Marketing_Process_and_Systems</name>
+            </dataCategory>
+            <label>Marketing</label>
+            <name>Marketing</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Salesforce</label>
+                    <name>Salesforce</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Google Workspace</label>
+                    <name>Google_Workspace</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Zapier</label>
+                    <name>Zapier</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Calendly</label>
+                    <name>Calendly</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Airtable</label>
+                    <name>Airtable</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Plecto</label>
+                    <name>Plecto</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Frisbii (Billwerk / Reepay)</label>
+                    <name>Frisbii_Billwerk_Reepay</name>
+                </dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>MergeTool</label>
+                        <name>MergeTool</name>
+                    </dataCategory>
+                    <label>Docfabricator</label>
+                    <name>Docfabricator</name>
+                </dataCategory>
+                <label>Systems &amp; Software</label>
+                <name>Systems_Software</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>New Employee Setup</label>
+                        <name>New_Employee_Setup</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Permissions &amp; Access Levels</label>
+                        <name>Permissions_Access_Levels</name>
+                    </dataCategory>
+                    <label>Platform User Management</label>
+                    <name>Platform_User_Management</name>
+                </dataCategory>
+                <label>IT Processes</label>
+                <name>IT_Processes</name>
+            </dataCategory>
+            <label>IT</label>
+            <name>IT</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>Data Protection, Compliance, and GDPR</label>
+                <name>Data_Protection_Compliance_and_GDPR</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Organizational Chart</label>
+                <name>Organizational_Chart</name>
+            </dataCategory>
+            <dataCategory>
+                <label>DK</label>
+                <name>DK</name>
+            </dataCategory>
+            <dataCategory>
+                <label>SE</label>
+                <name>SE</name>
+            </dataCategory>
+            <dataCategory>
+                <label>IR</label>
+                <name>IR</name>
+            </dataCategory>
+            <label>Policy</label>
+            <name>Policy</name>
+        </dataCategory>
+        <label>All</label>
+        <name>All</name>
+    </dataCategory>
+    <label>Internal</label>
+    <objectUsage>
+        <object>KnowledgeArticleVersion</object>
+        <object>SvcCatalogItemDef</object>
+    </objectUsage>
+</DataCategoryGroup>

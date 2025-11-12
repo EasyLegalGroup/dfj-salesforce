@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Advanced Healthcare Directive</fullName>
+        <default>false</default>
+        <label>Advanced Healthcare Directive</label>
+    </customValue>
+    <customValue>
+        <fullName>Arveafkald</fullName>
+        <default>false</default>
+        <label>Arveafkald</label>
+    </customValue>
+    <customValue>
+        <fullName>Arveforskudskontrakt</fullName>
+        <default>false</default>
+        <label>Arveforskudskontrakt</label>
+    </customValue>
+    <customValue>
+        <fullName>Bobehandling</fullName>
+        <default>false</default>
+        <label>Bobehandling</label>
+    </customValue>
+    <customValue>
+        <fullName>Børnetestamente</fullName>
+        <default>false</default>
+        <label>Børnetestamente</label>
+    </customValue>
+    <customValue>
+        <fullName>Enduring Power of Attorney</fullName>
+        <default>false</default>
+        <label>Enduring Power of Attorney</label>
+    </customValue>
+    <customValue>
+        <fullName>Forhåndssamtykke til uskiftet bo</fullName>
+        <default>false</default>
+        <label>Forhåndssamtykke til uskiftet bo</label>
+    </customValue>
+    <customValue>
+        <fullName>Framtidsfullmakt</fullName>
+        <default>false</default>
+        <label>Framtidsfullmakt</label>
+    </customValue>
+    <customValue>
+        <fullName>Fremtidsfuldmagt</fullName>
+        <default>false</default>
+        <label>Fremtidsfuldmagt</label>
+    </customValue>
+    <customValue>
+        <fullName>Gavebrev</fullName>
+        <default>false</default>
+        <label>Gavebrev</label>
+    </customValue>
+    <customValue>
+        <fullName>Generalfuldmagt</fullName>
+        <default>false</default>
+        <label>Generalfuldmagt</label>
+    </customValue>
+    <customValue>
+        <fullName>Generalfullmakt</fullName>
+        <default>false</default>
+        <label>Generalfullmakt</label>
+    </customValue>
+    <customValue>
+        <fullName>Gældsbrev</fullName>
+        <default>false</default>
+        <label>Gældsbrev</label>
+    </customValue>
+    <customValue>
+        <fullName>Gåvobrev</fullName>
+        <default>false</default>
+        <label>Gåvobrev</label>
+    </customValue>
+    <customValue>
+        <fullName>Købsaftale</fullName>
+        <default>false</default>
+        <label>Købsaftale</label>
+    </customValue>
+    <customValue>
+        <fullName>Min sidste vilje</fullName>
+        <default>false</default>
+        <label>Min sidste vilje</label>
+    </customValue>
+    <customValue>
+        <fullName>Pantebrev</fullName>
+        <default>false</default>
+        <label>Pantebrev</label>
+    </customValue>
+    <customValue>
+        <fullName>Probate Administration</fullName>
+        <default>false</default>
+        <label>Probate Administration</label>
+    </customValue>
+    <customValue>
+        <fullName>Salgs- og pantsætningsforbud</fullName>
+        <default>false</default>
+        <label>Salgs- og pantsætningsforbud</label>
+    </customValue>
+    <customValue>
+        <fullName>Samboavtal</fullName>
+        <default>false</default>
+        <label>Samboavtal</label>
+    </customValue>
+    <customValue>
+        <fullName>Samejeoverenskomst</fullName>
+        <default>false</default>
+        <label>Samejeoverenskomst</label>
+    </customValue>
+    <customValue>
+        <fullName>Samäganderättsavtal</fullName>
+        <default>false</default>
+        <label>Samäganderättsavtal</label>
+    </customValue>
+    <customValue>
+        <fullName>Skuldebrev</fullName>
+        <default>false</default>
+        <label>Skuldebrev</label>
+    </customValue>
+    <customValue>
+        <fullName>Skøde</fullName>
+        <default>false</default>
+        <label>Skøde</label>
+    </customValue>
+    <customValue>
+        <fullName>Testamente</fullName>
+        <default>false</default>
+        <label>Testamente</label>
+    </customValue>
+    <customValue>
+        <fullName>Testamente 30%-regel</fullName>
+        <default>false</default>
+        <label>Testamente 30%-regel</label>
+    </customValue>
+    <customValue>
+        <fullName>Vårdnadstestamente</fullName>
+        <default>false</default>
+        <label>Vårdnadstestamente</label>
+    </customValue>
+    <customValue>
+        <fullName>Will</fullName>
+        <default>false</default>
+        <label>Will</label>
+    </customValue>
+    <customValue>
+        <fullName>Ægtepagt</fullName>
+        <default>false</default>
+        <label>Ægtepagt</label>
+    </customValue>
+    <customValue>
+        <fullName>Äktenskapsförord</fullName>
+        <default>false</default>
+        <label>Äktenskapsförord</label>
+    </customValue>
+    <masterLabel>Document Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Maxcall</fullName>
+        <default>false</default>
+        <label>Maxcall</label>
+    </customValue>
+    <customValue>
+        <fullName>Invalid</fullName>
+        <default>false</default>
+        <label>Invalid</label>
+    </customValue>
+    <masterLabel>Unqualified Status</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

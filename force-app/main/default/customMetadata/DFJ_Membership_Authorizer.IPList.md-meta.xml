@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>IPList</label>
+    <protected>false</protected>
+    <values>
+        <field>IP_Address__c</field>
+        <value xsi:type="xsd:string">101.53.164.8,202.142.121.23,203.81.240.121,213.162.73.34,94.245.90.90,165.22.87.53,110.226.52.241,112.196.123.218,223.178.210.207,223.178.209.30,45.249.86.105,13.51.99.82,94.245.90.90,94.245.90.90,14.194.98.17</value>
+    </values>
+    <values>
+        <field>Static_Token__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

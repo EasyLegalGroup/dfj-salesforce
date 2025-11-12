@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>UP - Afventer os</fullName>
+        <default>false</default>
+        <label>UP - Afventer os</label>
+    </customValue>
+    <customValue>
+        <fullName>UP - Afventer kunden</fullName>
+        <default>false</default>
+        <label>UP - Afventer kunden</label>
+    </customValue>
+    <customValue>
+        <fullName>Arkiveret - (uden for proces)</fullName>
+        <default>false</default>
+        <label>Arkiveret - (uden for proces)</label>
+    </customValue>
+    <customValue>
+        <fullName>new</fullName>
+        <default>true</default>
+        <label>Ny - Første udkast</label>
+    </customValue>
+    <customValue>
+        <fullName>Gennemgang Get Accept</fullName>
+        <default>false</default>
+        <label>Gennemgang - Getaccept</label>
+    </customValue>
+    <customValue>
+        <fullName>client_review</fullName>
+        <default>false</default>
+        <label>Gennemgang - Telefonisk</label>
+    </customValue>
+    <customValue>
+        <fullName>Gennemgang - 30%</fullName>
+        <default>false</default>
+        <label>30% - Gennemgang</label>
+    </customValue>
+    <customValue>
+        <fullName>Intern - Tinglysning haster</fullName>
+        <default>false</default>
+        <label>Intern - Tinglysning haster</label>
+    </customValue>
+    <customValue>
+        <fullName>Tinglysning</fullName>
+        <default>false</default>
+        <label>Tinglysning</label>
+    </customValue>
+    <customValue>
+        <fullName>public_registration</fullName>
+        <default>false</default>
+        <label>Tinglysning - Mangler info</label>
+    </customValue>
+    <customValue>
+        <fullName>Ægtepagt - Afventer underskrift</fullName>
+        <default>false</default>
+        <label>Ægtepagt - Afventer underskrift</label>
+    </customValue>
+    <customValue>
+        <fullName>Ægtepagt - Anmeldelse</fullName>
+        <default>false</default>
+        <label>Ægtepagt - Anmeldelse</label>
+    </customValue>
+    <customValue>
+        <fullName>Ægtepagt - Afventer retten</fullName>
+        <default>false</default>
+        <label>Ægtepagt - Afventer retten</label>
+    </customValue>
+    <customValue>
+        <fullName>Ægtepagt - afvist/delvist sortering</fullName>
+        <default>false</default>
+        <label>Ægtepagt - afvist/delvist sortering</label>
+    </customValue>
+    <customValue>
+        <fullName>Ægtepagt - Afvist tinglysning</fullName>
+        <default>false</default>
+        <label>Ægtepagt - Afvist tinglysning</label>
+    </customValue>
+    <customValue>
+        <fullName>Ægtepagt - Godkendt/færdig</fullName>
+        <default>false</default>
+        <label>Ægtepagt - Godkendt/færdig</label>
+    </customValue>
+    <customValue>
+        <fullName>30% - Afventer testamente</fullName>
+        <default>false</default>
+        <label>30% - Afventer testamente</label>
+    </customValue>
+    <customValue>
+        <fullName>30% - Afventer refusion</fullName>
+        <default>false</default>
+        <label>30% - Afventer refusion</label>
+    </customValue>
+    <customValue>
+        <fullName>complete</fullName>
+        <default>false</default>
+        <label>Færdig</label>
+    </customValue>
+    <customValue>
+        <fullName>Færdig - Afventer respons</fullName>
+        <default>false</default>
+        <label>Arkiveret (Vender selv tilbage)</label>
+    </customValue>
+    <customValue>
+        <fullName>Arkiveret (Intet svar)</fullName>
+        <default>false</default>
+        <label>Arkiveret (Intet svar)</label>
+    </customValue>
+    <customValue>
+        <fullName>Intern - Ny haster</fullName>
+        <default>false</default>
+        <label>Intern - Ny haster</label>
+    </customValue>
+    <customValue>
+        <fullName>Intern ny - Ekstern</fullName>
+        <default>false</default>
+        <label>Intern - ny ekstern</label>
+    </customValue>
+    <customValue>
+        <fullName>Hastesager (1-3 dage)</fullName>
+        <default>false</default>
+        <label>Intern - Gennemgang haster (1-3 dage)</label>
+    </customValue>
+    <customValue>
+        <fullName>Klar til afsendelse</fullName>
+        <default>false</default>
+        <label>Intern - Klar til afsendelse</label>
+    </customValue>
+    <customValue>
+        <fullName>Mangelfuld tjekliste</fullName>
+        <default>false</default>
+        <label>Intern - Mangelfuld tjekliste</label>
+    </customValue>
+    <customValue>
+        <fullName>draft</fullName>
+        <default>false</default>
+        <label>Intern - Udarbejdelse</label>
+    </customValue>
+    <customValue>
+        <fullName>Intern - Opfølgning</fullName>
+        <default>false</default>
+        <label>Intern - Personlig opfølgning</label>
+    </customValue>
+    <customValue>
+        <fullName>Rettelser</fullName>
+        <default>false</default>
+        <label>Intern - Rettelser</label>
+    </customValue>
+    <customValue>
+        <fullName>Intern - Postforsendelse</fullName>
+        <default>false</default>
+        <label>Intern - Postforsendelse</label>
+    </customValue>
+    <customValue>
+        <fullName>Intern - Under annullering</fullName>
+        <default>false</default>
+        <label>Intern - Under annullering</label>
+    </customValue>
+    <customValue>
+        <fullName>canceled</fullName>
+        <default>false</default>
+        <label>Intern - Annulleret</label>
+    </customValue>
+    <customValue>
+        <fullName>Intern - Oprydning</fullName>
+        <default>false</default>
+        <label>Intern - Oprydning</label>
+    </customValue>
+    <customValue>
+        <fullName>Færdig + Servicekald</fullName>
+        <default>false</default>
+        <label>Færdig + Servicekald</label>
+    </customValue>
+    <customValue>
+        <fullName>Færdig + Servicekald ikke besvaret</fullName>
+        <default>false</default>
+        <label>Færdig + Servicekald ikke besvaret</label>
+    </customValue>
+    <customValue>
+        <fullName>Annulleringsark</fullName>
+        <default>false</default>
+        <label>Annulleringsark</label>
+    </customValue>
+    <customValue>
+        <fullName>Dokument sendt ikke betalt</fullName>
+        <default>false</default>
+        <label>Dokument sendt ikke betalt</label>
+    </customValue>
+    <customValue>
+        <fullName>Oprydning</fullName>
+        <default>false</default>
+        <label>Gammel - Oprydning</label>
+    </customValue>
+    <customValue>
+        <fullName>Betalt doks ikke sendt</fullName>
+        <default>false</default>
+        <label>Betalt doks ikke sendt</label>
+    </customValue>
+    <customValue>
+        <fullName>Færdig Færdig</fullName>
+        <default>false</default>
+        <label>Færdig Færdig</label>
+    </customValue>
+    <customValue>
+        <fullName>Faktura - Afventer betaling</fullName>
+        <default>false</default>
+        <label>Faktura - Afventer betaling</label>
+    </customValue>
+    <customValue>
+        <fullName>Bobehandling</fullName>
+        <default>false</default>
+        <label>Bobehandling</label>
+    </customValue>
+    <customValue>
+        <fullName>Færdig ny process</fullName>
+        <default>false</default>
+        <label>Færdig ny process</label>
+    </customValue>
+    <customValue>
+        <fullName>Unsatisfied - Sweden</fullName>
+        <default>false</default>
+        <label>Unsatisfied - Sweden</label>
+    </customValue>
+    <customValue>
+        <fullName>30% - Afventer organisation</fullName>
+        <default>false</default>
+        <label>30% - Afventer organisation</label>
+    </customValue>
+    <customValue>
+        <fullName>Rådgiver - Journal not done</fullName>
+        <default>false</default>
+        <label>Rådgiver - Journal not done</label>
+    </customValue>
+    <customValue>
+        <fullName>Fejl ved afsendelse af afsluttende emails</fullName>
+        <default>false</default>
+        <label>Fejl ved afsendelse af afsluttende emails</label>
+    </customValue>
+    <customValue>
+        <fullName>Pending Fremtidsfuldmagt Review</fullName>
+        <default>false</default>
+        <label>Pending Fremtidsfuldmagt Review</label>
+    </customValue>
+    <customValue>
+        <fullName>Pending Ægtepagt Review</fullName>
+        <default>false</default>
+        <label>Pending Ægtepagt Review</label>
+    </customValue>
+    <customValue>
+        <fullName>Mersalg</fullName>
+        <default>false</default>
+        <label>Mersalg</label>
+    </customValue>
+    <customValue>
+        <fullName>Ægtepagt - SKAL tinglyses</fullName>
+        <default>false</default>
+        <label>Ægtepagt - SKAL tinglyses</label>
+    </customValue>
+    <customValue>
+        <fullName>Betalt udkast sendt</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Betalt udkast sendt</label>
+    </customValue>
+    <customValue>
+        <fullName>Melina/Ella</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Melina/Ella</label>
+    </customValue>
+    <customValue>
+        <fullName>Gratis BT</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Gratis BT</label>
+    </customValue>
+    <customValue>
+        <fullName>Ægtepagt - Godkendt tinglysning</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Ægtepagt - Godkendt tinglysning</label>
+    </customValue>
+    <customValue>
+        <fullName>BT mangler</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>BT mangler</label>
+    </customValue>
+    <customValue>
+        <fullName>Bolighandel</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Bolighandel</label>
+    </customValue>
+    <masterLabel>Journal States</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

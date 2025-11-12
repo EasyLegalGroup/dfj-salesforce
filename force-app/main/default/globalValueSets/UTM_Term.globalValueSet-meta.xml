@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Andet</fullName>
+        <default>false</default>
+        <label>Andet</label>
+    </customValue>
+    <customValue>
+        <fullName>30-49 - gift og samlevende</fullName>
+        <default>false</default>
+        <label>30-49 - gift og samlevende</label>
+    </customValue>
+    <customValue>
+        <fullName>3 procent lookalike af alle leads, gift og samlevende</fullName>
+        <default>true</default>
+        <label>3 procent lookalike af alle leads, gift og samlevende</label>
+    </customValue>
+    <customValue>
+        <fullName>Alle mellem 50 til 64 aar - gift og samlevende</fullName>
+        <default>false</default>
+        <label>Alle mellem 50 til 64 aar - gift og samlevende</label>
+    </customValue>
+    <customValue>
+        <fullName>Pre-booking</fullName>
+        <default>false</default>
+        <label>Pre-booking</label>
+    </customValue>
+    <customValue>
+        <fullName>Alle 25-65 år</fullName>
+        <default>false</default>
+        <label>Alle 25-65 år</label>
+    </customValue>
+    <customValue>
+        <fullName>Popermo medlemmer</fullName>
+        <default>false</default>
+        <label>Popermo medlemmer</label>
+    </customValue>
+    <customValue>
+        <fullName>Børnefamilier</fullName>
+        <default>false</default>
+        <label>Børnefamilier</label>
+    </customValue>
+    <customValue>
+        <fullName>testamente</fullName>
+        <default>false</default>
+        <label>testamente</label>
+    </customValue>
+    <customValue>
+        <fullName>testamentepris</fullName>
+        <default>false</default>
+        <label>testamentepris</label>
+    </customValue>
+    <customValue>
+        <fullName>samlevertestamente</fullName>
+        <default>false</default>
+        <label>samlevertestamente</label>
+    </customValue>
+    <customValue>
+        <fullName>Gratis raadgivning</fullName>
+        <default>false</default>
+        <label>Gratis raadgivning</label>
+    </customValue>
+    <customValue>
+        <fullName>Gratis dokument</fullName>
+        <default>false</default>
+        <label>Gratis dokument</label>
+    </customValue>
+    <customValue>
+        <fullName>din familie jurist</fullName>
+        <default>false</default>
+        <label>din familie jurist</label>
+    </customValue>
+    <customValue>
+        <fullName>Forældre med børn op til 8 år</fullName>
+        <default>false</default>
+        <label>Forældre med børn op til 8 år</label>
+    </customValue>
+    <customValue>
+        <fullName>Kopimålgruppe 1-2 procent af alle leads</fullName>
+        <default>false</default>
+        <label>Kopimålgruppe 1-2 procent af alle leads</label>
+    </customValue>
+    <customValue>
+        <fullName>alle-over-40</fullName>
+        <default>false</default>
+        <label>alle-over-40</label>
+    </customValue>
+    <customValue>
+        <fullName>online testamente</fullName>
+        <default>false</default>
+        <label>online testamente</label>
+    </customValue>
+    <customValue>
+        <fullName>45</fullName>
+        <default>false</default>
+        <label>45</label>
+    </customValue>
+    <customValue>
+        <fullName>pris  testamente</fullName>
+        <default>false</default>
+        <label>pris  testamente</label>
+    </customValue>
+    <customValue>
+        <fullName>Alle over 30</fullName>
+        <default>false</default>
+        <label>Alle over 30</label>
+    </customValue>
+    <customValue>
+        <fullName>Remarketing åbnet men ikke tilmeldt</fullName>
+        <default>false</default>
+        <label>Remarketing åbnet men ikke tilmeldt</label>
+    </customValue>
+    <customValue>
+        <fullName>1-3 procent lookalike</fullName>
+        <default>false</default>
+        <label>1-3 procent lookalike</label>
+    </customValue>
+    <customValue>
+        <fullName>28-40-aar</fullName>
+        <default>false</default>
+        <label>28-40-aar</label>
+    </customValue>
+    <customValue>
+        <fullName>testamente  opret</fullName>
+        <default>false</default>
+        <label>testamente  opret</label>
+    </customValue>
+    <customValue>
+        <fullName>pris testamente</fullName>
+        <default>false</default>
+        <label>pris testamente</label>
+    </customValue>
+    <customValue>
+        <fullName>testamente pris</fullName>
+        <default>false</default>
+        <label>testamente pris</label>
+    </customValue>
+    <customValue>
+        <fullName>3 procent m%C3%A5lgruppe af alle emner</fullName>
+        <default>false</default>
+        <label>3 procent m%C3%A5lgruppe af alle emner</label>
+    </customValue>
+    <customValue>
+        <fullName>samlever  testamente</fullName>
+        <default>false</default>
+        <label>samlever  testamente</label>
+    </customValue>
+    <customValue>
+        <fullName>testamente  online</fullName>
+        <default>false</default>
+        <label>testamente  online</label>
+    </customValue>
+    <customValue>
+        <fullName>testamente danmark</fullName>
+        <default>false</default>
+        <label>testamente danmark</label>
+    </customValue>
+    <customValue>
+        <fullName>testamente online</fullName>
+        <default>false</default>
+        <label>testamente online</label>
+    </customValue>
+    <customValue>
+        <fullName>testamente  samlever</fullName>
+        <default>false</default>
+        <label>testamente  samlever</label>
+    </customValue>
+    <customValue>
+        <fullName>Forældre med boern op til 8 år</fullName>
+        <default>false</default>
+        <label>Forældre med boern op til 8 år</label>
+    </customValue>
+    <customValue>
+        <fullName>Alle som har boern 9 til 17 aar</fullName>
+        <default>false</default>
+        <label>Alle som har boern 9 til 17 aar</label>
+    </customValue>
+    <customValue>
+        <fullName>40</fullName>
+        <default>false</default>
+        <label>40</label>
+    </customValue>
+    <customValue>
+        <fullName>3 procent lookalike af alle som har tilmeldt sig som har boern op til 18 aar</fullName>
+        <default>false</default>
+        <label>3 procent lookalike af alle som har tilmeldt sig som har boern op til 18 aar</label>
+    </customValue>
+    <customValue>
+        <fullName>30-49</fullName>
+        <default>false</default>
+        <label>30-49</label>
+    </customValue>
+    <customValue>
+        <fullName>Remarketing - alle som har aabnet men ikke tilmeldt sig</fullName>
+        <default>false</default>
+        <label>Remarketing - alle som har aabnet men ikke tilmeldt sig</label>
+    </customValue>
+    <customValue>
+        <fullName>B�rnefamilier</fullName>
+        <default>false</default>
+        <label>B�rnefamilier</label>
+    </customValue>
+    <customValue>
+        <fullName>gensidigt testamente</fullName>
+        <default>false</default>
+        <label>gensidigt testamente</label>
+    </customValue>
+    <customValue>
+        <fullName>online  testamente</fullName>
+        <default>false</default>
+        <label>online  testamente</label>
+    </customValue>
+    <customValue>
+        <fullName>opret testamente</fullName>
+        <default>false</default>
+        <label>opret testamente</label>
+    </customValue>
+    <customValue>
+        <fullName>gensidigt  testamente</fullName>
+        <default>false</default>
+        <label>gensidigt  testamente</label>
+    </customValue>
+    <customValue>
+        <fullName>familie  testamente  pris</fullName>
+        <default>false</default>
+        <label>familie  testamente  pris</label>
+    </customValue>
+    <customValue>
+        <fullName>testamente dk</fullName>
+        <default>false</default>
+        <label>testamente dk</label>
+    </customValue>
+    <customValue>
+        <fullName>testamente samlever</fullName>
+        <default>false</default>
+        <label>testamente samlever</label>
+    </customValue>
+    <customValue>
+        <fullName>Alle over 50 aar - gift og samlevende</fullName>
+        <default>false</default>
+        <label>Alle over 50 aar - gift og samlevende</label>
+    </customValue>
+    <customValue>
+        <fullName>3 procent lookalike af tilmeldte Upprätta en framtidsfullmakt för endast 145</fullName>
+        <default>false</default>
+        <label>3 procent lookalike af tilmeldte Upprätta en framtidsfullmakt för endast 145</label>
+    </customValue>
+    <customValue>
+        <fullName>40 til 64 aar i forhold og gift</fullName>
+        <default>false</default>
+        <label>40 til 64 aar i forhold og gift</label>
+    </customValue>
+    <customValue>
+        <fullName>Alle over 50 aar</fullName>
+        <default>false</default>
+        <label>Alle over 50 aar</label>
+    </customValue>
+    <customValue>
+        <fullName>oprettelse  af  testamente pris</fullName>
+        <default>false</default>
+        <label>oprettelse  af  testamente pris</label>
+    </customValue>
+    <customValue>
+        <fullName>Lookalike 3 procent</fullName>
+        <default>false</default>
+        <label>Lookalike 3 procent</label>
+    </customValue>
+    <customValue>
+        <fullName>Re marketing alle der har abnet men ikke tilmeldt forste gang</fullName>
+        <default>false</default>
+        <label>Re marketing alle der har abnet men ikke tilmeldt forste gang</label>
+    </customValue>
+    <customValue>
+        <fullName>all</fullName>
+        <default>false</default>
+        <label>all</label>
+    </customValue>
+    <customValue>
+        <fullName>I et forhold 51 til 64 aar</fullName>
+        <default>false</default>
+        <label>I et forhold 51 til 64 aar</label>
+    </customValue>
+    <customValue>
+        <fullName>Gift over 64 aar</fullName>
+        <default>false</default>
+        <label>Gift over 64 aar</label>
+    </customValue>
+    <customValue>
+        <fullName>I et forhold 30 til 50 aar</fullName>
+        <default>false</default>
+        <label>I et forhold 30 til 50 aar</label>
+    </customValue>
+    <customValue>
+        <fullName>Gift 30 til 50 aar</fullName>
+        <default>false</default>
+        <label>Gift 30 til 50 aar</label>
+    </customValue>
+    <customValue>
+        <fullName>I et forhold over 64 aar</fullName>
+        <default>false</default>
+        <label>I et forhold over 64 aar</label>
+    </customValue>
+    <customValue>
+        <fullName>Gift 51 til 64 aar</fullName>
+        <default>false</default>
+        <label>Gift 51 til 64 aar</label>
+    </customValue>
+    <customValue>
+        <fullName>Alle over 65 aar - gift og samlevende</fullName>
+        <default>false</default>
+        <label>Alle over 65 aar - gift og samlevende</label>
+    </customValue>
+    <customValue>
+        <fullName>-</fullName>
+        <default>false</default>
+        <label>-</label>
+    </customValue>
+    <customValue>
+        <fullName>testamente(e)</fullName>
+        <default>false</default>
+        <label>testamente(e)</label>
+    </customValue>
+    <customValue>
+        <fullName>testamente(pris)</fullName>
+        <default>false</default>
+        <label>testamente(pris)</label>
+    </customValue>
+    <customValue>
+        <fullName>testamente(B)</fullName>
+        <default>false</default>
+        <label>testamente(B)</label>
+    </customValue>
+    <customValue>
+        <fullName>oprette testamente</fullName>
+        <default>false</default>
+        <label>oprette testamente</label>
+    </customValue>
+    <customValue>
+        <fullName>Gratis Testamente foredrag med lækker Tapas på Brasseriet Baum i Køge</fullName>
+        <default>false</default>
+        <label>Gratis Testamente foredrag med lækker Tapas på Brasseriet Baum i Køge</label>
+    </customValue>
+    <customValue>
+        <fullName>Gratis Testamente foredrag med lækker Tapas på Restaurant Skovbakken i Odder</fullName>
+        <default>false</default>
+        <label>Gratis Testamente foredrag med lækker Tapas på Restaurant Skovbakken i Odder</label>
+    </customValue>
+    <customValue>
+        <fullName>Gratis Testamente foredrag med lækker Tapas på Hotel Marina i Grenaa</fullName>
+        <default>false</default>
+        <label>Gratis Testamente foredrag med lækker Tapas på Hotel Marina i Grenaa</label>
+    </customValue>
+    <customValue>
+        <fullName>Gratis Testamente foredrag med let Buffet på Restaurant Fasaneriet i Lejre</fullName>
+        <default>false</default>
+        <label>Gratis Testamente foredrag med let Buffet på Restaurant Fasaneriet i Lejre</label>
+    </customValue>
+    <customValue>
+        <fullName>Lookalike 5 procent af billetto tilmeldinger 2022</fullName>
+        <default>false</default>
+        <label>Lookalike 5 procent af billetto tilmeldinger 2022</label>
+    </customValue>
+    <customValue>
+        <fullName>All new</fullName>
+        <default>false</default>
+        <label>All new</label>
+    </customValue>
+    <customValue>
+        <fullName>Din Familjejurist</fullName>
+        <default>false</default>
+        <label>Din Familjejurist</label>
+    </customValue>
+    <customValue>
+        <fullName>DK - Tilmeldingsblanket</fullName>
+        <default>false</default>
+        <label>DK - Tilmeldingsblanket</label>
+    </customValue>
+    <customValue>
+        <fullName>762972</fullName>
+        <default>false</default>
+        <label>762972</label>
+    </customValue>
+    <customValue>
+        <fullName>DK - Website Form</fullName>
+        <default>false</default>
+        <label>DK - Website Form</label>
+    </customValue>
+    <customValue>
+        <fullName>763129</fullName>
+        <default>false</default>
+        <label>763129</label>
+    </customValue>
+    <customValue>
+        <fullName>--None--</fullName>
+        <default>false</default>
+        <label>--None--</label>
+    </customValue>
+    <customValue>
+        <fullName>Børnefamilier 30-40 år</fullName>
+        <default>false</default>
+        <label>Børnefamilier 30-40 år</label>
+    </customValue>
+    <customValue>
+        <fullName>test_utm_term</fullName>
+        <default>false</default>
+        <label>test_utm_term</label>
+    </customValue>
+    <customValue>
+        <fullName>H-0003975-0043</fullName>
+        <default>false</default>
+        <label>H-0003975-0043</label>
+    </customValue>
+    <customValue>
+        <fullName>H-0003975-0044</fullName>
+        <default>false</default>
+        <label>H-0003975-0044</label>
+    </customValue>
+    <customValue>
+        <fullName>H-0003975-0046</fullName>
+        <default>false</default>
+        <label>H-0003975-0046</label>
+    </customValue>
+    <customValue>
+        <fullName>H-0003975-0048</fullName>
+        <default>false</default>
+        <label>H-0003975-0048</label>
+    </customValue>
+    <customValue>
+        <fullName>Juridisk rådgivning - vi ringer til dig med link til kalender</fullName>
+        <default>false</default>
+        <label>Juridisk rådgivning - vi ringer til dig med link til kalender</label>
+    </customValue>
+    <customValue>
+        <fullName>120211494449370211</fullName>
+        <default>false</default>
+        <label>120211494449370211</label>
+    </customValue>
+    <customValue>
+        <fullName>June 2024 - lead ads to calendly</fullName>
+        <default>false</default>
+        <label>June 2024 - lead ads to calendly</label>
+    </customValue>
+    <customValue>
+        <fullName>120211580535170211</fullName>
+        <default>false</default>
+        <label>120211580535170211</label>
+    </customValue>
+    <customValue>
+        <fullName>H-0007140-001</fullName>
+        <default>false</default>
+        <label>H-0007140-001</label>
+    </customValue>
+    <customValue>
+        <fullName>dk_gifte_forældre</fullName>
+        <default>false</default>
+        <label>dk_gifte_forældre</label>
+    </customValue>
+    <customValue>
+        <fullName>PR leads - Gifte m. dine og mine børn</fullName>
+        <default>false</default>
+        <label>PR leads - Gifte m. dine og mine børn</label>
+    </customValue>
+    <customValue>
+        <fullName>Gifte m. dine og mine børn</fullName>
+        <default>false</default>
+        <label>Gifte m. dine og mine børn</label>
+    </customValue>
+    <customValue>
+        <fullName>PR Lead Internal Meeting Booking</fullName>
+        <default>false</default>
+        <label>PR Lead Internal Meeting Booking</label>
+    </customValue>
+    <customValue>
+        <fullName>Sambo m. børn</fullName>
+        <default>false</default>
+        <label>Sambo m. børn</label>
+    </customValue>
+    <masterLabel>UTM Term</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

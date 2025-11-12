@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldOverrides>
+        <field>Date__c</field>
+        <formula>TODAY()</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Hours_in_Workday__c</field>
+        <formula>Time_Sheet__c.Default_Hours_in_Workday__c</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Type__c</field>
+        <literalValue>Late</literalValue>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Work_End__c</field>
+        <formula>TIMEVALUE(&quot;17:00:00.000&quot;)</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Work_Start__c</field>
+        <formula>TIMEVALUE(&quot;09:00:00.000&quot;)</formula>
+    </fieldOverrides>
+    <label>Mark as Late</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <quickActionLayout>
+        <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
+        <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Time_Sheet__c</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Work_Start__c</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+        </quickActionLayoutColumns>
+        <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Date__c</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Work_End__c</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+        </quickActionLayoutColumns>
+    </quickActionLayout>
+    <successMessage>Employee marked as having been late!</successMessage>
+    <targetObject>Time_Sheet_Correction__c</targetObject>
+    <targetParentField>Time_Sheet__c</targetParentField>
+    <type>Create</type>
+</QuickAction>

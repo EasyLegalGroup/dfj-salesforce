@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Not Required</fullName>
+        <default>false</default>
+        <label>Not Required</label>
+    </customValue>
+    <customValue>
+        <fullName>Pending Document Approval</fullName>
+        <default>false</default>
+        <label>Pending Document Approval</label>
+    </customValue>
+    <customValue>
+        <fullName>Awaiting Tinglysning</fullName>
+        <default>false</default>
+        <label>Awaiting Tinglysning</label>
+    </customValue>
+    <customValue>
+        <fullName>Completed</fullName>
+        <default>false</default>
+        <label>Completed</label>
+    </customValue>
+    <customValue>
+        <fullName>In Progress</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>In Progress</label>
+    </customValue>
+    <description>Used in relation to the Danish Tinglysning System</description>
+    <masterLabel>Public Registration Status</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

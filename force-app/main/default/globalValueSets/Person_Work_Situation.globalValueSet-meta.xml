@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Regular Employee</fullName>
+        <default>false</default>
+        <label>Regular Employee</label>
+    </customValue>
+    <customValue>
+        <fullName>Public Sector Employee</fullName>
+        <default>false</default>
+        <label>Public Sector Employee</label>
+    </customValue>
+    <customValue>
+        <fullName>Part-Time Employee</fullName>
+        <default>false</default>
+        <label>Part-Time Employee</label>
+    </customValue>
+    <customValue>
+        <fullName>Retiree</fullName>
+        <default>false</default>
+        <label>Retiree</label>
+    </customValue>
+    <customValue>
+        <fullName>Self-Employed</fullName>
+        <default>false</default>
+        <label>Self-Employed</label>
+    </customValue>
+    <customValue>
+        <fullName>Sick Leave</fullName>
+        <default>false</default>
+        <label>Sick Leave</label>
+    </customValue>
+    <customValue>
+        <fullName>Unemployed</fullName>
+        <default>false</default>
+        <label>Unemployed</label>
+    </customValue>
+    <customValue>
+        <fullName>Student</fullName>
+        <default>false</default>
+        <label>Student</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <customValue>
+        <fullName>Pension</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Pension</label>
+    </customValue>
+    <customValue>
+        <fullName>Pensionist</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Pensionist</label>
+    </customValue>
+    <customValue>
+        <fullName>Førtidspensionist</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Førtidspensionist</label>
+    </customValue>
+    <masterLabel>Person Work Situation</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

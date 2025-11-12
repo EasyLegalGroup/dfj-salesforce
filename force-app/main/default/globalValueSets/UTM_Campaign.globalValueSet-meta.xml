@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Gratis dokument</fullName>
+        <default>false</default>
+        <label>Gratis dokument</label>
+    </customValue>
+    <customValue>
+        <fullName>Gratis raadgivning</fullName>
+        <default>false</default>
+        <label>Gratis raadgivning</label>
+    </customValue>
+    <customValue>
+        <fullName>Indhent tilbud</fullName>
+        <default>false</default>
+        <label>Indhent tilbud</label>
+    </customValue>
+    <customValue>
+        <fullName>Risikovurdering</fullName>
+        <default>false</default>
+        <label>Risikovurdering</label>
+    </customValue>
+    <customValue>
+        <fullName>Reference</fullName>
+        <default>false</default>
+        <label>Reference</label>
+    </customValue>
+    <customValue>
+        <fullName>Arvetest</fullName>
+        <default>false</default>
+        <label>Arvetest</label>
+    </customValue>
+    <customValue>
+        <fullName>Kanvas</fullName>
+        <default>false</default>
+        <label>Kanvas</label>
+    </customValue>
+    <customValue>
+        <fullName>Bestil dokument</fullName>
+        <default>false</default>
+        <label>Bestil dokument</label>
+    </customValue>
+    <customValue>
+        <fullName>-</fullName>
+        <default>false</default>
+        <label>-</label>
+    </customValue>
+    <customValue>
+        <fullName>Ukendt</fullName>
+        <default>false</default>
+        <label>Ukendt</label>
+    </customValue>
+    <customValue>
+        <fullName>Cadence</fullName>
+        <default>false</default>
+        <label>Cadence</label>
+    </customValue>
+    <customValue>
+        <fullName>Mailkampagne - sommer 2023</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Mailkampagne - sommer 2023</label>
+    </customValue>
+    <customValue>
+        <fullName>Gratis foredrag</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Gratis foredrag</label>
+    </customValue>
+    <customValue>
+        <fullName>Gratis Rådgivning</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Gratis Rådgivning</label>
+    </customValue>
+    <customValue>
+        <fullName>konkurrence</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>konkurrence</label>
+    </customValue>
+    <masterLabel>UTM Campaign</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

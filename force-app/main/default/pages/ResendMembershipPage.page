@@ -1,0 +1,18 @@
+<apex:page standardController="Membership__c" recordSetVar="Memberships">
+<!-- Begin Default Content REMOVE THIS -->
+<!-- End Default Content REMOVE THIS -->
+    <apex:includeLightning />
+    <div id="Con" />
+    <script>
+        $Lightning.use("c:ResendMembersApp", function () {
+            $Lightning.createComponent(
+                "c:ResendMembershipModal",
+                {},
+                "Con",
+                function(cmp) {
+                    console.log("Component is created!");
+                    console.log(cmp);
+                });
+            });
+      </script>
+</apex:page>
