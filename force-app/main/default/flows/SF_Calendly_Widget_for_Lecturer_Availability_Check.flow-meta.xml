@@ -20,9 +20,25 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Add_lecture_se_sweden_to_Booking_URL</name>
+        <label>Add lecture-se-sweden to Booking URL</label>
+        <locationX>842</locationX>
+        <locationY>674</locationY>
+        <assignmentItems>
+            <assignToReference>LecturerUrl</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>https://calendly.com/d/ckqm-z5r-ymn/foredrag-i-sveriga</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Lecturer_Url_to_Calendly_Url</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Assign_Lecturer_Url_to_Calendly_Url</name>
         <label>Assign Lecturer Url to Calendly Url</label>
-        <locationX>974</locationX>
+        <locationX>1172</locationX>
         <locationY>950</locationY>
         <assignmentItems>
             <assignToReference>CalendlyUrl</assignToReference>
@@ -82,7 +98,7 @@
     <assignments>
         <name>Assign_User_s_Market_Unit_to_Variable</name>
         <label>Assign User&apos;s Market Unit to Variable</label>
-        <locationX>512</locationX>
+        <locationX>611</locationX>
         <locationY>134</locationY>
         <assignmentItems>
             <assignToReference>MarketUnit</assignToReference>
@@ -115,7 +131,7 @@
     <assignments>
         <name>Auto_Select_Assign_Swedish_Booking_URL</name>
         <label>Auto-Select Assign Swedish Booking URL</label>
-        <locationX>1106</locationX>
+        <locationX>1370</locationX>
         <locationY>566</locationY>
         <assignmentItems>
             <assignToReference>LecturerUrl</assignToReference>
@@ -166,10 +182,18 @@
             <stringValue>Sjælland</stringValue>
         </value>
     </choices>
+    <choices>
+        <name>Sverige</name>
+        <choiceText>Sweden</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Sweden</stringValue>
+        </value>
+    </choices>
     <decisions>
         <name>Auto_Select_Lecturer_from_which_Country</name>
         <label>Auto-Select Lecturer from which Country?</label>
-        <locationX>974</locationX>
+        <locationX>1172</locationX>
         <locationY>458</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -206,7 +230,7 @@
     <decisions>
         <name>Select_Lecturer_from_Which_Area_of_Denmark</name>
         <label>Select Lecturer from Which Area of Denmark?</label>
-        <locationX>578</locationX>
+        <locationX>710</locationX>
         <locationY>566</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -239,11 +263,26 @@
             </connector>
             <label>Check Sjælland</label>
         </rules>
+        <rules>
+            <name>Check_Sweden</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>plSelectArea</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Sverige</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Add_lecture_se_sweden_to_Booking_URL</targetReference>
+            </connector>
+            <label>Check Sweden</label>
+        </rules>
     </decisions>
     <decisions>
         <name>Who_is_User_Checking</name>
         <label>Who is User Checking?</label>
-        <locationX>512</locationX>
+        <locationX>611</locationX>
         <locationY>350</locationY>
         <defaultConnector>
             <targetReference>Auto_Select_Lecturer_from_which_Country</targetReference>
@@ -291,7 +330,7 @@
     <screens>
         <name>Screen_1_Select_What_to_Check</name>
         <label>Screen 1 - Select What to Check</label>
-        <locationX>512</locationX>
+        <locationX>611</locationX>
         <locationY>242</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -339,6 +378,7 @@
                     <name>plSelectArea</name>
                     <choiceReferences>Jylland_og_Fyn</choiceReferences>
                     <choiceReferences>Sj_lland</choiceReferences>
+                    <choiceReferences>Sverige</choiceReferences>
                     <dataType>String</dataType>
                     <fieldText>Select Area</fieldText>
                     <fieldType>RadioButtons</fieldType>
@@ -395,7 +435,7 @@
     <screens>
         <name>Screen_2_Calendly_Window</name>
         <label>Screen 2 - Calendly Window</label>
-        <locationX>512</locationX>
+        <locationX>611</locationX>
         <locationY>1142</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -592,7 +632,7 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>386</locationX>
+        <locationX>485</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Assign_User_s_Market_Unit_to_Variable</targetReference>
