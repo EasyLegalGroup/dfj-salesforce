@@ -2407,22 +2407,32 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Numeric_Weekdays__c</field>
+            <field>Is_Next_Call_Time_Overdue__c</field>
             <table>Lead</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Weekday__c</field>
+            <field>Call_Status__c</field>
             <table>Lead</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Is_Interested_in_Pension__c</field>
+            <field>Last_No_Show_Email_Date__c</field>
             <table>Lead</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Communication_Ban__c</field>
+            <field>Call_Status_Reasons__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CallBack_Time__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Last_Meeting_Booker_Email__c</field>
             <table>Lead</table>
         </columns>
         <masterLabel>Leads</masterLabel>
@@ -2684,11 +2694,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Call_Campaign__c</field>
-            <table>Lead.telegenta__Telegenta_Call_histories__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Days_Since_Creation__c</field>
             <table>Lead.telegenta__Telegenta_Call_histories__r</table>
         </columns>
         <masterLabel>Telegenta Call History</masterLabel>
