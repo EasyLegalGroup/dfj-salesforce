@@ -1,0 +1,20 @@
+<messaging:emailTemplate subject="Gratis og uforpligtende familietjek" 
+    recipientType="Lead" 
+    relatedToType="Lead"
+    language="da">
+
+    <messaging:plainTextEmailBody >
+Hej {!recipient.FirstName} {!recipient.LastName},
+
+Jeg har forsøgt at komme i kontakt med dig, da du har deltaget i vores foredrag om arv, testamente og fremtidsfuldmagter.
+
+Vi vil gerne tilbyde dig et gratis og uforpligtende familietjek, hvor vi i fællesskab gennemgår dine muligheder i forhold til arv, fremtidsfuldmagter og alvorlig sygdom. Vi afsætter en hel time, så der er god tid til at drøfte dine behov og ønsker i ro og mag.
+
+Du er meget velkommen til at vende tilbage, hvis det har interesse – så finder vi et tidspunkt, der passer dig.
+
+De bedste hilsner,
+{!$User.FirstName} fra Din Familiejurist
+
+Link til booking af foredrag: https://www.totalliv.dk/foredrag
+    </messaging:plainTextEmailBody>
+</messaging:emailTemplate>

@@ -1,0 +1,16 @@
+<messaging:emailTemplate subject="Foredrag i dit nærområde" 
+    recipientType="Lead" 
+    relatedToType="Lead"
+    language="da">
+
+    <messaging:plainTextEmailBody >
+Hej {!recipient.FirstName} {!recipient.LastName}, 
+
+Som aftalt sender jeg dig en SMS med et link, hvor du løbende kan holde øje med, hvornår der skulle komme et foredrag i dit nærområde: 
+
+https://www.totalliv.dk/foredrag 
+
+De bedste hilsner,
+{!$User.FirstName} fra Din Familiejurist
+    </messaging:plainTextEmailBody>
+</messaging:emailTemplate>

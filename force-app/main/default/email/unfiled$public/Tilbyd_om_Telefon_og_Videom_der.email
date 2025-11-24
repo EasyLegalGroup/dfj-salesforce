@@ -1,0 +1,31 @@
+<messaging:emailTemplate subject="Gratis rådgivningsmøde" 
+    recipientType="Lead" 
+    relatedToType="Lead"
+    language="da">
+
+    <messaging:plainTextEmailBody >
+Hej {!recipient.FirstName} {!recipient.LastName}
+
+Tak for en god samtale.
+
+Hvis du kunne være interesseret i et gratis rådgivningsmøde, tilbyder vi både telefonmøder og videomøder. 
+Du skal blot svare på denne mail, så finder vi en tid, der passer dig.
+
+For at kunne forberede mødet bedst muligt, vil jeg bede dig om at svare på følgende:
+
+• Er du gift, samlevende eller single?
+  (Hvis du er gift eller samlevende, anbefaler vi, at I begge deltager i mødet.)
+
+• Har du børn?
+  (Og er det fælles børn eller sammenbragte?)
+
+• Bor du til leje eller ejer du en bolig?
+
+Vi har ledige tider alle hverdage mellem kl. 9 og 17 – du vælger selv den dag og det tidspunkt, der passer dig bedst.
+
+Jeg glæder mig til at høre fra dig.
+
+De bedste hilsner
+{!$User.FirstName} fra Din Familiejurist
+    </messaging:plainTextEmailBody>
+</messaging:emailTemplate>
