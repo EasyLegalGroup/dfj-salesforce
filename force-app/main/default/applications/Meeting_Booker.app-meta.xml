@@ -62,6 +62,7 @@
     <setupExperience>all</setupExperience>
     <tabs>standard-home</tabs>
     <tabs>standard-Lead</tabs>
+    <tabs>standard-Account</tabs>
     <tabs>telegenta__Campaign_Session</tabs>
     <tabs>standard-Event</tabs>
     <uiType>Lightning</uiType>
