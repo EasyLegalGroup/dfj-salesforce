@@ -8,41 +8,768 @@ public without sharing class DF_DocFabricator_Utility {
     public static String underscoreString = '_';
     public static String postfixForMetaApiName = '__c';
     public static List<String> fieldLabelList = new List<String>{'uuid','record_model_id','version'};
-    /*
-    * @Description  This method will be invoked when we need Record_form_configuration metadata record for particular market_unit
-    * @Param		String - marketUnit
-    * @Return       List<Record_form_configuration__mdt>
-    */
-    public static List<Record_form_configuration__mdt> GetRecordFormConfigurationMetadataRecord_Apex(String marketUnit,String recordId,String journalType){
-        try{
-            system.debug('>>>test>> recordId +'+recordId);
-            if(String.isBlank(marketUnit)){
-                return null;
+
+    /**
+     * Result wrapper for the two-tier permission-based selection.
+     */
+    public class DocFabSelectionResult{
+        public Decimal recordModelId;
+        public String formUuid;
+        public String errorMessage;
+        public String permissionError;
+        public String fieldConfigurationJson;
+    }
+
+    /**
+     * Wrapper for Record Model options shown in the UI picker.
+     */
+    public class RecordModelOption {
+        @AuraEnabled public String recordModelId;
+        @AuraEnabled public String label;
+        @AuraEnabled public String icon;
+        @AuraEnabled public String developerName;
+    }
+
+    /**
+     * Wrapper for Form options shown in the UI picker.
+     */
+    public class FormOption {
+        @AuraEnabled public String formUuid;
+        @AuraEnabled public Decimal formNumber;
+        @AuraEnabled public String recordModelId;
+        @AuraEnabled public String label;
+        @AuraEnabled public String icon;
+        @AuraEnabled public String developerName;
+    }
+
+    /**
+     * Result wrapper for the two-tier selection process.
+     * Contains accessible record models and forms, plus metadata for the LWC to decide what to show.
+     */
+    public class SelectionOptions {
+        @AuraEnabled public List<RecordModelOption> recordModels = new List<RecordModelOption>();
+        @AuraEnabled public List<FormOption> forms = new List<FormOption>();
+        @AuraEnabled public String errorMessage;
+        @AuraEnabled public Boolean requiresRecordModelSelection = false;
+        @AuraEnabled public Boolean requiresFormSelection = false;
+        // If only one record model and one form, these are populated for direct open
+        @AuraEnabled public String resolvedRecordModelId;
+        @AuraEnabled public String resolvedFormUuid;
+        @AuraEnabled public String fieldConfigurationJson;
+        // For direct URL open when existing UUID is found (bypass selection)
+        @AuraEnabled public String directOpenUrl;
+        @AuraEnabled public Boolean hasExistingDocFab = false;
+    }
+
+    /**
+     * Default icons for record models and forms when not specified in CMDT.
+     */
+    public static final String DEFAULT_RECORD_MODEL_ICON = 'utility:data_mapping';
+    public static final String DEFAULT_FORM_ICON = 'utility:care_request_reviewer';
+
+    /**
+     * Normalizes an icon name to ensure it has the proper SLDS prefix.
+     * If the icon already has a category prefix (utility:, standard:, action:, custom:, doctype:),
+     * it is returned as-is. Otherwise, 'utility:' is prepended.
+     * 
+     * Examples:
+     * - "add" → "utility:add"
+     * - "utility:add" → "utility:add"
+     * - "standard:account" → "standard:account"
+     * - "my_custom_icon" → "utility:my_custom_icon"
+     * 
+     * @param iconName The icon name from CMDT (may or may not include prefix)
+     * @param defaultIcon The default icon to use if iconName is blank
+     * @return Normalized icon name with proper prefix
+     */
+    private static String normalizeIconName(String iconName, String defaultIcon) {
+        if (String.isBlank(iconName)) {
+            return defaultIcon;
+        }
+        
+        // Check if it already has a known SLDS icon category prefix
+        String lowerIcon = iconName.toLowerCase();
+        if (lowerIcon.startsWith('utility:') || 
+            lowerIcon.startsWith('standard:') || 
+            lowerIcon.startsWith('action:') || 
+            lowerIcon.startsWith('custom:') || 
+            lowerIcon.startsWith('doctype:')) {
+            return iconName;
+        }
+        
+        // No prefix found, default to utility:
+        return 'utility:' + iconName;
+    }
+
+    /**
+     * Two-tier permission-based selection using DocFab_Record_Model__mdt and DocFab_Form__mdt.
+     * 
+     * Configuration is defined at the page layout level:
+     * - recordModelIds: Comma-separated list of allowed Record Model IDs (e.g., "160, 54, 22")
+     * - formNumbers: Comma-separated list of allowed Form Numbers (e.g., "17, 51, 22")
+     * 
+     * The user must have Custom Permission for BOTH the Record Model AND the Form to access it.
+     * 
+     * Flow:
+     * 1. Parse the comma-separated lists from the page layout
+     * 2. Query DocFab_Form__mdt for the specified Form Numbers (which also gives us their parent Record Models)
+     * 3. Also query any directly-specified Record Model IDs
+     * 4. Filter both to only those the user has Custom Permission for
+     * 5. Return the accessible options for the LWC to display
+     * 
+     * @param recordModelIdsCsv Comma-separated Record Model IDs from page layout (can be empty)
+     * @param formNumbersCsv Comma-separated Form Numbers from page layout (required)
+     * @return SelectionOptions with accessible record models and forms
+     */
+    @AuraEnabled(cacheable=false)
+    public static SelectionOptions getAccessibleOptions(String recordModelIdsCsv, String formNumbersCsv){
+        SelectionOptions result = new SelectionOptions();
+        
+        // Parse inputs
+        Set<String> requestedRecordModelIds = parseCsvToSet(recordModelIdsCsv);
+        Set<Decimal> requestedFormNumbers = parseCsvToDecimalSet(formNumbersCsv);
+        
+        // Validate: At least form numbers must be configured
+        if(requestedFormNumbers.isEmpty()){
+            result.errorMessage = 'No Journal Form has been configured for this page.';
+            return result;
+        }
+        
+        // Query forms and their parent record models by Form Number
+        List<DocFab_Form__mdt> allForms = [
+            SELECT Id, DeveloperName, Form_UUID__c, Form_Number__c, Custom_Permission__c, Icon__c, Page_Layout_Label__c,
+                   Record_Model__c, Record_Model__r.Record_Model_Id__c, Record_Model__r.Custom_Permission__c,
+                   Record_Model__r.DeveloperName, Record_Model__r.Icon__c, Record_Model__r.Page_Layout_Label__c,
+                   Record_Model__r.Field_Configuration__c
+              FROM DocFab_Form__mdt
+             WHERE Form_Number__c IN :requestedFormNumbers
+        ];
+        
+        // Also query any directly-specified record models (in case they want to show record models without specific forms)
+        Map<String, DocFab_Record_Model__mdt> recordModelMap = new Map<String, DocFab_Record_Model__mdt>();
+        if(!requestedRecordModelIds.isEmpty()){
+            List<DocFab_Record_Model__mdt> directRecordModels = [
+                SELECT Id, DeveloperName, Record_Model_Id__c, Custom_Permission__c, Icon__c, 
+                       Page_Layout_Label__c, Field_Configuration__c
+                  FROM DocFab_Record_Model__mdt
+                 WHERE Record_Model_Id__c IN :requestedRecordModelIds
+            ];
+            for(DocFab_Record_Model__mdt rm : directRecordModels){
+                recordModelMap.put(rm.Record_Model_Id__c, rm);
             }
-            List<Record_form_configuration__mdt> recordFormConfigurationInstance = new List<Record_form_configuration__mdt>();
-            // Changes for ticket DIN-287 : Form and record model selector
-			// Description: Added journaltpye in in query to get the metadata records according to the type and marketunit.
-			// Start
-            recordFormConfigurationInstance = [SELECT Id,MasterLabel,Market_unit_name__c,Form_uuid__c,Record_modal_id__c,Journal_type__c,Docfab_Journal_Object__c,Salesforce_User__c, Default_Record_Model_Id__c from Record_form_configuration__mdt WHERE Market_unit_name__c =: marketUnit AND Journal_type__c=:journalType  LIMIT 1];
-            // Start
-            // Checking recordFormConfigurationInstance, record_model_id and form_uuit is not empty/blank.
-            if (!recordFormConfigurationInstance.isEmpty()) {
-                if (!String.isBlank(recordFormConfigurationInstance[0].Record_modal_id__c)) {
-system.debug('recordFormConfigurationInstance-->'+recordFormConfigurationInstance);
-                    return recordFormConfigurationInstance;
-                }else{
-                    DFJ_ErrorLogController.addErrorLogs(recordId, 'Getting metadata record according to the market_unit of journal record', '', 'Warning', 'Form_uuid__c or Record_modal_id__c field is null', '', '');
+        }
+        
+        // Add record models from forms to the map
+        for(DocFab_Form__mdt f : allForms){
+            if(f.Record_Model__r != null && !recordModelMap.containsKey(f.Record_Model__r.Record_Model_Id__c)){
+                recordModelMap.put(f.Record_Model__r.Record_Model_Id__c, f.Record_Model__r);
+            }
+        }
+        
+        // Filter record models by permission
+        Map<String, DocFab_Record_Model__mdt> accessibleRecordModels = new Map<String, DocFab_Record_Model__mdt>();
+        for(String rmId : recordModelMap.keySet()){
+            DocFab_Record_Model__mdt rm = recordModelMap.get(rmId);
+            if(hasPermission(rm.Custom_Permission__c)){
+                accessibleRecordModels.put(rmId, rm);
+            }
+        }
+        
+        // Filter forms by permission (both form permission AND parent record model permission)
+        List<DocFab_Form__mdt> accessibleForms = new List<DocFab_Form__mdt>();
+        for(DocFab_Form__mdt f : allForms){
+            String parentRmId = f.Record_Model__r != null ? f.Record_Model__r.Record_Model_Id__c : null;
+            // Must have permission for both the form AND its parent record model
+            if(hasPermission(f.Custom_Permission__c) && accessibleRecordModels.containsKey(parentRmId)){
+                accessibleForms.add(f);
+            }
+        }
+        
+        // Check if user has no access to anything
+        if(accessibleForms.isEmpty()){
+            result.errorMessage = 'You do not have access to any Journal Forms configured for this page.';
+            return result;
+        }
+        
+        // Build the result options
+        // Group forms by record model
+        Map<String, List<DocFab_Form__mdt>> formsByRecordModel = new Map<String, List<DocFab_Form__mdt>>();
+        Set<String> recordModelIdsWithForms = new Set<String>();
+        for(DocFab_Form__mdt f : accessibleForms){
+            String rmId = f.Record_Model__r.Record_Model_Id__c;
+            recordModelIdsWithForms.add(rmId);
+            if(!formsByRecordModel.containsKey(rmId)){
+                formsByRecordModel.put(rmId, new List<DocFab_Form__mdt>());
+            }
+            formsByRecordModel.get(rmId).add(f);
+        }
+        
+        // Build RecordModelOption list (only record models that have accessible forms)
+        for(String rmId : recordModelIdsWithForms){
+            DocFab_Record_Model__mdt rm = accessibleRecordModels.get(rmId);
+            if(rm == null) continue;
+            
+            RecordModelOption opt = new RecordModelOption();
+            opt.recordModelId = rm.Record_Model_Id__c;
+            opt.label = String.isNotBlank(rm.Page_Layout_Label__c) ? rm.Page_Layout_Label__c : rm.DeveloperName;
+            opt.icon = normalizeIconName(rm.Icon__c, DEFAULT_RECORD_MODEL_ICON);
+            opt.developerName = rm.DeveloperName;
+            result.recordModels.add(opt);
+        }
+        
+        // Build FormOption list
+        for(DocFab_Form__mdt f : accessibleForms){
+            FormOption opt = new FormOption();
+            opt.formUuid = f.Form_UUID__c;
+            opt.formNumber = f.Form_Number__c;
+            opt.recordModelId = f.Record_Model__r.Record_Model_Id__c;
+            opt.label = String.isNotBlank(f.Page_Layout_Label__c) ? f.Page_Layout_Label__c : f.DeveloperName;
+            opt.icon = normalizeIconName(f.Icon__c, DEFAULT_FORM_ICON);
+            opt.developerName = f.DeveloperName;
+            result.forms.add(opt);
+        }
+        
+        // Determine selection requirements
+        Integer numRecordModels = result.recordModels.size();
+        Integer numForms = result.forms.size();
+        
+        if(numRecordModels == 1 && numForms == 1){
+            // Direct open - no selection needed
+            result.requiresRecordModelSelection = false;
+            result.requiresFormSelection = false;
+            result.resolvedRecordModelId = result.recordModels[0].recordModelId;
+            result.resolvedFormUuid = result.forms[0].formUuid;
+            // Get field configuration
+            DocFab_Record_Model__mdt rm = accessibleRecordModels.get(result.resolvedRecordModelId);
+            result.fieldConfigurationJson = rm != null ? rm.Field_Configuration__c : null;
+        } else if(numRecordModels == 1){
+            // Only one record model, but multiple forms - show form picker
+            result.requiresRecordModelSelection = false;
+            result.requiresFormSelection = true;
+            result.resolvedRecordModelId = result.recordModels[0].recordModelId;
+            // Get field configuration
+            DocFab_Record_Model__mdt rm = accessibleRecordModels.get(result.resolvedRecordModelId);
+            result.fieldConfigurationJson = rm != null ? rm.Field_Configuration__c : null;
+        } else {
+            // Multiple record models - show record model picker first
+            result.requiresRecordModelSelection = true;
+            // Form selection depends on how many forms the selected record model has
+            // This will be determined by the LWC after user selects a record model
+        }
+        
+        return result;
+    }
+
+    /**
+     * Context-aware version of getAccessibleOptions that handles special cases:
+     * - Journal with existing External_record_uuid__c but no page layout config → opens existing directly
+     * - Lead with existing journals but no page layout config → opens existing if user has permission
+     * 
+     * @param recordModelIdsCsv Comma-separated Record Model IDs from page layout (can be empty)
+     * @param formNumbersCsv Comma-separated Form Numbers from page layout (can be empty)
+     * @param objectApiName The object API name (Lead, Journal__c, etc.)
+     * @param recordId The record ID being viewed
+     * @param existingExternalUuid The existing External_record_uuid__c if any (for Journal__c)
+     * @param existingRecordModelId The existing DocFab_Record_Model_ID__c if any (for Journal__c)
+     * @return SelectionOptions with accessible options or direct open URL
+     */
+    @AuraEnabled(cacheable=false)
+    public static SelectionOptions getAccessibleOptionsWithContext(
+        String recordModelIdsCsv, 
+        String formNumbersCsv,
+        String objectApiName,
+        String recordId,
+        String existingExternalUuid,
+        String existingRecordModelId
+    ){
+        SelectionOptions result = new SelectionOptions();
+        
+        // Parse inputs
+        Set<String> requestedRecordModelIds = parseCsvToSet(recordModelIdsCsv);
+        Set<Decimal> requestedFormNumbers = parseCsvToDecimalSet(formNumbersCsv);
+        Boolean hasPageLayoutConfig = !requestedFormNumbers.isEmpty();
+        Boolean hasExistingUuid = !String.isBlank(existingExternalUuid);
+        Boolean isLead = objectApiName == 'Lead';
+        Boolean isJournal = objectApiName == 'Journal__c';
+        
+        // Get DocFab base URL
+        Doc_Fabricator_Setting__c docFabSetting = Doc_Fabricator_Setting__c.getOrgDefaults();
+        String baseUrl = (docFabSetting != null) ? docFabSetting.URL__c : null;
+        
+        // SCENARIO: Journal with existing UUID but no page layout config
+        // → Open existing DocFab directly (no form selection needed)
+        if(isJournal && hasExistingUuid && !hasPageLayoutConfig){
+            result.hasExistingDocFab = true;
+            if(String.isBlank(baseUrl)){
+                result.errorMessage = 'DocFab base URL is missing in Doc_Fabricator_Setting__c.';
+                return result;
+            }
+            result.directOpenUrl = buildDocFabUrl(baseUrl, existingExternalUuid, null);
+            return result;
+        }
+        
+        // SCENARIO: Journal without UUID and no page layout config
+        // → Error - cannot create without configuration
+        if(isJournal && !hasExistingUuid && !hasPageLayoutConfig){
+            result.errorMessage = 'No Journal Form has been configured for this page. Please contact your administrator to configure the Journal Form component.';
+            return result;
+        }
+        
+        // SCENARIO: Lead with no page layout config
+        // → Check for existing journals with DocFab records that user has permission for
+        if(isLead && !hasPageLayoutConfig){
+            return handleLeadNoPageLayoutConfig(recordId, baseUrl);
+        }
+        
+        // Standard flow: Page layout is configured, proceed with permission-based selection
+        return getAccessibleOptionsStandard(requestedRecordModelIds, requestedFormNumbers, hasExistingUuid, existingExternalUuid, existingRecordModelId, baseUrl, isJournal);
+    }
+    
+    /**
+     * Handle Lead scenario where no page layout config exists.
+     * Looks for existing journals with DocFab records that user has permission to access.
+     */
+    private static SelectionOptions handleLeadNoPageLayoutConfig(String leadId, String baseUrl){
+        SelectionOptions result = new SelectionOptions();
+        
+        if(String.isBlank(leadId)){
+            result.errorMessage = 'Lead ID is required.';
+            return result;
+        }
+        
+        // Query existing journals for this Lead that have DocFab records
+        List<Journal__c> leadJournals = [
+            SELECT Id, External_record_uuid__c, DocFab_Record_Model_ID__c, CreatedDate
+              FROM Journal__c
+             WHERE Lead__c = :leadId
+               AND External_record_uuid__c != null
+             WITH SECURITY_ENFORCED
+             ORDER BY CreatedDate DESC
+        ];
+        
+        if(leadJournals.isEmpty()){
+            result.errorMessage = 'No Journal Form has been configured for this page. Please contact your administrator to configure the Journal Form component.';
+            return result;
+        }
+        
+        // Check which journals the user has permission to access (based on their Record Model)
+        Set<String> journalRecordModelIds = new Set<String>();
+        for(Journal__c j : leadJournals){
+            if(!String.isBlank(j.DocFab_Record_Model_ID__c)){
+                journalRecordModelIds.add(j.DocFab_Record_Model_ID__c);
+            }
+        }
+        
+        // Query the record models to check permissions
+        Map<String, DocFab_Record_Model__mdt> recordModelMap = new Map<String, DocFab_Record_Model__mdt>();
+        if(!journalRecordModelIds.isEmpty()){
+            List<DocFab_Record_Model__mdt> recordModels = [
+                SELECT Id, Record_Model_Id__c, Custom_Permission__c, Page_Layout_Label__c, DeveloperName, Icon__c
+                  FROM DocFab_Record_Model__mdt
+                 WHERE Record_Model_Id__c IN :journalRecordModelIds
+            ];
+            for(DocFab_Record_Model__mdt rm : recordModels){
+                recordModelMap.put(rm.Record_Model_Id__c, rm);
+            }
+        }
+        
+        // Find journals user has permission to access
+        List<Journal__c> accessibleJournals = new List<Journal__c>();
+        for(Journal__c j : leadJournals){
+            DocFab_Record_Model__mdt rm = recordModelMap.get(j.DocFab_Record_Model_ID__c);
+            // If no CMDT record exists for this model, or user has permission, allow access
+            if(rm == null || hasPermission(rm.Custom_Permission__c)){
+                accessibleJournals.add(j);
+            }
+        }
+        
+        if(accessibleJournals.isEmpty()){
+            result.errorMessage = 'You do not have permission to access the existing journal forms for this Lead. Please contact your administrator.';
+            return result;
+        }
+        
+        // If only one accessible journal, open it directly
+        if(accessibleJournals.size() == 1 && String.isNotBlank(baseUrl)){
+            result.hasExistingDocFab = true;
+            result.directOpenUrl = buildDocFabUrl(baseUrl, accessibleJournals[0].External_record_uuid__c, null);
+            return result;
+        }
+        
+        // Multiple accessible journals - this shouldn't happen without page layout config
+        // but if it does, open the most recent one
+        result.hasExistingDocFab = true;
+        result.directOpenUrl = buildDocFabUrl(baseUrl, accessibleJournals[0].External_record_uuid__c, null);
+        return result;
+    }
+    
+    /**
+     * Standard permission-based selection flow when page layout config exists.
+     */
+    private static SelectionOptions getAccessibleOptionsStandard(
+        Set<String> requestedRecordModelIds,
+        Set<Decimal> requestedFormNumbers,
+        Boolean hasExistingUuid,
+        String existingExternalUuid,
+        String existingRecordModelId,
+        String baseUrl,
+        Boolean isJournal
+    ){
+        SelectionOptions result = new SelectionOptions();
+        
+        // Query forms and their parent record models by Form Number
+        List<DocFab_Form__mdt> allForms = [
+            SELECT Id, DeveloperName, Form_UUID__c, Form_Number__c, Custom_Permission__c, Icon__c, Page_Layout_Label__c,
+                   Record_Model__c, Record_Model__r.Record_Model_Id__c, Record_Model__r.Custom_Permission__c,
+                   Record_Model__r.DeveloperName, Record_Model__r.Icon__c, Record_Model__r.Page_Layout_Label__c,
+                   Record_Model__r.Field_Configuration__c
+              FROM DocFab_Form__mdt
+             WHERE Form_Number__c IN :requestedFormNumbers
+        ];
+        
+        // Also query any directly-specified record models
+        Map<String, DocFab_Record_Model__mdt> recordModelMap = new Map<String, DocFab_Record_Model__mdt>();
+        if(!requestedRecordModelIds.isEmpty()){
+            List<DocFab_Record_Model__mdt> directRecordModels = [
+                SELECT Id, DeveloperName, Record_Model_Id__c, Custom_Permission__c, Icon__c, 
+                       Page_Layout_Label__c, Field_Configuration__c
+                  FROM DocFab_Record_Model__mdt
+                 WHERE Record_Model_Id__c IN :requestedRecordModelIds
+            ];
+            for(DocFab_Record_Model__mdt rm : directRecordModels){
+                recordModelMap.put(rm.Record_Model_Id__c, rm);
+            }
+        }
+        
+        // Add record models from forms to the map
+        for(DocFab_Form__mdt f : allForms){
+            if(f.Record_Model__r != null && !recordModelMap.containsKey(f.Record_Model__r.Record_Model_Id__c)){
+                recordModelMap.put(f.Record_Model__r.Record_Model_Id__c, f.Record_Model__r);
+            }
+        }
+        
+        // Filter record models by permission
+        Map<String, DocFab_Record_Model__mdt> accessibleRecordModels = new Map<String, DocFab_Record_Model__mdt>();
+        for(String rmId : recordModelMap.keySet()){
+            DocFab_Record_Model__mdt rm = recordModelMap.get(rmId);
+            if(hasPermission(rm.Custom_Permission__c)){
+                accessibleRecordModels.put(rmId, rm);
+            }
+        }
+        
+        // Filter forms by permission (both form permission AND parent record model permission)
+        List<DocFab_Form__mdt> accessibleForms = new List<DocFab_Form__mdt>();
+        for(DocFab_Form__mdt f : allForms){
+            String parentRmId = f.Record_Model__r != null ? f.Record_Model__r.Record_Model_Id__c : null;
+            if(hasPermission(f.Custom_Permission__c) && accessibleRecordModels.containsKey(parentRmId)){
+                accessibleForms.add(f);
+            }
+        }
+        
+        // Check if user has no access to anything configured
+        if(accessibleForms.isEmpty()){
+            // Check if there ARE forms configured but user lacks permission
+            if(!allForms.isEmpty()){
+                result.errorMessage = 'You do not have permission to access any of the Journal Forms configured for this page. Please contact your administrator to request access.';
+            } else {
+                result.errorMessage = 'No Journal Forms found for the configured Form Numbers. Please contact your administrator.';
+            }
+            return result;
+        }
+        
+        // For Journal with existing UUID: Check if user has permission to the existing record model
+        if(isJournal && hasExistingUuid && !String.isBlank(existingRecordModelId)){
+            DocFab_Record_Model__mdt existingRm = recordModelMap.get(existingRecordModelId);
+            if(existingRm != null && !hasPermission(existingRm.Custom_Permission__c)){
+                result.errorMessage = 'You do not have permission to access this Journal Form. The journal was created with a Record Model that you do not have access to. Please contact your administrator.';
+                return result;
+            }
+        }
+        
+        result.hasExistingDocFab = hasExistingUuid;
+        
+        // Build the result options
+        Map<String, List<DocFab_Form__mdt>> formsByRecordModel = new Map<String, List<DocFab_Form__mdt>>();
+        Set<String> recordModelIdsWithForms = new Set<String>();
+        for(DocFab_Form__mdt f : accessibleForms){
+            String rmId = f.Record_Model__r.Record_Model_Id__c;
+            recordModelIdsWithForms.add(rmId);
+            if(!formsByRecordModel.containsKey(rmId)){
+                formsByRecordModel.put(rmId, new List<DocFab_Form__mdt>());
+            }
+            formsByRecordModel.get(rmId).add(f);
+        }
+        
+        // Build RecordModelOption list
+        for(String rmId : recordModelIdsWithForms){
+            DocFab_Record_Model__mdt rm = accessibleRecordModels.get(rmId);
+            if(rm == null) continue;
+            
+            RecordModelOption opt = new RecordModelOption();
+            opt.recordModelId = rm.Record_Model_Id__c;
+            opt.label = String.isNotBlank(rm.Page_Layout_Label__c) ? rm.Page_Layout_Label__c : rm.DeveloperName;
+            opt.icon = normalizeIconName(rm.Icon__c, DEFAULT_RECORD_MODEL_ICON);
+            opt.developerName = rm.DeveloperName;
+            result.recordModels.add(opt);
+        }
+        
+        // Build FormOption list
+        for(DocFab_Form__mdt f : accessibleForms){
+            FormOption opt = new FormOption();
+            opt.formUuid = f.Form_UUID__c;
+            opt.formNumber = f.Form_Number__c;
+            opt.recordModelId = f.Record_Model__r.Record_Model_Id__c;
+            opt.label = String.isNotBlank(f.Page_Layout_Label__c) ? f.Page_Layout_Label__c : f.DeveloperName;
+            opt.icon = normalizeIconName(f.Icon__c, DEFAULT_FORM_ICON);
+            opt.developerName = f.DeveloperName;
+            result.forms.add(opt);
+        }
+        
+        // Determine selection requirements
+        Integer numRecordModels = result.recordModels.size();
+        Integer numForms = result.forms.size();
+        
+        if(numRecordModels == 1 && numForms == 1){
+            result.requiresRecordModelSelection = false;
+            result.requiresFormSelection = false;
+            result.resolvedRecordModelId = result.recordModels[0].recordModelId;
+            result.resolvedFormUuid = result.forms[0].formUuid;
+            DocFab_Record_Model__mdt rm = accessibleRecordModels.get(result.resolvedRecordModelId);
+            result.fieldConfigurationJson = rm != null ? rm.Field_Configuration__c : null;
+        } else if(numRecordModels == 1){
+            result.requiresRecordModelSelection = false;
+            result.requiresFormSelection = true;
+            result.resolvedRecordModelId = result.recordModels[0].recordModelId;
+            DocFab_Record_Model__mdt rm = accessibleRecordModels.get(result.resolvedRecordModelId);
+            result.fieldConfigurationJson = rm != null ? rm.Field_Configuration__c : null;
+        } else {
+            result.requiresRecordModelSelection = true;
+        }
+        
+        return result;
+    }
+
+    /**
+     * Get forms for a specific record model (called after user selects a record model).
+     * Returns only forms the user has permission to access.
+     * 
+     * @param recordModelId The Record Model ID selected by the user
+     * @param formNumbersCsv Comma-separated Form Numbers from page layout
+     */
+    @AuraEnabled(cacheable=false)
+    public static SelectionOptions getFormsForRecordModel(String recordModelId, String formNumbersCsv){
+        SelectionOptions result = new SelectionOptions();
+        
+        if(String.isBlank(recordModelId)){
+            result.errorMessage = 'Record Model ID is required.';
+            return result;
+        }
+        
+        Set<Decimal> requestedFormNumbers = parseCsvToDecimalSet(formNumbersCsv);
+        if(requestedFormNumbers.isEmpty()){
+            result.errorMessage = 'No forms configured.';
+            return result;
+        }
+        
+        // Get the record model
+        List<DocFab_Record_Model__mdt> recordModels = [
+            SELECT Id, DeveloperName, Record_Model_Id__c, Custom_Permission__c, Icon__c, 
+                   Page_Layout_Label__c, Field_Configuration__c
+              FROM DocFab_Record_Model__mdt
+             WHERE Record_Model_Id__c = :recordModelId
+             LIMIT 1
+        ];
+        
+        if(recordModels.isEmpty()){
+            result.errorMessage = 'Record Model not found.';
+            return result;
+        }
+        
+        DocFab_Record_Model__mdt rm = recordModels[0];
+        
+        // Check permission for record model
+        if(!hasPermission(rm.Custom_Permission__c)){
+            result.errorMessage = 'You do not have access to this record model.';
+            return result;
+        }
+        
+        // Get forms for this record model that are in the requested list (by Form Number)
+        List<DocFab_Form__mdt> forms = [
+            SELECT Id, DeveloperName, Form_UUID__c, Form_Number__c, Custom_Permission__c, Icon__c, Page_Layout_Label__c,
+                   Record_Model__r.Record_Model_Id__c
+              FROM DocFab_Form__mdt
+             WHERE Form_Number__c IN :requestedFormNumbers
+               AND Record_Model__r.Record_Model_Id__c = :recordModelId
+        ];
+        
+        // Filter by permission
+        List<DocFab_Form__mdt> accessibleForms = new List<DocFab_Form__mdt>();
+        for(DocFab_Form__mdt f : forms){
+            if(hasPermission(f.Custom_Permission__c)){
+                accessibleForms.add(f);
+            }
+        }
+        
+        if(accessibleForms.isEmpty()){
+            result.errorMessage = 'You do not have access to any forms for this record model.';
+            return result;
+        }
+        
+        // Build form options
+        for(DocFab_Form__mdt f : accessibleForms){
+            FormOption opt = new FormOption();
+            opt.formUuid = f.Form_UUID__c;
+            opt.formNumber = f.Form_Number__c;
+            opt.recordModelId = recordModelId;
+            opt.label = String.isNotBlank(f.Page_Layout_Label__c) ? f.Page_Layout_Label__c : f.DeveloperName;
+            opt.icon = normalizeIconName(f.Icon__c, DEFAULT_FORM_ICON);
+            opt.developerName = f.DeveloperName;
+            result.forms.add(opt);
+        }
+        
+        result.resolvedRecordModelId = recordModelId;
+        result.fieldConfigurationJson = rm.Field_Configuration__c;
+        
+        if(result.forms.size() == 1){
+            result.requiresFormSelection = false;
+            result.resolvedFormUuid = result.forms[0].formUuid;
+        } else {
+            result.requiresFormSelection = true;
+        }
+        
+        return result;
+    }
+
+    /**
+     * Legacy selectConfiguration method - now simplified to work with the new architecture.
+     * This is kept for backwards compatibility with existing code that calls it.
+     * 
+     * @param marketUnit - Ignored in new architecture
+     * @param formTypeName - Ignored in new architecture  
+     * @param componentRecordModelId - Record Model ID (if already selected)
+     * @param componentFormUuid - Form UUID (if already selected)
+     * @param currentUserId - Ignored in new architecture (permissions checked via FeatureManagement)
+     */
+    public static DocFabSelectionResult selectConfiguration(String marketUnit, String formTypeName, Decimal componentRecordModelId, String componentFormUuid, Id currentUserId){
+        DocFabSelectionResult result = new DocFabSelectionResult();
+        
+        // Convert decimal to string
+        String recordModelIdStr = componentRecordModelId != null ? String.valueOf(componentRecordModelId.longValue()) : null;
+        
+        if(String.isBlank(recordModelIdStr)){
+            result.errorMessage = 'Record Model ID is required.';
+            return result;
+        }
+        
+        // Look up Record Model
+        List<DocFab_Record_Model__mdt> recordModels = [
+            SELECT Id, Record_Model_Id__c, Field_Configuration__c, Custom_Permission__c, 
+                   Page_Layout_Label__c, Icon__c, DeveloperName
+              FROM DocFab_Record_Model__mdt
+             WHERE Record_Model_Id__c = :recordModelIdStr
+             LIMIT 1
+        ];
+        
+        if(recordModels.isEmpty()){
+            result.errorMessage = 'Record Model ID ' + recordModelIdStr + ' is not configured.';
+            return result;
+        }
+        
+        DocFab_Record_Model__mdt recordModel = recordModels[0];
+        
+        // Check Custom Permission for Record Model
+        if(!hasPermission(recordModel.Custom_Permission__c)){
+            result.permissionError = 'You do not have access to record model ' + recordModelIdStr + '.';
+            return result;
+        }
+        
+        // If form UUID provided, validate it
+        if(!String.isBlank(componentFormUuid)){
+            List<DocFab_Form__mdt> forms = [
+                SELECT Id, Form_UUID__c, Custom_Permission__c
+                  FROM DocFab_Form__mdt
+                 WHERE Form_UUID__c = :componentFormUuid
+                   AND Record_Model__r.Record_Model_Id__c = :recordModelIdStr
+                 LIMIT 1
+            ];
+            
+            if(forms.isEmpty()){
+                result.errorMessage = 'Form UUID ' + componentFormUuid + ' is not configured for record model ' + recordModelIdStr + '.';
+                return result;
+            }
+            
+            // Check Custom Permission for Form
+            if(!hasPermission(forms[0].Custom_Permission__c)){
+                result.permissionError = 'You do not have access to this form.';
+                return result;
+            }
+        }
+        
+        result.recordModelId = componentRecordModelId;
+        result.formUuid = componentFormUuid;
+        result.fieldConfigurationJson = recordModel.Field_Configuration__c;
+        
+        return result;
+    }
+
+    /**
+     * Check if the current user has the specified custom permission.
+     * Returns true if permission is blank (no restriction) or if user has the permission.
+     */
+    private static Boolean hasPermission(String customPermissionApiName){
+        if(String.isBlank(customPermissionApiName)){
+            return false; // Custom Permission is now required
+        }
+        return FeatureManagement.checkPermission(customPermissionApiName);
+    }
+
+    /**
+     * Parse a comma-separated string into a Set of trimmed, non-empty values.
+     */
+    private static Set<String> parseCsvToSet(String csv){
+        Set<String> result = new Set<String>();
+        if(String.isBlank(csv)){
+            return result;
+        }
+        for(String part : csv.split(',')){
+            String trimmed = part.trim();
+            if(!String.isBlank(trimmed)){
+                result.add(trimmed);
+            }
+        }
+        return result;
+    }
+
+    /**
+     * Parse a comma-separated string of numbers into a Set of Decimals.
+     * Used for Form Numbers which are numeric.
+     */
+    private static Set<Decimal> parseCsvToDecimalSet(String csv){
+        Set<Decimal> result = new Set<Decimal>();
+        if(String.isBlank(csv)){
+            return result;
+        }
+        for(String part : csv.split(',')){
+            String trimmed = part.trim();
+            if(!String.isBlank(trimmed)){
+                try {
+                    result.add(Decimal.valueOf(trimmed));
+                } catch(Exception e){
+                    // Skip invalid numbers
                 }
-
-            }else{
-                DFJ_ErrorLogController.addErrorLogs(recordId, 'Getting metadata record according to the market_unit of journal record', '', 'Warning', 'metadata Form_uuid__c or Record_modal_id__c field is empty. Or there may be no record for this markit unit and type', '', '');
             }
+        }
+        return result;
+    }
 
+    public static String buildDocFabUrl(String baseUrl, String recordUuid, String formUuid){
+        if(String.isBlank(baseUrl) || String.isBlank(recordUuid)){
+            return null;
         }
-        catch(Exception ex){
-            DFJ_ErrorLogController.addErrorLogs(recordId, 'Getting metadata record according to the market_unit of journal record', ex.getMessage(), 'Error', 'DF_DocFabricator_Utility apex class GetRecordFormConfigurationMetadataRecord_Apex method.', ex.getStackTraceString(), String.valueOf(ex.getLineNumber()));
+        String url = baseUrl + 'public/form/' + recordUuid;
+        if(!String.isBlank(formUuid)){
+            url += '/' + formUuid;
         }
-        return null;
+        return url;
     }
 
     /*
@@ -50,7 +777,12 @@ system.debug('recordFormConfigurationInstance-->'+recordFormConfigurationInstanc
     * @Param		String - recordModelId, journalRecord
     * @Return       String - record_uuid or error
     */
-    public static String AuthenticateCurrentSalesforceUser_Apex(String recordModelId,List<Journal__c> journalRecord){
+    public static String AuthenticateCurrentSalesforceUser_Apex(String recordModelId, List<Journal__c> journalRecord){
+        // Backwards-compatible overload for existing callers that do not send fieldConfigurationJson.
+        return AuthenticateCurrentSalesforceUser_Apex(recordModelId, journalRecord, null);
+    }
+
+    public static String AuthenticateCurrentSalesforceUser_Apex(String recordModelId,List<Journal__c> journalRecord, String fieldConfigurationJson){
         // Changes for ticket - DIN-170 : Create DocFab Record.
 	    // Start
 	    // Description : authorizing current salesforce user to create record in external system.
@@ -79,7 +811,7 @@ system.debug('recordFormConfigurationInstance-->'+recordFormConfigurationInstanc
 
                         if (!String.isBlank(recordModelId)) {
                             // call api to create record in external system.
-                            recordUuidOrError = CreateRecordToOpenDocFab_Apex(recordModelId,userList[0].id,journalRecord);
+                            recordUuidOrError = CreateRecordToOpenDocFab_Apex(recordModelId,userList[0].id,journalRecord, fieldConfigurationJson);
                             return recordUuidOrError;
                         }else {
                             DFJ_ErrorLogController.addErrorLogs(journalRecord[0].Id, 'Checking recordModelId is not empty.','recordModelId is null so can not call method to create new record', 'Warning', 'DF_DocFabricator_Utility apex class AuthenticateCurrentSalesforceUser_Apex method.','', '');
@@ -88,12 +820,12 @@ system.debug('recordFormConfigurationInstance-->'+recordFormConfigurationInstanc
                     }else{
                         // Show error toast message if user is not present.
                         recordUuidOrError = 'Current user with '+UserInfo.getUserEmail()+' does not exists in the DocFabricator system.';
-                        DFJ_ErrorLogController.addErrorLogs(journalRecord[0].Id, 'Authorizing current salesforce user so user can create record in external system.','StatusCode is '+response.getStatusCode()+' or getting responsebody : '+response, 'Warning', 'DF_DocFabricator_Utility apex class AuthenticateCurrentSalesforceUser_Apex method.','', '');
+                        DFJ_ErrorLogController.addErrorLogs(journalRecord[0].Id, 'Authorizing current salesforce user so user can create record in external system.','StatusCode is '+response.getStatusCode()+' body: '+response.getBody(), 'Warning', 'DF_DocFabricator_Utility apex class AuthenticateCurrentSalesforceUser_Apex method.','', '');
                         return recordUuidOrError;
                     }
 
                 }else{
-                    DFJ_ErrorLogController.addErrorLogs(journalRecord[0].Id, 'Authorizing current salesforce user so user can create record in external system.','StatusCode is'+response.getStatusCode()+' or getting responsebody : '+response, 'Warning', 'DF_DocFabricator_Utility apex class method AuthenticateCurrentSalesforceUser_Apex.','', '');
+                    DFJ_ErrorLogController.addErrorLogs(journalRecord[0].Id, 'Authorizing current salesforce user so user can create record in external system.','StatusCode is '+response.getStatusCode()+' body: '+response.getBody(), 'Warning', 'DF_DocFabricator_Utility apex class method AuthenticateCurrentSalesforceUser_Apex.','', '');
                 }
 
 
@@ -122,7 +854,12 @@ system.debug('recordFormConfigurationInstance-->'+recordFormConfigurationInstanc
     * @Param        String - recordModelId,recordUserId,journalRecord
     * @Return       String - record_uuid
     */
-    public static String CreateRecordToOpenDocFab_Apex(String recordModelId,String recordUserId,List<Journal__c> journalRecord){
+    public static String CreateRecordToOpenDocFab_Apex(String recordModelId, String recordUserId, List<Journal__c> journalRecord){
+        // Backwards-compatible overload for existing callers that do not send fieldConfigurationJson.
+        return CreateRecordToOpenDocFab_Apex(recordModelId, recordUserId, journalRecord, null);
+    }
+
+    public static String CreateRecordToOpenDocFab_Apex(String recordModelId,String recordUserId,List<Journal__c> journalRecord, String fieldConfigurationJson){
         // Changes for ticket - DIN-170 : Create DocFab Record.
 	    // Start
 	    // Description : Creating record in external system
@@ -135,61 +872,48 @@ system.debug('recordFormConfigurationInstance-->'+recordFormConfigurationInstanc
             // Description : 
             // Start   
             
-            //Changes Start TCS-86
-            Boolean salesforceUserExistInMetadata = false;      
-            List<DFJ_JournalDocfabFieldConfigurator__mdt> fieldConfiguratorInstance = new List<DFJ_JournalDocfabFieldConfigurator__mdt>();
-            List<Record_form_configuration__mdt> recordFormConfigurationInstance = new List<Record_form_configuration__mdt>();
-
-            fieldConfiguratorInstance = [SELECT Id,MasterLabel,Field_Configuration__c,Journal_type__c,Market_unit__c,Default_Field_Configurater__c FROM DFJ_JournalDocfabFieldConfigurator__mdt WHERE Market_unit__c =: journalRecord[0].Market_Unit__c AND Journal_type__c =: journalRecord[0].Type__c  LIMIT 1];
-			recordFormConfigurationInstance = GetRecordFormConfigurationMetadataRecord_Apex(journalRecord[0].Market_Unit__c,journalRecord[0].Id,journalRecord[0].Type__c);
-
-            if(!recordFormConfigurationInstance.isEmpty() && String.isNotBlank(recordFormConfigurationInstance[0].Salesforce_User__c)){
-                String salesforceUserId = recordFormConfigurationInstance[0].Salesforce_User__c;	
-                String currentUserId = UserInfo.getUserId();	
-                salesforceUserExistInMetadata = salesforceUserId.contains(currentUserId);			
-            }           
-        
-            if (test.isRunningTest()) {
-                fieldConfiguratorInstance.add(DFJ_JournalDocfabFieldConfigurator__mdt.getInstance('Test_All_Market'));
-            }            
-            String body = '{"owner_id":"'+recordUserId+'","record_model_id":"'+recordModelId+'","content":{';
-            if(String.isBlank(journalRecord[0].Account__c) || String.isNotBlank(journalRecord[0].Lead__c) || salesforceUserExistInMetadata)  //Chnages TCS-53
-            {
-                if (!fieldConfiguratorInstance.isEmpty() && !String.isEmpty(fieldConfiguratorInstance[0].Field_Configuration__c)) {    //Chnages TCS_53
-                    Map<String,Object> fieldConfigurationMap = (Map<String,Object>) (salesforceUserExistInMetadata ? JSON.deserializeUntyped(fieldConfiguratorInstance[0].Default_Field_Configurater__c) :JSON.deserializeUntyped(fieldConfiguratorInstance[0].Field_Configuration__c));
-                    String query = 'SELECT '+ String.join(new List<String>(fieldConfigurationMap.keySet()),',')+' FROM Journal__c WHERE ID=\''+journalRecord[0].Id+ '\' LIMIT 1';
-                    List<Journal__c> journalRecordInstance = new List<Journal__c>();
-                    
-                    journalRecordInstance = Database.query(query);
-                    System.System.debug('fieldConfiguratorInstance >>> '+ JSON.serializePretty(fieldConfigurationMap)); // DIN-339 changes
-                    if (fieldConfigurationMap != null && !fieldConfigurationMap.keySet().isEmpty()) {
-                        for (String configurationKey : fieldConfigurationMap.keySet()) {
-                            if (configurationKey.contains('Lead__r.')) {
-                                List<String> fieldLead = configurationKey.split('\\.');
-                                String value = string.valueof(journalRecordInstance[0].getSobject('Lead__r').get(fieldLead[1]));
-                                body += '"'+ String.valueOf(fieldConfigurationMap.get(configurationKey)) + '" : "'+(String.isBlank(value) ? '': EscapeReversedCharacters_Apex(String.valueOf(value))) +'",';
-                            }else{
-                                body += '"'+ String.valueOf(fieldConfigurationMap.get(configurationKey)) + '" : "'+ (journalRecordInstance[0].get(configurationKey) == null ? '': EscapeReversedCharacters_Apex(String.valueOf(journalRecordInstance[0].get(configurationKey)))) +'",';
-                            }
-                        }
-                    }
-                }else {
-                    return 'Error field configuration not found.';
-                }
-            }else{   //Chnages TCS-53
-                body += '"journal_name" : "'+ journalRecord[0].Name +'","person_1_first_name":"'+journalRecord[0].Account__r.FirstName+'","person_1_last_name":"'+journalRecord[0].Account__r.LastName+'",';
+            Map<String, Object> fieldConfigurationMap = null;
+            if(!String.isBlank(fieldConfigurationJson)){
+                fieldConfigurationMap = (Map<String,Object>) JSON.deserializeUntyped(fieldConfigurationJson);
             }
-             //End1
-            // changes for ticket DIN-175 : Create docfab record with prefilled data.
-			// Description : Sending the journal data in request body to prefilled the Docfab form.
-			// Start
-            // Changes for ticket DIN-254 : Add "OK" button to docfab error toast and include status message from api service
-            // Description : Added code to escape the characters.
-            // Start
 
-            body = body.removeEnd(',');
-            body += '}}';            
-            // End
+            Map<String, Object> contentMap = new Map<String, Object>();
+            if (fieldConfigurationMap != null && !fieldConfigurationMap.isEmpty()) {
+                if(journalRecord == null || journalRecord.isEmpty() || journalRecord[0].Id == null){
+                    // No persistent journal to query; skip SF→DocFab field mapping in this call.
+                    fieldConfigurationMap.clear();
+                }
+            }
+            if (fieldConfigurationMap != null && !fieldConfigurationMap.isEmpty()) {
+                List<String> fieldList = new List<String>(fieldConfigurationMap.keySet());
+                Id jrId = journalRecord[0].Id;
+                String query = 'SELECT '+ String.join(fieldList,',')+' FROM Journal__c WHERE Id = :jrId LIMIT 1';
+                List<Journal__c> journalRecordInstance = Database.query(query);
+                System.debug('fieldConfigurationMap >>> '+ JSON.serializePretty(fieldConfigurationMap));
+                for (String configurationKey : fieldConfigurationMap.keySet()) {
+                    String targetKey = String.valueOf(fieldConfigurationMap.get(configurationKey));
+                    String valueToSend = '';
+                    if (configurationKey.contains('Lead__r.')) {
+                        Integer dotIdx = configurationKey.indexOf('.');
+                        if(dotIdx > -1 && journalRecordInstance[0].getSobject('Lead__r') != null){
+                            String leadFieldName = configurationKey.substring(dotIdx + 1);
+                            Object leadValue = journalRecordInstance[0].getSobject('Lead__r').get(leadFieldName);
+                            valueToSend = leadValue == null ? '' : String.valueOf(leadValue);
+                        }
+                    } else {
+                        Object fieldValue = journalRecordInstance[0].get(configurationKey);
+                        valueToSend = fieldValue == null ? '' : String.valueOf(fieldValue);
+                    }
+                    contentMap.put(targetKey, valueToSend);
+                }
+            }
+
+            Map<String, Object> payload = new Map<String, Object>();
+            payload.put('owner_id', recordUserId);
+            payload.put('record_model_id', recordModelId);
+            payload.put('content', contentMap);
+
+            String body = JSON.serialize(payload);
             System.debug('body body >>>> '+body);
             Doc_Fabricator_Setting__c docFabSetting = Doc_Fabricator_Setting__c.getOrgDefaults();
             // docfab endpoint
@@ -215,11 +939,11 @@ system.debug('recordFormConfigurationInstance-->'+recordFormConfigurationInstanc
                 if (!String.isBlank(recorduuid)) {
                     return recorduuid;
                 }else {
-                    DFJ_ErrorLogController.addErrorLogs(journalRecord[0].Id, 'Creating record in external system.','returned response : '+response, 'Warning', 'DF_DocFabricator_Utility apex class method.','', '');
+                    DFJ_ErrorLogController.addErrorLogs(journalRecord[0].Id, 'Creating record in external system.','returned response body: '+response.getBody(), 'Warning', 'DF_DocFabricator_Utility apex class method.','', '');
                 }
 
             }else {
-                DFJ_ErrorLogController.addErrorLogs(journalRecord[0].Id, 'Checking status and response string is not empty and null.','StatusCode is '+ response.getStatusCode() +' or getting responsebody :'+response, 'Warning', 'DF_DocFabricator_Utility apex class method.','', '');
+                DFJ_ErrorLogController.addErrorLogs(journalRecord[0].Id, 'Checking status and response string is not empty and null.','StatusCode is '+ response.getStatusCode() +' body: '+response.getBody(), 'Warning', 'DF_DocFabricator_Utility apex class method.','', '');
                 return 'Error Code '+ response.getStatusCode()+' '+ response.getStatus();
             }
 
@@ -235,9 +959,9 @@ system.debug('recordFormConfigurationInstance-->'+recordFormConfigurationInstanc
     }
 
     /*
-    * @Description  This method will removing the reversed character. Changes for ticket DIN-254 : Add "OK" button to docfab error toast and include status message from api service
+    * @Description  Remove characters that would break DocFab payloads.
     * @Param        String - stringBody
-    * @Return       String - stringBody
+    * @Return       String - escaped string
     */
     public static String EscapeReversedCharacters_Apex(String stringBody){
         try {
@@ -748,11 +1472,12 @@ system.debug('fieldName-->'+fieldName);
                     customField.relationshipLabel =  customField.fullName.substringAfterLast('.').removeEnd('__c');
                     //customField.relationshipName = prefixForMetaApiName + underscoreString + paramsToCreateField.parent_model_id + '_' + paramsToCreateField.record_model;
                     customField.relationshipName = customField.fullName.substringAfterLast('.').removeEnd('__c');
-                    //Changes DFJ-68 Starts
+                    //Changes DFJ-68 Starts - Updated to use DocFab_Record_Model__mdt
                     if(paramsToCreateField.parent_model_id == null){
-                        List<DFJ_ObjectRecordModelId__mdt> objectRecordIdInstance = new List<DFJ_ObjectRecordModelId__mdt>();
-            			objectRecordIdInstance = [SELECT Id,Docfab_Journal_Object__c,Record_model_id__c FROM DFJ_ObjectRecordModelId__mdt WHERE Docfab_Journal_Object__c =: paramsToCreateField.record_model LIMIT 1];
-						customField.referenceTo = prefixForMetaApiName + underscoreString + objectRecordIdInstance[0].Record_model_id__c + underscoreString + paramsToCreateField.destination_model +'__c';
+                        List<DocFab_Record_Model__mdt> recordModelInstance = [SELECT Id, Record_Model_Id__c FROM DocFab_Record_Model__mdt WHERE Record_Model_Id__c =: paramsToCreateField.record_model LIMIT 1];
+                        if(!recordModelInstance.isEmpty()){
+                            customField.referenceTo = prefixForMetaApiName + underscoreString + recordModelInstance[0].Record_Model_Id__c + underscoreString + paramsToCreateField.destination_model +'__c';
+                        }
                     }else{
                         //End
                         customField.referenceTo = prefixForMetaApiName + underscoreString + paramsToCreateField.parent_model_id + underscoreString + paramsToCreateField.destination_model +'__c';

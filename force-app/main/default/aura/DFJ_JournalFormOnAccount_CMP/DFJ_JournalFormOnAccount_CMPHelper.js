@@ -14,8 +14,10 @@
             action.setParams({
                 "recordId": recordId,
                 //Changes DFJ-77 Starts
-                "orderId":relateOrderId
+                "orderId": relateOrderId,
                 //End
+                // New parameter for two-tier selection (empty for legacy Aura component)
+                "recordModelId": ""
 
             });
             action.setCallback(this, function(response) {

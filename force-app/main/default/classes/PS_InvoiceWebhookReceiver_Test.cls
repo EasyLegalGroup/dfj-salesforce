@@ -11,9 +11,13 @@ public with sharing class PS_InvoiceWebhookReceiver_Test {
         Account testAccount = new Account(Name='Test Account');
         insert testAccount;
 
+        // Ensure lead is owned by current user before conversion
+        leadRecords[0].OwnerId = UserInfo.getUserId();
+        update leadRecords[0];
+
         Database.LeadConvert lc = new database.LeadConvert();
         lc.setLeadId( leadRecords[0].Id );  
-        LeadStatus convertStatus = [Select Id, MasterLabel from LeadStatus where IsConverted=true limit 1];
+        LeadStatus convertStatus = [Select Id, MasterLabel from LeadStatus where IsConverted=true AND MasterLabel = 'Qualified' limit 1];
         lc.setDoNotCreateOpportunity( true );  
         // lc.setA
         lc.setConvertedStatus(convertStatus.MasterLabel);  
@@ -237,9 +241,13 @@ public with sharing class PS_InvoiceWebhookReceiver_Test {
         Account testAccount = new Account(name='Test Account');
         insert testAccount;
 
+        // Ensure lead is owned by current user before conversion
+        leadRecords[0].OwnerId = UserInfo.getUserId();
+        update leadRecords[0];
+
         Database.LeadConvert lc = new database.LeadConvert();  
         lc.setLeadId( leadRecords[0].Id );  
-        LeadStatus convertStatus = [Select Id, MasterLabel from LeadStatus where IsConverted=true limit 1];
+        LeadStatus convertStatus = [Select Id, MasterLabel from LeadStatus where IsConverted=true AND MasterLabel = 'Qualified' limit 1];
         lc.setDoNotCreateOpportunity( true );  
         // lc.setA
         lc.setConvertedStatus(convertStatus.MasterLabel);  
@@ -285,9 +293,13 @@ public with sharing class PS_InvoiceWebhookReceiver_Test {
         Account testAccount = new Account(name='Test Account');
         insert testAccount;
 
+        // Ensure lead is owned by current user before conversion
+        leadRecords[0].OwnerId = UserInfo.getUserId();
+        update leadRecords[0];
+
         Database.LeadConvert lc = new database.LeadConvert();  
         lc.setLeadId( leadRecords[0].Id );  
-        LeadStatus convertStatus = [Select Id, MasterLabel from LeadStatus where IsConverted=true limit 1];
+        LeadStatus convertStatus = [Select Id, MasterLabel from LeadStatus where IsConverted=true AND MasterLabel = 'Qualified' limit 1];
         lc.setDoNotCreateOpportunity( true );  
         // lc.setA
         lc.setConvertedStatus(convertStatus.MasterLabel);  
@@ -375,7 +387,7 @@ public with sharing class PS_InvoiceWebhookReceiver_Test {
         insert testConfigurations;
 
         //List<Lead> leadRecords = PS_TestDataFactory_Test.createLeadWithLeadProductAndPayment(1, 1, 1, true);
-        Lead testLead = new Lead(LastName = 'Test', Company = 'xyz', Provider_Id__c='testProviderid12', Email='test@test.com', Fixed_Discount_Type__c = 0);
+        Lead testLead = new Lead(LastName = 'Test', Company = 'xyz', Provider_Id__c='testProviderid12', Email='test@test.com', Fixed_Discount_Type__c = 0, OwnerId = UserInfo.getUserId());
         insert testLead;
 
         Product2 product = (new Product2(Name='test',productCode='1234',isActive = true,Product_Identifier__c = 'PI3'));
@@ -394,9 +406,17 @@ public with sharing class PS_InvoiceWebhookReceiver_Test {
         Account testAccount = new Account(name='Test Account');
         insert testAccount;
 
+        // Ensure lead owner is current user before conversion
+        testLead = [SELECT Id, OwnerId FROM Lead WHERE Id = :testLead.Id];
+        if (String.valueOf(testLead.OwnerId).startsWith('00G')) {
+            testLead.OwnerId = UserInfo.getUserId();
+            update testLead;
+        }
+
         Database.LeadConvert lc = new database.LeadConvert();  
         lc.setLeadId( testLead.Id );  
-        LeadStatus convertStatus = [Select Id, MasterLabel from LeadStatus where IsConverted=true limit 1];
+        lc.setOwnerId(UserInfo.getUserId());
+        LeadStatus convertStatus = [Select Id, MasterLabel from LeadStatus where IsConverted=true AND MasterLabel = 'Qualified' limit 1];
         lc.setDoNotCreateOpportunity( true );  
         // lc.setA
         lc.setConvertedStatus(convertStatus.MasterLabel);  

@@ -180,7 +180,8 @@ public class DFJ_TestDataFactory {
                            TimeZoneSidKey = 'America/Los_Angeles',
                            LocaleSidKey = 'en_US',
                            LanguageLocaleKey = 'en_US',
-                           ProfileId = pf.Id
+                           ProfileId = pf.Id,
+                           Company__c = 'Din Familiejurist ApS'
                            /*UserRoleId = obj.Id*/);
         		insert uu;
         return uu;
@@ -366,7 +367,7 @@ public class DFJ_TestDataFactory {
     public static List<Lead> CreateleadWithLedgerForLeadConversion(Integer noOflead,Integer noOfLedger){
         List<Lead> leadList = new List<Lead>();
         for (Integer i = 0; i < noOflead; i++) {
-            leadList.add(new Lead(LastName='test'+i,Provider_Id__c='newtestProviderid12'+i,UTM_Campaign__c='Kanvas',UTM_Content__c='Vil gerne oprette et testamente',UTM_Medium__c='Cube',UTM_Source__c='Facebook',UTM_Term__c='Andet'));
+            leadList.add(new Lead(LastName='test'+i,Company='Test Company '+i,Provider_Id__c='newtestProviderid12'+i,UTM_Campaign__c='Kanvas',UTM_Content__c='Vil gerne oprette et testamente',UTM_Medium__c='Cube',UTM_Source__c='Facebook',UTM_Term__c='Andet',OwnerId=UserInfo.getUserId()));
         }
         if (noOflead > 0) {
             insert leadList;

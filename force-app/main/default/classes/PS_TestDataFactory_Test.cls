@@ -5,7 +5,7 @@ public with sharing class PS_TestDataFactory_Test {
         List<Lead> leadList = new List<Lead>();
         List<LeadProducts__c> leadProducts = new List<LeadProducts__c>();
         for(Integer i = 0;i<numOfLead;i++){
-            leadList.add(new Lead(LastName = 'LastName', Company = 'xyz', Provider_Id__c='testProviderLnamev10',Email='test@test.com'));
+            leadList.add(new Lead(LastName = 'LastName', Company = 'xyz', Provider_Id__c='testProviderLnamev10',Email='test@test.com', OwnerId=UserInfo.getUserId()));
         }
         if(!leadList.isEmpty()){
             insert leadList;

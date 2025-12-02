@@ -8,19 +8,27 @@ public class TestGettingNextLead {
         leadIns.Company='test';
         leadIns.LastName='test';
         leadIns.Status='Open';
-        leadIns.Phone='123456';
+        leadIns.Phone='+4512345678';
         leadIns.telegenta__Last_Contact_State__c='Got appointment';
         leadIns.telegenta__Next_Call_Time__c=Datetime.now().addHours(-1);
         leadIns.Provider_id__c = '1q2we4ee';
+        leadIns.OwnerId = UserInfo.getUserId();
         insert leadIns;
         
+        // Re-query and ensure ownership is set correctly before conversion
+        leadIns = [SELECT Id, OwnerId FROM Lead WHERE Id = :leadIns.Id];
+        if (String.valueOf(leadIns.OwnerId).startsWith('00G')) {
+            // Owner is a Queue, reassign to current user
+            leadIns.OwnerId = UserInfo.getUserId();
+            update leadIns;
+        }
         
         Database.LeadConvert lc = new Database.LeadConvert();
         lc.setLeadId(leadIns.id);
+        lc.setOwnerId(UserInfo.getUserId());
 
-        LeadStatus convertStatus = [SELECT Id, MasterLabel FROM LeadStatus WHERE IsConverted=true LIMIT 1];
+        LeadStatus convertStatus = [SELECT Id, MasterLabel FROM LeadStatus WHERE IsConverted=true AND MasterLabel = 'Qualified' LIMIT 1];
         lc.setConvertedStatus(convertStatus.MasterLabel);
-        lc.setAccountId(leadIns.Id);
         Database.LeadConvertResult lcr = Database.convertLead(lc);
         System.assert(lcr.isSuccess());
         
